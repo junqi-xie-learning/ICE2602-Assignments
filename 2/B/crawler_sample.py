@@ -15,7 +15,9 @@ def union_dfs(a, b):
 
 
 def union_bfs(a, b):
-    pass
+    for e in b:
+        if e not in a:
+            a.insert(0, e)
 
 
 def crawl(seed, method):
@@ -28,7 +30,7 @@ def crawl(seed, method):
             content = get_page(page)
             outlinks = get_all_links(content)
 
-            globals()['union_%s' % method](tocrawl, outlinks)
+            globals()['union_{}'.format(method)](tocrawl, outlinks)
             crawled.append(page)
     return graph, crawled
 

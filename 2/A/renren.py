@@ -36,3 +36,14 @@ response = opener.open("http://www.renren.com/974663514/profile")
 soup = BeautifulSoup(response.read())
 
 # 下面的代码部分需要你们自己编写，主要是寻找并打印相关姓名、学校、生日和地址。
+info = {}
+
+info['name'] = soup.find('a', {'class': 'hd-name'}).string
+info['school'] = soup.find('li', {'class': 'school'}).contents[0].string
+temp_label = soup.find('li', {'class': 'birthday'}).contents
+info['sex'] = temp_label[1].string
+info['birthday'] = temp_label[3].string[1:]
+info['address'] = soup.find('li', {'class': 'address'}).string
+
+for content in info:
+    print(info[content])

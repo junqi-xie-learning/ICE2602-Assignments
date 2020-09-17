@@ -12,14 +12,14 @@ class Bitarray:
     def set(self, n):
         """ Sets the nth element of the bitarray """
 
-        index = int(n / 8)
+        index = n // 8
         position = n % 8
         self.bitarray[index] = self.bitarray[index] | 1 << (7 - position)
 
     def get(self, n):
         """ Gets the nth element of the bitarray """
 
-        index = n / 8
+        index = n // 8
         position = n % 8
         return (self.bitarray[index] & (1 << (7 - position))) > 0
 

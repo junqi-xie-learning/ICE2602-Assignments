@@ -1,31 +1,40 @@
 import time
 import copy
+
+
 def make_hashtable(b):
+    hashtable = []
+    for i in range(b):
+        hashtable.append([])
+    return hashtable
 
-def hashtable_get_bucket(table,keyword):
+def hashtable_get_bucket(table, keyword):
+    return table[hash_string(keyword, len(table))]
 
+def hash_string(keyword, buckets):
+    number = 0
+    for ch in keyword:
+        number += ord(ch)
+    number %= buckets
+    return number
 
-def hash_string(keyword,buckets):
+def hashtable_add(table, keyword):
+    hashtable_get_bucket(table, keyword).append(keyword)
 
+def hashtable_lookup(table, keyword):
+    return keyword in hashtable_get_bucket(table, keyword)
 
-def hashtable_add(table,keyword):
-
-
-def hashtable_lookup(table,keyword):
-
-    
 def get_random_string():
     import random
     return ''.join(random.sample([chr(i) for i in range(48, 123)], 6))
 
 tocrawl = [get_random_string() for i in range(10**4)]
-tocrawl_copy = copy.deepcopy(tocrawl)	
-#tocrawl.pop()会将tocrawl中的元素全部去掉，需要多复制一份
+tocrawl_copy = copy.deepcopy(tocrawl)
 
 def time_execution(code):
-    start = time.clock()
+    start = time.perf_counter()
     result = eval(code)
-    run_time = time.clock() - start
+    run_time = time.perf_counter() - start
     return run_time, result
 
 def crawl(tocrawl):
@@ -33,7 +42,7 @@ def crawl(tocrawl):
     while tocrawl:
         page = tocrawl.pop()
         if page not in crawled:
-            #crawl page
+            # crawl page
             crawled.append(page)
     return crawled
 
@@ -41,8 +50,8 @@ def crawl_hashtable(tocrawl):
     table = make_hashtable(100)
     while tocrawl:
         page = tocrawl.pop()
-        if not hashtable_lookup(table,page):
-            #crawl page
+        if not hashtable_lookup(table, page):
+            # crawl page
             hashtable_add(table, page)
     return table
 
