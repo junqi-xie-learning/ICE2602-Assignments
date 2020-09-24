@@ -1,59 +1,57 @@
 # SJTU EE208
 
+import sys
 import threading
 import queue
 import time
 
-
-def get_page(page):
-    print('downloading page %s' % page)
-    time.sleep(0.5)
-    return g.get(page, [])
+from crawler import *
 
 
-def get_all_links(content):
-    return content
-
-
-def working():
+def crawl_multi_thread(max_page, thread):
     while True:
         page = q.get()
-        # if varLock.acquire():
-        if page not in crawled:
-            # varLock.release()
-            # else:
-            # varLock.release()
+
+        to_crawl = False
+        if varLock.acquire():
+            to_crawl = page not in crawled and len(crawled) < max_page
+            varLock.release()
+        
+        if to_crawl:
+            print(page, thread)
             content = get_page(page)
-            outlinks = get_all_links(content)
+            add_page_to_folder(page, content)
+            outlinks = get_all_links(content, page)
             for link in outlinks:
                 q.put(link)
             if varLock.acquire():
                 graph[page] = outlinks
                 crawled.append(page)
                 varLock.release()
-            q.task_done()
+            time.sleep(0.5) # Added for politeness
+        q.task_done()
 
 
-g = {'A': ['B', 'C', 'D'],
-     'B': ['E', 'F'],
-     'C': ['1', '2'],
-     '1': ['3', '4'],
-     'D': ['G', 'H'],
-     'E': ['I', 'J'],
-     'G': ['K', 'L'],
-     }
-
-start = time.time()
 NUM = 4
 crawled = []
 graph = {}
 varLock = threading.Lock()
 q = queue.Queue()
-q.put('A')
-for i in range(NUM):
-    t = threading.Thread(target=working)
-    t.setDaemon(True)
-    t.start()
-q.join()
-end = time.time()
-print(end - start)
+
+
+def main(seed, max_page):
+    q.put(seed)
+    
+    for i in range(NUM):
+        t = threading.Thread(target=crawl_multi_thread, args=(max_page, i))
+        t.setDaemon(True)
+        t.start()
+    q.join()
+
+
+if __name__ == '__main__':
+
+    seed = sys.argv[1]
+    max_page = int(sys.argv[2])
+
+    crawled = main(seed, max_page)
