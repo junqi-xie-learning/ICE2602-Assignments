@@ -3,12 +3,9 @@
 import os
 import re
 import string
-import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-
-import time
 
 from bs4 import BeautifulSoup
 
@@ -79,12 +76,6 @@ def get_all_links(content, page):
     return links
 
 
-def union_bfs(a, b):
-    for e in b:
-        if e not in a:
-            a.insert(0, e)
-
-
 def add_page_to_folder(page, content):  # 将网页存到文件夹里，将网址和对应的文件名写入index.txt中
     index_filename = 'index.txt'  # index.txt中每行是'网址 对应的文件名'
     folder = 'html'  # 存放网页的文件夹
@@ -97,28 +88,3 @@ def add_page_to_folder(page, content):  # 将网页存到文件夹里，将网�
     f = open(os.path.join(folder, filename), 'wb')
     f.write(content)  # 将网页存入文件
     f.close()
-
-
-def crawl(seed, max_page):
-    tocrawl = [seed]
-    crawled = []
-
-    while tocrawl and len(crawled) < max_page:  # Limit the number of pages to be crawled
-        page = tocrawl.pop()
-        if page not in crawled:
-            print(page)
-            content = get_page(page)
-            add_page_to_folder(page, content)
-            outlinks = get_all_links(content, page)
-            union_bfs(tocrawl, outlinks)  # Modified to use BFS
-            crawled.append(page)
-            time.sleep(0.5)  # Added for politeness
-    return crawled
-
-
-if __name__ == '__main__':
-
-    seed = sys.argv[1]
-    max_page = int(sys.argv[2])
-
-    crawled = crawl(seed, max_page)

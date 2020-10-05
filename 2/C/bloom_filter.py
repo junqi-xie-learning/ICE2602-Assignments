@@ -1,12 +1,11 @@
 # SJTU EE208
 
 from Bitarray import Bitarray
-import math
-import copy
 import random
+import copy
 
 
-# modified from GeneralHashFunctions.BKDRHash
+# Modified from GeneralHashFunctions.BKDRHash to support random seeds
 def BKDRHash(key, seed):
     hash = 0
     for i in range(len(key)):
@@ -16,36 +15,58 @@ def BKDRHash(key, seed):
 
 class BloomFilter:
     def __init__(self, n, f):
-        self.bitarray = Bitarray(20 * n) # Randomly-chosen number
+        '''
+        Input: `n`: number of elements to be stored; \
+               `f`: user-defined hash function with 2 parameters: key, seed
+        '''
+        self.bitarray = Bitarray(20 * n)  # Randomly-chosen number
         self.hash_func = f
 
+        # Generate seeds to obtain different hash functions
         self.seeds = set()
-        for i in range(14): # Closest to `math.log(2) * 20`
-            index = random.randint(0, 2 ** 32)
-            self.seeds.add(index)
+        for i in range(14):  # Closest to `math.log(2) * 20`
+            seed = random.randint(0, 2 ** 20)
+            self.seeds.add(seed)
     
     def add(self, keyword):
+        '''
+        Add `keyword` into the Bitarray.
+
+        Input: `keyword`: keyword to be added
+        Output: None
+        '''
         for seed in self.seeds:
             index = self.hash_func(keyword, seed) % self.bitarray.size
-            self.bitarray.set(index)
+            self.bitarray.set(index)  # Mark all the corresponding positions to `1`.
     
     def find(self, keyword):
+        '''
+        Determine if `keyword` is in the Bitarray.
+
+        Input: `keyword`: keyword to be searched
+        Output: a boolean constant indicating the result
+        '''
         for seed in self.seeds:
             index = self.hash_func(keyword, seed) % self.bitarray.size
-            if self.bitarray.get(index):
-                return False
-        return True
+            if self.bitarray.get(index) == 0:
+                return False  # If any of the positions is `0`, `keyword` is not in the BloomFilter.
+        return True  # Otherwise, it's likely to be in the BloomFilter.
 
+
+# Test BloomFilter
 def get_random_string():
-    import random
     return ''.join(random.sample([chr(i) for i in range(48, 123)], 6))
 
 
-size = 10 ** 6
-tocrawl = [get_random_string() for i in range(size)]
-tocrawl_copy = copy.deepcopy(tocrawl)
+def test_hashset(tocrawl):
+    '''
+    Split `tocrawl` in halves. Store the first half in the set, and find strings in the second half.
+    Use `set` as the set. Intended to be used as a reference.
 
-def test_hashtable(tocrawl):
+    Input: `tocrawl`: list of words to be tested
+    Output: search result of the second half
+    '''
+    size = len(tocrawl)
     crawled = set()
     result = []
 
@@ -57,7 +78,16 @@ def test_hashtable(tocrawl):
             result.append(page in crawled)
     return result
 
+
 def test_bloomfilter(tocrawl):
+    '''
+    Split `tocrawl` in halves. Store the first half in the set, and find strings in the second half.
+    Use `BloomFilter` as the set.
+
+    Input: `tocrawl`: list of words to be tested
+    Output: search result of the second half
+    '''
+    size = len(tocrawl)
     crawled = BloomFilter(size // 2, BKDRHash)
     result = []
 
@@ -69,12 +99,19 @@ def test_bloomfilter(tocrawl):
             result.append(crawled.find(page))
     return result
 
-reference = test_hashtable(tocrawl)
-result = test_bloomfilter(tocrawl_copy)
 
-count = 0
-for i in range(len(reference)):
-    if reference[i] != result[i]:
-        count += 1
+if __name__ == '__main__':
+    tocrawl = [get_random_string() for i in range(10 ** 6)]
+    tocrawl_copy = copy.deepcopy(tocrawl)
 
-print("{:.6f}".format(count / len(reference)))
+    reference = test_hashset(tocrawl)
+    result = test_bloomfilter(tocrawl_copy)
+
+    # Count the total number of false positives
+    count = 0
+    for i in range(len(reference)):
+        if reference[i] != result[i]:
+            count += 1
+
+    # Calculate the false positive rate
+    print("{:.6f}".format(count / len(reference)))

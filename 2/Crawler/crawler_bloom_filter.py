@@ -1,11 +1,10 @@
-# SJTU EE208
-
 import sys
 import threading
 import queue
 import time
 
 from crawler import *
+from bloom_filter import *
 
 
 def working(max_page, thread):
@@ -26,7 +25,7 @@ def working(max_page, thread):
         terminate, to_crawl = False, False
         if varLock.acquire():  # Try to acquire the lock
             terminate = len(crawled) >= max_page  # Terminate the current thread
-            to_crawl = page not in crawled  # URL not recorded
+            to_crawl = not crawled.find(page)  # URL not recorded
             varLock.release()
         
         if terminate:
@@ -40,7 +39,7 @@ def working(max_page, thread):
             for link in outlinks:
                 q.put(link)
             if varLock.acquire():  # Try to acquire the lock
-                crawled.append(page)
+                crawled.add(page)
                 varLock.release()
             time.sleep(0.5)  # Added for politeness
         q.task_done()  # Task finished
@@ -48,12 +47,12 @@ def working(max_page, thread):
 
 # Variables here are shared by multiple threads
 NUM = 4
-crawled = []
+crawled = None  # To be initialized in `main`
 varLock = threading.Lock()
 q = queue.Queue()
 
 
-def crawl_multi_thread(seed, max_page):
+def crawl_bloom_filter(seed, max_page):
     q.put(seed)
     
     threads = []  # Store all the threads
@@ -72,4 +71,5 @@ if __name__ == '__main__':
     seed = sys.argv[1]
     max_page = int(sys.argv[2])
 
-    crawl_multi_thread(seed, max_page)
+    crawled = BloomFilter(max_page, BKDRHash)  # Initialize `crawled` as BloomFilter
+    crawl_bloom_filter(seed, max_page)
