@@ -1,16 +1,16 @@
 # Lab 1: HTML Parser
 
-## Exercise 1 (1.py)
+## Exercise 1 (url_parser.py)
 
 * Input: None
 * Output: `res1.txt`
 
-## Exercise 2 (2.py)
+## Exercise 2 (img_parser.py)
 
 * Input: None
 * Output: `res2.txt`
 
-## Exercise 3 (3.py)
+## Exercise 3 (zhihudaily_parser.py)
 
 * Input: customized User-Agent (Optional)
 * Output: `res3.txt`
@@ -19,7 +19,7 @@
 python 3.py (--user_agent {customized User-Agent})
 ```
 
-## Extended Exercise 1 (1.1.py)
+## Extended Exercise 1 (url_classifier.py)
 
 * Input: None
-* Output: `res1.1.txt`
+* Output: `classified.txt`

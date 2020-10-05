@@ -43,7 +43,7 @@ def main():
     url = "http://www.baidu.com/"
     content = urllib.request.urlopen(url).read()
     urlSetDict = parseURL(content)
-    write_outputs(urlSetDict, "res1.1.txt")
+    write_outputs(urlSetDict, "classified.txt")
 
 
 if __name__ == '__main__':
