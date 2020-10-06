@@ -3,8 +3,8 @@ import threading
 import queue
 import time
 
-from crawler import *
-from bloom_filter import *
+from C.bloom_filter import *
+from D.crawler import *
 
 
 def working(max_page, thread):

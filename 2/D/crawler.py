@@ -1,7 +1,6 @@
 # SJTU EE208
 
 import os
-import re
 import string
 import sys
 import urllib.error
@@ -63,19 +62,10 @@ def get_all_links(content, page):
     Output: all links in `content`
     '''
     links = []
-    pattern1 = re.compile('^http.*')  # 'http://.../', 'https://.../'
-    pattern2 = re.compile('^/{2}.*')  # '//.../'
-    pattern3 = re.compile('^/{1}.*')  # '/.../'
-
     soup = BeautifulSoup(content)  # Load the HTML content into BeautifulSoup
     for i in soup.findAll('a'):  # Find the nodes tagged with 'a'
         link = i.get('href', '')  # Get their 'href' attributes
-        if pattern1.match(link):
-            links.append(link)
-        elif pattern2.match(link):
-            links.append(urllib.parse.urljoin('http:', link))
-        elif pattern3.match(link):
-            links.append(urllib.parse.urljoin(page, link))
+        links.append(urllib.parse.urljoin(page, link))  # Convert all kinds of paths to absolute paths
     return links
 
 

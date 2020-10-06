@@ -21,12 +21,16 @@ class BloomFilter:
         '''
         self.bitarray = Bitarray(20 * n)  # Randomly-chosen number
         self.hash_func = f
+        self.size = 0
 
         # Generate seeds to obtain different hash functions
         self.seeds = set()
         for i in range(14):  # Closest to `math.log(2) * 20`
             seed = random.randint(0, 2 ** 20)
             self.seeds.add(seed)
+    
+    def __len__(self):
+        return self.size
     
     def add(self, keyword):
         '''
@@ -38,6 +42,7 @@ class BloomFilter:
         for seed in self.seeds:
             index = self.hash_func(keyword, seed) % self.bitarray.size
             self.bitarray.set(index)  # Mark all the corresponding positions to `1`.
+        self.size += 1
     
     def find(self, keyword):
         '''
