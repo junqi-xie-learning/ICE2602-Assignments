@@ -64,8 +64,9 @@ def get_all_links(content, page):
     links = []
     soup = BeautifulSoup(content)  # Load the HTML content into BeautifulSoup
     for i in soup.findAll('a'):  # Find the nodes tagged with 'a'
-        link = i.get('href', '')  # Get their 'href' attributes
-        links.append(urllib.parse.urljoin(page, link))  # Convert all kinds of paths to absolute paths
+        link = urllib.parse.urljoin(page, i.get('href', ''))  # Convert all kinds of paths to absolute paths
+        if (link[:4] == 'http'):
+            links.append(link)
     return links
 
 
