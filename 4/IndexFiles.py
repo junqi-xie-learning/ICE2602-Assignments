@@ -186,7 +186,7 @@ if __name__ == '__main__':
 
     start = datetime.now()
     try:
-        # IndexFiles('testfolder', 'index', StandardAnalyzer())
+        # IndexFiles('test_folder', 'index', StandardAnalyzer())
 
         ConvertFiles(html_dir, doc_dir)
         IndexFiles(doc_dir, store_dir, WhitespaceAnalyzer())
