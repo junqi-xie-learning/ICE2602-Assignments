@@ -43,7 +43,7 @@ class SearchFiles(object):
             command = self.get_input()
             score_docs = self.search(command)
             self.output(score_docs)
-    
+
 
     def get_input(self):
         '''
@@ -54,7 +54,7 @@ class SearchFiles(object):
         '''
         command = input("Query: ")
         if command == '':
-            return
+            exit()
         return self.preprocess(command)
 
 
@@ -70,7 +70,7 @@ class SearchFiles(object):
         query = self.parser.parse(command)
         return self.searcher.search(query, 50).scoreDocs
 
-    
+
     def output(self, score_docs):
         '''
         Output the search results.
@@ -81,12 +81,14 @@ class SearchFiles(object):
         print("{} total matching documents.".format(len(score_docs)))
         for score_doc in score_docs:
             doc = self.searcher.doc(score_doc.doc)
-            print('path: {}, title: {}, url: {}, name: {}.'.format(
+            print('path: {}, title: {}, url: {}, name: {}'.format(
                 doc.get('path'), doc.get('title'), doc.get('url'), doc.get('name')))
         print()
 
 
 if __name__ == '__main__':
+
+    index_dir = sys.argv[1]
 
     lucene.initVM()
     print('lucene', lucene.VERSION)
@@ -94,4 +96,4 @@ if __name__ == '__main__':
     # SearchFiles('index', StandardAnalyzer())
 
     # Pass the Jieba function as a parameter for generalized preprocessing
-    SearchFiles('index', WhitespaceAnalyzer(), lambda x: ' '.join(jieba.cut(x)))
+    SearchFiles(index_dir, WhitespaceAnalyzer(), lambda x: ' '.join(jieba.cut(x)))

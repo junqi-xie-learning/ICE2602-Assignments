@@ -25,7 +25,7 @@ and the contents.
 
 
 class IndexFiles(object):
-    def __init__(self, root, store_dir, analyzer):
+    def __init__(self, html_dir, root, store_dir, analyzer):
         '''
         Input: `root`: directory stroing the documents
                `store_dir`: directory to store the Lucene index
@@ -36,13 +36,12 @@ class IndexFiles(object):
         self.root = root
 
         # Initialize `FieldType`
-        self.file_type = self.get_field_type(True, False)
-        self.title_type = self.get_field_type(True, True)
+        self.property_type = self.get_field_type(True, False)
         self.content_type = self.get_field_type(False, True)
 
         # Load data from `index.txt` and `titles.txt`
-        self.titles = self.load_titles()
         self.urls = self.load_urls()
+        self.titles = self.load_titles()
 
         # Initialize `Ticker`
         self.ticker = Ticker('Commit index')
@@ -55,11 +54,14 @@ class IndexFiles(object):
                     continue
                 print("Adding {}".format(filename))
                 try:
-                    path = os.path.join(root, filename)
-                    contents = self.get_contents(path)
+                    filepath = os.path.join(root, filename)  # Path of the doc file
+
+                    name = filename[:-4]  # Remove the suffix of the file
+                    path = os.path.join(html_dir, name)  # Path of the HTML file
+                    contents = self.get_contents(filepath)
                     title = self.titles[filename]
                     url = self.urls[filename]
-                    doc = self.get_doc(filename, path, title, url, contents)
+                    doc = self.get_doc(name, path, title, url, contents)
                     self.writer.addDocument(doc)
                 except Exception as e:
                     print("Failed to index doc: {}".format(e))
@@ -106,7 +108,23 @@ class IndexFiles(object):
         else:  # Not indexed
             t.setIndexOptions(IndexOptions.NONE)
         return t
-    
+
+
+    def load_urls(self):
+        '''
+        Read urls from file `index.txt`.
+
+        Input: None
+        Output: None
+        '''
+        urls = { }
+        with open('index.txt', 'r') as file:
+            for l in file.readlines():
+                url, filename = l.split('\t')
+                filename = filename.strip() + '.txt'  # Add the suffix of the file
+                urls[filename] = url
+        return urls
+
 
     def load_titles(self):
         '''
@@ -122,22 +140,6 @@ class IndexFiles(object):
                 title = title.strip()  # Remove the ending '\n'
                 titles[filename] = title
         return titles
-    
-
-    def load_urls(self):
-        '''
-        Read urls from file `index.txt`.
-
-        Input: None
-        Output: None
-        '''
-        urls = { }
-        with open('index.txt', 'r') as file:
-            for l in file.readlines():
-                url, filename = l.split('\t')
-                filename = filename.strip()[:-4] + '.txt'  # Legacy Problem: change the suffix of the file
-                urls[filename] = url
-        return urls
 
 
     def get_contents(self, path):
@@ -164,10 +166,10 @@ class IndexFiles(object):
         Output: `Document` with the fields initialized
         '''
         doc = Document()
-        doc.add(Field("name", filename, self.file_type))
-        doc.add(Field("path", path, self.file_type))
-        doc.add(Field("title", title, self.title_type))
-        doc.add(Field("url", url, self.file_type))
+        doc.add(Field("name", filename, self.property_type))
+        doc.add(Field("path", path, self.property_type))
+        doc.add(Field("title", title, self.property_type))
+        doc.add(Field("url", url, self.property_type))
         if len(contents) > 0:
             doc.add(Field("contents", contents, self.content_type))
         else:
@@ -189,7 +191,8 @@ if __name__ == '__main__':
         # IndexFiles('test_folder', 'index', StandardAnalyzer())
 
         ConvertFiles(html_dir, doc_dir)
-        IndexFiles(doc_dir, store_dir, WhitespaceAnalyzer())
+        # Use `WhitespaceAnalyzer` as the tokenizer
+        IndexFiles(html_dir, doc_dir, store_dir, WhitespaceAnalyzer())
         end = datetime.now()
         print(end - start)
     except Exception as e:
