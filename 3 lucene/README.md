@@ -1,10 +1,23 @@
-# Lab 4: Lucene
+# Lab 3: Lucene
 
-## Step 1 (Optional)
+## Part A
 
-Download test data from [EE208-Assignments-Test-Data](https://github.com/junqi-xie/EE208-Assignments-Test-Data)
+### Step 1
 
-## Step 2 (IndexFiles.py)
+Download test data from [EE208-Assignments-Test-Data](https://github.com/junqi-xie/EE208-Assignments-Test-Data) and move the data to root folder.
+
+Desired folder structure:
+```
+3 lucene/
+-- html/ (test data)
+-- index.txt (test data)
+-- Ticker.py
+-- ConvertFiles.py
+-- IndexFiles.py
+-- SearchFiles.py
+```
+
+### Step 2 (IndexFiles.py)
 
 * Input: html directory, docs directory (temp), index directory
 * Output: docs directory (temp), `titles.txt` (temp), index directory
@@ -13,7 +26,7 @@ Download test data from [EE208-Assignments-Test-Data](https://github.com/junqi-x
 python IndexFiles.py html docs index
 ```
 
-## Step 3 (SearchFiles.py)
+### Step 3 (SearchFiles.py)
 
 * Input: index directory
 * Output: In Terminal (Interactive script)

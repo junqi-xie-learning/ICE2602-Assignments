@@ -10,6 +10,8 @@ from org.apache.lucene.index import DirectoryReader
 from org.apache.lucene.queryparser.classic import QueryParser
 from org.apache.lucene.store import SimpleFSDirectory
 from org.apache.lucene.search import IndexSearcher
+from org.apache.lucene.search import BooleanQuery
+from org.apache.lucene.search import BooleanClause
 
 
 '''
@@ -20,6 +22,32 @@ index for the search query entered against the `contents` field.  It will \
 then display the `path`, `title`, `url` and `name` fields for each of the \
 hits it finds in the index.
 '''
+
+
+def parseCommand(command):
+    '''
+    input: C title:T author:A language:L
+    output: {'contents':C, 'title':T, 'author':A, 'language':L}
+
+    Sample:
+    input:'contenance title:henri language:french author:william shakespeare'
+    output:{'author': ' william shakespeare',
+                   'language': ' french',
+                   'contents': ' contenance',
+                   'title': ' henri'}
+    '''
+    allowed_opt = ['title', 'author', 'language']
+    command_dict = {}
+    opt = 'contents'
+    for i in command.split(' '):
+        if ':' in i:
+            opt, value = i.split(':')[:2]
+            opt = opt.lower()
+            if opt in allowed_opt and value != '':
+                command_dict[opt] = command_dict.get(opt, '') + ' ' + value
+        else:
+            command_dict[opt] = command_dict.get(opt, '') + ' ' + i
+    return command_dict
 
 
 class SearchFiles(object):
@@ -34,8 +62,8 @@ class SearchFiles(object):
         self.searcher = IndexSearcher(DirectoryReader.open(self.dir))
         self.preprocess = preprocess
 
-        # Initialize `QueryParser`
-        self.parser = QueryParser("contents", analyzer)
+        # Store Analyzer
+        self.analyzer = analyzer
 
         # Search docs
         print("Hit enter with no input to quit.")
@@ -67,8 +95,12 @@ class SearchFiles(object):
         '''
         print()
         print("Searching for: ", command)
-        query = self.parser.parse(command)
-        return self.searcher.search(query, 50).scoreDocs
+        command_dict = parseCommand(command)
+        querys = BooleanQuery.Builder()
+        for k,v in command_dict.items():
+            query = QueryParser(k, self.analyzer).parse(v)
+            querys.add(query, BooleanClause.Occur.MUST)
+        return self.searcher.search(querys.build(), 50).scoreDocs
 
 
     def output(self, score_docs):
