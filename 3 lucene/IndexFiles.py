@@ -7,7 +7,7 @@ from java.nio.file import Paths
 from org.apache.lucene.analysis.miscellaneous import LimitTokenCountAnalyzer
 from org.apache.lucene.analysis.standard import StandardAnalyzer
 from org.apache.lucene.analysis.core import WhitespaceAnalyzer
-from org.apache.lucene.document import Document, Field, FieldType
+from org.apache.lucene.document import Document, Field, FieldType, StringField, TextField
 from org.apache.lucene.index import IndexWriter, IndexWriterConfig, IndexOptions
 from org.apache.lucene.store import SimpleFSDirectory
 
@@ -27,7 +27,8 @@ and the contents.
 class IndexFiles(object):
     def __init__(self, html_dir, root, store_dir, analyzer):
         '''
-        Input: `root`: directory stroing the documents
+        Input: `html_dir`: directory storing the HTML files
+               `root`: directory storing the documents
                `store_dir`: directory to store the Lucene index
                `analyzer`: analyzer required to split the query
         '''
@@ -36,8 +37,8 @@ class IndexFiles(object):
         self.root = root
 
         # Initialize `FieldType`
-        self.property_type = self.get_field_type(True, False)
-        self.content_type = self.get_field_type(False, True)
+        # self.property_type = self.get_field_type(True, False)
+        # self.content_type = self.get_field_type(False, True)
 
         # Load data from `index.txt` and `titles.txt`
         self.urls = self.load_urls()
@@ -166,12 +167,17 @@ class IndexFiles(object):
         Output: `Document` with the fields initialized
         '''
         doc = Document()
-        doc.add(Field("name", filename, self.property_type))
-        doc.add(Field("path", path, self.property_type))
-        doc.add(Field("title", title, self.property_type))
-        doc.add(Field("url", url, self.property_type))
+        # doc.add(Field("name", filename, self.property_type))
+        # doc.add(Field("path", path, self.property_type))
+        # doc.add(Field("title", title, self.property_type))
+        # doc.add(Field("url", url, self.property_type))
+        doc.add(StringField("name", filename, Field.Store.YES))
+        doc.add(StringField("path", path, Field.Store.YES))
+        doc.add(TextField("title", title, Field.Store.YES))
+        doc.add(TextField("url", url, Field.Store.YES))
         if len(contents) > 0:
-            doc.add(Field("contents", contents, self.content_type))
+            # doc.add(Field("contents", contents, self.content_type))
+            doc.add(TextField("contents", contents, Field.Store.YES))
         else:
             print("Warning: No content in {}".format(filename))
         return doc
@@ -190,8 +196,8 @@ if __name__ == '__main__':
     try:
         # IndexFiles('test_folder', 'index', StandardAnalyzer())
 
-        ConvertFiles(html_dir, doc_dir)
-        # Use `WhitespaceAnalyzer` as the tokenizer
+        # ConvertFiles(html_dir, doc_dir)
+        # Use `WhitespaceAnalyzer` as `Analyzer`
         IndexFiles(html_dir, doc_dir, store_dir, WhitespaceAnalyzer())
         end = datetime.now()
         print(end - start)

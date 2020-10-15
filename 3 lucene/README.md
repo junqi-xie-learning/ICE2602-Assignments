@@ -34,3 +34,23 @@ python IndexFiles.py html docs index
 ```
 python SearchFiles.py index
 ```
+
+## Part B Exercise 1
+
+### Step 1 (IndexUpdate.py)
+
+* Input: docs directory (from Part A), index directory (from Part A), new index directory
+* Output: new index directory
+* Example Command in Terminal:
+```
+python IndexUpdate.py docs index index_new
+```
+
+### Step 2 (SearchFiles.py)
+
+* Input: new index directory
+* Output: In Terminal (Interactive script)
+* Example Command in Terminal:
+```
+python SearchFiles.py index_new
+```

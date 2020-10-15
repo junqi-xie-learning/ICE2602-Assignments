@@ -24,32 +24,6 @@ hits it finds in the index.
 '''
 
 
-def parseCommand(command):
-    '''
-    input: C title:T author:A language:L
-    output: {'contents':C, 'title':T, 'author':A, 'language':L}
-
-    Sample:
-    input:'contenance title:henri language:french author:william shakespeare'
-    output:{'author': ' william shakespeare',
-                   'language': ' french',
-                   'contents': ' contenance',
-                   'title': ' henri'}
-    '''
-    allowed_opt = ['title', 'author', 'language']
-    command_dict = {}
-    opt = 'contents'
-    for i in command.split(' '):
-        if ':' in i:
-            opt, value = i.split(':')[:2]
-            opt = opt.lower()
-            if opt in allowed_opt and value != '':
-                command_dict[opt] = command_dict.get(opt, '') + ' ' + value
-        else:
-            command_dict[opt] = command_dict.get(opt, '') + ' ' + i
-    return command_dict
-
-
 class SearchFiles(object):
     def __init__(self, store_dir, analyzer, preprocess = lambda x: x):
         '''
@@ -71,6 +45,28 @@ class SearchFiles(object):
             command = self.get_input()
             score_docs = self.search(command)
             self.output(score_docs)
+    
+
+    def parse_command(self, command):
+        '''
+        Parse the input command and convert it into a command dict.
+
+        Input: `command`: query in the format `C site:S`
+        Output: dict in the format `{ 'contents': C, 'site': S }`
+        '''
+        allowed_opt = ['site']
+        opt = 'contents'
+        command_dict = { opt: '' }
+
+        for i in command.split(' '):
+            if ':' in i:
+                opt, value = i.split(':')
+                opt = opt.lower()
+                if opt in allowed_opt:
+                    command_dict[opt] = value
+            else:
+                command_dict[opt] += ' ' + i
+        return command_dict
 
 
     def get_input(self):
@@ -78,24 +74,25 @@ class SearchFiles(object):
         Get query input from terminal.
 
         Input: None
-        Output: processed command
+        Output: dict containing preprocessed query
         '''
         command = input("Query: ")
         if command == '':
             exit()
-        return self.preprocess(command)
+        print()
+        print("Searching for: ", command)
+        command_dict = self.parse_command(command)
+        command_dict['contents'] = self.preprocess(command_dict['contents'])
+        return command_dict
 
 
-    def search(self, command):
+    def search(self, command_dict):
         '''
         Search for the query in the Lucene index.
 
-        Input: `command`: keyword to be searched
+        Input: `command_dict`: dict containing preprocessed query
         Output: score_docs satisfying the requirement
         '''
-        print()
-        print("Searching for: ", command)
-        command_dict = parseCommand(command)
         querys = BooleanQuery.Builder()
         for k,v in command_dict.items():
             query = QueryParser(k, self.analyzer).parse(v)
@@ -105,7 +102,7 @@ class SearchFiles(object):
 
     def output(self, score_docs):
         '''
-        Output the search results.
+        Output the search results in terminal.
 
         Input: `score_docs`: search results
         Output: None
