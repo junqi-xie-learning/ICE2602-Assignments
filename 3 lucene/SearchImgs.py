@@ -14,7 +14,7 @@ from org.apache.lucene.search import BooleanQuery
 from org.apache.lucene.search import BooleanClause
 
 
-class SearchFiles(object):
+class SearchImgs(object):
     def __init__(self, store_dir, analyzer, preprocess = lambda x: x):
         '''
         Input: `store_dir`: directory storing the Lucene index
@@ -26,8 +26,8 @@ class SearchFiles(object):
         self.searcher = IndexSearcher(DirectoryReader.open(self.dir))
         self.preprocess = preprocess
 
-        # Store Analyzer
-        self.analyzer = analyzer
+        # Initialize `QueryParser`
+        self.parser = QueryParser("description", analyzer)
 
         # Search docs
         print("Hit enter with no input to quit.")
@@ -35,28 +35,6 @@ class SearchFiles(object):
             command = self.get_input()
             score_docs = self.search(command)
             self.output(score_docs)
-    
-
-    def parse_command(self, command):
-        '''
-        Parse the input command and convert it into a command dict.
-
-        Input: `command`: query in the format `C site:S`
-        Output: dict in the format `{ 'contents': C, 'site': S }`
-        '''
-        allowed_opt = ['site']
-        opt = 'contents'
-        command_dict = { opt: '' }
-
-        for i in command.split(' '):
-            if ':' in i:
-                opt, value = i.split(':')
-                opt = opt.lower()
-                if opt in allowed_opt:
-                    command_dict[opt] = value
-            else:
-                command_dict[opt] += ' ' + i
-        return command_dict
 
 
     def get_input(self):
@@ -64,30 +42,25 @@ class SearchFiles(object):
         Get query input from terminal.
 
         Input: None
-        Output: dict containing preprocessed query
+        Output: processed command
         '''
         command = input("Query: ")
         if command == '':
             exit()
-        print()
-        print("Searching for: ", command)
-        command_dict = self.parse_command(command)
-        command_dict['contents'] = self.preprocess(command_dict['contents'])
-        return command_dict
+        return self.preprocess(command)
 
 
-    def search(self, command_dict):
+    def search(self, command):
         '''
         Search for the query in the Lucene index.
 
-        Input: `command_dict`: dict containing preprocessed query
+        Input: `command`: keyword to be searched
         Output: score_docs satisfying the requirement
         '''
-        querys = BooleanQuery.Builder()
-        for k, v in command_dict.items():
-            query = QueryParser(k, self.analyzer).parse(v)
-            querys.add(query, BooleanClause.Occur.MUST)
-        return self.searcher.search(querys.build(), 50).scoreDocs
+        print()
+        print("Searching for: ", command)
+        query = self.parser.parse(command)
+        return self.searcher.search(query, 50).scoreDocs
 
 
     def output(self, score_docs):
@@ -100,8 +73,8 @@ class SearchFiles(object):
         print("{} total matching documents.".format(len(score_docs)))
         for score_doc in score_docs:
             doc = self.searcher.doc(score_doc.doc)
-            print('path: {}, title: {}, url: {}, name: {}'.format(
-                doc.get('path'), doc.get('title'), doc.get('url'), doc.get('name')))
+            print('img_url: {}, url: {}, url_title: {}'.format(
+                doc.get('img_url'), doc.get('url'), doc.get('url_title')))
         print()
 
 
@@ -112,7 +85,5 @@ if __name__ == '__main__':
     lucene.initVM()
     print('lucene', lucene.VERSION)
 
-    # SearchFiles('index', StandardAnalyzer())
-
     # Pass the Jieba function as a parameter for generalized preprocessing
-    SearchFiles(index_dir, SimpleAnalyzer(), lambda x: ' '.join(jieba.cut(x)))
+    SearchImgs(index_dir, SimpleAnalyzer(), lambda x: ' '.join(jieba.cut(x)))

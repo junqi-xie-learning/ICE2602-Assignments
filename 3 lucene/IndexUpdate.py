@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 from java.nio.file import Paths
 from org.apache.lucene.analysis.miscellaneous import LimitTokenCountAnalyzer
 from org.apache.lucene.analysis.standard import StandardAnalyzer
-from org.apache.lucene.analysis.core import WhitespaceAnalyzer
+from org.apache.lucene.analysis.core import SimpleAnalyzer
 from org.apache.lucene.document import Document, Field, FieldType, StringField, TextField
 from org.apache.lucene.index import FieldInfo, IndexWriter, IndexReader ,IndexWriterConfig, Term, DirectoryReader
 from org.apache.lucene.store import SimpleFSDirectory
@@ -18,20 +18,19 @@ from Ticker import Ticker
 
 
 class IndexUpdate(object):
-    def __init__(self, root, original_dir, store_dir, analyzer):
+    def __init__(self, root, store_dir, analyzer):
         '''
         Input: `root`: directory storing the documents
-               `original_dir`: directory storing the original Lucene index
                `store_dir`: directory to store the new Lucene index
                `analyzer`: analyzer required to split the query
         '''
         # Initialize `IndexWriter` and `IndexSearcher`
         self.writer = self.get_writer(store_dir, analyzer)
-        self.searcher = self.get_searcher(original_dir)
+        self.searcher = self.get_searcher(store_dir)
         self.root = root
 
         # Initialize `Ticker`
-        self.ticker = Ticker('Commit index')
+        self.ticker = Ticker('Updating index')
         threading.Thread(target=self.ticker.run).start()
 
         # Update Docs
@@ -42,8 +41,8 @@ class IndexUpdate(object):
                 print("Updating {}".format(filename))
                 try:
                     # Remove the original doc and get the info
-                    name = filename[:-4]
-                    term = Term('name', name)
+                    name = filename[:-4]  # Remove the suffix of the file
+                    term = Term('name', name)  # Create a term to be searched
                     doc_info = self.search(term)
                     self.writer.deleteDocuments(term)
 
@@ -136,8 +135,8 @@ class IndexUpdate(object):
         doc = Document()
         doc.add(StringField("name", doc_info['name'], Field.Store.YES))
         doc.add(StringField("path", doc_info['path'], Field.Store.YES))
-        doc.add(TextField("title", doc_info['path'], Field.Store.YES))
-        doc.add(TextField("url", doc_info['url'], Field.Store.YES))
+        doc.add(StringField("title", doc_info['title'], Field.Store.YES))
+        doc.add(StringField("url", doc_info['url'], Field.Store.YES))
         doc.add(TextField("site", doc_info['site'], Field.Store.YES))
         if len(contents) > 0:
             doc.add(TextField("contents", contents, Field.Store.YES))
@@ -149,8 +148,7 @@ class IndexUpdate(object):
 if __name__ == '__main__':
 
     doc_dir = sys.argv[1]
-    original_dir = sys.argv[2]
-    store_dir = sys.argv[3]
+    store_dir = sys.argv[2]
 
     lucene.initVM()
     print('lucene {}'.format(lucene.VERSION))
@@ -158,9 +156,9 @@ if __name__ == '__main__':
     start = datetime.now()
     try:
         # fn = 'pg17565.txt'
-        # IndexUpdate('testfolder', 'index', 'index', StandardAnalyzer())
+        # IndexUpdate('testfolder', 'index', StandardAnalyzer())
 
-        IndexUpdate(doc_dir, original_dir, store_dir, WhitespaceAnalyzer())
+        IndexUpdate(doc_dir, store_dir, SimpleAnalyzer())
         end = datetime.now()
         print(end - start)
     except Exception as e:

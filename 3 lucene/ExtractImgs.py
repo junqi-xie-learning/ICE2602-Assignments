@@ -4,24 +4,22 @@ import os, threading
 import re
 
 from bs4 import BeautifulSoup
-import jieba, string
+import jieba, urllib
 
 from Ticker import Ticker
 
 
-class ConvertFiles(object):
-    def __init__(self, root, store_dir):
-        '''
-        Input: `root`: directory storing the HTML webpages
-               `store_dir`: directory to store the processed documents
-        '''
+class ExtractImgs(object):
+    def __init__(self, root):
         # Initialize paths
         self.root = root
-        self.store_dir = store_dir
-        self.title_filename = 'titles.txt'
+        self.image_filename = 'images.txt'
+
+        # Load data from `index.txt`
+        self.urls = self.load_urls()
 
         # Initialize `Ticker`
-        self.ticker = Ticker('Converting Files')
+        self.ticker = Ticker('Extracting Images')
         threading.Thread(target=self.ticker.run).start()
 
         # Convert HTMLs
@@ -29,43 +27,52 @@ class ConvertFiles(object):
             for filename in filenames:
                 if not filename.endswith('.htm') and not filename.endswith('.html'):
                     continue
-                print("Converting {}".format(filename))
+                print("Extracting images from {}".format(filename))
                 try:
                     path = os.path.join(root, filename)
-
                     contents = self.get_contents(path)
-                    tokenized = self.tokenize(contents)
-                    if tokenized == []:
-                        raise Exception('this page is empty')  # Some webpage is empty
-                    
                     try:
                         title = contents.find('title').string.strip().replace('\n', '').replace('\t', ' ')
                     except:
                         title = ''  # The `title` tag of some webpage is empty
-                    
-                    self.write(filename, tokenized, title)
+
+                    for img_url, description in self.extract_img(contents, self.urls[filename]):
+                        description = ' '.join(jieba.cut(description)).strip().replace('\n', '').replace('\t', ' ')
+                        self.write(img_url, description, self.urls[filename], title)
                 except Exception as e:
                     print("Failed to convert doc: {}. Error: {}".format(filename, e))
         
         self.ticker.tick = False
 
 
-    def write(self, filename, contents, title):
+    def write(self, img_url, contents, url, url_title):
         '''
-        Write tokenized contents to file, and title to `titles.txt`
+        Write extracted images to `images.txt`
 
-        Input: `filename`: original name of the file
-               `contents`: tokenized contents of the file
-               `title`: title of the file
+        Input: `img_url`: url of the image
+               `contents`: tokenized description of the image
+               `url`: url of the webpage containing the image
+               `url_title`: title of the webpage containing the image
         Output: None
         '''
-        if not os.path.exists(self.store_dir):
-            os.mkdir(self.store_dir)
-        filename = filename + '.txt'  # Add the suffix of the file
-        with open(os.path.join(self.store_dir, filename), 'w') as file:
-            file.write(' '.join(contents))
-        with open(self.title_filename, 'a') as file:
-            file.write(filename + '\t' + title + '\n')
+        with open(self.image_filename, 'a') as file:
+            file.write('\t'.join([img_url, contents, url, url_title]) + '\n')
+
+
+    def load_urls(self):
+        '''
+        Read urls from file `index.txt`.
+
+        Input: None
+        Output: dict containing the filenames and their corresponding urls
+        '''
+        urls = { }
+        with open('index.txt', 'r') as file:
+            for l in file.readlines():
+                url, filename = l.split('\t')
+                filename = filename.strip()
+                urls[filename] = url
+        return urls
 
 
     def get_encoding(self, contents):
@@ -105,18 +112,25 @@ class ConvertFiles(object):
         return soup
 
 
-    def tokenize(self, contents):
+    def extract_img(self, contents, url):
         '''
-        Tokenize contents using Jieba.
+        Extract image labels from contents.
 
         Input: `contents`: contents of the file
-        Output: list of words in the file
+        Output: list of images in the file
         '''
-        # Whitespace, ascii puctuations and hanzi punctuations
-        stop_chars = string.whitespace + string.punctuation \
-            + '！？｡。＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘’‛“”„‟…‧﹏'
-        tokenized = []
-        for s in jieba.cut(contents.text):  # Use Jieba to tokenize the contents
-            if s not in stop_chars:
-                tokenized.append(s)  # Remove whitespaces and punctuations
-        return tokenized
+        img_list = []
+
+        # Each box is characterized by <div class='info'> ... </div>
+        for i in contents.findAll('div', {'class': 'info'}):
+            img_url = i.find('img')
+            if img_url:  # Check if the box contains an image
+                img_url = img_url.get('src', '')  # Get the image source
+                img_url = urllib.parse.urljoin(url, img_url)  # Convert relative address into the absolute address
+
+                description = i.find('p')  # Get the description of the image
+                description = description.text
+
+                img = [img_url, description]
+                img_list.append(img)
+        return img_list

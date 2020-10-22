@@ -6,22 +6,13 @@ from datetime import datetime
 from java.nio.file import Paths
 from org.apache.lucene.analysis.miscellaneous import LimitTokenCountAnalyzer
 from org.apache.lucene.analysis.standard import StandardAnalyzer
-from org.apache.lucene.analysis.core import WhitespaceAnalyzer
+from org.apache.lucene.analysis.core import SimpleAnalyzer
 from org.apache.lucene.document import Document, Field, FieldType, StringField, TextField
 from org.apache.lucene.index import IndexWriter, IndexWriterConfig, IndexOptions
 from org.apache.lucene.store import SimpleFSDirectory
 
 from Ticker import Ticker
 from ConvertFiles import ConvertFiles
-
-
-'''
-This class is loosely based on the Lucene (java implementation) demo class \
-org.apache.lucene.demo.IndexFiles.  It will take `html`, `docs` and `index` \
-directory as arguments, and will index all of the webpages in that directory \
-and downward recursively.  It will index on the file name, path, title, url \
-and the contents.
-'''
 
 
 class IndexFiles(object):
@@ -116,7 +107,7 @@ class IndexFiles(object):
         Read urls from file `index.txt`.
 
         Input: None
-        Output: None
+        Output: dict containing the filenames and their corresponding urls
         '''
         urls = { }
         with open('index.txt', 'r') as file:
@@ -132,7 +123,7 @@ class IndexFiles(object):
         Read titles from file `titles.txt`.
 
         Input: None
-        Output: None
+        Output: dict containing the filenames and their corresponding titles
         '''
         titles = { }
         with open('titles.txt', 'r') as file:
@@ -196,9 +187,9 @@ if __name__ == '__main__':
     try:
         # IndexFiles('test_folder', 'index', StandardAnalyzer())
 
-        # ConvertFiles(html_dir, doc_dir)
-        # Use `WhitespaceAnalyzer` as `Analyzer`
-        IndexFiles(html_dir, doc_dir, store_dir, WhitespaceAnalyzer())
+        ConvertFiles(html_dir, doc_dir)
+        # Use `SimpleAnalyzer` as `Analyzer`
+        IndexFiles(html_dir, doc_dir, store_dir, SimpleAnalyzer())
         end = datetime.now()
         print(end - start)
     except Exception as e:

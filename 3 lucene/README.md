@@ -43,7 +43,7 @@ python SearchFiles.py index
 * Output: new index directory
 * Example Command in Terminal:
 ```
-python IndexUpdate.py docs index index_new
+python IndexUpdate.py docs index
 ```
 
 ### Step 2 (SearchFiles.py)
@@ -52,5 +52,39 @@ python IndexUpdate.py docs index index_new
 * Output: In Terminal (Interactive script)
 * Example Command in Terminal:
 ```
-python SearchFiles.py index_new
+python SearchFiles.py index
+```
+
+## Part B Exercise 2
+
+### Step 1
+
+Download test data from [EE208-Assignments-Test-Data](https://github.com/junqi-xie/EE208-Assignments-Test-Data) and move the data to root folder.
+Desired folder structure:
+```
+3 lucene/
+-- html/ (test data)
+-- index.txt (test data)
+-- Ticker.py
+-- ExtractImgs.py
+-- IndexImgs.py
+-- SearchImgs.py
+```
+
+### Step 2 (IndexImgs.py)
+
+* Input: html directory, index directory
+* Output: `images.txt` (temp), index directory
+* Example Command in Terminal:
+```
+python IndexImgs.py html index_img
+```
+
+### Step 3 (SearchImgs.py)
+
+* Input: index directory
+* Output: In Terminal (Interactive script)
+* Example Command in Terminal:
+```
+python SearchImgs.py index_img
 ```
