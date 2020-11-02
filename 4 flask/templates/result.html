@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <hr>
+    <h1>Search Results for "{{ keyword }}"</h1>
+{% for result in results %}
+    <h2><a href="{{ result.url }}">{{ result.title }}</a></h2>
+    <p>{{ result.abstract | safe }}</p>
+    <p><i>{{ result.url }}</i></p>
+    <br>
+{% endfor %}
+{% endblock %}

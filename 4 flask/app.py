@@ -1,29 +1,40 @@
 # SJTU EE208
 
 from flask import Flask, redirect, render_template, request, url_for
+import lucene, jieba
+
+from org.apache.lucene.analysis.core import SimpleAnalyzer
+from SearchFiles import SearchFiles
 
 app = Flask(__name__)
 
 
-@app.route('/form', methods=['POST', 'GET'])
-def bio_data_form():
+def search(request):
+    keyword = request.form['keyword']
+    return redirect(url_for('result', keyword=keyword))
+
+
+@app.route('/', methods=['POST', 'GET'])
+def index():
     if request.method == "POST":
-        username = request.form['username']
-        age = request.form['age']
-        email = request.form['email']
-        hobbies = request.form['hobbies']
-        return redirect(url_for('showbio', username=username, age=age, email=email, hobbies=hobbies))
-    return render_template("bio_form.html")
+        return search(request)
+    return render_template("index.html")
 
 
-@app.route('/showbio', methods=['GET'])
-def showbio():
-    username = request.args.get('username')
-    age = request.args.get('age')
-    email = request.args.get('email')
-    hobbies = request.args.get('hobbies')
-    return render_template("show_bio.html", username=username, age=age, email=email, hobbies=hobbies)
+@app.route('/result', methods=['POST', 'GET'])
+def result():
+    if request.method == "POST":
+        return search(request)
+    
+    vm_env.attachCurrentThread()
+    engine = SearchFiles('index', SimpleAnalyzer(), lambda x: ' '.join(jieba.cut(x)))
+    keyword = request.args.get('keyword')
+    results = engine.search_command(keyword)
+    return render_template("result.html", keyword=keyword, results=results)
 
 
+vm_env = None  # To be initialized in __main__
 if __name__ == '__main__':
+    vm_env = lucene.initVM()
+    print('lucene', lucene.VERSION)
     app.run(debug=True, port=8080)
