@@ -1,0 +1,193 @@
+		<!doctype html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>文汇报-滴水湖畔群贤毕至 跨界推动创新发展</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+        <link href="https://client.whb.cn/new/components/com_m_news/include/css/style.css?v=0.01" rel="stylesheet" type="text/css"/>
+        <script src="https://client.whb.cn/new/components/com_m_news/include/js/jquery.min.js?v=0.01" type="text/javascript"></script>
+        <script src="/new/components/com_m_news/include/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 320;
+		var ua = navigator.userAgent;
+		var IS_Android = 0;
+		if (/(Android)/i.test(ua)) {
+			IS_Android = 1;
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3) {
+				document.write('<meta name="viewport" content="width=320, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+			}
+			else{
+				document.write('<meta name="viewport" content="width=320, target-densitydpi=device-dpi">');
+			}
+		}
+		else{
+			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+        <script type="text/javascript" language="javascript">
+			var oY, tY, cY, offSetPx;
+			var moveTimeOut;
+			window.onscroll = function () {
+				if (moveTimeOut) {
+					clearTimeout(moveTimeOut);
+				}
+				oY = document.getElementById("backBtn").offsetTop;
+				tY = getScrollTop(oY);
+				if (oY > tY+300) {
+					offSetPx = -1;
+				}
+				else {
+					offSetPx = 1;
+				}
+				moveTimeOut = setTimeout(moveBackBtn, 0);
+			}
+	
+			function moveBackBtn() {
+				cY = document.getElementById("backBtn").offsetTop;
+	
+				if (offSetPx > 0) {
+					if (cY >= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY + 10 + "px";
+	
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+				else {
+					if (cY <= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY - 10 + "px";
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+			}
+	
+			function getScrollTop() {
+				var scrollPos;
+				if (window.pageYOffset) {
+					scrollPos = window.pageYOffset;
+				}
+				else if (document.compatMode && document.compatMode != 'BackCompat')
+				{ scrollPos = document.documentElement.scrollTop; }
+				else if (document.body) { scrollPos = document.body.scrollTop; }
+				return scrollPos;
+			}
+			
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: '/new/index.php?option=com_m_news&getWxConfig',
+					data: {
+						getWxConfig: '1',
+					},
+					dataType: 'json',
+					success: function(signPackage) {
+						wx.config({
+							debug: false,
+							appId: signPackage["appId"],
+							timestamp: signPackage["timestamp"],
+							nonceStr: signPackage["nonceStr"],
+							signature: signPackage["signature"],
+							jsApiList: [
+								'checkJsApi',
+								'onMenuShareTimeline',
+								'onMenuShareAppMessage'
+							]
+						});
+					},
+					error: function(xhr, type, error) {
+					}
+				});
+			});
+		</script>
+        </head>
+        <body>
+        <a href="javascript:history.go(-1);" class="backBtn" style="display: none; z-index: 100; opacity: 0.8; top:300px; right:5px; padding: 0px; width: 40px; height: 40px; background-image: url(https://client.whb.cn/new/components/com_m_news/include/images/BackBtn1.png);position:absolute;" id="backBtn"></a>
+        <div class="content">
+        	<div class="menu1">
+            <h1>2020年10月13日   要闻  </h1>
+            </div>
+            <div style="clear:both;">
+            						<script type="text/javascript">
+							wx.ready(function () {
+								// 在这里调用 API
+								wx.onMenuShareAppMessage({
+								  title: '滴水湖畔群贤毕至 跨界推动创新发展',  
+								  desc: '26位诺贝尔奖得主、17位中国两院院士、18位青年科学家将齐聚临港',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2020-10-13&id=132637&p=2',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg', 
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								});
+								wx.onMenuShareTimeline({  
+							      title: '滴水湖畔群贤毕至 跨界推动创新发展',  
+								  desc: '文汇报',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2020-10-13&id=132637&p=2',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg',  
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								}); 
+							});
+						</script>
+						<div align="left" style="padding-bottom: 10px">
+							<div style="background:#F5F5F5; padding: 12px;">
+																<div style="font-size:12px; color:#949494;width: 296px;word-wrap:break-word">上海滴水湖论坛将于10月29日至31日举办</div>
+																<div style="font-weight:600;font-size:24px;width: 296px;word-wrap:break-word">滴水湖畔群贤毕至 跨界推动创新发展</div>
+							</div>
+															<div style="color:#949494; margin: 5px 10px;font-size:14px;width:296px;word-break:break-word;">26位诺贝尔奖得主、17位中国两院院士、18位青年科学家将齐聚临港</div>
+													</div>
+						<div style="border-bottom: 1px solid #CECECE; clear: both; margin-bottom: 5px;"></div>
+						<div align="center" style="padding: 0px 12px;">
+												<div style="font-size:14px; text-align: left;word-break: break-all;">
+							<img src="https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg" style="position:absolute;left:-1000px;top:-1000px;"/>
+							    <p><p>本报讯&nbsp;（首席记者许琦敏&nbsp;记者沈竹士）金秋10月，滴水湖畔汇聚全球智慧。10月29日至31日，包括26位诺贝尔奖得主和8位沃尔夫奖、拉斯克奖、图灵奖、麦克阿瑟天才奖等世界著名学术奖项得主在内的37位世界顶尖科学家，将与17位中国科学院、中国工程院院士，18位中外杰出青年科学家一起，共赴一场汇聚全球顶尖原创科学思想和科研成果的智慧盛宴——上海滴水湖论坛。</p><p>上海滴水湖论坛由上海市人民政府主办，上海临港地区开发建设管理委员会、上海临港经济发展（集团）有限公司、上海市科学技术协会、世界顶尖科学家协会和上海交通大学承办。</p><p>本届论坛的主题是“科技，为了人类共同的命运”，分为主题论坛、特别论坛和圆桌会议三大板块。四个主题论坛分别为世界顶尖科学家光子科学与产业论坛、生命科学与产业论坛、创新药研发和转化医学论坛、脑科学与人工智能论坛；特别论坛将为中外杰出青年科学家和世界顶尖科学家搭建深度互动的交流平台；在圆桌会议上，各国顶尖科学家将围绕前沿科技与创新发展畅所欲言。三天论坛交流成果将在10月31日下午的新闻发布会上对外发布。</p><p>上海滴水湖论坛旨在聚焦具有全球影响力的科技创新中心建设，搭建国际化、综合性科学平台。论坛将充分发挥诺贝尔奖获得者等顶尖科学家的带动与引领作用，打通科技创新链的不同环节，聚集分散在全球的高端人才、先进技术和优质项目等资源，吸引众多国内有潜质的优秀科学家参与；搭建综合性科创平台，服务上海全球卓越城市建设，力争成为上海建设具有全球影响力的科创中心的新名片，推动上海成为中国原创科技成果的诞生地、世界科技创新发展的策源地。</p><p>参加此次盛会的科学家，涵盖了化学、物理学、医学、计算机科学等主要科学研究领域，包括来自美国、英国、挪威、德国、以色列等国家的顶尖科学家，代表了各自领域当前世界最高水准的学术成就和社会影响，具有全球号召力。他们汇聚于上海滴水湖论坛进行智慧碰撞，将对全球科学界和产业界产生深远影响。</p></p>							<img src="https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg" style="position:absolute;left:-1000px;top:-1000px;"/>
+						</div>
+					  </div>
+					</div>
+				            </div>
+            <br style="clear:both"/>
+        </div><!--content-->
+        </body>
+        <script type="text/javascript">
+			var date = "2020-10-13";
+			var name,value,i;
+			var str=location.href;
+			var num=str.indexOf("?");
+			str=str.substr(num+1);
+			var arrtmp=str.split("&");
+			var backurl = "";
+			for(i=0;i < arrtmp.length;i++){
+				num=arrtmp[i].indexOf("=");
+				if(num>0){
+					name=arrtmp[i].substring(0,num);
+					value=arrtmp[i].substr(num+1);
+					if(name=="p"){
+						backurl = "index.php?option=com_m_news&date="+date+"&p="+value;
+						$(".backBtn").attr("href", "index.php?option=com_m_news&date="+date+"&p="+value);
+					}
+				}
+			}
+			function goback(){
+				window.location.href = backurl;
+				console.log("不是首页");
+				if(IS_Android){
+					console.log("android");
+					android.goback(1);
+				}
+				else{
+					console.log("ios");
+					return 1;
+				}
+			}
+			//setTimeout("goback();", 3000);
+		</script>
+        </html>
+		

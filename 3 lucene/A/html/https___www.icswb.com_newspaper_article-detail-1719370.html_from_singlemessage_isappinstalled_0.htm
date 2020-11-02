@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>提升产品核心竞争力  助推产业高质量发展 - 长沙晚报网</title>
+    <meta name="keywords" content="长沙新闻 长沙晚报 掌上长沙 长沙市委机关报 星沙时报 湘江早报 晚报文萃 星辰在线 学生家长社会 湖南新闻网 湖南长沙 湖南投资 热门话题 突发新闻 财经 时政 娱乐 生活资讯 独家报道 新闻客户端 长沙美食 长沙旅游 长沙楼市 长沙车市 长沙股市 长沙历史人文" />
+    <meta name="description" content="长沙新闻 长沙晚报 掌上长沙 长沙市委机关报 星沙时报 湘江早报 晚报文萃 星辰在线 学生家长社会 湖南新闻网 湖南长沙 湖南投资 热门话题 突发新闻 财经 时政 娱乐 生活资讯 独家报道 新闻客户端 长沙美食 长沙旅游 长沙楼市 长沙车市 长沙股市 长沙历史人文" />
+    <link rel="stylesheet" href="/image_szb_pc/szb.css" />
+    <link type="text/css" href="/system_js/jquery_ui/datepicker/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="/system_js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/system_js/jquery_ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/front_js/roll/msclass.js"></script>
+    <script type="text/javascript" src="/front_js/common.js"></script>
+    <script type="text/javascript" src="/front_js/site/site_ad.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/front_js/comment.js"></script>
+    <style type="text/css">
+     #ui-datepicker-div{width:auto;font-size:15px}
+        .ui-datepicker{width:230px}
+        .mask {filter:alpha(opacity=0);-moz-opacity:0;opacity:0;position:absolute;text-align:center;cursor:pointer;background:#eeeeee}
+        .mask_select{filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;position:absolute;text-align:center;cursor:pointer;background:#000000}
+        .mask a{display:block}
+        .mask_select a{display:block}
+
+        a {
+            text-decoration: none;
+        }
+        /*左侧导航栏*/
+        .am-panel{
+            line-height: 160%;
+            margin-bottom:10px;
+        }
+        .am-panel-default {
+            border: 1px solid #DDD;
+        }
+        .am-panel-hd {
+            cursor: pointer;
+            border-bottom: 0px none;
+            color: #444;
+            background-color: #F5F5F5;
+            border-color: #DDD;
+            padding: 5px;
+        }
+        .am-panel-collapse{
+            display: none;
+            border-top: 1px solid #DDD;
+        }
+        .am-panel-title {
+            margin: 0px;
+            font-size: 100%;
+            color: inherit;
+        }
+        .am-panel-bd {
+            border-top: 1px solid #DDD;
+            padding: 5px;
+        }
+        .am-panel-bd a{
+            color:#727272;
+        }
+
+       /*轮换图样式*/
+        .slider-nav {width: 100%;text-align: center; line-height: 28px; border-top: #d8d8d8 1px solid; height: 28px;}
+        .slider-nav-bar{margin: 0 auto;display:inline-block;padding-top: 6px; zoom: 1; height: 22px;}
+        .slider-nav-bar ul{display:inline-block;*display:inline;float:left}
+        .slider-nav-bar li {list-style:none;margin-top: 5px; background: url(/image_szb_pc/qqsplit.png) no-repeat -165px -112px; float: left; margin-left: 12px; width: 6px; cursor: pointer; height: 6px; _display: inline}
+        .slider-nav-bar li.active {background: url(/image_szb_pc/qqsplit.png) no-repeat -165px -86px}
+        .slider-content {}
+        #slider-pre {background: url(/image_szb_pc/qqsplit.png) no-repeat -151px -60px; float: left; width: 20px; cursor: pointer; margin-right: 8px; height: 15px; _display: inline}
+        #slider-next {background: url(/image_szb_pc/qqsplit.png) no-repeat -151px -131px; float: left; width: 20px; cursor: pointer; height: 15px;margin-left: 16px;}
+        #slider-marquee {overflow: hidden; zoom: 1;left:-10px;position:relative;margin:0 auto;}
+        #slider-marquee li{margin: 0 1px;}
+        #slider-marquee-content img {border: #ccc 1px solid;overflow: hidden}
+        #slider-marquee-content .link {margin:0 auto;padding-top:20px;width:500px;display: block; text-align: center;font-size:18px;line-height:26px;}
+        #slider-marquee-content a:link {color: #0b3b8c; text-decoration: none}
+        #slider-marquee-content a:visited {color: #0b3b8c; text-decoration: none}
+        #slider-marquee-content a:hover {color: #0b3b8c; text-decoration: underline}
+        #slider-marquee-content a:active {color: #0b3b8c; text-decoration: underline}
+
+    </style>
+    <script>
+        $(function () {
+
+            /*展开与折叠左边导航菜单*/
+            $("div .am-panel-hd").click(function () {
+                $(this).siblings("div").toggle();
+            });
+            //根据文章id展开对应的标签层
+	    var articleId=parseInt("1719370");
+	    if(articleId>0){
+	    	$("div .am-panel-bd[idvalue="+articleId+"]").parent().css("display","block");
+	    	$("div .am-panel-bd[idvalue="+articleId+"]").children("a").css("color","#000");
+	    }
+            /*滚动图片*/
+            var picCount = $("#slider-marquee-content >li").length;
+            if (picCount > 0) {
+                //添加圆点图示
+                for (var i = 0; i < picCount; i++) {
+                    $("#slider-tab").append("<li></li>");
+                }
+                var marqueeControl = new Marquee(["slider-marquee", "slider-marquee-content", "slider-tab", "onclick"], 4, 0.5, 604, 600, 20, 5000, 100000, 0);
+                $("#slider-marquee").css("height","");
+                $("#slider-marquee-content").css("height","");
+                $("#slider-pre").click(function () {
+                    marqueeControl.Run(3);
+                });
+                $("#slider-next").click(function () {
+                    marqueeControl.Run(2);
+                });
+            }
+            else {
+                $("#slider-box").css("display", "none");
+            }
+
+        });
+	$(function(){   
+	    
+	    var openComment = AsyncGetOpenComment(1719370,window.COMMENT_TABLE_TYPE_NEWSPAPER_ARTICLE);
+            if(openComment != window.COMMENT_OPEN_COMMENT_NON_COMMENT){
+                CreateLongComment(1719370,window.COMMENT_TABLE_TYPE_NEWSPAPER_ARTICLE,15,true);
+                CommentShow(0,1719370,window.COMMENT_TABLE_TYPE_NEWSPAPER_ARTICLE,"",true);
+            }
+	    
+	});
+	window.CommentShowCallBack = function(data){
+            var listContent = "";
+            var pagerButton = data["page_button"];
+            comment_count = data["count"];
+            var result = eval(data["result"]);
+            $.each(result, function (i, v) {
+            	var username = v["UserName"].replace(" ","");
+                if (username == undefined || username == "") {
+                    username = "游客";
+                }else if(username.length > 30){
+                    var mphone =username.substr(3,4);
+            	    username = username.replace(mphone,"****");
+                }
+                listContent = listContent + '<div id="'+v["CommentId"]+'" style="border-bottom:2px dashed #CCC; width:100%; margin:8px 4px;">'+
+                        '<table width="100%" cellpadding="0" cellspacing="0">'+
+                        '<tr>'+
+                        '<td style="padding:5px;">'+
+                        '<div style="text-align:left;line-height:180%;">'+username+'    <span style="color:#666666;font-size:10px;">'+v["CreateDate"]+'</span>    </div>'+
+                        '<div class="commentcontent" style="color:#666;text-align:left;line-height:180%;font-size:14px;"><table width="100%" style="table-layout:fixed"><tr><td style="word-wrap:break-word">'+v["Content"]+'</td></tr></table></div>'+
+                        '</td></tr></table>'+
+                        '</div>';
+
+            });
+
+            $("#commentmessage").html(listContent);
+            $("#comment_pagerbutton").html(pagerButton);
+            $("#count").html(comment_count);
+        };
+
+        window.CreateLongCommentCallback = function(data,tableId,tableType,channelId){
+            var re_url = window.location.href;
+            re_url=encodeURIComponent(re_url);
+            var result = data["result"];
+            var username = "";
+	    var name = '<td class="guest" style="text-align:left;">您还未<a href="/default.php?mod=user&a=login&temp=user_login&re_url=' + re_url + '" style="font-weight:bold">登录</a>,目前的身份是游客</td>';
+            if (result["UserMobile"] != undefined && result["UserMobile"].length > 0) {
+		username = result["UserMobile"];
+                name = '<td class="username" style="text-align:left">您已用' + username + '登录，点击<a href="/default.php?mod=user&a=logout&re_url=' + re_url + '">注销<a/></td>';
+            }
+
+            if (tableId > 0) {
+                $('#comment').append('<form id="mainForm" action="/default.php?mod=comment&a=create" data-ajax="false" method="post">'
+                        + '<table width="100%" class="">'
+                        + '<tr>'
+                        + name 
+                        + '<td  align="left" style="width:130px">'
+                        + '<div>已有<span style="display:inline" id="count">0</span>人评论</div>'
+                        +'</td>'
+                        + '</tr>'
+                        + '<tr>'
+                        + '<td colspan="2"><textarea name="content" style="width:100%" rows="5" class="comment_content"></textarea>'
+                        + '<input type="hidden" value="' + tableId + '" name="table_id"/>'
+                        + '<input type="hidden" value="' + tableType + '" name="table_type"/>'
+                        + '<input type="hidden" name="channel_id" value="' + channelId + '"/>'
+                        + '<input type="hidden" id="url" name="url" value="' + getURL() + '"/></td>'
+                        + '</tr>'
+                        + '<tr><td colspan="2" align="right"><input onclick="sub_comment()" class="publish" type="button" value="发表评论"/></td></tr>'
+                        + '</table></form>');
+            }
+
+
+        };
+    </script>
+</head>
+<body>
+<!--头部-->
+<table id="header_top" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="td1"><a href="/"><img src="/image_szb_pc/changsha-icon_02.png" style="vertical-align: bottom;" /></a></td>
+        <td class="td2">
+            <span class="paper_name">多媒体数字报</span>
+        </td>
+        <td class="td3">
+            <span class="paper_edit">社长、总编辑：李鹏飞 晚报热线：96333</span>
+        </td>
+        <td class="td4"></td>
+        <td class="td5" style="text-align:right">
+            <a class="link" style="margin-right:20px" href="/h/101948/index.html">我要纠错</a>
+            		<a class="link" href="/default.php?mod=user&a=register&re_url=%2Fdefault.php%3Fmod%3Dnewspaper_article%26a%3Ddetail%26newspaper_article_id%3D1719370%26from%3Dsinglemessage%26isappinstalled%3D0">注册</a>
+		<span width="20"> </span>
+		<a class="link" href="/default.php?mod=user&a=login&re_url=%2Fdefault.php%3Fmod%3Dnewspaper_article%26a%3Ddetail%26newspaper_article_id%3D1719370%26from%3Dsinglemessage%26isappinstalled%3D0">登录</a>
+        </td>
+        <td class="td6" width="70"></td>
+    </tr>
+</table>
+<table id="header_bottom" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="link1">
+            <a href="/">长沙晚报网</a>
+        </td>
+        <td class="line_space"><img src="/image_szb_pc/line.png"></td>
+        <td class="link2">
+            <a href="/default.php?mod=newspaper&a=gen_one&channel_id=15">数字报</a>
+        </td>
+        <td class="line_space"><img src="/image_szb_pc/line.png"></td>
+        <td class="link3">
+            <a id="bmdh" href="javascript:void(0)">版面导航</a>
+        </td>
+        <td class="line_space"><img src="/image_szb_pc/line.png"></td>
+        <td class="header_date">
+            <span id="paper_year"></span>年<span id="paper_month"></span>月<span id="paper_day"></span>日 星期<span id="paper_week_day"></span> 出版
+        </td>
+        <td>
+        <span id="pre_day">前一天</span>
+            <input id="dateSelect" type="text" readonly
+                   style="background:url(/front_js/cxcalendar/cxcalendar.png) no-repeat 95%;width: 120px;font-size:16px">
+			<span id="next_day">后一天</span>
+        </td>
+        <td class="search_box">
+            <div class="search">
+                <div class="search_left">
+                    <input id="top_search_text" class="" type="text">
+                </div>
+                <div class="search_right">
+                    <img style="cursor:pointer" src="/image_szb_pc/search2_03.png" alt="搜索" onclick="if($('#top_search_text').val().length>1){window.open('http://so.icswb.com/default.php?mod=search&site_id=2&search_target=2&search_key='+encodeURIComponent($('#top_search_text').val()));}else{alert('请输入检索内容')}">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div id="div_bm" class="menu_bm" style="display: none;">
+    <ul>
+        
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256922">要闻(A01)</a></li>
+                
+            
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256923">要闻(A02)</a></li>
+                
+            
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256924">星城地产(A03)</a></li>
+                
+            
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256925">要闻(A04)</a></li>
+                
+            
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256926">特别报道(A05)</a></li>
+                
+            
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256927">特别关注(A06)</a></li>
+                
+            
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256928">时事(A07)</a></li>
+                
+            
+                
+                <li class="first_li"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256929">文体(A08)</a></li>
+                
+            
+    </ul>
+</div>
+<script>
+    function getWeekByDay(dayValue){
+        var day = new Date(dayValue); //将日期值格式化
+        var today = new Array("日","一","二","三","四","五","六"); //创建星期数组
+        return today[day.getDay()];  //返一个星期中的某一天，其中0为星期日
+    }
+    function GetDateStr(AddDayCount, strDate) {
+	var dateArray = strDate.substr(0,10).split("-");
+	var dd = new Date(dateArray[0],dateArray[1]-1,dateArray[2]); 
+        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期 
+        var y = dd.getFullYear(); 
+        var m = dd.getMonth()+1;//获取当前月份的日期 
+        var d = dd.getDate(); 
+        return y+"-"+m+"-"+d; 
+	}
+    $(function () {
+        var publishDate = Request['publish_date'];
+        $('#pre_day,#next_day').css('cursor','pointer');
+        if(typeof  publishDate === 'undefined'){
+            $('#dateSelect').val(new Date().getFullYear() + '-' +  (parseInt(new Date().getMonth())+1) + '-' +  new Date().getDate());
+            $('#next_day').css({'color':'gray','cursor':'default'});
+        }
+        else{
+            $('#dateSelect').val(publishDate);
+            var today = new Date();
+            var dateArray = publishDate.substr(0,10).split("-");
+            var date = new Date(dateArray[0],dateArray[1]-1,dateArray[2]);
+	    if (date == today) {
+	    $('#next_day').css({'color':'gray','cursor':'default'});
+	    }
+        }
+
+        $('#dateSelect').datepicker({
+            minDate: '1956-04-25',
+            showOtherMonths: true,
+            selectOtherMonths: false,
+            onSelect: function(dateText, inst) {
+                var today=new Date();
+                var dateArray=dateText.substr(0,10).split("-");
+                var date=new Date(dateArray[0],dateArray[1]-1,dateArray[2]);
+                if(date<=today){
+                 window.location.href = '/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date='+dateText;
+                 }
+            }
+        });
+
+        //计算时间
+        var currentPaperDate="2019-10-21";
+        currentPaperDate=currentPaperDate.replace(new RegExp("-","gm"),"/");
+        var date = new Date(currentPaperDate);
+        var year=date.getFullYear();
+        var month=date.getMonth()+1;
+        var day=date.getDate();
+        var weekday=getWeekByDay(currentPaperDate);
+        $("#paper_year").html(year);
+        $("#paper_month").html(month);
+        $("#paper_day").html(day);
+        $("#paper_week_day").html(weekday);
+
+        $("#bmdh").mouseover(function (e) {
+            $("#div_bm").css("display", "block");
+            $("#div_bm").css("left", e.clientX-10);
+            $("#div_bm").css("top", e.clientY-10);
+        });
+        $("#div_bm").mouseleave(function (){
+            $(this).css("display","none");
+        });
+        $('#pre_day').click(function() {
+		if ($(this).css('cursor') == 'pointer') {
+			var preDate = GetDateStr(-1, $('#dateSelect').val());
+			window.location.href = '/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date='+preDate;
+		}
+	});
+	$('#next_day').click(function() {
+		if ($(this).css('cursor') == 'pointer') {
+			var nextDate = GetDateStr(1, $('#dateSelect').val());
+			window.location.href = '/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date='+nextDate;
+		}
+	});
+
+    });
+</script>
+<!--内容-->
+<div style="margin: auto;width: 1000px">
+    <div style="float: left;width: 246px;margin: 10px;margin-left:0;">
+    	<div class="page_image" style="margin-bottom:5px;">
+    		<a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256922"><img src="/upload/site_2/2019/10/21/newspaper_page/sub_257/256922/5daca115d2022.jpg" style="width: 245px;" /></a>
+    	</div>
+        <div class="am-panel-group" id="accordion">
+            
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-1'}">
+                                要闻（A01）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719367">
+                        <a href="/newspaper_article-detail-1719367.html">
+                            习近平向第六届世界互联网大会致贺信
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719368">
+                        <a href="/newspaper_article-detail-1719368.html">
+                            凝聚爱国主义的磅礴力量
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719369">
+                        <a href="/newspaper_article-detail-1719369.html">
+                            脚下有泥察实情 心中有底出实招
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719370">
+                        <a href="/newspaper_article-detail-1719370.html">
+                            提升产品核心竞争力  助推产业高质量发展
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719371">
+                        <a href="/newspaper_article-detail-1719371.html">
+                            增进团结友谊 展示风采风格
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719372">
+                        <a href="/newspaper_article-detail-1719372.html">
+                            发现大长沙 点赞国际范
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719373">
+                        <a href="/newspaper_article-detail-1719373.html">
+                            107项新产品新技术闪耀轨博会
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719374">
+                        <a href="/newspaper_article-detail-1719374.html">
+                            长沙免疫规划成就展开展
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719375">
+                        <a href="/newspaper_article-detail-1719375.html">
+                            导读
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-2'}">
+                                要闻（A02）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719376">
+                        <a href="/newspaper_article-detail-1719376.html">
+                            墙缝里的家书展骄杨风骨
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719377">
+                        <a href="/newspaper_article-detail-1719377.html">
+                            让数据多跑路群众少跑腿
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719378">
+                        <a href="/newspaper_article-detail-1719378.html">
+                            守初心担使命，党支部攻坚在一线
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719379">
+                        <a href="/newspaper_article-detail-1719379.html">
+                            将个人和企业的发展与长沙发展融为一体
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719380">
+                        <a href="/newspaper_article-detail-1719380.html">
+                            市民比拼文明创意
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719381">
+                        <a href="/newspaper_article-detail-1719381.html">
+                            错拿他人行李后竟敲诈
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719382">
+                        <a href="/newspaper_article-detail-1719382.html">
+                            省委管理干部任前公示公告
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">
+                                星城地产（A03）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719383">
+                        <a href="/newspaper_article-detail-1719383.html">
+                            长房·东旭国际（广告）
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-4'}">
+                                要闻（A04）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719384">
+                        <a href="/newspaper_article-detail-1719384.html">
+                            品牌“二选一” 消费者咋选？
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719385">
+                        <a href="/newspaper_article-detail-1719385.html">
+                            执子之手五十年，每天爱你多一点
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719386">
+                        <a href="/newspaper_article-detail-1719386.html">
+                            送手机赠话费，这样敬老很实在
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719387">
+                        <a href="/newspaper_article-detail-1719387.html">
+                            睡前两小时，直播下单近200万元
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719388">
+                        <a href="/newspaper_article-detail-1719388.html">
+                            找不到停车位 怒砸宝马奥迪车
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719389">
+                        <a href="/newspaper_article-detail-1719389.html">
+                            坡子街正施工 这些路段将禁行
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719390">
+                        <a href="/newspaper_article-detail-1719390.html">
+                            停不进车的停车位
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719391">
+                        <a href="/newspaper_article-detail-1719391.html">
+                            医生轻点鼠标，帮患者管好检查“时间账”
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719392">
+                        <a href="/newspaper_article-detail-1719392.html">
+                            两栋楼每户都安装独立水表
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719393">
+                        <a href="/newspaper_article-detail-1719393.html">
+                            长沙市2018年认定高新技术企业研发投入补贴等三批资金公示
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-5'}">
+                                特别报道（A05）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719394">
+                        <a href="/newspaper_article-detail-1719394.html">
+                            长沙发布254个紧缺急需人才岗位
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719395">
+                        <a href="/newspaper_article-detail-1719395.html">
+                            2019年“两大人才工程”申报工作启动
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719396">
+                        <a href="/newspaper_article-detail-1719396.html">
+                            不断汇聚人才“强磁场”着力助推发展高质量
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719397">
+                        <a href="/newspaper_article-detail-1719397.html">
+                            同城通·商业租售转让
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719398">
+                        <a href="/newspaper_article-detail-1719398.html">
+                            同城通·搬家运输
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719399">
+                        <a href="/newspaper_article-detail-1719399.html">
+                            同城通·建筑防水
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719400">
+                        <a href="/newspaper_article-detail-1719400.html">
+                            同城通·公告
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719401">
+                        <a href="/newspaper_article-detail-1719401.html">
+                            同城通·证件声明作废
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-6'}">
+                                特别关注（A06）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719402">
+                        <a href="/newspaper_article-detail-1719402.html">
+                            守护孩子，预防接种树起健康屏障
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-7'}">
+                                时事（A07）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719403">
+                        <a href="/newspaper_article-detail-1719403.html">
+                            凝聚爱国主义的磅礴力量
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719404">
+                        <a href="/newspaper_article-detail-1719404.html">
+                            苏太德：他把防弹衣让给了别人
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719405">
+                        <a href="/newspaper_article-detail-1719405.html">
+                            海南建省
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719406">
+                        <a href="/newspaper_article-detail-1719406.html">
+                            “新”花怒放 活力涌动
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719407">
+                        <a href="/newspaper_article-detail-1719407.html">
+                            湘粮国际首届“蟹王”嗨购惠
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel am-panel-default">
+                        <div class="am-panel-hd">
+                            <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-8'}">
+                                文体（A08）
+                            </h4>
+                        </div>
+                        <div class="am-panel-collapse">
+                            
+                    
+                    <div class="am-panel-bd" idvalue="1719408">
+                        <a href="/newspaper_article-detail-1719408.html">
+                            非遗“活”起来
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719409">
+                        <a href="/newspaper_article-detail-1719409.html">
+                            中国选手打破军事五项男子女子障碍跑世界纪录
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719410">
+                        <a href="/newspaper_article-detail-1719410.html">
+                            篮球少年，请开始你的表演
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719411">
+                        <a href="/newspaper_article-detail-1719411.html">
+                            长沙有了“网球周末”
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719412">
+                        <a href="/newspaper_article-detail-1719412.html">
+                            “小戏骨”和老戏骨同台飙戏
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719413">
+                        <a href="/newspaper_article-detail-1719413.html">
+                            时光的夏布
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719414">
+                        <a href="/newspaper_article-detail-1719414.html">
+                            文明塑筋骨  格物传精神
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719415">
+                        <a href="/newspaper_article-detail-1719415.html">
+                            菊花石
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719416">
+                        <a href="/newspaper_article-detail-1719416.html">
+                            月朗星稀
+                        </a>
+                    </div>
+                    
+                
+                    
+                    <div class="am-panel-bd" idvalue="1719417">
+                        <a href="/newspaper_article-detail-1719417.html">
+                            瓷画
+                        </a>
+                    </div>
+                    
+                
+                        </div>
+                    </div>
+                    
+                
+        </div>
+    </div>
+    <div style="float: left;border: #d8d8d8 1px solid; margin-top: 10px;  width: 710px;">
+    <div style="display:block">    	
+    	<div style="margin:10px;line-height:180%;float:left;"><a href="/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=2019-10-21&newspaper_page_id=256922" style="color:#727272; font-size:16px">返回版面</a></div>
+    	<div style="margin:10px;line-height:180%;float:right;color:#727272; font-size:16px"></div>
+    	<div style="clear:both"></div>
+    </div>
+    <div style="text-align:center;margin:5px;">
+        <h4></h4>
+        <h2>提升产品核心竞争力  助推产业高质量发展</h2>
+        <h4>朱健出席长沙汽车产业链企业高级管理研修班开班仪式</h4>
+    </div>
+        
+    <div style="padding:16px;line-height:180%;text-align:justify;word-break:break-all;"><div id="slider-box">
+            <div class="slider-content">
+                <div id="slider-marquee">
+                    <ul id="slider-marquee-content">
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-nav-bar"><span id="slider-pre"></span><ul id="slider-tab"></ul><span id="slider-next"></span></div>
+            </div>
+        </div>
+
+        <div>
+            <p id="content">　　长沙晚报10月20日讯（全媒体记者 唐朝昭）今日，由市汽车产业链办公室、市工信局共同主办，上海交通大学海外教育学院承办的长沙汽车产业链企业高级管理研修班正式开班，湖大艾盛、瑞捷机械、华域视觉等长沙市40余家汽车零部件企业的负责人参加培训。市委副书记朱健出席并作开班动员。<br /><br />　　据悉，此次培训为期三天半，将采取专题授课、互动交流、参访学习等形式进行。部分零部件企业将产品样品、产品说明等在课堂上现场展示，为加快融入上汽集团采购体系做好前期推介工作。培训期间，全体学员将前往上汽大众、上海汽车城、上汽通用等进行现场参访学习，与企业开展互动交流、建立密切联系、拓展合作机会。<br /><br />　　朱健指出，本次培训是落实市委十三届八次全会精神、推动长沙制造业高质量发展的切实举措，是借助上海交大海外教育学院丰富的培训经验和资源优势助推长沙汽车产业链谋篇布局、“强链、补链、延链”的切实推动。他强调，要积极把握机遇，努力争取进入上汽集团采购体系，成为潜在、批量、战略供应商。要助推产学研协作，通过与上汽大众知名企业及世界500强企业对标对表，找出技术差距，找出薄弱环节，依托与上海交大、同济大学、湖南大学等高校深度合作，逐步在技术上突破和提升。他希望，各位通过成为百年交大的学员，进一步增强发展的内生动力，切实增强办成百年老店的战略定力。</p>
+        </div>
+        <div>
+        <p style="margin:10px;line-height:180%;font-size:100%;text-align:center;color:#cc0000;">版权所有，未经授权禁止转载、摘编、复制或建立镜像。如有违反，追究法律责任。</p>
+        </div>
+        <div style="margin:10px;">
+        
+        	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a><a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"32"},"share":{},"image":{"viewList":["weixin","sqq","qzone","tsina","tqq","renren","mshare","copy","print"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","sqq","qzone","tsina","tqq","renren","mshare","copy","print"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+        
+        </div>
+            <!-----------comment------------>
+        <div id="comment" idvalue="2" style="width:98%;margin:10px;{OpenComment}"></div>
+    <div style="width:98%;margin:10px;{OpenComment}">
+        <dl id="commentmessage"></dl>
+        <a name="comment"></a>
+        <div id="comment_pagerbutton"></div>
+    </div>
+    
+<pre_temp id="936"></pre_temp></div>
+        <div class="box_cen">
+            <div class="cen_top"></div>
+            <div class="cen_middle"></div>
+            <div class="cen_bottom"></div>
+        </div>
+    </div>
+</div>
+<!--内容-->
+<div style="clear: both"></div>
+<!--底部-->
+<!--底部-->
+<table class="bottom_box" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            <table id="bottom" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="B1">
+                      <div style="display:none;" class="old">
+  			<div style="" class="message">2011年12月25日之前的内容请点击下方按钮前往浏览</div>
+  			<div style="" class="click_to_old" onclick="window.location.href = 'http://cswb2.changsha.cn/cswb/default0.htm';">前往</div>
+  			<div style="" class="hide_old" onclick="$('.old').hide();">关闭</div>
+	              </div>
+                      <div id="datepicker" style="font-size:13px"></div>
+                    </td>
+                    <td class="B2"><div class="site_ad_274"></div><script language='javascript' src='/upload/site_ad/2/site_ad_274.js' charset="utf-8"></script><!--数字报底部方框--></td>
+                    <td class="B3" style="display:none;">
+                    <div class="site_ad_293"></div><script language="javascript" src="/upload/site_ad/2/site_ad_293.js" charset="utf-8"></script>
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                    	<div class="foot">
+  			<div class="w_1k">
+  				<a href="/h/8/15.html" target="_blank">版权声明</a> <a href="/h/8/17.html" target="_blank">关于我们</a>    <a href="/h/8/16.html" target="_blank">晚报新媒体</a>    <a href="/h/100006/20151231/384929.html" target="_blank">广告刊例</a>
+  			</div>
+  			</div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<style>
+.old{
+display:none;width: 236px; z-index: 100; background-color: rgb(230, 232, 236); position: absolute; top: 120px; height: 120px;color:rgb(56, 56, 56)
+}
+.message{
+padding: 20px 20px 15px 20px;
+}
+.click_to_old{
+border: 0px solid rgb(211, 211, 211); background: rgb(200, 203, 213) none repeat scroll 0% 0%; width: 80px; height: 25px; float: left; margin-left: 25px;text-align:center;font-size:14px;line-height:25px;cursor:pointer
+}
+.hide_old{
+border: 0px solid rgb(211, 211, 211); background: rgb(200, 203, 213) none repeat scroll 0% 0%; width: 80px; height: 25px; float: right; margin-right: 25px;text-align:center;font-size:14px;line-height:25px;cursor:pointer
+}
+</style>
+<script>
+    $(document).ready(function () {
+        //日历控件
+        $("#datepicker").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: false,
+            onSelect: function(dateText, inst) {
+                var oldDay = new Date('2011', '11', '26');
+                var today = new Date();
+                var dateArray = dateText.substr(0, 10).split("-");
+                var date = new Date(dateArray[0], dateArray[1] - 1, dateArray[2]);
+                if (date <= today) {
+                    if (date < oldDay) {
+                        $('.old').show();
+                        return false;
+                    }
+                    window.location.href = '/default.php?mod=newspaper&a=gen_one&channel_id=15&publish_date=' + dateText;
+                }
+            }
+        });
+    });    
+</script>
+<script type="text/javascript">var visitConfig = encodeURIComponent("https://www.icswb.com") +"||2||15||5||1719370||"+encodeURI("");</script><script type="text/javascript" src="/front_js/visit.js" charset="utf-8"></script>
+
+
+
+
+</body>
+</html>

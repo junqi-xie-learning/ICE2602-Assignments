@@ -1,0 +1,198 @@
+<!Doctype html>
+<!--540c2422db6f0b50d9c8e09a14fb85d5-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>陈豪在大理州督促检查洱海保护治理工作 他强调了哪些事？</title>
+<meta http-equiv="expires" content="0" />
+<meta name="keywords" content="陈豪,大理州,督促,检查,洱海,保护,治理,工作,强调,这些," />
+<meta name="description" content="陈豪在大理州督促检查洱海保护治理工作 他强调了哪些事？,{@implode(' ',$keywords)}" />
+<meta name="author" content="云南日报报业集团，云报客户端" />
+<meta name="Copyright" content="云南日报报业集团版权所有" />
+<script src="/statics/js/jquery-1.11.1.min.js"></script>
+<script src="/statics/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<link href="/statics/css/wxyd/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function fontSize(t) {
+    if(t == 's'){
+        $('#content').css({'fontSize': "14px", 'line-height': "20px"});
+    }else if (t == 'm'){
+        $('#content').css({'fontSize': "16px", 'line-height': "22px"});
+    }else if (t == 'b'){
+        $('#content').css({'fontSize': "18px", 'line-height': "24px"});
+    }else{
+        $('#content').css({'fontSize': "16px", 'line-height': "22px"});
+    }
+}
+function showtitle(str) {
+    document.title = str;
+}
+function nightMode() {
+    $('#body').css({'background': "#000", 'color': '#fff'});
+    $('#title').css('color', '#fff');
+}
+function dayMode() {
+    $('#body').css({'background': "#fff", 'color': '#000'});
+    $('#title').css('color', '#000');
+}
+function getQueryParam(str){
+    var LocString=String(window.document.location.href);
+    var rs = new RegExp("(^|)"+str+"=([^\&]*)(\&|$)","gi").exec(LocString), tmp;
+    if(tmp=rs){
+        return tmp[2];
+    }
+    return "";
+}
+function resizefont(){
+   var fs = getQueryParam("fontsize");
+   fontSize(fs);
+}
+function get_link_info(){
+    var title = $("#link-title").val();
+    var thumb = $("#link-thumb").val();
+    var json = "{\"title\":\""+title+"\",\"icon_url\":\""+thumb+"\"}";
+    return json;
+}
+function debug_get_link_info(){
+    var title = $("#link-title").value;
+    var thumb = $("#link-thumb").value;
+    var json = "{\"title\":\""+title+"\",\"icon_url\":\""+thumb+"\"}";
+    return json;
+}
+$(document).ready(function(){
+    $("img.lazy").lazyload({effect:"fadeIn"});
+    if(getQueryParam('xgxw')){
+        $('#head').show();
+    }
+    if(getQueryParam('token')){
+        var token = getQueryParam('token');
+        $('a').each(function(){
+            var url = $(this).attr('href');
+            if(url.indexOf('?')>=0){
+                $(this).attr('href', url + '&token=' + token);
+            }else if(url.indexOf('.jpg')==-1&&url.indexOf('.jpeg')==-1&&url.indexOf('.png')==-1&&url.indexOf('.gif')==-1&&url.indexOf('.mp4')==-1){
+                $(this).attr('href', url + '?token=' + token);
+            }
+        });
+    }
+    $('#backs').click(function(){
+        window.history.back();
+    });
+    var w = $(document).width(),wrate = w/640;
+    $('#head').css('height', Math.round(wrate * 72) + 'px');
+    $('#back').css('width', Math.round(wrate * 100) + 'px');
+});
+
+//微信分享接口适配
+url_now=window.location.href;
+if(url_now.indexOf('file:///')>=0||url_now.indexOf('file%3A%2F%2F%2F')>=0)url_now='';
+$.ajax({
+	url: 'https://webapp.yunnan.cn/new/index.php?nova_p=VkNTcDRpVktaZ2FmZThqN082QTgwZUZhTldPWmw4MUtUMGo4MzNyNEp6UmNjWk5oVmIrdlN3dkpUbkVUTkg3Wg@@',
+	data: 'ready=1&url='+encodeURIComponent(url_now),
+	type: 'get',
+	dataType: 'json',
+	success: function(d){
+		if(d.success == '1'){
+			wx.config({
+				appId: d.appid,
+				timestamp: d.timestamp,
+				nonceStr: d.noncestr,
+				signature: d.signature,
+				jsApiList: [
+										'previewImage',
+										'onMenuShareTimeline',
+										'onMenuShareAppMessage',
+										'onMenuShareQQ',
+										'onMenuShareWeibo',
+										'onMenuShareQZone'
+									]
+			});
+			var sdata = {
+          title: document.title,
+          desc: '云报客户端',
+          link: location.href.split('?')[0],
+          imgUrl: 'https://wxyd.yunnan.cn/uploadfile/s2/2018/1123/20181123060343896.jpg',
+          success: function () {
+          },
+          cancel: function () {
+          }
+      };
+		wx.ready(function(){
+		wx.onMenuShareTimeline(sdata);
+        wx.onMenuShareAppMessage(sdata);
+        wx.onMenuShareQQ(sdata);
+        wx.onMenuShareWeibo(sdata);
+        wx.onMenuShareQZone(sdata);
+			});
+		}
+	}
+});
+
+//$(function() {
+//    $("img.lazy").lazyload({
+//	 effect : "fadeIn"
+//	});
+//});
+
+</script>
+</head>
+
+<body id="body" onload="resizefont()">
+<div class="head w100" id="head" style="display:none">
+    <div class="fl" id="backs">返回</div>
+</div>
+<div class="main">
+	<article id="Article">
+		<h1 id="title">陈豪在大理州督促检查洱海保护治理工作 他强调了哪些事？</h1>
+		<section class="crumbs"><time datetime="2018-11-23 18:04:41">2018-11-23 18:04:41</time>/<a href='云报客户端' target='_blank' style='color:#AAA'>云报客户端</a></section>
+		<div class="content" id="content">
+            
+			
+			<p style="text-align: center;"><strong>陈豪在大理州督促检查洱海保护治理工作时强调</strong></p>
+<p style="text-align: center;"><strong>坚决贯彻习近平总书记重要指示精神</strong></p>
+<p style="text-align: center;"><strong>压实责任勇于担当推进洱海保护治理</strong></p>
+<p><a target=_blank rel="noopener noreferrer" href="/uploadfile/s2/2018/1123/20181123060355902.jpg"><img height="466" title="陈豪在大理州督促检查洱海保护治理工作 他强调了哪些事？" class="lazy" data-original="/uploadfile/s2/2018/1123/20181123060355902.jpg" width="700" /></a><span style="font-size: 14px; color: rgb(105, 105, 105);">陈豪一行在双廊镇仔细查看水质并听取上海交通大学云南（大理）研究院专家介绍情况。</span></p>
+<p>11月22日至23日，省委书记陈豪率队赴大理白族自治州督促检查洱海保护治理工作和中央环境保护督察&ldquo;回头看&rdquo;及高原湖泊环境问题专项督察反馈意见整改工作。他强调，要深入学习贯彻习近平总书记近期重要批示精神，进一步提高政治站位，强化责任担当，从忠诚践行&ldquo;四个意识&rdquo;&ldquo;两个维护&rdquo;的高度，从对人民负责、对子孙后代负责的高度，坚持科学治理、依法治理、综合治理，打好洱海保护治理这场攻坚战。</p>
+<p>习近平总书记2015年1月考察云南时作出重要指示，一定要把洱海保护好，让&ldquo;苍山不墨千秋画、洱海无弦万古琴&rdquo;的自然美景永驻人间。3年来，省委、省政府和大理各级干部群众牢记嘱托，采取断然措施、开启抢救模式，采取&ldquo;七大行动&rdquo;，全力实施洱海保护治理。</p>
+<p>陈豪一行先后来到大理市上登凝灰岩矿区、海东新区秀北山森林公园，检查边坡生态修复治理、海东绿化和海东新区规划调整情况。过去满目疮痍的矿区，已基本复绿；昔日的荒山，正在建设生态公园。陈豪表示，要采取断然措施，按照中央环保督察要求立即关停取缔违法违规非煤矿山，全面退出禁止开发区的矿山开发活动，拓宽思路、创新机制，扎实抓好生态修复和面山绿化工作；要坚持调减海东开发强度，切实降低洱海流域环境负荷，为子孙后代留下绿水青山。</p>
+<p><a target=_blank rel="noopener noreferrer" href="/uploadfile/s2/2018/1123/20181123060409595.jpg"><img height="466" title="陈豪在大理州督促检查洱海保护治理工作 他强调了哪些事？" class="lazy" data-original="/uploadfile/s2/2018/1123/20181123060409595.jpg" width="700" /></a><span style="font-size: 14px; color: rgb(105, 105, 105);">陈豪一行在大理市湾桥镇阳溪河道检查入湖河道综合治理工作。</span></p>
+<p>双廊镇集中实施环境整治和风貌提升工程，如今街巷干净整洁，白族建筑清新雅致，污水处理管网大为改观。陈豪指出，控制建设规模、高起点规划建设特色小镇是沿湖村庄的治理方向，双廊要转型升级，降低商业氛围、增加文化氛围，建设成为高水平的文化创意特色小镇。在码头边，调研组仔细查看水质并听取上海交通大学云南（大理）研究院专家介绍情况。得知今年洱海水质1-5月、11月达到Ⅱ类，全湖水质总体保持稳定，陈豪十分欣慰，要求认真听取专家意见，坚持科学护水、科学治水、科学用水。</p>
+<p>大理州正抓紧整改洱海流域农业面源污染突出、水质未达到水环境功能区要求等问题。调研组深入洱源县三营镇士登村小组研究削减农业面源污染问题，要求精准施策，大力调整农业种植结构，改进生产生活方式。在大理市喜洲镇桃源村第四村民小组生态搬迁项目现场，调研组要求高起点高水平制订规划，全方位加强&ldquo;三线&rdquo;管控工作，提高依法治湖、科学治湖水平。在洱源县第二污水处理厂、大理市湾桥镇阳溪河道，调研组与当地干部一起研究截污治污和河道整治，分析针对措施。陈豪指出，要抓住入湖水质这个主要矛盾，以上游入湖河道断面水质改善目标倒逼治理；要突出群众主体地位，推动形成保护治理全员发动、全民行动的良好局面。</p>
+<p><a target=_blank rel="noopener noreferrer" href="/uploadfile/s2/2018/1123/20181123060427544.jpg"><img height="426" title="陈豪在大理州督促检查洱海保护治理工作 他强调了哪些事？" class="lazy" data-original="/uploadfile/s2/2018/1123/20181123060427544.jpg" width="700" /></a><span style="color:#696969;"><span style="font-size:14px;">11月23日，陈豪主持召开座谈会，听取大理州、大理市、洱源县工作情况汇报。</span></span></p>
+<p>23日，陈豪主持召开座谈会，听取大理州、大理市、洱源县工作情况汇报，肯定洱海保护治理取得的成效，查摆剖析存在的问题和挑战，进一步压实责任，督促整改落实。他指出，习近平总书记始终心系洱海，多次过问有关工作情况、作出重要指示批示，体现了对云南工作的深切关怀。洱海污染是多年高增长积累的环境问题，其治理保护形势依然严峻，绝不能掉以轻心。我们一定要认真学习贯彻习近平生态文明思想，站位全局、对标对表，进一步清醒认识洱海保护治理的艰巨性、复杂性、紧迫性，增强洱海保护治理的政治自觉、思想自觉和行动自觉，坚持问题导向，举一反三，不折不扣把中央环境保护督察整改任务落实到位。</p>
+<p>陈豪强调，系统开展洱海流域生态文明建设，必须标本兼治、整体推进，把湖泊保护治理与城市规划建设、产业转型、乡村振兴、脱贫攻坚和文化旅游有机结合起来。要坚持规划引导，立足长远、统筹兼顾，抓好大理市城乡建设总体规划和洱海流域保护发展规划，全面加强流域空间管控；要统筹山水林田湖草等生态要素，因地制宜全力实施生态修复和环境保护工程；要科学治理、多管齐下，把改善提升洱海水质作为首要任务，在环湖截污、入湖河道治理、农村人居环境治理上狠下功夫；要坚持绿色发展，加快产业转型升级，大力推进生态产业化、产业生态化。他提出，省级各部门要主动支持做好洱海保护治理工作，履行好监督管理职责；大理州委、州政府和洱海流域县（市）党委、政府要更加严实地担起主体责任，认真落实&ldquo;党政同责、一岗双责&rdquo;，以铁肩担当、铁腕执法坚决守护好洱海。</p>
+<p>刘慧晏、和段琪、王显刚参加活动。</p>
+<p>云报客户端记者：田静/文 雷桐苏/摄<br />
+责编：张文峰</p>
+            <p><script language="javascript" src="https://wxydapi.yunnan.cn/index.php?m=poster&c=index&a=show_poster&id=11"></script></p>
+            <p><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yndaily.wxyd"><img src="/statics/images/wxydapp/wxyd_qr.jpg" alt="推广" /></a><center><p>【点击或扫码即可下载安装】</p></center></p>
+			<p><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yndaily.wxyd"><img src="/statics/images/wxydapp/download.jpg" alt="推广" /></a></p>
+		</div>
+		<!--<div id="pages" class="text-c"></div>-->
+	</article>
+</div>
+<!-- netstat -->
+<input type="hidden" name="nodename" value="头条">
+<input type="hidden" name="nsid" id="nsid" value="wxyd-2-93-100422">
+<input type="hidden" name="siteid" value="wxyd-2">
+<input type="hidden" name="sitename" value="云报">
+<input type="hidden" name="catname" value="头条">
+<input type="hidden" name="origin" value="1">
+<input type="hidden" name="title" value="陈豪在大理州督促检查洱海保护治理工作 他强调了哪些事？">
+<input type="hidden" name="subscriber" value="张文峰">
+<input type="hidden" name="pubtime" value="2018-11-23 18:04:41">
+<input type="hidden" name="copyfrom" value="云报客户端">
+<input type="hidden" name="xiangyu" value="rubbish">
+<script src="https://netstat.yunnan.cn/test/unicodeConv.js" type="text/javascript"></script>
+<script src="https://netstat.yunnan.cn/test/webstat_end.js" type="text/javascript"></script>
+<!-- netstat -->
+<script src="https://netstat.yunnan.cn/ynwvote/ybzan/js/zan.js"></script>
+<!-- TRS -->
+<script id="_trs_ta_js" src="https://ta.trs.cn/c/js/ta.js?mpid=1006" async="async" defer="defer"></script>
+<!-- TRS -->
+</body>
+</html>

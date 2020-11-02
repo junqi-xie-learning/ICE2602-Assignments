@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>高校发起国庆“网络拉歌”</title>
+    <style>
+        body{ padding:0px; margin:0px;}
+        img{width:100%}
+        .w{width: 95%;}
+		.lr{margin:0 auto;}
+        .H_xq{font-size:16px;line-height:24px;padding:0px;}
+		.H_xq h1{font-size: 22px;color: #000;margin: 0.7em 0;}
+		.H_xq h3{font-size: 16px;color: #3f3f3f;margin:0.5em 0;}
+		
+		.H_xq img{margin-bottom: 8px;}
+		
+		.H_xq font{ color:#ed1c24;}
+		.H_xq .img1{ text-align:center;}
+		.H_xq .img3{margin-bottom: 8px; width:60%;}
+		
+        .img2{ width:100%;}
+		
+		.xiazai-top{
+        	background-color:#fff;
+        	position:relative;
+        	padding:10px 0 5px 0;
+        	border-bottom:1px solid #dddddd;
+    	}
+    	
+		.open-app{
+			position:absolute;
+			top:23%;
+			right:4%;
+		}
+		
+		.xiazai-bottom{
+			width:100%;
+        	font-size:0;
+        	padding:10px 0 10px 0;
+        	background-color:rgba(0,0,0,0.8);
+			position:fixed;
+			bottom:0;
+			left:0;
+			display:none;
+    	}
+    	
+    </style>
+</head>
+
+<body>
+
+<div class="xiazai-top">
+  <img src="/images/wx/logo-top.png" style="width:135px;margin-left:10px;">
+  <img src="/images/wx/open-top.png" class="open-app" style="width:77px;" onclick="download();" >
+</div>
+
+<div class="H_xq w lr">
+	<h1 id="title">高校发起国庆“网络拉歌”</h1>
+	<h3 id="subtitle">上海交大唱响第一声，华东师大接唱</h3>
+	
+	
+	
+	    本报讯（记者 徐瑞哲）天津、武汉、上海等地高校近日发起“青春为祖国歌唱”的网络拉歌活动。在拥有120多年校史的上海交通大学，师生们发出申城高校为新中国庆生的第一声。紧接着，其闵行校区的“隔壁高校”——华东师范大学，昨天也唱响爱国之声。<br/><br/>    “相聚在东海之滨，汲取知识的甘泉。交大，交大，学府庄严，师生切磋共涉艰险”“薄日出，南洋之上，光照四方；书声琅，琴声畅，莫负大好春光”“我爱你中国，心爱的母亲，我为你流泪，也为你自豪”……在上海交大闵行校区思源门旁的仰思坪上，参与网络拉歌的上海交大青年学子和老师手执五星红旗，用歌声表达对祖国的热爱。交大师生演唱的歌曲包括《上海交通大学校歌》《吾友南洋》《我爱你中国》。<br/><br/>    其中，《吾友南洋》为1990届土木工程专业校友罗坚、2015届土木工程专业校友王斌、2014届电子与通信工程专业校友姜若芾共同创作。他们表示，“为母校写歌，为校友写歌，其实也是为自己写歌”，回顾母校生活的点点滴滴，吟唱“青春不毕业”的心语，抒发对母校和同窗的深厚情谊，以及百年来爱国主义的精神力量。<br/><br/>    网络拉歌少不了在线版。上海交大同时通过航拍、延时摄影等组合形式，运用微信、微博、抖音、微视等新媒体平台形成传播矩阵，开展歌曲接力，希望形成网络互动，将活动传递给更多高校。<br/><br/>    “华东师范大学，上海交大喊你来接力！”截至发稿时，华东师大等相关高校接过网络拉歌邀约，正在线上线下共谱青春之歌，齐声祝福新中国七十华诞。华东师大师生们也继续在网上拉歌，并传向更远：“@上海交通大学 唱得好，三湘四水更动听。#青春为祖国歌唱#华东师范大学在黄浦江畔@湖南大学，浏阳河来一个！”<br/><br/>
+</div>
+
+<div style="height:70px;"></div> <!-- 底部悬浮框的高度 -->
+
+<div class="xiazai-bottom" id="xiazaiBottom">
+   <img src="/images/wx/logo-bottom.png" style="width:125px;margin-left:15px;">
+   <img src="/images/wx/open-bottom.png" class="open-app" style="width:80px;top:20%;" onclick="download();"/>
+</div>
+
+<script type="text/javascript">
+    function isPC() {
+	    var userAgentInfo = navigator.userAgent.toLowerCase();
+	    var Agents = ["Android", "iPhone",
+	                "SymbianOS", "Windows Phone",
+	                "iPad", "iPod"];
+	    var flag = true;
+	    for (var v = 0; v < Agents.length; v++) {
+	        if (userAgentInfo.indexOf(Agents[v].toLowerCase()) > 0) {
+	            flag = false;
+	            break;
+	        }
+	    }
+	    return flag;
+	}
+	
+	function download()
+	{
+		window.open("/link/app");
+	}
+	
+	(function(){
+	
+		var clientWidth = document.documentElement.clientWidth;
+		var bottom = document.getElementById("xiazaiBottom");
+		if (isPC())
+		{
+			document.body.style.width = "640px";
+			document.body.style.margin = "0 auto";
+			
+			bottom.style.width = "640px";
+			bottom.style.left = (clientWidth - 640)/2 + "px";
+			
+			window.onresize = function(){
+				var bottom = document.getElementById("xiazaiBottom");
+				var clientWidth2 = document.documentElement.clientWidth;
+				bottom.style.left = (clientWidth2 - 640)/2 + "px";
+			}
+			
+			clientWidth = 640;
+		}
+		bottom.style.display = "block";
+			
+	})();
+</script>
+
+<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script type="text/javascript" src="/js/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/weixinShare.js?ver=20170427"></script> 
+<script type="text/javascript"> 
+$(function(){     
+    $.ajax({ 
+        url: "/weixin/getWeiXinShare", 
+        type: "POST", 
+        data: {pageUrl:window.location.href}, 
+        // data: {pageUrl:encodeURIComponent(window.location.href)}, 
+        dataType: "json", 
+        success : function(data){ 
+            if (data) 
+            { 
+                var weixin = new WeiXinShare(); 
+                weixin.config(data.appId, data.timestamp, data.nonceStr, data.signature); 
+                var title = $("#title").text();
+                var subtitle = $("#subtitle").text();
+                var logoUrl = "https://images.shobserver.com/images/logo_jf.jpg";
+                weixin.share({'title':title, 'link':location.href,'img_url':logoUrl, 'desc':subtitle}); 
+            }
+        } 
+    }); 
+}); 
+</script>
+</body>
+</html>

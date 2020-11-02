@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="aplus-toUT" content="Umeng4Aplus">
+ <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+ <meta content="telephone=no" name="format-detection" />
+ <title></title>
+ <link rel="stylesheet" href="css/style121.css?20200311" />
+ <script type="text/javascript" src="https://app.cntv.cn/special/cportal/detail/arti/js/jquery-1.8.2.min.js"></script>
+ <script type="text/javascript" src="http://js.player.cntv.cn/creator/swfobject.js"></script>
+ <script type="text/javascript" src="http://js.player.cntv.cn/creator/common_standard_multi.js"></script>
+ <style>
+  .back{position:fixed;bottom:4.5rem;width:100%;display:none;}
+  .back img{width:2rem;margin:0;}::selection{background:#ffe500;color:#121212;}
+  ::-moz-selection{background:#ffe500;color:#121212;}
+  ::-webkit-selection{background:#ffe500;color:#121212;}
+ </style>
+</head>
+<body>
+<article class="dd">
+ <!--<div id="back" class="back"> -->
+ <!--<img src="img/back.png" alt="" /> -->
+ <!--</div> -->
+ <div class="header">
+  <h1 class="title-h1" id="title"></h1>
+ </div>
+ <div class="source" id="source">
+  <em onclick="s()">T<i>T</i></em>
+  <div class="setfont" id="setFont">
+   <ul>
+    <li class="s" id="s" font="18">小号字体</li>
+    <li class="n cur" id="n" font="20">正常字体</li>
+    <li class="m" id="m" font="24">大号字体</li>
+    <li class="b" id="b" font="26">超大号字体</li>
+   </ul>
+   <div class="clear"></div>
+   <div class="btn">
+    <i class="btn_cancel">取消</i>
+    <i class="btn_determine">确定</i>
+   </div>
+  </div>
+  <div class="info" id="info">
+   <p></p>
+   <span class="t"></span>
+  </div>
+  <div class="info-r yuedu">
+   <span></span>
+  </div>
+ </div>
+ <div class="concent">
+  <!--视频部分-->
+  <div class="bt-wz"></div>
+  <!--summary-->
+  <div class="summary">
+   <ul id="stitle"></ul>
+  </div>
+  <!--summary end-->
+  <div id="myFlash" style=" display:none;"></div>
+
+  <div class="body" id="content_body">
+   <!--repaste.body.begin-->
+   <!--下面是播放器 start player-->
+   <div class="vedio" id="playerbg" style="display:none">
+    <div class="img">
+     <img class="pic-s" src="img/bofangnew.png?122" alt="" />
+     <img class="pic-b" src="http://p3.img.cctvpic.com/photoAlbum/templet/common/DEPA1373364114800649/playimg.jpg" id="playimg" />
+     <span class="timer"></span>
+    </div>
+   </div>
+   <!--播放器end-->
+   <!--音频播放器代码-->
+   <!--<div class="playeroutbox" id="audio_div">
+              <div class="progress" id="audio_player">
+                  <div id="played_time_btn" class="line" style="width:0"><span id="touch_bar"></span></div>
+              </div>
+              <div class="button playicon" id="play_or_pause"
+                   style="z-index:99;background-color:#FFF;opacity: 1;"></div>&lt;!&ndash;播放时将pauseicon  换成playicon，暂停时两者切换&ndash;&gt;
+              <span class="time" id="total_time"></span>
+          </div>-->
+   <div class="audiotitle" id="audio_tilte"></div>
+  </div>
+ </div>
+ <div class="share" style=" display:none;">
+  <ul class="clear">
+   <li>
+    <div class="icon wx"></div><span>微信</span></li>
+   <li>
+    <div class="icon py"></div><span>朋友圈</span></li>
+   <li>
+    <div class="icon xl"></div><span>新浪微博</span></li>
+   <li>
+    <div class="icon more"></div><span>更多</span></li>
+  </ul>
+ </div>
+ <!--repaste.body.end-->
+</article>
+
+<section id="ads_footer">
+ <a href="#"><img src="" /></a>
+ <img class="tuiguang" src="img/tuiguang.png" />
+</section>
+<!--相关推荐-->
+<div class="new" id="hotlist" style="display: none">
+</div>
+<!--  相关评论 -->
+<div class="new" id="ind_comment">
+ <div class="cheng"></div>
+ <div class="new-comment">
+  <div class="title title-2">
+   <img src="./img/zxpl.png">
+  </div>
+  <div class="new-main">
+<!--   <div class="ui-border-t"></div>-->
+   <div id="data_comment"></div>
+   <div class="lone">
+    <!--     // <div class="lone-left-1"></div> -->
+<!--    <img class="lone-left" src="img/morenull-left.png" alt="" />-->
+<!--    <div class="lone-mid-1"></div>-->
+<!--    <div class="lone-mid-1 lone-mid-2"></div>-->
+<!--    <img class="lone-right" src="img/morenull-right.png" alt="" />-->
+    <p class="lone-wz">查看更多评论<img src="./img/enter.png"></p>
+   </div>
+<!--   <div class="ui-border-t"></div>-->
+  </div>
+ </div>
+</div>
+<div id="download" class="box_min">
+ <div class="nomsg_box">
+  <div class="nomsg_left">
+<!--   <div class="nomsg_font">收起</div>-->
+<!--   <div class="nomsg_img">-->
+<!--    <img src="img/jian.png" />-->
+<!--   </div>-->
+  </div>
+  <div class="nomsg_right">
+   <img src="img/download.png?20190830" alt="" />
+  </div>
+  <div class="clear"></div>
+ </div>
+ <div class="t_zhe">
+  <div>
+   <p class="p_one">请先下载客户端</p>
+   <p class="p_two">了解最新资讯和新闻</p>
+   <ul>
+    <li class="li_one"><img src="img/iknow2.png" alt="" /></li>
+    <li class="li_two"><img src="img/downke1.png" alt="" /></li>
+   </ul>
+  </div>
+ </div>
+</div>
+<!--最新评论end-->
+<!--点赞提示浮层-->
+<div class="prompt-layer">您已经“赞”过了</div>
+<!--无内容提示-->
+<div class="empty"><img src="./img/empty.png"></div>
+<script type="text/javascript" src="https://app.cntv.cn/special/cportal/detail/arti/js/Dialog.js"></script>
+<script>
+    function getParam(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+    function getPlaceholderCount(strAll,strSource) {
+        var regex = new RegExp(strSource, 'g')
+        var result = strAll.match(regex);
+        return result.length
+    }
+    var time_to_sec = function (time) {
+        var s = '';
+        var hour
+        var min
+        if(getPlaceholderCount(time,':')==2){
+            hour = time.split(':');
+            s = Number(hour[0]*3600) + Number(hour[1]*60) + Number(hour[2]);
+        }else if(getPlaceholderCount(time,':')==1){
+            min = time.split(':');
+            s =  Number(min[0]*60) + Number(min[1]);
+        }
+        return s;
+    };
+    var videoLength
+    var _size = 20;
+    var curindex = $('#setFont ul li.cur').index();
+    var define = function (size) {
+        if (!size) {
+            size = _size;
+        }
+        $('#content_body p').css('font-size', size);
+        $('#hotlist').css('font-size', size);
+        $('#ind_comment .wz').css('font-size', size - 2);
+        this.curindex = $('#setFont ul li.cur').index();
+        document.getElementById("setFont").style.display = "none";
+    };
+    $(".btn_determine").click(function () {
+        define();
+    });
+
+    $('.btn_cancel').click(function () {
+        document.getElementById("setFont").style.display = "none";
+    });
+
+    var hideFont = function (event) {
+        var styleobj = document.getElementById("setFont");
+        if (event.target !== styleobj) {
+            document.getElementById("setFont").style.display = "none";
+            /*html5Player.controls = "controls";*/
+        }
+    };
+    if (document.all) {
+        try {
+            document.getElementById("content_body").attachEvent("touchstart", hideFont);
+            document.getElementById("title").attachEvent("touchstart", hideFont);
+            document.getElementById("info").attachEvent("touchstart", hideFont);
+        }
+        catch (e) {
+        }
+    }
+    else {
+        try {
+            document.getElementById("content_body").addEventListener("touchstart", hideFont, false);
+            document.getElementById("title").addEventListener("touchstart", hideFont, false);
+            document.getElementById("info").addEventListener("touchstart", hideFont, false);
+        }
+        catch (e) {
+        }
+    }
+    window.onscroll = window.onchange = function () {
+        document.getElementById("setFont").style.display = "none";
+    };
+
+    $('.setFont ul li').click(function () {
+        _size = $(this).attr('font');
+        $(this).addClass("cur").siblings("li").removeClass("cur");
+    });
+
+    function s() {
+        //document.getElementById("html5Player").removeAttribute("controls");
+        document.getElementById("setFont").style.display = "block";
+        $('#setFont ul li').eq(curindex).addClass("cur").siblings("li").removeClass("cur");
+    }
+</script>
+<script>
+
+    var href_client=false;
+    var screen_Width;
+    var screen_Height;
+    var video_str,video_x,video_jpg;
+    // 20190315
+    var href_parameter = window.location.href.split("?")[1].split("&");
+    for(var h=0;h<= href_parameter.length;h++){
+        if (href_parameter[h] == 'isfromapp=1') {
+            href_client = true;
+        }
+    }
+    var fs = document.documentElement.clientWidth / 18.75 > 28 ? 28 : document.documentElement.clientWidth / 18.75;
+    document.documentElement.style.fontSize = fs + 'px';
+    window.onresize = function () {
+        $("#download").hide();
+        fs = document.documentElement.clientWidth / 18.75 > 28 ? 28 : document.documentElement.clientWidth / 18.75;
+        document.documentElement.style.fontSize = fs + 'px';
+        if (!href_client) {
+            setTimeout(function () {$("#download").show();}, 100);
+            changeVideoSize();
+        }
+    }
+    // 视频播放器款控告自适应 20190315
+    function changeVideoSize(){
+        $('.video').each(function () {
+            // screen_Width = $(this).parents("p").width(); //获取播放器id父级p标签宽度
+            // screen_Height = screen_Width*0.75;
+            // screen_Height = screen_Width*0.5625;
+           video_str = $(this).attr('logo').substring($(this).attr('logo').lastIndexOf('_') + 1);
+
+            video_x = video_str.indexOf('x')
+            video_jpg = video_str.indexOf('.')
+            screen_Width = video_str.substring(0, video_x)//window.innerWidth * 0.92;
+            screen_Height = video_str.substring(video_x + 1, video_jpg)//window.innerHeight;
+
+            var videosize = $(this).attr('videosize');
+            if (videosize) {
+             console.log(videosize)
+             var ws = videosize.split(':')[0];
+             var hs = videosize.split(':')[1];
+             screen_Width = $(this).parents("p").width();
+             screen_Height = _w*hs/ws;
+            } else {
+             if (parseInt(screen_Width) < parseInt(screen_Height)) {
+              screen_Width = $(this).parents("p").width();
+              screen_Height = screen_Width * 16 / 9
+             } else {
+              screen_Width = $(this).parents("p").width();
+              screen_Height = screen_Width * 0.75
+             }
+            }
+
+            var this_id = $(this).attr("id");
+            $(this).css('background-size',screen_Width+'px '+screen_Height+'px ');
+            html5PlayerResize(this_id,screen_Width,screen_Height);
+        })
+    }
+
+</script>
+<script type="text/javascript">
+    var adoLen = 0;//音频数量
+    var quanjuTotal;
+    var comcount = 0;
+    var isListVideo = false;
+    var comcountNum = 0;
+    var comcountLock = {};
+
+    //客户端视频关闭调用事件
+    function clientVideoClose() {
+        /*if(isListVideo == true){
+         $(".videoGuidCode").show();
+         }else{
+         $("#playerbg").show();
+         }*/
+    }
+    function getParam(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+    //随机头像
+    Array.prototype.random = function () {
+        var index = Math.floor((Math.random() * this.length));
+        return this[index];
+    };
+    var heads = ['img/touxiang1.png', 'img/touxiang2.png', 'img/touxiang3.png', 'img/touxiang4.png', 'img/touxiang5.png', 'img/touxiang6.png'];
+
+
+    //客户端调用获取文章事件
+    /**
+     function clientFetchArticle(){
+        return $('#content_body').text().trim();
+    }
+     */
+    function getNum(text) {
+        var vale = text.replace(/[^0-9]/ig, "");
+        return vale;
+    }
+    var weChatShare = {
+        title: '',
+        imgUrl: '',
+        brief: ''
+    };
+    var articalID = null;
+    var itemtype = "", allow_praise = "", allow_share = "", allow_comment = "", allow_ad = "";
+    var itemtitle = "";
+    var sharedImageUrl='';
+    var DataAcquisition = function (B, C) {
+        this.url = B;
+        this.isArray = "";
+        this.m = 1;
+        this.global = {
+            isClient: false,
+            isNoImg: false,
+            isNight: false,
+            isBack: false,
+            belong: false,
+            isFilterAds: false,
+            adstype: [{"type": "0", "divid": "ads_footer"}, {"type": "1", "divid": "ads_floatbot"}],
+            preview:false,//测试预览新增  20181024
+            version:false//版本控制  20181105
+        };
+        this.guid = "";
+        this.addressFor();
+        this.commentUrl = C;
+        this.commentPrepage = 0;
+        this.commentList(1);
+        this.share();
+    };
+    var dialog = com.maxl.base.util.Dialog;
+    var version = window.location.href.indexOf('version') > -1?window.location.href.substring(window.location.href.indexOf('version=')+8,window.location.href.indexOf('version=')+11):0;
+    DataAcquisition.prototype = {
+        addressFor: function () {
+            try {
+                articalID = getParam("id");
+            } catch (e) {
+                try {
+                    articalID =  getParam("id");
+                }
+                catch (e) {
+                    articalID = null;
+                }
+            }
+            if (articalID != null) {
+                try {
+                    isArray = window.location.href.split("?")[1].split("&");
+                } catch (e) {
+                    console.log("没有传入参数")
+                }
+            }
+            this.DataAddress();
+            for (var v in isArray) {
+                if (isArray[v] == "isfromapp=1") {
+                    this.global.isClient = true;
+                    client = true;
+                }
+                if(isArray[v] == "allow_comment=0"){
+                    $('.lone').hide()
+                }
+                if (isArray[v] == "isNoImg=1") {
+                    this.global.isNoImg = true;
+                }
+                if (isArray[v] == "isNight=1") {
+                    //this.global.isNight=true;
+                }
+                if (isArray[v] == "belong=1") {
+                    this.global.belong = true;
+                }
+                if (isArray[v] == "back=1") {
+                    this.global.isBack = true;
+                }
+                if (isArray[v] == "preview=1"){
+                    this.global.preview = true;
+                }
+                // if (isArray[v] == "version=724"){
+                //   this.global.version = true;
+                // }
+                // if (isArray[v] == "version=728"){
+                //   this.global.version = true;
+                // }
+                if(version >= 724){
+                    this.global.version = true;
+                }
+            }
+            this.setNightModel(this.global.isNight);
+        },
+        /*客户端调用黑夜模式*/
+        setNightModel: function (night) {
+            if (night) {
+                if ($(document.body).hasClass("night")) {
+                    return false;
+                }
+                else {
+                    $(document.body).addClass("night");
+                }
+            } else {
+                $(document.body).removeClass("night");
+            }
+        },
+        DataAddress: function () {
+            if (articalID == "undefined" || articalID == "" || articalID == null) {
+                //跳转404;
+                window.location.href = "http://m.news.cntv.cn/c/404/index.shtml";
+            }
+            else {
+                var articaltype = articalID.substring(0, 4).toUpperCase();
+                switch (articaltype) {
+                    case "ARTI":
+                        itemtype = "article_flag";
+                        break;
+                    case "VIDE":
+                        itemtype = "video_flag";
+                        break;
+                    case "PHOA":
+                        itemtype = "album_flag";
+                        window.location.href = "http://m.news.cntv.cn/c/album/index.shtml?id=" + articalID;
+                        break;
+                    default:
+                        window.location.href = "http://m.news.cntv.cn/c/404/index.shtml";
+                        break;
+                }
+            }
+            this.url += articalID + "&cb=test.setMyArticalContent";
+            this.addScript(this.url);
+        },
+        addScript: function (link) {
+            var el = document.createElement("script");
+            el.type = "text/javascript";
+            el.lang = "javascript";
+            if (el.readyState) {
+                el.onreadystatechange = function () {
+                    if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                    }
+                }
+            }
+            else {
+                el.onload = function () {
+                }
+            }
+            el.src = link;
+
+            document.getElementsByTagName("body")[0].appendChild(el);
+        },
+        setMyArticalContent: function (data) {
+            if (!data.id && !data.itemType) {
+                $('.empty').show().siblings().hide();
+                try {
+                 if(browser.versions.iphone){
+                   window.webkit.messageHandlers.onDataRevoke.postMessage('{"empty": "empty"}');
+                 }else{
+                  window.recommend.onDataRevoke('{"url": "'+window.location.href+'"}');
+                 }
+                } catch (e) {
+                 console.log(e)
+                }
+                return
+            }
+            /*获取微信分享相关页面信息*/
+            weChatShare.title = data.title;
+            var reg2 = /(\[!--begin:htmlVideoCode--\][^{][^[]*\[!--end:htmlVideoCode--\])/g;
+            var oBrief = data.content.replace(reg2, '');
+            if (this.global.belong) {
+                oBrief = oBrief.replace("<strong>央视网消息<\/strong>", "<strong>央视新闻客户端<\/strong>")
+            }
+            var re = /<[^<>]+>/g;
+            /*截取接口content内容的前30个字，加上...*/
+            var oBriefSec = oBrief.replace(re, '').substring(0, 30) + '...';
+            weChatShare.brief = oBriefSec;
+            /**
+             * weChatShare.imgUrl取值：data.contentId非空取央视新闻icon；空取手工维护icon
+             * contentId有值的是联播和滚动，空的是要闻
+             * 新老数据兼容（判断是否有"shareLogo"字段）
+             * 新数据只判断"shareLogo"字段是否有值，无关contentId
+             * */
+            if(getParam('id') == 'ArtiWRm2uaA5hUOJsHE1EsWz180611'){
+             // sharedImageUrl = 'http://p1.img.cctvpic.com/cportal/img/photoAlbum/page/performance/img/2018/6/11/1528729336782_180_841x473.jpg';
+             weChatShare.imgUrl = 'http://p1.img.cctvpic.com/cportal/img/photoAlbum/page/performance/img/2018/6/11/1528729336782_180_841x473.jpg';
+            }else if ('shareLogo' in data) {
+              sharedImageUrl = data.shareLogo;
+              if(data.shareLogo != ''){
+                weChatShare.imgUrl = data.shareLogo;
+              } else {
+                weChatShare.imgUrl = 'http://app.cctv.com/special/cportal/detail/arti/img/weixin_icon2.png';
+              }
+            } else {
+              sharedImageUrl = data.logo;
+              if(data.contentId != ''){
+                sharedImageUrl = '';
+                weChatShare.imgUrl = 'http://app.cctv.com/special/cportal/detail/arti/img/weixin_icon2.png';
+              }else{
+                if(data.logo != ''){
+                  weChatShare.imgUrl = data.logo;
+                }else{
+                  sharedImageUrl = '';
+                  weChatShare.imgUrl = 'http://app.cctv.com/special/cportal/detail/arti/img/weixin_icon2.png';
+                }
+              }
+            }
+
+            if (data.id == "" || data.id == null) {
+                window.location.href = "http://m.news.cntv.cn/c/404/index.shtml";
+            }
+            else {
+                /*判断PC浏览器跳PC地址*/
+                if (browser.versions.mobile || data.relance_id == 'newscctv' || this.global.preview == true ) {
+                    itemtitle = data.title;
+                    allow_praise = data.allow_praise;
+                    allow_share = data.allow_share;
+                    allow_ad = data.allow_ad;
+                    allow_comment = data.allow_comment;
+                    document.title = data.title;
+                    if(this.global.isClient&&browser.versions.iphone){
+                    }else{
+                        with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","&aplus&v_id="+articalID+"&title="+ encodeURI(data.title) ,id="tb-beacon-aplus",src="https://g.alicdn.com/alilog??aplus_plugin/cctv.js,mlog/aplus_u.js");
+                    }
+                    document.getElementById("title").innerHTML = data.title;
+                    var source = document.getElementById("source");
+                    if (this.global.belong) {
+                        data.source = data.source.replace("央视网", "央视新闻客户端")
+                    }
+                    source.getElementsByTagName("p")[0].innerHTML = data.source;
+                    source.getElementsByTagName("span")[0].innerHTML = data.pubtime;//时间截取
+                    //判断是否是在2016年2月25日前
+                    if (20160225 > getNum(data.pubtime.substr(0, 11))) {
+                        $('#yuedu').hide();
+                    } else {
+                        this.getReadCount();
+                    }
+                    /*增加摘要固定两条*/
+                    var _title = new Array();
+                    if (data.wdesc1 != "" && data.wdesc1 != null && data.wdesc1 != undefined) {
+                        _title.push(data.wdesc1);
+                    }
+                    if (data.wdesc2 != "" && data.wdesc2 != null && data.wdesc2 != undefined) {
+                        _title.push(data.wdesc2);
+                    }
+                    var _titleLength = 0;
+                    if (_title != "" && _title != null && _title !== undefined) {
+                        _titleLength = _title.length;
+                    }
+                    if (_titleLength > 0) {
+                        $(".summary").show();
+                        for (i = 0; i < 1; i++) {
+                            var titleDiv = document.createElement("li");
+                            titleDiv.innerHTML = _title[i];
+                            document.getElementById("stitle").appendChild(titleDiv);
+                        }
+                    }
+                    if (this.global.belong) {
+                        data.content = data.content.replace("<strong>央视网消息<\/strong>", "<strong>央视新闻客户端<\/strong>")
+                    }
+                    data.content = replaceContent(data.content);
+                    var contentDiv = document.createElement("div");
+                    contentDiv.id = 'oContent';
+                    contentDiv.innerHTML = data.content;
+                    /*判断是否是显示图片*/
+                    if (this.global.isClient) {
+                        if (this.global.isNoImg) {
+                            var imgArray = $(contentDiv).find("img");
+                            imgArray.each(function (index, element) {
+                                var tempImgDiv = $("<div class='tempImgDiv'>点击加载图片</div>");
+                                $(this).attr("data-src", $(this).attr("src")).attr("src", "").hide().parent("p").append(tempImgDiv);
+                            });
+                        }
+
+                        $(contentDiv).find("img").click(function () {
+                            var thisimgurl = $(this).attr("src");
+                            JSSetImageUrl(thisimgurl);
+                        });
+                    }
+                    document.getElementById("content_body").appendChild(contentDiv);
+                    if (!this.global.isClient) {
+                        if (this.global.isBack) {
+                            $("#back").show();
+                            $('#back').click(function () {
+                                history.go(-1);
+                            })
+                        } else {
+                            var down = $("#download");
+                            $("#download").show();
+                            $('.nomsg_left').click(function () {
+                                if (down.hasClass('box_min')) {
+                                    down.attr('class', 'box_max');
+                                    // $('.nomsg_font').text('展开');
+                                    $('.nomsg_left').attr('class', 'nomsg_left noShow');
+                                } else {
+                                    down.attr('class', 'box_min');
+                                    // $('.nomsg_font').text('收起');
+                                    $('.nomsg_left').attr('class', 'nomsg_left show');
+                                }
+
+                            });
+                            $('.nomsg_right').click(function () {
+                                downApp();
+                            });
+                        }
+                    } else {
+                        $(".share").show();
+                    }
+                    /*添加正文内容后触发显示图片方法*/
+                    var that = this;
+                    /*视频音频*/
+                    if (articalID.substring(0, 4).toUpperCase() == "VIDE" || articalID.substring(0, 4).toUpperCase() == "ARTI" && data.id != null && data.id != "") {
+                        if (data.guid) {
+                            this.guid = data.guid;
+                            var that = this;
+                            // videoLength=time_to_sec(data.videolength)
+                            /*判断是视频还是音频 gutype:0视频,1视频集,2音频,3,音频集*/
+                            data.gutype = transGutype(data.gutype);
+
+                            if (data.gutype == 2) {
+                                var aContent = $('#oContent').find('p[type=hidden]')
+                                /* if(aContent.length==1){
+                                     var ids = [];
+                                     ids.push(this.guid);
+                                     console.log(ids)
+                                     $('#videoGuidCode1').append('<iframe src="audio.html?id='+this.guid+'" frameborder="0" width="100%" height="42px" marginHeight="0" marginWidth="0"></iframe>')
+                                     $('.videoGuidCode').show();
+                                 }else{*/
+                                adoLen = aContent.length;
+                                var thisglobalisClient = 0;
+                                if(this.global.isClient){
+                                    thisglobalisClient = 1
+                                }
+                                for(var i=0;i<aContent.length;i++){
+                                    var idd = $('#oContent .videoGuidCode').eq(i).attr('rel')
+                                    $('#videoGuidCode'+(i+1)).append('<iframe id="if'+i+'" class="ifr" src="audio.html?id='+idd+'&index='+i+'&articalID='+articalID+'&isfromapp='+thisglobalisClient+'" frameborder="0" width="100%" height="42px" marginHeight="0" marginWidth="0"></iframe>')
+                                    $('.videoGuidCode').show();
+                                }
+                                // }
+                                /* var audioPosition = $("#content_body").find("input[type=hidden]");
+                                 audioPosition.parent().append($("#audio_div")).append($("#audio_tilte"));
+                                 $(".playeroutbox").show();
+                                 $('#videoGuidCode1').append('<div class="playeroutbox" id="audio_div"><div class="progress" id="audio_player"><div id="played_time_btn" class="line" style="width:0"><span id="touch_bar"></span></div></div><div class="button playicon" id="play_or_pause" style="z-index:99;background-color:#FFF;opacity: 1;"></div><span class="time" id="total_time"></span></div>').show()
+                                 $("#audio_div").show();
+                                 var html5audio = document.createElement("script");
+                                 html5audio.src = "js/html5_audio.js?20180402";
+                                 var html5audios = document.getElementsByTagName("script")[0];
+                                 html5audios.parentNode.insertBefore(html5audio, html5audios);
+                                setTimeout(function(){
+                                    createAudioPlayer("audio_player", ids, false, 0, 0);
+                                    if (that.global.isClient) {
+                                        $('#play_or_pause').click(function () {
+                                            var classname = $(this).attr('class');
+                                            if (classname.indexOf("playicon") != -1) {
+                                                that.js2cmdaudio();
+                                            }
+                                        });
+                                    }
+                                },1000)*/
+                            } else if (data.gutype == 0 || !data.gutype || data.gutype == 1 /*|| this.global.version==false*/) {
+                                if (this.global.isClient) {
+                                    if ($('#oContent').find('.video').length > 0) {
+                                        isListVideo = true;
+                                        var oLogo = $('#oContent').find('span[logo]');
+                                        var logoLength = oLogo.length;
+                                        var oLen_timer = $('#oContent').find('span[len]');
+                                        for (var c = 0; c < logoLength; c++) {
+                                            var logo = oLogo[c].getAttribute('logo');
+                                            var logoId = 'videoGuidCode' + (c + 1) + '';
+                                            var len_timer =  oLen_timer[c].getAttribute('len');
+                                            var oHtml = '<div class="img"><img class="pic-s" src="img/bofangnew.png" alt=""><img class="pic-b" src="' + logo + '"><span class="timer">'+len_timer+'</span></div>';
+                                            $('#' + logoId + '').html(oHtml).css('display', 'block').addClass('vedio');
+
+                                        }
+                                        $(".videoGuidCode").click(function () {
+                                            var oGuid = $(this)[0].getAttribute('rel');
+                                            that.js2cmd(oGuid);
+                                        });
+
+                                        if (data.videolength) {
+
+                                        }else {
+                                            document.getElementById("playimg").src = "http://p3.img.cctvpic.com/photoAlbum/templet/common/DEPA1373364114800649/autoplayimg20130905.png";
+                                        }
+
+                                    } else {
+                                        isListVideo = false;
+                                        document.getElementById("playerbg").style.display = "block";
+                                        if(data.content.indexOf('logo="')>-1){
+                                            var logText = data.content.substring(data.content.indexOf('logo="')+6)
+                                            document.getElementById("playimg").src = logText.substring(0,logText.indexOf('"'))
+                                        }else{
+                                            document.getElementById("playimg").src = data.logo;
+                                        }
+                                        if (data.videolength) {
+                                            $(".timer").text(data.videolength);
+                                        }
+
+                                        else {
+                                            document.getElementById("playimg").src = "http://p3.img.cctvpic.com/photoAlbum/templet/common/DEPA1373364114800649/autoplayimg20130905.png";
+                                        }
+                                        $("#playerbg").click(function () {
+                                            that.js2cmd(data.guid);
+                                        });
+                                    }
+                                } else {
+                                    $("#source em").hide();
+                                    if ($('#oContent').find('.videoGuidCode').length > 0) {
+                                        isListVideo = true;
+                                        var pChild = $('#oContent').find('p[type="hidden"]');
+                                        var oLogo = $('#oContent').find('span[logo]');
+                                        var pLength = pChild.length;
+                                        if(data.content.indexOf('logo="')>-1) {
+                                            for (var z = 0; z < pLength; z++) {
+                                                var logo = oLogo[z].getAttribute('logo');
+                                                var guid = pChild[z].getAttribute('data').split(']')[1].split(',')[0];
+                                                var videosize = oLogo[z].getAttribute('videosize');
+                                                var oId = 'videoGuidCode' + (z + 1) + '';
+                                                this.creatHTMLplayer(guid, oId, logo, videosize);
+                                            }
+                                        }else{
+                                            for (var z = 0; z < pLength; z++) {
+                                                var logo = oLogo[z].getAttribute('logo');
+                                                var guid = pChild[z].getAttribute('data').split(']')[1].split(',')[0];
+                                                var videosize = oLogo[z].getAttribute('videosize');
+                                                var oId = 'videoGuidCode' + (z + 1) + '';
+                                                this.creatHTMLplayer(guid, oId, data.logo, videosize);
+                                            }
+                                        }
+                                    } else {
+                                        isListVideo = false;
+                                        $("#myFlash").css("display","block");
+                                        /*创建HTML5播放器*/
+                                        if(data.content.indexOf('logo="')>-1){
+                                            var logText = data.content.substring(data.content.indexOf('logo="')+6)
+                                            var logHref =logText.substring(0,logText.indexOf('"'))
+                                            this.creatHTMLplayer(data.guid, 'myFlash', logHref, videosize);
+                                        }else{
+                                            this.creatHTMLplayer(data.guid, 'myFlash', data.logo, videosize);
+                                        }
+                                    }
+
+                                }
+                            }else if (data.gutype==4/*&&this.global.version==true*/){
+                                if (this.global.isClient) {//
+                                    //if ($('#oContent').find('.video').length > 1) {
+                                    isListVideo = true;
+                                    var oLogo = $('#oContent').find('.video');
+                                    var logoLength = oLogo.length;
+                                    var oLen_timer = $('#oContent').find('span[len]');
+                                    // for (var c = 0; c < logoLength; c++) {
+                                    // 	var logo = $(".video").eq(c).attr('logo');
+                                    // 	var logoId = $(".video").eq(c).attr('id');
+                                    //   var len_timer =  oLen_timer[c].getAttribute('len');
+                                    //   var oHtml = '<div class="img"><img class="pic-s" src="img/bofang.png" alt=""><img class="pic-b" src="' + logo + '"><span class="timer">'+len_timer+'</span></div>';
+                                    // 	$('#' + logoId + '').html(oHtml).css('display', 'block').addClass('vedio');
+                                    // 	$(".video").eq(c).click(function() {
+                                    // 		var oGuid = $(this).attr('rel');
+                                    // 		that.js2cmd(oGuid);
+                                    // 	});
+                                    //
+                                    // }
+                                    $(".video").each(function () {
+                                        var logo = $(this).attr('logo');
+                                        var logoId = $(this).attr('id');
+                                        var len_timer =  $(this).attr('len');
+                                        var oHtml = '<div class="img"><img class="pic-s" src="img/bofangnew.png" alt=""><img class="pic-b" src="' + logo + '"><span class="timer">'+len_timer+'</span></div>';
+                                        $('#' + logoId + '').html(oHtml).css('display', 'block').addClass('vedio');
+                                        $(this).click(function() {
+                                            var oGuid = $(this).attr('rel');
+                                            that.js2cmd(oGuid);
+                                            if(browser.versions.iphone){
+                                                allStopApp();
+                                            }
+                                        });
+                                    });
+                                    /*} else {
+              										isListVideo = false;
+              										document.getElementById("playerbg").style.display = "block";
+              										if (data.content.indexOf('logo="') > -1) {
+              											var logText = data.content.substring(data.content.indexOf('logo="') + 6)
+              											document.getElementById("playimg").src = logText.substring(0, logText.indexOf('"'))
+              										} else {
+              											document.getElementById("playimg").src = data.logo;
+              										}
+              										if (data.videolength) {
+              											$(".timer").text(data.videolength);
+              										} else {
+              											document.getElementById("playimg").src = "http://p3.img.cctvpic.com/photoAlbum/templet/common/DEPA1373364114800649/autoplayimg20130905.png";
+              										}
+              										$("#playerbg").click(function() {
+              											that.js2cmd(data.guid);
+              										});
+              									}*/
+
+                                } else {
+                                    $("#source em").hide();
+                                    if ($('#oContent').find('.video').length > 0) {
+                                        isListVideo = true;
+                                        var pChild = $('#oContent').find('.video');
+                                        var oLogo = $('#oContent').find('.video');
+                                        var pLength = pChild.length;
+                                        if(data.content.indexOf('logo="')>-1) {
+                                            var self=this;
+                                            for (var z = 0; z < pLength; z++) {
+                                                var logo = pChild.eq(z).attr('logo');
+                                                var guid = pChild.eq(z).attr('rel');
+                                                var oId = pChild.eq(z).attr('id');
+                                                var videosize = oLogo[z].getAttribute('videosize');
+                                                this.creatHTMLplayer(guid, oId, logo, videosize);
+
+                                            }
+                                        }else{
+                                            for (var z = 0; z < pLength; z++) {
+                                                var guid = pChild.eq(z).attr('rel');
+                                                var oId = pChild.attr('id')
+                                                var videosize = oLogo[z].getAttribute('videosize');
+                                                this.creatHTMLplayer(guid, oId, data.logo, videosize);
+                                            }
+                                        }
+
+                                    } else {
+                                        isListVideo = false;
+                                        $("#myFlash").css("display","block");
+                                        /*创建HTML5播放器*/
+                                        if(data.content.indexOf('logo="')>-1){
+                                            var logText = data.content.substring(data.content.indexOf('logo="')+6)
+                                            var logHref =logText.substring(0,logText.indexOf('"'))
+                                            this.creatHTMLplayer(data.guid, 'myFlash', logHref, videosize);
+                                        }else{
+                                            this.creatHTMLplayer(data.guid, 'myFlash', data.logo, videosize);
+                                        }
+                                    }
+                                    var span_f = 0;
+                                    var span_timer = setInterval(function () {
+                                        console.log($(".video").length);
+                                        if($('.video').eq(span_f).find('video').length==1){
+                                            console.log($('.video').eq(span_f));
+                                            var vid=$('.video').eq(span_f).find('video').attr('id');
+                                            document.getElementById(vid).addEventListener('play', function () {
+                                                allStopApp();
+                                            });
+                                            span_f++;
+
+                                        }
+                                        if(span_f == $('.video').length){
+                                            clearInterval(span_timer);
+                                        }
+                                    },100);
+                                }
+                                var aContent = $('#oContent').find('.audio')
+                                /*if (aContent.length == 1) {
+                                    var ids = [];
+                  adoLen = aContent.length;
+                                    ids.push(this.guid);
+                                    $('.audio').append('<iframe src="audio.html?id=' + this.guid + '" frameborder="0" width="100%" height="42px" marginHeight="0" marginWidth="0"></iframe>')
+                                    $('.audio').show();
+                                } else if(aContent.length > 1){*/
+                                adoLen = aContent.length;
+                                var thisglobalisClient = 0
+                                if(this.global.isClient){
+                                    thisglobalisClient = 1
+                                }
+                                // for (var i = 0; i < aContent.length; i++) {
+                                //     console.log("混排au");
+                                // 	var idd = $('#oContent .audio').eq(i).attr('rel')
+                                // 	$('.audio').eq(i).append('<iframe id="if' + i + '" class="ifr" src="audio.html?id=' + idd + '&index=' + i + '&articalID=' + articalID + '&isfromapp='+ thisglobalisClient +'" frameborder="0" width="100%" height="42px" marginHeight="0" marginWidth="0"></iframe>')
+                                // 	$('.audio').show();
+                                // }
+                                $(".audio").each(function (index) {
+                                    var idd = $(this).attr('rel')
+                                    $(this).append('<iframe id="if'+index+'" class="ifr" src="audio.html?id='+idd+'&index='+index+'&articalID='+articalID+'&isfromapp='+thisglobalisClient+'" frameborder="0" width="100%" height="42px" marginHeight="0" marginWidth="0"></iframe>')
+                                    $('.audio').show();
+                                });
+                                //}
+                                // $('.video').click(function(){
+                                // 	allStopApp()
+                                //   });
+
+                            }
+                        }
+                    }
+
+                    that.drawingFinsh(data);
+                    /*热点推荐图解*/
+                    function hotlist() {
+                        if (data.hotList.total == 0 || data.hotList.total == "" || data.hotList.error != undefined) {
+                            return false;
+                        }
+						if(data.ad_type != 2){
+							$('#hotlist').css('display','block')
+						}
+                        var str = '';
+                        // str += '<div class="new-comment"><div class="title title-1">热点推荐</div><div class="new-main"><div  class="ui-border-t" ></div><ul>'
+                        str += '<div class="cheng"></div><div class="new-comment"><div class="title title-1"><img src="./img/rdtj.png"></div><div class="new-main"><ul>'
+                        var zw = data.hotList.itemList.length < 3 ? data.hotList.itemList.length : 3;
+                        for (i = 0; i < zw; i++) {
+                            var title = data.hotList.itemList[i].itemTitle;
+                            var url = data.hotList.itemList[i].clientUrl;
+
+                            // 替换热点推荐链接
+                            try {
+                              url = url.replace('http://api.cportal.cctv.com/app/detail/ywnr.html', 'http://app.cctv.com/special/cportal/detail/arti/index.html');
+                            } catch (e) {
+
+                            }
+
+                            str += '<li class="list-1 " ><a   href="' + url + '">' + title + '</a></li>';
+                            if (i < 2) {
+                                str += '<div  class="ui-border-t"></div>';
+                            }
+                        }
+                        // str += '</ul><div  class="ui-border-t"></div></div></div>';
+                        str += '</ul></div></div>';
+                        $("#hotlist").html(str);
+                    }
+                    var Pcurl = data.url
+                    if (data.catalog != 1) {
+                        hotlist();
+                    }
+                    else {
+                        $(".source em").css('display', 'none');
+                        hotlist();
+                    }
+                    /********ad_type=2时为领导人模板，不显示广告********/
+                    /********通栏广告01,只在客户端中显示********/
+                    if (data.ad_type == 2) {
+                        this.global.isFilterAds = true;
+                    }
+                    this.setAds(1, this.global.adstype[0].divid, "http://galaxy.bjcathay.com/s?z=cathay&c=781&op=1", "http://galaxy.bjcathay.com/s?z=cathay&c=769&op=1", this.global.isFilterAds);
+                    /********飘浮广告,只在客户端中显示********/
+                    this.setAds(1, this.global.adstype[1].divid, "http://galaxy.bjcathay.com/s?z=cathay&c=780&op=1 ", "http://galaxy.bjcathay.com/s?z=cathay&c=768&op=1", this.global.isFilterAds);
+                }else {
+					/*
+                    * 0629
+                    * 1、url字段为空:
+                    *   页面id：ArtiSzwqRP8ttvXG9I1JyrhL190627
+                    *   1) contentId = ''：例如"contentId":""，
+                    *      走 http://m.news.cctv.com/2019/06/27/ARTISzwqRP8ttvXG9I1JyrhL190627.shtml
+                    *   2) contentId != ''：例如"contentId":"VIDEEbjUezJMyS9r13SwV61I190624",
+                    *      走http://tv.cctv.com/2019/06/27/ARTISzwqRP8ttvXG9I1JyrhL190627.shtml
+                    *
+                    * 2、url字段非空：
+                    * 直接跳转url
+                    * */
+					if (data.url != '') {
+						window.location = data.url;
+					} else {
+						if (data.contentId != '') {
+							var date = new Date;
+							var reg = "VIDE";
+							// if (data.guid != null && data.guid.length > 0 && data.content.length == 0) {
+							// 	reg = "VIDE";
+							// }
+							var year = date.getFullYear() + "";
+							var sub_date = articalID.substring(24, 30);
+							var pc_url = "http://tv.cctv.com/" + year.substring(0, 2) + sub_date.substring(0, 2) + "/" + sub_date.substring(2, 4) + "/" + sub_date.substring(4, 6) + "/" + reg + articalID.substring(4, 30) + ".shtml";
+							window.location = pc_url;
+						} else {
+							var date = new Date;
+							var reg = "ARTI";
+							// if (data.guid != null && data.guid.length > 0 && data.content.length == 0) {
+							// 	reg = "VIDE";
+							// }
+							var year = date.getFullYear() + "";
+							var sub_date = articalID.substring(24, 30);
+							var pc_url = "http://m.news.cctv.com/" + year.substring(0, 2) + sub_date.substring(0, 2) + "/" + sub_date.substring(2, 4) + "/" + sub_date.substring(4, 6) + "/" + reg + articalID.substring(4, 30) + ".shtml";
+							window.location = pc_url;
+						}
+					}
+                }
+            }
+         /**
+          * 返回文章信息 版本<=728客户端调用backInfoIOS和backInfoAndriod；>728执行postMwssage()，向客户端发送数据
+          * 客户端外不传
+          */
+         if (version > 728 && this.global.isClient == 1){
+          postMwssage();
+         }
+
+        },
+        /*加载显示图片*/
+        showImg: function () {
+            var tempImg = $("#content_body").find(".tempImgDiv");
+            if (tempImg.length > 0) {
+                tempImg.each(function (index, element) {
+                    $(this).click(function () {
+                        var img = $(this).siblings("img");
+                        img.attr("src", img.attr("data-src"));
+                        img.show().siblings("div").hide();
+                    });
+                });
+            }
+        },
+        /*****广告投放函数******/
+        /***** @type 广告形式，1为品牌，2为互众******/
+        /***** @divId 投放位置ID******/
+        /***** @jslink 请求地址******/
+        /***** @flag 是否过滤投放******/
+        setAds: function (type, divId, androidlink, iphonelink, flag) {
+            if (this.global.isClient) {
+                if (flag) {
+                    $("#" + divId).remove();
+                } else {
+                    if (type == 1) {
+                        var time = new Date().getTime();
+                        if (browser.versions.android) {
+                            this.addScript(androidlink);
+
+                        } else if (browser.versions.iphone) {
+                            this.addScript(iphonelink);
+                        }
+                    }
+                    var aa = $("#" + divId + " .ads-close");
+                    if (aa != undefined) {
+                        aa.on("click", function () {
+                            b();
+                        })
+                        var b = function () {
+                            if (aa != null) {
+                                $(aa).parent().remove();
+                                aa = null;
+                            } else {
+                                return;
+                            }
+                        }
+                        var closeads = setTimeout(b, 5000);
+                    }
+                }
+            }
+        },
+        /*****通栏广告01回调函数******/
+        /*****data.type：0，代表文章底部通栏；1，代表底部浮层通栏******/
+        callback: function (data) {
+            for (i = 0; i < this.global.adstype.length; i++) {
+                if (this.global.adstype[i].type == data.type) {
+                    if (data.url != "" && data.url != null && data.url != undefined) {
+                        $("#" + this.global.adstype[i].divid).find("a").find("img").attr("src", data.url);
+                        $("#" + this.global.adstype[i].divid).show();
+                        if (data.click != "" && data.click != null && data.click != undefined) {
+                            $("#" + this.global.adstype[i].divid).find("a").attr("href", data.click)
+                        } else {
+                            $("#" + this.global.adstype[i].divid).find("a").attr("href", "javascript:void(0);")
+                        }
+                    } else {
+                        $("#" + this.global.adstype[i].divid).remove();
+                    }
+                }
+            }
+        },
+        //页面数据渲染完成
+        drawingFinsh: function (data) {
+            this.dealVR();
+        },
+        //处理VR数据
+        dealVR: function () {
+            var that = this;
+            $(".vr_flag").click(function (event) {
+                event.preventDefault();
+
+                var vrUrl = $(this).attr('href');
+                var webUrl = $(this).attr('data-link');
+                if (that.global.isClient) {
+                    if (vrUrl) {
+                        //audioPlayer.pause();
+                        that.js2cmdVR(vrUrl);
+
+                    }
+                } else {
+                    if (browser.versions.iphone) {
+                        window.location.href = webUrl;
+                    } else {
+                        dialog.showAlert('该页面暂不支持VR视频播放<br/>请下载央视新闻客户端观看');
+                    }
+                }
+            });
+        },
+        js2cmdaudio: function () {
+            if (browser.versions.WinPhone) {
+                window.external.notify("js2cmd:AudioStart@" + articalID);
+            }
+            else {
+                window.location = "js2cmd:AudioStart@" + articalID;
+            }
+        },
+        /*点击查看更多评论按钮*/
+        js2cmdcomment: function () {
+            if (browser.versions.WinPhone) {
+                window.external.notify("js2cmd:FindMoreComment@" + articalID);
+            }
+            else {
+                window.location = "js2cmd:FindMoreComment@" + articalID;
+            }
+        },
+        /*调用客户端VR视频*/
+        js2cmdVR: function (VRUrl) {
+            if (browser.versions.WinPhone) {
+                window.external.notify("js2cmd://StartPlayVRVideo@" + encodeURIComponent(VRUrl));
+            }
+            else {
+                window.location = "js2cmd://StartPlayVRVideo@" + encodeURIComponent(VRUrl);
+            }
+        },
+        js2cmd: function (guid) {
+            if (browser.versions.WinPhone) {
+                window.external.notify("js2cmd://StartPlayVideo@" + guid);
+            }
+            else {
+                window.location = "js2cmd://StartPlayVideo@" + guid;
+            }
+        },
+        creatHTMLplayer: function (guid, oId, postimg, videosize) {
+            var that = this;
+            var oId = oId || 'myFlash';
+            var str = postimg.substring(postimg.lastIndexOf('_') + 1)
+            var x = str.indexOf('x')
+            var jpg = str.indexOf('.')
+            var relGuid = guid || this.guid;
+            document.getElementById(oId).style.display = "block";
+            var _w = str.substring(0, x)//window.innerWidth * 0.92;
+
+            var _h = str.substring(x + 1, jpg)//window.innerHeight;
+            if (videosize) {
+             // console.log(videosize)
+             var ws = videosize.split(':')[0];
+             var hs = videosize.split(':')[1];
+             _w = window.innerWidth * 0.92;
+             _h = _w*hs/ws;
+
+             that.createPlayer(oId, _w, _h, postimg, articalID, relGuid);
+            } else {
+             // if (parseInt(_w) < parseInt(_h)) {
+             //  _w = window.innerWidth * 0.92
+             //  _h = _w * 16 / 9
+             // } else {
+             //  _w = window.innerWidth * 0.92
+             //  _h = _w * 9 / 16
+             // }
+             $.ajax({
+              url: `https://vdn.apps.cntv.cn/api/getIpadVideoInfo.do?pid=${guid}&tai=ipad&from=html5`,
+              type: "get",
+              dataType: 'jsonp',
+              jsonpCallback: 'getHtml5VideoData',
+              success: function (_data) {
+               $.ajax({
+                url: JSON.parse(_data).hls_url,
+                type: "get",
+                success: function (_data) {
+                 var resolution = _data.split('#')[2].split(',')[2];
+                 var arr = resolution.indexOf('/');
+                 resolution = resolution.slice(12,arr).split('x');
+                 var ws = resolution[0]-0;
+                 var hs = resolution[1]-0;
+
+                 var _w = window.innerWidth * 0.92;
+                 var _h = _w * hs / ws;
+                 document.getElementById(oId).setAttribute('videosize',_w+':'+_h)
+
+                 that.createPlayer(oId, _w, _h, postimg, articalID, relGuid);
+                },
+                timeout: 10000,
+                error: function () {
+                 var newW,newH;
+                 if (!_w || !_h) {
+                  newW = window.innerWidth * 0.92;
+                  newH = newW * 0.75
+                 } else {
+                  newW = window.innerWidth * 0.92;
+                  newH = newW * _h / _w;
+                 }
+                 // if (parseInt(_w) < parseInt(_h)) {
+                 //  _w = window.innerWidth * 0.92
+                 //  _h = _w * 16 / 9
+                 // } else {
+                 //  _w = window.innerWidth * 0.92
+                 //  _h = _w * 0.75
+                 // }
+                 that.createPlayer(oId, newW, newH, postimg, articalID, relGuid);
+                }
+
+               });
+              },
+              timeout: 10000,
+              error: function () {
+               var newW,newH;
+               if (!_w || !_h) {
+                newW = window.innerWidth * 0.92;
+                newH = newW * 0.75
+               } else {
+                newW = window.innerWidth * 0.92;
+                newH = newW * _h / _w;
+               }
+               // if (parseInt(_w) < parseInt(_h)) {
+               //  _w = window.innerWidth * 0.92
+               //  _h = _w * 16 / 9
+               // } else {
+               //  _w = window.innerWidth * 0.92
+               //  _h = _w * 0.75
+               // }
+               that.createPlayer(oId, newW, newH, postimg, articalID, relGuid);
+              }
+             });
+            }
+        },
+        createPlayer (oId, _w, _h, postimg, articalID, relGuid) {
+         var fo = createCommonPlayer(oId, _w, _h, "news", true, postimg, true);
+//              var fo = createCommonPlayer("v_player",_w,_h,"news");
+         fo.addVariable("id", "20091109129210");
+         fo.addVariable("articleId", articalID);
+         fo.addVariable("videoCenterId", relGuid); //guid
+         fo.addVariable("scheduleId", "C2253600000311");
+         fo.addVariable("filePath", "/flvxml/2009/05/04/");
+         fo.addVariable("sorts", ",,,,,");
+         fo.addVariable("sysSource", "sports");
+         fo.addVariable("autoRePlay", "false");//"true");
+         fo.addVariable("userId", "001");
+         fo.addVariable("hour24DataURL", "");
+         fo.addVariable("isCycle", "false");
+         fo.addVariable("wideMode", "normal");
+         fo.addVariable("defaultRate", "low");
+         fo.addVariable("isAutoPlay", "true");
+         writePlayer(fo, oId, "", "");
+        },
+        /* 评论 */
+        commentList: function (cur) {
+            var commentApp = 'news',                //应用
+                commentItemid = articalID,      //文章id
+                commentItemtype = 0,                //图文
+                commentPage = cur;                  //页码
+            this.commentPrepage = 5;                    //默认条数
+            crul = 'http://common.newcomment.cntv.cn/comment/list?app=news&itemid=' + commentItemid + '&itemtype=0&jsonp_callback=test.commentDataSuccess&prepage=5&page=' + commentPage+'&nature=1&avatar=1';
+            this.commentUrl += '?app=' + commentApp + '&itemid=' + commentItemid + '&itemtype=' + commentItemtype + '&page=' + commentPage + '&prepage=' + this.commentPrepage + '&jsonp_callback=test.commentDataSuccess';
+            this.addScript(crul);
+        },
+        commentDataSuccess: function (data) {
+            var total = data.data.total;     //评论总条数
+            quanjuTotal = total;
+            var data = data.data;
+
+            if (total == 0) {
+                $('#ind_comment').css("display", "none");
+            } else {
+                var sttt = '';
+                for (var i = 0;i < data.content.length ;i++) {
+                    comcount++;
+                    var contenteach = data.content[i];
+                    var dateline = this.getDateDiff(parseInt(contenteach.dateline) * 1000); //shijian
+                    var str = '';
+                    str += '<div class="list">';
+
+                    // if (contenteach.pics.length != 0) {
+                    //     str += '<img class="pic" src="' + contenteach.pics[0] + '" alt="头像"/>';
+                    // } else {
+                    //     var imgheader = heads.random();
+                    //     str += '<img class="pic" src="' + imgheader + '" alt="头像"/>';
+                    //     //str+='<img class="pic" src="img/header.png" alt="头像"/>';
+                    // }
+                    if (contenteach.avatar && contenteach.avatar != '') {
+                      str += '<img class="pic" src="' + contenteach.avatar + '" alt="头像"/>';
+                    } else {
+                      str += '<img class="pic" src="./img/defaultHand.png" alt="头像"/>';
+                    }
+                    str += '<div class="main" id="comment-' + i + '">';
+                    // str += '<p class="name">' + contenteach.author + '</p><span style="font-size:30px;line-height:16px;"> · </span>';
+                    str += '<div class="agree" data_pid="'+contenteach.pid+'" data_tid="'+contenteach.tid+'"><img src="./img/agree-off.png"><span>'+contenteach.agree+'</span></div>'
+                    str += '<p class="name">' + contenteach.author + '</p>';
+                    str += '<p class="time">' + dateline + '</p>';
+                    str += '<p class=" wz fs ">' + contenteach.message + '</p>';
+                    str += '<div class="zhankai">展开<b></b></div><div class="shouqi" style="display:none;">收起<b></b></div>';
+                    str += '<div class="reply_container">'
+
+                    str += '</div>'
+                    str += '<div class="ui-border-t"></div>'
+                    str += '</div>'
+                    str += '</div>';
+                    sttt =  sttt + str;
+                }
+                $('#data_comment').append(sttt);
+
+                for (var z in data.reply) {
+                    var sttr = '';
+                    for (var w = 0; w < data.reply[z].length; w++) {
+                        str = "";
+                        var contenteach = data.reply[z][w];
+                        str += '<div class="reply">'
+                        str += '<p class="name">' + contenteach.author + '</p>  ';
+                        str += '<p class=" wz fs ">' + contenteach.message + '</p>';
+                        str += '<div class="zhankai">展开<b></b></div><div class="shouqi" style="display:none;">收起<b></b></div>';
+                        str += '</div>'
+                        sttr = sttr + str;
+                    }
+                    $('#comment-' + z + ' .reply_container').append(sttr);
+                }
+                for (var z in data.replyCount) {
+                    str = "";
+                    var count = data.replyCount[z];
+                    if (count > 5) {
+                        str += '<div class="reply more" dataid=' + z + ' count="' + count + '" >'
+                        str += '<p > 查看全部' + count + '条评论</p>  '
+                        str += '</div>'
+                    }
+                    $('#comment-' + z + ' .reply_container').append(str);
+                }
+                var that = this;
+                $('.list .more').click(function () {
+                        var id = $(this).attr('dataid');
+                        var count = $(this).attr('count');
+                        that.getAllReply(id, count);
+                    }
+                )
+                $('.fs').each(function () {
+                    $(this).removeClass('fs');
+                    var height = ($(this).css('font-size').replace('px', ''))*1.4;
+                    if ($(this).height() > height) {
+                        $(this).height('1.4em');
+                    } else {
+                        $(this).next().hide();
+                    };
+                })
+                $('.zhankai').click(function () {
+                    $(this).prev().css("height", 'auto');
+                    $(this).hide();
+                    $(this).next().show();
+                })
+                $('.shouqi').click(function () {
+                    // var height = ($(this).prev().prev().css('font-size').replace('px', ''))*1.4;
+                    $(this).prev().prev().css("height", '1.4em');
+                    $(this).hide();
+                    $(this).prev().show();
+                })
+                $('.agree').each(function (index, item) {
+                  if (comcountLock[$(item).attr('data_pid')] == undefined) {
+                    comcountLock[$(item).attr('data_pid')] = true;
+                  }
+                  if (index >= comcountNum) {
+                   $(item).click(function () {
+                    if (comcountLock[$(this).attr('data_pid')]) {
+                     var pid = $(this).attr('data_pid')
+                     var tid = $(this).attr('data_tid')
+                     var commentItemid = articalID
+                     var postData = btoa('uid=&time='+new Date().getTime());
+                     var data = {"app": "news", "itemid": commentItemid, "itemtype": "0", "authorid": '11111111', "author": '11111111', "tid": tid, "pid": pid, "data": postData};
+                      $.ajax({
+                        url: 'http://newcomment.cntv.cn/comment/agree',
+                        type: "post",
+                        data: data,
+                        dataType: 'jsonp',
+                        jsonp: 'jsonp_callback',
+                        jsonpCallback: 'callback',
+                        success: function (_data) {
+                         console.log(_data)
+                        },
+                        timeout: 10000,
+                        error: function (e) {
+                        	console.log(e)
+                         //warnbox("请求超时，请检查网络或者重新刷新页面！")
+                        }
+                      });
+                      var agreeNum = $(this).children('span').text()-0;
+                      $(this).children('img').attr('src', './img/agree-on.png').next().text(agreeNum+1).css('color', '#C52106');
+                      comcountLock[$(this).attr('data_pid')] = false;
+                    } else {
+                      $('.prompt-layer').show().animate({
+                        opacity: 1
+                      },500, 'linear');
+                      setTimeout(function () {
+                        $('.prompt-layer').animate({
+                          opacity: 0
+                        },300, 'linear', function () {
+                          $(this).hide();
+                        });
+                      }, 1500);
+                      return
+                    }
+                   })
+                  }
+                })
+                comcountNum = comcount;
+                this.viewMore();
+            }
+        },
+        getAllReply: function (id, count) {
+            var drul = "http://common.newcomment.cntv.cn/comment/list?app=news&itemid=" + articalID + "&replyid=" + id + "&itemtype=0&prepage=" + count + "&jsonp_callback=test.moreReplySuccess";
+            this.addScript(drul);
+        },
+        moreReplySuccess: function (datas) {
+            var data = datas.data;
+            var id = data.replyid;
+            var sttrd = '';
+            for (var z in data.reply) {
+                str = "";
+                var contenteach = data.reply[z];
+                str += '<div class="reply">'
+                str += '<p class="name">' + contenteach.author + '</p>  ';
+                str += '<p class=" wz fs ">' + contenteach.message + '</p>';
+                str += '<div class="zhankai">展开<b></b></div><div class="shouqi" style="display:none;">收起<b></b></div>';
+                str += '</div>'
+                sttrd = str + sttrd;
+            }
+            $('#comment-' + id + ' .reply_container').html(sttrd);
+            $('.fs').each(function () {
+                $(this).removeClass('fs');
+                var height = ($(this).css('font-size').replace('px', ''))*1.4;
+                if ($(this).height() > height) {
+                    $(this).height('1.4em');
+                } else {
+                    $(this).next().hide();
+                }
+                ;
+            })
+            $('.zhankai').click(function () {
+                $(this).prev().css("height", 'auto');
+                $(this).hide();
+                $(this).next().show();
+            })
+            $('.shouqi').click(function () {
+                // var height = ($(this).prev().prev().css('font-size').replace('px', ''))*1.4;
+                $(this).prev().prev().css("height", '1.4em');
+                $(this).hide();
+                $(this).prev().show();
+            })
+
+        },
+        //阅读数
+        getReadCount: function () {
+            //  var iid = articalID,        //文章id
+            //readCoundUrl='http://st.app.cntvwb.cn/stat/getac?itype=news&iid='+iid+'&cb=test.readCountDataSuccess';
+            //readPostUrl='http://st.app.cntvwb.cn/stat/updatec?itype=news&iid='+iid,
+            //      this.addScript(readPostUrl);
+            //this.addScript(readCoundUrl);
+            //http://115.182.9.166/api/rest/clicknum?id=ArtiSLqVwAnDomAdR0q6pxoV170504
+            //http://api.cportal.cctv.com/api/rest/clicknum?id=ArtiSLqVwAnDomAdR0q6pxoV170504
+            //http://115.182.9.166/api/rest/liveClick?itype=news&iid=LiveDkoEhRq88s5mACsmOeYE170506&cb=1
+            //http://api.cportal.cctv.com/api/rest/liveClick?itype=news&iid=LiveDkoEhRq88s5mACsmOeYE170506
+
+            var iid = articalID,        //文章id
+                // readCoundUrl = 'http://api.cportal.cctv.com/api/rest/clicknum?itype=news&id=' + iid + '&cb=test.readCountDataSuccess';
+                readCoundUrl ='http://nc.api.cportal.cctv.com/api/rest/clicknum?itype=news&id=' + iid + '&cb=test.readCountDataSuccess';
+            this.addScript(readCoundUrl);
+        },
+        readCountDataSuccess: function (data) {
+            var rc = data.data.vc;
+            $('.yuedu').text(rc + ' 人已阅');
+
+        },
+        getDateDiff: function (dateTimeStamp) {
+            var minute = 1000 * 60;
+            var hour = minute * 60;
+            var day = hour * 24;
+
+            var now = new Date().getTime();
+            var diffValue = now - dateTimeStamp;
+
+            var weekC = diffValue / (7 * day);
+
+            var newTime = new Date(dateTimeStamp);
+            var nianyueri = this.gshtime(newTime);
+            //console.log(nianyueri);
+            var dayC = diffValue / day;
+            var hourC = diffValue / hour;
+            var minC = diffValue / minute;
+            if (weekC >= 1) {
+                result = nianyueri;
+            }
+            else if (dayC >= 1 && dayC < 7) {
+                result = parseInt(dayC) + "天前";
+            }
+            else if (hourC >= 1 && hourC < 24) {
+                result = parseInt(hourC) + "个小时前";
+            }
+            else if (minC >= 20 && minC < 60) {
+                result = parseInt(minC) + "分钟前";
+            } else
+                result = "刚刚";
+            return result;
+        },
+        //事件转换
+        gshtime: function (time) {
+            var year_ = time.getFullYear();       //年</span>
+            var month_ = time.getMonth() + 1;  //月
+            var day_ = time.getDate();         //日
+            var str = "";
+            str += year_ + '-';
+            if (month_ < 10)
+                str += "0";
+            str += month_ + '-';
+            if (day_ < 10)
+                str += "0";
+            str += day_;
+            return (str);
+        },
+        viewMore: function (le) {
+            var that = this;
+            if (comcount >= quanjuTotal) {
+                $(".lone").css("display", "none");
+            }
+            $(".lone-wz").click(function () {
+                if (that.global.isClient) {
+                    that.js2cmdcomment();
+                } else {
+                    that.m++;
+                    if (quanjuTotal % 5 == 0) {//除的尽
+                        var n = parseInt(quanjuTotal / 5);
+                    } else {//除不尽
+                        var n = parseInt(quanjuTotal / 5) + 1;
+                    }
+                    if (n == that.m) {
+                        test.commentList(that.m);
+                        $(".lone").css("display", "none");
+                    } else {
+                        test.commentList(that.m);
+                    }
+                    $(this).unbind("click")
+                }
+            });
+        },
+        share: function () {
+            $('.share .xl').click(function () {
+                window.location = "js2cmd:doSinaShare";
+            });
+            $('.share .wx').click(function () {
+                window.location = "js2cmd:doWeixinShare";
+            });
+            $('.share .py').click(function () {
+                window.location = "js2cmd:doWeixinCircleShare";
+            });
+            $('.share .more').click(function () {
+                window.location = "js2cmd:doSystemShare";
+            })
+        }
+    };
+    ///*测试地址*/ http://115.182.9.166/api/rest/articleInfo?id= 正式 http://api.cportal.cctv.com/api/rest/articleInfo?id=
+    var test = new DataAcquisition('http://api.cportal.cctv.com/api/rest/articleInfo?id=', 'http://newcomment.cntv.cn/comment/gettree');
+    function callback(data) {
+        test.callback(data);
+    }
+    /*判断终端类型*/
+    var browser = {
+        versions: function () {
+            var ua = navigator.userAgent;
+            return {
+                iphone: ua.indexOf('iPhone') > -1,
+                android: ua.indexOf('Android') > -1,
+                mobile: /AppleWebKit.*Mobile/i.test(ua) || /Android/i.test(ua) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(ua)),
+                isIE7: /MSIE 7.0|MSIE 8.0|MSIE/i.test(ua),
+                WinPhone: /Windows Phone/i.test(ua),
+                isWeChat: /MicroMessenger/i.test(ua),
+                isIpad: /ipad/i.test(ua)
+            }
+        }()
+    }
+    function transGutype(gutype) {
+        if ("粗切" == gutype) {
+            return 0;
+        }
+        if ("精切" == gutype) {
+            return 1;
+        }
+        return gutype;
+    }
+    /*调用播放视频*/
+    function getImgDown() {
+        $("#content_body img").live("click", function (evt) {
+        });
+    }
+    /*正文图片下载*/
+    function JSSetImageUrl(ImageUrl) {
+        if (browser.versions.WinPhone) {
+            window.external.notify("js2cmd:StartDownloadImage@" + ImageUrl);
+        }
+        else {
+            window.location = "js2cmd:StartDownloadImage@" + ImageUrl;
+        }
+    }
+    /*返回文章信息*/
+    /*版本<=728客户端调用backInfoIOS和backInfoAndriod；>728执行postMwssage()，向客户端发送数据*/
+    function backInfoIOS() {
+        var infojson = "{" + "\"itemTitle\":" + "\"" + itemtitle.replace(/"/g, "\\\"") + "\",\"itemType\":\"" + itemtype + "\"," + "\"itemID\":" + "\"" + articalID + "\"," + "\"detailUrl\":" + "\"" + window.location.href + "\",\"allow_praise\":\"" + allow_praise + "\",\"allow_share\":\"" + allow_share + "\",\"allow_comment\":\"" + allow_comment + "\",\"allow_ad\":\"" + allow_ad + "\",\"sharedImageUrl\":\"" + sharedImageUrl + "\"}";
+        return infojson;
+    }
+    function backInfoAndriod() {
+        var infojson = "{" + "\"itemTitle\":" + "\"" + itemtitle.replace(/"/g, "\\\"") + "\",\"itemType\":\"" + itemtype + "\"," + "\"itemID\":" + "\"" + articalID + "\"," + "\"detailUrl\":" + "\"" + window.location.href + "\",\"allow_praise\":\"" + allow_praise + "\",\"allow_share\":\"" + allow_share + "\",\"allow_comment\":\"" + allow_comment + "\",\"allow_ad\":\"" + allow_ad + "\",\"sharedImageUrl\":\"" + sharedImageUrl + "\"}";
+        window.recommend.setPageInfo(infojson);
+        return false;
+    }
+
+    /*在读取数据之后调用*/
+    function postMwssage() {
+        var infojson = "{" + "\"itemTitle\":" + "\"" + itemtitle.replace(/"/g, "\\\"") + "\",\"itemType\":\"" + itemtype + "\"," + "\"itemID\":" + "\"" + articalID + "\"," + "\"detailUrl\":" + "\"" + window.location.href + "\",\"allow_praise\":\"" + allow_praise + "\",\"allow_share\":\"" + allow_share + "\",\"allow_comment\":\"" + allow_comment + "\",\"allow_ad\":\"" + allow_ad + "\",\"sharedImageUrl\":\"" + sharedImageUrl + "\"}";
+        if(browser.versions.iphone){
+         window.webkit.messageHandlers.GetShareImageUrl.postMessage(infojson);
+        }else{
+         window.recommend.setPageInfo(infojson);
+        }
+    }
+
+    function downApp() {
+        openApp("cntvnews://app.cntv.cn/", "../../download/news/index.html");
+    }
+    function openApp(clientUrl, fail) {
+        var the_href = "#";
+        if (browser.versions.iphone) {
+            if (browser.versions.isWeChat) {
+                var jumUrl = encodeURIComponent(clientUrl);
+                window.location = " http://a.app.qq.com/o/simple.jsp?pkgname=cn.cntvnews" + '&g_f=' + jumUrl;
+            } else {
+
+                the_href = clientUrl;
+                window.location = the_href;
+                setTimeout(function () {
+                    window.location = "https://itunes.apple.com/us/app/yang-shi-xin-wen/id467289231?ls=1&amp;mt=8";
+                }, 500);
+            }
+        } else {
+            if (browser.versions.isWeChat) {
+                var jumUrl = encodeURIComponent(clientUrl);
+                window.location = " http://a.app.qq.com/o/simple.jsp?pkgname=cn.cntvnews" + '&android_schema=' + jumUrl;
+            }  else {
+                window.location = clientUrl;
+                setTimeout(function () {
+                    $('.t_zhe').show();
+                    $('.li_one').click(function () {
+                        $('.t_zhe').hide();
+                    });
+                    $('.li_two').click(function () {
+                        $.ajax({
+                            dataType: "jsonp",
+                            jsonp: 'cb',
+                            url: "http://appms.app.cntvwb.cn/appms/api/version.do?action=release-GetNewVersions&applyName=1372992399",
+                            success: function (data) {
+                                $('.t_zhe').hide();
+                                window.location = data.data.versionsUrl;
+                            }
+                        });
+
+                    });
+                }, 500);
+
+            }
+        }
+    }
+    function showVideoImg() {
+        if (isListVideo == true) {
+            $(".videoGuidCode").show();
+        } else {
+            $("#playerbg").show();
+        }
+        $("article").css("margin-top", 0);
+    }
+    function replaceContent(content) {
+        var reg5 = /(\[!--begin:htmlVideoCode--\][^{][^[]*\[!--end:htmlVideoCode--\])/g;
+        content = content.replace(reg5, "<p type='hidden' data='$1' name='0'/></p>");
+        return content;
+    }
+    /*多音频控制*/
+    var beforeInd='';
+    var stopId_v;
+    function allStop(ind){
+        if(!href_client){
+            $('.video').each(function () {
+                stopId_v = $(this).attr('id');
+                document.getElementById('html5Player-'+ stopId_v).pause();
+            })
+        }
+
+        // document.getElementById('html5Player-videoGuidCode1').pause();
+        // for(var i=0;i<adoLen;i++){
+        //     if(ind!=i){
+        //         var ifId = document.getElementById('if'+i).contentWindow;
+        //         ifId.stop();
+        //     }
+        // }
+        if(beforeInd == ''){
+            beforeInd=ind;
+        }
+        if(beforeInd!=ind){
+            var ifId = document.getElementById('if'+beforeInd).contentWindow;
+            ifId.stop();
+            beforeInd=ind;
+        }
+
+    }
+
+    function allStopApp(){
+        for(var i=0;i<adoLen;i++){
+            var ifId = document.getElementById('if'+i).contentWindow;
+            ifId.stop();
+        }
+    }
+
+    function h5requestEvent(b){
+        window.recommend.h5requestEvent(b)
+    }
+
+    // // 添加视频监听
+    // setTimeout(function(){
+    //     $('.video').each(function(){
+    //         var vid=$(this).find('video').attr('id');
+    //         document.getElementById(vid).addEventListener('play', function () {
+    //             allStopApp();
+    //         });
+    //     })
+    // },1000);
+
+</script>
+<div class="bottom"></div>
+<!--浮层广告-->
+<section id="ads_floatbot">
+ <a href="#"><img /></a>
+ <span class="ads-close"></span>
+</section>
+<img src="" id='img' style="opacity: 0" />
+<script type="application/javascript">
+
+    var advertising = function () {
+        this.thelink = document.getElementById("hasApp");
+        this.thelink2 = document.getElementById("hasApp2");
+        this.ClickClient();
+    };
+    advertising.prototype = {
+        ClickClient: function () {
+            this.thelink.onclick = function () {
+                opaDvertising.hasApp("hasApp", "cntvnews://app.cntv.cn/", "cntvnews://app", "http://download.cntv.cn/app/cctvnews/index.html");
+            }
+            this.thelink2.onclick = function () {
+                opaDvertising.hasApp("hasApp2", "cntvnews://app.cntv.cn/", "cntvnews://app", "http://download.cntv.cn/app/cctvnews/index.html");
+            }
+        },
+        applink: function (fail) {
+            return function () {
+                var clickedAt = +new Date;
+                console.log(clickedAt);
+                // During tests on 3g/3gs this timeout fires immediately if less than 500ms.
+                setTimeout(function () {
+                    // To avoid failing on return to MobileSafari, ensure freshness!
+                    if (+new Date - clickedAt < 2000) {
+                        window.location = fail;
+                    }
+                }, 500);
+            };
+        },
+        hasApp: function (elmId, andUrl, iPhoneUrl, fail) {
+            var thelinkID = document.getElementById(elmId);
+            if (browser.versions.android) {
+                thelinkID.setAttribute("href", andUrl);
+                thelinkID.onclick = this.applink(fail);
+                thelinkID.click();
+            } else if (browser.versions.iphone) {
+                thelinkID.setAttribute("href", iPhoneUrl);
+                thelinkID.onclick = this.applink(fail);
+                thelinkID.click();
+            } else {
+                window.location.href = "http://app.cntv.cn/index.shtml";
+            }
+        }
+    }
+
+    var opaDvertising = new advertising();
+</script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    // 微信配置
+    //Ajax
+    function getAjax(url, data, cb, spacial) {
+        $.ajax({
+            url: url,
+            type: "get",
+            data: data,
+            dataType: 'jsonp',
+            success: function (_data) {
+                cb(_data)
+            },
+            timeout: 10000,
+            error: function () {
+                //warnbox("请求超时，请检查网络或者重新刷新页面！")
+            }
+
+        });
+    }
+
+    var data = {"appid": "newstiket", "url": encodeURIComponent(encodeURIComponent(window.location.href))};
+    getAjax("http://api.cntv.cn/Apicommon/index?&path=iphoneInterface/general/getWeiXinSignature.jsonp", data, weixinSucess);
+    function weixinSucess(data) {
+        wx.config({
+            debug: false,
+            appId: "wx2723c0deaa5a97e9",
+            timestamp: data.timestamp,
+            nonceStr: data.nonceStr,
+            signature: data.signature,
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] //功能列表，我们要使用JS-SDK的什么功能
+        });
+    }
+
+    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在 页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready 函数中。
+    wx.ready(function () {
+        // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareTimeline({
+            title: weChatShare.title, // 分享标题
+            link: window.location.href,
+            imgUrl: weChatShare.imgUrl // 分享图标
+        });
+        // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareAppMessage({
+            title: weChatShare.title, // 分享标题
+            desc: weChatShare.brief, // 分享描述
+            link: window.location.href,
+            imgUrl: weChatShare.imgUrl, // 分享图标
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+        });
+    });
+    wx.error(function (res) {
+        console.log("失败");
+    });
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?019794186c954b4b5c8cfa41f0b572ae";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+    // var _gsq = _gsq || [];
+    // (function () {
+    //     var s = document.createElement('script');
+    //     s.type = 'text/javascript';
+    //     s.async = true;
+    //     s.src = 'http://app.cntv.cn/special/gridsum/2762/gs.js';
+    //     var    firstScript = document.getElementsByTagName('script')[0];
+    //     firstScript.parentNode.insertBefore(s, firstScript);
+    // })();
+</script>
+
+
+<!--<script type="text/javascript" src="js/html5_audio.js?20180402"></script>-->
+</body>
+</html>

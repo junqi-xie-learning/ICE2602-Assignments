@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta property="wb:webmaster" content="88f4387d2a6e5500"/>
+    <script>
+        // var u = window.location.href;
+        // if (u.indexOf('http:') >= 0) {
+        //     u = u.replace('http', 'https');
+        //     window.location.href = u;
+        // }
+    </script>
+    <!-- build:css css/lib/common.css -->
+    <link rel="stylesheet" href="css/lib/normal.css"/>
+    <link rel="stylesheet" href="css/lib/base.css"/>
+    <link rel="stylesheet" href="css/lib/public.css"/>
+    <link href="css/lib/iSlider.min.css" rel="stylesheet">
+    <!-- endbuild -->
+    <!-- build:css css/custom/video_custom.css -->
+    <link rel="stylesheet" href="css/custom/header.css"/>
+    <link rel="stylesheet" href="css/custom/global.css"/>
+    <link rel="stylesheet" href="css/custom/login_new.css"/>
+    <link rel="stylesheet" href="css/custom/userStatus.css"/>
+    <link rel="stylesheet" href="css/custom/video.css"/>
+    <link rel="stylesheet" href="css/custom/toTop.css"/>
+    <!-- endbuild -->
+    <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=443494193&debug=true" type="text/javascript"
+            charset="utf-8"></script>
+    <script src="js/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/player/sewise.player.min.js"></script>
+
+    <script src="js/custom/tool.js"></script>
+    <title>央视频移动网</title>
+    <script type="text/javascript">
+        var mobileurl = 'https://www.newscctv.net/219h5/#/article';
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent,
+                    app = navigator.appVersion;
+                return { //移动终端浏览器版本信息
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+
+        if (browser.versions.mobile || browser.versions.ios || browser.versions.android ||
+            browser.versions.iPhone || browser.versions.iPad) {
+            window.location.href = mobileurl + '?videoId=' + _getRequest()['videoId'];
+        }
+    </script>
+</head>
+
+<body id="body">
+
+<div class="header">
+    <div class="heart">
+        <!--<a href="../index.html" class="logo-a"><img src="img/logo.png" alt="" class="logo_img"></a>-->
+        <a href="../index.html" class="logo-a"><img src="img/logo.png" alt="" class="logo_img"></a>
+
+        <div class="nav">
+            <div class="box choice_box">
+                <img src="img/choice_no.png" alt="">
+                <span>精选</span>
+            </div>
+            <div class="box map_box">
+                <img src="img/map_no.png" alt="">
+                <span>地图</span>
+            </div>
+            <!--<div class="split"></div>-->
+            <div class="box burst_box">
+                <img src="img/burst_no.png" alt="">
+                <span>快讯</span>
+            </div>
+            <div class="box polity_box">
+                <img src="img/polity_no.png" alt="">
+                <span>时政</span>
+            </div>
+            <div class="box matrix_box">
+                <img src="img/matrix_no.png" alt="">
+                <span>矩阵号</span>
+            </div>
+            <a href="" class="login header-login">登录</a></div>
+    </div>
+</div>
+
+<div class="main-box">
+    <!--视频大框-->
+    <div class="video-box">
+        <!--加载失败-->
+        <div class="loadErr">
+            获取视频失败</br>点击重新加载
+        </div>
+        <!--加载动画-->
+        <div class="load-box">
+            <img src="img/video_loading.gif" alt="" class="loadgif">
+        </div>
+        <div id="video-container">
+            <!--flash提示-->
+            <div class="flash-box" id="flash">
+                <div class="flash-box-flex">
+                    <div class="flash-cctv-logo"></div>
+                    <div class="flash-logo"></div>
+                    <a href='http://www.adobe.com/go/getflash' target='_blank' class="flash-text">点击启用或更新 Adobe Flash Player</a>
+                </div>
+            </div>
+            <div class="video-tips-layer" id="video-tips-layer">
+                <p>抱歉，因版权原因</p>
+                <p>您所在的地区暂时无法观看此视频</p>
+            </div>
+            <div class="vr" id="vr"></div>
+        </div>
+    </div>
+    <!--文章大框-->
+    <div class="container">
+        <!--头部-->
+        <div class="top-info">
+            <span class="type_icon"></span>
+            <img class="num smaller-icon" src="img/person_black.png">
+            <span class="people-num"></span>
+            <img class="split" src="img/split.png">
+            <img class="timer smaller-icon" src="img/clock_black.png">
+            <span class="public-time"></span>
+        </div>
+        <p class="title"></p>
+
+        <div class="icon-box">
+            <img src="img/default_dpet.png" class="deptImg raidus">
+            <a href="">
+                <span class="deptName"></span>
+            </a>
+            <span class="videoTime"></span>
+        </div>
+        <p class="article"></p>
+    </div>
+</div>
+<!--评论大框-->
+<div class="comment-box"></div>
+
+<img src="img/toTop.png" alt="" class="toTop">
+
+<!--底部字-->
+<!--<div class="cp">-->
+<p class="copy-right">
+    © 2017-2020 央视频移动网 保留所有权利<br>
+    <a href="http://www.beian.miit.gov.cn" target="_blank">京ICP备16065310号-5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11040202120012" target="_blank"><img src="img/police_icon.png"/>京公网安备11040202120012号</a>
+</p>
+<!--</div>-->
+
+<!--登录-->
+<div class="login-layer" id="login-layer">
+    <div class="login-panel" id="login-panel">
+        <div class="login-layer-close" id="login-layer-close"></div>
+        <!--标签组-->
+        <div class="label-box flex-row-btw-center">
+            <div class="label label-normal label-selected flex-row-center-center" id="label-normal">
+                <span class="slash">///////</span>
+                <span class="text">普通用户登录</span>
+                <span class="slash">///////</span>
+            </div>
+            <div class="label label-profession  flex-row-center-center" id="label-profession">
+                <span class="slash">///////</span>
+                <span class="text">专业用户登录</span>
+                <span class="slash">///////</span>
+            </div>
+        </div>
+        <!--普通用户-->
+        <div class="login-main login-main-normal" style="" id="login-main-normal">
+            <!--title-->
+            <div class="title flex-row-center-center">
+                <div class="line"></div>
+                <span class="text">第三方登录平台</span>
+                <div class="line"></div>
+            </div>
+            <!--选择-->
+            <div class="choose flex-row-center-center">
+                <div class="choose-item flex-col-center-center" id="go_wb">
+                    <img src="./img/wblogo.png" alt="">
+                    <span>微博账号</span>
+                </div>
+                <div class="choose-item flex-col-center-center" id="go_wx">
+                    <img src="./img/wxlogo.png" alt="">
+                    <span>微信账号</span>
+                </div>
+            </div>
+        </div>
+        <!--专业用户-->
+        <div class="login-main login-main-profession" style="display: none;" id="login-main-profession">
+            <!--选择-->
+            <div class="choose flex-row-center-center">
+                <div class="choose-item flex-col-center-center" id="go_cms">
+                    <img src="./img/content-icon.png" alt="">
+                    <span>内容管理</span>
+                </div>
+                <div class="choose-item flex-col-center-center" id="go_upload">
+                    <img src="./img/material-icon.png" alt="">
+                    <span>素材回传</span>
+                </div>
+            </div>
+            <!--注册-->
+            <div class="register-box flex-col-center-center" id="go_register">
+                <div class="register">注册矩阵号</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- build:js VR -->
+<script src="js/vr/three.min.js"></script>
+<script src="js/vr/hls.js"></script>
+<script src="js/vr/CanvasRenderer.js"></script>
+<script src="js/vr/Projector.js"></script>
+<script src="js/vr/mxreality.js"></script>
+<!-- build:js js/custom/video_custom.js -->
+<script src="js/custom/config.js"></script>
+<script src="js/custom/tool.js"></script>
+<script src="js/custom/statistic.js"></script>
+<script src="js/custom/template.js"></script>
+<script src="js/custom/debug.js"></script>
+<script src="js/custom/userStatus.js"></script>
+<script src="js/custom/tips.js"></script>
+<script src="js/custom/auth.js"></script>
+<!--<script src="js/custom/login.js"></script>-->
+<script src="js/custom/scrollLoader.js"></script>
+<script src="js/custom/comments.js"></script>
+<script src="js/custom/video.js"></script>
+<script src="js/custom/nav.js"></script>
+<script src="js/custom/toTop.js"></script>
+<script src="js/custom/login_new.js"></script>
+<!-- endbuild -->
+
+<script>
+
+    var Debugger = new Debug();
+    var toTop = new ToTop();
+    toTop.init();
+
+    var videoDetail = new VideoDetail();
+    videoDetail.init();
+    var comments = new Comments();
+    var scrollLoader = new ScrollLoader();
+
+
+    var nav = new Nav();
+    nav.init();
+    userStatus()
+    var tips = new Tips();
+
+    var auth = new Auth({
+        error: function (msg) {
+            tips.show(null, msg)
+        },
+        logined: function (authsign) {
+            _videoPageView(authsign)
+            userStatus()
+            comments.cid = null
+            comments.init();
+        },
+        noLogin: function () {
+            var user = localStorage[Config.localStorage_prefix + 'user']
+            try {
+                user = JSON.parse(user)
+            } catch (e) {
+                localStorage.removeItem(Config.localStorage_prefix + 'user')
+                user = {}
+            }
+            var authsign = user.authsign
+            _videoPageView(authsign)
+        }
+    });
+
+    var login_New = new Login_New();
+
+
+    comments.reg('empty', function () {
+        tips.show(1);
+    });
+    comments.reg('tooLong', function () {
+        tips.show(2);
+    });
+    comments.reg('noLogin', function () {
+        login_New.show();
+    });
+    comments.reg('submitMsg', function (msg) {
+        tips.show(null, msg);
+    });
+    comments.init();
+
+    scrollLoader.reg('onBottom', function () {
+        comments.load();
+    });
+    scrollLoader.init();
+
+
+    $('.header-login').on('click', function () {
+        login_New.show()
+        return false
+    });
+
+</script>
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1261297706'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261297706' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+
+</html>

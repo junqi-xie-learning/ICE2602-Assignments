@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>《经济半小时》 20190531 科技成果转化有“真经”</title>
+    <meta name="keywords" content="本期节目主要内容：
+    目前，中国经济领域各大高校的科技研发工作热火朝天，但很多科研成果却难以转化为产值，上海交通大学一直在进行将科技成果转化的科技实验，本期节目将带您了解科技成果转化的状况。
+（《经济半小时》 20190531 科技成果转化有“真经”）"/>
+    <meta name="description" content="本期节目主要内容：
+    目前，中国经济领域各大高校的科技研发工作热火朝天，但很多科研成果却难以转化为产值，上海交通大学一直在进行将科技成果转化的科技实验，本期节目将带您了解科技成果转化的状况。
+（《经济半小时》 20190531 科技成果转化有“真经”）"/>
+    <link rel="stylesheet" href="http://app.cntv.cn/special/r/css/newdetail/base.css"/>
+    <link rel="stylesheet" href="http://app.cntv.cn/special/r/css/newdetail/index.css?20180516"/>
+    <script type="text/javascript" src="http://js.player.cntv.cn/creator/swfobject.js"></script>
+    <script type="text/javascript" src="http://js.player.cntv.cn/creator/common_standard_multi.js"></script>
+    <script type="text/javascript" src="http://js.player.cntv.cn/creator/live_common.js"></script>
+    <style>
+        .detail .title_show .desc .vset_img img {
+            height: auto; }
+        .detail .loading img {
+            height: auto; }
+        .detail .t_zhe{
+            z-index: 9999;;
+        }
+    </style>
+    <script type='text/javascript'>
+        var vsid="C10329"
+        var guid="9bfb7d74c26a4ddca8f54f7700b4c46d"
+    </script>
+</head>
+<body>
+<div class="detail" id="detail" style="display: none;" v-show="download">
+<div v-if="hash==0">
+<div class="title_show">
+    <cntv-nav :tags="tags" :download="download"></cntv-nav>
+    <div class="video">
+        <div class="anniu" v-if="videoInfo.img">
+            <cntv-video :vsid="'video'+videoInfo.vid" :vpostimg="'http://app.cntv.cn/special/r/img/newdetail/change.jpg'"
+                        :vguid="videoInfo.vid"></cntv-video>
+        </div>
+    </div>
+    <div class="open">
+        
+        <div class="open_img" @click="openApp(videoInfo.title)">
+            <img src="http://app.cntv.cn/special/r/img/newdetail/open.png" alt="d"/>
+        </div>
+        
+    </div>
+    <div class="list ">
+        <h1 class="list_text">《经济半小时》 20190531 科技成果转化有“真经”</h1>
+        <div class="list_img" v-on:click="changeDescStat()" v-if="videoInfo.vsetid">
+            <img src="http://app.cntv.cn/special/r/img/newdetail/list.png" alt=""/>
+        </div>
+    </div>
+
+<div class="desc " v-if="descShow">
+<div class="clear">
+    <div class="vset_img"><img :src="videoSet.videoset[0].img"></div>
+<div class="vset_detail">
+<div><span>栏目：</span><span>{{videoSet.videoset[0].name}}</span></div>
+<div><span>类型：</span><span>{{videoSet.videoset[0].fl}}</span></div>
+<div><span>频道：</span><span>{{videoSet.videoset[0].sbpd}}</span></div>
+<div><span>播出时间：</span><span>{{videoSet.videoset[0].sbsj}}</span></div>
+</div>
+</div>
+    <p v-html="videoSet.videoset[0].desc"></p>
+</div>
+</div>
+    
+        
+    
+<div class="title_scroll" v-if="videoX&&videoX.video&&videoX.video.length>0">
+    
+    <div class="head">
+        <div class="blue">
+            <span></span>
+            <h2 class="h2">选集</h2>
+        </div>
+        <div class="h_more" @click="jumpMore('01')">
+            更多
+        </div>
+    </div>
+    
+<div class="scroll_scroll">
+<ul class="ul_scroll" :style="'width:'+(videoX.video.length * 7.7+ 2 )+'rem'">
+<li v-for="item in videoX.video">
+<a :href="item.vsid?'http://m.app.cctv.com/vsetv/detail/'+item.vsid+'/'+item.vid+'/index.shtml':'http://m.app.cctv.com/video/detail/'+item.vid+'/index.shtml'">
+<div>
+{{item.t}}
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+    
+<div class="title_scroll" v-if="videoJ&&videoJ.video&&videoJ.video.length>0">
+    
+    <div class="head">
+        <div class="blue">
+            <span></span>
+            <h2 class="h2">精选</h2>
+        </div>
+        <div class="h_more" @click="jumpMore('02')">
+            更多
+        </div>
+    </div>
+    
+<div class="scroll_scroll">
+<ul class="ul_scroll" :style="'width:'+(videoJ.video.length * 7.7 + 2 )+'rem'">
+<li v-for="item in videoJ.video">
+<a :href="item.vsid?'http://m.app.cctv.com/vsetv/detail/'+item.vsid+'/'+item.vid+'/index.shtml':'http://m.app.cctv.com/video/detail/'+item.vid+'/index.shtml'">
+<div>
+{{item.t}}
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+    
+<div class="title_point" v-if="videoPoint.length>0">
+    
+    <div class="head">
+        <div class="blue">
+            <span></span>
+            <h2 class="h2">本期看点</h2>
+        </div>
+    </div>
+    
+<div class="scroll">
+<ul class="clear" :style="'width:'+(7.6*videoPoint.length+0.375)+'rem;'">
+<li v-for="item in videoPoint">
+<a :href="'http://m.app.cctv.com/video/detail/'+item.vid+'/index.shtml'">
+<div class="news left">
+<div class="news_video">
+    <img :src="item.img" alt=""/>
+    <div class="shadow"></div>
+<p class="time">{{item.len}}</p>
+</div>
+<div class="news_text">
+{{item.t}}
+</div>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+    
+<div class="title_video" v-if="flag&&videoSet&&videoSet.video&&(videoSet.video.length>0)" >
+    
+    <div class="head">
+        <div class="blue">
+            <span></span>
+            <h2 class="h2">相关视频</h2>
+        </div>
+    </div>
+    
+<ul>
+<li v-for="item in videoSet.video">
+<a :href="'http://m.app.cctv.com/video/detail/'+item.vid+'/index.shtml'">
+<div class="news left">
+<div class="news_video">
+    <img v-bind:src="item.img" alt=""/>
+    <div class="shadow"></div>
+<p class="time">{{item.len}}</p>
+</div>
+<div class="news_text">
+{{item.t}}
+</div>
+</div>
+</a>
+</li>
+</ul>
+</div>
+    
+    
+<div class="vote" v-if="showNum==1">
+<div class="head clear">
+<div class="blue">
+    <span></span>
+<div class="b_title">{{surveyData.details.body.title}}</div>
+    <div class="head_result" @click="changeEnd()" v-if="!showEnd">查看结果</div>
+    <div class="head_result" @click="changeEnd()" v-if="showEnd&&canBack">我要投票</div>
+</div>
+</div>
+    
+<div class="single answer clear" v-if="!showEnd">
+<p class="answer_title">{{surveyData.details.body.detail}}</p>
+<div class="clear" v-if="surveyData.questions">
+<div class="answer_con" v-for="(item,index) in surveyData.questions.data" v-if="item.type==1&&index<1">
+<p>{{index+1}}、{{item.title}}</p>
+<ul class="clear">
+<li class="clear" v-for="ques in item.item" :id="'id'+ques.id" @click="choose(item,ques)">
+    <div class="li_button" :class="questionChoice[ques.qid]==ques.id?'choose':''"></div>
+<div>{{ques.title}}</div>
+</li>
+</ul>
+</div>
+</div>
+    <div class="answer_button" v-if="questionId.length>=allNum" @click="vote()">提交完成</div>
+</div>
+<div class="result clear" v-if="showEnd">
+<div class="result_con" v-for="(item,index) in surveyData.questions.data" v-if="item.type==1&&index<1">
+<div class="result_title">{{index+1}}、{{item.title}}</div>
+<ul>
+<li class="interact_li"  v-for="(ques,index2) in item.item">
+<div class="result_answer">{{ques.title}}</div>
+<div class="result_du clear">
+<div class="result_left">
+    <div class="chang" :style="'width:'+Math.round(ques.hits*10000/item.hitsTotal)/100+'%'"></div>
+<div class="pre" v-if="ques.hits&&item.hitsTotal">{{Math.round((ques.hits/item.hitsTotal)*10000)/100}}%</div>
+    <div class="pre" v-if="!ques.hits||!item.hitsTotal">0%</div>
+</div>
+    <div class="dui" v-if="(questionChoice[ques.qid]==ques.id||questionChoice[ques.id]==ques.id)&&!canBack">
+        <div><img src="http://app.cntv.cn/special/r/img/newdetail/dui.png" alt=""/></div>
+        <div>
+            已投票
+        </div>
+    </div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+    
+<div class="question" v-if="showNum==2">
+<div class="head clear">
+<div class="blue">
+    <span></span>
+<div class="b_title">{{surveyData.details.body.title}}</div>
+    <div class="head_result" @click="changeEnd()" v-if="!showEnd">查看结果</div>
+    <div class="head_result" @click="changeEnd()" v-if="showEnd&&canBack">我要投票</div>
+</div>
+</div>
+    
+    
+<div class="multi answer clear" v-if="!showEnd">
+    <p class="answer_title"><div class="b_title">{{surveyData.details.body.detail}}</div></p>
+<div v-for="(item,index) in multiQuestion" v-if="(item.type==1||item.type==3)&&index<=nextNum&&index>(nextNum-1)">
+<div class="answer_con" v-if="item.type==1">
+<p>{{index}}、{{item.title}}</p>
+<ul class="clear">
+<li class="clear" v-for="ques in item.item" :id="'id'+ques.id" @click="choose(item,ques)">
+    <div class="li_button1" :class="questionChoice[ques.qid]==ques.id?'choose':''"></div>
+<div>{{ques.title}}</div>
+</li>
+</ul>
+</div>
+<div class="answer_con" v-if="item.type==3">
+<p>{{index}}、{{item.title}}</p>
+<ul class="clear">
+<li class="multi_li clear" v-for="ques in item.item" :id="'id'+ques.id" @click="choose(item,ques)">
+    <div class="li_button" :class="questionChoice[ques.id]==ques.id?'choose':''"></div>
+<div>{{ques.title}}</div>
+</li>
+</ul>
+</div>
+</div>
+    <div class="answer_button" @click="vote()" v-if="nextNum==questionNum&&Object.keys(choice).length==nextNum">提交完成</div>
+    <div class="answer_button" @click="changeNext()" v-if="nextNum!=questionNum&&Object.keys(choice).length==nextNum">提交并进行下一题</div>
+</div>
+    
+<div class="result clear" v-if="showEnd">
+<p>{{surveyData.details.body.detail}}</p>
+<div class="result_con duo_result" v-for="(item,index) in multiQuestion" v-if="(item.type==1||item.type==3)&&index<=endNum">
+<div class="result_title">{{index}}、{{item.title}}</div>
+<ul>
+<li v-for="(ques,index2) in item.item">
+<div class="result_answer">{{ques.title}}</div>
+<div class="result_du clear">
+<div class="result_left">
+    <div class="chang" :style="'width:'+Math.round(ques.hits*10000/item.hitsTotal)/100+'%'"></div>
+<div class="pre" v-if="ques.hits&&item.hitsTotal">{{Math.round((ques.hits/item.hitsTotal)*10000)/100}}%</div>
+    <div class="pre" v-if="!ques.hits||!item.hitsTotal">0%</div>
+</div>
+
+    <div class="dui" v-if="(questionChoice[ques.qid]==ques.id||questionChoice[ques.id]==ques.id)&&!canBack">
+        <div><img src="http://app.cntv.cn/special/r/img/newdetail/dui.png" alt=""/></div>
+        <div>
+            已投票
+        </div>
+    </div>
+</div>
+</li>
+</ul>
+</div>
+<div class="result_button" @click="changeEndNum()">{{endNum==1?'更多结果':'收起更多'}}</div>
+</div>
+</div>
+
+<div v-if="showNum==4&&chatData" v-for="item in chatData">
+<div class="talk">
+<div class="head clear">
+<div class="blue clear">
+<span></span>
+<div class="b_title">{{item.topictitle}}</div>
+<div class="head_peo" @click="goDetailPage(item.id)">{{chatNumberData[item.itemid]}}人参与</div>
+</div>
+</div>
+    
+<div class="talk_con">
+<div>{{item.content}}</div>
+</div>
+</div>
+</div>
+
+<div class="title_groom">
+    <div class="head">
+        <div class="blue">
+            <span></span>
+            <h2 class="h2">精彩推荐</h2>
+        </div>
+    </div>
+    
+<ul>
+<li class="groom clear" v-for="item in adviseList">
+<a :href="'http://m.app.cctv.com/video/detail/'+item.vid+'/index.shtml'">
+<div class="groom_left">
+    <img v-bind:src="item.imgUrl" alt=""/>
+    <div class="shadow"></div>
+<p class="time">{{item.video_length}}</p>
+</div>
+<div class="groom_right">
+<p class="p1">{{item.title}}</p>
+<span class="p2">{{item.cornerStr}}</span>
+</div>
+</a>
+</li>
+</ul>
+</div>
+
+<div class="title_ping" v-if="commentList.length > 1">
+    
+    <div class="head">
+        <div class="blue">
+            <span></span>
+            <h2 class="h2">全部评论</h2>
+        </div>
+    </div>
+    
+<ul>
+<li class="clear" v-for="(item,$index) in commentList" v-show="$index<5">
+    <div class="p_head">
+        <div>
+            <img src="http://app.cntv.cn/special/r/img/newdetail/header.png" alt=""/>
+        </div>
+    </div>
+<div class="p_content">
+<div class="c_name">{{item.author}}</div>
+<div class="c_infor">{{item.message}}</div>
+</div>
+</li>
+</ul>
+    <div class="more_comment"  @click="openApp(videoInfo.title)" v-show="commentList.length > 5"><img src="http://app.cntv.cn/special/r/img/newdetail/more_comment.png" /></div>
+    
+</div>
+<div class="loading">
+    <img src="http://app.cntv.cn/special/r/img/newdetail/copy.jpg" alt=""/>
+</div>
+<div class="t_zhe">
+    <div>
+        <p class="p_one">请先下载客户端</p>
+        <p class="p_two">即可使用弹幕播放器观看视频</p>
+        <ul>
+            <li class="li_one">
+                <img src="http://app.cntv.cn/special/r/img/newdetail/iknow1.png" alt=""/>
+            </li>
+            <li class="li_two">
+                <img src="http://app.cntv.cn/special/r/img/newdetail/downke1.png" alt=""/>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<div id="iScroll"  v-if="hash==1">
+<div class="title_groom">
+<div class="head">
+<div class="blue">
+    <span></span>
+{{videoName}}
+</div>
+</div>
+    
+<ul>
+<li class="groom clear" v-for="item in videoJump">
+<a :href="item.vsid?'http://m.app.cctv.com/vsetv/detail/'+item.vsid+'/'+item.vid+'/index.shtml':'http://m.app.cctv.com/video/detail/'+item.vid+'/index.shtml'">
+<div class="groom_left">
+    <img v-bind:src="item.img" alt=""/>
+    <div class="shadow"></div>
+<p class="time">{{item.len}}</p>
+</div>
+<div class="groom_right">
+<p class="p1">{{item.t}}</p>
+</div>
+</a>
+</li>
+</ul>
+    <div id="imgtext_loading">
+        <div class="load" v-show="hsflag">
+            <img src="http://app.cntv.cn/special/r/img/newdetail/load.gif" alt=""/>
+        </div>
+    </div>
+</div>
+</div>
+<cbox-login v-if="hash==2"></cbox-login>
+</div>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="http://app.cntv.cn/special/js/plug/jquery-1.8.2.min.js"></script>
+<script src="http://app.cntv.cn/special/r/js/newdetail/build.js?20180516"></script>
+<script>
+document.documentElement.style.fontSize = document.documentElement.clientWidth / 18.75 + 'px';
+window.onresize=function(){
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 18.75 + 'px';
+};
+function imgload(e) {
+    var wi = e.width,
+            hi = e.height,
+            wi = wi / hi * 1.89;
+    $(e).css({
+        "width": wi + "rem",
+        "height": 1.89 + "rem"
+    });
+setTimeout(function () {
+    var z = 40.4;
+$('.nav li').each(function () {
+    console.log($(this).width());
+    z = z + $(this).width() + 20;
+});
+    $('.nav ul').width(z);
+}, 100)
+}
+</script>
+<script type='text/javascript'>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }else{
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+var _gsq = _gsq || [];
+(function () {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'http://app.cntv.cn/special/gridsum/GWD-002971-160517/gs.js';
+    var    firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(s, firstScript);
+})();
+
+var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?019794186c954b4b5c8cfa41f0b572ae";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

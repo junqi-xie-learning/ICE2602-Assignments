@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="文汇报 数字报 电子报 看报 报纸 多媒体报刊">
+<meta name="description" content="文汇 报数字报 电子报 看报 报纸 多媒体报刊">
+<title>
+要闻
+</title>
+<link href="../../../tplimg/wh_global.css" rel="stylesheet" type="text/css">
+<link href="../../../tplimg/web.css"       rel="stylesheet" type="text/css">
+<link href="../../../tplimg/blue1.css"     rel="stylesheet" type="text/css">
+<link href="../../../tplimg/jquery.jscrollpane.css"  rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../../tplimg/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../../tplimg/period.js"></script>
+<script type="text/javascript" src="../../../tplimg/calendarp.js"></script>
+<script type="text/javascript" src="../../../tplimg/mpcore.js"></script>
+<script type="text/javascript" src="../../../tplimg/public.js"></script>
+<script type="text/javascript" src="../../../tplimg/range.js"></script>
+<script type="text/javascript" src="../../../tplimg/swfobject.js"></script>
+<script type="text/javascript">
+//画线--写title
+$(function(){
+var obj = document.getElementsByName('PagePicMap');	
+	if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)){
+	    //alert('你是使用IE')
+		obj[0].onmouseover=function(){drawLine(event.srcElement, event);};
+	    obj[0].onmouseout=function(){MouseOutMap();};
+	}else if (navigator.userAgent.indexOf('Firefox') >= 0){
+	    //alert('你是使用Firefox')
+		obj[0].onmouseover=function(){drawLine(arguments[0].target, arguments[0]);};
+		document.getElementById("leveldiv").onmouseout=function(){MouseOutMap();};
+	}else if (navigator.userAgent.indexOf('Opera') >= 0){
+	    //alert('你是使用Opera')
+		obj[0].onmouseover=function(){drawLine(event.srcElement, event);};
+	    obj[0].onmouseout=function(){MouseOutMap();};
+	}else{
+	    //alert('你是使用其他的浏览器浏览网页！')
+		obj[0].onmouseover=function(){drawLine(event.srcElement, event);};
+	    obj[0].onmouseout=function(){MouseOutMap();};
+	}
+		createTInfo();
+		replacePageTitle();
+});
+//素材窗口展示新形式;
+var tStr ="[";
+var T=[];
+function createTInfo(){
+/*
+a 类型
+b 小图
+c 预览地址
+*/
+var trArr= $("#tableInfo tr");
+var t01 = $("#tableInfo tr").length;
+	if(t01>0){
+		for(var i=0;i<t01;i++){
+			var trTemp = trArr[i];
+			var tabStr= $(trTemp).find('table')[0];
+			var objStr=$(trTemp).find('object')[0];
+				if(tabStr != undefined){
+					//有图片素材
+					var tr0 =$(tabStr).find('tr')[0];
+					var  imgPath= $(tr0).find('img')[0].src;
+					var tr1 = $(tabStr).find('tr')[1];
+					var imgText= $(tr1).find('td')[0].innerText;
+						imgText = imgText.replace(/\s/g, "").replace(/\"/g, "");
+					var oneInfo ="{'a':'images','b':'"+imgPath+"','c':'"+imgPath+"','d':'"+imgPath+"','text':'"+imgText+"'},";
+					tStr+=oneInfo;
+				}
+				if(objStr != undefined){
+					//有视频素材
+					var embed0 =$(objStr).find('embed')[0].src;
+					var vInfo ="{'a':'video','b':'../../../tplimg/video.gif','c':'"+embed0+"','text':''},";
+					tStr+=vInfo;
+				}
+		}
+	 var ln = tStr.length;
+	    tStr = tStr.substr(0,ln-1);
+	}
+	
+	 tStr+="]";
+	 var myobj=eval(tStr);
+	 T=myobj;
+}
+//title中关键字屏蔽
+function replacePageTitle(){
+	var reg= /[A-Z]+/g;
+	$("#BM li a:nth-child(2)").each(function(){
+		var aTitle=$(this).text();
+		var aIndex = aTitle.split(':')[0];
+		var aStr = aTitle.split(':')[1];
+		var aNum  = aIndex.match(reg);
+		if(aNum !=null){
+			aIndex_num = aIndex.replace(aNum[0],'');
+			$(this).empty();
+			$(this).append(aIndex_num+":"+aStr);
+		}
+	});
+	var str=$(".B_06_1").text();
+	var ms = str.match(reg);
+	if(ms !=null){
+		str = str.replace(ms[0],'');
+		$(".B_06_1").empty();
+		$(".B_06_1").append(str);
+	}
+}
+
+//页面热区点击跳转
+function goPage(){
+var hrefTemp = $("#leveldiv").attr("class");
+document.location.href = hrefTemp;
+}
+
+//通版显示和隐藏--配合calendar.js
+function mOver()
+{
+var obj1 = document.getElementById("graphics-js");
+	obj1.style.overflow="visible";
+}
+
+function mOut()
+{
+var obj1 = document.getElementById("graphics-js");
+	obj1.style.overflow="hidden";
+}
+</script>
+<script type="text/javascript" src="../../../tplimg/article.js"></script>
+<style type="text/css">
+.preart{
+margin-left: -4px;
+}
+#bmt{	
+}
+#tableInfo{
+display:none;
+}
+.BMTitle li a.titleInfo {
+width:155px;
+height:30px;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+}
+.BTArticle li a.articleInfo{
+width:220px;
+height:30px;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+}
+
+.B_06_3{
+width:380px;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+}
+
+</style>
+
+</head>
+<body>
+<SPAN id=leveldiv title="点击查看内容" onclick="goPage()";
+style="CURSOR: pointer; BORDER-TOP: #ff0000 2px solid; HEIGHT: 312px; BORDER-RIGHT: #ff0000 2px solid; WIDTH: 84px; BORDER-BOTTOM: #ff0000 2px solid; POSITION: absolute; LEFT: 617px; BORDER-LEFT: #ff0000 2px solid; Z-INDEX: 11; DISPLAY: none; TOP: 298px"></SPAN>
+<!--日历部分-->
+<div id="calendarBox" style="left:50%; margin-left:186px; top:121px; display:none" >
+  <form name=CLD>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan=7 align="center" height="24" bgcolor="#ffffff"><img src="../../../tplimg/d1.gif" width="7" height="11"  onclick="turnpage('SY',0)" />
+          <select name=SY  onchange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+            <script>for(i=2006;i<2051;i++){document.write('<option>'+i+'</option>')}</script>
+          </select>
+          <img src="../../../tplimg/d.gif" width="7" height="11" onClick="turnpage('SY',1)" /> <img src="../../../tplimg/d1.gif" width="7" height="11" onClick="turnpage('SM',0)" />
+          <select name=SM onChange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+            <script>for(i=1;i<13;i++) document.write('<option>'+i+'</option>')</script>
+          </select>
+          <img src="../../../tplimg/d.gif" width="7" height="11" style="cursor:pointer;" onClick="turnpage('SM',1)" /></td>
+      </tr>
+      <tr height="22" bgcolor="#e8e8e8">
+        <td align="center"><b>日</b></td>
+        <td align="center"><b>一</b></td>
+        <td align="center"><b>二</b></td>
+        <td align="center"><b>三</b></td>
+        <td align="center"><b>四</b></td>
+        <td align="center"><b>五</b></td>
+        <td align="center"><b>六</b></td>
+      </tr>
+      <script>
+            var gNum;
+            for(i=0;i<6;i++) {
+                document.write('<tr height="20">');
+                for(j=0;j<7;j++){
+                    gNum = i*7+j;
+                    document.write('<td align=center id="GD' + gNum +'" width="14%"><a id="CD' + gNum + '">');
+                    document.write('</a></td>');
+                }
+                document.write('</tr>');
+            } 
+      </script>
+    </table>
+  </form>
+</div>
+<!--日历牌,默认不显示;-->
+<!--下拉 版面导航strar  默认看不到-->
+<div id="BM" class="down" style="position:absolute;">
+<ul class="BMTitle">
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/1/10830.pdf></a>
+<a class="titleInfo" title="要闻" href=node_61.html>1: 要闻</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/2/20830.pdf></a>
+<a class="titleInfo" title="要闻" href=node_63.html>2: 要闻</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/3/30830.pdf></a>
+<a class="titleInfo" title="要闻" href=node_65.html>3: 要闻</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/4/40830.pdf></a>
+<a class="titleInfo" title="专题" href=node_64.html>4: 专题</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/5/50830.pdf></a>
+<a class="titleInfo" title="要闻" href=node_66.html>5: 要闻</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/6/60830.pdf></a>
+<a class="titleInfo" title="国际;人民政协" href=node_68.html>6: 国际;人民政协</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/7/70830.pdf></a>
+<a class="titleInfo" title="教科卫;广告" href=node_69.html>7: 教科卫;广告</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/8/80830.pdf></a>
+<a class="titleInfo" title="社会建设" href=node_67.html>8: 社会建设</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/9/90830.pdf></a>
+<a class="titleInfo" title="环球" href=node_70.html>9: 环球</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/10/100830.pdf></a>
+<a class="titleInfo" title="文化" href=node_60.html>10: 文化</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/11/110830.pdf></a>
+<a class="titleInfo" title="艺术" href=node_59.html>11: 艺术</a>
+</li>
+
+<li>
+<a class="Icon I01" href=../../../images/2018-08/30/12/120830.pdf></a>
+<a class="titleInfo" title="2018亚运会特刊" href=node_62.html>12: 2018亚运会特刊</a>
+</li>
+</ul>
+</div>
+<!--下拉 版面导航end-->
+
+<!--下拉 标题导航start 默认看不到-->
+<div id="BT" class="down" style="position:absolute;">
+<ul class="BTArticle">
+  
+  <li>
+      <a id="mp692122" class="articleInfo"  title="2025年，跻身世界体育产业发达城市行列"  href=content_692122.html>2025年，跻身世界体育产业发达城市行列</a>
+ </li> 
+  <li>
+      <a id="mp692126" class="articleInfo"  title="一张小小提示卡让“上海服务”更精细"  href=content_692126.html>一张小小提示卡让“上海服务”更精细</a>
+ </li> 
+  <li>
+      <a id="mp692130" class="articleInfo"  title="“啄木鸟”为公共场所不规范用语“找茬”"  href=content_692130.html>“啄木鸟”为公共场所不规范用语“找茬”</a>
+ </li> 
+  <li>
+      <a id="mp692134" class="articleInfo"  title="照顾金丝猴，让它们吃好还要玩好"  href=content_692134.html>照顾金丝猴，让它们吃好还要玩好</a>
+ </li> 
+  <li>
+      <a id="mp692138" class="articleInfo"  title="欢迎顶尖科技人才来沪开展科研"  href=./content_692138.html>欢迎顶尖科技人才来沪开展科研</a>
+ </li> 
+  <li>
+      <a id="mp692142" class="articleInfo"  title="加强上海与希腊各层面友好交流"  href=content_692142.html>加强上海与希腊各层面友好交流</a>
+ </li> 
+  <li>
+      <a id="mp692145" class="articleInfo"  title="促进八项规定精神在党内成风化俗"  href=content_692145.html>促进八项规定精神在党内成风化俗</a>
+ </li> 
+  <li>
+      <a id="mp692148" class="articleInfo"  title="为上海科创中心建设献计出力"  href=content_692148.html>为上海科创中心建设献计出力</a>
+ </li> 
+
+</ul>
+</div>
+<!--下拉 标题导航end-->
+
+<!--头上部 start-->
+<div class="BGX head">
+	<div class="w">
+		<div class="head_1">
+			<a class="logo" href="#"><img src="../../../tplimg/Logo.gif"></a>
+			<div class="menu">
+			<a href="http://www.whb.cn/" target="_blank" class="M1"> </a>
+			</div>
+		</div>
+		<div class="head_2">
+			<a href="#" class="M4"> </a>|
+			<a href="#" class="M5"> </a>|
+			<a href="#" class="M6" id="calendarBtn"> </a>|
+			<span class="time">
+			2018年08月30日 星期四
+			</span>
+		</div>
+	</div>
+</div>
+<!--头上部 end-->
+<!--中部正文 start-->
+<div class="w body clearfix" style="padding-bottom:25px">
+<div class="left B_01">
+	<div class="B_01_1" style="width: 395px;">
+    	<div class="B_01_3" id="graphics-js">
+		 <!--版面图gjy-->
+        
+<map name=PagePicMap><Area coords="12,32,280,32,280,40,12,40,12,32,6,45,283,45,283,66,6,66,6,45,6,73,40,73,40,77,6,77,6,73,80,84,110,84,110,76,177,76,177,84,209,84,209,110,80,110,80,84,6,80,72,80,72,114,74,114,74,118,216,118,216,75,223,75,223,71,285,71,285,161,248,161,248,166,215,166,215,162,200,162,200,166,75,166,75,162,60,162,60,166,6,166,6,80" shape="polygon" href="content_692122.html"><Area coords="33,188,255,188,255,195,33,195,33,188,13,198,275,198,275,215,13,215,13,198,9,219,281,219,281,266,227,266,227,271,9,271,9,219" shape="polygon" href="content_692126.html"><Area coords="74,278,215,278,215,285,74,285,74,278,9,290,288,290,288,306,9,306,9,290,9,311,227,311,227,315,281,315,281,368,264,368,264,371,9,371,9,311" shape="polygon" href="content_692130.html"><Area coords="9,381,97,381,97,386,9,386,9,381,33,391,256,391,256,398,33,398,33,391,25,402,263,402,263,419,25,419,25,402,9,426,40,426,40,430,9,430,9,426,9,433,74,433,74,511,212,511,212,455,220,455,220,441,212,441,212,424,281,424,281,437,257,437,257,450,281,450,281,563,234,563,234,567,9,567,9,433,76,424,209,424,209,503,76,503,76,424,83,505,202,505,202,508,83,508,83,505" shape="polygon" href="content_692134.html"><Area coords="290,31,385,31,385,40,290,40,290,31,290,45,384,45,384,57,290,57,290,45,290,62,386,62,386,144,321,144,321,148,290,148,290,62" shape="polygon" href="./content_692138.html"><Area coords="290,157,384,157,384,167,290,167,290,157,301,170,373,170,373,175,301,175,301,170,290,180,384,180,384,245,369,245,369,253,290,253,290,180" shape="polygon" href="content_692142.html"><Area coords="290,261,384,261,384,270,290,270,290,261,295,275,380,275,380,280,295,280,295,275,290,285,386,285,386,428,308,428,308,432,290,432,290,285" shape="polygon" href="content_692145.html"><Area coords="290,441,384,441,384,450,290,450,290,441,290,454,384,454,384,459,290,459,290,454,290,464,384,464,384,563,359,563,359,571,290,571,290,464" shape="polygon" href="content_692148.html"></map>
+<img id="Bantu" src=../../../images/2018-08/30/2/20830_b.jpg border=0 USEMAP=#PagePicMap>
+
+        <!--版面图gjy-->
+		
+		
+      </div>
+      <div class="B_01_4"></div>
+	</div>
+    <div class="B_01_2"> <a href="node_tc.htm" class="Btn01"></a>
+        <!--上一版，下一版gjy-->
+        <a class=preart href="node_61.html"><span class='Btn02'></span></a>
+        <a class=preart href="node_65.html"><span class='Btn03'></span></a>
+		<!--上一版，下一版gjy-->
+    </div>
+</div>
+<!--右部文章正文start-->
+<div class="left B_02 clearfix" style="padding-top:10px;">
+	<div class="BGN B_06">
+    	<div class="B_06_1">
+    	  
+2
+</div>
+        <div class="B_06_2" style="display:none">
+          
+2018-八月-30
+</div>
+        <div class="B_06_3">
+          
+要闻
+</div>
+    </div>
+    
+    <div class="B_02_1 B_07">
+        <div class="L_List clearfix" id="List_1">
+        	<div class="L_AUp L_AUpNo"><span class="Icon"></span></div>
+			<div style="width:530px; overflow:hidden;position:relative;">
+			<div class="L_body" style="width:555px;position:relative;">
+				<div id="textBody">
+				<!--引题标题副题gjy-->
+				
+<h1 class="title1"></h1>
+<h1 class="title">欢迎顶尖科技人才来沪开展科研</h1>
+<h2 class="title2">应勇会见上海交大李政道研究所所长维尔切克一行</h2>
+
+					<hr align="left" class="hr"/>
+					<!--素材列-->
+					<div class="img">
+						<div id="view" class="view">
+							<div class="s" id="ListShow"></div>
+						</div>
+						<div class="list">
+								<a href='#' class="i_u"></a>
+								<div id="list">
+									<ul>
+									<!--	缩略图	-->
+									</ul>
+								</div>
+							<a href='#' class="i_d"></a>
+						</div>
+						<div class="imgText"></div>
+				  </div>
+					  <table id="tableInfo" bgcolor=#efefef>
+</table>
+					
+					<div id="articleText" class="articleText textLR">
+					  
+<!--enpcontent--><P>&nbsp;&nbsp;&nbsp;&nbsp;本报讯&nbsp;上海市市长应勇昨天会见了上海交通大学李政道研究所所长、诺贝尔物理学奖获得者弗朗克·维尔切克一行。</P><P></P><P>&nbsp;&nbsp;&nbsp;&nbsp;应勇对维尔切克出任李政道研究所首任所长和李政道研究所实验楼开工建设表示祝贺。他说，当前上海正加快建设具有全球影响力的科技创新中心，持续加大科研投入，并在张江科学城设立了李政道研究所等重要科研机构。开放是上海最大的优势，人才是上海最大的需求。欢迎更多全球顶尖科学家和科技人才来沪开展科研活动，加强合作交流，以科技造福人类。上海将认真倾听科学家们的意见建议，努力为各类科研活动创造更好的条件，营造更好的环境。衷心祝愿李政道研究所在维尔切克先生带领下，在科研领域取得更大进展和更多成果。</P><P></P><P>&nbsp;&nbsp;&nbsp;&nbsp;维尔切克说，上海是一座开放的城市，充满活力、资源丰富。上海持续推进科创中心建设，给科学家们带来了很多机遇。李政道研究所将立足世界科技前沿，努力挖掘科技潜能，助力上海实现科创中心的伟大愿景，为人类创造更多福祉。</P><P></P><P>&nbsp;&nbsp;&nbsp;&nbsp;李政道研究所于2016年在沪成立。维尔切克是当今最杰出的理论物理学家和数学家之一，曾获2004年诺贝尔物理学奖，其研究涉及凝聚态物理、天体物理和粒子物理等多个领域。</P><P></P><P>&nbsp;&nbsp;&nbsp;&nbsp;上海交大党委书记姜斯宪、校长林忠钦，李政道图书馆馆长李中清等参加会见。</P><P></P><P></P><!--/enpcontent-->
+
+				  </div>
+			  </div>
+            </div>
+			</div> 
+        	<div class="L_ADown"><span class="Icon"></span></div>
+            <div class="number BGX" align="right">
+				<a href="javascript:history.go(-1);" class="N_1" style="background:none"><span></span>返回</a>
+				<a href="#" id="font" class="N_2"><span></span>字体</a>
+				<a href="#" class="N_3"><span></span>复制全文</a>
+				<a class=preart href="content_692134.html"><span></span>上一篇</a>
+				<a class=preart href="content_692142.html"><span></span>下一篇</a>
+				<a href="#" class="N_6" style="color: rgb(170, 170, 170);"><span></span>上页</a>
+				<a href="#" class="N_7" style="color: rgb(0, 0, 0);"><span></span>下页</a>			
+		  </div>
+        </div>
+        <div class="L_AEnd"></div>     
+    </div>  
+</div>
+<!--右侧文章正文end-->
+</div>
+
+<div class="BGX copy">
+<div class="w">上海报业集团 版权所有</div>
+</div>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible" style="display:none;"></div>
+</body>
+</html>
+
+<!--mpproperty <founder-date>
+2018-08-30
+</founder-date>
+<founder-author>
+
+</founder-author>
+<founder-title>欢迎顶尖科技人才来沪开展科研
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle>应勇会见上海交大李政道研究所所长维尔切克一行</founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle></founder-introtitle>
+<founder-pagepicurl>http://outside/whb/images/2018-08/30/2/20830_b.jpg</founder-pagepicurl>
+<founder-pagenum>2</founder-pagenum>
+<founder-papername>文汇报</founder-papername>
+<founder-nodeid>63</founder-nodeid> /mpproperty-->
+
+

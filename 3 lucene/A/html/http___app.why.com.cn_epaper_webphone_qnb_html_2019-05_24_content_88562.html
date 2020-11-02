@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>
+装着剩菜饭的餐盒不能一扔了之
+</title>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641e36ad99ad4a5e9df6a40952a4f724";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<link rel="stylesheet" href="../../../tplimg/jquery.mobile-1.4.4.min.css" />
+<link rel="stylesheet" media="screen and (min-width:801px) and (min-height:601px) and (max-height:1001px)" href="../../../tplimg/content_heng.css" />
+<link rel="stylesheet" media="screen and (max-width:1001px) and (min-width:601px) and (min-height:801px)" href="../../../tplimg/content_shu.css" />
+<link rel="stylesheet" media="screen and (max-width:601px) and (min-height:401px) and (max-height:1001px)" href="../../../tplimg/content_phone.css" />
+<link rel="stylesheet" media="screen and (min-width:401px) and (max-width:1001px) and (max-height:601px)" href="../../../tplimg/content_phone_shu.css" />
+<link rel="stylesheet" href="../../../tplimg/main.css" />
+<script src="../../../tplimg/jquery.min.js"></script>
+<script src="../../../tplimg/jquery.mobile-1.4.4.min.js"></script>
+<script src="../../../tplimg/swipe.js"></script>
+<script type="text/javascript">
+$(function() {
+    var trip;
+	$( ".popup" ).on("click", function(){
+		$.mobile.loading( 'show' );
+		if(!trip){
+			$("#popupParis").html("<div class='swipe' id='slider'><div class='swipe-wrap'></div></div>");
+			trip = true;
+			$(this).find('img').each(function(index, element) {
+				var oDiv = $("<div>").html("<img src="+$(this).attr("src")+" /><p>"+$(this).parents('tr').siblings('tr').find('td').html()+"</p>");
+				$("#slider >div").append(oDiv)
+			});
+			var slider = Swipe(document.getElementById('slider'), {});
+		}
+		var p_html=$(this).find('.tushuo').html();
+		var imgID = new Image();
+	    imgID.src = $(this).find('img').attr("src");
+	    imgID.onload = function(){
+		    trip=false;
+			$.mobile.loading( 'hide' );
+			$("#popupParis").popup("open", {positionTo: "window"});
+	    }
+	});
+});
+ $(document).ready(function(){
+	if($('.pic').find('img').length==0){
+		$('.art_title').width('90%');
+		$('.pic').width('0');
+		}
+}); 
+$(document).ready(function(){
+	if($('.pic').find('img').length>1){
+		$('.pic_more').css('display','block');
+		}
+	else{
+	$('.pic_more').css('display','none');
+	};
+	
+	if($(window).width()-0<600){
+    $('.pic_more').css('display','none');
+	$('.art_title').width('100%');
+}
+		
+}); 
+</script>
+<script type="text/javascript">
+function paperurl(obj){
+var npapername="青年报";
+var myurl="";
+switch (npapername)
+{
+case "青年报":
+  myurl="node_1.html";
+  break;
+case "生活周刊":
+  myurl="node_361.html";
+  break;
+case "学生导报":
+  myurl="node_457.html";
+  break;
+case "青年社交":
+  myurl="node_281.html";
+  break;
+
+}
+  obj.target="_self";
+  obj.href = myurl;
+  obj.click();
+}
+</script>
+<body>
+<div class="header">
+  <div class="title" id="art_title">
+    <h1></h1>
+<h2>装着剩菜饭的餐盒不能一扔了之</h2>
+<h3>上海交大学子调研后建议：完善回收制度和回收体系</h3>
+<h3>青年报记者 周胜洁</h3></div>
+  <div class="pic" id="pic">
+    <a href="javascript:void(0);" big="##B_PIC##" class="popup">
+<TABLE><TBODY><TR><TD><IMG src="../../../images/2019-05/24/A07/res03_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p>&nbsp;&nbsp;&nbsp;&nbsp;蔡广新&nbsp;制图</p></TD></TR></TBODY></TABLE>
+</a>
+  </div>
+</div>
+<div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false"></div>
+<div class="kongbai"></div>
+<div class="con">
+  <p><P><p>在校园里看到垃圾桶塞满了外卖包装垃圾和食物残渣混合物；查阅相关资料发现，一年的外卖垃圾可以“堆满故宫”，这些外卖包装垃圾将对城市环境造成多少负担？上海交大“外卖食品包装垃圾治理研究”实践团队走访学校、写字楼、商家进行详细调研，实践项目也将参加这周末举行的“挑战杯”全国大学生课外学术科技作品竞赛上海市赛。</p><p><strong>青年报记者&nbsp;周胜洁</strong></p><p><strong>八成受访者</strong></p><p><strong>外卖餐盒和剩饭菜一起扔掉</strong></p><p>交大研二学生小王和室友平均每周会叫3-5次外卖，吃不完时会剩下汤汁、饭菜，他们通常随手将外卖包装盒加残羹剩饭一起丢在寝室楼内的混合垃圾桶。“好像记得盒子和剩菜需要分类扔，但学校里也找不到这样的分类垃圾桶。”</p><p>小王的想法具有普遍性，也被实践团队成员注意到。队长浦颖婕表示，他们查阅资料发现，我国每天产生的外卖垃圾为350吨，一年累积是12万吨，具象形容是“几周堆满故宫”；而据某环保组织统计，我国平均每单外卖消耗约3个餐盒（杯），每天约产生9600万个废弃餐盒（杯）。</p><p>按照每天每单外卖用1个塑料袋，每个塑料袋占据0.06平方米面积的标准计算，全国人民每天所用的塑料袋可覆盖192万平方米，大约相当于269个足球场，不到4天即可覆盖一个西湖。</p><p>而且，外卖包装垃圾回收的关键因素在于自身的“特殊性”——是可回收垃圾与湿垃圾的结合。厨余垃圾和塑料的结合，将会面临着填埋和焚烧都会产生巨大污染这种最尴尬的境况。</p><p>为进一步了解情况，团队7人对150位不同年龄段、不同行业的消费者进行调研，研究他们如何处理外卖餐盒以及对于外卖包装回收的意识。根据结果显示，有80.9%的受访者表示，他们一直都将外卖包装垃圾与剩饭菜混合直接丢掉，不会将剩下的餐食单独扔进厨余垃圾桶。</p><p>85.7%的受访者坦言，他们从未二次利用外卖包装，用完后通常一扔了之。95.7%的受访者在扔垃圾时，不会将外卖餐盒投入分类垃圾桶中。</p><p>队长浦颖婕还指出，另一方面，目前对外卖包装垃圾进行回收处理的处理站、垃圾桶等配套设施严重缺位，这也使外卖餐盒无处可去。“根据调查结果，受访者表示外卖垃圾回收途径的完善程度平均分为1.95（满分10分），处于极低水平。”</p><p><strong>餐厅经营者</strong></p><p><strong>政府应主导构建回收体系</strong></p><p>外卖包装垃圾的回收体系的构建需要资金，那资金从何而来？实践团队走访了炸鸡店、小吃快餐等94户外卖商家。浦颖婕和队员们在走访交大闵行校区附近一家餐厅时，老板对学生们表示，如果建立了成熟的外卖餐盒回收渠道，可以让外卖餐盒经洗净、消毒、回收或再造，最终能分配给商家进行再次使用，他们很乐意参与其中，“如果政府倡导，有回收渠道的话，我们店家也愿意为环保出一份力，也省去了再购的成本。”</p><p>此外，队员们也听到一些卖家坦言：“我们做的都是小本生意，这些回收所需花费的资金不应该全由卖家承担。”</p><p>针对商家所做的94份研究问卷得出的结果，商家最期待政府与外卖平台承担外卖食品包装垃圾的回收处理费用比例分别为46.67%、37.78%，“所以说，商家认为政府、外卖平台最应承担外卖食品包装垃圾的回收处理费用。”</p><p><strong>[调研分析]</strong></p><p><strong>完善外卖垃圾回收制度</strong></p><p>对此，交大实践团队成员提出，政府必须有所作为，外卖包装垃圾的回收处理应以政府建立的回收利用成本分摊机制为基础。</p><p>浦颖婕说，他们还建议完善外卖垃圾回收制度和回收体系，如在居民区设立外卖餐盒回收站点或有助于分类的智能垃圾箱。以居委会、学校、单位作为载体推行，鼓励居民统一在此投放外卖垃圾，随后统一回收处理。</p><p>同时还可加大对外卖垃圾新型回收技术研发的支持力度，从技术更新改进入手，“比如扩展可收回外卖包装垃圾类型，提高现行外卖包装垃圾的回收效率，用自动化的垃圾处理设备代替昂贵的人工挑拣等。”</p></P></p></div>
+<div class="BackBtn1" id="BackBtn1">
+<a href="javascript:;" onclick="paperurl(this)"><img src="../../../tplimg/home.png" /></a></br></br></br>
+<a href="javascript:history.back(-1)" ><img src="../../../tplimg/BackBtn1.png" /></a>
+</div>
+
+<div class="pic_more" id="pic_more"><a href="javascript:void(0);"><img src="../../../tplimg/pic_more.png" /></a></div>
+</body>
+</html>
+
+
+<!--mpproperty <founder-date>
+2019-05-24
+</founder-date>
+<founder-author>
+青年报记者 周胜洁
+</founder-author>
+<founder-title>装着剩菜饭的餐盒不能一扔了之
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle>上海交大学子调研后建议：完善回收制度和回收体系</founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle></founder-introtitle>
+<founder-pagepicurl>http://phone/qnb/images/2019-05/24/A07/20190524A07_brief.jpg</founder-pagepicurl>
+<founder-pagenum>A07</founder-pagenum>
+<founder-papername>青年报</founder-papername>
+<founder-nodeid>7</founder-nodeid> /mpproperty-->
+
+

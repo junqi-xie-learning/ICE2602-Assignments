@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>历史不容歪曲，东京审判完整庭审记录首次以中文面世</title>
+<link rel="stylesheet" href="/r/share_files/reset_style.css">
+<link rel="stylesheet" href="/r/share_files/vote.css">
+<link rel="stylesheet" type="text/css" href="/r/share_files/style.css">
+<script type="text/javascript" src="/r/share_files/jquery-1.10.2.min.js"></script>
+<script src="/r/share_files/front.js" type="text/javascript"></script>
+<script src="/r/share_files/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/r/share_files/sha1.js" type="text/javascript"></script>
+<script src="/r/share_files/weixin.js" type="text/javascript"></script>
+<style>
+
+		.textCenter {text-align: center}
+		.title {font-family: "BoldFont";text-align: left;}
+		.author {text-align: center;}
+		.source {text-align: left;}
+		.authorLeft {vertical-align: text-top;text-align: left;}
+		#zanImages{
+			width: 80%;
+			height: 80%;
+			margin: 0 auto;
+			vertical-align: top;
+			display: inline-block;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -7px;
+			margin-top: -8px;
+		}
+		.content-min-ctn>p{
+			text-align: justify;
+			margin: 18px 0;
+
+		}
+		/* 底部下载APP */
+		.download-app-box{
+			background: rgb(45,49,50);
+			position: relative;
+			padding: 15px 10px;
+			overflow: hidden;
+		}
+		.media-container:first-child{
+			margin-top: 0;
+		}
+		.media-container, .media-body {
+			overflow: hidden;
+			zoom: 1;
+		}
+		.media-body, .media-left, .media-right {
+			display: table-cell;
+			vertical-align: top;
+		}
+		.media-left{
+			padding-right: 10px;
+			padding-top: 2px;
+		}
+		.media-header{
+			font-size: 16px;
+			font-weight: 500;
+			font-family: "微软雅黑";
+			color: #fff;
+		}
+		.media-text{
+			color: rgb(156,157,157);
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		.download-app{
+			width: 26%;
+			position: absolute;
+			top: 27%;
+			right: 4.3%;
+			z-index: 100;
+		}
+		.content-min-ctn img{ width:100% !important;height:auto !important}
+	</style>
+<script>
+        var imageArr = new Array();
+        var img = {
+            "width":"645px",
+            "height":"483px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var img = {
+            "width":"645px",
+            "height":"430px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var voteColors = [
+            "#e3e5f1",
+            "#cacdde",
+            "#aaafca"
+        ];
+        var perVotePerW;	// 100%长度
+        $(document).ready(function(){
+            $("#header").load("/include/header.html");
+            $("#foot").load("/include/footer.html");
+            var w = document.body.clientWidth - 20;
+            try {
+                var fontsize = w / 20;	// 字数：一行18字
+                document.body.style.fontSize = fontsize + "px";
+                var percent = w / 720;
+                $("#voteTitle").css("font-size", (percent * 30) + "px");
+                $("#voteTitle").css("height", (percent * 70) + "px");
+                $("#voteTitle").css("padding-top", (percent * 35) + "px");
+                // 投票长度 720px 400=100%
+                perVotePerW = percent * 400;
+                $("#voteCon").css("font-size", (percent * 30) + "px");
+                var width = percent * 125;
+                var height = width / height * width;
+                $(".voteimg").css("width", width + "px");
+                $(".voteimg").css("height", height + "px");
+
+            } catch (e) {}
+
+            $("img[name=videoImg]").click(function() {
+                openVideo(this)
+            });
+
+            // 图片宽度、高度
+            if(imageArr.length == 0)
+                return ;
+            for(var index = 0; index < imageArr.length; index++) {
+                var img = $("#image-" + (index + 1));
+                var width = imageArr[index].width;
+                width = width.replace("px", "");
+                width = width.replace("PX", "");
+                if(width >= 645) {
+                    // 宽度645，直接铺满
+                    img.css("width", "100%");
+                    continue ;
+                }
+                // 小于645，按照比例进行缩放
+                var proportion = w/645;	// 宽度比例
+                width = width * proportion;
+                img.css("width", width + "px");
+
+                // 专家图片
+                var photo = $("#expertPhoto");
+                if(photo == null || photo == undefined)
+                    return ;
+                var photoWidth = 223 * proportion;
+                photo.css("width", photoWidth + "px");
+                var height = 272 * proportion;
+                photo.css("height", height + "px");
+            }
+        });
+
+        var play, videoIndex = 0;
+        function openVideo(img) {
+            videoIndex++;
+            $(img).css("display", "none");
+            $(img).after("<div id='mod_player_" + videoIndex + "'></div>");
+            try{
+                // url由app替换字符串获得
+                var url = $(img).attr("videourl");
+                var pos1 = url.indexOf("vid=");
+                if (pos1 < 0){
+                    alert("视频路径格式有误，无法播放!");
+                }else{
+                    var pos2 = url.indexOf("&", pos1);
+                    if (pos2 < 0)
+                        pos2 = url.length;
+                    var vid = url.substring(pos1 + 4,pos2);
+                    var video = new tvp.VideoInfo();
+                    video.setVid(vid);
+                    var player =new tvp.Player();
+                    player.create({
+                        width:"100%",
+                        height:280,
+                        video:video,
+                        modId:"mod_player_" + videoIndex,
+                        vodFlashExtVars: {
+                            showlogo:0,
+                            popup : 0,
+                            share : 0,
+                            follow : 0
+                        },
+                        autoplay:true
+                    });
+
+                    player.oninited = function() {
+                        player.play();
+                    }
+                    player.play();
+                }
+            }catch(e){console.debug(e.message);}
+        }
+
+        //评论
+        function fnSubmit(){
+            if($("#text").val().trim().length==0){
+                alert("请输入评论内容");
+                return ;
+            }
+            var text = $("#text").val();
+            $.ajax({
+                type: "POST",
+                url:"/whb/comment.jspx",
+                "dataType" : "json",
+                data:{
+                    text:text,
+                    contentId:67907,
+                    hasCaptcha:"no"
+                },
+                success:myCallback
+            })
+        }
+        function myCallback(data) {
+            if(data.status==0) {
+                alert("评论成功,等待审核");
+                $("#text").val("");
+                fnText();
+                //location.href=location.href;
+            } else if(data.status==1) {
+                alert("验证码错误");
+                //$("#commentCaptcha").click();
+            } else if(data.status==2) {
+                alert("内容不存在");
+                //$("#commentCaptcha").click();
+            } else if(data.status==3) {
+                alert("评论关闭");
+                //$("#commentCaptcha").click();
+            } else if(data.status==4) {
+                alert("需要登录评论");
+                //$("#commentCaptcha").click();
+            } else if(data.status==100) {
+                alert("内容不存在");
+                // $("#commentCaptcha").click();
+            } else if(data.status==101) {
+                alert("评论不能为空");
+                // $("#commentCaptcha").click();
+            } else {
+                alert("评论失败");
+                // $("#commentCaptcha").click();
+            }
+        }
+        function fnText(){
+            var length = $("#text").val().trim().length;
+            $("#textcount").html(300-length);
+        }
+	</script>
+<script src="../../../../../../r/cms/html5.js"></script>
+</head>
+<body style="margin: 10px; font-size: 18.7px;" bgcolor="white"><input id="title" type="hidden" value="历史不容歪曲，东京审判完整庭审记录首次以中文面世">
+<input id="descp" type="hidden" value="今年是抗日战争胜利暨世界反法西斯战争胜利73周年，也是东京审判宣判70周年。">
+<input id="imgUrl" type="hidden" value="/u/cms/www/201808/30161648myot.jpg">
+<div id="header"><a id="appDownload" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook">
+<img src="/r/share_files/download.png" width="100%">
+</a>
+<script>
+
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var isWeixin = is_weixin();
+        var isAndroid = false;
+        var isIos = false;
+
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/) == "iphone os";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+
+        if (bIsAndroid) {
+            isAndroid = bIsAndroid;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+
+        } else if(bIsIphoneOs || bIsIpad) {
+            isIos = bIsIphoneOs || bIsIpad;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+        }
+	</script></div>
+<table class="marginTop_normal marginLeft_big marginRight_big marginBottom_big">
+<tbody><tr style="font-size:22px;text-align:justify;">
+<td class="title titleFont" colspan="2"><font color="#000000" style="line-height:1.5;">历史不容歪曲，东京审判完整庭审记录首次以中文面世</font></td>
+</tr>
+<tr>
+<td class="author authorFont" style="text-align:left;padding-bottom:5px;">
+<font color="#595757">2018-08-30 18:51:25</font>
+<font style="margin-left: 10px;" color="#595757">作者：许旸</font>
+</td>
+</tr>
+</tbody></table>
+<div style="margin:0;padding:0; width:100%;height:1px;background-color:#787878;overflow:hidden;"></div>
+<div class="content_body">
+<div class="content_title hei"></div>
+<div class="content_other"></div>
+<font color="#000000" font-size="16.666666px">
+<div class="content-min-ctn" style="text-align:justify;font-size:18px; wrap-word:normal; line-height:1.6;">
+<p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201808/30135843ll6y.jpg" alt="QQ截图20180830135740.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">今年是抗日战争胜利暨世界反法西斯战争胜利73周年，也是东京审判宣判70周年。《远东国际军事法庭庭审记录·全译本》（第一辑）出版，10卷本约500万字，按原始文献时间顺序，完整呈现了从1946年4月29日到1946年12月9日共128个庭审日的庭审记录。今天在上海交通大学举办的新书座谈会上，学界评价，这是东京审判庭审记录首次以中文形式完整呈现，史料价值重大，也为大众读者准确认识这段历史提供了权威文本。</p><p style="text-align:left;display:block;">《远东国际军事法庭庭审记录》是战后审判研究最核心的文献，全译本40卷以2013年出版的英文版《远东国际军事法庭庭审记录》为底本，酌参日文版庭审记录，合计约2000万字，计划分四辑陆续出版，庭审内容包括从1946年4月29日至1948年11月12日的庭审准备、庭审至宣判的记录，其间庭审416日、817次，宣判7日、14次，合计开庭423日、831次，共有庭审记录49858页，涵盖检方向法庭和被告提交起诉书、法庭成立、立证准备、检方立证、辩方反证、检方回答和法庭判决等全过程。“南京大屠杀史的研究，基础根基就在东京审判的判词里，中译本问世有助于进一步推动相关学术研究。”侵华日军南京大屠杀遇难同胞纪念馆馆长张建军说。</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201808/3015283971hp.jpg" alt="QQ截图20180830150412.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">《远东国际军事法庭庭审记录·全译本》由国内“东京审判研究第一人”程兆奇教授、东京审判中国检察官向哲濬之子向隆万担任丛书主编，20余位来自国内外高校的法学史学专家组成翻译团队，潜心审校，反复加工打磨，历时三年完成。“二战后国际秩序特别是亚太秩序的研究，都离不开东京审判。庭审记录有大量法律性的语言，一般的外语还不能很准确去把握。庭审记录的准确翻译、索引导读有助于学术研究的开拓。”上海社科院国际问题研究所所长王健说，保存这份历史记忆是中日乃至世界各国人民共同的责任，庭审记录是对有意篡改歪曲历史现象的对抗。</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201808/301306060fjb.jpg" alt="081606267yun.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: center; display: block;"><span style="color: rgb(127, 127, 127);">▲庭审中的中国检察官向哲濬</span></p><p style="text-align:left;display:block;">全译本第一辑在翻译英文版本的同时，比对日文版差异，逐字查核数千例讹错，并进行校勘。比如，1946年9月3日庭审记录，桑德斯基助理检察官宣读有关日本在朝鲜逐渐扩大罂粟种植的部分，英文原档误记为“Chosen”，这是对“Choson”的讹误，“Choson”一词是英语对“朝鲜”的异译。再如，1946年12月3日，博格霍夫·穆德检察官宣读日军侵略荷属东印度的证词部分，英文庭审记录多处把外相“东乡（茂德）”误做“东条（英机）”，即英文应为“TOGO”，误做“TOJO”。</p><p style="text-align:left;display:block;">“翻译的难度不仅在于法律、历史、政治术语，就拿人名、地名来说，牵涉到日本、中国、菲律宾等非英语国家就非常复杂。”上海交通大学东京审判研究中心名誉主任向隆万说，仅“七七事变”时华北主要军事负责人之一秦德纯的名字，在庭审记录中就有13种拼法，需细细辨别。在编纂梳理的过程中，有关庭审记录的全面史料浮出水面，向隆万以150页关于毒品的审判为例，他在座谈会现场念了一份伪满洲国“内政部”的官方报告——“三千万居民中有超过9百万鸦片吸食者，几乎是1/3的人口，每年销售额超过5亿美元，天津租界被称为世界海洛英和成瘾者的神经中枢。每周有500公斤以上海洛因直接从天津发货，60%的海洛因到达美国，其余30%通过欧洲到达美国、10%到达其他国家。柏林鸦片交易委员会声明，全世界近90%非法白色毒品是日本人在天津、大连以及‘满洲’制造的。”这个记录是空前绝后的，现在南美一些毒枭远远达不到这个数字。“从这个角度来讲，日本当时对中国的侵略暴行就看得更清楚了。”</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201808/30132226wg7y.jpg" alt="08160512qm2r.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: center; display: block;"><span style="color: rgb(127, 127, 127);">▲东京审判11国法官、检察官图（合成图片）</span></p><p style="text-align:left;display:block;">除了翻译，全译本还进行了细致梳理和导读，令读者清晰看到庭审脉络。其中，最受中国读者关注的对华侵略部分的九一八事变、伪满洲国的建立、南京大屠杀、日本在东北等地的鸦片毒化政策、日本对中国经济侵略等历史细节一一呈现。如第3、第4卷展现的1946年7-9月针对南京暴行检辩两方举证的部分，详细呈现了金陵大学医院外科医生威尔逊、曾在安全区国际委员会工作的许传音、南京大屠杀幸存者尚德义、金陵大学历史学教授贝茨等十数人的法庭证言。</p><p style="text-align:left;display:block;">如第4、第5卷涉及的1946年8-9月的侵占东北检方举证部分中，通过庭审内容详细再现了日本侵略满洲的罪恶计划以及在经济领域侵略中国的情况。时任上海浦东电气公司董事长和经理童受民以及华北钢铁公司筹备委员会执行会长、总经理兼总工程师陈大受等作为检方证人的证词，充分证实了日本大肆掠夺华北、华中占领区的矿藏资源和电力设施，特别是通过“计划”和“统治”中国东北矿藏、农业、工业与铁路系统，实现其把东北当成日本“工业原料的来源地”与“人口拓展地”，以此“加速增强和充实”日本国力，“推进战争”的企图。</p><p style="text-align:left;display:block;">除了中国部分之外，还可以看出第二次世界大战期间，日本南向、西向侵略的整体思路和计划，包括对美、英、法、苏等各国及其殖民地的军事进攻和经济、文化侵略等。随着全译本整体工程推进和最终完成，二战期间日本帝国主义侵略和暴行的完整画卷将会清晰展露在世人面前。</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201808/30152823y7st.jpg" alt="QQ截图20180830150346.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">除了翻译，东京审判中心专家为每卷进行详细索引编纂，并在卷首提纲挈领地综述该卷包含的重要时间节点发生的重要庭审事件，对使用者进行导读。</p><p style="text-align:left;display:block;">以第六卷为例：</p><p style="text-align:left;display:block;"><span style="color: rgb(127, 127, 127);">本卷内容为1946年9月24日至10月8日共11个庭审日的公开审判庭审记录。在历时两年半的审判过程中，这部分庭审由检方举证，分别属于“德意日三国同盟”“对中国军民的暴行及在华投放鸦片和其他毒品”“日本与法国、法属印度支那及泰国的关系”“侵略苏联”五个举证阶段。</span></p><p style="text-align:left;display:block;"><span style="color: rgb(127, 127, 127);">9月24日的主要内容有：日本与纳粹德国之间的各种会谈、磋商和联络，日本试图探知德国对日本侵略法属印度支那和荷属东印度及对所谓“中国事变”（全面侵华战争）所持的立场。9月25日的主要内容有：“德意日三国同盟”的达成历程。9月26日的主要内容有：“德意日三国同盟”缔结后，日、德两国关于对中国、美国、苏联发动侵略战争的沟通和谋划......</span></p><p style="text-align:left;display:block;">这一导读大大方便了读者的研究使用，迅速建立对于这一历史进程的认识并能精准定位研究所需内容。</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201808/30130633xlrd.jpg" alt="081608054mdc.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: center; display: block;"><span style="color: rgb(127, 127, 127);">▲东京审判法庭席位图</span></p><p style="text-align:left;display:block;">据悉，“东京审判出版工程”是上海交通大学出版社长期打造的重大出版项目，依托上海交通大学东京审判研究中心，系统搜集、整理、出版东京审判核心文献与研究著译，迄今已出版200余卷。2013年，上海交通大学出版社联合国家图书馆出版社共同策划出版英文版80卷《远东国际军事法庭庭审记录》，填补了国内东京审判核心史料文献的空白。2015年又编译出版了12卷本《远东国际军事法庭庭审记录·中国部分》。2017年“东京审判文献数据库”获第四届中国出版政府奖·网络出版物奖。</p><p style="text-align:left;display:block;"><span style="color: rgb(127, 127, 127);">文汇记者：许旸</span></p><p style="text-align:left;display:block;"><span style="color: rgb(127, 127, 127);">编辑制作：许旸</span></p><p style="text-align:left;display:block;"><span style="color: rgb(127, 127, 127);">责任编辑：王磊</span></p><p style="text-align: left; display: block;"><span style="color: rgb(127, 127, 127);">*文汇独家稿件，转载请注明出处。</span></p>
+</div>
+</font>
+</div>
+<div>
+<div class="reset-css">
+<div class="praise-container" style="height:42px;">
+<span id="ups" style="float: right;font-size: 12px;height: 22px;position: relative;top: 5px;">0</span>
+<span onclick="Cms.up('',67907,0);" id="zanImagesCtn" style="display: inline-block;width: 20px;height: 20px;border: 1px solid #333;border-radius: 50%;line-height: 20px;overflow: hidden;position: relative;float: right;margin-right: 3px;">
+<img id="zanImages" src="/r/share_files/dianzan2x.png" alt="">
+</span>
+</div>
+<div class="edit-comment">
+<textarea name="text" id="text" placeholder="请输入文字内容..." style="resize: none;line-height:1.5;padding-bottom:5px;" rows="2" oninput="fnText();"></textarea>
+<div class="submit-comment-container solve_float">
+<span class="left">还可以输入<span id="textcount" style="color:#FFA83F;">300</span>字</span>
+<button class="submit-comment right" onclick="fnSubmit();">提交</button>
+</div>
+<input type="hidden" name="contentId" value="67907">
+</div>
+<div>
+<button class="btn-see-more" onclick="location='/findComment.jspx?contentId=67907'">查看评论&gt;&gt;</button>
+</div>
+</div>
+</div>
+<div class="download-app-box">
+<div class="media-container">
+<div class="media-left">
+<img src="/r/share_files/logo3.png" alt="Logo" style="width: 40px;height:40px;">
+</div>
+<div class="media-body">
+<h4 class="media-header">文汇报</h4>
+<div class="media-text">源于事实 来自眼界</div>
+</div>
+</div>
+<img class="download-app" src="/r/share_files/down-app.png" onclick="window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook'" alt="DownLoad">
+</div>
+<div id="foot"></div>
+<script src="/r/share_files/tvp.player_v2.js" type="text/javascript"></script>
+<script src="/r/share_files/wb.js" type="text/javascript"></script>
+<script type=text/javascript>
+    $(function() {
+        Cms.siteFlow("http://www.whb.cn", location.href, document.referrer, "历史不容歪曲，东京审判完整庭审记录首次以中文面世", "许旸","592");
+        Cms.viewCount("","210609",null,null, null,null,null);
+    });
+</script>
+</body></html>

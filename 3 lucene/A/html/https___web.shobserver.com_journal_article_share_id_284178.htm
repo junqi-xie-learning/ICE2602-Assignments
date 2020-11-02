@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>《钱学森精神读本》在沪首发</title>
+    <style>
+        body{ padding:0px; margin:0px;}
+        img{width:100%}
+        .w{width: 95%;}
+		.lr{margin:0 auto;}
+        .H_xq{font-size:16px;line-height:24px;padding:0px;}
+		.H_xq h1{font-size: 22px;color: #000;margin: 0.7em 0;}
+		.H_xq h3{font-size: 16px;color: #3f3f3f;margin:0.5em 0;}
+		
+		.H_xq img{margin-bottom: 8px;}
+		
+		.H_xq font{ color:#ed1c24;}
+		.H_xq .img1{ text-align:center;}
+		.H_xq .img3{margin-bottom: 8px; width:60%;}
+		
+        .img2{ width:100%;}
+		
+		.xiazai-top{
+        	background-color:#fff;
+        	position:relative;
+        	padding:10px 0 5px 0;
+        	border-bottom:1px solid #dddddd;
+    	}
+    	
+		.open-app{
+			position:absolute;
+			top:23%;
+			right:4%;
+		}
+		
+		.xiazai-bottom{
+			width:100%;
+        	font-size:0;
+        	padding:10px 0 10px 0;
+        	background-color:rgba(0,0,0,0.8);
+			position:fixed;
+			bottom:0;
+			left:0;
+			display:none;
+    	}
+    	
+    </style>
+</head>
+
+<body>
+
+<div class="xiazai-top">
+  <img src="/images/wx/logo-top.png" style="width:135px;margin-left:10px;">
+  <img src="/images/wx/open-top.png" class="open-app" style="width:77px;" onclick="download();" >
+</div>
+
+<div class="H_xq w lr">
+	<h1 id="title">《钱学森精神读本》在沪首发</h1>
+	
+	
+	
+	    本报讯（记者 徐瑞哲）今年是钱学森诞辰108周年，也是他逝世10周年。昨天，新书《钱学森精神读本》在上海交通大学钱学森图书馆首发。根据中共中央办公厅、国务院办公厅印发的《关于进一步弘扬科学家精神加强作风和学风建设的意见》，钱学森图书馆组织研究团队编著这一读本，从“爱国、奉献、求实、创新、协同、育人”6个角度提炼其精神内涵。钱学森前秘书、中央军委科技委大校顾吉环等向师生代表赠书。<br/><br/>    同日，“选择——钱学森的初心与信仰”展览在钱馆地下专题展厅开幕。展览选取钱学森少年时代、在美20年、1955年—1982年以及晚年这4个人生片段，回答“共产党员”和“科学家”两重身份如何实现统一。展览对外免费开放，持续至明年4月26日。<br/><br/>
+</div>
+
+<div style="height:70px;"></div> <!-- 底部悬浮框的高度 -->
+
+<div class="xiazai-bottom" id="xiazaiBottom">
+   <img src="/images/wx/logo-bottom.png" style="width:125px;margin-left:15px;">
+   <img src="/images/wx/open-bottom.png" class="open-app" style="width:80px;top:20%;" onclick="download();"/>
+</div>
+
+<script type="text/javascript">
+    function isPC() {
+	    var userAgentInfo = navigator.userAgent.toLowerCase();
+	    var Agents = ["Android", "iPhone",
+	                "SymbianOS", "Windows Phone",
+	                "iPad", "iPod"];
+	    var flag = true;
+	    for (var v = 0; v < Agents.length; v++) {
+	        if (userAgentInfo.indexOf(Agents[v].toLowerCase()) > 0) {
+	            flag = false;
+	            break;
+	        }
+	    }
+	    return flag;
+	}
+	
+	function download()
+	{
+		window.open("/link/app");
+	}
+	
+	(function(){
+	
+		var clientWidth = document.documentElement.clientWidth;
+		var bottom = document.getElementById("xiazaiBottom");
+		if (isPC())
+		{
+			document.body.style.width = "640px";
+			document.body.style.margin = "0 auto";
+			
+			bottom.style.width = "640px";
+			bottom.style.left = (clientWidth - 640)/2 + "px";
+			
+			window.onresize = function(){
+				var bottom = document.getElementById("xiazaiBottom");
+				var clientWidth2 = document.documentElement.clientWidth;
+				bottom.style.left = (clientWidth2 - 640)/2 + "px";
+			}
+			
+			clientWidth = 640;
+		}
+		bottom.style.display = "block";
+			
+	})();
+</script>
+
+<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script type="text/javascript" src="/js/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/weixinShare.js?ver=20170427"></script> 
+<script type="text/javascript"> 
+$(function(){     
+    $.ajax({ 
+        url: "/weixin/getWeiXinShare", 
+        type: "POST", 
+        data: {pageUrl:window.location.href}, 
+        // data: {pageUrl:encodeURIComponent(window.location.href)}, 
+        dataType: "json", 
+        success : function(data){ 
+            if (data) 
+            { 
+                var weixin = new WeiXinShare(); 
+                weixin.config(data.appId, data.timestamp, data.nonceStr, data.signature); 
+                var title = $("#title").text();
+                var subtitle = $("#subtitle").text();
+                var logoUrl = "https://images.shobserver.com/images/logo_jf.jpg";
+                weixin.share({'title':title, 'link':location.href,'img_url':logoUrl, 'desc':subtitle}); 
+            }
+        } 
+    }); 
+}); 
+</script>
+</body>
+</html>

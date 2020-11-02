@@ -1,0 +1,461 @@
+  <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<script src="http://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1424933607444705/zepto.min.js"></script>
+<script src="http://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1424933607444705/touch.js"></script>
+<script type="text/javascript" src="http://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1431044825464772/swipe.js"></script>
+<script type="text/javascript" src="http://r.img.cctvpic.com/library/content/tw/script/a2.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://pic.fastapi.net/sdk/js/mobile.js" charset="utf-8"></script>
+<title>m.cctv.com-手机央视网</title>
+<link rel="stylesheet" href="http://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1432263496615322/style_20150529.css" />
+<script type="text/javascript">
+function onBridgeReady(){
+	WeixinJSBridge.call('hideOptionMenu');
+}
+if (typeof WeixinJSBridge == "undefined"){
+    if( document.addEventListener ){
+        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    }else if (document.attachEvent){
+        document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    }
+}else{
+	onBridgeReady();
+}
+</script>
+
+<script>
+function GetRequest_code(){
+	var url = location.search; //获取url中"?"符后的字串
+	var theRequest = new Object();
+	if (url.indexOf("?") != -1) {
+		var str = url.substr(1);
+		strs = str.split("&");
+		for(var i = 0; i < strs.length; i ++) {
+			theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+		}
+	}
+	return theRequest;
+}
+var Request_code = new Object();
+Request_code = GetRequest_code();
+var code = Request_code['code'];
+if(code == "" ){code = 860010-1145020000;}
+</script>
+
+<style type="text/css">
+#spyt_banner i{
+	position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    padding: 0px 3px;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0) none repeat scroll 0% 0%;
+    opacity: 0.5;
+    font-style: normal;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	var vjAcc=code;
+	var wrUrl="http://cntv.wrating.com/";
+	var wrVideoUrl="http://cntv.wrating.com/";
+</script>
+
+<div class="page_wrap">
+	<!--页头广告-->
+	
+	
+
+	<div class="ind_ad_01" id="spyt_banner">
+		<a href=""><img src=""></a>
+		<div class="close_area">
+			<div class="close_btn"></div>
+		</div>
+	</div>
+
+	<!--页头-->
+	<header class="head_diceng">
+		<div class="logo"><a href="http://m.cctv.com/index.shtml"></a></div>
+		<ul class="nav_list">
+			<li><a href="http://m.cctv.com/ml/index.shtml">央视名栏</a></li>
+		</ul>
+		<div class="nav_btn"><a href="http://m.cctv.com/mobile/wangzhannav/index.shtml"></a></div>
+	</header>
+	<!--浮层导航包含页-->
+	<!-- <script language="javascript" type="text/javascript" src="http://m.cctv.com/general/fuceng/index.js?version=3.0" charset="UTF-8"></script> -->
+	<div class="more_btnbox" id="j_pullLoader" style="display: block;">
+		<div class="more_btn_loading " id="j_loading">
+			<span class="loadingbtn">加载更多</span>
+			<span class="more_btn">正在加载</span>
+		</div>
+	</div>
+	<!--正文内容-->
+	<div class="ind_video" style="display: none;">
+		<!--标题-->
+		<div class="title_area">
+			<h2></h2>
+		</div>
+		<!--播放器-->
+		<div class="player_area">
+			<div class="player" id="player">
+			</div>
+			<div class="player_desc">
+				<p class="time"></p>
+				<div class="length"></div>
+			</div>
+		</div>
+	</div>
+	<div class="share_" style="display: none;">
+	<!--分享-->
+	
+<div class="ind_share">
+	<div class="share_area">
+		<div class="share_box">
+			<div class="wenzi"><div class="vertical-table"><div class="row"><div class="cell">分享 :</div></div></div></div>
+			<ul class="share">
+				<li><i class="qq" data-share="sina"></i></li>
+				<!-- <li><i class="weibo" data-share="tx_weibo"></i></li> -->
+				<li><i class="sina" data-share="qq_zone"></i></li>
+			</ul>
+			<ul class="fav">
+				<li><i class="shoucang"></i></li>
+				<li><i class="xihuan"></i></li>
+			</ul>
+		</div>
+	</div>
+</div>
+	</div>
+	<!--简介部分-->
+	<div class="ind_video_brief" id="ind_video_brief" style="display: none;"></div>
+	<!--客户端推广代码-->
+	<div class="ELMT1432803538595462">
+	<!--单条视频相关阅读-->
+	<div class="md" style="display: none;">
+		<div class="md_hd_tabs">
+			<ul class="mh_tabs_2">
+				<li>播放列表</li>
+				<li>相关推荐</li>
+			</ul>
+			<span class="mh_line line_2"></span>
+		</div>
+		<div class="md_bd_tabs tabs_2">
+			<div class="box">
+				<div class="ind_list_box box_m_t">
+					<ul id="ind_list_box_vide">
+					</ul>
+				</div>
+				<div class="ind_detial_box">
+					<div class="detial" id="detial">查看更多</div>
+				</div>
+			</div>
+			<div class="box">
+				<link type="text/css" rel="stylesheet" href="http://r.img.cctvpic.com/nettv/mcntv/dicengbaohanye/shipin/tuijian/style/style.css?c0f9ce38ba11741d70a6608b7b47799e"/>
+<div class="md">
+	
+	<div class="md_bd">
+		
+		<div id="SUBD1432867124440778">
+		<div class="ELMT1436263028601708">
+<div class="ind_list_box" id="ELMT1436263028601708">
+	<ul>
+		
+		<li style="display:none">
+			<a href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDEvYwZbq61gQ7FcAyYU3Vj180807&code=860010-1145020500" class="vertical-container common">
+				<div class="img"><img src="http://p1.img.cctvpic.com/fmspic/2018/08/07/07f106273e4f4b57aaa05e43a2515f82-90.jpg"><i href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDEvYwZbq61gQ7FcAyYU3Vj180807&code=860010-1145020500" class="video_icon"></i></div>
+				<div class="content_box">
+					<h3>疏于看管“儿童司机”频上路</h3>
+				</div>
+			</a>
+		</li>
+		
+		<li style="display:none">
+			<a href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDER99IzurYH2LfEjfYsvAU180807&code=860010-1145020500" class="vertical-container common">
+				<div class="img"><img src="http://p5.img.cctvpic.com/fmspic/2018/08/07/00dbab6538984aa193552c11ae223c64-73.jpg"><i href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDER99IzurYH2LfEjfYsvAU180807&code=860010-1145020500" class="video_icon"></i></div>
+				<div class="content_box">
+					<h3>“水城”威尼斯分流游客遭抗议</h3>
+				</div>
+			</a>
+		</li>
+		
+		<li style="display:none">
+			<a href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDEhErIzPH5hQjsOHBjERKE180807&code=860010-1145020500" class="vertical-container common">
+				<div class="img"><img src="http://p3.img.cctvpic.com/fmspic/2018/08/07/d230751665d545a98fa7d4971b3b452c-21.jpg"><i href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDEhErIzPH5hQjsOHBjERKE180807&code=860010-1145020500" class="video_icon"></i></div>
+				<div class="content_box">
+					<h3>今日“立秋” 多地天气依然很热</h3>
+				</div>
+			</a>
+		</li>
+		
+		<li style="display:none">
+			<a href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDE98xlTrSZMwyyeihYwHdn180807&code=860010-1145020500" class="vertical-container common">
+				<div class="img"><img src="http://p2.img.cctvpic.com/fmspic/2018/08/07/9ad76f348f25479c8e3da7bd124f3aab-87.jpg"><i href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDE98xlTrSZMwyyeihYwHdn180807&code=860010-1145020500" class="video_icon"></i></div>
+				<div class="content_box">
+					<h3>山西临汾空气自动监测数据造假</h3>
+				</div>
+			</a>
+		</li>
+		
+		<li style="display:none">
+			<a href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDE4EWHLuCnSx9gjD7uHX4k180807&code=860010-1145020500" class="vertical-container common">
+				<div class="img"><img src="http://p1.img.cctvpic.com/fmspic/2018/08/07/16d69e6c02214d5ea88b28db509e97b5-50.jpg"><i href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDE4EWHLuCnSx9gjD7uHX4k180807&code=860010-1145020500" class="video_icon"></i></div>
+				<div class="content_box">
+					<h3>印尼地震亲历者:房倒屋塌 亲人遇难</h3>
+				</div>
+			</a>
+		</li>
+		
+		<li style="display:none">
+			<a href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDE1Y7lQz1y6dvh5qBqjaTK180807&code=860010-1145020500" class="vertical-container common">
+				<div class="img"><img src="http://p4.img.cctvpic.com/fmspic/2018/08/07/6bbf44a756454a0fae4b782b8583585d-92.jpg"><i href="http://m.cctv.com/dc/v/index.shtml?videoID=VIDE1Y7lQz1y6dvh5qBqjaTK180807&code=860010-1145020500" class="video_icon"></i></div>
+				<div class="content_box">
+					<h3>意大利风景区车辆限行引争议</h3>
+				</div>
+			</a>
+		</li>
+		
+	</ul>
+</div>
+
+<div class="ind_detial_box" id="MoreELMT1436263028601708">
+	<div class="detial">查看更多</div>
+</div>
+
+
+	<script type="text/javascript">
+	var maimaELMT1436263028601708 = "&code=";
+		$("#ELMT1436263028601708 ul li a").each(function(){
+				var Oldurl=$(this).attr("href");
+				if(Oldurl.indexOf("dc/n") > 0 || Oldurl.indexOf("dc/v") > 0 || Oldurl.indexOf("dc/p") > 0 ){
+					if(Oldurl.indexOf("code") < 0){
+						$(this).attr("href",Oldurl+maimaELMT1436263028601708);
+					}
+				}
+		});
+	</script>
+	<script type="text/javascript">
+		var curPageELMT1436263028601708 = 1,
+			pageSizeELMT1436263028601708 = 6;
+		function showLiELMT1436263028601708(curPageELMT1436263028601708){
+			 // 获得ul下所有的li
+			var lis = $("#ELMT1436263028601708 ul li");
+
+			 // 根据curPage计算出beginLi和endLi    就是要显示的li从那一条开始，到哪一条结束
+			var beginLi = (curPageELMT1436263028601708-1)*pageSizeELMT1436263028601708;		// 从0开始
+			var endLi = beginLi + pageSizeELMT1436263028601708 - 1;
+
+			if (endLi >= lis.length-1)
+			{
+				endLi = lis.length;
+			}
+
+			for (var i=beginLi; i<=endLi; i++)
+			{
+				$(lis).eq(i).css("display","block");
+				if (endLi == lis.length)
+				{
+					$("#MoreELMT1436263028601708").css("display","none");
+					$("#ELMT1436263028601708 ul").addClass("last-child-no-bottom");
+					
+				}
+			}
+			if(($("#MoreELMT1436263028601708").css("display")) == "none"){
+				$("#ELMT1436263028601708").append("<div style='height:4px'></div>");
+			}
+		}
+
+		var moreType = '2',
+			moreUrl = '';
+		if (moreType == "1")
+		{	// 新页面打开链接
+			var detialText = $("#MoreELMT1436263028601708 .detial").html();
+			var detialStr = '<a href="'+moreUrl+'">'+detialText+'</a>';
+			$("#MoreELMT1436263028601708 .detial").html(detialStr);
+		}else{
+			// 本页面继续加载
+			$("#MoreELMT1436263028601708 .detial").click(function(){
+				curPageELMT1436263028601708 ++;
+				showLiELMT1436263028601708(curPageELMT1436263028601708);
+			});
+		}
+		$(function (){
+			// 默认，展示第一页数据
+			showLiELMT1436263028601708(1);
+		});
+	</script>
+</div>
+		</div>
+		
+	</div>
+</div>
+			</div>
+		</div>
+	</div>
+	<!--评论-->
+	<div class="pinglun_" style="display: none;">
+	
+
+	</div>
+	<!--底部导航-->
+	<link type="text/css" rel="stylesheet" href="http://r.img.cctvpic.com/nettv/mcntv/mobile/ysmldt/style/style.css?bb99c7b56b22949627cb39582949a2c0"/>
+
+	
+				
+					<style type="text/css">
+div.footer{background-color: #fff;padding: 20px 0;}
+</style>
+				
+			
+
+<div class="footer">
+	
+	<p><a href="http://www.cctv.com/index.shtml">返回PC</a></p>
+	
+	
+	<p><a href="javascript:void(0)">客服:(010)88047123</a></p>
+	
+	
+	<p><a href="javascript:void(0)">中国中央电视台  央视网  版权所有</a></p>
+	
+</div>
+</div>
+<script type="text/javascript" src="http://p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1432263496615322/diceng_video_20170508.js?123456789abcdefg123456789"></script>
+<script type="text/javascript" src="http://js.player.cntv.cn/creator/common_standard.js"></script>
+<script type="text/javascript" src="http://js.player.cntv.cn/creator/swfobject.js"></script>
+<script type="text/javascript">
+var hoffsetH_h = window.screen.availHeight;
+$("#j_pullLoader").css("height",(hoffsetH_h-180));
+//获取url参数
+	var isInit = true;
+	//获取url参数
+	function GetRequest() {
+		var url = location.search; //获取url中"?"符后的字串
+		var theRequest = new Object();
+		if (url.indexOf("?") != -1) {
+			var str = url.substr(1);
+			strs = str.split("?");
+			strs = str.split("&");
+			for(var i = 0; i < strs.length; i ++) {
+				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+			}
+		}
+		return theRequest;
+	}
+	var Request = new Object();
+	Request = GetRequest();
+	var vsid,videoID,guid;
+	vsid = Request['vsid'];
+	videoID = Request['videoID'];
+	guid = Request['guid'];
+
+	$(function(){
+		if(vsid != undefined && vsid != ""){
+			initHtml_video(vsid,"vsid");
+		}else if(videoID != undefined && videoID != ""){
+			initHtml_video(videoID,"videoID");
+		}else if(guid != undefined && guid != ""){
+			initHtml_video(guid,"guid");
+		}else if(vsid == undefined || vsid == "" && videoID == undefined || videoID == "" && guid == undefined || guid == ""){
+			if ( window.location.href.indexOf("producePage")!=-1){
+			}else{
+				window.location.href="http://m.cctv.com/404/index.shtml";
+			}
+		}
+	});
+/* 以下是广告相关逻辑 */
+
+// 广告：script请求方法
+function addScript(link){
+	var el = document.createElement("script");
+	el.type="text/javascript";
+	el.lang="javascript";
+	if(el.readyState){
+		el.onreadystatechange=function(){
+			if(!this.readyState||this.readyState=="loaded"||this.readyState=="complete"){
+			}
+		}
+	}else{
+		el.onload=function(){}
+	}
+	el.src=link;
+	document.getElementsByTagName("body")[0].appendChild(el);
+}
+var videoPrimaryArray = '[{"primaryid":"PAGE1354766409225382","isAd":true}]'
+
+// 广告：初始化
+function initAd(primaryPageId){
+
+	// 声明广告相关接口
+	var androidlink = "http://galaxy.bjcathay.com/s?z=cathay&c=744&op=1";
+	// 判断：primary_page_id 是否为空
+	if (primaryPageId != "" || primaryPageId != " ")
+	{
+		// 调用广告方法
+		addScript(androidlink+"&_mcctvPrimaryPageId="+primaryPageId);
+	}else{
+		// 调用广告方法
+		addScript(androidlink);
+	}
+}
+// 广告：重写callback函数
+function callback(data){
+	for(j=0;j<data.type.split(",").length;j++){
+		var type_item = data.type.split(",")[j];
+		if(type_item == "spyt_banner"){
+			var banner_yetou = $("#"+type_item);
+			if(data.url != "" && data.url != null && data.url != undefined){
+				$(banner_yetou).find("a").attr("href",data.click);
+				$(banner_yetou).find("img").attr("src",data.url);
+				$(banner_yetou).find("img").css("display","block");
+				$(banner_yetou).find(".close_btn").click(function(){
+					$(banner_yetou).find("img").css("display","none");
+				})
+				$("#spyt_banner").append('<i>广告</i>');
+			}else if(data.jsadID != '' && data.jsadID != null && data.jsadID != undefined){
+				var bannerid = data.jsadID;
+				var guanggaoming = data.type;
+				$("#"+guanggaoming).find('a').remove();
+				var slot = {}
+					slot[bannerid]={target: guanggaoming}
+				if(typeof(_FTAPI_)!= 'undefined'){
+					var timer = setInterval(function () {
+						if (_FTAPI_) {
+							clearInterval(timer);
+							_FTAPI_.init(slot);
+						}
+					}, 500);
+				}
+			}else{
+				$(banner_yetou).hide();
+			}
+		}
+	}
+}
+</script>
+<!-- START WRating v1.0 -->
+<script type="text/javascript">
+_vjTrack("");
+</script>
+<script type="text/javascript">
+document.write('<noscript><img src="http://cntv.wrating.com/a.gif?c='+code+'" width="1" height="1"/></noscript>');
+</script>	
+<!-- END WRating v1.0 -->
+<!-- 百度埋码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?acdbd83e8b6676383819e90cc6ee7ec2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

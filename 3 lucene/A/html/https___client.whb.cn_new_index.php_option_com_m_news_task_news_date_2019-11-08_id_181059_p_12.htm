@@ -1,0 +1,189 @@
+		<!doctype html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>文汇电子报-服务国家是心灵召唤，不需要犹豫</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+        <link href="https://client.whb.cn/new/components/com_m_news/include/css/style.css?v=0.01" rel="stylesheet" type="text/css"/>
+        <script src="https://client.whb.cn/new/components/com_m_news/include/js/jquery.min.js?v=0.01" type="text/javascript"></script>
+        <script src="/new/components/com_m_news/include/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 320;
+		var ua = navigator.userAgent;
+		var IS_Android = 0;
+		if (/(Android)/i.test(ua)) {
+			IS_Android = 1;
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3) {
+				document.write('<meta name="viewport" content="width=320, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+			}
+			else{
+				document.write('<meta name="viewport" content="width=320, target-densitydpi=device-dpi">');
+			}
+		}
+		else{
+			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+        <script type="text/javascript" language="javascript">
+			var oY, tY, cY, offSetPx;
+			var moveTimeOut;
+			window.onscroll = function () {
+				if (moveTimeOut) {
+					clearTimeout(moveTimeOut);
+				}
+				oY = document.getElementById("backBtn").offsetTop;
+				tY = getScrollTop(oY);
+				if (oY > tY+300) {
+					offSetPx = -1;
+				}
+				else {
+					offSetPx = 1;
+				}
+				moveTimeOut = setTimeout(moveBackBtn, 0);
+			}
+	
+			function moveBackBtn() {
+				cY = document.getElementById("backBtn").offsetTop;
+	
+				if (offSetPx > 0) {
+					if (cY >= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY + 10 + "px";
+	
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+				else {
+					if (cY <= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY - 10 + "px";
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+			}
+	
+			function getScrollTop() {
+				var scrollPos;
+				if (window.pageYOffset) {
+					scrollPos = window.pageYOffset;
+				}
+				else if (document.compatMode && document.compatMode != 'BackCompat')
+				{ scrollPos = document.documentElement.scrollTop; }
+				else if (document.body) { scrollPos = document.body.scrollTop; }
+				return scrollPos;
+			}
+			
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: '/new/index.php?option=com_m_news&getWxConfig',
+					data: {
+						getWxConfig: '1',
+					},
+					dataType: 'json',
+					success: function(signPackage) {
+						wx.config({
+							debug: false,
+							appId: signPackage["appId"],
+							timestamp: signPackage["timestamp"],
+							nonceStr: signPackage["nonceStr"],
+							signature: signPackage["signature"],
+							jsApiList: [
+								'checkJsApi',
+								'onMenuShareTimeline',
+								'onMenuShareAppMessage'
+							]
+						});
+					},
+					error: function(xhr, type, error) {
+					}
+				});
+			});
+		</script>
+        </head>
+        <body>
+        <a href="javascript:history.go(-1);" class="backBtn" style="display: none; z-index: 100; opacity: 0.8; top:300px; right:5px; padding: 0px; width: 40px; height: 40px; background-image: url(https://client.whb.cn/new/components/com_m_news/include/images/BackBtn1.png);position:absolute;" id="backBtn"></a>
+        <div class="content">
+        	<div class="menu1">
+            <h1>2019年11月8日   综合;专版  </h1>
+            </div>
+            <div style="clear:both;">
+            						<script type="text/javascript">
+							wx.ready(function () {
+								// 在这里调用 API
+								wx.onMenuShareAppMessage({
+								  title: '服务国家是心灵召唤，不需要犹豫',  
+								  desc: '上海交通大学首批10位签约毕业生全部投身国防军工行业',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2019-11-08&id=181059&p=12',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg', 
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								});
+								wx.onMenuShareTimeline({  
+							      title: '服务国家是心灵召唤，不需要犹豫',  
+								  desc: '文汇电子报',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2019-11-08&id=181059&p=12',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg',  
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								}); 
+							});
+						</script>
+						<div align="left" style="padding-bottom: 10px">
+							<div style="background:#F5F5F5; padding: 12px;">
+																<div style="font-size:12px; color:#949494;width: 296px;word-wrap:break-word">上海交通大学首批10位签约毕业生全部投身国防军工行业</div>
+																<div style="font-weight:600;font-size:24px;width: 296px;word-wrap:break-word">服务国家是心灵召唤，不需要犹豫</div>
+							</div>
+													</div>
+						<div style="border-bottom: 1px solid #CECECE; clear: both; margin-bottom: 5px;"></div>
+						<div align="center" style="padding: 0px 12px;">
+												<div style="font-size:14px; text-align: left;word-break: break-all;">    <p><p>■本报记者&nbsp;姜澎</p><p>编号为“0000001号”的上海高校2020届录用协议书日前出炉。这份就业协议是上海交通大学机械与动力工程学院博士生高娇与中国工程物理研究院签署的。</p><p>记者获悉，今年该校包揽了上海从“0000001号”到“0000010号”的前十份录用协议书。从黄旭华院士所在的中船集团第七一九研究所到中国电子科技集团公司第十三研究所，清一色的，这些学生签约的都是国防军工行业的国家重点单位。“不需要再犹豫或挑挑拣拣了，到国家重要行业关键领域服务，就是我的职业理想。”高娇的话代表了这些签约学生的心声。</p><p>在上海交大，前十位签约的学生不论是学术能力还是综合素质，都可以用“优秀”来形容。高娇就是其中之一，她在读博期间已累计发表二区以上SCI论文9篇，申请国家发明专利4项，还获得包括“挑战杯”“节能减排”大赛等多项国内顶级创新创业竞赛的特等奖。</p><p>上海交大就业中心相关负责人告诉记者，每年该校都有上千名毕业生投身到国防事业。这些签约的学生，既不犹豫，也没有权衡，都是听从内心的召唤做出了选择。</p><p>育人环境对学生的就业选择十分重要。上海交大副校长王伟明说，学校长期坚持以国家战略需求为牵引，以“价值引领”推动全员关心就业引导工作，“就业工作比招生工作还重要”。从校长和党委书记为学生上第一课，到邀请“两弹一星”功臣孙家栋、航母总设计师朱英富等来为学生授课，学校不断激励学生胸怀家国、志存高远。</p><p>材料科学与工程学院硕士毕业生王志恒，就是受到黄旭华学长的感召。当听过黄旭华隐“功”埋名三十载，终生报国不言悔的事迹后，王志恒毅然选择了其所在的七一九研究所。</p><p>高娇说，参加招聘宣讲会时，看到宣传册上“铸国防基石，做民族脊梁”的字样，她当时就想起了“共和国勋章”获得者、“两弹一星”功勋于敏先生说过的名言——“国家需要我，我一定全力以赴”。高娇没有犹豫，决定签约。</p><p>“为国奉献说起来容易，但是需要科研人员的坚持、奉献、甘于寂寞。”王伟明认为，让大学生尽早地参与到国家科研项目，可以让他们感受到为国效力的成就感。</p><p>电子信息与电气工程学院硕士毕业生张仕强在读研期间就参与了带教导师和中电十三所的一个课题项目。在做课题期间，他就被中电十三所承担的“振兴民族半导体，实现国家信息化”历史使命所打动。临近毕业时，张仕强毫不犹豫地选择了该所，投身微波无源器件领域研究。</p><p>上海交大学生处负责人侯士兵表示，以国家战略需求为导向，学校聚焦核心就业单位，不断加强与国家重点单位在人才培养、导师聘任、实践基地等方面的深度合作。“学校要做的就是要创造条件，激发学生们的爱国心和科研能力，让他们与祖国同向同行，未来得到最好的发展。”</p></p></div>
+						</div>
+					</div>
+				            </div>
+            <br style="clear:both"/>
+        </div><!--content-->
+        </body>
+        <script type="text/javascript">
+			var date = "2019-11-08";
+			var name,value,i;
+			var str=location.href;
+			var num=str.indexOf("?");
+			str=str.substr(num+1);
+			var arrtmp=str.split("&");
+			var backurl = "";
+			for(i=0;i < arrtmp.length;i++){
+				num=arrtmp[i].indexOf("=");
+				if(num>0){
+					name=arrtmp[i].substring(0,num);
+					value=arrtmp[i].substr(num+1);
+					if(name=="p"){
+						backurl = "index.php?option=com_m_news&date="+date+"&p="+value;
+						$(".backBtn").attr("href", "index.php?option=com_m_news&date="+date+"&p="+value);
+					}
+				}
+			}
+			function goback(){
+				window.location.href = backurl;
+				console.log("不是首页");
+				if(IS_Android){
+					console.log("android");
+					android.goback(1);
+				}
+				else{
+					console.log("ios");
+					return 1;
+				}
+			}
+			//setTimeout("goback();", 3000);
+		</script>
+        </html>
+		

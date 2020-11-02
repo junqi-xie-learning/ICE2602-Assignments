@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+ <head> 
+  <meta name="descriptions" content="自2001年起，上海交大累计选派二十届共221名志愿者，服务五省六县20多所学校。">
+ </head> 
+ <body> 
+  <div id="wx_pic" style="margin:0 auto;display:none;"> 
+   <img src="/shsldb/51ldbdemo1/images/logo_min.png"> 
+  </div> 
+  <meta charset="utf-8"> 
+  <title>上海交大启动“未来教师”提升计划，为基础教育添砖加瓦</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+  <link rel="stylesheet" href="/shsldb/51ldbdemo1/wap/css/mui.min.css"> 
+  <link rel="stylesheet" href="/shsldb/51ldbdemo1/wap/css/swiper.min.css"> 
+  <link rel="stylesheet" href="/shsldb/51ldbdemo1/wap/css/index.css"> 
+  <script src="/shsldb/51ldbdemo1/js/jquery.min.js"></script> 
+  <script src="/shsldb/51ldbdemo1/wap/js/openApp.js"></script> 
+  <style>
+	.xiazai-bottom {
+    width: 100%;
+    font-size: 0;
+    padding: 10px 0 10px 0;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+	}
+	 .more-reply-openapp {
+    margin: 0 auto 15px auto;
+    border: 1px solid #C52026;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: #C52026;
+    padding: 5px 0;
+    width: 95%;
+    cursor: pointer;
+}
+	.abstract {
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+}
+	</style> 
+  <script type="text/javascript">
+   //js判断是否是苹果设备
+function checkIsAppleDevice(){
+var u=navigator.userAgent,app=navigator.appVersion;
+ var ios = !!u.match(/\(i[^;]+;(U;)? CPU.+Mac OS X/);
+  var iPad = u.indexOf('iPad')>-1;
+  var iPhone= u.indexOf('iPhone')>-1||u.indexOf('Mac')>-1;
+  if (ios||iPad||iPhone){
+  return true;
+  } else {
+  return false;
+  }
+ }
+
+//js判断是否为Android设备
+function checkIsAndroidDevice(){
+var u = navigator.userAgent;
+if ( u.indexOf('Android') > -1 || u.indexOf('Adr') > -1 ){
+return true;
+}else{
+return false;
+}
+}
+ 
+
+
+
+
+
+//js判断终端访问
+
+function checkIsTerminal(){
+
+var u = navigator.userAgent;
+
+trident = u.indexOf('Trident') > -1;//IE内核
+
+presto = u.indexOf('Presto') > -1;//opera内核
+
+webkit = u.indexOf('AppleWebKit') > -1; //苹果。谷歌内核
+
+gecko = u.indexOf('Gecko') > -1;//火狐内核
+
+mobile= !!u.match(/AppleWebjit.*Mobile,*/);//移动终端
+
+android = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;//Android终端
+
+ios = !!u.match(/\(i[^;]( U;)? CPU.+Mac OS X/);//ios终端
+
+iphone = u.indexOf('iPhone') > -1;//iPhone或者QQHD浏览器
+
+ipad = u.indexOf('iPad') > -1;//iPad
+
+webapp = u.indexOf('Safari') == -1;//web应用程序没有头部与底部
+
+weixin = u.indexOf('MicroMessenger') > -1;//微信
+
+qq = u.match(/\sQQ/i) == "qq";//QQ
+}
+    
+  function  tryOpenApp() {
+       let _downLoadUrl = '';
+          let _schema = '';
+          let _protocal = '';
+          if (checkIsAppleDevice()) {
+            _downLoadUrl = 'https://apps.apple.com/us/app/%E5%8A%B3%E5%8A%A8%E8%A7%82%E5%AF%9F/id1467203338?l=zh&ls=1';
+            _schema = '?promoter';
+            _protocal = 'XiTuPhone';
+          } else if (checkIsAndroidDevice()) {
+            _downLoadUrl = 'http://ldgcapp.51ldb.com/ldbapp/ldgc.apk';
+            _schema = 'promotion';
+            _protocal = 'xitu';
+          }
+          openAppFun.loadSchema({
+            // 通过NN打开某个链接
+            schema: _schema,
+            //schema头协议，实际情况填写
+            protocal: _protocal,
+            //发起唤醒请求后，会等待loadWaiting时间，超时则跳转到failUrl，默认3000ms
+            loadWaiting:"1000",
+            //唤起失败时的跳转链接，默认跳转到下载页
+            failUrl: _downLoadUrl,
+            // apk信息,请根据实际情况填写
+            apkInfo:{
+              PKG: "com.xituchina.umbrella",
+              CATEGORY: "android.intent.category.DEFAULT",
+              ACTION: "android.intent.action.VIEW"
+            }
+          });
+ 
+    } 
+    </script> 
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script> 
+  <script src="http://ldgc.51ldb.com/TrueCMS/js/jquery-1.7.2.min.js" type="text/javascript"></script> 
+  <script>
+  $.ajax({   
+		url : 'http://ldgc.51ldb.com/TrueCMS/visitorController/getWeiXinSignature.do',
+		type : 'POST',   
+		cache : false,
+		async : false,
+		error : function() {  
+			console.info('链接异常，请检查网络');
+		},
+		data : {
+			'htmlUrl':window.location.href.split('#')[0]
+		},    
+		success : function(result) {
+			var res = eval("("+result+")");
+			if(res.success){
+			wx.config({
+    　　　　 debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印
+    　　　　 appId: 'wxfba351a17516f446',
+    　　　　 timestamp: res.ret.timestamp,
+    　　　　 nonceStr: res.ret.nonceStr,
+    　　　　 signature: res.ret.signature,
+    　　　　 jsApiList: [
+           　　"updateTimelineShareData", //分享到朋友圈
+              "updateAppMessageShareData"//分享给朋友
+    		 ]
+    	  });
+        wx.ready(function () {      //需在用户可能点击分享按钮前就先调用
+    	    wx.updateTimelineShareData({ 
+    	        title: '上海交大启动“未来教师”提升计划，为基础教育添砖加瓦', // 分享标题
+    	        link: res.ret.url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    	        imgUrl: 'http://ldgc.51ldb.com/shsldb/51ldbdemo1/images/logo_min_only.png', // 分享图标
+    	        success: function () {
+    	          // 设置成功
+    	        }
+    	    })
+    	 }); 
+       wx.ready(function () {      //需在用户可能点击分享按钮前就先调用
+           wx.updateAppMessageShareData({ 
+        		title: '上海交大启动“未来教师”提升计划，为基础教育添砖加瓦', // 分享标题
+        		desc: "自2001年起，上海交大累计选派二十届共221名志愿者，服务五省六县20多所学校。", // 分享描述
+        		link: res.ret.url, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        		imgUrl: 'http://ldgc.51ldb.com/shsldb/51ldbdemo1/images/logo_min_only.png', // 分享图标
+       			success: function () {
+          			// 设置成功
+       			}
+    		})
+    	 });  
+		  }else{
+				console.info(res.error);
+		  }
+		}
+	});
+</script> 
+  <input type="hidden" name="userId" id="userId" value=""> 
+  <input type="hidden" name="username" id="username" value=""> 
+  <input type="hidden" name="tokenn" id="tokenn" value=""> 
+  <input type="hidden" id="nrid" name="nrid" value="0172feee800dc0017d7eeff628e2c4a6"> 
+  <input type="hidden" id="token" name="token" value=""> 
+  <!--<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  href="javascript:window.history.back();"></a>
+		<h1 class="mui-title">劳动观察</h1>
+	</header>--> 
+  <div class="xiazai-top" style="background-color: #fff;
+    position: relative;
+    padding: 8px 0 1px 0;
+    border-bottom: 1px solid #dddddd;"> 
+   <div> 
+    <img src="/shsldb/51ldbdemo1/images/logo_min.png" style="    width: 116px;    margin-left: 10px;"> 
+    <img src="/shsldb/51ldbdemo1/images/open-top.png" class="open-app" style="position: absolute;    top: 19%;    right: 4%;    width: 72px;    height: 32px;" onclick="tryOpenApp();"> 
+   </div> 
+  </div> 
+  <div class="mui-content"> 
+   <div class="main"> 
+    <h1 class="article-head">上海交大启动“未来教师”提升计划，为基础教育添砖加瓦</h1> 
+    <!--<div class="index-news clearfix">
+				<span class="mui-pull-left"><img class="news-pic" src="/shsldb/51ldbdemo1/wap/img/news.png">会情</span>
+				<span class="mui-pull-right"><img class="add-btn" src="/shsldb/51ldbdemo1/wap/img/add-btn.png"></span>
+			</div>--> 
+    <p class="clearfix" style="font-size:14px;color:#707070;"> <span class="mui-pull-left" style="margin-right: 3rem;">来源：劳动观察</span> <span class="mui-pull-left"></span> <span class="mui-pull-right"></span> </p> 
+    <p class="clearfix" style="font-size:14px;color:#707070;"> <span class="mui-pull-left">作者：李嘉宝</span> <span class="mui-pull-right">2020-06-30 09:03</span> </p> 
+    <div class="clearfix" style="    margin-bottom: 1rem;"> 
+     <div class="mui-pull-left zhaiyao-tit"></div> 
+     <div class="mui-pull-left zhaiyao-info" style="  width: 98%;  margin: 13px 3px;"> 
+      <img style="border-radius: 5px;margin-bottom: -21px;width:98%" src="/picture/c1903a01-e993-4f53-b849-27e688b71913.jpg"> 
+     </div> 
+    </div> 
+    <div class="clearfix" style="    margin-bottom: 1rem;"> 
+     <div class="mui-pull-left zhaiyao-tit"></div> 
+     <div class="mui-pull-left zhaiyao-info" style=" border-radius:5px;  line-height: 27px;    width: 98%;    background: #ebe8e8;        padding: 5px;">
+       自2001年起，上海交大累计选派二十届共221名志愿者，服务五省六县20多所学校。 
+     </div> 
+    </div> 
+    <div class="content" id="zoom"> 
+     <p style="line-height: 1.5; text-indent: 0px; text-align: justify;"><span style="font-size: 18px; font-family: SimSun;">上海交通大学“未来教师”提升计划日前正式启动。该项目将对研究生支教团成员开展一系列素质提升培训，提高志愿者教学能力和基础教育经验，为交大基础教育储备优质人才。校党委常委、副校长张安胜，校工会主席、基础教育办主任于朝阳等出席活动。</span></p> 
+     <p style="line-height: 1.5"><br></p> 
+     <p style="line-height: 1.5; text-indent: 0px; text-align: justify;"><span style="font-size: 18px; font-family: SimSun;">校基础教育办副主任刘轶昆介绍了“未来教师”提升计划筹备情况。经过充分调研交流、结合实际需求，“提升计划”建立了跟班带教和项目实践两大工作机制，设置了专题培训、教学实践、课题研究等培训环节，力求提升支教学生精准服务能力。围绕“未来教师”培养，学校设立了专项工作组做好相关保障。</span></p> 
+     <p style="line-height: 1.5"><br></p> 
+     <p style="line-height: 1.5; text-indent: 0px; text-align: justify;"><span style="font-size: 18px; font-family: SimSun;">校团委书记钱文韬介绍了上海交大研支团的工作情况。自2001年起，上海交大累计选派二十届共221名志愿者，服务五省六县20多所学校，授课年级从一年级至高三，覆盖学生数量超过五万人。在招募遴选、保障激励、队伍建设等方面，上海交大严格选拔、规范管理、落实保障、扎实培训，形成一套在全国范围内极具特色的研支团工作体系。</span></p> 
+     <p style="line-height: 1.5"><br></p> 
+     <p style="line-height: 1.5; text-indent: 0px; text-align: justify;"><span style="font-size: 18px; font-family: SimSun;">校党委常委、副校长张安胜对选择到西部支教的研究生支教团成员表达赞叹、欣慰和钦佩，对他们的选择、付出和牺牲给予肯定。他表示：“交大强调四位一体的育人理念，特别重视价值引领。到西部去是实践育人的直接体现，不仅要有情怀、担当、责任的基础，还与实际的能力密切相关。希望同学们以此为起点，为未来的人生选择做好铺垫和积累。希望大家在未来的选择中，更注重事业的高度、心胸更加宽广、目标更加长远。未来基础教育领域大有天地，希望在这些同学们中间涌现出一些热爱基础教育，愿意投身教育事业的优秀学生，并在这份事业中获得自己的人生价值。”</span></p> 
+     <p style="line-height: 1.5"><br></p> 
+     <!--开始 内容附件标签--> 
+     <!--结束 内容附件标签--> 
+    </div> 
+    <p class="clearfix"> <span class="mui-pull-left" style="color: #afa5a5;font-size: 14px;"></span></p> 
+    <p class="clearfix"> <span class="mui-pull-left" style="color: #afa5a5;font-size: 14px;"></span> </p> 
+    <p class="clearfix"> <span class="mui-pull-left" style="color: #afa5a5;font-size: 14px;"></span> </p> 
+    <p class="clearfix"> <span class="mui-pull-left" style="color: #afa5a5;font-size: 14px;"></span></p> 
+    <p class="clearfix"> <span class="mui-pull-left" style="color: #afa5a5;font-size: 14px;"><span>责任编辑：</span>王枫</span> </p> 
+    <p class="clearfix" style="font-size:14px;color:#707070;"> <span class="mui-pull-left" style="color: #afa5a5;font-size: 14px;margin-right:20px;"></span> <span style="color: #afa5a5;font-size: 14px;"></span> </p> 
+    <p class="clearfix" style="margin-bottom:60px;"> <span class="mui-pull-left" style="color: #afa5a5;font-size: 14px;">劳动观察新闻，未经授权不得转载 </span> </p> 
+    <p class="abstract"></p> 
+    <div class="xiazai-bottom" id="xiazaiBottom" style="width: 640px;height:57px;display: block;"> 
+     <img src="/shsldb/51ldbdemo1/images/logo_min_d.png" style="    width: 112px;    margin-left: 10px;"> 
+     <img src="/shsldb/51ldbdemo1/images/open-bottom.png" class="open-app" style="position: absolute;    top: 25%;    right: 44%;    width: 70px;    height:29px;" onclick="tryOpenApp();"> 
+    </div> 
+   </div> 
+  </div> 
+  <script type="text/javascript" src="/shsldb/51ldbdemo1/wap/js/swiper.min.js"></script> 
+  <script type="text/javascript">
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+        slidesPerView: 'auto',
+        paginationClickable: true,
+        speed:600,
+        spaceBetween: 30
+	});
+</script> 
+  <!-- 微信分享 --> 
+  <script type="text/javascript" src="/shsldb/51ldbdemo1/node/node_modules/jssha/src/sha.js"></script> 
+  <script type="text/javascript" src="/shsldb/51ldbdemo1/wap/js/zd.js"></script> 
+  <!-- 页面脚本 --> 
+  <script>
+ $(document).ready(function () {
+     $("#zoom").find("video").each(function(i){
+        $(this).removeAttr("style");
+		  $(this).css("width","100%");
+     });
+     $("#zoom").find("img").each(function(i){
+		var w = $(this).width();       
+		if(w>100){
+          $(this).removeAttr("style");
+		  $(this).css("width","99%");
+          $(this).css("border-radius","0.5rem");
+         // $(this).css("margin-left","-1.9rem");
+          $(this).css("height","87%");
+       $(this).parent("#zoom p").css("text-indent","0em");
+          //$(this).parent().css("text-indent","0em");
+		}		
+	 });
+ //   $("#zoom p").removeAttr("style");
+   
+    });   
+</script> 
+  <script id="visits_js" type="text/javascript" src="/shsldb/resource/js/visits.js?cmsURL=http://www.51ldb.com/TrueCMS&amp;siteId=404f7f46-f437-46e1-b71b-4d29a1768782&amp;columnId=5bc5db52-aa6d-438d-87c3-26450b8665d7&amp;messageId=0172feee800dc0017d7eeff628e2c4a6"></script>  
+ </body>
+</html>

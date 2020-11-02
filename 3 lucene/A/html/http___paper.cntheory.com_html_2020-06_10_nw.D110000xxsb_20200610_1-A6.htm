@@ -1,0 +1,584 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="content-language" content="utf-8"/>
+    <meta name="robots" content="all"/>
+    <meta name="author" content=""/>
+    <meta name="copyright" content=""/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <META name='filetype' content='0'>
+    <META name='publishedtype' content='1'>
+    <META name='pagetype' content='2'>
+    <META name='catalogs' content='XTW_0009002'>
+    <link href="../../../tplimg/mulu_4.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all"/>
+    <title>
+学习时报
+-
+钱学森系统工程思想的时代价值
+</title>
+    <SCRIPT language=Javascript src="../../../tplimg/prototype.js"></SCRIPT>
+    <SCRIPT language=Javascript src="../../../tplimg/mp.js"></SCRIPT>
+    <SCRIPT language=Javascript src="../../../tplimg/calendar2.js"></SCRIPT>
+    <SCRIPT language=Javascript src="../../../tplimg/new.js"></SCRIPT>
+    <SCRIPT language=Javascript src="../../../tplimg/range.js"></SCRIPT>
+    <SCRIPT language=Javascript src="../../../tplimg/jspoints111.js"></SCRIPT>
+
+    <style>
+        a.ared:link {
+            font-size: 12px;
+            color: #FF0000;
+            text-decoration: none;
+        }
+
+        a.ared:visited {
+            font-size: 12px;
+            color: #FF0000;
+            text-decoration: none;
+        }
+
+        a.ared:hover {
+            font-size: 12px;
+            color: #006699;
+            text-decoration: none;
+        }
+    </style>
+    <style>
+        .head_c2 {display: block;float: left;margin: 0 15px 0 0;width: 91px;color: #004873;height: 21px;padding: 0 2px 0 2px;background: #fff;border: 1px solid #66B1EB;text-align: left;}
+
+        .head_c3 {float: right; margin: 2px 0 0 0;}
+
+        #pic {width: 400px;}
+
+        .btn-audio-stop {
+            display: block;
+            width: 90px;
+            height: 15px;
+            float: left;
+        }
+
+        .btn-audio-play {
+            display: block;
+            width: 15px;
+            height: 15px;
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        function nTabs(tabObj, obj) {
+            var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+            for (i = 0; i < tabList.length; i++) {
+                if (tabList[i].id == obj.id) {
+                    document.getElementById(tabObj + "_Title" + i).className = "active";
+                    document.getElementById(tabObj + "_Content" + i).style.display = "block";
+                } else {
+                    document.getElementById(tabObj + "_Title" + i).className = "normal";
+                    document.getElementById(tabObj + "_Content" + i).style.display = "none";
+                }
+            }
+        }
+
+        /*function CopyAll()
+
+        {
+
+                 var obj = document.getElementById("articleContent");
+
+                 if(obj!=null){
+
+                           var content = obj.innerText;
+
+                           window.clipboardData.setData("Text",content);
+
+                           alert("复制成功");
+
+                 }
+
+        }*/
+
+        //全文复制功能
+        function CopyAll() {
+
+            var obj = document.getElementById("articleContent").innerText;
+            var oInput = document.createElement('input');
+            oInput.value = obj;
+            document.body.appendChild(oInput);
+            oInput.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            oInput.className = 'oInput';
+            oInput.style.display = 'none';
+            alert('复制成功');
+
+        }
+		function getCss(element, attr){
+			if(element.currentStyle){
+			return element.currentStyle[attr];
+		}else{
+			return window.getComputedStyle(element,null)[attr];
+		}
+		}
+		function zoomIn() {
+			var oDiv=document.getElementById('content');
+			var fs=getCss(oDiv,'fontSize');
+			oDiv.style.fontSize=parseInt(fs)+2+'px';
+			oDiv.style.lineHeight='190%';
+			document.documentElement.scrollTop=9999;
+		} 
+ 
+		function zoomOut() {
+			var oDiv=document.getElementById('content');
+			var fs=parseInt(getCss(oDiv,'fontSize'));
+			if(fs<=10) return false;
+			oDiv.style.fontSize=fs-2+'px';
+		 }
+
+        function submitCheck() {
+            if (document.all("content1").value.length > 1000) {
+                alert("评论内容超过1000字！");
+                return false;
+            }
+            if (document.all("content1").value.indexOf("<script") != -1 || document.all("content1").value.indexOf("<\/") != -1) {
+                alert("评论内容含有特殊字符!");
+                return false;
+            }
+            if (document.all("content1").value == "") {
+                alert("必须填写评论内容！");
+                return false;
+            }
+            var isnodecomment = document.commentform.isnodecomm.value;
+            document.commentform.nispagename.value = escape(document.getElementById("pageNameForJiaoHu").innerText.replace(/(^\s*)|(\s*$)/g, ""));
+            document.commentform.paperdate.value = document.getElementById("paperdatediv").innerText.replace(/(^\s*)|(\s*$)/g, "");
+            document.commentform.content.value = escape(document.commentform.content1.value);
+            document.commentform.author.value = escape(document.commentform.author1.value);
+            document.commentform.submit();
+        }
+
+        function viewComment() {
+            document.viewform.nispagename.value = escape(document.getElementById("pageNameForJiaoHu").innerText.replace(/(^\s*)|(\s*$)/g, ""));
+            document.viewform.paperdate.value = document.getElementById("paperdatediv").innerText.replace(/(^\s*)|(\s*$)/g, "");
+
+            document.viewform.submit();
+        }
+
+        function dohit() {
+            if (document.readyState == 'complete') {
+                document.frames("hitClickIframe").document.hitform.url.value = location.href;
+                if (document.commentform.isnodecomm.value == '1') {
+                    document.frames("hitClickIframe").document.hitform.nodeid.value = document.commentform.nodeid.value;
+                } else {
+                    document.frames("hitClickIframe").document.hitform.articleid.value = document.commentform.articleid.value;
+                }
+                document.frames("hitClickIframe").document.hitform.submit();
+                document.hitClickIframe.style.display = "none";
+            } else
+                window.setTimeout("dohit()", "300");
+        }
+
+        function getDate() {
+            var url = window.location.pathname.split('/');
+            var length = url.length;
+            document.getElementById("newsIframe").src = "http://paperpost.people.com.cn/" + url[1] + "-" + url[length - 3] + "-" + url[length - 2] + ".html";
+        }
+    </script>
+    <script type="text/javascript">
+        var focus_width = 260;
+        var focus_height = 180;
+        var text_height = 20;
+        var swf_height = focus_height + text_height;
+        var pics = "";
+        var links = "";
+        var texts = "";
+        var resCount = 0;
+
+        function showArtPics() {
+            if (resCount > 0) {
+                pics = pics.substring(0, pics.length - 1);
+                links = links.substring(0, links.length - 1);
+                texts = texts.substring(0, texts.length - 1);
+                var content = "";
+                content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+                content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+                content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+                content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+                content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+                content += '<\/object>';
+                document.getElementById("showArtPicsDiv").innerHTML = content;
+            }
+        }
+
+    </script>
+</head>
+<SPAN id=leveldiv title=点击查看内容
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; Z-INDEX: 100; LEFT: 233px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 210px; CURSOR: hand; POSITION: absolute; TOP: 123px; HEIGHT: 34px; BORDER-RIGHT-WIDTH: 0px"></SPAN>
+<body onLoad="img_filter();initialize();initMPPage();">
+<!--initialize();initMPPage();-->
+<div class="div_bg">
+    <div class="div_center">
+        <!--左侧版面图部分-->
+        <div class="left_c">
+            <div class="ban">
+                <div>
+                    <map name=PagePicMap><Area coords="10,44,392,44,392,339,10,339" shape="polygon" href="./nw.D110000xxsb_20200610_1-A6.htm"><Area coords="29,356,390,356,390,563,29,563" shape="polygon" href="nw.D110000xxsb_20200610_2-A6.htm"></map><img  width=400 height=575 src=../../../images/2020-06/10/A6/20200610A6_brief.jpg border=0 USEMAP=#PagePicMap>
+                </div>
+            </div>
+            <div class="ban_t">
+                <div>
+                    <ul>
+                        <li style="width:400px">
+                            A6版:科技前沿
+                            &nbsp;&nbsp;
+                            <a href=../../../images/2020-06/10/A6/20200610A6_pdf.pdf><IMG src="../../../tplimg/ico4.gif" border=0> PDF版下载</a>
+                            <span>
+            <a class=preart href="nbs.D110000xxsb_A5.htm"> 上一版</a>&nbsp;&nbsp;<a class=preart href="nbs.D110000xxsb_A7.htm">下一版 </a>
+                                <!--<span><a href="node_tc.htm"><img src="../../../tplimg/button3.gif" border="0" style="float:right;padding-right:40px"/></a></span>-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+			<p style="margin: -2px 0 0 10px"><a href="../../../tplimg/index.html" target="_blank"><img src="../../../tplimg/tgxx.jpg" /></a></p>
+            <!-- -->
+
+
+        </div>
+        <!--右侧目录部分-->
+        <div class="right_c">
+            <div style="margin:0 auto;width:530px;height:70px;text-align:right;padding:8px 0 0 20px;">
+                <div style="height:70px;">
+                    <div style="float:right; position:relative; bottom:10px"><a href="http://www.cntheory.com/" target="_blank"><img src="../../../tplimg/lilunwang.png" width="156px" height="70px" border="0" alt="学习时报" /></a></div>
+                    <div style="float:left; line-height: 70px;font-size: 14px;">
+                       	  当前为&nbsp;2020年06月10日 星期三&nbsp;发刊之&nbsp;学习时报</div>
+                </div>
+            </div>
+            <div style="margin:0 auto; color:#004773; height:20px; width:500px; padding:8px 10px 10px 20px; text-align: left;float:left;">
+                <div style="float:left; width:50px;">往期回顾</div>
+                <div style="float:left; width:60px; padding-top:2px;"><a onClick="autoShowDate();" style="cursor:hand;"
+                                                                         title="鼠标点击，显示日历牌"><img src="../../../tplimg/ico1.gif"
+                                                                                                 border="0" alt=""/></a>
+                </div>
+
+                <!-- <div style="float:right; text-align:right;"><a href=nbs.D110000xxsb_A7.htm>返回目录</a></div>-->
+                <div style="float:right; text-align:right;"><a
+                        href=nbs.D110000xxsb_A6.htm>返回目录</a></div>
+            </div>
+            <div class="mobilepaper" id="mobilepaper"></div>
+			<div style="background-color:#AC0707;color:#ffffff;margin:40px 0px 0 5px;line-height:27px;"><img src="../../../tplimg/xxsbnry.png"></div>
+            <!--目录与标题-->
+			<div align="right" style="position:static">
+<input align="center" name="context" type="text" placeholder="请输入关键字查询" id="context" style="width:480px">
+<input type="button" value="一键搜索" align="right" onclick="my_button(this)">
+</div>
+            <div style="margin:0px auto 0 auto; width:550px; overflow-wrap: break-word; overflow-x: hidden;">
+                <div class="text_c"><br/>
+                    
+            <h3></h3>
+            <h1>钱学森系统工程思想的时代价值</h1>
+            <h2></h2>
+            <h4>
+                        盛懿 汪长明
+  字数:<text id="wordcount"></text></h4>
+
+                    <div class="c_c">
+                        <div id='reslist'>
+                            <div style="text-align:center;">
+    <IMG src="../../../images/2020-06/10/A6/res02_attpic_brief.jpg" style="display:none;text-align:center;">
+</div>
+  <div>  </div>
+                        </div>
+                        <DIV id=ozoom style="zoom:100%;">
+                            <div id="showArtPicsDiv" align="center"></div>
+                            <script language=javascript>
+                                /*	if(picResCount>0){
+                                        document.getElementById("picres").style.display="block";
+                                        document.write("<br />");
+                                    }*/
+                            </script>
+                            <div id="content">
+                                <!--enpcontent--> <founder-content><P>&nbsp;&nbsp;&nbsp;&nbsp;<p&nbsp;align&nbsp;=&nbsp;"left"><font&nbsp;color&nbsp;=&nbsp;"#000000"&nbsp;face&nbsp;=&nbsp;"宋体"><b>&nbsp;&nbsp;&nbsp;&nbsp;</b>核心阅读<br>　　系统是由相互作用和相互依赖的若干组成部分结合成的具有特定功能的有机整体；这些组成部分作为分系统，又是更大系统的组成部分；系统工程是组织管理系统的规划、研究、设计、制造、实验和使用的科学方法。钱学森系统工程思想的理论精髓可以归纳为：顶层设计、科学管理、自主创新、全国协作、综合集成。<br>　　系统工程思想是钱学森晚年的重要理论建树和思想结晶，是支撑其人生历程中第三座科技创造高峰的代表性成果。在全面深化改革新的历史起点上，重温钱学森系统工程思想的理论内涵和现实情怀，具有重要时代价值。<br>　　对推进中国特色社会主义事业的历史启迪<br>　　钱学森系统工程思想的时代机遇。坚持和完善中国特色社会主义制度、推进国家治理体系和治理能力现代化，全面深化改革，离不开系统性思维，离不开坚持全国一盘棋解决问题。习近平总书记指出：“全面深化改革是一项复杂的系统工程，需要加强顶层设计和整体谋划，加强各项改革关联性、系统性、可行性研究。”就理论内涵而言，这与钱学森系统工程思想在认识论和方法论上高度契合。<br>　　钱学森1978年9月发表的《组织管理的技术——系统工程》一文是系统工程中国学派的奠基之作，而1979年1月《组织管理社会主义建设的技术——社会工程》一文的发表则是他将系统工程思想从工程系统工程向社会系统工程、从工程管理向社会和国家管理推广，更好实现系统工程社会化服务职能的标志性成果。<br>　　钱学森认为，系统是由相互作用和相互依赖的若干组成部分结合成的具有特定功能的有机整体；这些组成部分作为分系统，又是更大系统的组成部分；系统工程是组织管理系统的规划、研究、设计、制造、实验和使用的科学方法。钱学森系统工程思想的理论精髓可以归纳为：顶层设计、科学管理、自主创新、全国协作、综合集成。与西方系统工程强调“工程”相比，钱学森系统工程思想更强调组织管理的重要性，能够更好地发挥中国特色社会主义制度的优越性。<br>　　钱学森系统工程思想的历史张力。经过40余年的推广、应用和发展，系统工程已经从概念走向理论、从理论走向实践，从航天型号研制部门走向国家决策机构、从工程技术型号设计走向国家管理顶层设计，衍生出军事系统工程、农业系统工程、社会系统工程、教育系统工程、法治系统工程等众多分支学科，渗透到社会的各个领域，成为当今中国社会广为人知的高频词汇之一，并纳入了国家公共话语体系。作为对系统工程思想和方法的创新发展，钱学森社会系统工程思想的理论价值在于顺应现代科学技术发展客观趋势，成为集成多种学科、涉及现代科学技术不同层次，规划、研究、管理社会的科学方法论；其实践价值在于面向我国社会主义现代化建设，具有中国特色和时代特征，旨在认识社会、改造社会、建设社会和管理社会。系统工程无论在思想方法还是工作方法上对我国经济、政治、文化、社会、生态文明建设等都产生了极其重要的影响。<br>　　对构建中国学术话语体系的实践探索<br>&nbsp;&nbsp;&nbsp;&nbsp;习近平总书记要求广大哲学社会科学工作者按照立足中国、借鉴国外，挖掘历史、把握当代，关怀人类、面向未来的思路，着力构建中国特色哲学社会科学，在指导思想、学科体系、学术体系、话语体系等方面充分体现中国特色、中国风格、中国气派。钱学森晚年创建现代科学技术体系的过程，实质上是构建哲学社会科学中国学派、提升中国学者学术话语权、向世界发出中国声音的过程。<br>　　钱学森系统工程思想体现了中国特色，做到了整体论与还原论的辩证统一。党的十九大报告提出，要为解决人类问题贡献中国智慧和中国方案。钱学森系统工程思想就是在中国特色社会主义伟大实践中形成并发展起来、集其毕生心智的重大理论创新成果，蕴含着显著的中国基因，体现了鲜明的中国特色。钱学森通过总结自身长期从事航天系统工程管理实践，以马克思主义哲学为指导，根据我国社会主义建设具体实际，提炼出具有中国特色的系统工程思想，形成了系统工程中国学派。这一理论的主要特点是充分发挥中国特色社会主义的制度优势，在中国共产党领导下，以马克思主义哲学为指导，将整个社会作为一个开放的复杂巨系统，以综合集成法解决社会主义建设过程中面临的各种复杂性问题。<br>　　钱学森系统工程思想与西方系统工程思想虽然在探索整体与部分关系以及研究各组成要素、组织结构、信息流动和控制机理等方面有相似的一面，但彼此在理论内涵、思维模式、目标要求、实践形式等层面存在很大不同。钱学森系统工程思想的显著特色在于“中国化”：第一，注重总体设计。即从国家和民族的高度来思考社会主义建设问题，在做好顶层设计、实现所要达到的目标时，一方面从组织领导上突出民主集中制和党的领导，另一方面在具体落实上倾全国之力集中攻关，体现了中国特色社会主义的制度优势和组织优势。第二，强调内部协调。社会主义建设本身就是一个大的系统工程，牵涉经济、政治、文化、社会和生态文明等方方面面，协调发展是系统运行的本质要求。第三，植根传统文化。中国传统文化为钱学森系统工程思想提供了文化滋养和思维方式。钱学森系统论建立在中国传统整体论基础上，并做到了东方整体论与西方还原论的辩证统一。因此，钱学森系统工程思想具有鲜明的民族性和本土性。<br>　　钱学森系统工程思想彰显了理论自信，做到了理论之维与价值之维的有机结合。习近平总书记在主持中共中央政治局第二十次集体学习时指出，必须高度重视理论的作用，增强理论自信和战略定力，对经过反复实践和比较得出的正确理论，要坚定不移坚持。系统工程思想正是发端于中国航天实践并在我国经济社会生活中得到检验的“正确理论”。就学术贡献而言，钱学森坚持以我国“两弹一星”重大科学技术工程为理论原点，着眼服务于中国社会主义建设事业，在系统科学领域努力探索构建具有中国特色、彰显自身特质的学科体系、学术体系、话语体系。这些系统性的创新成就使中国系统科学赢得了实质性自我学术主张和学术话语权，并在世界学术之林创立了具有“中国学派”身份标签的系统科学体系。在此意义上，钱学森是一位使我国哲学社会科学形成自身特色和优势的先行者和拓荒者。关于系统工程的发展前景，晚年钱学森曾指出，系统科学是20世纪中叶兴起的一场科学革命，而系统工程的实践又将引起一场技术革命，这场科学和技术革命在21世纪必将促发组织管理的革命。<br>　　对完善科学决策机制的现实意义<br>　　从“系统五性”到“五位一体”：钱学森社会系统工程思想的当代呈现。“五位一体”总体布局是党中央顶层设计执政理念的具体体现。只有坚持“五个建设”全面推进、协调发展，才能形成经济富裕、政治民主、文化繁荣、社会公平、生态良好的发展格局，把我国建设成为富强民主文明和谐美丽的社会主义现代化强国。全面推进“五位一体”总体布局重在统筹，统筹需要以科学的方法论为引领，钱学森社会系统工程思想可以为“五位一体”总体布局提供有理论价值和实践意义的借鉴。<br>　　钱学森社会系统工程思想是钱学森系统工程思想的社会化拓展。社会系统作为开放的复杂巨系统，具有开放性、复杂性、层次性、整体性和动态性五重属性。经济建设、政治建设、文化建设、社会建设、生态文明建设“五位一体”总体布局是党中央全面深化改革的一项重大战略部署，成为新时代中国特色社会主义建设的一项重大社会系统工程，同样具有开放性、复杂性、层次性、整体性和动态性特征。结合“五位一体”总体布局，认真审视系统工程在国家治理这一社会管理系统中的重要作用发现，系统工程不仅是一种技术和方法，更是一种具有普遍价值和意义的科学方法论。这就要求我们在解决复杂问题时运用系统的观点思考问题，用科学的方法求解问题。而针对国家治理过程中一些牵一发而动全身、具有开放复杂巨系统特征的社会系统工程问题，钱学森创立的“从定性到定量综合集成的方法”可以成为解决此类问题的科学方法。<br>　　从“综合集成”到“科学决策”：新时代领导干部队伍建设的理论召唤。党的十九届四中全会以国家治理体系和治理能力现代化为主题，向全党提出了新的要求。除了制度体系，还有一个很重要的决策体系。钱学森提出定性与定量相结合的综合集成方法之初衷，在于建立科学有效的决策机制。综合集成方法的实质是把智慧体系、知识体系、技术体系有机结合起来，构成一个高度智能化的知识—智慧融合体系。其最终实践形式是一个集专家、数据+信息+知识、计算机于一体的巨型智能系统——从定性到定量综合集成研讨厅体系。钱学森指出，如果将定性与定量两种研究方法结合起来，使专家群体、数据和各种信息、计算机技术三者集成为一个系统，就可以有效处理复杂巨系统问题。他认为，这是研究处理开放复杂巨系统问题当前唯一可行的方法。在百年未有之大变局时代背景下，面对全球化进程受阻、国际格局不确定因素日益增多、国内各种新旧矛盾叠加、社会大系统循环面临多重挑战等情况，我们更需要科学决策。<br>　　坚持底线思维，着力防范化解重大风险，关键在领导干部。如何提高领导干部的系统科学素养及其决策能力和水平，是我国当前能否运用科学的思维方法贯彻执行党中央指导方针的关键因素。上世纪七八十年代，钱学森应邀赴中央党校为各级领导干部作了关于现代科学技术体系、社会主义建设的大战略问题等多场专题报告。其中很多内容涉及如何加强领导干部队伍建设、提高领导干部素质和能力、实现领导决策科学化民主化等方面。他多次提出，从我国现代化建设的要求看，学习领导科学，努力实现领导工作的科学化，是在新的历史条件下每一个领导干部面临的重要而又必须解决的新课题。</font></p></P></founder-content><!--/enpcontent-->
+                  <INPUT type=checkbox value=0 name=titlecheckbox sourceid="<Source>SourcePh</Source>" style="display:none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--工具条-->
+                <div class="tool_t">
+                    <!--<a id="btn-audio" class="btn-audio-stop" href="#"><img width="15px" height="15px"  src="../../../tplimg/voice_stop.png" />语音读报</a>-->
+
+                   <!-- <a href=node_7.htm>返回目录</a>
+                    &nbsp;&nbsp;&nbsp;<a href="#" onclick="zoomIn();">放大</a><a href="#" onclick="zoomOut();"><img
+                        src="../../../tplimg/ico6.gif" border="0" alt=""/>缩小</a><a href="#" onclick="CopyAll();"><img
+                        src="../../../tplimg/ico7.gif" border="0" alt=""/>全文复制</a>&nbsp;&nbsp;&nbsp;-->
+					<a href=nbs.D110000xxsb_A6.htm>返回目录</a>
+&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="zoomIn();"><img src="../../../tplimg/ico5.gif" border="0" alt="" />放大</a><a href="javascript:void(0)" onclick="zoomOut();"><img src="../../../tplimg/ico6.gif" border="0" alt="" />缩小</a><a href="javascript:void(0)" onclick="CopyAll();"><img src="../../../tplimg/ico7.gif" border="0" alt="" />全文复制</a>&nbsp;&nbsp;&nbsp;	
+                    <a class=preart href="nw.D110000xxsb_20200610_2-A6.htm">下一篇</a></div>
+                <!-- 以下是供复制全文用 -->
+                <div style="display:none" id="articleContent">
+                    
+                          <!--enpcontent--><P>&nbsp;&nbsp;&nbsp;&nbsp;<p&nbsp;align&nbsp;=&nbsp;"left"><font&nbsp;color&nbsp;=&nbsp;"#000000"&nbsp;face&nbsp;=&nbsp;"宋体"><b>&nbsp;&nbsp;&nbsp;&nbsp;</b>核心阅读<br>　　系统是由相互作用和相互依赖的若干组成部分结合成的具有特定功能的有机整体；这些组成部分作为分系统，又是更大系统的组成部分；系统工程是组织管理系统的规划、研究、设计、制造、实验和使用的科学方法。钱学森系统工程思想的理论精髓可以归纳为：顶层设计、科学管理、自主创新、全国协作、综合集成。<br>　　系统工程思想是钱学森晚年的重要理论建树和思想结晶，是支撑其人生历程中第三座科技创造高峰的代表性成果。在全面深化改革新的历史起点上，重温钱学森系统工程思想的理论内涵和现实情怀，具有重要时代价值。<br>　　对推进中国特色社会主义事业的历史启迪<br>　　钱学森系统工程思想的时代机遇。坚持和完善中国特色社会主义制度、推进国家治理体系和治理能力现代化，全面深化改革，离不开系统性思维，离不开坚持全国一盘棋解决问题。习近平总书记指出：“全面深化改革是一项复杂的系统工程，需要加强顶层设计和整体谋划，加强各项改革关联性、系统性、可行性研究。”就理论内涵而言，这与钱学森系统工程思想在认识论和方法论上高度契合。<br>　　钱学森1978年9月发表的《组织管理的技术——系统工程》一文是系统工程中国学派的奠基之作，而1979年1月《组织管理社会主义建设的技术——社会工程》一文的发表则是他将系统工程思想从工程系统工程向社会系统工程、从工程管理向社会和国家管理推广，更好实现系统工程社会化服务职能的标志性成果。<br>　　钱学森认为，系统是由相互作用和相互依赖的若干组成部分结合成的具有特定功能的有机整体；这些组成部分作为分系统，又是更大系统的组成部分；系统工程是组织管理系统的规划、研究、设计、制造、实验和使用的科学方法。钱学森系统工程思想的理论精髓可以归纳为：顶层设计、科学管理、自主创新、全国协作、综合集成。与西方系统工程强调“工程”相比，钱学森系统工程思想更强调组织管理的重要性，能够更好地发挥中国特色社会主义制度的优越性。<br>　　钱学森系统工程思想的历史张力。经过40余年的推广、应用和发展，系统工程已经从概念走向理论、从理论走向实践，从航天型号研制部门走向国家决策机构、从工程技术型号设计走向国家管理顶层设计，衍生出军事系统工程、农业系统工程、社会系统工程、教育系统工程、法治系统工程等众多分支学科，渗透到社会的各个领域，成为当今中国社会广为人知的高频词汇之一，并纳入了国家公共话语体系。作为对系统工程思想和方法的创新发展，钱学森社会系统工程思想的理论价值在于顺应现代科学技术发展客观趋势，成为集成多种学科、涉及现代科学技术不同层次，规划、研究、管理社会的科学方法论；其实践价值在于面向我国社会主义现代化建设，具有中国特色和时代特征，旨在认识社会、改造社会、建设社会和管理社会。系统工程无论在思想方法还是工作方法上对我国经济、政治、文化、社会、生态文明建设等都产生了极其重要的影响。<br>　　对构建中国学术话语体系的实践探索<br>&nbsp;&nbsp;&nbsp;&nbsp;习近平总书记要求广大哲学社会科学工作者按照立足中国、借鉴国外，挖掘历史、把握当代，关怀人类、面向未来的思路，着力构建中国特色哲学社会科学，在指导思想、学科体系、学术体系、话语体系等方面充分体现中国特色、中国风格、中国气派。钱学森晚年创建现代科学技术体系的过程，实质上是构建哲学社会科学中国学派、提升中国学者学术话语权、向世界发出中国声音的过程。<br>　　钱学森系统工程思想体现了中国特色，做到了整体论与还原论的辩证统一。党的十九大报告提出，要为解决人类问题贡献中国智慧和中国方案。钱学森系统工程思想就是在中国特色社会主义伟大实践中形成并发展起来、集其毕生心智的重大理论创新成果，蕴含着显著的中国基因，体现了鲜明的中国特色。钱学森通过总结自身长期从事航天系统工程管理实践，以马克思主义哲学为指导，根据我国社会主义建设具体实际，提炼出具有中国特色的系统工程思想，形成了系统工程中国学派。这一理论的主要特点是充分发挥中国特色社会主义的制度优势，在中国共产党领导下，以马克思主义哲学为指导，将整个社会作为一个开放的复杂巨系统，以综合集成法解决社会主义建设过程中面临的各种复杂性问题。<br>　　钱学森系统工程思想与西方系统工程思想虽然在探索整体与部分关系以及研究各组成要素、组织结构、信息流动和控制机理等方面有相似的一面，但彼此在理论内涵、思维模式、目标要求、实践形式等层面存在很大不同。钱学森系统工程思想的显著特色在于“中国化”：第一，注重总体设计。即从国家和民族的高度来思考社会主义建设问题，在做好顶层设计、实现所要达到的目标时，一方面从组织领导上突出民主集中制和党的领导，另一方面在具体落实上倾全国之力集中攻关，体现了中国特色社会主义的制度优势和组织优势。第二，强调内部协调。社会主义建设本身就是一个大的系统工程，牵涉经济、政治、文化、社会和生态文明等方方面面，协调发展是系统运行的本质要求。第三，植根传统文化。中国传统文化为钱学森系统工程思想提供了文化滋养和思维方式。钱学森系统论建立在中国传统整体论基础上，并做到了东方整体论与西方还原论的辩证统一。因此，钱学森系统工程思想具有鲜明的民族性和本土性。<br>　　钱学森系统工程思想彰显了理论自信，做到了理论之维与价值之维的有机结合。习近平总书记在主持中共中央政治局第二十次集体学习时指出，必须高度重视理论的作用，增强理论自信和战略定力，对经过反复实践和比较得出的正确理论，要坚定不移坚持。系统工程思想正是发端于中国航天实践并在我国经济社会生活中得到检验的“正确理论”。就学术贡献而言，钱学森坚持以我国“两弹一星”重大科学技术工程为理论原点，着眼服务于中国社会主义建设事业，在系统科学领域努力探索构建具有中国特色、彰显自身特质的学科体系、学术体系、话语体系。这些系统性的创新成就使中国系统科学赢得了实质性自我学术主张和学术话语权，并在世界学术之林创立了具有“中国学派”身份标签的系统科学体系。在此意义上，钱学森是一位使我国哲学社会科学形成自身特色和优势的先行者和拓荒者。关于系统工程的发展前景，晚年钱学森曾指出，系统科学是20世纪中叶兴起的一场科学革命，而系统工程的实践又将引起一场技术革命，这场科学和技术革命在21世纪必将促发组织管理的革命。<br>　　对完善科学决策机制的现实意义<br>　　从“系统五性”到“五位一体”：钱学森社会系统工程思想的当代呈现。“五位一体”总体布局是党中央顶层设计执政理念的具体体现。只有坚持“五个建设”全面推进、协调发展，才能形成经济富裕、政治民主、文化繁荣、社会公平、生态良好的发展格局，把我国建设成为富强民主文明和谐美丽的社会主义现代化强国。全面推进“五位一体”总体布局重在统筹，统筹需要以科学的方法论为引领，钱学森社会系统工程思想可以为“五位一体”总体布局提供有理论价值和实践意义的借鉴。<br>　　钱学森社会系统工程思想是钱学森系统工程思想的社会化拓展。社会系统作为开放的复杂巨系统，具有开放性、复杂性、层次性、整体性和动态性五重属性。经济建设、政治建设、文化建设、社会建设、生态文明建设“五位一体”总体布局是党中央全面深化改革的一项重大战略部署，成为新时代中国特色社会主义建设的一项重大社会系统工程，同样具有开放性、复杂性、层次性、整体性和动态性特征。结合“五位一体”总体布局，认真审视系统工程在国家治理这一社会管理系统中的重要作用发现，系统工程不仅是一种技术和方法，更是一种具有普遍价值和意义的科学方法论。这就要求我们在解决复杂问题时运用系统的观点思考问题，用科学的方法求解问题。而针对国家治理过程中一些牵一发而动全身、具有开放复杂巨系统特征的社会系统工程问题，钱学森创立的“从定性到定量综合集成的方法”可以成为解决此类问题的科学方法。<br>　　从“综合集成”到“科学决策”：新时代领导干部队伍建设的理论召唤。党的十九届四中全会以国家治理体系和治理能力现代化为主题，向全党提出了新的要求。除了制度体系，还有一个很重要的决策体系。钱学森提出定性与定量相结合的综合集成方法之初衷，在于建立科学有效的决策机制。综合集成方法的实质是把智慧体系、知识体系、技术体系有机结合起来，构成一个高度智能化的知识—智慧融合体系。其最终实践形式是一个集专家、数据+信息+知识、计算机于一体的巨型智能系统——从定性到定量综合集成研讨厅体系。钱学森指出，如果将定性与定量两种研究方法结合起来，使专家群体、数据和各种信息、计算机技术三者集成为一个系统，就可以有效处理复杂巨系统问题。他认为，这是研究处理开放复杂巨系统问题当前唯一可行的方法。在百年未有之大变局时代背景下，面对全球化进程受阻、国际格局不确定因素日益增多、国内各种新旧矛盾叠加、社会大系统循环面临多重挑战等情况，我们更需要科学决策。<br>　　坚持底线思维，着力防范化解重大风险，关键在领导干部。如何提高领导干部的系统科学素养及其决策能力和水平，是我国当前能否运用科学的思维方法贯彻执行党中央指导方针的关键因素。上世纪七八十年代，钱学森应邀赴中央党校为各级领导干部作了关于现代科学技术体系、社会主义建设的大战略问题等多场专题报告。其中很多内容涉及如何加强领导干部队伍建设、提高领导干部素质和能力、实现领导决策科学化民主化等方面。他多次提出，从我国现代化建设的要求看，学习领导科学，努力实现领导工作的科学化，是在新的历史条件下每一个领导干部面临的重要而又必须解决的新课题。</font></p></P><!--/enpcontent-->
+                          
+                </div>
+                <!--结束工具条-->
+
+            </div>
+        </div>
+    </div>
+    <!--结束内容部分-->
+    <!--版权部分-->
+   <div class="copyright">
+	  <p class="p1"><span class="red" style="letter-spacing:3px">中共中央党校（国家行政学院）报刊社版权所有</span></p>
+	  <p class="p1"><span class="red" style="letter-spacing:3px">凡引用、复制、转载、摘编或以其他任何方式使用上述内容时请注明来源为"学习时报"</span></p>
+	  <p class="p1"><span class="red" style="letter-spacing:3px">京ICP备12002119号-1 京公网安备11010802020448号 订阅电话：010-68928763</span></p>
+	  <p align="center"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278556451'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D1278556451%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></p>
+	</div>
+    <script language=JavaScript>
+        <!--
+        document.write("<div id=detail style=position:absolute;width:300px;></div>");
+        //-->
+    </script>
+    <!-------rqdh版面导航------>
+    <div id=daydh
+         style="display:none; position:absolute; left:50%;margin-left:-100px; top:110px; filter:alpha(opacity=90);"
+         onmouseover="document.getElementById('daydh').style.display='block';">
+        <form name=CLD style="padding:0px;margin:0px;">
+            <table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+                   bgcolor="#007CD2">
+                <tr>
+                    <td bgcolor="#D8EFFF" style="padding: 3px;">
+                        <table cellspacing=0 cellpadding=0 width="100%" align=center border=0 bgcolor="#D8EFFF">
+                            <tr>
+                                <td>
+                                    <table width="100%" align=center border="0" cellpadding="1" cellspacing="1">
+                                        <tr class="default" align=center>
+                                            <td height=15 colspan=7 bgcolor="#FFFFFF">
+                                                <table width="100%" border="0" cellpadding="2" cellspacing="0">
+                                                    <tr align="center">
+                                                        <td align="left" nowrap><img
+                                                                src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/121.files/d1.gif"
+                                                                width="7" height="11" style="cursor:hand;"
+                                                                onClick="turnpage(SY,0)"/></td>
+                                                        <td><select class=jumpmenu onChange=changeMPCld()
+                                                                    name=SY>
+                                                            <script language=JavaScript>
+                                                                for (i = 1949; i < 2051; i++)
+                                                                    document.write('<option>' + i + '</option>')
+                                                            </script>
+                                                        </select>
+                                                        </td>
+                                                        <td><img
+                                                                src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/121.files/d.gif"
+                                                                width="7" height="11" style="cursor:hand;"
+                                                                onClick="turnpage(SY,1)"/></td>
+                                                        <td align="center" nowrap><img
+                                                                src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/121.files/d1.gif"
+                                                                width="7" height="11" style="cursor:hand;"
+                                                                onClick="turnpage(SM,0)"/></td>
+                                                        <td><select class=jumpmenu onChange=changeMPCld()
+                                                                    name=SM>
+                                                            <script language=JavaScript>
+                                                                <!--
+                                                                for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+                                                                //-->
+                                                            </script>
+                                                        </select>
+                                                        </td>
+                                                        <td><img
+                                                                src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/121.files/d.gif"
+                                                                width="7" height="11" style="cursor:hand;"
+                                                                onClick="turnpage(SM,1)"/></td>
+                                                        <td align="right" nowrap><strong><font id=GZ
+                                                                                               fface="Arial, Helvetica, sans-serif"></font></strong>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr align=middle bgcolor="#FFFFFF" class="default">
+                                            <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font
+                                                    face="Arial, Helvetica, sans-serif">日</font></b></td>
+                                            <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font
+                                                    face="Arial, Helvetica, sans-serif">一</font></b></td>
+                                            <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font
+                                                    face="Arial, Helvetica, sans-serif">二</font></b></td>
+                                            <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font
+                                                    face="Arial, Helvetica, sans-serif">三</font></b></td>
+                                            <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font
+                                                    face="Arial, Helvetica, sans-serif">四</font></b></td>
+                                            <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font
+                                                    face="Arial, Helvetica, sans-serif">五</font></b></td>
+                                            <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font
+                                                    face="Arial, Helvetica, sans-serif">六</font></b></td>
+                                        </tr>
+                                        <script language=JavaScript>
+                                            <!--
+                                            var gNum;
+                                            for (i = 0; i < 6; i++) {
+                                                document.write('<tr align=center>');
+                                                for (j = 0; j < 7; j++) {
+                                                    gNum = i * 7 + j;
+                                                    document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum + '" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum + ')" onMouseOut="mOut()" id="SD' + gNum + '"');
+                                                    document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+                                                }
+                                                document.write('</tr>');
+                                            }
+                                            //-->
+                                        </script>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-------rqdh版面导航END------>
+    <!-------文章显示标题开始------>
+    <div style="display:none">
+        <table width="265" border="0" cellspacing="0" cellpadding="0" style="margin-top:3px;">
+      
+        <tr>
+          <td width="16" align="left"><img src="3.files/icon07.jpg" /></td>
+          <td width="271" align="left" class="fontstyle" height="22">
+      <a href=./nw.D110000xxsb_20200610_1-A6.htm><div style="display:inline" id=mp_nw.D110000xxsb_20200610_1-A6>钱学森系统工程思想的时代价值</div></a>
+          </td>
+        </tr>
+        <tr><td background="3.files/dian01.jpg" colspan="2" height="1"></td></tr>
+        <tr>
+          <td width="16" align="left"  bgcolor="#D8EFFF"><img src="3.files/icon07.jpg" /></td>
+          <td width="271" align="left" class="fontstyle" height="22"  bgcolor="#D8EFFF">
+      <a href=nw.D110000xxsb_20200610_2-A6.htm><div style="display:inline" id=mp_nw.D110000xxsb_20200610_2-A6>把握技术迭代的三个关键点</div></a>
+          </td>
+        </tr>
+        <tr><td background="3.files/dian01.jpg" colspan="2" height="1"></td></tr>
+      
+      </table>
+    </div>
+    <!-------文章显示标题结束------>
+    <img src="../../../tplimg/left_ico.gif" style="display:none;"/> <img src="../../../tplimg/right_ico.gif"
+                                                                  style="display:none;"/> <img
+        src="../../../tplimg/ico10.gif" style="display:none;"/> <img src="../../../tplimg/ico8.gif" style="display:none;"/>
+    <img src="../../../tplimg/ico9.gif" style="display:none;"/> <img src="../../../tplimg/ti.gif" style="display:none;"/> <img
+        src="../../../tplimg/fb.gif" style="display:none;"/>
+</div>
+</div>
+
+</body>
+<script language="javascript">
+    if (document.getElementById('ozoom') != null && document.getElementById('ozoom').offsetHeight <= 357)
+        document.getElementById('ozoom').style.height = '357px';
+
+</script>
+<SCRIPT language=Javascript src="../../../tplimg/webdig_test.js"></SCRIPT>
+
+<SCRIPT language=Javascript src="../../../tplimg/jquery.min.js"></SCRIPT>
+<script src="../../../tplimg/jquery.rwdImageMaps.min.js"></script>
+<script type="text/javascript">
+
+    //设置图片热区
+    $('img[usemap]').rwdImageMaps();
+    (function ($) {
+        //播放语音按钮
+        var audioEle = document.createElement('audio');
+        audioEle.id = "mp3Btn";
+
+        var url = window.location.href;
+        var id = url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf(".htm"));
+        var dtime = url.substring(url.lastIndexOf("/") - 10, url.lastIndexOf("/"));
+        var content = encodeURIComponent(".c_c");
+        var url = "/asm/getAudio.do?id=" + id + "&dtime=" + dtime + "&content=" + content;
+        audioEle.src = url;
+
+        document.body.appendChild(audioEle);
+
+
+        //播放完毕
+        $('#mp3Btn').on('ended', function () {
+            console.log("音频已播放完成");
+            $('#btn-audio img').attr("src", "../../../tplimg/voice_stop.png");
+        })
+        //播放器控制
+        var audio = document.getElementById('mp3Btn');
+        audio.volume = .5;
+        $('#btn-audio').click(function () {
+            event.stopPropagation();//防止冒泡
+            if (audio.paused) { //如果当前是暂停状态
+                $('#btn-audio img').attr("src", "../../../tplimg/voice_play.png");
+                audio.play(); //播放
+                return;
+            } else {//当前是播放状态
+                $('#btn-audio img').attr("src", "../../../tplimg/voice_stop.png");
+                audio.pause(); //暂停
+            }
+        });
+    })(jQuery)
+ function my_button()
+    { 
+     var s = document.getElementById("context").value;
+	 if(s!="")
+		{
+			 window.location.href="/search/adsearch.jsp?context="+encodeURI(s);
+		}
+	 else
+		{
+	   		alert("搜索关键字不能为空！");
+		}
+    } 
+</script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?703a2e4b7c1acee6e7f0cf6d71017dee";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+//显示文章字数
+var wordcount = document.getElementById("content").innerText.replace(/\s+/g,"").length;
+document.getElementById("wordcount").innerText = wordcount;
+</script>
+</html>
+
+<!--mpproperty <founder-date>
+2020-06-10
+</founder-date>
+<founder-author>
+盛懿 汪长明
+
+</founder-author>
+<founder-title>钱学森系统工程思想的时代价值
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle></founder-subtitle>
+<founder-type>1</founder-type>
+<founder-description>        核心阅读　　系统是由相互作用和相互依赖的若干组成部分结合成的具有特定功能的有机整体；这些组成部分作为分系统，又是更大系统的组成部分；系统工程是组织管理系统的规划、研究、设计、制造、实验...</founder-description>
+<founder-introtitle></founder-introtitle>
+<founder-pagepicurl>http://xxsb/images/2020-06/10/A6/20200610A6_brief.jpg</founder-pagepicurl>
+<founder-pagenum>A6</founder-pagenum>
+<founder-papername>学习时报</founder-papername>
+<founder-nodeid>7</founder-nodeid> /mpproperty-->
+
+

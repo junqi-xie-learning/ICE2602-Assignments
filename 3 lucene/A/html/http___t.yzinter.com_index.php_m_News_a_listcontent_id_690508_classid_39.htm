@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="renderer" content="webkit">
+<title>原创|“青春为祖国歌唱”，上海交大师生发起“网络拉歌”献礼祖国华诞-扬眼</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="alternate icon" type="image/png" href="http://m.yangtse.com/images/icon.png">
+<link rel="apple-touch-icon-precomposed" href="http://m.yangtse.com/images/icon_72x72.png">
+<link rel="stylesheet" href="css/amui.all.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.min.css" />
+<link href="css/mp3.css" rel="stylesheet" type="text/css" />
+<script src="js/zepto.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/scrolltopcontrol.js"></script>
+<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+<script src="js/main.js"></script>
+<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<style type="text/css">
+<!--
+.dh {background:#d12a1a;color:#fff;}
+.ad img {
+	width: 100%;
+}
+video{width: 100%; height: auto; background: #000;}
+.a1:link       { color:#fff; TEXT-DECORATION: none }
+.a1:hover      { color:#fff; TEXT-DECORATION: none }
+.a1:visited    { color:#fff; TEXT-DECORATION: none }
+#wrap{position: relative;padding: 10px;overflow: hidden;}
+#read-more{margin:25px;display:none}
+#download{margin:25px;display:none}
+-->
+</style>
+<script type="text/javascript">
+$(function() {
+	      if($.cookie('warp')==null){
+        var slideHeight = 800; 
+        var defHeight = $('#wrap').height();
+        if (defHeight >= slideHeight) {
+            $('#wrap').css('height', slideHeight + 'px');
+            $("#download").show();
+            $("#read-more").show();
+            $("#read-more a").click(function() {
+                var curHeight = $('#wrap').height();
+                    $('#wrap').animate({
+                        height: defHeight
+                    },
+                    "normal");
+                    $("#download").hide();
+                    $("#read-more").hide();
+                    var date = new Date();
+                    date.setTime(date.getTime()+10800*1000);
+                    $.cookie('warp','true',{expires:date});
+                return false;
+            });
+        }
+        }
+});
+</script>
+</head>
+<body>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+
+		   					
+		               wx.config({
+		   
+		                   debug: false,
+		   
+		                   appId: '',
+		   
+		                   timestamp: ,
+		   
+		                   nonceStr: '',
+		   
+		                   signature: '',
+		   
+		                   jsApiList: [
+		                       'checkJsApi',
+		                       'onMenuShareTimeline',
+		                       'onMenuShareAppMessage'
+		                              ]
+		   
+		               });
+		    
+		               wx.ready(function () {
+		                
+		                   // 在这里调用 API
+		   
+		                   wx.onMenuShareTimeline({
+		   
+		                       title:'原创|“青春为祖国歌唱”，上海交大师生发起“网络拉歌”献礼祖国华诞', // 分享标题
+		   
+		                       link: '', // 分享链接
+		   
+		                       imgUrl: 'http://www.yangtse.com/img/yangyan.jpg', // 分享图标
+		   
+		                       success: function () {
+		   
+		                           // 用户确认分享后执行的回调函数
+		                         
+		                       },
+		   
+		                       cancel: function () {
+		   
+		                           // 用户取消分享后执行的回调函数
+		   
+		                       }
+		   
+		                   });
+		   
+		   
+		   
+		                   wx.onMenuShareAppMessage({
+		   
+		                       title: '原创|“青春为祖国歌唱”，上海交大师生发起“网络拉歌”献礼祖国华诞', // 分享标题
+		   
+		                       desc: '扬子晚报-扬眼新闻', // 分享描述
+		   
+		                       link:'', // 分享链接
+		   
+		                       imgUrl:'http://www.yangtse.com/img/yangyan.jpg', // 分享图标
+		   
+		                       type: '', // 分享类型,music、video或link，不填默认为link
+		   
+		                       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+		   
+		                       success: function () {
+		   
+		                           // 用户确认分享后执行的回调函数
+		   
+		                       },
+		   
+		                       cancel: function () {
+		   
+		                           // 用户取消分享后执行的回调函数
+		   
+		                       }
+		   
+		                   });
+		   
+		               });
+		               
+</script>
+<header data-am-widget="header" class="am-header dh">
+<div class="am-header-left am-header-nav">
+    <a href="http://a.yzinter.com/wap/"  class="a1">
+    <i class="am-header-icon am-icon-shopping-cart"></i>
+      <span class="am-header-nav-title"> 商城</span>
+      </a>
+</div>
+<h1 class="am-header-title">扬眼</h1>
+<div class="am-header-right am-header-nav">
+     <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yz.activity" class="a1">
+       <span class="am-header-nav-title">下载 </span>
+       <i class="am-header-icon am-icon-download"></i>
+        </a>
+</div>
+</header>
+<article data-am-widget="paragraph" class="am-paragraph am-paragraph-default">
+<div class="am-article-hd">
+<h1 class="am-article-title"><br>原创|“青春为祖国歌唱”，上海交大师生发起“网络拉歌”献礼祖国华诞</h1>
+<p class="am-article-meta">2019-04-02 16:04:46</p>
+</div>
+ 
+<div class="am-article-bd">
+<div id="wrap">	
+	<p><img alt="图片" border="0" width="500" height="202" alt="" src="http://app.yzinter.com/d/file/news/finance/2019-04-02/96901b17f23f094d5015fb0a5543d267.jpg" /></p>
+<p>扬子晚报网4月2日讯（记者 罗晓娜）近日，在上海交大闵行校区思源门旁的仰思坪上，一场主题为&ldquo;青春为祖国歌唱&rdquo;的网络拉歌活动正在进行。上海交大年轻学子和老师一起，用一曲曲动听的歌声，表达着对祖国的热爱，同时向相关高校发起网络拉歌邀约，共谱青春赞歌。</p>
+<p>在此次&ldquo;青春为祖国歌唱&rdquo;网络拉歌活动中，上海交通大学通过航拍、延时摄影等组合形式，通过微信、微博、抖音、微视等新媒体平台形成传播矩阵，开展歌曲接力，激励和引导广大青年大力弘扬爱国主义精神，展现青年学子良好的精神风貌。</p>
+<p style="text-align: left"><img alt="图片" border="0" width="500" height="273" alt="" src="http://app.yzinter.com/d/file/news/finance/2019-04-02/15de16e13411816c890a415cfae81f45.jpg" /></p>
+<p>上海交大师生演唱的歌曲包括《上海交通大学校歌》 《吾友南洋》 《我爱你中国》，不仅展示了交大的历史底蕴和师生风貌，也传递了交大校友的报国情怀和共鸣。歌曲节奏明快，充满希望和力量感，具有很强的爱国主义精神。其中，《吾友南洋》为由1990届土木工程专业校友罗坚、2015届土木工程专业校友王斌、2014届电子与通信工程专业校友姜若芾共同创作的歌曲。</p>
+<p style="text-align: left"><img alt="图片" border="0" width="500" height="333" alt="" src="http://app.yzinter.com/d/file/news/finance/2019-04-02/35f6e4a646114842056f0216ea856a75.jpg" /></p>
+<p>图片提供：上海交大</p>
+<p>在国旗下，在仰思坪，在樱花林，在思源湖，交大师生的歌声在充满春光的校园里荡漾。十几年如一日扎根在洱海治理一线的孔海南教授也出现在&ldquo;拉歌&rdquo;活动现场。&ldquo;这次拉歌活动很有感染力，从同学们的合唱中，我感受到了年轻人的那种乐观和积极向上，也感受到了他们对祖国的热爱和青春的力量，&rdquo;孔海南教授表示。编辑：李燕</p><div id="gradient"></div>
+</div>
+</div>
+<div style="text-align:center;" id="read-more"><a href="#" class="huge ui basic button">看全文</a></div>
+<div style="text-align:center;" id="download"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yz.activity" class="huge ui red button">下载扬眼客户端浏览更多新闻</a></div></article>
+<div class="ad"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yz.activity"><img src="images/app-banner.gif" /></a></div>
+<footer data-am-widget="footer" class="am-footer am-footer-default">
+<div class="am-footer-switch">
+<span class="am-footer-ysp" data-rel="mobile" data-am-modal="{target: '#am-switch-mode'}">触屏版</span>
+</div>
+<div class="am-footer-miscs ">
+<p>扬子晚报网版权所有，未经授权不得转载或建立镜像</p>
+<p>苏ICP备13020714</p>
+<p><script type="text/javascript" src="http://t.yzinter.com/index.php?m=Toutiao&a=click&classid=39&id=690508"></script><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5508285'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/stat.php%3Fid%3D5508285%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></p>
+</div>
+</footer>
+</body>
+</html>

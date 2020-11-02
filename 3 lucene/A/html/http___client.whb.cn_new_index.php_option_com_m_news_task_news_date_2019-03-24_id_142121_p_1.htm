@@ -1,0 +1,155 @@
+		<!doctype html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>文汇报-</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+        <link href="https://client.whb.cn/new/components/com_m_news/include/css/style.css?v=0.01" rel="stylesheet" type="text/css"/>
+        <script src="https://client.whb.cn/new/components/com_m_news/include/js/jquery.min.js?v=0.01" type="text/javascript"></script>
+        <script src="/new/components/com_m_news/include/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 320;
+		var ua = navigator.userAgent;
+		var IS_Android = 0;
+		if (/(Android)/i.test(ua)) {
+			IS_Android = 1;
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3) {
+				document.write('<meta name="viewport" content="width=320, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+			}
+			else{
+				document.write('<meta name="viewport" content="width=320, target-densitydpi=device-dpi">');
+			}
+		}
+		else{
+			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+        <script type="text/javascript" language="javascript">
+			var oY, tY, cY, offSetPx;
+			var moveTimeOut;
+			window.onscroll = function () {
+				if (moveTimeOut) {
+					clearTimeout(moveTimeOut);
+				}
+				oY = document.getElementById("backBtn").offsetTop;
+				tY = getScrollTop(oY);
+				if (oY > tY+300) {
+					offSetPx = -1;
+				}
+				else {
+					offSetPx = 1;
+				}
+				moveTimeOut = setTimeout(moveBackBtn, 0);
+			}
+	
+			function moveBackBtn() {
+				cY = document.getElementById("backBtn").offsetTop;
+	
+				if (offSetPx > 0) {
+					if (cY >= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY + 10 + "px";
+	
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+				else {
+					if (cY <= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY - 10 + "px";
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+			}
+	
+			function getScrollTop() {
+				var scrollPos;
+				if (window.pageYOffset) {
+					scrollPos = window.pageYOffset;
+				}
+				else if (document.compatMode && document.compatMode != 'BackCompat')
+				{ scrollPos = document.documentElement.scrollTop; }
+				else if (document.body) { scrollPos = document.body.scrollTop; }
+				return scrollPos;
+			}
+			
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: '/new/index.php?option=com_m_news&getWxConfig',
+					data: {
+						getWxConfig: '1',
+					},
+					dataType: 'json',
+					success: function(signPackage) {
+						wx.config({
+							debug: false,
+							appId: signPackage["appId"],
+							timestamp: signPackage["timestamp"],
+							nonceStr: signPackage["nonceStr"],
+							signature: signPackage["signature"],
+							jsApiList: [
+								'checkJsApi',
+								'onMenuShareTimeline',
+								'onMenuShareAppMessage'
+							]
+						});
+					},
+					error: function(xhr, type, error) {
+					}
+				});
+			});
+		</script>
+        </head>
+        <body>
+        <a href="javascript:history.go(-1);" class="backBtn" style="display: none; z-index: 100; opacity: 0.8; top:300px; right:5px; padding: 0px; width: 40px; height: 40px; background-image: url(https://client.whb.cn/new/components/com_m_news/include/images/BackBtn1.png);position:absolute;" id="backBtn"></a>
+        <div class="content">
+        	<div class="menu1">
+            <h1>2019年3月24日 </h1>
+            </div>
+            <div style="clear:both;">
+                        </div>
+            <br style="clear:both"/>
+        </div><!--content-->
+        </body>
+        <script type="text/javascript">
+			var date = "2019-03-24";
+			var name,value,i;
+			var str=location.href;
+			var num=str.indexOf("?");
+			str=str.substr(num+1);
+			var arrtmp=str.split("&");
+			var backurl = "";
+			for(i=0;i < arrtmp.length;i++){
+				num=arrtmp[i].indexOf("=");
+				if(num>0){
+					name=arrtmp[i].substring(0,num);
+					value=arrtmp[i].substr(num+1);
+					if(name=="p"){
+						backurl = "index.php?option=com_m_news&date="+date+"&p="+value;
+						$(".backBtn").attr("href", "index.php?option=com_m_news&date="+date+"&p="+value);
+					}
+				}
+			}
+			function goback(){
+				window.location.href = backurl;
+				console.log("不是首页");
+				if(IS_Android){
+					console.log("android");
+					android.goback(1);
+				}
+				else{
+					console.log("ios");
+					return 1;
+				}
+			}
+			//setTimeout("goback();", 3000);
+		</script>
+        </html>
+		

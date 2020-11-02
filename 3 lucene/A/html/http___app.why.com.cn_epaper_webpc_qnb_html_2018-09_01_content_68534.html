@@ -1,0 +1,779 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+自主研发VR射击体验打靶归来
+</title>
+<SCRIPT language=Javascript src="../../../tplimg/swfobject.js"></SCRIPT>
+<link href="../../../tplimg/paper_blu.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../tplimg/mpcore.js"></script>
+<script type="text/javascript" src="../../../tplimg/period.js"></script>
+<script type="text/javascript" src="../../../tplimg/calendarp.js"></script>
+<script type="text/javascript" src="../../../tplimg/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../../tplimg/formap3.js"></script>
+   <script language="JavaScript" type="text/javascript">
+function zoomIn() {
+  newZoom= parseInt(ozoom.style.zoom)+10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+function zoomOut() {
+  newZoom= parseInt(ozoom.style.zoom)-10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+  
+  $(document).ready(  
+  function() {  
+		$(".title3").html($(".title3").html().replace("<br>",""));
+		$(".title1").html($(".title1").html().replace("<br>",""));
+		$(".title5").html($(".title5").html().replace("<br>",""));
+  });  
+            </script>
+
+<style type="text/css">
+<!--
+#layer31
+{
+	top: -0px;
+	right: 17px;
+	position: relative;
+	float: right;
+	/*overflow:hidden;*/
+}
+.tushuo{
+		text-align: left;
+		padding: 0 20px;
+		text-indent: 2em;
+		font-size:13px;
+}
+
+#nav_1 a:link{
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+} 
+#nav_1 a:visited {
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+}
+#nav_1 a:hover {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: underline;
+	font-weight:normal;
+}
+#nav_1 a:active {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: none;
+	font-weight:normal;
+} 
+.date {font-size:14px; color:#000000}
+.btH2 {
+	font-size:14px;
+	color:#FFF
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: none;
+	color: #C00;
+}
+a:active {
+	text-decoration: none;
+	color: #C00;
+}
+talbe{margin:0 auto}  
+td{ font-size:12px; color:#000000}
+
+.demo {position:relative; width:1000px; margin:0 auto;}
+.title1 {
+	font-family: "黑体";
+	font-size: 18px;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: bold;
+	font-variant: normal;
+	color: black;
+}
+.title3 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+
+.title4 {
+	font-family: "宋体";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+}
+.title2 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #666;
+}
+.title5 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+.content_tt {font-size: 14px; line-height: 180%; margin: auto; padding: 10px; text-align:left}
+.content_tt  p{text-indent:2em}
+.main-ed-map img{max-width:380px}
+.wztp img{max-width:500px; width:expression(this.width > 500 ? "500px" : this.width)}
+
+#float{border:2px solid #CEE3E9;background:#F1F7F9;font-size:18px;font-weight:bold;padding:10px 20px;position:absolute;left:0;top:0;z-index:9999;display:none;line-height:24px;}
+
+TD.S9bo_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+.dropdown {float:left; padding-right:0px}
+.dropdown dt {}
+.dropdown dt:hover {background:url()}
+.dropdown dd {position:absolute; overflow:hidden; width:194px; display:none; background:#edebec; z-index:200; opacity:0}
+.dropdown ul {width:194px; border:2px solid #d0caca; list-style:none; }
+.dropdown li {display:inline;text-align:left; float:none;magin:0;border-bottom:1px solid #ffffff;}
+.dropdown a, .dropdown a:active, .dropdown a:visited {display:block; text-align:left; padding:5px; color:#333; text-decoration:none; background:#ececec;width:190px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;border-bottom:1px solid #ffffff;}
+.dropdown a:hover {background:#f8f8f8; color:#000}
+.dropdown .underline {border-bottom:1px solid #fafafa}
+.wztp table{width:100%;text-align:center}
+-->
+</style>
+<script language="javascript">
+var DDSPEED = 10;
+var DDTIMER = 15;
+
+// main function to handle the mouse events //
+function ddMenu(id,d){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearInterval(c.timer);
+  if(d == 1){
+    clearTimeout(h.timer);
+    if(c.maxh && c.maxh <= c.offsetHeight){return}
+    else if(!c.maxh){
+      c.style.display = 'block';
+      c.style.height = 'auto';
+      c.maxh = c.offsetHeight;
+      c.style.height = '0px';
+    }
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }else{
+    h.timer = setTimeout(function(){ddCollapse(c)},50);
+  }
+}
+
+// collapse the menu //
+function ddCollapse(c){
+  c.timer = setInterval(function(){ddSlide(c,-1)},DDTIMER);
+}
+
+// cancel the collapse if a user rolls over the dropdown //
+function cancelHide(id){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearTimeout(h.timer);
+  clearInterval(c.timer);
+  if(c.offsetHeight < c.maxh){
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }
+}
+
+// incrementally expand/contract the dropdown and change the opacity //
+function ddSlide(c,d){
+  var currh = c.offsetHeight;
+  var dist;
+  if(d == 1){
+    dist = (Math.round((c.maxh - currh) / DDSPEED));
+  }else{
+    dist = (Math.round(currh / DDSPEED));
+  }
+  if(dist <= 1 && d == 1){
+    dist = 1;
+  }
+  c.style.height = currh + (dist * d) + 'px';
+  c.style.opacity = currh / c.maxh;
+  c.style.filter = 'alpha(opacity=' + (currh * 100 / c.maxh) + ')';
+  if((currh < 2 && d != 1) || (currh > (c.maxh - 2) && d == 1)){
+    clearInterval(c.timer);
+  }
+}
+</script>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641e36ad99ad4a5e9df6a40952a4f724";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">
+<!--
+
+marquee { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+span.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+
+TD.S7_b { font-size: 7pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S7_g { font-size: 7pt; color: #595959; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_b { font-size: 10pt; color: #595959; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S10_bb { font-size: 11pt; color: #FFFFFF; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt; font-weight:bold}
+TD.S10_bbb { font-size: 14pt; color: #000000; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_w { font-size: 8pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_w { font-size: 9pt; color: #FFFFFF; line-height: 13pt; font-family: "宋体"; letter-spacing:1pt}
+TD.S9_ws { font-size: 9pt; color: #000080; line-height: 13pt; font-family: "宋体"}
+TD.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_w { font-size: 11pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_o { font-size: 9pt; color: #FF0000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+TD.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体"; letter-spacing:0pt}
+TD.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体"}
+TD.S12_g { font-size: 12pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_gr { font-size: 10pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_gr { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+
+P.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S9_w { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+A:link { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体" }
+A:link.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration}
+A:link.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+
+A:visited.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_b { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_b { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+
+input
+{
+COLOR: #000000;
+FONT-SIZE: 9pt
+}
+Select.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+body,td,th {
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+}
+
+a:link {
+	text-decoration: none;
+}
+#bmt{width:410px;
+	 height:590px;
+ position:relative;
+	 top:24px;
+	 left:10px;
+	 text-align:center;
+	 z-index:9999;
+	  overflow:hidden;
+	 }
+.bgt{background:url(http://pc/qnb/tplimg/paper-bg.jpg) no-repeat;
+ height:619px
+}
+-->
+</style>
+
+</head>
+
+<body topmargin="0" leftmargin="0">
+<div id="float"></div>
+<div id="demo"  style="position:relative;">
+<table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0" height="100%">
+	<tr>
+		<td valign="top">
+		<table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0" height="100%">
+			<tr>
+				<td height="674">
+
+<table border="0" width="100%" id="table50" cellspacing="0" cellpadding="0" background="../../../tplimg/bg-1.jpg" height="674">
+	<tr>
+		<td style="vertical-align:top">
+		<div align="center">
+			<table border="0" width="1024" id="table51" cellspacing="0" cellpadding="0" height="100%">
+				<tr>
+					<td valign="top">
+					<table border="0" width="100%" id="table52" cellspacing="0" cellpadding="0" height="100%">
+						<tr>
+							<td valign="top" width="440">
+							<table border="0" width="100%" id="table53" cellspacing="0" cellpadding="0">
+								<tr>
+									<td id="bgt" background="../../../tplimg/paper-bg.jpg" style="background-repeat:no-repeat;height:619px" valign="top">
+								 <div id="bmt">			
+                
+<map name=PagePicMap><Area coords="4,23,337,23,337,64,190,64,190,128,190,128,190,256,190,256,190,261,169,261,169,256,4,256,4,23,4,258,114,258,114,490,99,490,99,510,120,510,120,258,191,258,191,538,42,538,42,508,42,508,42,490,42,490,42,261,4,261,4,258" shape="polygon" href="./content_68534.html"><Area coords="199,91,347,91,347,300,199,300" shape="polygon" href="content_68539.html"><Area coords="198,313,346,313,346,435,198,435" shape="polygon" href="content_68542.html"><Area coords="198,445,346,445,346,538,198,538" shape="polygon" href="content_68546.html"></map>
+<img src=../../../images/2018-09/01/A05/20180901A05_brief.jpg border=0 USEMAP=#PagePicMap>
+</div>
+								<tr>
+									<td height="6"></td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table94" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="18">　</td>
+											<td><div id="coreArea" style="display:none"></div>
+											<table border="0" width="94%" id="table95" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g" width="198">
+													<p align="left" style="color:#000000">
+                                                      第A05版：青年
+                                                </td>
+
+													<td width="117" class="S9_g">
+													<p align="right">
+													  <a class=preart href="node_4.html">上一版</a>&nbsp;&nbsp;<a class=preart href="node_6.html">下一版</a> &nbsp;&nbsp;
+												  </td>
+												   <td width="50" align=right valign=center nowrap style="PADDING-RIGHT: 5px"><a href=../../../images/2018-09/01/A05/20180901A05_pdf.pdf><IMG height=16  
+src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+							</table>
+							</td>
+							<td valign="top">
+							<table border="0" width="100%" id="table54" cellspacing="0" cellpadding="0">
+								<tr>
+									<td height="97" valign="top">
+									<table border="0" width="100%" id="table55" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="277"><img border="0" src="../../../tplimg/青年报_logo.png" width="277" height="97"></td>
+											<td valign="top">
+											<table border="0" width="100%" id="table56" cellspacing="0" cellpadding="0" height="97">
+												<tr>
+													<td>　</td>
+												</tr>
+												<tr>
+													<td valign="bottom">
+													<table border="0" width="100%" id="table93" cellspacing="0" cellpadding="0">
+														<tr>
+															<td class="S9_g">
+															<p align="right">
+															2018年09月01日 星期六</td>
+															<td width="14" valign="bottom">　</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+												<tr>
+													<td height="40" valign="bottom">
+													<table border="0" width="100%" id="table57" cellspacing="0" cellpadding="0">
+														<tr><td width="12"></td>
+															<td>
+															<dl class="dropdown">
+  <dt id="one-ddheader" onMouseOver="ddMenu('one',1)" onMouseOut="ddMenu('one',-1)"><img border="0" src="../../../tplimg/top-1.png" width="99" height="41" align="right"><dt>
+  <dd id="one-ddcontent" onMouseOver="cancelHide('one')" onMouseOut="ddMenu('one',-1)">
+    <ul id="artPList1">
+  
+<li><a  id="mp68534"  title="自主研发VR射击体验打靶归来"  class="underline" href=./content_68534.html>自主研发VR射击体验打靶归来</a></li> 
+<li><a  id="mp68539"  title="多大的孩子生病该去看儿科？"  class="underline" href=content_68539.html>多大的孩子生病该去看儿科？</a></li> 
+<li><a  id="mp68542"  title="浦东首期“青年英才营”结营"  class="underline" href=content_68542.html>浦东首期“青年英才营”结营</a></li> 
+<li><a  id="mp68546"  title="医务社工为病患带去夏日音乐会"  class="underline" href=content_68546.html>医务社工为病患带去夏日音乐会</a></li> 
+  
+  </ul>
+  </dd>
+</dl></td>
+															<td width="99">
+															<dl class="dropdown">
+  <dt id="two-ddheader" onMouseOver="ddMenu('two',1)" onMouseOut="ddMenu('two',-1)"><img border="0" src="../../../tplimg/top-2.png" width="100" height="41"></dt>
+  <dd id="two-ddcontent" onMouseOver="cancelHide('two')" onMouseOut="ddMenu('two',-1)">
+	<ul>
+	<a id=pageLink href=node_1.html title="头版">
+		第A01版：头版</a>
+<a id=pageLink href=node_2.html title="要闻">
+		第A02版：要闻</a>
+<a id=pageLink href=node_3.html title="城事">
+		第A03版：城事</a>
+<a id=pageLink href=node_4.html title="城事">
+		第A04版：城事</a>
+<a id=pageLink href=node_5.html title="青年">
+		第A05版：青年</a>
+<a id=pageLink href=node_6.html title="文体">
+		第A06版：文体</a>
+<a id=pageLink href=node_7.html title="文体">
+		第A07版：文体</a>
+<a id=pageLink href=node_8.html title="文体">
+		第A08版：文体</a>
+</ul
+  </dd>
+</dl></td>
+															<td width="90">
+															<span id="calendarBtn"><img border="0" src="../../../tplimg/top-3.png" width="90" height="41"></span></td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="46">
+									<table border="0" width="100%" id="table96" cellspacing="0" cellpadding="0" height="100%">
+										<tr>
+											<td>　</td>
+										</tr>
+										<tr>
+											<td>
+											<table border="0" width="100%" id="table98" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g">
+													<p align="right">
+													<a onClick="zoomIn();" href="javascript:"><img border="0" src="../../../tplimg/a--.gif" width="10" height="10"> 
+													放大</a>&nbsp; 
+													<a onClick="zoomOut();" href="javascript:"><img border="0" src="../../../tplimg/a-.gif" width="10" height="10"> 
+													缩小</a>&nbsp; 
+													<a onClick="ozoom.style.zoom='100%';" 
+            href="javascript:"><img border="0" src="../../../tplimg/a0.gif" width="10" height="10"> 
+													默认</a>&nbsp;
+													
+													&nbsp;
+													<a class=preart href="content_68539.html"><img border='0' src='../../../tplimg/anext.gif' width='10' height='10'>下一篇</a>
+												  </td>
+													<td width="14">　</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+										<tr>
+											<td height="5"></td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table58" cellspacing="0" cellpadding="0">
+										<tr>
+											<td valign="top" width="279">
+											<table border="0" width="573" id="table59" cellspacing="1" cellpadding="0" bgcolor="#17529a" height="510">
+												<tr>
+													<td bgcolor="#FFFFFF" valign="top">
+													<table border="0" width="100%" id="table97" height="100%" cellpadding="0" cellspacing="10">
+														<tr>
+															<td valign="top">
+															<table border="0" width="100%" id="table99" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td height="80" align="center" valign="middle" class="S12_b">
+<p class="title3">交大2017级学生军训 夜间拉练重温改革开放40周年历史成就</p>
+<p class="title1">自主研发VR射击体验打靶归来</p>
+<p class="title5"></p>
+<p class="title6">青年报记者　刘昕璐</p>
+</td>
+																</tr>
+																<tr>
+																	<td bgcolor="#17529a" height="1"></td>
+																</tr>
+																<tr>
+																	<td height="15"></td>
+																</tr>
+																<tr>
+																	<td class="S11_g">
+																	<div class="wztp" style="height:600px; overflow-y:auto; width:100%;">
+																	  <table bgcolor=#efefef><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2018-09/01/A05/res03_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p>&nbsp;&nbsp;&nbsp;&nbsp;受访者供图</p><p>&nbsp;&nbsp;&nbsp;&nbsp;交大学子体验VR射击。</p></TD></TR></TBODY></TABLE></td></tr></table><script language="JavaScript" type="text/javascript">
+								if(picResCount>0){
+									document.getElementById("picres").style.display="block";
+									document.write("<br>");
+								}
+ 			  				</script>
+          <div id="ozoom" style="zoom:100%;FLOAT: left;"><!--enpcontent-->
+            <table width="100%" border="0" class="S11_g">
+<tr>
+<td class="content_tt"><P><p>上海交通大学2017级学生军训正在进行。4015名参训学生投入为期14天的军事化训练，以饱满的热情和昂扬的斗志，体验精彩的军训生活，在校园留下青春的奋斗足迹。在校园10公里拉练中，校方专门融入了“改革开放40周年”时光隧道元素，让学生们身临其境重温历史成就。与此同时，学生们还亲历一把VR射击，感受“打靶归来”的豪迈。</p><p>青年报记者　刘昕璐</p><p>拉练沿途打造“改革开放40周年”时光隧道</p><p>前几天的一个夜晚，上海交通大学2017级学生军训团开展了校园10公里拉练活动。本次拉练以“改革开放四十载砥砺奋进新时代”为主题，沿途打造了“改革开放40周年”时光隧道，所有场景的布置设计均由参训学生完成。</p><p>青年报记者获悉，时光隧道中第一个场景为菁菁堂门前的1978年十一届三中全会布展，通过展板、拱门、视频投影以及歌曲等多种形式，介绍了全会精神以及其在中国历史进程中的重大意义；接下来是材料学院东侧的深圳标志建筑群展板，标志着1980年深圳经济特区建立这一历史事件；随后来到北区桥洞，这里配置了有关浦东新区的系列展板，详细介绍了1990年浦东新区开发开放以来所取得的“28个第一”；第四个场景设置在文俊路、南洋北路路口，以展板、喷绘、歌曲播放等形式展示了1992年邓小平视察南方讲话这一历史场景；在后续场景中，还通过旗帜、实体模型、荧光板、投影等多种形式，生动展现了港澳回归、中国加入WTO、北京奥运会、上海世博会、中国梦、一带一路、党的十九大胜利召开等一系列重大历史进程。</p><p>拉练沿途时光隧道中，还以大国重器为支线，通过实体模型、荧光板等方式，展示了辽宁舰、C919、单口径球面射电望远镜、世界首颗量子卫星“墨子号”、“嫦娥三号”月球探测器、“天宫二号”空间实验室、复兴号以及桥梁港口等科技成就。</p><p>强健体魄磨炼意志VR射击体验“打靶归来”</p><p>晚上9点，伴随着响亮激昂的口号声，承训教官和全体参训师生在首长的带领下从交大闵行校区南区体育场出发，途经思源湖、南洋北路、宣怀大道、涵泽湖，最终到达光彪楼。行进途中，参训学生士气昂扬、秩序井然、精神抖擞、军歌嘹亮。</p><p>四营二十六连连长刘小朋表示，通过拉练可以增强学生的国防安全意识，培养学生的组织纪律观念，在锻炼体魄的同时磨砺意志。一营八连参训学生潘译文表示，拉练以一种独特的形式将军训与“纪念改革开放40周年”相结合，行进途中不仅锻炼身体、增强了集体意识，还充分学习了改革开放以来国家发生的沧桑巨变，有助于当代大学生成长为合格的新时代青年。</p><p>此次，为落实国家总体安全观，增强参训学生的国防教育和应急反应意识，军训团还组织参训学生开展了　VR射击演练体验。值得一提的是，本次VR射击打靶实战演练体验依托上海交通大学自主研发的科技成果，主要基于上海交通大学电子信息与电气工程学院肖双九副教授科研团队研发的“三维实境仿真战术训练系统”，在“真听、真看、真感受”的过程中树立参训师生的国家安全意识、培养应急反应能力。</p><p>据介绍，该系统以Unity3D引擎开发的模拟实战训练人机交互系统为核心，集成了人工智能、人机交互、语音识别等多种计算机技术，为单兵和分队战术训练提供全新高效的仿真训练模式。通过安装多个摄像头模拟双目视觉，用于捕捉训练者姿态，并反映到系统中。训练者需要佩戴好训练帽、麦克风，使用训练枪进行训练，系统集成了语音识别技术，训练者可以通过麦克风，直接以语音与系统进行交互。</p><p>现场，参训学生第一次接触到虚拟现实仿真训练系统，了解和掌握了相关使用技巧，完成了固定靶射击科目的训练。三营二十五连的刘畅同学表示，训练枪比想象中要沉，能明显感受到枪支的后坐力。这次VR实战射击演练体验让她对基础射击的动作要领有了认识，也体会到射击的不易。</p></P>
+<INPUT type=checkbox value=0 name=titlecheckbox sourceid="<Source>SourcePh</Source>" style="display:none">
+</td>
+</tr>
+</table>
+
+
+<!--/enpcontent--></div>
+        </div></td>
+																</tr>
+															</table>
+															</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+											<td valign="top" width="11">　</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td valign="bottom" bgcolor="#e1f5ff">
+
+<table border="0" width="100%" id="table67" cellspacing="0" cellpadding="0" bgcolor="#e1f5ff">
+	<tr>
+		<td height="100%" valign="bottom"><br>
+		　<table border="0" width="100%" id="table68" cellspacing="0" cellpadding="0">
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#17529a" height="26" class="S9bo_g">
+				<p align="center"><font color="#FFFFFF"></font></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table></div>
+<div style="display:none"><a href="../../../paperindex.htm" id="paperName"></a>
+    青年报
+</div>
+<!-- -------------------------版面导航-------------->
+<div id=bmdh onMouseOver="document.getElementById('bmdh').style.display = 'block';" onMouseOut="document.getElementById('bmdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:220px; top:82px; filter:alpha(opacity=90);">
+  <table cellspacing=0 cellpadding=2 width="192px" border=0 bgcolor=#ffffff><tbody>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_1.html>
+        第A01版
+        ：头版</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A01/20180901A01_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_2.html>
+        第A02版：要闻</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A02/20180901A02_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_3.html>
+        第A03版
+        ：城事</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A03/20180901A03_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_4.html>
+        第A04版：城事</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A04/20180901A04_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_5.html>
+        第A05版
+        ：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A05/20180901A05_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_6.html>
+        第A06版：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A06/20180901A06_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_7.html>
+        第A07版
+        ：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A07/20180901A07_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_8.html>
+        第A08版：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2018-09/01/A08/20180901A08_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+</tbody></table></div>
+<!-------bmdh版面导航END------>
+<!-- -------------------------标题导航-------------->
+<DIV  id=btdh onMouseOver="document.getElementById('btdh').style.display = 'block';" onMouseOut="document.getElementById('btdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:200px; top:82px; filter:alpha(opacity=90); background-color:#FFFFFF">
+  <ul id="artPList1">
+  
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp68534" href=./content_68534.html>自主研发VR射击体验打靶归来</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp68539" href=content_68539.html>多大的孩子生病该去看儿科？</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp68542" href=content_68542.html>浦东首期“青年英才营”结营</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp68546" href=content_68546.html>医务社工为病患带去夏日音乐会</a></li> 
+  
+  </ul>
+</div>
+<!-- -------------------------标题导航 END -------------->
+<!--日历部分-->
+
+<div id="calendarBox"  style="left:50%; margin-left:295px; top:82px;">
+<form name=CLD>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td colspan=7 align="center" height="24" bgcolor="#ffffff">
+              <img src="../../../tplimg/d1.gif" width="7" height="11"  onclick="turnpage('SY',0)">
+               <select name=SY  onchange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=2006;i<2051;i++){document.write('<option>'+i+'</option>')}</script>
+              </select>
+               <img src="../../../tplimg/d.gif" width="7" height="11" onClick="turnpage('SY',1)">
+               <img src="../../../tplimg/d1.gif" width="7" height="11" onClick="turnpage('SM',0)">
+                <select name=SM onChange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=1;i<13;i++) document.write('<option>'+i+'</option>')</script>
+                </select>                          
+                <img src="../../../tplimg/d.gif" width="7" height="11" style="cursor:pointer;" onClick="turnpage('SM',1)">
+          </td>
+        </tr>
+        <tr height="22" bgcolor="#e8e8e8">
+          <td align="center"><b>日</b></td>
+          <td align="center"><b>一</b></td>
+          <td align="center"><b>二</b></td>
+          <td align="center"><b>三</b></td>
+          <td align="center"><b>四</b></td>
+          <td align="center"><b>五</b></td>
+          <td align="center"><b>六</b> </td>
+        </tr>
+        <script>
+            var gNum;
+            for(i=0;i<6;i++) {
+                document.write('<tr height="20">');
+                for(j=0;j<7;j++){
+                    gNum = i*7+j;
+                    document.write('<td align=center id="GD' + gNum +'" width="14%"><a id="CD' + gNum + '">');
+                    document.write('</a></td>');
+                }
+                document.write('</tr>');
+            } 
+      </script>
+   </table>
+</form>
+</div>
+ <span class="nav_1" style="display:none"><a href="#" class="14bai" onClick="goPrePeriod()">上一期</a>&nbsp;&nbsp;<a href="#" class="14bai" onClick="goNxtPeriod();" >下一期</a></span>
+
+</body>
+
+</html>
+
+<!--mpproperty <founder-date>
+2018-09-01
+</founder-date>
+<founder-author>
+青年报记者　刘昕璐
+</founder-author>
+<founder-title>自主研发VR射击体验打靶归来
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle></founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle>交大2017级学生军训 夜间拉练重温改革开放40周年历史成就</founder-introtitle>
+<founder-pagepicurl>http://pc/qnb/images/2018-09/01/A05/20180901A05_brief.jpg</founder-pagepicurl>
+<founder-pagenum>A05</founder-pagenum>
+<founder-papername>青年报</founder-papername>
+<founder-nodeid>5</founder-nodeid> /mpproperty-->
+
+

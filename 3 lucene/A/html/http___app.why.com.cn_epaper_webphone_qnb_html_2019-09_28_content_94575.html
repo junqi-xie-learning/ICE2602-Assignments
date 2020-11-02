@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>
+燃！又是一波青春告白
+</title>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641e36ad99ad4a5e9df6a40952a4f724";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<link rel="stylesheet" href="../../../tplimg/jquery.mobile-1.4.4.min.css" />
+<link rel="stylesheet" media="screen and (min-width:801px) and (min-height:601px) and (max-height:1001px)" href="../../../tplimg/content_heng.css" />
+<link rel="stylesheet" media="screen and (max-width:1001px) and (min-width:601px) and (min-height:801px)" href="../../../tplimg/content_shu.css" />
+<link rel="stylesheet" media="screen and (max-width:601px) and (min-height:401px) and (max-height:1001px)" href="../../../tplimg/content_phone.css" />
+<link rel="stylesheet" media="screen and (min-width:401px) and (max-width:1001px) and (max-height:601px)" href="../../../tplimg/content_phone_shu.css" />
+<link rel="stylesheet" href="../../../tplimg/main.css" />
+<script src="../../../tplimg/jquery.min.js"></script>
+<script src="../../../tplimg/jquery.mobile-1.4.4.min.js"></script>
+<script src="../../../tplimg/swipe.js"></script>
+<script type="text/javascript">
+$(function() {
+    var trip;
+	$( ".popup" ).on("click", function(){
+		$.mobile.loading( 'show' );
+		if(!trip){
+			$("#popupParis").html("<div class='swipe' id='slider'><div class='swipe-wrap'></div></div>");
+			trip = true;
+			$(this).find('img').each(function(index, element) {
+				var oDiv = $("<div>").html("<img src="+$(this).attr("src")+" /><p>"+$(this).parents('tr').siblings('tr').find('td').html()+"</p>");
+				$("#slider >div").append(oDiv)
+			});
+			var slider = Swipe(document.getElementById('slider'), {});
+		}
+		var p_html=$(this).find('.tushuo').html();
+		var imgID = new Image();
+	    imgID.src = $(this).find('img').attr("src");
+	    imgID.onload = function(){
+		    trip=false;
+			$.mobile.loading( 'hide' );
+			$("#popupParis").popup("open", {positionTo: "window"});
+	    }
+	});
+});
+ $(document).ready(function(){
+	if($('.pic').find('img').length==0){
+		$('.art_title').width('90%');
+		$('.pic').width('0');
+		}
+}); 
+$(document).ready(function(){
+	if($('.pic').find('img').length>1){
+		$('.pic_more').css('display','block');
+		}
+	else{
+	$('.pic_more').css('display','none');
+	};
+	
+	if($(window).width()-0<600){
+    $('.pic_more').css('display','none');
+	$('.art_title').width('100%');
+}
+		
+}); 
+</script>
+<script type="text/javascript">
+function paperurl(obj){
+var npapername="青年报";
+var myurl="";
+switch (npapername)
+{
+case "青年报":
+  myurl="node_1.html";
+  break;
+case "生活周刊":
+  myurl="node_361.html";
+  break;
+case "学生导报":
+  myurl="node_457.html";
+  break;
+case "青年社交":
+  myurl="node_281.html";
+  break;
+
+}
+  obj.target="_self";
+  obj.href = myurl;
+  obj.click();
+}
+</script>
+<body>
+<div class="header">
+  <div class="title" id="art_title">
+    <h1></h1>
+<h2>燃！又是一波青春告白</h2>
+<h3>朗诵、快闪、合唱，沪高校师生逐梦而歌</h3>
+<h3>青年报记者 刘昕璐</h3></div>
+  <div class="pic" id="pic">
+    <a href="javascript:void(0);" big="##B_PIC##" class="popup">
+</a>
+  </div>
+</div>
+<div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false"></div>
+<div class="kongbai"></div>
+<div class="con">
+  <p><P><p>朗诵、快闪、合唱……国庆之际，申城高校师生纷纷在红色回响中聆听初心绽放，在热情讴歌中铭记伟大时代，通过深情告白祖国，礼赞新中国成立70周年。</p><p><strong>青年报记者&nbsp;刘昕璐</strong></p><p><strong>复旦大学</strong></p><p>《红旗颂》《共产党宣言》《七律·长征》和《红岩魂》《义勇军进行曲》《保卫黄河》《春天的故事》《时间的入口》……“倾听历史回响，讴歌伟大时代”——“不忘初心，牢记使命”主题教育暨庆祝新中国成立70周年《红色回响》经典诵读会26日在复旦大学相辉堂举行。</p><p>在诵读与聆听之间，师生们重温新中国的峥嵘岁月和光辉历程，感受一代又一代共产党人不忘初心、牢记使命的执着与坚守、努力与追求。</p><p>90分钟的演出，通过诵读、演唱、话剧等不同艺术形式，从不同角度讴歌党、讴歌祖国、讴歌人民，回顾栉风沐雨、砥砺前行的中国，细数七十年波澜壮阔的征程和七十年春华秋实的收获，更以无比喜悦和振奋之情，共同庆祝70年来新中国取得的光荣成就。</p><p>记者获悉，红色经典回响在复旦大学这样一所有着光荣革命传统的学校。自创校之日起，复旦就始终与民族共命运、与时代同前进。在本次诵读会上，不少作品所展现的故事里也留下复旦人的奋斗足迹。</p><p><strong>上海交通大学</strong></p><p>“祝福你，我的祖国，我把满腔赤诚献给你，愿你永远坚强，永远蓬勃……”同一时间，在城市的西南片区，上海交大教职工在徐汇校区，用快闪演绎了《祝福祖国》《交通大学校歌》两首歌曲，以此表达爱国荣校的真挚情怀。</p><p>在悠扬的手风琴伴奏下，上海交通大学教工南洋合唱团领唱的歌声掷地有声，一言一行之间都动情演绎着对祖国诚挚的爱。</p><p>全国先进工作者、上海交通大学机械与动力工程学院王如竹教授参与了此次快闪活动，他说：“我们身处于一个伟大的时代，是这时代为我们的科学研究提供了干事创业的良好氛围。习近平总书记提出‘人类命运共同体’，我们应致力于给全人类带来福祉，我们要无私地投入科学研究和教学一线，为祖国建设贡献力量。”</p><p>实际上，此次快闪是上海交大工会举办的迎接新中国成立70周年系列活动之一，近期，“庆祝新中国成立70周年教职工书画展”、“录制微电影《理直气壮陈锡喜》”“庆祝新中国成立70周年专场音乐会”等系列活动，汇聚全校教职工的磅礴力量，不忘初心担使命，坚定从容创一流，以优异成绩迎接新中国成立70周年。</p><p><strong>华东师范大学</strong></p><p>70年披荆斩棘，70风雨兼程，70年砥砺奋进，70年岁月如歌。为献礼新中国成立70周年，华东师范大学一场“心怀祖国&nbsp;逐梦而歌”庆祝新中国成立70周年师生合唱展演暨第35个教师节表彰会也于日前在校举行。</p><p>伴随着白发苍苍的老教授们用嘹亮的歌声唱起《共和国之恋》，回顾建校历程的画面在屏幕上滚动播放，台下的观众心潮澎湃。</p><p>老教授合唱团的老师们平均年龄约75岁，他们大多数是“新中国的同龄人”。合唱团声部长、外语学院退休教师章昌云坦言，歌唱祖国歌唱党，心中满溢着对新中国发展的自豪和骄傲。“祖国的繁荣昌盛离不开一代又一代人才作出的卓越贡献。作为一名教师，我曾经培养的学生已经成长为各行各业的中坚力量。同时，我也对现在的同学们给予厚望，未来属于你们，让国家强起来是你们的责任和使命。”章昌云说道。</p><p>青年人只有把自己的小我融入祖国的大我、人民的大我之中，才能更好实现人生价值、升华人生境界。现场播放的由在外工作学习交流的全球华东师大人发来的隔空互动视频，成为击中现场观众心中的“最大公约数”。大家都在以澎湃之情向祖国告白，以青春之力砥砺前行，以报国之志书写人生。</p></P></p></div>
+<div class="BackBtn1" id="BackBtn1">
+<a href="javascript:;" onclick="paperurl(this)"><img src="../../../tplimg/home.png" /></a></br></br></br>
+<a href="javascript:history.back(-1)" ><img src="../../../tplimg/BackBtn1.png" /></a>
+</div>
+
+<div class="pic_more" id="pic_more"><a href="javascript:void(0);"><img src="../../../tplimg/pic_more.png" /></a></div>
+</body>
+</html>
+
+
+<!--mpproperty <founder-date>
+2019-09-28
+</founder-date>
+<founder-author>
+青年报记者 刘昕璐
+</founder-author>
+<founder-title>燃！又是一波青春告白
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle>朗诵、快闪、合唱，沪高校师生逐梦而歌</founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle></founder-introtitle>
+<founder-pagepicurl>http://phone/qnb/images/2019-09/28/A04/20190928A04_brief.jpg</founder-pagepicurl>
+<founder-pagenum>A04</founder-pagenum>
+<founder-papername>青年报</founder-papername>
+<founder-nodeid>4</founder-nodeid> /mpproperty-->
+
+

@@ -1,0 +1,191 @@
+		<!doctype html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>文汇报-以科学精神涵养城市文明</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+        <link href="https://client.whb.cn/new/components/com_m_news/include/css/style.css?v=0.01" rel="stylesheet" type="text/css"/>
+        <script src="https://client.whb.cn/new/components/com_m_news/include/js/jquery.min.js?v=0.01" type="text/javascript"></script>
+        <script src="/new/components/com_m_news/include/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 320;
+		var ua = navigator.userAgent;
+		var IS_Android = 0;
+		if (/(Android)/i.test(ua)) {
+			IS_Android = 1;
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3) {
+				document.write('<meta name="viewport" content="width=320, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+			}
+			else{
+				document.write('<meta name="viewport" content="width=320, target-densitydpi=device-dpi">');
+			}
+		}
+		else{
+			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+        <script type="text/javascript" language="javascript">
+			var oY, tY, cY, offSetPx;
+			var moveTimeOut;
+			window.onscroll = function () {
+				if (moveTimeOut) {
+					clearTimeout(moveTimeOut);
+				}
+				oY = document.getElementById("backBtn").offsetTop;
+				tY = getScrollTop(oY);
+				if (oY > tY+300) {
+					offSetPx = -1;
+				}
+				else {
+					offSetPx = 1;
+				}
+				moveTimeOut = setTimeout(moveBackBtn, 0);
+			}
+	
+			function moveBackBtn() {
+				cY = document.getElementById("backBtn").offsetTop;
+	
+				if (offSetPx > 0) {
+					if (cY >= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY + 10 + "px";
+	
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+				else {
+					if (cY <= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY - 10 + "px";
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+			}
+	
+			function getScrollTop() {
+				var scrollPos;
+				if (window.pageYOffset) {
+					scrollPos = window.pageYOffset;
+				}
+				else if (document.compatMode && document.compatMode != 'BackCompat')
+				{ scrollPos = document.documentElement.scrollTop; }
+				else if (document.body) { scrollPos = document.body.scrollTop; }
+				return scrollPos;
+			}
+			
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: '/new/index.php?option=com_m_news&getWxConfig',
+					data: {
+						getWxConfig: '1',
+					},
+					dataType: 'json',
+					success: function(signPackage) {
+						wx.config({
+							debug: false,
+							appId: signPackage["appId"],
+							timestamp: signPackage["timestamp"],
+							nonceStr: signPackage["nonceStr"],
+							signature: signPackage["signature"],
+							jsApiList: [
+								'checkJsApi',
+								'onMenuShareTimeline',
+								'onMenuShareAppMessage'
+							]
+						});
+					},
+					error: function(xhr, type, error) {
+					}
+				});
+			});
+		</script>
+        </head>
+        <body>
+        <a href="javascript:history.go(-1);" class="backBtn" style="display: none; z-index: 100; opacity: 0.8; top:300px; right:5px; padding: 0px; width: 40px; height: 40px; background-image: url(https://client.whb.cn/new/components/com_m_news/include/images/BackBtn1.png);position:absolute;" id="backBtn"></a>
+        <div class="content">
+        	<div class="menu1">
+            <h1>2018年10月31日   世界顶尖科学家论坛  </h1>
+            </div>
+            <div style="clear:both;">
+            						<script type="text/javascript">
+							wx.ready(function () {
+								// 在这里调用 API
+								wx.onMenuShareAppMessage({
+								  title: '以科学精神涵养城市文明',  
+								  desc: '',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2018-10-31&id=132938&p=5',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg', 
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								});
+								wx.onMenuShareTimeline({  
+							      title: '以科学精神涵养城市文明',  
+								  desc: '文汇报',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2018-10-31&id=132938&p=5',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg',  
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								}); 
+							});
+						</script>
+						<div align="left" style="padding-bottom: 10px">
+							<div style="background:#F5F5F5; padding: 12px;">
+																<div style="font-weight:600;font-size:24px;width: 296px;word-wrap:break-word">以科学精神涵养城市文明</div>
+							</div>
+													</div>
+						<div style="border-bottom: 1px solid #CECECE; clear: both; margin-bottom: 5px;"></div>
+						<div align="center" style="padding: 0px 12px;">
+												<div style="font-size:14px; text-align: left;word-break: break-all;">
+							<img src="https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg" style="position:absolute;left:-1000px;top:-1000px;"/>
+							    <p><p>黄庆桥</p><p>滴水湖畔，全球&nbsp;“最强大脑”论道“科技，为了人类共同命运”；黄浦江边，科技界、金融界、学术界、产业界精英共谋创新之道，共商创新之策……</p><p>这几天，科技创新、科学精神正成为上海这座全球城市的热频词汇。</p><p>世界主要大国崛起的历史表明，得科学之进步者，必得发展之先机；引创新之源泉者，必引昌盛之潮流。特别是20世纪以来，科学革命发生的频率不断加速，而科学上的重大进展总是带来技术上的重大突破、生产方式上的颠覆变革和人类生活方式上的重大改变。并且，从科学进步到技术突破的速度越来越快，科学对人类社会发展的影响越来越直接、越来越深远。在此背景下，重视科学，重视创新，已经成为世界主要大国的共识和努力发展方向，弘扬科学精神已经成为世界主流价值追求。</p><p>世界科学中心的不断涌现和转移，国际创新中心兴衰与更替，新兴产业方向的持续涌现，无不说明，科学精神是科学技术的灵魂，科学与创新，是卓越城市持续发展的根本动力。今天，文化作为软实力，正越来越深刻地影响着社会生活，成为一座城市综合实力和竞争力的重要组成部分。大力培育和弘扬科学精神，正是提高城市文化软实力的内在要求，是建设具有全球影响力的科创中心的现实选择。</p><p>科学求真，创新求变。引领创新，培育崇尚科学的城市精神，上海具有得天独厚的优势和条件。比如，作为中国重要的经济中心、文化重镇，上海科教资源优势明显，市民科学素养高。上海的高等院校、科研院所密集，并具有较高程度的国际化。第十次中国公民科学素质调查显示：上海市以21.88%的比例名列全国第一。根据上海&nbsp;“十三五”科普规划，到2020年，上海市民具备科学素质比例要攀升至25%。正如诺奖得主、法国物理学家阿罗什所言，科学的诞生离不开宽松的环境、代代传承的团队，更离不开全社会的参与。科学精神不是科学家的专利，市民科学素质的提高，“聚天下英才而用之”成为共识，创新创业的生态不断优化，等等，都体现着我们这座城市的科学精神。另一方面，上海滴水湖此次聚集26位诺奖得主和8位沃尔夫奖、拉斯克奖、图灵奖、麦克阿瑟天才奖等奖项得主在内的37位世界顶尖科学家，以及17位中国两院院士、18位中外杰出青年科学家，也从科学人才视角彰显了“高端节点”城市集聚全球高端要素，配置全球战略性资源的城市能级。</p><p>让科学精神成为上海城市精神的重要标志，让创新浪潮在上海澎湃激荡。这是此次论坛传递的声音。我们相信，当科学精神之树“望之蔚然而深秀”，上海将真正成为“全球学术新思想、科学新发现、技术新发明、产业新方向”的重要策源地。</p><p>（作者为上海交通大学科学史与科学文化研究院副研究员）</p><p>视觉设计：冯晓瑜</p></p>							<img src="https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg" style="position:absolute;left:-1000px;top:-1000px;"/>
+						</div>
+					  </div>
+					</div>
+				            </div>
+            <br style="clear:both"/>
+        </div><!--content-->
+        </body>
+        <script type="text/javascript">
+			var date = "2018-10-31";
+			var name,value,i;
+			var str=location.href;
+			var num=str.indexOf("?");
+			str=str.substr(num+1);
+			var arrtmp=str.split("&");
+			var backurl = "";
+			for(i=0;i < arrtmp.length;i++){
+				num=arrtmp[i].indexOf("=");
+				if(num>0){
+					name=arrtmp[i].substring(0,num);
+					value=arrtmp[i].substr(num+1);
+					if(name=="p"){
+						backurl = "index.php?option=com_m_news&date="+date+"&p="+value;
+						$(".backBtn").attr("href", "index.php?option=com_m_news&date="+date+"&p="+value);
+					}
+				}
+			}
+			function goback(){
+				window.location.href = backurl;
+				console.log("不是首页");
+				if(IS_Android){
+					console.log("android");
+					android.goback(1);
+				}
+				else{
+					console.log("ios");
+					return 1;
+				}
+			}
+			//setTimeout("goback();", 3000);
+		</script>
+        </html>
+		

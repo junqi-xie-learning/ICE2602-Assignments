@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>从原地养老向跨区养老转变</title>
+    <style>
+        body{ padding:0px; margin:0px;}
+        img{width:100%}
+        .w{width: 95%;}
+		.lr{margin:0 auto;}
+        .H_xq{font-size:16px;line-height:24px;padding:0px;}
+		.H_xq h1{font-size: 22px;color: #000;margin: 0.7em 0;}
+		.H_xq h3{font-size: 16px;color: #3f3f3f;margin:0.5em 0;}
+		
+		.H_xq img{margin-bottom: 8px;}
+		
+		.H_xq font{ color:#ed1c24;}
+		.H_xq .img1{ text-align:center;}
+		.H_xq .img3{margin-bottom: 8px; width:60%;}
+		
+        .img2{ width:100%;}
+		
+		.xiazai-top{
+        	background-color:#fff;
+        	position:relative;
+        	padding:10px 0 5px 0;
+        	border-bottom:1px solid #dddddd;
+    	}
+    	
+		.open-app{
+			position:absolute;
+			top:23%;
+			right:4%;
+		}
+		
+		.xiazai-bottom{
+			width:100%;
+        	font-size:0;
+        	padding:10px 0 10px 0;
+        	background-color:rgba(0,0,0,0.8);
+			position:fixed;
+			bottom:0;
+			left:0;
+			display:none;
+    	}
+    	
+    </style>
+</head>
+
+<body>
+
+<div class="xiazai-top">
+  <img src="/images/wx/logo-top.png" style="width:135px;margin-left:10px;">
+  <img src="/images/wx/open-top.png" class="open-app" style="width:77px;" onclick="download();" >
+</div>
+
+<div class="H_xq w lr">
+	<h1 id="title">从原地养老向跨区养老转变</h1>
+	<h3 id="subtitle">上海老年人口峰值将达700万，养老服务业正在发生新变化</h3>
+	
+	
+	
+	    ■本报记者 徐瑞哲<br/><br/>    “我们上海老年人的高峰期将会出现在本世纪中叶，到时差不多有700万老龄人口。”在昨天上海交通大学·神户大学联合论坛暨中日企业创新合作论坛上，上海市福利中心主任、养老服务行业协会会长徐启华说。这意味着，再过30年，全城老人要比现在多200万人左右。<br/><br/>    养老业内有一句话：中国养老先看上海，上海养老先看日本。鉴于日本老年人超就业人口12%的高占比，以及他们百岁老人仍能就业的典型事例，上海有何创新之策可为？<br/><br/>    如将2013年视为中国养老事业大发展的元年，有统计表明至今的六七年来，国务院及有关部委已下发300多个相关文件，从中央到地方高度重视养老问题。<br/><br/>    数据显示，截至2018年，上海老年人口就已经超过503万，老龄化程度则已经超过34%，每三人之中就有一个老人。到去年年底，上海全市拥有712家养老机构，设有14.42万张的养老床位，并正在发展社区嵌入式养老等，与居家养老、机构养老等相互融合。<br/><br/>    徐启华对此的基本判断在于“五个转变”。其一，从过去仅将养老作为民政部门的民生问题，更多地转向事关全民的社会与经济问题；其二，从解决“有没有”向解决“好不好”的转变，“有一张床”过渡到“有一间房”的需求；其三，从单一的形态向复合的形态转变，满足“衣、食、养、娱、康、教”；其四，从最最典型的劳动密集型、最最传统的服务型业态，向高科技深度介入的行业转变，包括康复数据等大数据以及健康服务等人工智能，越来越多地走进养老业。<br/><br/>    最后一个转变，在于养老服务业正在从原地养老向跨区养老转变。徐启华认为，随着长三角地区一体化发展提升为国家战略并形成规划纲要，这也为养老服务领域的业务发展打下了坚实基础，使得众多老人在本地之外又多了一种选择：考虑到价格、环境、服务等方面因素，转为邻近地市养老。<br/><br/>
+</div>
+
+<div style="height:70px;"></div> <!-- 底部悬浮框的高度 -->
+
+<div class="xiazai-bottom" id="xiazaiBottom">
+   <img src="/images/wx/logo-bottom.png" style="width:125px;margin-left:15px;">
+   <img src="/images/wx/open-bottom.png" class="open-app" style="width:80px;top:20%;" onclick="download();"/>
+</div>
+
+<script type="text/javascript">
+    function isPC() {
+	    var userAgentInfo = navigator.userAgent.toLowerCase();
+	    var Agents = ["Android", "iPhone",
+	                "SymbianOS", "Windows Phone",
+	                "iPad", "iPod"];
+	    var flag = true;
+	    for (var v = 0; v < Agents.length; v++) {
+	        if (userAgentInfo.indexOf(Agents[v].toLowerCase()) > 0) {
+	            flag = false;
+	            break;
+	        }
+	    }
+	    return flag;
+	}
+	
+	function download()
+	{
+		window.open("/link/app");
+	}
+	
+	(function(){
+	
+		var clientWidth = document.documentElement.clientWidth;
+		var bottom = document.getElementById("xiazaiBottom");
+		if (isPC())
+		{
+			document.body.style.width = "640px";
+			document.body.style.margin = "0 auto";
+			
+			bottom.style.width = "640px";
+			bottom.style.left = (clientWidth - 640)/2 + "px";
+			
+			window.onresize = function(){
+				var bottom = document.getElementById("xiazaiBottom");
+				var clientWidth2 = document.documentElement.clientWidth;
+				bottom.style.left = (clientWidth2 - 640)/2 + "px";
+			}
+			
+			clientWidth = 640;
+		}
+		bottom.style.display = "block";
+			
+	})();
+</script>
+
+<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script type="text/javascript" src="/js/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/weixinShare.js?ver=20170427"></script> 
+<script type="text/javascript"> 
+$(function(){     
+    $.ajax({ 
+        url: "/weixin/getWeiXinShare", 
+        type: "POST", 
+        data: {pageUrl:window.location.href}, 
+        // data: {pageUrl:encodeURIComponent(window.location.href)}, 
+        dataType: "json", 
+        success : function(data){ 
+            if (data) 
+            { 
+                var weixin = new WeiXinShare(); 
+                weixin.config(data.appId, data.timestamp, data.nonceStr, data.signature); 
+                var title = $("#title").text();
+                var subtitle = $("#subtitle").text();
+                var logoUrl = "https://images.shobserver.com/images/logo_jf.jpg";
+                weixin.share({'title':title, 'link':location.href,'img_url':logoUrl, 'desc':subtitle}); 
+            }
+        } 
+    }); 
+}); 
+</script>
+</body>
+</html>

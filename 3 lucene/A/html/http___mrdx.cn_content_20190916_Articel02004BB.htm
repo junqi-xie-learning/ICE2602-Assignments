@@ -1,0 +1,868 @@
+<!-- -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>新华每日电讯--2019年09月16日--要 闻--“青春告白祖国”</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.FloatTitle {display:block;width:100%;text-align:center;FONT-FAMILY: "宋体"; FONT-WEIGHT:BOLD;}
+
+.w12 {	FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: 16px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.black2 {	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.blu12 {	FONT-SIZE: 12px; COLOR: #0000ff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.blue12 {	FONT-SIZE: 12px; COLOR: #0000ff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.w14 {	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+#schedule {
+	BORDER-RIGHT: #8e8e8e 1px solid;
+	PADDING-RIGHT: 0.25em;
+	BORDER-LEFT: #8e8e8e 1px solid;
+	PADDING-LEFT: 0.25em;
+	DISPLAY: none;
+	Z-INDEX: 2;
+	BORDER-BOTTOM: #8e8e8e 1px solid;
+	PADDING-BOTTOM: 0.25em;
+	BORDER-TOP: #8e8e8e 1px solid;
+	PADDING-TOP: 0.25em;
+	POSITION: absolute;
+	TEXT-ALIGN: left;
+}
+#schedule SELECT {
+	FONT-SIZE: 12px
+}
+#date TABLE {
+	FONT-SIZE: 12px
+}
+#schedule SELECT {
+	WIDTH: 60px
+}
+#schedule TABLE {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; MARGIN: 0.15em 0px 0px; FONT-FAMILY: tahoma; BORDER-COLLAPSE: collapse
+}
+#schedule TABLE TD {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 0.15em; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 0.15em; PADDING-BOTTOM: 0.15em; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 0.15em; BORDER-BOTTOM: #fff 1px solid; TEXT-ALIGN: center
+}
+#schedule TABLE TH {
+	BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 0.15em; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 0.15em; PADDING-BOTTOM: 0.15em; BORDER-LEFT: #fff 1px solid; PADDING-TOP: 0.15em; BORDER-BOTTOM: #fff 1px solid; TEXT-ALIGN: center
+}
+#schedule TABLE TD {
+	BACKGROUND: #fff
+}
+#schedule TABLE TD#active {
+	BACKGROUND: #fc6
+}
+#schedule TABLE TD#istoday {
+	BACKGROUND: #908080
+}
+#schedule TABLE TD A {
+	COLOR: #000; TEXT-DECORATION: none
+}
+#schedule TABLE TD A:hover {
+	COLOR: #cd0104
+}
+#schedule TABLE TH {
+	BACKGROUND: #99CCFF; COLOR: #FFFFFF
+}
+.atitle { color:#000000 }
+-->
+</style>
+<script language="JavaScript">
+hgyxCalendar = function (year, month) {
+	this.dateObject = new Date(year, month, 1);
+	this.selectedDate = new Date();
+}
+
+
+hgyxCalendar.prototype.isNotEndOfMonth = function () {
+	var checkMonth = new Date(this.getFullYear(), this.getMonth(), this.getDate()+1);
+        return checkMonth.getMonth() == this.getMonth() && checkMonth.getFullYear() == this.getFullYear();
+}
+
+hgyxCalendar.prototype.isStartOfMonth = function () {
+	return this.getDate() == 1;
+}
+
+hgyxCalendar.prototype.isEndOfWeek = function () {
+	return this.getDay() >= 6; //暂时硬定为星期六为最后一日
+}
+
+hgyxCalendar.prototype.isStartOfWeek = function () {
+	return this.getDay() == 0; //暂时硬定为星期日为第一日
+}
+
+hgyxCalendar.prototype.next = function () {
+	this.dateObject = new Date(this.getFullYear(), this.getMonth(), this.getDate()+1);
+	//return ;
+}
+
+hgyxCalendar.prototype.isSelectedDate = function () {
+	return this.getFullYear() == this.selectedDate.getFullYear() && this.getMonth() == this.selectedDate.getMonth() && this.getDate() == this.selectedDate.getDate();
+}
+
+hgyxCalendar.prototype.setSelectedDate = function (selectedDate) {
+	this.selectedDate = selectedDate;
+}
+
+hgyxCalendar.prototype.isToday = function () {
+	var now = new Date();
+	return this.getFullYear() == now.getFullYear() && this.getMonth() == now.getMonth() && this.getDate() == now.getDate();
+}
+
+hgyxCalendar.prototype.getWeekDay = function () {
+	return this.dateObject.getDay();
+}
+
+hgyxCalendar.prototype.getDay = function () {
+	return this.dateObject.getDay();
+}
+
+hgyxCalendar.prototype.getDate = function () {
+	return this.dateObject.getDate();
+}
+
+hgyxCalendar.prototype.getMonth = function () {
+	return this.dateObject.getMonth();
+}
+
+hgyxCalendar.prototype.getFullYear = function () {
+	return this.dateObject.getFullYear();
+}
+
+hgyxCalendar.prototype.getTime = function () {
+	return this.dateObject.getTime();
+}
+
+</script>
+<script language="JavaScript">
+function handlerMM(e)
+{
+x = document.body.scrollLeft+event.clientX;
+y = document.body.scrollTop+event.clientY;
+var divElm = document.getElementById("infodiv");
+divElm.style.left = x+20;
+divElm.style.top = y+20;
+divElm.style.width = 0;
+divElm.style.height = 0;
+
+var floatTitle = document.getElementById('floattitle').innerText;
+if(floatTitle.length >1 && floatTitle != '点击查看标题列表' && floatTitle != '点击收起标题列表')
+	viewit(document.getElementById("myviewer"));
+else
+	closeView(document.getElementById("myviewer"));
+}
+function viewit(obj){ 
+if (obj != null){ 
+	obj.style.left=event.x+parseInt(document.body.scrollLeft)-parseInt(obj.width)/2+150; 
+	obj.style.top=event.y+parseInt(document.body.scrollTop)-parseInt(obj.height)/2+0; 
+	
+	var ImageXPos = 5;//版面略图的左上角
+	var ImageYPos = -10;
+	Nx=parseInt(document.all.getsize.width)/parseInt(document.all.pagesketch.width); 
+	bgx=(-1)*(Nx-1)*(event.x-ImageXPos+parseInt(document.body.scrollLeft))-parseInt(obj.style.left)+ImageXPos; 
+	
+	Ny=parseInt(document.all.getsize.height)/parseInt(document.all.pagesketch.height); 
+	bgy=(-1)*(Ny-1)*(event.y-ImageYPos+parseInt(document.body.scrollTop))-parseInt(obj.style.top)+ImageYPos; 
+	obj.style.backgroundPosition=bgx+" "+bgy; 
+}} 
+function closeView(obj)
+{
+if (obj != null){ 
+	obj.style.left=-2000; 
+	obj.style.top=-2000; 
+	}
+}
+</script>
+
+<script id=oMapScript event=onmouseover() for=PageMap>
+drawLine(event.srcElement);
+</script>
+<SCRIPT id=oMapScript1 event=onmouseout() for=PageMap>
+MouseOutMap();
+</SCRIPT>
+<SCRIPT id=oMapScript2 event=onclick() for=PageMap>
+clickmap(event.srcElement);
+</SCRIPT>
+
+
+</head>
+
+
+<body>
+<SPAN id=infodiv  style="Z-INDEX: 50; POSITION: absolute; filter:alpha(opacity=80);background-color:#FFFF66;"><FONT face="宋体" size=3><B><P id="floattitle" style="white-space:nowrap;"></P></B></FONT></SPAN>
+<script>
+document.onmousemove = handlerMM;
+</script>
+<table width="980" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+  <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="50%"><TABLE width="100%" height=23 
+                        border=0 cellPadding=0 cellSpacing=0 bgcolor="#ddf4ff">
+            <TBODY>
+              <TR>
+			  <TD width="150" align="center"><a href="http://www.xinhuanet.com/mrdx">电子报旧版</a></TD>
+                <TD width="200" align="center"><A class=14 
+                              href="#">2019年09月16日</A></TD>
+                <TD width="17%"><SPAN style="display:"><A class=14 href=../20190915/IssueIndex.htm>上一期</A></span></TD>
+                <TD width="19%"><SPAN style="display:none"><A class=14 href=****处理标记：[Issue]时，数据源为空。 ****>下一期</A></span></TD>
+                
+              </TR>
+            </TBODY>
+          </TABLE></td>
+          <td><TABLE width="100%" border=0 cellPadding=0 cellSpacing=0 bgcolor="#ddf4ff">
+            <TBODY>
+              <TR align=right>
+                <TD style="PADDING-LEFT: 6px" align=left width="30%" height=22>
+                  <TABLE width="100%" border=0 cellpadding="0" cellspacing="0">
+                    <TBODY>
+                      <TR>
+                        <TD><span style="display:"><A class=preart href="Articel02003BB.htm"><FONT face=Webdings>3</FONT>上一篇</A>&nbsp;&nbsp;</span><span style="display:none"><A class=preart href="****处理标记：[Article]时，数据源为空。 ****"><FONT face=Webdings>4</FONT>下一篇</A>&nbsp;&nbsp;</span></TD>
+                      </TR>
+                    </TBODY>
+                </TABLE></TD>
+                <TD align=middle>
+				<a class="atitle" href="Page02HO.htm">返回本版列表</a>&nbsp;&nbsp;&nbsp;&nbsp;点击率：<SCRIPT src="../../search/counter.asp?articleId=Articel02004BB.htm&articletitle=“青春告白祖国”"></SCRIPT >&nbsp;&nbsp;字体： <a id=zoomin
+href="#" onclick="elf()">放大</a>&nbsp;&nbsp;<a id=zoomnormal
+href="#" onclick="ogf()">默认</a>&nbsp;&nbsp;<a id=zoomout
+href="#" onclick="slf()">缩小</a>&nbsp;&nbsp;</TD>
+              </TR>
+            </TBODY>
+          </TABLE></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="346" valign="top">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>
+					<style type="text/css">  
+<!--
+#mylink {position:relative;}
+#mylink a {filter:alpha(opacity=50);-moz-opacity:0.5;opacity: 0.5;position:absolute;padding:10px;border-width:2px;display:block;text-indent:1px;text-decoration:none;background:url("no.gif");}
+#mylink a.overlink:hover {border:solid 2px #FF0000;display:block;}
+-->  
+</style>
+<div id="mylink" style="z-index:80;position:absolute;"> 
+
+<a href="Articel02002BB.htm" class="overlink" style="width:242px;height:249px;left:3px;top:30px;"
+onmousemove="document.getElementById('floattitle').innerText = '加强新时代党内法规制度建设重要举措';" onmouseout="document.getElementById('floattitle').innerText = ''"></a>
+
+<a href="Articel02003BB.htm" class="overlink" style="width:89px;height:462px;left:254px;top:34px;"
+onmousemove="document.getElementById('floattitle').innerText = '共筑网络家园安全防线';" onmouseout="document.getElementById('floattitle').innerText = ''"></a>
+
+<a href="Articel02004BB.htm" class="overlink" style="width:242px;height:211px;left:3px;top:285px;"
+onmousemove="document.getElementById('floattitle').innerText = '“青春告白祖国”';" onmouseout="document.getElementById('floattitle').innerText = ''"></a>
+
+</div>
+<img src="../../IMAGE/20190916/02/Page02-346.jpg" id=pagesketch border="1" width="346" useMap=#PageMap>
+					</td>
+                  </tr>
+                  <tr>
+                    <td height="26" align="right" background="../../../public/dsdzb_18.gif"><TABLE height=24 cellSpacing=0 cellPadding=0 width="98%" 
+                        border=0>
+                                  <TBODY>
+                                    <TR> 
+                                      <TD class=14 align=middle width="21%" 
+                            height=24>要 闻</TD>
+                                      <TD align=middle width="60%"> <TABLE cellSpacing=1 cellPadding=0 width="92%" 
+                              border=0>
+                                          <TBODY>
+                                            <TR> 
+                                              <TD class=12 vAlign=center align=middle 
+                                width="12%" bgColor=#cc0000><FONT 
+                                color=#ffffff>12</FONT></TD>
+                                              <TD class=12 vAlign=center align=middle 
+                                width="20%" bgColor=#999999><FONT 
+                                color=#ffffff>2/12</FONT></TD>
+                                              <TD class=12 align=middle 
+                                width="10%"><U><B> <SPAN  style="display:"> 
+                                                <A class=12 title="上一版" href="Page01HO.htm"> 
+                                                1 
+                                                </a> </SPAN></B></U></TD>
+                                              <TD align=middle width="10%"> <strong>2</strong> 
+                                              </TD>
+                                              <TD align=middle width="10%"> <SPAN  style="display:"> 
+                                                <A class=12 title="下一版" href="Page03HO.htm"> 
+                                                3 
+                                                </A> </SPAN> </TD>
+                                              <TD align=middle width="10%"> <SPAN  style="display:"> 
+                                                <A class=12 title="下一版" href="Page03HO.htm">
+                                                &gt;
+                                                </A></SPAN> </TD>
+                                              <TD align=middle width="10%"><A class=12 
+                                href="Page12HO.htm">&gt;|</A></TD>
+                                              <TD>
+											  
+											  <select name="select" id='spage' onChange="bao(this.options[this.options.selectedIndex].value)">
+											  
+												<option value="Page01HO.htm">要 闻</option>
+											 
+												<option value="Page02HO.htm">要 闻</option>
+											 
+												<option value="Page03HO.htm">要 闻</option>
+											 
+												<option value="Page04HO.htm">要 闻</option>
+											 
+												<option value="Page05HO.htm">新闻纵深</option>
+											 
+												<option value="Page06HO.htm">要 闻</option>
+											 
+												<option value="Page07HO.htm">综合新闻</option>
+											 
+												<option value="Page08HO.htm">脱贫攻坚</option>
+											 
+												<option value="Page09HO.htm">成风化人</option>
+											 
+												<option value="Page10HO.htm">成风化人</option>
+											 
+												<option value="Page11HO.htm">成风化人</option>
+											 
+												<option value="Page12HO.htm">每周影像</option>
+											 
+											 </select>
+											  <script>
+											  function bao(s)
+											  {
+											  		window.location.href=s
+											  }
+											  document.getElementById("spage").selectedIndex = 2-1;
+											  </script>
+											  </TD>
+                                            </TR>
+                                          </TBODY>
+                                        </TABLE></TD>
+                                      <TD vAlign=center align=right width="13%"> 
+                                        <A class="14" href="../../PDF/20190916/02.pdf" target=_blank>PDF版</A><SPAN 
+                              class=12></SPAN></TD>
+                                      <TD vAlign=center align=left width="6%"> 
+                                        <A href="../../PDF/20190916/02.pdf" target=_blank> 
+                                        <IMG src="../../../public/pdf.gif" 
+                          width=16 
+                              height=16 border="0"></a></TD>
+                                    </TR>
+                                  </TBODY>
+                                </TABLE></td>
+                  </tr>
+          </table>	
+	<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+      <TBODY>
+        <TR>
+          <TD class=w14 align=middle bgColor=#608bc7 height=22>本版面文章</TD>
+        </TR>
+        <TR>
+          <TD bgColor=#094078 height=3></TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+	<TABLE cellSpacing=0 cellPadding=0 width="100%" style="BORDER-RIGHT: #8e8e8e 1px solid; border-bottom:#8e8e8e 1px solid; border-left:#8e8e8e 1px solid;">
+      <TBODY>
+        
+        <TR>
+          <TD width="2%" vAlign=middle>·</TD>
+          <TD height=22> <a class="atitle" href="Articel02002BB.htm" target=_blank>加强新时代党内法规制度建设重要举措</a> </TD>
+        </TR>
+        
+        <TR>
+          <TD width="2%" vAlign=middle>·</TD>
+          <TD height=22> <a class="atitle" href="Articel02003BB.htm" target=_blank>共筑网络家园安全防线</a> </TD>
+        </TR>
+        
+        <TR>
+          <TD width="2%" vAlign=middle>·</TD>
+          <TD height=22> <a class="atitle" href="Articel02004BB.htm" target=_blank>“青春告白祖国”</a> </TD>
+        </TR>
+        
+      </TBODY>
+    </TABLE></td>
+    <td valign="top">
+    	<br>
+    	
+	<span style="display:">
+      <TABLE cellSpacing=0 cellPadding=0 width=98% border=0>
+        <TBODY>
+<tr>
+          	<td align="center">
+          		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <TR>
+  <TD width="100%" ><SPAN style="display:none" >&nbsp;&nbsp;<font color=ff0000>相关文章：</font></span>&nbsp;<br></TD>
+  </TR>
+  
+      </table>
+          	</td>
+          </tr>
+          <TR>
+            <TD>
+              <table border="0" cellpadding="0" cellspacing="0">
+                
+				
+
+              </table>
+              <SPAN id=contenttext style="display:"><font face=Arial><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content=Yes http-equiv=MSThemeCompatible>
+<META name=GENERATOR content="MSHTML 9.00.8112.16421">
+<STYLE>BODY {
+	FONT-FAMILY: 宋体; FONT-SIZE: 14px
+}
+TABLE {
+	FONT-FAMILY: 宋体; FONT-SIZE: 14px
+}
+</STYLE>
+</HEAD>
+<BODY leftMargin=3 topMargin=2 bgColor=#ffffff>
+<TABLE border=0 cellSpacing=0 cellPadding=5 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=top>
+    <TD width="100%" align=center>
+      <DIV align=center></DIV></TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center>
+      <DIV align=center><STRONG><FONT 
+      style="FONT-SIZE: 23px">“青春告白祖国”</FONT></STRONG></DIV></TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center>
+      <DIV align=center><FONT 
+      style="FONT-SIZE: 18px">全国高校千万大学生抒发爱国报国之情</FONT></DIV></TD></TR>
+  <TR vAlign=top>
+    <TD>
+      <HR color=#000000 SIZE=1>
+    </TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center>（ 2019-09-16 ） 稿件来源：新华每日电讯 要 闻</TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center></TD></TR></TBODY></TABLE>
+<DIV>&nbsp;</DIV>
+<DIV>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR>
+    <TD bgColor=#f7f7f7>
+      <DIV align=center><IMG border=0 align=baseline 
+      src="../../IMAGE/20190916\02\02_02_0166.jpg"></DIV>
+      <DIV align=center>&nbsp;</DIV>
+      <DIV 
+      align=center>　　在上海交通大学举行的“青春告白祖国”系列宣讲会上,船舶海洋与建筑工程学院研究生李凯薇在进行演讲(9月9日摄)。　　　　　新华社发</DIV></TD></TR>
+  <TR>
+    <TD bgColor=#f7f7f7>
+      <DIV align=center>&nbsp;</DIV></TD></TR>
+  <TR>
+    <TD bgColor=#f7f7f7>
+      <DIV align=left></DIV></TD></TR>
+  <TR>
+    <TD>
+      <DIV 
+align=center>&nbsp;</DIV></TD></TR></TBODY></TABLE>　　新华社北京9月15日电(记者胡浩)“永远跟党走”“将论文写在万亩稻田上”“乡村振兴,我们青年责无旁贷”……连日来,全国各地各高校广泛开展“青春告白祖国”活动,千万大学生积极向党和祖国真情告白,表达坚定理想信念,抒发爱国奋斗之志。<BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　“青春告白祖国”活动自8月30日启动,目前正在全国2900多所高校、3800多万大学生中展开,广大高校学生通过“说”“拍”“演”等多种形式,用学生自己的语言、自己的体验解读理论、宣传成就、展示风采,积极传播青春正能量。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV>
+<DIV align=center><STRONG>表达爱党爱国之情</STRONG></DIV><BR><BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　重温建党建国、改革开放的伟大历程,寻访中国共产党团结带领全国各族人民战胜无数困难和挑战的光辉足迹,当代大学生真切感受到革命先辈的崇高品格,深刻领悟了中国共产党为人民谋幸福、为民族谋复兴的初心和使命。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　在南开大学的研究生开学典礼上,全场新生重温了张伯苓老校长发出的“三问”——你是中国人吗?你爱中国吗?你愿意中国好吗?“愿祖国繁荣富强!”全体新生的回答响亮而坚定。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　新疆师范大学举办“红色教育实践课堂”,邀请学生代表谈暑期赴延安、西柏坡、井冈山、韶山等革命圣地学习的心得体会,引导广大学生感悟先辈“革命理想高于天”的精神境界。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　首都大学生在“向祖国报告”诗诵会上,表演了自编自创的《破晓》《曙光》《为有牺牲多壮志》《向祖国报告》等多部优秀作品,以诵读青春诗歌的方式致敬伟大祖国。中国矿业大学2019级参加军训的新生齐声合唱《歌唱祖国》,并通过行军拉练的方式向长征精神致敬。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　海南、云南、西藏等地的大学生以主题班会、故事演讲、读书会、微视频、快闪等多种形式开展“青春告白祖国”活动,抒发爱党爱国爱社会主义之情,表达“听党话、跟党走”的信心决心。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV>
+<DIV align=center><STRONG>讲述生动实践故事</STRONG></DIV><BR><BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　在活动中,同学们结合对新中国成立70年来的重大成就、重大变化、重要经验的实践考察,对中华优秀传统文化、革命文化、社会主义先进文化的真切体验,进一步增强了对中国特色社会主义道路、理论、制度、文化的政治认同、思想认同、理论认同、情感认同。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　华南理工大学精心组织了一场题为“小我融入大我　读懂中国行”的思政课,4位同学结合自身经历讲述了重走长征路、深入乡土调研、力促民族团结的生动故事,用青年脚步丈量祖国大地,用青年声音讲述中国故事。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　电子科技大学组织2019年暑期社会实践成果展,近100支暑期社会实践团队参展,32名同学向大家讲述了暑期社会实践成果和体悟。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　在“青春告白祖国”宣讲会上,江西师范大学马克思主义学院2017级硕士生赵灵飞对比展现了家乡安徽亳州在20年里的巨大变化,从麦田说到乡村振兴、精准扶贫,从“傻子瓜子”说到民营经济发展,用最真切的案例和最真挚的情感讲出了只有共产党才能救中国、只有社会主义才能发展中国的朴素道理,引起同学共鸣。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV>
+<DIV align=center><STRONG>抒发报国奋斗之志</STRONG></DIV><BR><BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　结合对区域协调发展、乡村振兴、创新驱动发展、生态文明建设、脱贫攻坚等国家战略的实践服务,同学们进一步增强了对自身所肩负的时代责任的深刻认识,激发勇立时代潮头、争做时代先锋的青春热情,坚定为祖国美好明天、民族伟大复兴而奋斗的决心。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　在上海市高校“青春告白祖国”启动仪式暨首场宣讲会上,来自复旦大学、上海交通大学、同济大学、上海大学等7所高校的10位优秀学生讲述自己的故事,发出上海学子爱国奋斗的时代强音。同济大学颜思敏同学说:“我代表同济青年,向祖国的美丽乡村告白。乡村振兴,我们青年责无旁贷。”上海大学学生讲师团成员徐海彬、范修竹声情并茂地介绍了该校“精海”无人艇团队,在南极、东海、南海岛礁海域、长江口等地进行海洋测绘、环境监测、水下考古的事迹。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　西安交通大学5位学生代表在新生开学典礼上讲述了学校校史、西迁岁月、我国电机之父钟兆琳先生、陶文铨院士团队系列故事,带领学生共同体会“为民族而生,为时代而生”的交大精神,擦亮爱国奋斗的精神底色。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　“爱国的方式千万种,我选择将论文写在万亩稻田上。”南昌大学生命科学学院“稻渔工程”团队代表吴流政在宣讲中以《助力脱贫致富　筑梦乡村振兴》为题,鼓励青年大学生用创新创业的实际行动唱响献给祖国的赞歌。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV></DIV>
+<DIV>&nbsp;</DIV></BODY></HTML>
+</font></SPAN>
+              <SPAN style="display:none">
+              <P><img border=0 src="****处理标记：[Article]时， 字段 [SnapUrl] 在数据源中没有找到! ****"></P>
+              </SPAN>
+            </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      </span>
+      <span style="display:none">
+      <TABLE cellSpacing=0 cellPadding=5 width=98% border=0 align="center">
+        <TBODY>
+          <!--引题-->
+          <TR vAlign=top style="display:none">
+            <TD style="PADDING-LEFT: 6px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" align="center" width=100%> <div align=center style='FONT-SIZE: 18px'></div>
+            </TD>
+          </TR>
+          <!--标题-->
+          <TR vAlign=top style="display:">
+            <TD style="PADDING-LEFT: 6px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" align="center" width=100%> <div align=center><STRONG style='FONT-SIZE: 23px;FONT-FAMILY: 宋体'>“青春告白祖国”</div>
+            </TD>
+          </TR>
+          <!--肩题-->
+          <TR vAlign=top style="display:">
+            <TD style="PADDING-LEFT: 6px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" align="center" width=100%> <div align=center style='FONT-SIZE: 18px'>全国高校千万大学生抒发爱国报国之情</div>
+            </TD>
+          </TR>
+          <TR vAlign=top style="display:none">
+            <TD style="PADDING-LEFT: 6px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" align="left" width="100%" bgcolor="#A3A3A3"> 
+            </TD>
+          </TR>
+          <TR vAlign=top>
+            <td><hr class=dotline color=#000000 size=1></td>
+          </TR>
+          <TR vAlign=top>
+            <td align="center">（ 2019-09-16 ） 稿件来源： 新华每日电讯要 闻 </td>
+          </TR>
+          <tr>
+          	<td align="center">
+          		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <TR>
+  <TD width="100%" ><SPAN style="display:none" >&nbsp;&nbsp;<font color=ff0000>相关文章：</font></span>&nbsp;<br></TD>
+  </TR>
+  
+      </table>
+          	</td>
+          </tr>
+          <!--作者-->
+          <TR vAlign=top style="display:">
+            <TD style="PADDING-LEFT: 6px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" align="center" width=100%> 
+            </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=100% border=0 align=left>
+        <TBODY>
+          <TR>
+            <TD>
+              <table border="0" align="center" cellpadding="0" cellspacing="0">
+                
+                <tr style="display:none">
+                  <td bgcolor="#E8E8D7">
+                    <table border=0 cellpadding=0 cellspacing=0 width=300 style="margin:0px 8px 8px 0px;border:1px solid #999;">
+                      <tr>
+                        <td align=center><a href="../../IMAGE/20190916/02/02_02_0166.jpg" target=_blank><img border=0 src="../../IMAGE/20190916/02/02_02_0166.jpg"  width=300></a> </td>
+                      </tr>
+                      <tr>
+                        <td>   </td>
+                      </tr>
+                  </table></td>
+                </tr>
+                  
+              </table>
+              <TABLE cellSpacing=0 cellPadding=0 width=98% border=0 align=center>
+                <TBODY>
+                  <TR>
+                    <TD> <SPAN id=oldcontenttext style="display:none"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META content=Yes http-equiv=MSThemeCompatible>
+<META name=GENERATOR content="MSHTML 9.00.8112.16421">
+<STYLE>BODY {
+	FONT-FAMILY: 宋体; FONT-SIZE: 14px
+}
+TABLE {
+	FONT-FAMILY: 宋体; FONT-SIZE: 14px
+}
+</STYLE>
+</HEAD>
+<BODY leftMargin=3 topMargin=2 bgColor=#ffffff>
+<TABLE border=0 cellSpacing=0 cellPadding=5 width="100%" align=center>
+  <TBODY>
+  <TR vAlign=top>
+    <TD width="100%" align=center>
+      <DIV align=center></DIV></TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center>
+      <DIV align=center><STRONG><FONT 
+      style="FONT-SIZE: 23px">“青春告白祖国”</FONT></STRONG></DIV></TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center>
+      <DIV align=center><FONT 
+      style="FONT-SIZE: 18px">全国高校千万大学生抒发爱国报国之情</FONT></DIV></TD></TR>
+  <TR vAlign=top>
+    <TD>
+      <HR color=#000000 SIZE=1>
+    </TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center>（ 2019-09-16 ） 稿件来源：新华每日电讯 要 闻</TD></TR>
+  <TR vAlign=top>
+    <TD width="100%" align=center></TD></TR></TBODY></TABLE>
+<DIV>&nbsp;</DIV>
+<DIV>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" align=center>
+  <TBODY>
+  <TR>
+    <TD bgColor=#f7f7f7>
+      <DIV align=center><IMG border=0 align=baseline 
+      src="../../IMAGE/20190916\02\02_02_0166.jpg"></DIV>
+      <DIV align=center>&nbsp;</DIV>
+      <DIV 
+      align=center>　　在上海交通大学举行的“青春告白祖国”系列宣讲会上,船舶海洋与建筑工程学院研究生李凯薇在进行演讲(9月9日摄)。　　　　　新华社发</DIV></TD></TR>
+  <TR>
+    <TD bgColor=#f7f7f7>
+      <DIV align=center>&nbsp;</DIV></TD></TR>
+  <TR>
+    <TD bgColor=#f7f7f7>
+      <DIV align=left></DIV></TD></TR>
+  <TR>
+    <TD>
+      <DIV 
+align=center>&nbsp;</DIV></TD></TR></TBODY></TABLE>　　新华社北京9月15日电(记者胡浩)“永远跟党走”“将论文写在万亩稻田上”“乡村振兴,我们青年责无旁贷”……连日来,全国各地各高校广泛开展“青春告白祖国”活动,千万大学生积极向党和祖国真情告白,表达坚定理想信念,抒发爱国奋斗之志。<BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　“青春告白祖国”活动自8月30日启动,目前正在全国2900多所高校、3800多万大学生中展开,广大高校学生通过“说”“拍”“演”等多种形式,用学生自己的语言、自己的体验解读理论、宣传成就、展示风采,积极传播青春正能量。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV>
+<DIV align=center><STRONG>表达爱党爱国之情</STRONG></DIV><BR><BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　重温建党建国、改革开放的伟大历程,寻访中国共产党团结带领全国各族人民战胜无数困难和挑战的光辉足迹,当代大学生真切感受到革命先辈的崇高品格,深刻领悟了中国共产党为人民谋幸福、为民族谋复兴的初心和使命。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　在南开大学的研究生开学典礼上,全场新生重温了张伯苓老校长发出的“三问”——你是中国人吗?你爱中国吗?你愿意中国好吗?“愿祖国繁荣富强!”全体新生的回答响亮而坚定。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　新疆师范大学举办“红色教育实践课堂”,邀请学生代表谈暑期赴延安、西柏坡、井冈山、韶山等革命圣地学习的心得体会,引导广大学生感悟先辈“革命理想高于天”的精神境界。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　首都大学生在“向祖国报告”诗诵会上,表演了自编自创的《破晓》《曙光》《为有牺牲多壮志》《向祖国报告》等多部优秀作品,以诵读青春诗歌的方式致敬伟大祖国。中国矿业大学2019级参加军训的新生齐声合唱《歌唱祖国》,并通过行军拉练的方式向长征精神致敬。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　海南、云南、西藏等地的大学生以主题班会、故事演讲、读书会、微视频、快闪等多种形式开展“青春告白祖国”活动,抒发爱党爱国爱社会主义之情,表达“听党话、跟党走”的信心决心。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV>
+<DIV align=center><STRONG>讲述生动实践故事</STRONG></DIV><BR><BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　在活动中,同学们结合对新中国成立70年来的重大成就、重大变化、重要经验的实践考察,对中华优秀传统文化、革命文化、社会主义先进文化的真切体验,进一步增强了对中国特色社会主义道路、理论、制度、文化的政治认同、思想认同、理论认同、情感认同。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　华南理工大学精心组织了一场题为“小我融入大我　读懂中国行”的思政课,4位同学结合自身经历讲述了重走长征路、深入乡土调研、力促民族团结的生动故事,用青年脚步丈量祖国大地,用青年声音讲述中国故事。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　电子科技大学组织2019年暑期社会实践成果展,近100支暑期社会实践团队参展,32名同学向大家讲述了暑期社会实践成果和体悟。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　在“青春告白祖国”宣讲会上,江西师范大学马克思主义学院2017级硕士生赵灵飞对比展现了家乡安徽亳州在20年里的巨大变化,从麦田说到乡村振兴、精准扶贫,从“傻子瓜子”说到民营经济发展,用最真切的案例和最真挚的情感讲出了只有共产党才能救中国、只有社会主义才能发展中国的朴素道理,引起同学共鸣。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV>
+<DIV align=center><STRONG>抒发报国奋斗之志</STRONG></DIV><BR><BR>
+<DIV>&nbsp;</DIV>
+<DIV>　　结合对区域协调发展、乡村振兴、创新驱动发展、生态文明建设、脱贫攻坚等国家战略的实践服务,同学们进一步增强了对自身所肩负的时代责任的深刻认识,激发勇立时代潮头、争做时代先锋的青春热情,坚定为祖国美好明天、民族伟大复兴而奋斗的决心。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　在上海市高校“青春告白祖国”启动仪式暨首场宣讲会上,来自复旦大学、上海交通大学、同济大学、上海大学等7所高校的10位优秀学生讲述自己的故事,发出上海学子爱国奋斗的时代强音。同济大学颜思敏同学说:“我代表同济青年,向祖国的美丽乡村告白。乡村振兴,我们青年责无旁贷。”上海大学学生讲师团成员徐海彬、范修竹声情并茂地介绍了该校“精海”无人艇团队,在南极、东海、南海岛礁海域、长江口等地进行海洋测绘、环境监测、水下考古的事迹。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　西安交通大学5位学生代表在新生开学典礼上讲述了学校校史、西迁岁月、我国电机之父钟兆琳先生、陶文铨院士团队系列故事,带领学生共同体会“为民族而生,为时代而生”的交大精神,擦亮爱国奋斗的精神底色。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>　　“爱国的方式千万种,我选择将论文写在万亩稻田上。”南昌大学生命科学学院“稻渔工程”团队代表吴流政在宣讲中以《助力脱贫致富　筑梦乡村振兴》为题,鼓励青年大学生用创新创业的实际行动唱响献给祖国的赞歌。<BR></DIV>
+<DIV>&nbsp;</DIV>
+<DIV></DIV></DIV>
+<DIV>&nbsp;</DIV></BODY></HTML>
+</SPAN>
+                        <script type="text/javascript"> 
+	var newBr = document.createElement("br");
+	var tagSpan = document.getElementById('oldcontenttext');
+	//document.body.insertBefore(newBr, tagSpan);//tagSpan.appendChild(newBr);
+	var ss = tagSpan.innerHTML;
+	ss = ss.replace(/<SPAN class=FloatTitle>/g, "<br /><SPAN class=FloatTitle>");
+	//alert(ss);
+	tagSpan.innerHTML = ss;
+
+	//document.body.insertBefore(document.createElement("br"), tagSpan.nextSibling);
+        </script>
+                        <SPAN style="display:none">
+                        <P><img border=0 src="****处理标记：[Article]时， 字段 [SnapUrl] 在数据源中没有找到! ****"></P>
+                        </SPAN>
+                    </TD>
+                  </TR>
+                </TBODY>
+            </TABLE></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      </span>	</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+	</td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>        
+        	&nbsp;</td></tr>
+  <tr>
+    <td><TABLE cellSpacing=2 cellPadding=0 width=600 align=center border=0>
+      <TBODY>
+        <TR>
+          <TD bgColor=#7da7d1 height=20>　<B>请注意：</B></TD>
+        </TR>
+        <TR>
+          <TD>
+            <TABLE class=txt12 cellSpacing=0 cellPadding=4 width="100%" 
+            align=center bgColor=#f5f5f5 border=0>
+              <TBODY>
+                <TR>
+                  <TD width=8><BR>
+                      <BR>
+                      <P><BR>
+                    </P></TD>
+                  <TD>
+                    <P>·遵守中华人民共和国有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。 <BR>
+                      ·新华每日电讯拥有管理笔名和留言的一切权利。 <BR>
+                      ·您在新华每日电讯留言板发表的言论，新华每日电讯有权在网站内转载或引用。 <BR>
+                      ·新华每日电讯新闻留言板管理人员有权保留或删除其管辖留言中的任意内容。<BR>
+                      ·如您对管理有意见请向留言板管理员反映。 </P></TD>
+                </TR>
+              </TBODY>
+          </TABLE></TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+      <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                      <td align="center">
+                                        <iframe src="/cmsbbs/default.aspx?sTitle=“青春告白祖国”&sDate=2019年09月16日&sPaperName=新华每日电讯&sPage=02" width="100%"  height="480" frameborder="0" application="true"></iframe></td>
+                                    </tr>
+                                  </table>
+                                  <TABLE cellSpacing=10 cellPadding=0 width="100%" 
+                        bgColor=#ffffff border=0>
+                                    <TBODY>
+                                      <TR>
+                                        <TD>
+                                          <DIV align=center><FONT color=#000000>
+										  <BR>
+                                                  [<SPAN 
+                              class=12><A href="mailto:?subject=信笺标题写在此&amp;body=信笺内容写在此" target=""><FONT 
+                              color=#000000><STRONG>推荐好友</STRONG></FONT></A></SPAN>] [<SPAN class=12><a href="javascript:;" onclick="window.print()"><FONT 
+                              color=#000000><STRONG>打印本页</STRONG></FONT></A></SPAN>] [<STRONG><SPAN class=12><a href="javascript:;" onclick="addfavorite()"><FONT 
+                              color=#000000>收藏本文</FONT></A></SPAN></STRONG>]</font></DIV></TD>
+                                      </TR>
+                                    </TBODY>
+                                  </TABLE>
+      <table width="773" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="../../../spacer.gif" width="1" height="5"></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#E5E5E5"><img src="../../../spacer.gif" width="1" height="5"></td>
+      </tr>
+      <tr>
+        <td align="center">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" class="copyright">Copyright &copy; 2000 - 2006 <font color="#FF0000">XINHUANET</font>.com　All Rights Reserved. 　制作单位：新华通讯社网络中心<br>
+             <a href="http://www.xinhuanet.com/copyright.htm" target="_blank" style="font-size:12px">版权所有</a> 新华网&nbsp;&nbsp;访问量：<SCRIPT src="../../search/visit.asp?visit=visit"></SCRIPT ></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</table>
+<!-- 字体自号 cookie -->
+
+<script language="JavaScript" defer="defer">
+var fsz=100;
+function elf(){
+fsz=fsz+10;
+setCookie('fsz',fsz);
+document.getElementById('contenttext').style.fontSize=getCookie('fsz')+'%';
+document.getElementById('oldcontenttext').style.fontSize=getCookie('fsz')+'%';
+}
+function ogf(){
+fsz=100;
+setCookie('fsz',fsz);
+document.getElementById('contenttext').style.fontSize=getCookie('fsz')+'%';
+document.getElementById('oldcontenttext').style.fontSize=getCookie('fsz')+'%';
+}
+function slf(){
+fsz=fsz-10;
+setCookie('fsz',fsz);
+document.getElementById('contenttext').style.fontSize=getCookie('fsz')+'%';
+document.getElementById('oldcontenttext').style.fontSize=getCookie('fsz')+'%';
+}
+
+function setCookie(name,value)
+{
+ var Days = 30;
+ var exp = new Date(); //new Date("December 31, 9998");
+ exp.setTime(exp.getTime() + Days*24*60*60*1000);
+ document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function getCookie(name)
+{
+ var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+ if(arr=document.cookie.match(reg)) return unescape(arr[2]);
+ else return null;
+}
+if(getCookie('fsz'))document.getElementById('content').style.fontSize=getCookie('fsz')+'%'; //如果有cookie,从cookie中取值
+
+</script>
+
+<script language="javascript">
+var isIE=(document.all&&document.getElementById&&!window.opera)?true:false; 
+var isMozilla=(!document.all&&document.getElementById&&!window.opera)?true:false; 
+var isOpera=(window.opera)?true:false;
+var seturl='url(#default#homepage)';
+var weburl=window.location.href;
+var webname=document.title;
+
+function myhomepage() {
+if(isMozilla){
+   try {netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");} 
+   catch (e){alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将[signed.applets.codebase_principal_support]设置为'true'");}
+   var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+   prefs.setCharPref('browser.startup.homepage',weburl);
+}
+if(isIE){
+   this.homepage.style.behavior=seturl;this.homepage.sethomepage(weburl); 
+}
+}
+
+function addfavorite()
+{
+
+if(isMozilla){
+   if (document.all){ window.external.addFavorite(weburl,webname);}
+   else if (window.sidebar){ window.sidebar.addPanel(webname, weburl,"");}
+}
+if(isIE){window.external.AddFavorite(weburl, webname);} 
+}
+
+</script>
+
+
+</body>
+</html>

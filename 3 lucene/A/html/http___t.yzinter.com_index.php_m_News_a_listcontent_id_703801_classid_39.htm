@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="renderer" content="webkit">
+<title>原创|大数据时代如何进行个人数据保护？-扬眼</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="alternate icon" type="image/png" href="http://m.yangtse.com/images/icon.png">
+<link rel="apple-touch-icon-precomposed" href="http://m.yangtse.com/images/icon_72x72.png">
+<link rel="stylesheet" href="css/amui.all.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.min.css" />
+<link href="css/mp3.css" rel="stylesheet" type="text/css" />
+<script src="js/zepto.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/scrolltopcontrol.js"></script>
+<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+<script src="js/main.js"></script>
+<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<style type="text/css">
+<!--
+.dh {background:#d12a1a;color:#fff;}
+.ad img {
+	width: 100%;
+}
+video{width: 100%; height: auto; background: #000;}
+.a1:link       { color:#fff; TEXT-DECORATION: none }
+.a1:hover      { color:#fff; TEXT-DECORATION: none }
+.a1:visited    { color:#fff; TEXT-DECORATION: none }
+#wrap{position: relative;padding: 10px;overflow: hidden;}
+#read-more{margin:25px;display:none}
+#download{margin:25px;display:none}
+-->
+</style>
+<script type="text/javascript">
+$(function() {
+	      if($.cookie('warp')==null){
+        var slideHeight = 800; 
+        var defHeight = $('#wrap').height();
+        if (defHeight >= slideHeight) {
+            $('#wrap').css('height', slideHeight + 'px');
+            $("#download").show();
+            $("#read-more").show();
+            $("#read-more a").click(function() {
+                var curHeight = $('#wrap').height();
+                    $('#wrap').animate({
+                        height: defHeight
+                    },
+                    "normal");
+                    $("#download").hide();
+                    $("#read-more").hide();
+                    var date = new Date();
+                    date.setTime(date.getTime()+10800*1000);
+                    $.cookie('warp','true',{expires:date});
+                return false;
+            });
+        }
+        }
+});
+</script>
+</head>
+<body>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+
+		   					
+		               wx.config({
+		   
+		                   debug: false,
+		   
+		                   appId: '',
+		   
+		                   timestamp: ,
+		   
+		                   nonceStr: '',
+		   
+		                   signature: '',
+		   
+		                   jsApiList: [
+		                       'checkJsApi',
+		                       'onMenuShareTimeline',
+		                       'onMenuShareAppMessage'
+		                              ]
+		   
+		               });
+		    
+		               wx.ready(function () {
+		                
+		                   // 在这里调用 API
+		   
+		                   wx.onMenuShareTimeline({
+		   
+		                       title:'原创|大数据时代如何进行个人数据保护？', // 分享标题
+		   
+		                       link: '', // 分享链接
+		   
+		                       imgUrl: 'http://www.yangtse.com/img/yangyan.jpg', // 分享图标
+		   
+		                       success: function () {
+		   
+		                           // 用户确认分享后执行的回调函数
+		                         
+		                       },
+		   
+		                       cancel: function () {
+		   
+		                           // 用户取消分享后执行的回调函数
+		   
+		                       }
+		   
+		                   });
+		   
+		   
+		   
+		                   wx.onMenuShareAppMessage({
+		   
+		                       title: '原创|大数据时代如何进行个人数据保护？', // 分享标题
+		   
+		                       desc: '扬子晚报-扬眼新闻', // 分享描述
+		   
+		                       link:'', // 分享链接
+		   
+		                       imgUrl:'http://www.yangtse.com/img/yangyan.jpg', // 分享图标
+		   
+		                       type: '', // 分享类型,music、video或link，不填默认为link
+		   
+		                       dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+		   
+		                       success: function () {
+		   
+		                           // 用户确认分享后执行的回调函数
+		   
+		                       },
+		   
+		                       cancel: function () {
+		   
+		                           // 用户取消分享后执行的回调函数
+		   
+		                       }
+		   
+		                   });
+		   
+		               });
+		               
+</script>
+<header data-am-widget="header" class="am-header dh">
+<div class="am-header-left am-header-nav">
+    <a href="http://a.yzinter.com/wap/"  class="a1">
+    <i class="am-header-icon am-icon-shopping-cart"></i>
+      <span class="am-header-nav-title"> 商城</span>
+      </a>
+</div>
+<h1 class="am-header-title">扬眼</h1>
+<div class="am-header-right am-header-nav">
+     <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yz.activity" class="a1">
+       <span class="am-header-nav-title">下载 </span>
+       <i class="am-header-icon am-icon-download"></i>
+        </a>
+</div>
+</header>
+<article data-am-widget="paragraph" class="am-paragraph am-paragraph-default">
+<div class="am-article-hd">
+<h1 class="am-article-title"><br>原创|大数据时代如何进行个人数据保护？</h1>
+<p class="am-article-meta">2019-05-08 14:07:22</p>
+</div>
+ 
+<div class="am-article-bd">
+<div id="wrap">	
+	<p><img alt="图片" border="0" width="500" height="375" alt="" src="http://app.yzinter.com/d/file/news/finance/2019-05-08/a98d6418b833daf413e81c6ab38d3bca.jpg" /></p>
+<p>扬子晚报网5月8日讯（记者&nbsp; 罗晓娜）大数据时代如何进行个人数据保护、为社会治理提供助力？5月8日下午，&ldquo;大数据与国家治理&rdquo;主题论坛在上海交大举行。&nbsp;</p>
+<p><strong>数据权利构建的核心是&ldquo;数据&rdquo;法律属性的明确</strong></p>
+<p>上海交通大学凯原法学院彭诚信国家社科基金重大项目课题组学术秘书长陈吉栋的研究聚焦大数据时代个人数据保护与数据权利体系。他表示，信息保护的前提是&ldquo;个人信息&rdquo;边界的清晰，数据权利构建的核心是&ldquo;数据&rdquo;法律属性的明确。在协调个人数据保护与流转利用之间的关系时应强调两个平衡，即个人数据上人格权益保护与财产利益开发的协调，以及个人数据上财产权益的排他保护与分享利用间的平衡。个人信息不仅关涉个人利益，而且关涉他人和整个社会利益，即个人信息具有公共性和社会性。个人信息保护的基本目的是保护人的尊严，知情同意不是且不应成为个人信息处理的唯一合法性基础。犯罪的技术治理扩张对个人数据权利构成了潜在威胁，应以数据正义为价值导向对技术治理扩张与个人数据权利保护进行平衡，防止滑向&ldquo;数字利维坦&rdquo;的陷阱等。</p>
+<p><strong>500家网站实证分析法律是否能保护信息隐私</strong></p>
+<p>上海交通大学媒体与传播学院教授邵国松表示，互联网领域最重要的立法《网络安全法》已于2017年6月1日开始实施。立法者希望能籍此全面提升我国网络安全（包括网络信息安全）的保障水平。就个人信息保护而言，这部法律真的能达到立法者所期待的效果吗？邵国松研究团队首先对《网络安全法》的隐私条款进行法律分析，然后选取我国500家颇具影响力的网站（分政府、社会组织、教育、商业、敏感信息五类）的隐私政策声明进行分析，审查这些网站是否很好地执行了《网络安全法》相关条款。结果发现，我国大部分网站合规程度较低，不同类别网站的合规程度也存在差异。通过技术检测，还发现70%的敏感信息类网站存在中级及以上的数据安全漏洞。质言之，法律在保护个人信息所扮演的角色目前看来是有限的，邵国松团队对此发现的涵义进行了展开讨论。</p>
+<p><strong>构建全球三级网络放大进博会溢出效应</strong></p>
+<p>上海交通大学人文艺术研究院教授徐剑课题组分析了32280条和进博会有关的推文，发现目前进博会在国外的活跃地区主要是北美地区、西欧地区、南亚地区、东南亚、中美洲、东亚和澳洲；就国家分布而言，美国、英国、加拿大、澳大利亚、欧美、日本、印度、新加坡是主要的关注国家。从全球范围来看，进博会仍然具有相当大面积的空白区域和人口没有有效接入。存在着整体宣传尚未形成有效三级网络；参展供需双方集中在大企业，缺乏对中小企业的关注；参照企业处于分散独立参与状态，点与点之间的互联不足等问题。</p>
+<p>徐剑认为，从全球网络的视角来看进博会，举办方上海是进博会商品和服务汇集的中心，每个地区的大都市和其周围城市分别扮演着枢纽和节点的角色，由此围绕博会构成一张以上海为中心、把世界各地商品和服务连接起来的网络。在此视角下，课题组建议通过构建以上海为中心的进博会全球三级传播网络，不断纳入潜在参与方，扩大进博会参与方的地理范围和供需内容的匹配度，最终实现放大进博会的溢出效应。编辑：李燕</p><div id="gradient"></div>
+</div>
+</div>
+<div style="text-align:center;" id="read-more"><a href="#" class="huge ui basic button">看全文</a></div>
+<div style="text-align:center;" id="download"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yz.activity" class="huge ui red button">下载扬眼客户端浏览更多新闻</a></div></article>
+<div class="ad"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yz.activity"><img src="images/app-banner.gif" /></a></div>
+<footer data-am-widget="footer" class="am-footer am-footer-default">
+<div class="am-footer-switch">
+<span class="am-footer-ysp" data-rel="mobile" data-am-modal="{target: '#am-switch-mode'}">触屏版</span>
+</div>
+<div class="am-footer-miscs ">
+<p>扬子晚报网版权所有，未经授权不得转载或建立镜像</p>
+<p>苏ICP备13020714</p>
+<p><script type="text/javascript" src="http://t.yzinter.com/index.php?m=Toutiao&a=click&classid=39&id=703801"></script><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5508285'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/stat.php%3Fid%3D5508285%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></p>
+</div>
+</footer>
+</body>
+</html>

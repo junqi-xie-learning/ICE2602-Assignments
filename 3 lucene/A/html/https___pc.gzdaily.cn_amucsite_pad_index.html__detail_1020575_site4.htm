@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title id="titleId"></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=1,maximum-scale=1,width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta itemprop="name" content="">
+    <meta name="description" itemprop="description" content="">
+    <meta itemprop="image" content="">
+    <link rel="stylesheet" type="text/css" href="trd/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="trd/swipe/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/css/init.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/home.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/spectil.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/personal.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/personSub.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/detail.css"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/live.css"/>
+    <link rel="stylesheet" href="https://www.gzdaily.cn/amucsite/pad/trd/vendorstyle.css" />
+    <link rel="stylesheet" href="https://www.gzdaily.cn/amucsite/pad/trd/style.css"/>
+    <link rel="stylesheet" href="https://www.gzdaily.cn/amucsite/pad/style/theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/vote.css" />
+</head>
+<body ng-controller="parentCtrl">
+    <img src="static/loading.gif" class="globalLoading" id="globalLoading">
+    <div ng-view id="contentsBox" style="max-width: 750px;margin: 0 auto;"></div>
+
+    <script type="text/javascript"  src="https://www.gzdaily.cn/amucsite/pad/trd/jquery/jquery-1.11.1.min.js"></script>
+    <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular/angular.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular-ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/swipe/swiper.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/common.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/sso-cfg.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/config.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/share.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/mainCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/pageInit.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/commonMethods.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/home.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/sso/sso-login.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/checkCookie.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/specCtrl.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/login.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/regitCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/details.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/liveDetCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/detailActCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/detailVedioCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/detailSpecCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/qaPage.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/askPage.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/comentCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/commenVedioCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/moreModuleCtr.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/writeOff.js"></script>
+    <script src="https://static.jmlk.co/scripts/dist/jmlink.min.js"></script>
+    <script src="https://www.gzdaily.cn/amucsite/pad/services/governmentCtr.js"></script>
+    <script src="https://www.gzdaily.cn/amucsite/pad/services/detailPatCtr.js"></script>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+</body>
+</html>

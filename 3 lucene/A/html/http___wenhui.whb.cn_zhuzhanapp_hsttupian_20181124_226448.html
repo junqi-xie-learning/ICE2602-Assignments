@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>多重演绎“时间反演”，走进2018李政道科艺大奖赛的时间长河</title>
+<link rel="stylesheet" href="/r/share_files/reset_style.css">
+<link rel="stylesheet" href="/r/share_files/vote.css">
+<link rel="stylesheet" type="text/css" href="/r/share_files/style.css">
+<script type="text/javascript" src="/r/share_files/jquery-1.10.2.min.js"></script>
+<script src="/r/share_files/front.js" type="text/javascript"></script>
+<script src="/r/share_files/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/r/share_files/sha1.js" type="text/javascript"></script>
+<script src="/r/share_files/weixin.js" type="text/javascript"></script>
+<style>
+
+		.textCenter {text-align: center}
+		.title {font-family: "BoldFont";text-align: left;}
+		.author {text-align: center;}
+		.source {text-align: left;}
+		.authorLeft {vertical-align: text-top;text-align: left;}
+		#zanImages{
+			width: 80%;
+			height: 80%;
+			margin: 0 auto;
+			vertical-align: top;
+			display: inline-block;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -7px;
+			margin-top: -8px;
+		}
+		.content-min-ctn>p{
+			text-align: justify;
+			margin: 18px 0;
+
+		}
+		/* 底部下载APP */
+		.download-app-box{
+			background: rgb(45,49,50);
+			position: relative;
+			padding: 15px 10px;
+			overflow: hidden;
+		}
+		.media-container:first-child{
+			margin-top: 0;
+		}
+		.media-container, .media-body {
+			overflow: hidden;
+			zoom: 1;
+		}
+		.media-body, .media-left, .media-right {
+			display: table-cell;
+			vertical-align: top;
+		}
+		.media-left{
+			padding-right: 10px;
+			padding-top: 2px;
+		}
+		.media-header{
+			font-size: 16px;
+			font-weight: 500;
+			font-family: "微软雅黑";
+			color: #fff;
+		}
+		.media-text{
+			color: rgb(156,157,157);
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		.download-app{
+			width: 26%;
+			position: absolute;
+			top: 27%;
+			right: 4.3%;
+			z-index: 100;
+		}
+		.content-min-ctn img{ width:100% !important;height:auto !important}
+	</style>
+<script>
+        var imageArr = new Array();
+        var img = {
+            "width":"645px",
+            "height":"483px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var img = {
+            "width":"645px",
+            "height":"430px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var voteColors = [
+            "#e3e5f1",
+            "#cacdde",
+            "#aaafca"
+        ];
+        var perVotePerW;	// 100%长度
+        $(document).ready(function(){
+            $("#header").load("/include/header.html");
+            $("#foot").load("/include/footer.html");
+            var w = document.body.clientWidth - 20;
+            try {
+                var fontsize = w / 20;	// 字数：一行18字
+                document.body.style.fontSize = fontsize + "px";
+                var percent = w / 720;
+                $("#voteTitle").css("font-size", (percent * 30) + "px");
+                $("#voteTitle").css("height", (percent * 70) + "px");
+                $("#voteTitle").css("padding-top", (percent * 35) + "px");
+                // 投票长度 720px 400=100%
+                perVotePerW = percent * 400;
+                $("#voteCon").css("font-size", (percent * 30) + "px");
+                var width = percent * 125;
+                var height = width / height * width;
+                $(".voteimg").css("width", width + "px");
+                $(".voteimg").css("height", height + "px");
+
+            } catch (e) {}
+
+            $("img[name=videoImg]").click(function() {
+                openVideo(this)
+            });
+
+            // 图片宽度、高度
+            if(imageArr.length == 0)
+                return ;
+            for(var index = 0; index < imageArr.length; index++) {
+                var img = $("#image-" + (index + 1));
+                var width = imageArr[index].width;
+                width = width.replace("px", "");
+                width = width.replace("PX", "");
+                if(width >= 645) {
+                    // 宽度645，直接铺满
+                    img.css("width", "100%");
+                    continue ;
+                }
+                // 小于645，按照比例进行缩放
+                var proportion = w/645;	// 宽度比例
+                width = width * proportion;
+                img.css("width", width + "px");
+
+                // 专家图片
+                var photo = $("#expertPhoto");
+                if(photo == null || photo == undefined)
+                    return ;
+                var photoWidth = 223 * proportion;
+                photo.css("width", photoWidth + "px");
+                var height = 272 * proportion;
+                photo.css("height", height + "px");
+            }
+        });
+
+        var play, videoIndex = 0;
+        function openVideo(img) {
+            videoIndex++;
+            $(img).css("display", "none");
+            $(img).after("<div id='mod_player_" + videoIndex + "'></div>");
+            try{
+                // url由app替换字符串获得
+                var url = $(img).attr("videourl");
+                var pos1 = url.indexOf("vid=");
+                if (pos1 < 0){
+                    alert("视频路径格式有误，无法播放!");
+                }else{
+                    var pos2 = url.indexOf("&", pos1);
+                    if (pos2 < 0)
+                        pos2 = url.length;
+                    var vid = url.substring(pos1 + 4,pos2);
+                    var video = new tvp.VideoInfo();
+                    video.setVid(vid);
+                    var player =new tvp.Player();
+                    player.create({
+                        width:"100%",
+                        height:280,
+                        video:video,
+                        modId:"mod_player_" + videoIndex,
+                        vodFlashExtVars: {
+                            showlogo:0,
+                            popup : 0,
+                            share : 0,
+                            follow : 0
+                        },
+                        autoplay:true
+                    });
+
+                    player.oninited = function() {
+                        player.play();
+                    }
+                    player.play();
+                }
+            }catch(e){console.debug(e.message);}
+        }
+
+        //评论
+        function fnSubmit(){
+            if($("#text").val().trim().length==0){
+                alert("请输入评论内容");
+                return ;
+            }
+            var text = $("#text").val();
+            $.ajax({
+                type: "POST",
+                url:"/whb/comment.jspx",
+                "dataType" : "json",
+                data:{
+                    text:text,
+                    contentId:67907,
+                    hasCaptcha:"no"
+                },
+                success:myCallback
+            })
+        }
+        function myCallback(data) {
+            if(data.status==0) {
+                alert("评论成功,等待审核");
+                $("#text").val("");
+                fnText();
+                //location.href=location.href;
+            } else if(data.status==1) {
+                alert("验证码错误");
+                //$("#commentCaptcha").click();
+            } else if(data.status==2) {
+                alert("内容不存在");
+                //$("#commentCaptcha").click();
+            } else if(data.status==3) {
+                alert("评论关闭");
+                //$("#commentCaptcha").click();
+            } else if(data.status==4) {
+                alert("需要登录评论");
+                //$("#commentCaptcha").click();
+            } else if(data.status==100) {
+                alert("内容不存在");
+                // $("#commentCaptcha").click();
+            } else if(data.status==101) {
+                alert("评论不能为空");
+                // $("#commentCaptcha").click();
+            } else {
+                alert("评论失败");
+                // $("#commentCaptcha").click();
+            }
+        }
+        function fnText(){
+            var length = $("#text").val().trim().length;
+            $("#textcount").html(300-length);
+        }
+	</script>
+<script src="../../../../../../r/cms/html5.js"></script>
+</head>
+<body style="margin: 10px; font-size: 18.7px;" bgcolor="white"><input id="title" type="hidden" value="多重演绎“时间反演”，走进2018李政道科艺大奖赛的时间长河">
+<input id="descp" type="hidden" value="△一等奖作品：先知的梦魇 作品形式：装置 作品简介：作品灵感来源于刘慈欣的小说《坍缩》，小说中描述宇宙在通过时间奇点之后进入坍缩态，在坍缩宇宙中的一切会随着逆向的时间运行，人的出生在死亡之后，历史成为了未知的未来。">
+<input id="imgUrl" type="hidden" value="/u/cms/www/201811/241352083rgc.jpg">
+<div id="header"><a id="appDownload" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook">
+<img src="/r/share_files/download.png" width="100%">
+</a>
+<script>
+
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var isWeixin = is_weixin();
+        var isAndroid = false;
+        var isIos = false;
+
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/) == "iphone os";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+
+        if (bIsAndroid) {
+            isAndroid = bIsAndroid;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+
+        } else if(bIsIphoneOs || bIsIpad) {
+            isIos = bIsIphoneOs || bIsIpad;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+        }
+	</script></div>
+<table class="marginTop_normal marginLeft_big marginRight_big marginBottom_big">
+<tbody><tr style="font-size:22px;text-align:justify;">
+<td class="title titleFont" colspan="2"><font color="#000000" style="line-height:1.5;">多重演绎“时间反演”，走进2018李政道科艺大奖赛的时间长河</font></td>
+</tr>
+<tr>
+<td class="author authorFont" style="text-align:left;padding-bottom:5px;">
+<font color="#595757">2018-11-24 17:04:30</font>
+<font style="margin-left: 10px;" color="#595757">作者：袁婧</font>
+</td>
+</tr>
+</tbody></table>
+<div style="margin:0;padding:0; width:100%;height:1px;background-color:#787878;overflow:hidden;"></div>
+<div class="content_body">
+<div class="content_title hei"></div>
+<div class="content_other"></div>
+<font color="#000000" font-size="16.666666px">
+<div class="content-min-ctn" style="text-align:justify;font-size:18px; wrap-word:normal; line-height:1.6;">
+<p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="382B1BA7-E13C-4064-81EB-C9DBBC3856BA.gif" src="http://wenhui.whb.cn/u/cms/www/201811/24140428ly40.gif"/></p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24140801hzax.jpeg"/></p><p><span style="COLOR: #a5a5a5">△一等奖作品：先知的梦魇&nbsp;作品形式：装置</span></p><p><span style="color: rgb(165, 165, 165);">作品简介：作品灵感来源于刘慈欣的小说《坍缩》，小说中描述宇宙在通过时间奇点之后进入坍缩态，在坍缩宇宙中的一切会随着逆向的时间运行，人的出生在死亡之后，历史成为了未知的未来。而这一切对于生活在逆向时间宇宙中的人却无法察觉，因为在坍缩的宇宙中所有的这一切将变得习以为常。作品通过建立一个坍缩态的宇宙模型，在视觉上呈现宇宙由膨胀进入坍缩时的景象，并由这一主题进而追问时间乃至生命的意义。</span></p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/241408025dfv.jpeg"/></p><p style="TEXT-ALIGN: left; DISPLAY: block">四方上下曰宇，古往今来曰宙。宇代表空间，而宙则代表时间。2018年11月24日，由上海交通大学、中华国际科学交流基金会和上海科技馆联合主办的上海交通大学李政道科学与艺术讲座基金系列活动在上海交通大学李政道图书馆开幕，同时，2018李政道科艺大奖赛获奖作品揭晓。本次活动的科学主题为“时间反演”。开幕式当日，上海交通大学校长、党委副书记、中国工程院院士林忠钦致欢迎辞，中国高等科学技术中心研究员王垂林代表李政道先生，中华国际科学交流基金会理事长陈曦先后致辞。林忠钦和李先生长子李中清为主题画揭幕，刘海粟研究中心主任朱刚对主题画作了解读。当天下午，来自科学、艺术、美术、设计、宣传教育等领域的专家学者，围绕科艺育人和科艺协作，进行了研讨。</p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24140835ktq7.jpeg"/></p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24140835pnoz.jpeg"/></p><p style="TEXT-ALIGN: center"><span style="COLOR: #a5a5a5">△主题画《宙》</span></p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/241408359ozs.jpeg"/></p><p style="TEXT-ALIGN: left; DISPLAY: block">本届李政道科学与艺术作品大奖赛吸引了来自全国147人报名，收到作品169件。最终46人获奖，49件获奖作品将在本次展览中展出，参赛作品分别来自40个机构及个人，参展作品覆盖15个机构或个人，来自全国各地、各行各业，甚至还有海外人士。比起往年，作品覆盖范围有了显著的增长。值得一提的是，今年7月举办的首届科艺工作坊作为探索科艺结合的实践范例，其学员投稿18件，其中10幅研习成果参展。此次参展作品内容丰富，形式多样，涵盖雕塑、油画、水墨画、多媒体等多种艺术表达形式。艺术家和学子们通过对科学理论的深入思考和探索，以艺术创作的形式引领大家进入时间反演的世界。他们以不同的创作视角和手法，展开丰富的联想，使观众在对艺术创作的欣赏过程中体验到“时间反演”这一物理学的趣味，并有了全新的认识。<br/></p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24140915ukh4.jpeg"/></p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24140916eix5.jpeg"/></p><p style="TEXT-ALIGN: center"><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24140916rhha.jpeg"/></p><p style="TEXT-ALIGN: left; DISPLAY: block">今年的科学主题是“时间反演”，这是当今物理学的一个研究热点。恰逢科艺活动五周年，这个主题正是对未来的探索和对过去的回望。李政道先生在为本次活动的致辞中写道：“时间之河的流动是不可逆转的，但是在想象的空间中，我们可以令时间之河倒流，并进一步研究微观环境下物理规律的时间反演对称性。”他深信，这次举办的科学与艺术作品展，能帮助公众更好地理解“时间反演”这一科学主题。</p><p style="TEXT-ALIGN: left; DISPLAY: block">上海交通大学师生创作提交了25件作品，其中10件获奖。上海交大在人才培养中注重激发学生的科学与艺术的表现力与想象力，更注重培养艺术专业学生对科学主题的表达，鼓励艺术专业学生关注科学前沿，进一步在大学生综合素质养成中弘扬科学精神。</p><p style="TEXT-ALIGN: left; DISPLAY: block">过去四年，上海交通大学举办了四届科艺活动，每届科学主题皆与当年的研究热点相契合，并得到李政道的认可。与会的科学家、艺术家从不同角度诠释科学奥秘，展现他们的科学造诣与艺术修为，对理论的反思及对艺术创作的探索，是理性与感性的撞击与升华。</p><p style="TEXT-ALIGN: center"><img alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24141016giyl.jpeg" style="width: 645px; display: block; height: auto; margin-left: auto; margin-right: auto;"/></p><p style="TEXT-ALIGN: center">&nbsp;</p><p><span style="COLOR: #a5a5a5">△三等奖作品：宇宙琴弦 作品形式：油画</span></p><p><span style="COLOR: #a5a5a5">作品简介：作品描述了人们利用宇宙弦将时空卷曲成可以逆时旅行的样子。将具有正曲率的时空区域卷曲成具有负曲率的时空区域，将通常空间中一光年卷曲成只有 10 万公里。这就意味着，在卷曲的时空中，一艘每小时飞行 10 万公里的宇宙飞船，飞行一天就能旅行到过去的 24 年之前。作品中双曲抛物面的方程为 x 2 ? ?? 2 = 8√2 ?</span></p><p><img style="WIDTH: 645px; DISPLAY: block; HEIGHT: auto; MARGIN-LEFT: auto; MARGIN-RIGHT: auto" alt="undefined" src="http://wenhui.whb.cn/u/cms/www/201811/24141017vtux.jpeg"/></p><p style="TEXT-ALIGN: left; DISPLAY: block"><span style="COLOR: #a5a5a5">△优秀奖作品：时空机 作品形式：雕塑</span></p><p style="TEXT-ALIGN: left; DISPLAY: block"><span style="COLOR: #a5a5a5">作品简介：作品的元素中有算盘和键盘的元素，这样代表两个不同的时间，这个作品是连接过去和现在的机器，红色的键位是 back 、T、i、m、e、回车键。寓意当人们按下这几键位后，时间开始倒转。更深的寓意是在科技快速发展的同时不能忘记咱们的优秀传统文化。</span></p><p style="TEXT-ALIGN: left; DISPLAY: block">在李政道先生的大力倡导和身体力行之下，依科学家之阐述，借艺术家之描绘，让人领略到科艺融合之大美，并引发对科学与艺术融合创新的思考。李政道先生认为“科学重理性辨析，艺术重感性领悟，两者相互融合，将会激发无限的创造潜能。”2018年7月份的科艺工作坊正是为了激发创造潜能而举行，而工作坊学员潜心学习与创作，获得了科艺大奖赛的多项名次。参赛选手纷纷表达对李政道先生的崇敬与感谢，正因为有科艺活动的鼓励与支持，才有了创作上的无限可能，最后凝结成科艺精品。</p><p style="TEXT-ALIGN: left; DISPLAY: block">李政道先生与多位艺术大家亦师亦友，吴作人、李可染、黄胄、华君武等人都是受李政道先生的影响，走上艺术诠释科学之路，将科学原理的奥妙通过美轮美奂的艺术作品呈现出来。2013年李政道先生捐资设立李政道科学与艺术讲座基金，用以支持与科学论坛同主题的艺术创作比赛。以艺术的手段呈现科学之美，并且将探索科学与艺术的机会扩展到艺术家乃至更多的学子和公众，这正是“做好美育工作，弘扬中华美育精神”的体现。</p><p style="TEXT-ALIGN: left; DISPLAY: block">11月24日，喜逢科艺活动五周年与李政道先生生辰，五年的积累与沉淀，孕育出今天的科艺盛事。本届李政道科学与艺术作品展为期30天，将持续到12月24日，对科艺作品感兴趣的朋友可前往上海交通大学李政道图书馆观展。</p><p style="TEXT-ALIGN: left; DISPLAY: block">&nbsp;</p><p><br/><span style="COLOR: rgb(127,127,127); FONT-SIZE: 16px">作者：袁婧</span><br/><span style="COLOR: rgb(127,127,127); FONT-SIZE: 16px">编辑：袁婧</span><br/><span style="COLOR: rgb(127,127,127); FONT-SIZE: 16px">责任编辑：刘栋</span></p><p><span style="COLOR: rgb(127,127,127); FONT-SIZE: 16px">*文汇独家稿件，转载请注明出处。</span></p>
+</div>
+</font>
+</div>
+<div>
+<div class="reset-css">
+<div class="praise-container" style="height:42px;">
+<span id="ups" style="float: right;font-size: 12px;height: 22px;position: relative;top: 5px;">0</span>
+<span onclick="Cms.up('',67907,0);" id="zanImagesCtn" style="display: inline-block;width: 20px;height: 20px;border: 1px solid #333;border-radius: 50%;line-height: 20px;overflow: hidden;position: relative;float: right;margin-right: 3px;">
+<img id="zanImages" src="/r/share_files/dianzan2x.png" alt="">
+</span>
+</div>
+<div class="edit-comment">
+<textarea name="text" id="text" placeholder="请输入文字内容..." style="resize: none;line-height:1.5;padding-bottom:5px;" rows="2" oninput="fnText();"></textarea>
+<div class="submit-comment-container solve_float">
+<span class="left">还可以输入<span id="textcount" style="color:#FFA83F;">300</span>字</span>
+<button class="submit-comment right" onclick="fnSubmit();">提交</button>
+</div>
+<input type="hidden" name="contentId" value="226448">
+</div>
+<div>
+<button class="btn-see-more" onclick="location='/whb/findComment.jspx?contentId=226448'">查看评论&gt;&gt;</button>
+</div>
+</div>
+</div>
+<div class="download-app-box">
+<div class="media-container">
+<div class="media-left">
+<img src="/r/share_files/logo3.png" alt="Logo" style="width: 40px;height:40px;">
+</div>
+<div class="media-body">
+<h4 class="media-header">文汇报</h4>
+<div class="media-text">源于事实 来自眼界</div>
+</div>
+</div>
+<img class="download-app" src="/r/share_files/down-app.png" onclick="window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook'" alt="DownLoad">
+</div>
+<div id="foot"></div>
+<script src="/r/share_files/tvp.player_v2.js" type="text/javascript"></script>
+<script src="/r/share_files/wb.js" type="text/javascript"></script>
+<script type=text/javascript>
+    $(function() {
+        Cms.viewCountNew(location.href,"","226448",null,null, null,null,null);
+    });
+</script>
+</body></html>

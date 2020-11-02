@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title id="titleId"></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=1,maximum-scale=1,width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta itemprop="name" content="">
+    <meta name="description" itemprop="description" content="">
+    <meta itemprop="image" content="">
+    <link rel="stylesheet" type="text/css" href="trd/bootstrap/css/bootstrap.min.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="trd/swipe/swiper.min.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/css/init.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/home.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/spectil.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/personal.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/personSub.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/detail.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/live.css?t=1"/>
+    <link rel="stylesheet" href="https://www.gzdaily.cn/amucsite/pad/trd/vendorstyle.css?t=1" />
+    <link rel="stylesheet" href="https://www.gzdaily.cn/amucsite/pad/trd/style.css?t=1"/>
+    <link rel="stylesheet" href="https://www.gzdaily.cn/amucsite/pad/style/theme.css?t=1"/>
+    <link rel="stylesheet" type="text/css" href="https://www.gzdaily.cn/amucsite/pad/style/vote.css?t=1"/>
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
+    <script>
+        var vConsole = new VConsole();
+    </script> -->
+</head>
+<body ng-controller="parentCtrl">
+    <img src="static/loading.gif" class="globalLoading" id="globalLoading">
+    <div ng-view id="contentsBox" style="max-width: 750px;margin: 0 auto;"></div>
+
+    <script type="text/javascript"  src="https://www.gzdaily.cn/amucsite/pad/trd/jquery/jquery-1.11.1.min.js"></script>
+    <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular/angular.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/angular-ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/swipe/swiper.min.js"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/common.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/sso-cfg.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/config.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/trd/share.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/mainCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/pageInit.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/commonMethods.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/home.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/sso/sso-login.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/checkCookie.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/specCtrl.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/login.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/regitCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/details.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/liveDetCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/detailActCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/detailVedioCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/detailSpecCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/qaPage.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/askPage.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/comentCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/commenVedioCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/moreModuleCtr.js?t=1"></script>
+    <script type="text/javascript" src="https://www.gzdaily.cn/amucsite/pad/services/writeOff.js?t=1"></script>
+    <script src="https://static.jmlk.co/scripts/dist/jmlink.min.js?t=1"></script>
+    <script src="https://www.gzdaily.cn/amucsite/pad/services/governmentCtr.js?t=1"></script>
+    <script src="https://www.gzdaily.cn/amucsite/pad/services/detailPatCtr.js?t=1"></script>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+</body>
+</html>

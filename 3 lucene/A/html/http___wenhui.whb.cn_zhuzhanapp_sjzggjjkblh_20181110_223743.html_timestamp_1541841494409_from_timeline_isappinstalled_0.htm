@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>凌晨4点不到出发，一天啃6个面包，晚上12点回校……进博会“小叶子”：虽辛苦，但很幸福！</title>
+<link rel="stylesheet" href="/r/share_files/reset_style.css">
+<link rel="stylesheet" href="/r/share_files/vote.css">
+<link rel="stylesheet" type="text/css" href="/r/share_files/style.css">
+<script type="text/javascript" src="/r/share_files/jquery-1.10.2.min.js"></script>
+<script src="/r/share_files/front.js" type="text/javascript"></script>
+<script src="/r/share_files/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/r/share_files/sha1.js" type="text/javascript"></script>
+<script src="/r/share_files/weixin.js" type="text/javascript"></script>
+<style>
+
+		.textCenter {text-align: center}
+		.title {font-family: "BoldFont";text-align: left;}
+		.author {text-align: center;}
+		.source {text-align: left;}
+		.authorLeft {vertical-align: text-top;text-align: left;}
+		#zanImages{
+			width: 80%;
+			height: 80%;
+			margin: 0 auto;
+			vertical-align: top;
+			display: inline-block;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -7px;
+			margin-top: -8px;
+		}
+		.content-min-ctn>p{
+			text-align: justify;
+			margin: 18px 0;
+
+		}
+		/* 底部下载APP */
+		.download-app-box{
+			background: rgb(45,49,50);
+			position: relative;
+			padding: 15px 10px;
+			overflow: hidden;
+		}
+		.media-container:first-child{
+			margin-top: 0;
+		}
+		.media-container, .media-body {
+			overflow: hidden;
+			zoom: 1;
+		}
+		.media-body, .media-left, .media-right {
+			display: table-cell;
+			vertical-align: top;
+		}
+		.media-left{
+			padding-right: 10px;
+			padding-top: 2px;
+		}
+		.media-header{
+			font-size: 16px;
+			font-weight: 500;
+			font-family: "微软雅黑";
+			color: #fff;
+		}
+		.media-text{
+			color: rgb(156,157,157);
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		.download-app{
+			width: 26%;
+			position: absolute;
+			top: 27%;
+			right: 4.3%;
+			z-index: 100;
+		}
+		.content-min-ctn img{ width:100% !important;height:auto !important}
+	</style>
+<script>
+        var imageArr = new Array();
+        var img = {
+            "width":"645px",
+            "height":"483px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var img = {
+            "width":"645px",
+            "height":"430px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var voteColors = [
+            "#e3e5f1",
+            "#cacdde",
+            "#aaafca"
+        ];
+        var perVotePerW;	// 100%长度
+        $(document).ready(function(){
+            $("#header").load("/include/header.html");
+            $("#foot").load("/include/footer.html");
+            var w = document.body.clientWidth - 20;
+            try {
+                var fontsize = w / 20;	// 字数：一行18字
+                document.body.style.fontSize = fontsize + "px";
+                var percent = w / 720;
+                $("#voteTitle").css("font-size", (percent * 30) + "px");
+                $("#voteTitle").css("height", (percent * 70) + "px");
+                $("#voteTitle").css("padding-top", (percent * 35) + "px");
+                // 投票长度 720px 400=100%
+                perVotePerW = percent * 400;
+                $("#voteCon").css("font-size", (percent * 30) + "px");
+                var width = percent * 125;
+                var height = width / height * width;
+                $(".voteimg").css("width", width + "px");
+                $(".voteimg").css("height", height + "px");
+
+            } catch (e) {}
+
+            $("img[name=videoImg]").click(function() {
+                openVideo(this)
+            });
+
+            // 图片宽度、高度
+            if(imageArr.length == 0)
+                return ;
+            for(var index = 0; index < imageArr.length; index++) {
+                var img = $("#image-" + (index + 1));
+                var width = imageArr[index].width;
+                width = width.replace("px", "");
+                width = width.replace("PX", "");
+                if(width >= 645) {
+                    // 宽度645，直接铺满
+                    img.css("width", "100%");
+                    continue ;
+                }
+                // 小于645，按照比例进行缩放
+                var proportion = w/645;	// 宽度比例
+                width = width * proportion;
+                img.css("width", width + "px");
+
+                // 专家图片
+                var photo = $("#expertPhoto");
+                if(photo == null || photo == undefined)
+                    return ;
+                var photoWidth = 223 * proportion;
+                photo.css("width", photoWidth + "px");
+                var height = 272 * proportion;
+                photo.css("height", height + "px");
+            }
+        });
+
+        var play, videoIndex = 0;
+        function openVideo(img) {
+            videoIndex++;
+            $(img).css("display", "none");
+            $(img).after("<div id='mod_player_" + videoIndex + "'></div>");
+            try{
+                // url由app替换字符串获得
+                var url = $(img).attr("videourl");
+                var pos1 = url.indexOf("vid=");
+                if (pos1 < 0){
+                    alert("视频路径格式有误，无法播放!");
+                }else{
+                    var pos2 = url.indexOf("&", pos1);
+                    if (pos2 < 0)
+                        pos2 = url.length;
+                    var vid = url.substring(pos1 + 4,pos2);
+                    var video = new tvp.VideoInfo();
+                    video.setVid(vid);
+                    var player =new tvp.Player();
+                    player.create({
+                        width:"100%",
+                        height:280,
+                        video:video,
+                        modId:"mod_player_" + videoIndex,
+                        vodFlashExtVars: {
+                            showlogo:0,
+                            popup : 0,
+                            share : 0,
+                            follow : 0
+                        },
+                        autoplay:true
+                    });
+
+                    player.oninited = function() {
+                        player.play();
+                    }
+                    player.play();
+                }
+            }catch(e){console.debug(e.message);}
+        }
+
+        //评论
+        function fnSubmit(){
+            if($("#text").val().trim().length==0){
+                alert("请输入评论内容");
+                return ;
+            }
+            var text = $("#text").val();
+            $.ajax({
+                type: "POST",
+                url:"/whb/comment.jspx",
+                "dataType" : "json",
+                data:{
+                    text:text,
+                    contentId:67907,
+                    hasCaptcha:"no"
+                },
+                success:myCallback
+            })
+        }
+        function myCallback(data) {
+            if(data.status==0) {
+                alert("评论成功,等待审核");
+                $("#text").val("");
+                fnText();
+                //location.href=location.href;
+            } else if(data.status==1) {
+                alert("验证码错误");
+                //$("#commentCaptcha").click();
+            } else if(data.status==2) {
+                alert("内容不存在");
+                //$("#commentCaptcha").click();
+            } else if(data.status==3) {
+                alert("评论关闭");
+                //$("#commentCaptcha").click();
+            } else if(data.status==4) {
+                alert("需要登录评论");
+                //$("#commentCaptcha").click();
+            } else if(data.status==100) {
+                alert("内容不存在");
+                // $("#commentCaptcha").click();
+            } else if(data.status==101) {
+                alert("评论不能为空");
+                // $("#commentCaptcha").click();
+            } else {
+                alert("评论失败");
+                // $("#commentCaptcha").click();
+            }
+        }
+        function fnText(){
+            var length = $("#text").val().trim().length;
+            $("#textcount").html(300-length);
+        }
+	</script>
+<script src="../../../../../../r/cms/html5.js"></script>
+</head>
+<body style="margin: 10px; font-size: 18.7px;" bgcolor="white"><input id="title" type="hidden" value="凌晨4点不到出发，一天啃6个面包，晚上12点回校……进博会“小叶子”：虽辛苦，但很幸福！">
+<input id="descp" type="hidden" value="今年进博会，在人流如织的“四叶草”中，有一道绝不容错过的青春亮丽风景线，那就是“小叶子”！ 来自复旦大学、上海交通大学等34所上海高校的5384名大学生志愿者，成为此次进博会志愿者队伍的主力军。">
+<input id="imgUrl" type="hidden" value="/u/cms/www/201811/101324153pcm.jpg">
+<div id="header"><a id="appDownload" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook">
+<img src="/r/share_files/download.png" width="100%">
+</a>
+<script>
+
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var isWeixin = is_weixin();
+        var isAndroid = false;
+        var isIos = false;
+
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/) == "iphone os";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+
+        if (bIsAndroid) {
+            isAndroid = bIsAndroid;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+
+        } else if(bIsIphoneOs || bIsIpad) {
+            isIos = bIsIphoneOs || bIsIpad;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+        }
+	</script></div>
+<table class="marginTop_normal marginLeft_big marginRight_big marginBottom_big">
+<tbody><tr style="font-size:22px;text-align:justify;">
+<td class="title titleFont" colspan="2"><font color="#000000" style="line-height:1.5;">凌晨4点不到出发，一天啃6个面包，晚上12点回校……进博会“小叶子”：虽辛苦，但很幸福！</font></td>
+</tr>
+<tr>
+<td class="author authorFont" style="text-align:left;padding-bottom:5px;">
+<font color="#595757">2018-11-10 14:11:27</font>
+<font style="margin-left: 10px;" color="#595757">作者：樊丽萍</font>
+</td>
+</tr>
+</tbody></table>
+<div style="margin:0;padding:0; width:100%;height:1px;background-color:#787878;overflow:hidden;"></div>
+<div class="content_body">
+<div class="content_title hei"></div>
+<div class="content_other"></div>
+<font color="#000000" font-size="16.666666px">
+<div class="content-min-ctn" style="text-align:justify;font-size:18px; wrap-word:normal; line-height:1.6;">
+<p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10135927w902.jpg" alt="华1.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: justify; display: block;">今年进博会，在人流如织的“四叶草”中，有一道绝不容错过的青春亮丽风景线，那就是“小叶子”！</p><p style="text-align: justify; display: block;">来自复旦大学、上海交通大学等34所上海高校的5384名大学生志愿者，成为此次进博会志愿者队伍的主力军。</p><p style="text-align: justify; display: block;">披星戴月、风雨无阻，全力投入到进博会志愿服务中的“小叶子”，大部分是90后和00后。据说，在“四叶草”的志愿者休息区墙上，有一张每天更新的“步行荣耀榜”。排行榜记载着每日步数前20名的志愿者。很多时候，前10名的步数均超过30000步，位居榜首的志愿者步数接近50000步。</p><p style="text-align: justify; display: block;">记者获悉，在这群特别能拼、能吃苦的“小叶子”中，有的是服务过多个重大会议、赛事的资深志愿者，也有的是经验丰富、术业有专攻的高校教师。在“小叶子”的岗位上，他们展现了别样的风采，让人难忘。</p><p style="text-align: justify;"><strong>他们，是一群每天凌晨4点就要出发的“小叶子”！</strong></p><p style="text-align: justify; display: block;">在临港地区的5所高校，都有学生成为光荣的进博会“小叶子”。由于临港离“四叶草”地理位置相对较远，每天“小叶子”们路上的往返将近4小时。而他们每天出发早上集结的时间是——凌晨4点！</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10131345k6as.jpg" alt="海洋大学凌晨出发1.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p>上海海事大学经过3个月的层层筛选，遴选了<strong>140</strong>位优秀的志愿者成为“小叶子”服务本届进博会。这是“小叶子”在出发前的合影——时间是凌晨4点不到！</p><p style="text-align:left;display:block;">本次进博会场地足足27万平方米，声势浩大，免不了产生些许的小bug。上海海洋大学的“小叶子”们细致耐心地发现了展会期间旗帜脱落、挂反等问题，并及时联系组委会解决，保证进博会的顺利进行，避免了国际尴尬，让我们为他们的细致工作点赞！</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10131558xeoa.jpg" alt="海洋大学2.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10131607244f.jpg" alt="海阳2.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p>上海电力学院有<strong>134</strong>名小电娃，在进博会餐饮消费服务保障组、保障保卫处提供志愿服务。需要行走步数最多的岗位，每天都有步数霸王的小电娃闪现。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10131644k04o.jpg" alt="上海电力学院.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">上海电机学院和上海建桥学院的“小叶子”，也习惯了披星戴月！</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/101316567dxx.jpg" alt="上海电机学院.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10131731qvy8.jpg" alt="上海建桥.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p><strong>昔日世博会“小白菜”，今日进博会“小叶子”</strong></p><p style="text-align:left;display:block;">在“四叶草”，不少“小叶子”都是热心的公益达人。在今年之前，他们服务过很多重大的赛事和活动。上海交通大学博士生罗前程就是其中之一。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10133340nzuf.jpg" alt="交大罗博士.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: justify; display: block;">8年前的上海世博会，他曾是“小白菜”；现在，他是中国国际进口博览会的“小叶子”，值守在VVIP贵宾室的接待岗位。</p><p style="text-align: justify; display: block;">“我很荣幸，能先后成为两次盛会的志愿者，一次在我工作的时候，一次在我再次转变成学生身份的时候。”今年35岁的上海交大博士罗前程说。</p><p style="text-align: justify; display: block;">既是“小白菜”又是“小叶子”，这个“双料”志愿者的身份让罗前程感到无比自豪。</p><p style="text-align: justify; display: block;">1983年出生的罗前程来自宁夏，在宁夏医科大学完成了本科教育毕业后，怀着对上海这座城市的喜爱与憧憬，于2005年来到上海市第七人民医院工作。工作的第四年，他以医疗急救支援的志愿者身份，参与到上海世博会的保障工作中。</p><p style="text-align: justify; display: block;">“当时，医院紧急抽调人手前往浦东新区医疗急救中心，我被分配到洋泾分站进行支援，那一急救站点周边人口密度大，又多为老式小区，急救任务重。”他回忆说，2010年4月，他正式上岗成为一名“小白菜”。那时，12小时为一班，经常需要通宵完成急救任务，一天几乎要跑十趟车，“经常是路上吃饭，有时候吃到一半，接到任务又要马上出发。”</p><p style="text-align: justify; display: block;">当时，原本定下来的支援时间为3个月，但因急救医生紧缺，罗前程主动要求再延长一个月，整整干了4个月。尽管急救任务很重很累，但他认为，这样的机会对他来说是光荣的，对自己的成长经历也有很大帮助。</p><p style="text-align: justify; display: block;">“我从2001年上大学就一直参加志愿者活动，在金鸡百花电影节、全国少数民族运动会、第九届全球健康促进大会都担任过志愿者，大学期间也作为班级团支书，三年都参与宣传艾滋病防治工作。”回忆起自己的志愿者经历，罗前程很自豪。</p><p style="text-align: justify; display: block;">在上海世博会结束之后，他前往浦东新区公利医院工作，曾作为组织者和实施者，成立“公利急先锋青年志愿者服务队”，向社区居民、武警部队、学校等推广心肺复苏等急救技能。</p><p style="text-align: justify; display: block;">2018年，热爱做公益的他，又考上了上海交通大学医学院博士。进博会举办前夕，当接到学院发布的招募志愿者通知时，他第一时间便报了名，并顺利入选。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/101333546g4o.jpg" alt="罗博士.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: justify; display: block;">10月20日进博会志愿者誓师大会后，罗前程便逐渐开始脱产培训，并自10月23日起进入国家会展中心实地培训，每天熟悉场馆。在此次进博会中，他被安排在VVIP贵宾室接待岗位做志愿者，与东方航空的工作人员一起完成接待工作。</p><p style="text-align: justify;"><strong>忙得一天都在吃面包，回到寝室看朋友圈，还是不忘晒晒幸福感</strong></p><p style="text-align: justify; display: block;">在上海财经大学，小叶子们的出发时间是凌晨4点半。啃着面包，数着星星，出发！凌晨五点半，当很多同学还在温暖的被窝里熟睡的时候，小叶子们已经走上了工作岗位。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10134317vlyt.jpg" alt="上财闹钟.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: center; display: block;"><span style="color: rgb(127, 127, 127);">▲这是上海财大一位“小叶子”设的闹钟</span></p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10134357by45.jpg" alt="上财1.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align: justify; display: block;">据了解，随车志愿者小组是本次活动中志愿者人数最多的组别，负责运送参加开幕式和平行论坛的注册嘉宾。每辆车都配有一位辅导员老师和两位学生志愿者。嘉宾上车前，志愿者们需在车旁进行引导，确认上车人数，向调度处汇报后，发车驶往国际展览中心。在车上，志愿者们需进行语音播报，并实时向调度处汇报情况；抵达后，需引导嘉宾下车，并留在停车场随时待命。</p><p style="text-align: justify; display: block;">所以，很多小叶子在天还没亮的时候，就接上了一车的注册嘉宾们，和司机与民警一道运送嘉宾前往国际展览中心。虽然战线很长，但他们始终保持良好的精神风貌，全心全意为进博会、为注册嘉宾服务！</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10134410ze5s.jpg" alt="上财2.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">吃了一天面包的“小叶子”，在深夜回到学校。他们在宿舍里吃着泡面，在手机上看着朋友圈，虽然腰酸背痛，但有一种满满的幸福感。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10134455rcnt.jpg" alt="640.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10134502t7m8.jpg" alt="财大二.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p><strong>每天最晚一批离开的“小叶子”，从到校休息到第二天出发不足4小时</strong></p><p style="text-align: justify; display: block;">在每天最晚一批离开的志愿者中，总有华东师范大学“小叶子”们的身影。回到学校，经常已经——12点了！</p><p style="text-align: justify; display: block;">05：15：华东师大闵行校区研究生公寓门口、中山北路校区中江路门口集合。收到来自后勤保障部连夜特制的惊喜早餐和小点心。华东师大闵行校区研究生公寓门口、中山北路校区中江路门口集合。收到来自后勤保障部连夜特制的惊喜早餐和小点心。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10135641uik6.jpg" alt="临城5点.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">06:30 &nbsp;到达国家会展中心，在休息区吃早餐。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10135655rlmu.jpg" alt="吃早饭1.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">07：30-12：00 分岗位投入工作。其中，华东师大有42名志愿者负责核心区四个平行论坛的会务工作，29名志愿者负责其他区域的会务工作，5名志愿者负责市民热线的志愿服务工作。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10135704lrt8.jpg" alt="分岗位1.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">13：00-18：00 分岗位投入工作。志愿者分别在各论坛现场准备会务工作。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10135715wdxr.jpg" alt="下午1.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">19：00-23：00 &nbsp;分岗位投入工作。志愿者为第二天会议筹备布置中。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10135834f11i.jpg" alt="困.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">24：00启程回校休息。四个多小时后又将迎来忙碌的一天。</p><p style="text-align:center;"><img src="https://wenhui.whb.cn/u/cms/www/201811/10140022px43.jpg" alt="四叶草.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p><strong>最后，小编想说：</strong></p><p><strong>各位小叶子们，你们真是好样的！</strong></p><p><strong><br/></strong></p><p><br/><span style="color: rgb(127, 127, 127);font-size:16px">作者：首席记者 樊丽萍</span><br/><span style="color: rgb(127, 127, 127);font-size:16px">编辑：沈湫莎</span><br/><span style="color: rgb(127, 127, 127);font-size:16px">责任编辑：樊丽萍 顾军</span></p><p><br/></p><p><span style="color: rgb(127, 127, 127);font-size:16px">*文汇独家稿件，转载请注明出处。</span></p>
+</div>
+</font>
+</div>
+<div>
+<div class="reset-css">
+<div class="praise-container" style="height:42px;">
+<span id="ups" style="float: right;font-size: 12px;height: 22px;position: relative;top: 5px;">0</span>
+<span onclick="Cms.up('',67907,0);" id="zanImagesCtn" style="display: inline-block;width: 20px;height: 20px;border: 1px solid #333;border-radius: 50%;line-height: 20px;overflow: hidden;position: relative;float: right;margin-right: 3px;">
+<img id="zanImages" src="/r/share_files/dianzan2x.png" alt="">
+</span>
+</div>
+<div class="edit-comment">
+<textarea name="text" id="text" placeholder="请输入文字内容..." style="resize: none;line-height:1.5;padding-bottom:5px;" rows="2" oninput="fnText();"></textarea>
+<div class="submit-comment-container solve_float">
+<span class="left">还可以输入<span id="textcount" style="color:#FFA83F;">300</span>字</span>
+<button class="submit-comment right" onclick="fnSubmit();">提交</button>
+</div>
+<input type="hidden" name="contentId" value="67907">
+</div>
+<div>
+<button class="btn-see-more" onclick="location='/findComment.jspx?contentId=67907'">查看评论&gt;&gt;</button>
+</div>
+</div>
+</div>
+<div class="download-app-box">
+<div class="media-container">
+<div class="media-left">
+<img src="/r/share_files/logo3.png" alt="Logo" style="width: 40px;height:40px;">
+</div>
+<div class="media-body">
+<h4 class="media-header">文汇报</h4>
+<div class="media-text">源于事实 来自眼界</div>
+</div>
+</div>
+<img class="download-app" src="/r/share_files/down-app.png" onclick="window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook'" alt="DownLoad">
+</div>
+<div id="foot"></div>
+<script src="/r/share_files/tvp.player_v2.js" type="text/javascript"></script>
+<script src="/r/share_files/wb.js" type="text/javascript"></script>
+<script type=text/javascript>
+    $(function() {
+        Cms.siteFlow("http://www.whb.cn", location.href, document.referrer, "凌晨4点不到出发，一天啃6个面包，晚上12点回校……进博会“小叶子”：虽辛苦，但很幸福！", "樊丽萍","3102");
+        Cms.viewCount("","223743",null,null, null,null,null);
+    });
+</script>
+</body></html>

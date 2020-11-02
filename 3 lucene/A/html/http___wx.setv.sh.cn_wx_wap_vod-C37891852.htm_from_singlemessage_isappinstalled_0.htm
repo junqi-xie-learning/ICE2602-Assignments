@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Note there is no responsive meta tag here -->
+        <link rel="icon" href="/favicon.ico">
+        <title>上海教育电视台</title>
+        <!-- ZUI CSS -->
+        <link href="/css/zui.min.css" rel="stylesheet">
+        <link href="/css/non-responsive.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="/css/details.css?t=201809251353" rel="stylesheet">
+        <link href="/css/lady.css?t=201809251353" rel="stylesheet">
+        <link href="/css/search.css?t=201809251353" rel="stylesheet">
+        <link href="/css/index.css?t=201809251353" rel="stylesheet">
+        <link href="/css/topic.css?t=201809251353" rel="stylesheet">
+        <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+        <script src="/js/jquery-1.11.0.min.js"></script>
+        <script src="/js/spark-md5.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+        <script src="/js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="/js/vue.js"></script>
+        <!-- swiper -->
+        <link rel="stylesheet" href="/js/swiper/swiper-4.2.6.min.css">
+        <script src="/js/swiper/swiper-4.2.6.min.js"></script>
+        <!-- swiper -->
+		<!-- CryptoJS -->
+		<script src="/js/CryptoJS/rollups/aes.js" type="text/javascript"></script>
+		<script src="/js/CryptoJS/rollups/md5.js" type="text/javascript"></script>
+		<script src="/js/CryptoJS/components/pad-zeropadding-min.js" type="text/javascript"></script>
+		<!-- CryptoJS -->		
+
+        <!--calendar-->
+        
+        <script src="/js/calendar.js"></script>
+        <link href="/css/calendar.css?t=201809251353" rel="stylesheet">
+        <style type="text/css">
+            ul,
+        ol,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+        </style>
+        <!--calendar-->
+
+        <script src="/js/moment.js"></script>
+		
+    </head>
+    <body>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-nav">
+                <div class="navbar-header">
+                    <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
+                    <a class="navbar-brand" href="/i/index"><img class="png-logo" src="/images/logo.png"></a>
+                </div>
+                <div class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <i class="icon icon-search"></i>
+                            <input type="text" class="form-control" placeholder="搜索" id="keyword">
+                            <button type="button" class="btn btn-default" id="searchBtn">搜索</button>
+                        </div>
+                                                <a class="user" href="#" data-toggle="modal" data-target="#myModalLogin" id="myModalLoginImg"><img src="/images/userLogo.png" alt=""></a>
+                                            </form>
+                </div>
+            </div>
+            <div id="navbar" class="nav-menu">
+                <div class="container-fixed-md">
+                    <ul class="nav navbar-nav nav-justified" id="menu_list">
+                        <li name="menu_index"><a href="/i/index.htm">首页</a></li><li name="menu_live"><a href="/live.php">直播·回看</a></li><li name="menu_aboutTip"><a href="/a/aboutTip.htm">教视概况</a></li><li name="menu_activity"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">精彩活动<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/activity/C37878368/0">上海市中小学生生态文明创意作品征集活动</a></li><li><a href="/z/activity/C37879601/0">魅力城市-美丽女生——2018上海市中学生德育实践活动</a></li><li><a href="/z/activity/0/_clt4_jytwy_zt_2018cybhljgxdrtzs_index.htm">2018雏鹰杯红领巾国学达人挑战赛</a></li></ul></li><li name="menu_recommend01"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">新闻资讯<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend01/0/_clt4_jytwy_zt_jsxw_index.htm">教视新闻</a></li><li><a href="/z/recommend01/0/_clt4_jytwy_zt_sxyjy_index.htm">升学与就业</a></li><li><a href="/z/recommend01/0/_clt4_jytwy_zt_2019jtysjnfcx_index.htm">“谢谢侬”2019上海市家庭医生技能风采秀</a></li></ul></li><li name="menu_recommend05"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">科技教育<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend05/0/_clt4_jytwy_zt_hzmwk_index.htm">汉字美微课</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_wczswk_index.htm">舞池之尚微课</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_swgwsm3_index.htm">十万个为什么（第三季）</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_hlzjjt_index.htm">活力张江讲坛</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_zmkdk_index.htm">周末开大课（第一季）</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_zmkdks2_index.htm">周末开大课（第二季）</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_zmkdks3_index.htm">周末开大课（第三季）</a></li><li><a href="/z/recommend05/0/http%3A__topic.htm">一起来成长</a></li></ul></li><li name="menu_recommend02"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">民生服务<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend02/0/_clt4_jytwy_zt_bnvl_index.htm">帮女郎</a></li></ul></li><li name="menu_recommend03"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">健康休闲<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend03/0/_clt4_jytwy_zt_jkdbt_index.htm">健康大不同</a></li><li><a href="/z/recommend03/0/_clt4_jytwy_zt_ylbd_index.htm">银龄宝典</a></li><li><a href="/z/recommend03/0/_clt4_jytwy_zt_ylkt_index.htm">银龄课堂</a></li><li><a href="/z/recommend03/0/_clt4_jytwy_zt_cqs_index.htm">常青树</a></li></ul></li><li name="menu_recommend04"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">人文纪录<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend04/0/_clt4_jytwy_zt_sssh_index.htm">书式生活</a></li><li><a href="/z/recommend04/0/_clt4_jytwy_zt_zgzz_index.htm">中国之最</a></li><li><a href="/z/recommend04/0/_clt4_jytwy_zt_xllf_index.htm">杏林流芳</a></li><li><a href="/z/recommend04/0/_clt4_jytwy_zt_bydg_index.htm">博雅达观</a></li></ul></li>                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="modal fade login" id="myModalLogin">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" onclick="closeModal()" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>账号登录</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>输入验证码错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <div>
+                        <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                        <form>
+                            <div id="part_psd" class="form-group log_form">
+                                <i class="icon icon-lock my_lock_style"></i><input type="password" class="form-control psd" name="password" placeholder="密码">
+                            </div>
+                        </form>
+                        <div class="checkbox" style="clear: both;">
+                            <label>
+                                <input type="checkbox" id="remember_me">记住我
+                            </label>
+                            <a href="javascript:void(0);" id="findPwd" class="jumpUrlLog">忘记密码？</a>
+                        </div>
+                        <button type="submit" style="" class="btn btn-default my_btn" id="loginBtn">登录</button>
+                        <div>
+                            <!--<span>其他方式：</span><img class="jumpUrlLog" id="wxLogin" src="/images/gwx.png" />-->
+                            <a class="jumpUrlLog" id="reg" href="javascript:void(0);">立即注册></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade find" id="myModalFind">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" onclick="closeModal()" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>重置密码</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>验证码输入错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                    <div class="part_psd">
+                        <input type="text" class="form-control get_code" name="veri_code" placeholder="验证码">
+                        <button type="submit"  class="btn btn-default get_code_no" name="btnSendCode">获取验证码</button>
+                    </div>
+                    <form>
+                        <div class="form-group log_form">
+                            <i class="icon icon-lock my_lock_style"></i><input type="password" class="form-control psd" name="password" placeholder="密码(6-16数字或字母)">
+                        </div>
+                    </form>
+                    <button type="submit"  class="btn btn-default my_btn" id="resetBtn">重置密码</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade reg" id="myModalReg">
+            <div class="modal-dialog">
+                <div class="modal-content reg">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" onclick="closeModal()" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>注册</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>验证码输入错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                    <form>
+                        <div class="form-group log_form">
+                            <i class="icon icon-lock my_lock_style"></i><input type="password" class="form-control psd" name="password" placeholder="密码(6-16数字或字母)">
+                        </div>
+                    </form>
+                    <div class="reg_middle">
+                        <input type="text" class="form-control get_code" name="veri_code" placeholder="验证码">
+                        <button type="submit" class="btn btn-default get_code_no" name="btnSendCode">获取验证码</button>
+                    </div>
+                    <button type="submit" class="btn btn-default my_btn" id="regBtn">注册</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade wxLogin" id="myModalWX">
+            <div class="modal-dialog">
+                <div class="modal-content login">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>为了账号安全，请绑定手机</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>验证码输入错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                    <div class="wx_middle">
+                        <input type="text" class="form-control get_code" name="veri_code" placeholder="验证码">
+                        <button type="submit"  class="btn btn-default get_code_btn" name="btnSendCode">获取验证码</button>
+                    </div>
+                    <button type="submit" class="btn btn-default my_btn" id="wxBindBtn">登录并绑定</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="wxLoginModal">
+            <div class="modal-dialog">
+                <div class="modal-content login">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" /><span class="sr-only">关闭</span></button>
+                    <div>
+                        <span id="wx_login_container"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+	
+<style>
+.swiper-pagination-bullet-active {background:green;}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+	background-image: url("/images/arrow1.png");
+    left: 10px;
+    right: auto;
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+	background-image: url("/images/arrow2.png");
+    right: 10px;
+    left: auto;
+}
+.swiper-pagination-bullet {
+    border: 2px solid white;
+    width: 12px;
+    height: 12px;
+}
+div#content {
+	margin-top: 10px;
+}
+
+
+</style>
+<!--<script src="/js/grayscale.js" type="text/javascript"></script>
+<script type="text/javascript">        
+
+    $(document).ready(function(){
+
+        var navStr = navigator.userAgent.toLowerCase();
+
+         if(navStr.indexOf("msie 10.0")!==-1||navStr.indexOf("rv:11.0")!==-1){ 
+
+                        grayscale(document.body);
+
+                        grayscale(document.getElementsByTagName("img"));
+
+                        grayscale(document.getElementsByTagName("div"));  
+
+                    }
+
+                    $("html").addClass("site-gray");
+
+    });
+
+</script>-->
+<div class="swiper-container container-fixed-md md_index">
+  <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="http://topic.setv.sh.cn/yuyi_report/index.html" ><img alt="于漪思想报告会" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/09/15/7000028769.jpg"></a></div><div class="swiper-slide"><a href="http://firstclass.setv.sh.cn/index.html" ><img alt="公共安全教育开学第一课" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/08/30/7000028483.jpg"></a></div><div class="swiper-slide"><a href="http://topic.setv.sh.cn/talktofan" ><img alt="对话樊锦诗" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/08/17/7000028283.jpg"></a></div><div class="swiper-slide"><a href="http://topic.setv.sh.cn/2020teachersday" ><img alt="师恩故事" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/08/11/7000028213.jpg"></a></div><div class="swiper-slide"><a href="http://topic.setv.sh.cn/summer" ><img alt="我眼中的上海之美" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/07/29/7000028063.jpg"></a></div><div class="swiper-slide"><a href="http://2020topteacher.setv.sh.cn/index.html" ><img alt="2020特级教师开课啦" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/04/10/7000026705.jpg"></a></div><div class="swiper-slide"><a href="/z/vod/0/_clt4_jytwy_zt_zmkdks3_index.htm" ><img alt="周末开大课（第三季）" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/04/16/7000026771.jpg"></a></div><div class="swiper-slide"><a href="http://2019ncov.setv.sh.cn/index.html" ><img alt="学做防疫小卫士" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2020/02/07/7000025895.jpg"></a></div><div class="swiper-slide"><a href="http://video.setv.sh.cn" ><img alt="全媒体实景党课" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2018/12/15/7000018563.jpg"></a></div><div class="swiper-slide"><a href="/z/vod/0/_clt4_jytwy_zt_ylbd_index.htm" ><img alt="银龄宝典" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2018/02/27/7000015831.jpg"></a></div><div class="swiper-slide"><a href="/z/vod/0/_clt4_jytwy_zt_jsxw_index.htm" ><img alt="教视新闻" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2017/11/21/7000014354.jpg"></a></div><div class="swiper-slide"><a href="/z/vod/0/_clt4_jytwy_zt_jkdbt_index.htm" ><img alt="健康大不同" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2017/11/21/7000014353.jpg"></a></div><div class="swiper-slide"><a href="/z/vod/0/_clt4_jytwy_zt_bnvl_index.htm" ><img alt="帮女郎" class=" yf_slide" src="http://img.setv.sh.cn/img/online/tmpl/2017/11/21/7000014350.jpg"></a></div>  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false">
+		&nbsp;</div>
+    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+		&nbsp;</div>
+</div>
+<div class="container-fixed-md md_index">
+    <input type="hidden" value="indexPage" id="indexPage"/>
+    <div class="cards yf_cards">
+        <div class="col-md-4 col-sm-4 col-lg-4 yf_col" style="/*float:left;width:310px;height:199px;*/"><div class="card yf_card"><div class="pic_words"><p class="p_title">教视新闻</p><br/><p class="p_desc">关注社会中的教育话题和教育中的社会问题</p></div><img src="http://img.setv.sh.cn/img/online/tmpl/2018/05/18/7000016457.jpg" alt=""><div class="mk"><a href="/z/vod/0/_clt4_jytwy_zt_jsxw_index.htm" ><img class="white_btn"src="/images/bsan.png"/></a></div></div></div><div class="col-md-4 col-sm-4 col-lg-4 yf_col" style="/*float:left;width:310px;height:199px;*/"><div class="card yf_card"><div class="pic_words"><p class="p_title"></p><br/><p class="p_desc"></p></div><img src="http://img.setv.sh.cn/img/online/tmpl/2020/04/10/7000026707.jpg" alt=""><div class="mk"><a href="http://video.setv.sh.cn/portal.html" ><img class="white_btn"src="/images/bsan.png"/></a></div></div></div><div class="col-md-4 col-sm-4 col-lg-4 yf_col" style="/*float:left;width:310px;height:199px;*/"><div class="card yf_card"><div class="pic_words"><p class="p_title">健康大不同</p><br/><p class="p_desc">一档轻松有趣的健康养生节目</p></div><img src="http://img.setv.sh.cn/img/online/tmpl/2018/05/18/7000016455.jpg" alt=""><div class="mk"><a href="/z/vod/0/_clt4_jytwy_zt_jkdbt_index.htm" ><img class="white_btn"src="/images/bsan.png"/></a></div></div></div>    </div>
+    <div id="rdzx">
+        <div class="up" style="margin: 20px 0 10px 10px;"><h3>精彩推荐</h3></div>
+        <div class="cards cards-borderless">
+            <div class="col-lg-3 col-sm-3 zx" style="/*float:left;width:235px;height:283px;*/"><a class="card" href="/z/vod/0/_clt4_jytwy_zt_jsxw_index.htm" ><img src="http://img.setv.sh.cn/img/online/tmpl/2017/12/13/7000015349.jpg" alt=""><div class="card-heading title"><strong>教视新闻</strong></div><div class="card-content text-muted">《教视新闻》栏目立足上海，关注全国。关注社会中的教育话题和教育中的社会问题。</div><hr class="hrr"/><div class="card-content date">周一至周六 18:00</div></a></div><div class="col-lg-3 col-sm-3 zx" style="/*float:left;width:235px;height:283px;*/"><a class="card" href="/z/vod/0/_clt4_jytwy_zt_bnvl_index.htm" ><img src="http://img.setv.sh.cn/img/online/tmpl/2017/11/22/7000014365.jpg" alt=""><div class="card-heading title"><strong>帮女郎</strong></div><div class="card-content text-muted">《帮女郎》是沪上知名的民生服务栏目，帮助观众解决“着急事、为难事、烦心事”。</div><hr class="hrr"/><div class="card-content date">周一至周五 20:15</div></a></div><div class="col-lg-3 col-sm-3 zx" style="/*float:left;width:235px;height:283px;*/"><a class="card" href="/z/vod/0/_clt4_jytwy_zt_jkdbt_index.htm" ><img src="http://img.setv.sh.cn/img/online/tmpl/2018/02/27/7000015829.jpg" alt=""><div class="card-heading title"><strong>健康大不同</strong></div><div class="card-content text-muted">《健康大不同》是一档轻松有趣的健康养生节目。倡导健康的生活方式、自然的养生理念。</div><hr class="hrr"/><div class="card-content date">每周六 19:35</div></a></div><div class="col-lg-3 col-sm-3 zx" style="/*float:left;width:235px;height:283px;*/"><a class="card" href="/z/vod/0/_clt4_jytwy_zt_ylbd_index.htm" ><img src="http://img.setv.sh.cn/img/online/tmpl/2018/02/27/7000015830.jpg" alt=""><div class="card-heading title"><strong>银龄宝典</strong></div><div class="card-content text-muted">上海教育电视台率先推出全国首档老年居家康复护理节目《银龄宝典》。</div><hr class="hrr"/><div class="card-content date">周一至周五 10:10 13:05 18:00 周日 19:35</div></a></div><div class="col-lg-3 col-sm-3 zx" style="/*float:left;width:235px;height:283px;*/"><a class="card" href="http://topic.setv.sh.cn/growtogether/index.html" ><img src="http://img.setv.sh.cn/img/online/tmpl/2020/05/19/7000027217.jpg" alt=""><div class="card-heading title"><strong>一起来成长</strong></div><div class="card-content text-muted">《一起来成长》，以关心教育、健康成长为宗旨，打造沪上亲子教育旗舰品牌栏目。</div><hr class="hrr"/><div class="card-content date">每周一至周三 19:35</div></a></div><div class="col-lg-3 col-sm-3 zx" style="/*float:left;width:235px;height:283px;*/"><a class="card" href="/z/vod/0/_clt4_jytwy_zt_sxyjy_index.htm" ><img src="http://img.setv.sh.cn/img/online/tmpl/2020/08/10/7000028193.jpg" alt=""><div class="card-heading title"><strong>升学与就业</strong></div><div class="card-content text-muted">为考生和家长们提供了一个全面、正确、详细、权威的信息渠道去了解高考改革的内容和趋势</div><hr class="hrr"/><div class="card-content date">每周日 18:00</div></a></div>        </div>
+    </div> 
+</div>
+<div class="linkInfo" >
+    <h1 style="padding: 30px;margin-top:0px;width:100%;min-width:800px;max-width:1200px;margin:0 auto;">友情链接</h1>
+    <ul class="bs-docs-footer-links" style="width: 1200px;margin: 0 auto;text-align: center;">
+        <li class="col-lg-2 " style="/*float:left;width:320px;height:40px;*/"><a href="http://www.shanghai.gov.cn/" target="_blank">中国上海</a><br/> <a href="http://www.shmec.gov.cn/" target="_blank">上海市教育委员会</a></li> <li class="col-lg-2 " style="/*float:left;width:320px;height:40px;*/"><a href="http://www.stcsm.gov.cn/" target="_blank">上海市科学技术委员会</a><br/> <a href="http://wgj.sh.gov.cn/" target="_blank">上海市文化和旅游局</a></li> <li class="col-lg-2 " style="/*float:left;width:320px;height:40px;*/"><a href="http://www.wsjsw.gov.cn/wsj/" target="_blank">上海市卫生健康委员会</a><br/> <a href="http://www.shmeea.edu.cn/" target="_blank">上海市教育考试院</a></li> <li class="col-lg-2 " style="/*float:left;width:320px;height:40px;*/"><a href="http://www.12333sh.gov.cn/xxzsp/ksy/index801.jsp" target="_blank">上海市职业能力考试院</a><br/> <a href="http://www.shedunews.com/" target="_blank">上海教育新闻网</a></li> <li class="col-lg-2 " style="/*float:left;width:320px;height:40px;*/"><a href="http://www.shou.org.cn/" target="_blank">上海开放大学</a><br/> <a href="http://www.shlll.net/" target="_blank">上海学习网</a></li>     </ul>
+</div>
+<div class="float_img">
+    <img src="/images/fc_pic.png?11" width="676" height="204"  alt=""/>
+    <span><a href="javascript:void(0);">x 关闭</a></span>
+</div>
+<script>
+	$(function(){		
+		if ($('.swiper-container')[0]) {
+			mySwiper = new Swiper('.swiper-container', {
+				autoplay: true,//可选选项，自动滑动
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},pagination: {
+					el: '.swiper-pagination',
+				},loop : true,
+			});
+			setInterval("mySwiper.slideNext()", 3000);
+		}
+	});
+</script>
+
+</div><!-- content -->
+
+        <div id="footer">
+            <p class="footer-p">上海教育电视台 电话：65834001 地址：大连路1541号 邮编：200086<br/>
+                上海教育电视台 版权所有<br/>
+                沪ICP备 11045836号-2
+            </p>
+        </div>
+
+        <!-- ZUI Javascript组件 -->
+        <script src="/js/zui.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="/js/ie10-viewport-bug-workaround.js"></script>
+        <!-- core JavaScript -->
+        <script type="text/javascript" src="/js/global.js?t=201809251353"></script>
+		<script type="text/javascript" src="/js/config.js?t=201809251353"></script>
+        <script type="text/javascript" src="/js/setv_index.js?t=201810191049"></script>
+        <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    </body>
+</html>

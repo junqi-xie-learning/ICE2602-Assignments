@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Copyright" content="中国新闻出版广电网 http://www.chinaxwcb.com" />
+<meta name="description" content="" />
+<meta name="Keywords" content="中国新闻出版传媒集团有限公司,中国新闻出版广电网,中华人民共和国国家新闻出版广电总局,出版,传媒,摄影,传媒,读书,专题,广电频道,媒体黄页,网络直播,中国出版" />
+<title>中国新闻出版广电网-www.chinaxwcb.com-沪上，一场读者爆棚的新书发布会</title>
+<base href="http://www.chinaxwcb.com">
+<link href="http://data.chinaxwcb.com/css/css_2011_bjnew_dzb.css" rel="stylesheet" type="text/css" />
+<link href="http://data.chinaxwcb.com/css/css_2011_contentnew.css" rel="stylesheet" type="text/css" />
+ <link href="http://www.chinaxwcb.com/template/1/default/_files/global.css" rel="stylesheet" />
+  <link href="http://www.chinaxwcb.com/template/1/default/_files/style.css" rel="stylesheet" />
+  <!-- 图片轮动插件 -->
+  <link rel="stylesheet" href="http://www.chinaxwcb.com/template/1/default/_files/plugins/imgchange/css/slideshows.css" />
+  <!--<script src='/template/1/default/_files/js/jquery1.42.min.js'>	</script>
+  <script type="text/javascript" src='/template/1/default/_files/js/jquery.SuperSlide.2.1.1.js'></script>-->
+  <!-- jquery CDN  -->
+  <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
+  
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://www.chinaxwcb.com/template/1/default/_files/plugins/leoweather/jquery.leoweather.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- 时间城市天气查询 -->
+  
+  <script src="http://www.chinaxwcb.com/template/1/default/_files/plugins/imgchange/js/jquery.cycle.all.js"></script>
+  <script src="http://www.chinaxwcb.com/template/1/default/_files/plugins/imgchange/js/jquery.easing.1.3.js"></script>
+
+  <script src="http://www.chinaxwcb.com/template/1/default/_files/js/index.js"></script>
+<script language="JavaScript">
+<!--
+//改变图片大小
+function resizepic(thispic)
+{
+  return true;
+}
+//无级缩放图片大小
+function bbimg(o)
+{
+  return true;
+}
+-->
+</script>
+</head>
+
+
+<body onload="showDay();">
+<!-- 顶部开始 -->
+
+<div style="position:relative;z-index:999;" class="banner shadow">
+  <div class="topnavbar">
+          <img class="cmg left" src="http://www.chinaxwcb.com/template/1/default/_files/images/CMGxwcb.jpg" height=26 alt="中国新闻出版传媒集团有限公司">
+  
+<div class="right top-title-2">
+  <a href="javascript:alert('请先设置好第三方平台appid和secret，再开启第三方登录');"><img src="http://www.chinaxwcb.com/template/1/default/_files/images/wechat.png" style="padding:0 0 3px;height: 20px;"></a>
+    <a href="javascript:alert('请先设置好第三方平台APP_ID和APP_KEY，再开启第三方登录');" class="ml10"><img src="http://www.chinaxwcb.com/template/1/default/_files/img/oauth_qq_7.png" style="padding:0 0 3px;height: 20px;display: none;"></a>
+    <a href="javascript:alert('请先设置好第三方平台CLIENT_ID和CLIENT_SERCRET，再开启第三方登录');" class="ml10 mr21"><img src="http://www.chinaxwcb.com/template/1/default/_files/images/weibo.png" style="padding:0 0 3px;height: 20px;"></a>
+	当前访客身份：游客 [ <a class="topa" href="http://www.chinaxwcb.com/login?fallbackUrl=%2F">登录</a> | <a class="topa" href="http://www.chinaxwcb.com/register">注册</a> ]
+</div>
+</div>
+</div>
+
+<div class="branding">
+    <div class="logo left"><a href="/" target="_blank"><img src="http://www.chinaxwcb.com/template/1/default/_files/images/logo.jpg" alt="中国新闻出版广电网"></a></div>
+  	<div class="AD-top right" id='xxk1' style='overflow: hidden;'><script src="http://www.chinaxwcb.com/dd_number/homepage10" class="left"></script></div>
+  </div>
+  <script>
+	$(function(){
+		var i=0;
+		var timer1=null;
+		function xxk1(){
+			$('#xxk1').children('a').eq(i).show().siblings('a').hide();
+			if(i>=1){
+				i=-1;
+			}
+			i++;
+		}
+		timer1=setInterval(xxk1,3500);
+	})
+  </script>
+<div class="toolbar">
+  <div class="left" id="weather"></div>
+  <script>
+$('#weather').leoweather({
+    //format:"{时段}好！ 时间：{年}/{月}/{日} {时}:{分}:{秒} 星期{周}&emsp; 今日{城市}的天气：{天气}，气温：{气温}℃"
+    format:"{时段}好！ 时间：{年}/{月}/{日} {时}:{分}:{秒} 星期{周}"
+  });</script>
+  
+  <div class="right">
+    <form action="http://www.chinaxwcb.com/search" method="get">
+      <input name="q" value="" class="left search-input" autocomplete="off" type="text" placeholder="请输入关键词">
+      <button type="submit" class="left search-button">站内搜索</button>
+      <div class="clear"></div>
+    </form>
+  </div>
+
+  <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<!-- LOGO结束 -->
+<!-- 导航开始 -->
+<div class="center channelNav" >
+<ul class="list-unstyled nav center w" style="text-align:center;height:40px;line-height: 40px;overflow: hidden;">
+<li style="height:40px;" class="left  cur"><a href="http://www.chinaxwcb.com/" class="nava fs16 item first curr">首页</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://www.chinaxwcb.com/node/36" class="nava fs16 item middle">政务</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://www.chinaxwcb.com/node/48" class="nava fs16 item middle">出版</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://www.chinaxwcb.com/node/51" class="nava fs16 item middle">传媒</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://www.chinaxwcb.com/node/52" class="nava fs16 item middle">广电</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://www.chinaxwcb.com/node/49" class="nava fs16 item middle">版权</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://www.chinaxwcb.com/node/92" class="nava fs16 item middle">读书</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://www.chinaxwcb.com/node/74" class="nava fs16 item middle">印包</a></li>
+<li style="height:40px;" class="left  middle "><a href="http://zgcb.chinaxwcb.com/site-3/" class="nava fs16 item middle">中国出版</a></li>
+<li style="height:40px;" class="left  last "><a href="http://data.chinaxwcb.com/epaper2019/Index.html" class="nava fs16 item last">电子报</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+<!-- 导航结束 -->
+<div class="mainbig">
+  <div class="clear"></div>
+	<div class="space"></div>
+    <div class="space"></div>
+<div class="main navx">
+<div class="bt"><a href="#">当前位置</a><a href='http://www.chinaxwcb.com'>中国新闻出版广电网</a>&nbsp;>>&nbsp;<a class='LinkPath' href='http://data.chinaxwcb.com/epaper2016/Index.html'>中国新闻出版广电报电子报</a>&nbsp;>>&nbsp;<a class='LinkPath' href=''>第2版：要闻</a>&nbsp;>>&nbsp;正文</div>
+<div class="rl">&nbsp;</div>
+</div>
+<div class="main">
+<div class="mainL">
+<h1 style="margin-top: 0px;margin-bottom: 0px;font-size:15px; text-align:center; font-weight:normal; line-height:30px;"></h1>
+<h1 style="margin-top: 0px;margin-bottom: 0px;">沪上，一场读者爆棚的新书发布会</h1>
+<h1 style="margin-top: 0px;margin-bottom: 0px;font-size:15px; text-align:center; font-weight:normal; line-height:20px;"></h1>
+<div class="info">作者：<a href='http://data.chinaxwcb.com/ShowAuthor.asp?ChannelID=1030&AuthorName=金鑫 房敏婕' title='金鑫 房敏婕'>金鑫&nbsp;房敏…</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;来源：中国新闻出版广电报&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：2019/10/18 9:15:40</div>
+<div class="content">
+<!-- 分享开始 -->
+ <div class="bdsharebuttonbox mt20">
+		<a href="#" class="bds_more a-none" data-cmd="more">分享到：</a>
+		<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+		<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+		<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+		<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+		<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	</div>
+	<script>
+		window._bd_share_config = {
+			"common": {
+				"bdSnsKey": {},
+				"bdText": "",
+				"bdMini": "2",
+				"bdMiniList": false,
+				"bdPic": "",
+				"bdStyle": "0",
+				"bdSize": "16"
+			},
+			"share": {}
+		};
+		with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+	</script>
+<!-- 分享结束 -->
+</div>
+<div class="content">
+<P>　　<STRONG>□本报记者 金鑫 通讯员 房敏婕</STRONG></P>
+<P align=center><STRONG><IMG onmousewheel="return bbimg(this)" border=0 hspace=0 alt="" src="http://data.chinaxwcb.com/epaper2019/UploadFiles_4430/201910/2019101809174770.jpg" onload=resizepic(this)></STRONG></P>
+<P align=center><FONT face=楷体_GB2312>&nbsp;&nbsp;&nbsp;&nbsp;黄仁伟为读者签售。</FONT><BR><BR><IMG onmousewheel="return bbimg(this)" border=0 hspace=0 alt="" src="http://data.chinaxwcb.com/epaper2019/UploadFiles_4430/201910/2019101809174786.jpg" onload=resizepic(this)></P>
+<P align=center><FONT face=楷体_GB2312></FONT></P>
+<P align=center><FONT face=楷体_GB2312></FONT></P>
+<P align=center><FONT face=楷体_GB2312>&nbsp;&nbsp;&nbsp;&nbsp;新书发布会现场座无虚席。</FONT></P>
+<P></P>
+<P align=right>&nbsp;&nbsp;&nbsp;&nbsp;<STRONG>房敏婕 摄</STRONG></P>
+<P align=right><STRONG></STRONG>&nbsp;</P>
+<P>　　10月13日，上海图书馆，降温和秋雨，挡不住300多名读者的热情，260个座位坐满了，加椅子；椅子坐满了，台阶上、过道上，或席地而坐，或站着听完3小时，这都是因为一位主讲嘉宾——复旦大学“一带一路”与全球治理研究院常务副院长黄仁伟。</P>
+<P>　　“‘一带一路’共建6年了，用上海话说，‘模子’已经出来了。”《大国坚守：中国外交在十字路口的历史抉择》新书发布会一开场，黄仁伟就迅速拉近了与读者的距离。他说，6年来，共建“一带一路”已完成夯基垒台、立柱架梁，转入落地生根、开花结果的全面推进阶段，成为广受欢迎的国际公共产品，在历史时空中镌刻下深深的中国印记。正如《纽约时报》的刊文，“一带一路”项目的数量和规模令人吃惊，远远超出了科幻作家的想象。</P>
+<P>　　《大国坚守》是中外知名外交专家、学者贾庆国、苏格、崔立如、黄仁伟等对中国外交新变化、新应对、新实践的深刻思考和通俗表达，近日由上海交通大学出版社出版。书中，专家学者聚焦中美关系、双边外交、中国主场外交等领域中的重要模块，从历史、现实等不同角度理性观察中国外交政策，在中美关系和“一带一路”等话题上既保留了历史纵深感，又体现了学者的时代关切。</P>
+<P>　　黄仁伟多年从事国际关系研究，近两年来他聚焦“一带一路”研究，更多时间用于走访实地。站在巨大的世界地图前，他指点读者观看自己实地勘察过的雅万高铁在建项目。“雅加达与万隆，两座城市之间只有一条高速公路，由于车辆众多，加上施工频繁，140多公里的路程经常要走上四五个小时。等到明年这个时候雅万高铁开通后，单程只需要40分钟，那是怎样的一种体验！”黄仁伟认为，雅万高铁的成功开通不仅能够改变印尼爪哇岛的经济状况，也预示着“一带一路”实质性的推进。</P>
+<P>　　黄仁伟认为，“一带一路”是世界资源重新配置的开始。对于新一轮全球化，中国不是通过一种强制力进行改变，而是通过利益交汇点实现利益共享，构建人类命运共同体。这对于世界经济的长期正面影响将日益显示出来。</P>
+<P>　　在签售环节，读者们排起长龙，抓住宝贵机会与黄仁伟交流。一位带着女儿从嘉定赶来的读者告诉记者：“当年听黄教授讲座的时候孩子还小，现在孩子都长大成人了，今天特意买了书请黄教授签名。”</P>
+<P>　　本次活动由上海图书馆、文汇报社和上海交通大学出版社共同主办。</P></div>
+<div class="adv"><img src="http://www.chinaxwcb.com/tplimg/ewm214content.gif" alt="欢迎关注" width="650" height="90" border="0" /></div>
+<div class="space"></div>
+<div class="lineX"></div>
+<h2>沪上，一场读者爆棚的新书发布会</h2>
+<div class="lineX"></div>
+<div class="pl">
+<p>以下网友留言只代表网友个人观点，不代表本网站观点</p>
+<div class="space"></div>
+<div class="lineX"></div>
+<h2>发布评论</h2>
+<div class="inner">
+<form action="" method="post">
+<div class="left">
+<label for="la1">
+	<a href="#b" id="a" onclick="la1.checked=true"></a>
+	<a href="#a" id="b" onclick="la1.checked=false"></a>
+	<input type="checkbox" id="la1" /> 
+</label>
+</div>
+<div class="left">&nbsp;匿名发表&nbsp;&nbsp;&nbsp;&nbsp;您在以匿名发表时可以输入昵称
+<p>如果您是本站注册用户请将此复选框钩掉，并在下面输入有效的用户名密码。</p>
+</div>
+<div class="left">
+用户名：<input type="text" name="user" class="input1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" name="password" class="input1" /><br />
+<textarea name="info" class="input2"></textarea><br />
+<input type="submit" value="发 送" class="input3" />
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+<div class="mainR">
+<iframe border="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" framespacing="0" frameborder="0" scrolling="no" width="327" height="880" src="https://www.chinaxwcb.com/node/3750"></iframe>
+</div>
+</div>
+  <div class="clear"></div>
+  <div class="space"></div>
+  <div class="spaceX"></div>
+  <div class="footer">
+      <p>
+        <a href="https://www.chinaxwcb.com/node/178" target="_blank" style="color: #000;">关于中国新闻出版广电网</a>&nbsp;|&nbsp;
+        <a href="https://www.chinaxwcb.com/node/315" target="_blank">版权声明</a>&nbsp;|&nbsp;
+        <a href="https://www.chinaxwcb.com/node/317" target="_blank">人才招聘</a>&nbsp;|&nbsp;
+        <a href="https://www.chinaxwcb.com/template/1/default/_files/images/ggkl2012.jpg" title="广告服务" target="_blank">广告服务</a>&nbsp;|&nbsp;
+        <a href="https://www.chinaxwcb.com/node/318" target="_blank">联系我们</a>
+      </p>
+      <p>京ICP备07004361号 Copyright 2007 chinaxwcb.com All Rights Reserved</p>
+
+      <p>
+        <a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/4028c08b4c9d8a1d014cb5979c1617ac" target="_blank">
+          <span>网络文化经营许可证:京网文[2015]0037-037号</span>
+          <img src="https://www.chinaxwcb.com/template/1/default/_files/images/wenhuajingying.png">
+        </a>
+      </p>
+      <p>
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502033686" target="_blank" >
+          <span>京公网安备 11010502033686号</span>
+          <img src="https://www.chinaxwcb.com/template/1/default/_files/images/jgwab.png">
+        </a>
+      </p>
+      <p>中国新闻出版传媒集团有限公司旗下中国新闻出版广电网 版权所有,未经许可不得复制或镜像</p>
+
+  </div>
+</div>
+</body>
+</html>

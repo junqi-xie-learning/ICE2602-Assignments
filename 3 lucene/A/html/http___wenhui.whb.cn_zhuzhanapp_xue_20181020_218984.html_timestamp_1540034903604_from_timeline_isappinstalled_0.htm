@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>这些大学里的年轻志愿者要在进博会上岗了！</title>
+<link rel="stylesheet" href="/r/share_files/reset_style.css">
+<link rel="stylesheet" href="/r/share_files/vote.css">
+<link rel="stylesheet" type="text/css" href="/r/share_files/style.css">
+<script type="text/javascript" src="/r/share_files/jquery-1.10.2.min.js"></script>
+<script src="/r/share_files/front.js" type="text/javascript"></script>
+<script src="/r/share_files/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/r/share_files/sha1.js" type="text/javascript"></script>
+<script src="/r/share_files/weixin.js" type="text/javascript"></script>
+<style>
+
+		.textCenter {text-align: center}
+		.title {font-family: "BoldFont";text-align: left;}
+		.author {text-align: center;}
+		.source {text-align: left;}
+		.authorLeft {vertical-align: text-top;text-align: left;}
+		#zanImages{
+			width: 80%;
+			height: 80%;
+			margin: 0 auto;
+			vertical-align: top;
+			display: inline-block;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -7px;
+			margin-top: -8px;
+		}
+		.content-min-ctn>p{
+			text-align: justify;
+			margin: 18px 0;
+
+		}
+		/* 底部下载APP */
+		.download-app-box{
+			background: rgb(45,49,50);
+			position: relative;
+			padding: 15px 10px;
+			overflow: hidden;
+		}
+		.media-container:first-child{
+			margin-top: 0;
+		}
+		.media-container, .media-body {
+			overflow: hidden;
+			zoom: 1;
+		}
+		.media-body, .media-left, .media-right {
+			display: table-cell;
+			vertical-align: top;
+		}
+		.media-left{
+			padding-right: 10px;
+			padding-top: 2px;
+		}
+		.media-header{
+			font-size: 16px;
+			font-weight: 500;
+			font-family: "微软雅黑";
+			color: #fff;
+		}
+		.media-text{
+			color: rgb(156,157,157);
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		.download-app{
+			width: 26%;
+			position: absolute;
+			top: 27%;
+			right: 4.3%;
+			z-index: 100;
+		}
+		.content-min-ctn img{ width:100% !important;height:auto !important}
+	</style>
+<script>
+        var imageArr = new Array();
+        var img = {
+            "width":"645px",
+            "height":"483px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var img = {
+            "width":"645px",
+            "height":"430px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var voteColors = [
+            "#e3e5f1",
+            "#cacdde",
+            "#aaafca"
+        ];
+        var perVotePerW;	// 100%长度
+        $(document).ready(function(){
+            $("#header").load("/include/header.html");
+            $("#foot").load("/include/footer.html");
+            var w = document.body.clientWidth - 20;
+            try {
+                var fontsize = w / 20;	// 字数：一行18字
+                document.body.style.fontSize = fontsize + "px";
+                var percent = w / 720;
+                $("#voteTitle").css("font-size", (percent * 30) + "px");
+                $("#voteTitle").css("height", (percent * 70) + "px");
+                $("#voteTitle").css("padding-top", (percent * 35) + "px");
+                // 投票长度 720px 400=100%
+                perVotePerW = percent * 400;
+                $("#voteCon").css("font-size", (percent * 30) + "px");
+                var width = percent * 125;
+                var height = width / height * width;
+                $(".voteimg").css("width", width + "px");
+                $(".voteimg").css("height", height + "px");
+
+            } catch (e) {}
+
+            $("img[name=videoImg]").click(function() {
+                openVideo(this)
+            });
+
+            // 图片宽度、高度
+            if(imageArr.length == 0)
+                return ;
+            for(var index = 0; index < imageArr.length; index++) {
+                var img = $("#image-" + (index + 1));
+                var width = imageArr[index].width;
+                width = width.replace("px", "");
+                width = width.replace("PX", "");
+                if(width >= 645) {
+                    // 宽度645，直接铺满
+                    img.css("width", "100%");
+                    continue ;
+                }
+                // 小于645，按照比例进行缩放
+                var proportion = w/645;	// 宽度比例
+                width = width * proportion;
+                img.css("width", width + "px");
+
+                // 专家图片
+                var photo = $("#expertPhoto");
+                if(photo == null || photo == undefined)
+                    return ;
+                var photoWidth = 223 * proportion;
+                photo.css("width", photoWidth + "px");
+                var height = 272 * proportion;
+                photo.css("height", height + "px");
+            }
+        });
+
+        var play, videoIndex = 0;
+        function openVideo(img) {
+            videoIndex++;
+            $(img).css("display", "none");
+            $(img).after("<div id='mod_player_" + videoIndex + "'></div>");
+            try{
+                // url由app替换字符串获得
+                var url = $(img).attr("videourl");
+                var pos1 = url.indexOf("vid=");
+                if (pos1 < 0){
+                    alert("视频路径格式有误，无法播放!");
+                }else{
+                    var pos2 = url.indexOf("&", pos1);
+                    if (pos2 < 0)
+                        pos2 = url.length;
+                    var vid = url.substring(pos1 + 4,pos2);
+                    var video = new tvp.VideoInfo();
+                    video.setVid(vid);
+                    var player =new tvp.Player();
+                    player.create({
+                        width:"100%",
+                        height:280,
+                        video:video,
+                        modId:"mod_player_" + videoIndex,
+                        vodFlashExtVars: {
+                            showlogo:0,
+                            popup : 0,
+                            share : 0,
+                            follow : 0
+                        },
+                        autoplay:true
+                    });
+
+                    player.oninited = function() {
+                        player.play();
+                    }
+                    player.play();
+                }
+            }catch(e){console.debug(e.message);}
+        }
+
+        //评论
+        function fnSubmit(){
+            if($("#text").val().trim().length==0){
+                alert("请输入评论内容");
+                return ;
+            }
+            var text = $("#text").val();
+            $.ajax({
+                type: "POST",
+                url:"/whb/comment.jspx",
+                "dataType" : "json",
+                data:{
+                    text:text,
+                    contentId:67907,
+                    hasCaptcha:"no"
+                },
+                success:myCallback
+            })
+        }
+        function myCallback(data) {
+            if(data.status==0) {
+                alert("评论成功,等待审核");
+                $("#text").val("");
+                fnText();
+                //location.href=location.href;
+            } else if(data.status==1) {
+                alert("验证码错误");
+                //$("#commentCaptcha").click();
+            } else if(data.status==2) {
+                alert("内容不存在");
+                //$("#commentCaptcha").click();
+            } else if(data.status==3) {
+                alert("评论关闭");
+                //$("#commentCaptcha").click();
+            } else if(data.status==4) {
+                alert("需要登录评论");
+                //$("#commentCaptcha").click();
+            } else if(data.status==100) {
+                alert("内容不存在");
+                // $("#commentCaptcha").click();
+            } else if(data.status==101) {
+                alert("评论不能为空");
+                // $("#commentCaptcha").click();
+            } else {
+                alert("评论失败");
+                // $("#commentCaptcha").click();
+            }
+        }
+        function fnText(){
+            var length = $("#text").val().trim().length;
+            $("#textcount").html(300-length);
+        }
+	</script>
+<script src="../../../../../../r/cms/html5.js"></script>
+</head>
+<body style="margin: 10px; font-size: 18.7px;" bgcolor="white"><input id="title" type="hidden" value="这些大学里的年轻志愿者要在进博会上岗了！">
+<input id="descp" type="hidden" value="首届中国国际进口博览会的脚步日益临近，沪上高校吹响了志愿服务的集结号，一批朝气活力的青年大学生正在接受系统专业的志愿服务培训。">
+<input id="imgUrl" type="hidden" value="/u/cms/www/201810/201555013g6k_cut.jpg">
+<div id="header"><a id="appDownload" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook">
+<img src="/r/share_files/download.png" width="100%">
+</a>
+<script>
+
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var isWeixin = is_weixin();
+        var isAndroid = false;
+        var isIos = false;
+
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/) == "iphone os";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+
+        if (bIsAndroid) {
+            isAndroid = bIsAndroid;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+
+        } else if(bIsIphoneOs || bIsIpad) {
+            isIos = bIsIphoneOs || bIsIpad;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+        }
+	</script></div>
+<table class="marginTop_normal marginLeft_big marginRight_big marginBottom_big">
+<tbody><tr style="font-size:22px;text-align:justify;">
+<td class="title titleFont" colspan="2"><font color="#000000" style="line-height:1.5;">这些大学里的年轻志愿者要在进博会上岗了！</font></td>
+</tr>
+<tr>
+<td class="author authorFont" style="text-align:left;padding-bottom:5px;">
+<font color="#595757">2018-10-20 15:56:41</font>
+<font style="margin-left: 10px;" color="#595757">作者：樊丽萍</font>
+</td>
+</tr>
+</tbody></table>
+<div style="margin:0;padding:0; width:100%;height:1px;background-color:#787878;overflow:hidden;"></div>
+<div class="content_body">
+<div class="content_title hei"></div>
+<div class="content_other"></div>
+<font color="#000000" font-size="16.666666px">
+<div class="content-min-ctn" style="text-align:justify;font-size:18px; wrap-word:normal; line-height:1.6;">
+<p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201810/20155348iu5s.jpg" alt="7f32c81a2a3c72ec85032dd75d2dc7be39e01813.jpg" style="width:645px;height:430px;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">首届中国国际进口博览会的脚步日益临近，沪上高校吹响了志愿服务的集结号，一批朝气活力的青年大学生正在接受系统专业的志愿服务培训。据悉，在今年进博会已经完成的5438名志愿者中，高校大学生志愿者超过5200人，堪称进博会志愿服务军团的绝对主力。今天下午，部分高校的志愿者代表在上海外国语大学松江校区接受志愿服务培训工作。肯担当、耐吃苦、做实事，进博会的志愿服务岗位，也将是中国青年自信与智慧的一次集中展示。</p><p style="text-align:left;display:block;">进博会是展示国家形象的重要窗口，提供优质的志愿服务，少不了专业人才的加盟。上海外国语大学阿拉伯语专业大四学生葛学政，是本次进博会会期服务岗位志愿者之一。目前，他已通过外交部遴选，毕业后即将进入外交部工作。</p><p style="text-align:left;display:block;">记者获悉，今年，上外师生集体上阵，共有460人入选进博会志愿者人选，人数居沪上高校之首。所有志愿者都是清一色的外语类专业背景，涉及法语、西班牙语、俄语、阿拉伯语、英语、德语、日语、葡萄牙语、朝鲜语、荷兰语、希腊语、意大利语、土耳其语、波兰语、越南语、印尼语、波斯语、瑞典语、泰语、希伯来语、印地语等20多个语种。其中，阿拉伯语、法语、俄语、西班牙语等语种服务人数超40人。在进博会期间，他们将主要服务于国际高级访问团，国外媒体记者团，制证安检团队，以及国家会展工作组等。</p><p style="text-align:left;display:block;">“我教的学生在进博会期间几乎全员上岗。”上外俄罗斯东欧中亚学院杨波教授即将参与进博会期间官方活动的同声传译和交替传译等会议翻译工作。近期，她还将为院系的志愿者开展专业培训。</p><p style="text-align:left;display:block;">在沪上复旦、上海交大、同济、华东师大等多所高校，世博会志愿者的校内培训眼下也在陆续启动。</p><p style="text-align:left;display:block;">上海交大今年有140余名学子入选世博会志愿者。就在不久前，该校安泰经管学院教师黄超芸在受邀为志愿者做内部培训。她说，进博会是“面向世界的国家行为”，因此，志愿者代表国家形象，需要强烈的志愿精神，“志愿者坚守的每个岗位将是一点火光，星星之火，可以燎原。”</p><p style="text-align:left;display:block;">在复旦大学，共有200位学子从400多名报名者中脱颖而出，成为进博会的志愿者。在接到进博会指挥部提出的需要招募媒体志愿者等具体的志愿者专业能力方向的要求后，学校在新闻学院中开展定向招募。</p><p style="text-align:left;display:block;">同济大学已组建了一支120人左右的进博会志愿者队伍。值得关注的是，同济电信学院的一个项目团队已为本次进博会准备了一套高精度的室内定位导航系统，将在技术上开创行业先河。进博会期间，同济将有多名志愿者服务于该系统，为进博会各参与方提供便利。</p><p style="text-align:left;display:block;">在华东师范大学，校方专门为140名即将服务进博会的志愿者“开小灶”，邀请一些有跨文化实践的专家和教师代表做专题报道，参加过米兰世博会、阿斯塔纳世博会等国际展会的学生志愿者也受邀分享自己志愿服务的经历。</p><p style="text-align:left;display:block;">此次进博会上，留学生志愿者也将成为一道风景。从尼泊尔来沪留学的浦瑞妍，是东华大学纺织工程专业大四学生，也是进博会的留学生志愿者代表之一。“尼泊尔的纺织品大多都是手工制作，来到中国学习的都是高技术的纺织工程，希望通过进博会能把好技术带回家乡。”</p><p style="text-align:left;display:block;">在东华大学招募的进博会志愿者中，有四位是留学生，分别来自塞内加尔、尼泊尔、布隆迪和巴基斯坦。</p><p style="text-align:left;display:block;"><br/></p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201810/2015551705zz.jpg" alt="timg (3).jpg" style="width:645px;height:429px;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">五月份开始就投入进口博览会实习的上外研究生金铭可以说是上外第一位进口博览会学生志愿者，她先后参与了宣传、会务以及接待等筹备工作，谈到100多天的志愿者工作，她表示“可能每一个人都在做微不足道的事情，这些事情是看不到的，甚至小到只是指示牌坏了需要有人去提醒，每一个人都在排查可能存在的问题。”正是这些默默付出的志愿工作者，汇成了一个强有力的团体，为进博会顺利开展保驾护航。</p><p style="text-align:left;display:block;">葛学政是上海外国语大学阿拉伯语专业大四学生，是本次进口博览会会期服务岗位志愿者。他已通过外交部遴选，毕业后将进入外交部工作。</p><p style="text-align:left;display:block;">这名“95后”青年在大二期间入选国家留学基金管理委员会优秀本科生项目，被选派至摩洛哥哈桑二世大学留学一年，学习成绩优异，实践经历丰富。“参加进口博览会志愿服务是我们年轻一代在国际平台上培养中国情怀和国际视野的重要经历。”小葛作为小语种特长志愿者，先期被安排在证件中心工作，负责进口博览会数种证件的校对、制作工作，很快成长为志愿者骨干。为了保证证件按时制作完成，他和其他志愿者经常加班至深夜，并就地过夜，“证件是保障进口博览会安全有序进行的一道屏障，工作中就要不怕吃苦，任劳任怨。”</p><p style="text-align:left;display:block;">今天，两款首届进口博览会志愿者服装还同时发布。</p><p style="text-align:left;display:block;">一款是新中式西装，灵感源于五星红旗，红色明快鲜亮，代表朝气、热情；白色宁静舒缓，代表和平、友善；灰色沉稳大气，代表时尚、专业。红白灰线面交织，领口呈现五星造型，点缀四叶草形纽扣，凸显海派的都市韵味。</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201810/20153428tlye.jpg" alt="undefined" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">另一款以五角星和线形元素组成主体纹样，寓意“一带一路”链接五大洲，体现进口博览会是“一带一路”倡议的生动实践，描绘出进口博览会将促进全球贸易和世界经济增长，推动人类命运共同体建设的美好愿景。两款服饰充分体现进口博览会志愿者自信、开放、阳光、担当的强国一代、大国青年形象。</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201810/20153428e74g.jpg" alt="undefined" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">“为祖国增光，为城市添彩！向前进，博青春！为进博，一起来！”志愿者代表用青春之声庄严宣誓，表达了践行志愿者精神、全心为进博奉献的信心与决心。</p><p style="text-align:center;"><img src="http://wenhui.whb.cn/u/cms/www/201810/20153428cwg1.jpg" alt="undefined" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">根据进口博览会的整体要求和志愿者岗位安排，目前，已经完成志愿者的招募和配岗工作，总计招募5438人。其中152名是长期管理岗位志愿者，主要是来自高校、机关企事业单位的在职人员，已从6月份起陆续脱产上岗服务，参与到进博会各个块面的筹备工作中；5200多名是高校大学生志愿者，这是进口博览会志愿者队伍的主力军，将参与到场馆内外迎博办博的各项服务保障工作中；同时，为体现长三角一体化，团市委也向苏浙皖三省发出了邀请，长三角30名志愿者也将共同参与到进博会志愿者工作中来。</p><p style="text-align:left;display:block;">作者：樊丽萍</p><p style="text-align:left;display:block;">编辑：李晨琰</p><p style="text-align:left;display:block;">责任编辑：姜澎</p><p style="text-align: left; display: block;">*文汇独家稿件，转载请注明出处。</p>
+</div>
+</font>
+</div>
+<div>
+<div class="reset-css">
+<div class="praise-container" style="height:42px;">
+<span id="ups" style="float: right;font-size: 12px;height: 22px;position: relative;top: 5px;">0</span>
+<span onclick="Cms.up('',67907,0);" id="zanImagesCtn" style="display: inline-block;width: 20px;height: 20px;border: 1px solid #333;border-radius: 50%;line-height: 20px;overflow: hidden;position: relative;float: right;margin-right: 3px;">
+<img id="zanImages" src="/r/share_files/dianzan2x.png" alt="">
+</span>
+</div>
+<div class="edit-comment">
+<textarea name="text" id="text" placeholder="请输入文字内容..." style="resize: none;line-height:1.5;padding-bottom:5px;" rows="2" oninput="fnText();"></textarea>
+<div class="submit-comment-container solve_float">
+<span class="left">还可以输入<span id="textcount" style="color:#FFA83F;">300</span>字</span>
+<button class="submit-comment right" onclick="fnSubmit();">提交</button>
+</div>
+<input type="hidden" name="contentId" value="67907">
+</div>
+<div>
+<button class="btn-see-more" onclick="location='/findComment.jspx?contentId=67907'">查看评论&gt;&gt;</button>
+</div>
+</div>
+</div>
+<div class="download-app-box">
+<div class="media-container">
+<div class="media-left">
+<img src="/r/share_files/logo3.png" alt="Logo" style="width: 40px;height:40px;">
+</div>
+<div class="media-body">
+<h4 class="media-header">文汇报</h4>
+<div class="media-text">源于事实 来自眼界</div>
+</div>
+</div>
+<img class="download-app" src="/r/share_files/down-app.png" onclick="window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook'" alt="DownLoad">
+</div>
+<div id="foot"></div>
+<script src="/r/share_files/tvp.player_v2.js" type="text/javascript"></script>
+<script src="/r/share_files/wb.js" type="text/javascript"></script>
+<script type=text/javascript>
+    $(function() {
+        Cms.siteFlow("http://www.whb.cn", location.href, document.referrer, "这些大学里的年轻志愿者要在进博会上岗了！", "樊丽萍","73");
+        Cms.viewCount("","218984",null,null, null,null,null);
+    });
+</script>
+</body></html>

@@ -1,0 +1,465 @@
+        <!DOCTYPE html>
+<html>
+<head>
+<meta name = "format-detection" content = "telephone=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="filetype" content="0"> 
+<meta name="publishedtype" content="1"> 
+<meta name="pagetype" content="2">
+<meta name=keywords content="新闻频道 新闻频道 新闻频道">
+<meta name=description content="新闻频道 新闻频道 新闻频道">
+<title></title>
+<script src="//p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1444718851473965/zepto.min.js"></script>
+<script  src="//p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1474357991471326/nativeShare.js"></script>
+<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<link rel="stylesheet" href="//p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1484790147611460/style1.css">
+<link type="text/css" rel="stylesheet" href="//r.img.cctvpic.com/news/m/v/style/style.css?ec72a86f242616a91de9a158002d8afd"/>
+</head>
+<body>
+<script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","v_id=&aplus&",id="tb-beacon-aplus",src=(location>"https"?"//js":"//js")+".data.cctv.com/__aplus_plugin_cctv.js,aplus_plugin_aplus_u.js")
+</script>
+
+<div class="page_wrap">
+  <header class="head_xq13581">
+    <div class="fanhui"><a href="javascript:history.go(-1)"></a></div>
+    <div class="pindao"><span><a href="//news.cctv.com/video/index.shtml">视频</a></span></div>
+    <div class="action">
+      <ul>
+        <li class="dianzan">
+          <i>赞</i>
+        </li>
+        <li class="fenxiang">
+          <a></a>
+        </li>
+      </ul>
+        <div style="clear:both"></div>
+    </div>
+  </header>
+  <div class="weixinplayer">
+    <img src="//p1.img.cctvpic.com/photoAlbum/templet/common/DEPA1479371378629219/isweixin.png">
+  </div>
+  <div class="ind_share_xq13581">
+    <div class="share_title">
+      <span>分享到:</span>
+    </div>
+    <div id="nativeShare"></div>
+    <div class="sharebtn sns-share" id="share">
+      <ul>
+        <li>
+          <a data-app="weixinFriend" class="nativeShare weixinpengyouquan">
+            <div class="img"><img src="//news.cctv.com/m/btn_weixinFriend_161118.png"></div>
+            <p>朋友圈</p>
+          </a>
+        </li>
+        <li>
+          <a class="weibo special" data-share="sina">
+            <div class="img"><img src="//news.cctv.com/m/btn_weibo_161118.png"></div>
+            <p>微博</p>
+          </a>
+        </li>
+        <li>
+          <a data-app="weixin" class="nativeShare weixin">
+            <div class="img"><img src="//news.cctv.com/m/btn_weixin_161118.png"></div>
+            <p>微信好友</p>
+          </a>
+        </li>
+        <li>
+          <a class="qzone special" data-share="qq_zone" id="qqzone">
+            <div class="img"><img src="//news.cctv.com/m/btn_qzone_161118.png"></div>
+            <p>QQ空间</p>
+          </a>
+        </li>
+        <li>
+          <a data-app="QQ" class="qq" onClick="shareToQQFriend()"  id="qq">
+            <div class="img"><img src="//news.cctv.com/m/btn_qq_161118.png"></div>
+            <p>QQ好友</p>
+          </a>
+        </li>
+        <div style="clear:both"></div>
+      </ul>
+      <div style="clear:both"></div>
+    </div>
+    <div class="btn_guanbi"></div>
+  </div>
+  <script type="text/javascript"> 
+    $(".head_xq13581 .action .fenxiang  a").click(function(){
+      if(navigator.appVersion.toLowerCase().match(/MicroMessenger/i) == "micromessenger") {
+        $(".weixinplayer").css("display","block");
+        $(".weixinplayer img").css("display","block");
+        $(".weixinplayer").click(function(){
+          $(".weixinplayer").css("display","none");
+        });
+      }else{
+        $(".ind_share_xq13581").css("display","block");
+      }
+    });
+    $(".ind_share_xq13581 .btn_guanbi").click(function(){
+      $(".ind_share_xq13581").css("display","none");
+    });
+  </script>
+
+  <div class="more_btnbox" id="j_pullLoader">
+    <div class="more_btn_loading " id="j_loading">
+      <span class="loadingbtn">加载更多</span>
+      <span class="more_btn">正在加载</span>
+    </div>
+  </div>
+  <!--正文内容-->
+  <div class="ind_video" style="display: none;">
+    <!--标题-->
+    <div class="title_area">
+      <h2></h2>
+    </div>
+    <!--播放器-->
+    <div class="player_area">
+      <div class="player" id="player"></div>
+      <div class="player_desc">
+        <p class="time"></p>
+        <div class="length"></div>
+      </div>
+    </div>
+  </div>
+  <div class="ind_video_brief" id="ind_video_brief"></div>
+  <div class="page_bottom_"></div>
+  
+</div>
+  
+  <script type="text/javascript" src="//js.player.cntv.cn/creator/common_standard.js"></script>
+  <script type="text/javascript" src="//js.player.cntv.cn/creator/swfobject.js"></script>
+  <script type="text/javascript">
+    var html5PlayBtnBottomleft = true;  //控制视屏标在左下
+    var hoffsetH_h = window.screen.availHeight;
+    $("#j_pullLoader").css("height",(hoffsetH_h-180));
+    //获取url参数
+    function GetRequest() {
+      var url = location.search; //获取url中"?"符后的字串
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("?");
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+          theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+    var Request = new Object();
+    Request = GetRequest();
+    var videoID;
+    videoID = Request['videoID'];
+    var apiUrl = '//api.cntv.cn/Article/newcontentinfo?id=';
+    if (videoID =="undefined" ||videoID==""||videoID==null){
+      // 确认，如果参数没有传应该如何提示  其他是跳转到404
+      if ( window.location.href.indexOf("producePage")!=-1){
+      }else{
+        window.location.href="//m.cctv.com/404/index.shtml";
+      }
+    }else{
+      apiUrl += videoID+"&serviceId=sjnews";
+    }
+    
+    var first=true;
+    function dianzan(){
+      var url='//api.itv.cntv.cn/praise/add?type=other&id='+videoID+'&jsonp_callback=?&r='+Date.parse(new Date());
+      $.ajax({
+        type:'get',
+        dataType:"jsonp",
+        url:url,
+        data:"",
+        success:function(data){
+        }
+      });
+    }
+    var nowNum;
+    function getdianzanNum(){
+      var url='//common.itv.cntv.cn/praise/batchGet?type=other&id='+videoID+'&jsonp_callback=?&r='+Date.parse(new Date());
+      $.ajax({
+        type:'get',
+        dataType:"jsonp",
+        url:url,
+        data:"",
+        success:function(data){
+          var _obj=data.data;
+          for(var a in _obj){
+            var dianzannum=_obj[a];
+          }
+          nowNum=dianzannum;
+        }
+      });
+    }
+    getdianzanNum();
+    $(".head_xq13581 .action .dianzan i").click(function(){
+      if(first){
+        $(".head_xq13581 .action .dianzan i").addClass("cur");
+        $(".head_xq13581 .action .dianzan i").html(nowNum+1);
+        dianzan();
+        first=false;
+      }
+    })
+
+    //公用Ajax方法
+    function getAjaxdata(url,jsonp,cb){
+      $.ajax({
+        url:url,
+        type:"get",
+		cache:true,
+        dataType:"jsonp",
+        jsonp:jsonp,
+        success: function(data){
+          getDataSucessHandler_Album(data.data);
+        },
+        error:function(){}
+      });
+    }
+
+    var config={};
+    var i0926,d0926,shareurl,c_type;
+    //单条视频播放(guid,vide)
+    function getDataSucessHandler_Album(data){
+	if(videoID.substr(0,4) !="VIDE"){
+    	window.location.href=data.url;
+    }
+      if(/AppleWebKit.*mobile/i.test(navigator.userAgent) || /Android/i.test(navigator.userAgent)|| (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
+        
+      }else{
+        window.location.href=data.url;
+      }
+      config = {
+        title:data.title,// 标题
+        desc: data.brief,// 描述
+        link:window.location.href,// 分享的网页链接
+        imgUrl:data.frame_url,
+      };      
+      $("#j_pullLoader").css("display","none");
+      $(".ind_video").css("display","block");
+      $(".ind_video_brief").css("display","block");
+      videoId = data.id;
+      i0926 = config.title;
+      c_type = data.type;  //2音频、0视频、6竖版视频
+      d0926=document.location.href;
+      shareurl = encodeURIComponent(config.link);
+      document.title=data.title;
+      $(".title_area").html('<h2>'+data.title+'</h2>');   
+      $(".player_desc").html('<p class="time">发布时间：'+data.create_date.substr(0,16)+'</p><div class="length">时长：'+data.length+'</div>');
+      if(data.content!= ""){
+        $("#ind_video_brief").html("<p id='ind_video_brief_p'>"+data.content+"</p>");
+      }else {
+        $("#ind_video_brief").html("<p id='ind_video_brief_p'>"+data.title+"</p>");
+      }
+      
+      play(data.guid,data.frame_url);//播放器
+    }
+    function play(guid,playimg){
+      videoId = videoId.substr(4,26);
+      var _w = window.innerWidth || screen.width;
+      var _h1 = window.innerHeight || screen.height;
+      if(c_type == 6 && _w<_h1){
+        var _h= parseInt(_w*16/9);
+      }else{
+        var _h= parseInt(_w*0.6);
+      }
+      
+      var fo = createCommonPlayer("v_player",_w,_h,"news",'',playimg);
+      fo.addVariable("videoCenterId",guid);
+      fo.addVariable("videoId",videoId);
+      fo.addVariable("isAutoPlay", 'true');
+      fo.addParam("wmode", "normal");
+      writePlayer(fo,"player");
+      var timer = setInterval(function(){   //监听 播放器 创建完
+        if($("#html5VideoBack").length>0){
+          clearInterval(timer);
+          $("#player").css("height",(_h-30)+"px");
+        }
+      },100)
+    }
+
+    function changeVideoSize(){
+      var screen_Width = window.innerWidth || screen.width;
+      var screen_Height1 = window.innerHeight || screen.height;
+      if(screen_Width<screen_Height1 && c_type == 6){
+        var screen_Height = parseInt(screen_Width*16/9);
+      }else{
+        var screen_Height = parseInt(screen_Width*0.6);
+      }
+      $("#player").css("width",screen_Width+"px");
+      $("#player").css("height",screen_Height-30+"px");
+      $("#html5VideoBack").css("width",screen_Width+"px");
+      $("#html5VideoBack").css("height",screen_Height-30+"px");
+      $("#html5Player").css("width",screen_Width+"px");
+      $("#html5Player").css("height",screen_Height-30+"px");
+      $("#html5ControlDiv").css("width",screen_Width+"px");
+      $("#html5ControlDiv").css("height",screen_Height-30+"px");
+    }
+    window.onresize=changeVideoSize;
+
+
+    $(document).ready(function(){
+      getAjaxdata(apiUrl,'cb',getAjaxdata); 
+    });
+
+  </script>
+  <script type="text/javascript" src="//g.alicdn.com/dingding/open-develop/1.9.0/dingtalk.js"></script>
+  <script type="text/javascript"> 
+      // 微信配置
+     function onBridgeReady(){
+      WeixinJSBridge.call('hideOptionMenu');
+    }
+    if (typeof WeixinJSBridge == "undefined"){
+      if( document.addEventListener ){
+        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+      }else if (document.attachEvent){
+        document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+      }
+    }else{
+      onBridgeReady();
+    }
+    function getAjax(url,data,cb,spacial){
+      $.ajax({
+        url:url,
+        type:"get",
+		cache:true,
+        data:data,
+        dataType:'jsonp',
+        success: function(_data){
+          cb(_data)
+        },
+        timeout:10000,
+        error:function(){warnbox("请求超时，请检查网络或者重新刷新页面！")}
+        
+      });
+      } 
+    var data={"appid":"newstiket","url":encodeURIComponent(encodeURIComponent(window.location.href))};  
+    getAjax("//api.cntv.cn/Apicommon/index?&path=iphoneInterface/general/getWeiXinSignature.jsonp",data,weixinSucess);
+    function weixinSucess(data){  
+      wx.config({
+      debug: false, 
+      appId: "wx2723c0deaa5a97e9", 
+      timestamp: data.timestamp, 
+      nonceStr:  data.nonceStr, 
+      signature: data.signature,
+      jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 功能列表，我们要使用JS-SDK的什么功能
+      });
+    }
+
+    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在 页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready 函数中。
+    wx.ready(function(){
+      // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+      wx.onMenuShareTimeline({
+        title: config.title, // 分享标题
+        link:window.location.href,
+        imgUrl: config.imgUrl // 分享图标
+      });
+      // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+      wx.onMenuShareAppMessage({
+        title: config.title, // 分享标题
+        desc:config.desc , // 分享描述
+        link:window.location.href,
+        imgUrl: config.imgUrl, // 分享图标
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+      });
+      onBridgeReady_OptionMenu();
+    });
+    wx.error(function(res){
+      console.log("失败");
+    });
+    function onBridgeReady_OptionMenu(){
+      WeixinJSBridge.call('showOptionMenu');
+    }
+      var share_obj = new nativeShare('nativeShare',config);
+      //微博分享
+      $(".ind_share_xq13581 .sharebtn ul li a.special").click(function(){
+        var shareurl = encodeURIComponent(window.location);
+        var share = $(this).attr("data-share");
+        Share(pcShare(config,share,shareurl));
+      });
+      //新开IE
+      function Share(bstrShareUrl){
+        window.open(bstrShareUrl);
+      }
+      /*分享功能*/
+      function pcShare(o,share,shareurl){
+        var http ="";
+        switch (share){
+          case "sina":{
+            http="//v.t.sina.com.cn/share/share.php?url="+shareurl+"&appkey=2078561600&title="+o.title+"&pic="+o.imgUrl+"&language=zh_cn"
+            return http;
+            break;
+          }
+          case "tx_weibo":{
+            http = "//v.t.qq.com/share/share.php?pic="+o.imgUrl+"&content="+o.desc+"&url="+shareurl+"&title="+o.title;
+            return http;
+            break;
+          }
+          case "qq_zone":{
+            http = "//sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?pics="+o.imgUrl+"&summary="+o.desc+"&url="+shareurl+"&title="+o.title;
+            return http;
+            break;
+          }
+          default:return null;
+        }
+      }
+
+	  function isdingding_20190304(){
+	　　//判断是不是钉钉
+	　　var ua = navigator.userAgent.toLowerCase();
+	　　return ua.indexOf("dingtalk") >= 0;
+	}
+
+	if(isdingding_20190304()){
+	　　dd.ready(function(){
+		　　dd.biz.navigation.setRight({
+		　　show: true,//控制按钮显示， true 显示， false 隐藏， 默认true
+		　　control: true,//是否控制点击事件，true 控制，false 不控制， 默认false
+		　　text: '',//控制显示文本，空字符串表示显示默认文本
+		　　onSuccess : function(result) {
+		　　//如果control为true，则onSuccess将在发生按钮点击事件被回调
+		　　dd.biz.util.share({
+		　　type: 0, //分享类型，0:全部组件 默认； 1:只能分享到钉钉；2:不能分享，只有刷新按钮
+		　　url: window.location.href,
+		　　content: config.desc,
+		　　title: config.title,
+		　　image: config.imgUrl,
+		　　onSuccess: function() {},
+		　　onFail: function(err) {}
+		　　})
+		　　},
+		　　onFail : function(err) {}
+		　　});
+		})
+	}
+  </script>
+  
+  <script type="text/javascript">
+    //分享给扣扣好友
+     var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(a){var b,c,d,e,f,g,h,i="",j=0;for(a=Base64._utf8_encode(a);j<a.length;)b=a.charCodeAt(j++),c=a.charCodeAt(j++),d=a.charCodeAt(j++),e=b>>2,f=(3&b)<<4|c>>4,g=(15&c)<<2|d>>6,h=63&d,isNaN(c)?g=h=64:isNaN(d)&&(h=64),i=i+this._keyStr.charAt(e)+this._keyStr.charAt(f)+this._keyStr.charAt(g)+this._keyStr.charAt(h);return i},decode:function(a){var b,c,d,e,f,g,h,i="",j=0;for(a=a.replace(/[^A-Za-z0-9\+\/\=]/g,"");j<a.length;)e=this._keyStr.indexOf(a.charAt(j++)),f=this._keyStr.indexOf(a.charAt(j++)),g=this._keyStr.indexOf(a.charAt(j++)),h=this._keyStr.indexOf(a.charAt(j++)),b=e<<2|f>>4,c=(15&f)<<4|g>>2,d=(3&g)<<6|h,i+=String.fromCharCode(b),64!=g&&(i+=String.fromCharCode(c)),64!=h&&(i+=String.fromCharCode(d));return i=Base64._utf8_decode(i)},_utf8_encode:function(a){a=a.replace(/\r\n/g,"\n");for(var b="",c=0;c<a.length;c++){var d=a.charCodeAt(c);128>d?b+=String.fromCharCode(d):d>127&&2048>d?(b+=String.fromCharCode(d>>6|192),b+=String.fromCharCode(63&d|128)):(b+=String.fromCharCode(d>>12|224),b+=String.fromCharCode(d>>6&63|128),b+=String.fromCharCode(63&d|128))}return b},_utf8_decode:function(a){for(var b="",c=0,d=c1=c2=0;c<a.length;)d=a.charCodeAt(c),128>d?(b+=String.fromCharCode(d),c++):d>191&&224>d?(c2=a.charCodeAt(c+1),b+=String.fromCharCode((31&d)<<6|63&c2),c+=2):(c2=a.charCodeAt(c+1),c3=a.charCodeAt(c+2),b+=String.fromCharCode((15&d)<<12|(63&c2)<<6|63&c3),c+=3);return b}}
+      function b0926(a,b){
+        var c,d,e;
+        for(d in b)
+          e=b[d],
+          c=new RegExp("("+d+"=)[^&]+","i"),a.match(c)?a=a.replace(c,"$1"+e):a+=-1===a.indexOf("?")?"?"+d+"="+e:"&"+d+"="+e;return a
+      }
+      function shareToQQFriend(){
+        window.location.href=b0926(
+          "mqqapi://share/to_fri?src_type=web&version=1&file_type=news",
+          {
+            share_id:"100389302",
+            title:Base64.encode(i0926),
+            thirdAppDisplayName:Base64.encode("\u624b\u673a\u592e\u89c6\u7f51"),
+            url:Base64.encode(d0926)
+          }
+        );
+      }
+  </script>
+ 
+  <!-- START WRating v1.0 --> 
+   
+   
+  <!-- END WRating v1.0 --> 
+
+  
+</body>
+</html>

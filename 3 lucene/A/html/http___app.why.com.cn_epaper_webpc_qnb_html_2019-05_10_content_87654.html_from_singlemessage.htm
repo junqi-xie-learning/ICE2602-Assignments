@@ -1,0 +1,917 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+要沿着兴趣一往无前地走下去
+</title>
+<SCRIPT language=Javascript src="../../../tplimg/swfobject.js"></SCRIPT>
+<link href="../../../tplimg/paper_blu.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../tplimg/mpcore.js"></script>
+<script type="text/javascript" src="../../../tplimg/period.js"></script>
+<script type="text/javascript" src="../../../tplimg/calendarp.js"></script>
+<script type="text/javascript" src="../../../tplimg/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../../tplimg/formap3.js"></script>
+   <script language="JavaScript" type="text/javascript">
+function zoomIn() {
+  newZoom= parseInt(ozoom.style.zoom)+10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+function zoomOut() {
+  newZoom= parseInt(ozoom.style.zoom)-10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+  
+  $(document).ready(  
+  function() {  
+		$(".title3").html($(".title3").html().replace("<br>",""));
+		$(".title1").html($(".title1").html().replace("<br>",""));
+		$(".title5").html($(".title5").html().replace("<br>",""));
+  });  
+            </script>
+
+<style type="text/css">
+<!--
+#layer31
+{
+	top: -0px;
+	right: 17px;
+	position: relative;
+	float: right;
+	/*overflow:hidden;*/
+}
+.tushuo{
+		text-align: left;
+		padding: 0 20px;
+		text-indent: 2em;
+		font-size:13px;
+}
+
+#nav_1 a:link{
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+} 
+#nav_1 a:visited {
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+}
+#nav_1 a:hover {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: underline;
+	font-weight:normal;
+}
+#nav_1 a:active {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: none;
+	font-weight:normal;
+} 
+.date {font-size:14px; color:#000000}
+.btH2 {
+	font-size:14px;
+	color:#FFF
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: none;
+	color: #C00;
+}
+a:active {
+	text-decoration: none;
+	color: #C00;
+}
+talbe{margin:0 auto}  
+td{ font-size:12px; color:#000000}
+
+.demo {position:relative; width:1000px; margin:0 auto;}
+.title1 {
+	font-family: "黑体";
+	font-size: 18px;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: bold;
+	font-variant: normal;
+	color: black;
+}
+.title3 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+
+.title4 {
+	font-family: "宋体";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+}
+.title2 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #666;
+}
+.title5 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+.content_tt {font-size: 14px; line-height: 180%; margin: auto; padding: 10px; text-align:left}
+.content_tt  p{text-indent:2em}
+.main-ed-map img{max-width:380px}
+.wztp img{max-width:500px; width:expression(this.width > 500 ? "500px" : this.width)}
+
+#float{border:2px solid #CEE3E9;background:#F1F7F9;font-size:18px;font-weight:bold;padding:10px 20px;position:absolute;left:0;top:0;z-index:9999;display:none;line-height:24px;}
+
+TD.S9bo_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+.dropdown {float:left; padding-right:0px}
+.dropdown dt {}
+.dropdown dt:hover {background:url()}
+.dropdown dd {position:absolute; overflow:hidden; width:194px; display:none; background:#edebec; z-index:200; opacity:0}
+.dropdown ul {width:194px; border:2px solid #d0caca; list-style:none; }
+.dropdown li {display:inline;text-align:left; float:none;magin:0;border-bottom:1px solid #ffffff;}
+.dropdown a, .dropdown a:active, .dropdown a:visited {display:block; text-align:left; padding:5px; color:#333; text-decoration:none; background:#ececec;width:190px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;border-bottom:1px solid #ffffff;}
+.dropdown a:hover {background:#f8f8f8; color:#000}
+.dropdown .underline {border-bottom:1px solid #fafafa}
+.wztp table{width:100%;text-align:center}
+-->
+</style>
+<script language="javascript">
+var DDSPEED = 10;
+var DDTIMER = 15;
+
+// main function to handle the mouse events //
+function ddMenu(id,d){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearInterval(c.timer);
+  if(d == 1){
+    clearTimeout(h.timer);
+    if(c.maxh && c.maxh <= c.offsetHeight){return}
+    else if(!c.maxh){
+      c.style.display = 'block';
+      c.style.height = 'auto';
+      c.maxh = c.offsetHeight;
+      c.style.height = '0px';
+    }
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }else{
+    h.timer = setTimeout(function(){ddCollapse(c)},50);
+  }
+}
+
+// collapse the menu //
+function ddCollapse(c){
+  c.timer = setInterval(function(){ddSlide(c,-1)},DDTIMER);
+}
+
+// cancel the collapse if a user rolls over the dropdown //
+function cancelHide(id){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearTimeout(h.timer);
+  clearInterval(c.timer);
+  if(c.offsetHeight < c.maxh){
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }
+}
+
+// incrementally expand/contract the dropdown and change the opacity //
+function ddSlide(c,d){
+  var currh = c.offsetHeight;
+  var dist;
+  if(d == 1){
+    dist = (Math.round((c.maxh - currh) / DDSPEED));
+  }else{
+    dist = (Math.round(currh / DDSPEED));
+  }
+  if(dist <= 1 && d == 1){
+    dist = 1;
+  }
+  c.style.height = currh + (dist * d) + 'px';
+  c.style.opacity = currh / c.maxh;
+  c.style.filter = 'alpha(opacity=' + (currh * 100 / c.maxh) + ')';
+  if((currh < 2 && d != 1) || (currh > (c.maxh - 2) && d == 1)){
+    clearInterval(c.timer);
+  }
+}
+</script>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641e36ad99ad4a5e9df6a40952a4f724";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">
+<!--
+
+marquee { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+span.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+
+TD.S7_b { font-size: 7pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S7_g { font-size: 7pt; color: #595959; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_b { font-size: 10pt; color: #595959; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S10_bb { font-size: 11pt; color: #FFFFFF; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt; font-weight:bold}
+TD.S10_bbb { font-size: 14pt; color: #000000; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_w { font-size: 8pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_w { font-size: 9pt; color: #FFFFFF; line-height: 13pt; font-family: "宋体"; letter-spacing:1pt}
+TD.S9_ws { font-size: 9pt; color: #000080; line-height: 13pt; font-family: "宋体"}
+TD.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_w { font-size: 11pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_o { font-size: 9pt; color: #FF0000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+TD.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体"; letter-spacing:0pt}
+TD.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体"}
+TD.S12_g { font-size: 12pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_gr { font-size: 10pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_gr { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+
+P.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S9_w { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+A:link { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体" }
+A:link.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration}
+A:link.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+
+A:visited.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_b { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_b { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+
+input
+{
+COLOR: #000000;
+FONT-SIZE: 9pt
+}
+Select.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+body,td,th {
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+}
+
+a:link {
+	text-decoration: none;
+}
+#bmt{width:410px;
+	 height:590px;
+ position:relative;
+	 top:24px;
+	 left:10px;
+	 text-align:center;
+	 z-index:9999;
+	  overflow:hidden;
+	 }
+.bgt{background:url(http://pc/qnb/tplimg/paper-bg.jpg) no-repeat;
+ height:619px
+}
+-->
+</style>
+
+</head>
+
+<body topmargin="0" leftmargin="0">
+<div id="float"></div>
+<div id="demo"  style="position:relative;">
+<table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0" height="100%">
+	<tr>
+		<td valign="top">
+		<table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0" height="100%">
+			<tr>
+				<td height="674">
+
+<table border="0" width="100%" id="table50" cellspacing="0" cellpadding="0" background="../../../tplimg/bg-1.jpg" height="674">
+	<tr>
+		<td style="vertical-align:top">
+		<div align="center">
+			<table border="0" width="1024" id="table51" cellspacing="0" cellpadding="0" height="100%">
+				<tr>
+					<td valign="top">
+					<table border="0" width="100%" id="table52" cellspacing="0" cellpadding="0" height="100%">
+						<tr>
+							<td valign="top" width="440">
+							<table border="0" width="100%" id="table53" cellspacing="0" cellpadding="0">
+								<tr>
+									<td id="bgt" background="../../../tplimg/paper-bg.jpg" style="background-repeat:no-repeat;height:619px" valign="top">
+								 <div id="bmt">			
+                
+<map name=PagePicMap><Area coords="1,19,349,19,349,542,1,542" shape="polygon" href="./content_87654.html"></map>
+<img src=../../../images/2019-05/10/A06/20190510A06_brief.jpg border=0 USEMAP=#PagePicMap>
+</div>
+								<tr>
+									<td height="6"></td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table94" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="18">　</td>
+											<td><div id="coreArea" style="display:none"></div>
+											<table border="0" width="94%" id="table95" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g" width="198">
+													<p align="left" style="color:#000000">
+                                                      第A06版：青年
+                                                </td>
+
+													<td width="117" class="S9_g">
+													<p align="right">
+													  <a class=preart href="node_5.html">上一版</a>&nbsp;&nbsp;<a class=preart href="node_7.html">下一版</a> &nbsp;&nbsp;
+												  </td>
+												   <td width="50" align=right valign=center nowrap style="PADDING-RIGHT: 5px"><a href=../../../images/2019-05/10/A06/20190510A06_pdf.pdf><IMG height=16  
+src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+							</table>
+							</td>
+							<td valign="top">
+							<table border="0" width="100%" id="table54" cellspacing="0" cellpadding="0">
+								<tr>
+									<td height="97" valign="top">
+									<table border="0" width="100%" id="table55" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="277"><img border="0" src="../../../tplimg/青年报_logo.png" width="277" height="97"></td>
+											<td valign="top">
+											<table border="0" width="100%" id="table56" cellspacing="0" cellpadding="0" height="97">
+												<tr>
+													<td>　</td>
+												</tr>
+												<tr>
+													<td valign="bottom">
+													<table border="0" width="100%" id="table93" cellspacing="0" cellpadding="0">
+														<tr>
+															<td class="S9_g">
+															<p align="right">
+															2019年05月10日 星期五</td>
+															<td width="14" valign="bottom">　</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+												<tr>
+													<td height="40" valign="bottom">
+													<table border="0" width="100%" id="table57" cellspacing="0" cellpadding="0">
+														<tr><td width="12"></td>
+															<td>
+															<dl class="dropdown">
+  <dt id="one-ddheader" onMouseOver="ddMenu('one',1)" onMouseOut="ddMenu('one',-1)"><img border="0" src="../../../tplimg/top-1.png" width="99" height="41" align="right"><dt>
+  <dd id="one-ddcontent" onMouseOver="cancelHide('one')" onMouseOut="ddMenu('one',-1)">
+    <ul id="artPList1">
+  
+<li><a  id="mp87654"  title="要沿着兴趣一往无前地走下去"  class="underline" href=./content_87654.html>要沿着兴趣一往无前地走下去</a></li> 
+  
+  </ul>
+  </dd>
+</dl></td>
+															<td width="99">
+															<dl class="dropdown">
+  <dt id="two-ddheader" onMouseOver="ddMenu('two',1)" onMouseOut="ddMenu('two',-1)"><img border="0" src="../../../tplimg/top-2.png" width="100" height="41"></dt>
+  <dd id="two-ddcontent" onMouseOver="cancelHide('two')" onMouseOut="ddMenu('two',-1)">
+	<ul>
+	<a id=pageLink href=node_1.html title="头版">
+		第A01版：头版</a>
+<a id=pageLink href=node_2.html title="要闻">
+		第A02版：要闻</a>
+<a id=pageLink href=node_3.html title="焦点">
+		第A03版：焦点</a>
+<a id=pageLink href=node_4.html title="问政">
+		第A04版：问政</a>
+<a id=pageLink href=node_5.html title="青年">
+		第A05版：青年</a>
+<a id=pageLink href=node_6.html title="青年">
+		第A06版：青年</a>
+<a id=pageLink href=node_7.html title="青年">
+		第A07版：青年</a>
+<a id=pageLink href=node_8.html title="城事">
+		第A08版：城事</a>
+<a id=pageLink href=node_9.html title="城事">
+		第A09版：城事</a>
+<a id=pageLink href=node_10.html title="财经">
+		第A10版：财经</a>
+<a id=pageLink href=node_11.html title="天下">
+		第A11版：天下</a>
+<a id=pageLink href=node_12.html title="广告">
+		第A12版：广告</a>
+<a id=pageLink href=node_13.html title="脸谱">
+		第A13版：脸谱</a>
+<a id=pageLink href=node_14.html title="文体">
+		第A14版：文体</a>
+<a id=pageLink href=node_15.html title="文体">
+		第A15版：文体</a>
+<a id=pageLink href=node_16.html title="专题 ">
+		第A16版：专题 </a>
+<a id=pageLink href=node_41.html title="乐业周刊">
+		第B01版：乐业周刊</a>
+<a id=pageLink href=node_42.html title="乐业·专题">
+		第B02版：乐业·专题</a>
+<a id=pageLink href=node_43.html title="乐业·专题">
+		第B03版：乐业·专题</a>
+<a id=pageLink href=node_44.html title="乐业·专题">
+		第B04版：乐业·专题</a>
+<a id=pageLink href=node_45.html title="乐业·专题">
+		第B05版：乐业·专题</a>
+<a id=pageLink href=node_46.html title="乐业·专题">
+		第B06版：乐业·专题</a>
+<a id=pageLink href=node_47.html title="乐业·专题">
+		第B07版：乐业·专题</a>
+<a id=pageLink href=node_48.html title="乐业·专题">
+		第B08版：乐业·专题</a>
+</ul
+  </dd>
+</dl></td>
+															<td width="90">
+															<span id="calendarBtn"><img border="0" src="../../../tplimg/top-3.png" width="90" height="41"></span></td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="46">
+									<table border="0" width="100%" id="table96" cellspacing="0" cellpadding="0" height="100%">
+										<tr>
+											<td>　</td>
+										</tr>
+										<tr>
+											<td>
+											<table border="0" width="100%" id="table98" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g">
+													<p align="right">
+													<a onClick="zoomIn();" href="javascript:"><img border="0" src="../../../tplimg/a--.gif" width="10" height="10"> 
+													放大</a>&nbsp; 
+													<a onClick="zoomOut();" href="javascript:"><img border="0" src="../../../tplimg/a-.gif" width="10" height="10"> 
+													缩小</a>&nbsp; 
+													<a onClick="ozoom.style.zoom='100%';" 
+            href="javascript:"><img border="0" src="../../../tplimg/a0.gif" width="10" height="10"> 
+													默认</a>&nbsp;
+													
+													&nbsp;
+													
+												  </td>
+													<td width="14">　</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+										<tr>
+											<td height="5"></td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table58" cellspacing="0" cellpadding="0">
+										<tr>
+											<td valign="top" width="279">
+											<table border="0" width="573" id="table59" cellspacing="1" cellpadding="0" bgcolor="#17529a" height="510">
+												<tr>
+													<td bgcolor="#FFFFFF" valign="top">
+													<table border="0" width="100%" id="table97" height="100%" cellpadding="0" cellspacing="10">
+														<tr>
+															<td valign="top">
+															<table border="0" width="100%" id="table99" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td height="80" align="center" valign="middle" class="S12_b">
+<p class="title3">以第一作者身份在《Nature》等杂志发表三篇论文的唐文涛：</p>
+<p class="title1">要沿着兴趣一往无前地走下去</p>
+<p class="title5"></p>
+<p class="title6">青年报记者 刘昕璐</p>
+</td>
+																</tr>
+																<tr>
+																	<td bgcolor="#17529a" height="1"></td>
+																</tr>
+																<tr>
+																	<td height="15"></td>
+																</tr>
+																<tr>
+																	<td class="S11_g">
+																	<div class="wztp" style="height:600px; overflow-y:auto; width:100%;">
+																	  <table bgcolor=#efefef><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2019-05/10/A06/res03_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p>&nbsp;&nbsp;&nbsp;&nbsp;“90后”唐文涛是一个超级厉害的“工科学术男”。受访者供图</p></TD></TR></TBODY></TABLE></td></tr></table><script language="JavaScript" type="text/javascript">
+								if(picResCount>0){
+									document.getElementById("picres").style.display="block";
+									document.write("<br>");
+								}
+ 			  				</script>
+          <div id="ozoom" style="zoom:100%;FLOAT: left;"><!--enpcontent-->
+            <table width="100%" border="0" class="S11_g">
+<tr>
+<td class="content_tt"><P><p><strong>勤学上进好青年</strong></p><p>●<strong>唐文涛</strong></p><p><strong>上海交通大学材料科学与工程学院在读博士生</strong></p><p>在微信朋友圈里，和所有年轻人一样喜欢分享美好事物的“90后”唐文涛，实则是一个超级厉害的“工科学术男”。他是上海交通大学材料科学与工程学院在读博士生，是上海交大最年轻的“Nature一作”，是钙钛矿模块的世界纪录创造者，也是此次2019年“全国向上向善好青年”的一员。攻坚克难，致力于用更加经济安全的新方法制备出更高效率的钙钛矿太阳能电池，助力祖国新能源技术革新，是他所理解的自身使命与担当。</p><p><strong>青年报记者&nbsp;刘昕璐</strong></p><p><strong>确认过眼神&nbsp;&nbsp;&nbsp;制备出世界上第一块国际认证的钙钛矿模块</strong></p><p>唐文涛，1993年生人，是上海交通大学材料科学与工程学院的一名在读博士生。他致力于钙钛矿模块化研究，并制备出了世界上第一块国际认证的钙钛矿模块。</p><p>“我本科读的是高分子材料专业，后因科创项目接触到新型太阳能电池，在‘确认过眼神’后，我发现，应用更新型的光伏材料实现更高效率的光电转化，正是我感兴趣的事情。”唐文涛说道。</p><p>2015年，唐文涛作为直博生加入上海交大韩礼元教授课题组，在国家自然基金的支持和国家政策的引导下，选择了把钙钛矿做到商业级别的大面积模块这一世界级的难题作为自己的课题。</p><p>跟全世界的科学家一样，唐文涛也被这一难题深深吸引。他多次与导师讨论分析，设计自己的试验方案和系统，并积极整合实验室资源，在短时间内学习了上千篇文献，尝试了近百次实验，制备的电池多达上千块。</p><p>怎样把钙钛矿电池做大做好，成了唐文涛整天思考和挂在嘴边的问题。那时候，他每天泡在实验室超过16小时。既见过凌晨四点的校园，也经历过半夜叫宿管阿姨开门的尴尬，这些，都留存在了唐文涛的记忆深处。</p><p>“由于钙钛矿电池通常在导电玻璃片上制作，而我已经刷了几千张玻璃片，实验室同仁就给我取了绰号叫‘片子手’。”唐文涛自曝，其间，为了解决自己实验过程中的疑惑，他还两次专程跑去日本国立物质材料研究所，学习他们的经验。</p><p><strong>厚积而薄发&nbsp;&nbsp;&nbsp;24岁以第一作者在《Nature》正刊发表论文</strong></p><p>功夫不负有心人。经过无数次的尝试和失败后，结合钙钛矿溶液成膜独有的特点和前期的工作，唐文涛和他的团队创新性地发现，通过胺类气体和钙钛矿合成原料间离子-分子间的质子交换和氢键作用原理，可以实现大面积、均匀、高质量钙钛矿薄膜的制备。</p><p>此项研究成果，实现了有效面积36平方厘米的钙钛矿电池模块的制备，在国际认证机构日本AIST获得了12.1%的认证效率。</p><p>2016年12月，这一模块的效率值作为首个钙钛矿太阳电池模块效率值被《Solar&nbsp;Cell&nbsp;Efficiency&nbsp;Tables》杂志正式收录，2017年10月，该成果也被发表在国际顶级期刊《Nature》（《自然》）正刊上。</p><p>这项工作是我国研究机构在钙钛矿电池领域第一次登上这份杂志，也是国内钙钛矿领域的第一篇《Nature》正刊。那一年，唐文涛24岁，和导师以共同第一作者在《Nature》正刊发表论文，也因此，唐文涛成为了交大最年轻的“Nature一作”。</p><p>唐文涛注意到，我国光伏装机量连年攀升，可是传统硅太阳能电池的核心技术和大部分的利润仍然掌握在少数欧美国家手中，成功实现低成本的钙钛矿光伏技术的商业化，是我国在光伏领域成功弯道超车，甚至实现平价上网的重要途径。</p><p>“钙钛矿很有可能真正代替传统能源被集成到屋顶、玻璃幕墙、汽车等地方。一旦这种集成得以实现，就可以真正做到‘零排放、零补贴、零污染’。”唐文涛说道。</p><p>为此，他还积极投身科研成果的转化，与课题组团队对接新能源科技企业，并在科技企业里担任高效钙钛矿模块项目负责人，合作研究现实问题。</p><p>在研究过程中，唐文涛申请了国家发明专利4项，通过新方法的开发，将36平方厘米的钙钛矿器件的效率进一步提升到了13.9%，并开发出面积更大效率更高的钙钛矿组件，这一结果获得了国际权威第三方机构Newport的认证，连续三次创造世界纪录。</p><p><strong>坚定的信念&nbsp;&nbsp;&nbsp;再苦再累始终保持着一颗孜孜不倦地追求的心</strong></p><p>在国际顶级期刊发文，似乎是学界的一个标杆。曾有一个好朋友问他，你这直博二年级就实现愿望了，接下来还想做什么？</p><p>对此，唐文涛的回答很坚定：“科研的车轮永远在飞速地前进，你不跟进就是在落后，并且世界纪录是需要去不断地冲击和打破的，现在创造的是一个世界纪录，以后还要做得更大，效率更高，去创造更多新的世界纪录，真正为钙钛矿电池的产业化、为祖国的新能源技术革新贡献自己的青春力量。”</p><p>作为青年学生，学习是第一要务。在浩瀚的学海里，唐文涛哪怕再苦再累也始终保持着一颗孜孜不倦地追求的心。在实验室、在聚光灯照不到的地方，唐文涛希望，所流的每一滴汗水，所付出的每一个细节，都应该继续传递“拼搏、奋斗、坚持、无悔”的精神，为实现大规模低成本太阳能发电的目标贡献力量。</p><p>“学习的本质就是面对未知，把不可能变为可能。”在唐文涛眼里，“impossible”（不可能）这个英文单词很好，因为每一个“impossible”都藏了一个“I&nbsp;am&nbsp;possible”（我是可能的），而年轻更是意味着一切皆有可能。</p><p>“要沿着自己的兴趣，一往无前地走下去，从容自信地走下去，脚踏实地地走下去。”唐文涛如是勉励自己，也这样鼓励学弟学妹们。</p><p><strong>对话</strong></p><p><strong>青年的价值只有在奋斗中才更显光芒</strong></p><p>记者：不少研究生都对发论文这件事甚为“苦恼”，作为上海交大最年轻的“Nature一作”，你能谈谈经验和体会吗？</p><p>唐文涛：在我看来，论文就是我们平时研究工作最终图文形式的输出。我们写一篇论文，跟音乐家创作一首歌曲类似，在前期探寻好的创新点和验证的过程中确实是曲折和痛苦的，需要查询大量的文献，实验中也要经历很多失败，并且不只是看了文献，做了实验就一定会有收获，还要反复思考分析，这些过程都是需要投入大量时间和精力的，反而在后期论文写作的时候是相对比较轻松的。</p><p>我是一个“工科学术男”，从大二开始我就钻进了实验室，踏踏实实看文献，做实验，学经验。如果没有此前长期的探索，就不可能有此后创新性的突破，青年的价值只有在奋斗中才更显光芒。</p><p>记者：“拼”是你的一种常态吗？会觉得辛苦吗？</p><p>唐文涛：不管是工作还是生活中，我总是喜欢专注于自己在做的事情，并尽量做好，我享受全身心投入到某件事情的状态。所以，我并不会觉得很苦，但“累”是肯定的。强健的体魄和放松的精神状态，才能让科研生活更高效、更持久。吉他和网球，便是我平衡科研工作的主要放松方式。</p><p>记者：心怀科技报国之志，对于这个目标，你觉得什么才是通达之径？</p><p>唐文涛：科技是强国之基。科技报国是我们每个科研工作者身上都肩负的使命和责任。对于我来说，我最想看到和实现的，还是与我研究相关的钙钛矿太阳能电池能早日实现产业化，为祖国的能源事业和人类的可再生能源需求贡献一份自己的力量。</p><p>要说通达之径，就是撸起袖子加油干，千千万万的科研工作者都贡献出自己的一份力量。</p></P>
+<INPUT type=checkbox value=0 name=titlecheckbox sourceid="<Source>SourcePh</Source>" style="display:none">
+</td>
+</tr>
+</table>
+
+
+<!--/enpcontent--></div>
+        </div></td>
+																</tr>
+															</table>
+															</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+											<td valign="top" width="11">　</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td valign="bottom" bgcolor="#e1f5ff">
+
+<table border="0" width="100%" id="table67" cellspacing="0" cellpadding="0" bgcolor="#e1f5ff">
+	<tr>
+		<td height="100%" valign="bottom"><br>
+		　<table border="0" width="100%" id="table68" cellspacing="0" cellpadding="0">
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#17529a" height="26" class="S9bo_g">
+				<p align="center"><font color="#FFFFFF"></font></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table></div>
+<div style="display:none"><a href="../../../paperindex.htm" id="paperName"></a>
+    青年报
+</div>
+<!-- -------------------------版面导航-------------->
+<div id=bmdh onMouseOver="document.getElementById('bmdh').style.display = 'block';" onMouseOut="document.getElementById('bmdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:220px; top:82px; filter:alpha(opacity=90);">
+  <table cellspacing=0 cellpadding=2 width="192px" border=0 bgcolor=#ffffff><tbody>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_1.html>
+        第A01版
+        ：头版</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A01/20190510A01_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_2.html>
+        第A02版：要闻</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A02/20190510A02_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_3.html>
+        第A03版
+        ：焦点</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A03/20190510A03_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_4.html>
+        第A04版：问政</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A04/20190510A04_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_5.html>
+        第A05版
+        ：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A05/20190510A05_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_6.html>
+        第A06版：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A06/20190510A06_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_7.html>
+        第A07版
+        ：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A07/20190510A07_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_8.html>
+        第A08版：城事</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A08/20190510A08_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_9.html>
+        第A09版
+        ：城事</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A09/20190510A09_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_10.html>
+        第A10版：财经</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A10/20190510A10_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_11.html>
+        第A11版
+        ：天下</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A11/20190510A11_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_12.html>
+        第A12版：广告</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A12/20190510A12_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_13.html>
+        第A13版
+        ：脸谱</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A13/20190510A13_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_14.html>
+        第A14版：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A14/20190510A14_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_15.html>
+        第A15版
+        ：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A15/20190510A15_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_16.html>
+        第A16版：专题 </a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/A16/20190510A16_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_41.html>
+        第B01版
+        ：乐业周刊</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B01/20190510B01_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_42.html>
+        第B02版：乐业·专题</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B02/20190510B02_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_43.html>
+        第B03版
+        ：乐业·专题</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B03/20190510B03_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_44.html>
+        第B04版：乐业·专题</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B04/20190510B04_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_45.html>
+        第B05版
+        ：乐业·专题</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B05/20190510B05_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_46.html>
+        第B06版：乐业·专题</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B06/20190510B06_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_47.html>
+        第B07版
+        ：乐业·专题</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B07/20190510B07_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_48.html>
+        第B08版：乐业·专题</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/10/B08/20190510B08_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+</tbody></table></div>
+<!-------bmdh版面导航END------>
+<!-- -------------------------标题导航-------------->
+<DIV  id=btdh onMouseOver="document.getElementById('btdh').style.display = 'block';" onMouseOut="document.getElementById('btdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:200px; top:82px; filter:alpha(opacity=90); background-color:#FFFFFF">
+  <ul id="artPList1">
+  
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp87654" href=./content_87654.html>要沿着兴趣一往无前地走下去</a></li> 
+  
+  </ul>
+</div>
+<!-- -------------------------标题导航 END -------------->
+<!--日历部分-->
+
+<div id="calendarBox"  style="left:50%; margin-left:295px; top:82px;">
+<form name=CLD>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td colspan=7 align="center" height="24" bgcolor="#ffffff">
+              <img src="../../../tplimg/d1.gif" width="7" height="11"  onclick="turnpage('SY',0)">
+               <select name=SY  onchange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=2006;i<2051;i++){document.write('<option>'+i+'</option>')}</script>
+              </select>
+               <img src="../../../tplimg/d.gif" width="7" height="11" onClick="turnpage('SY',1)">
+               <img src="../../../tplimg/d1.gif" width="7" height="11" onClick="turnpage('SM',0)">
+                <select name=SM onChange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=1;i<13;i++) document.write('<option>'+i+'</option>')</script>
+                </select>                          
+                <img src="../../../tplimg/d.gif" width="7" height="11" style="cursor:pointer;" onClick="turnpage('SM',1)">
+          </td>
+        </tr>
+        <tr height="22" bgcolor="#e8e8e8">
+          <td align="center"><b>日</b></td>
+          <td align="center"><b>一</b></td>
+          <td align="center"><b>二</b></td>
+          <td align="center"><b>三</b></td>
+          <td align="center"><b>四</b></td>
+          <td align="center"><b>五</b></td>
+          <td align="center"><b>六</b> </td>
+        </tr>
+        <script>
+            var gNum;
+            for(i=0;i<6;i++) {
+                document.write('<tr height="20">');
+                for(j=0;j<7;j++){
+                    gNum = i*7+j;
+                    document.write('<td align=center id="GD' + gNum +'" width="14%"><a id="CD' + gNum + '">');
+                    document.write('</a></td>');
+                }
+                document.write('</tr>');
+            } 
+      </script>
+   </table>
+</form>
+</div>
+ <span class="nav_1" style="display:none"><a href="#" class="14bai" onClick="goPrePeriod()">上一期</a>&nbsp;&nbsp;<a href="#" class="14bai" onClick="goNxtPeriod();" >下一期</a></span>
+
+</body>
+
+</html>
+
+<!--mpproperty <founder-date>
+2019-05-10
+</founder-date>
+<founder-author>
+青年报记者 刘昕璐
+</founder-author>
+<founder-title>要沿着兴趣一往无前地走下去
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle></founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle>以第一作者身份在《Nature》等杂志发表三篇论文的唐文涛：</founder-introtitle>
+<founder-pagepicurl>http://pc/qnb/images/2019-05/10/A06/20190510A06_brief.jpg</founder-pagepicurl>
+<founder-pagenum>A06</founder-pagenum>
+<founder-papername>青年报</founder-papername>
+<founder-nodeid>6</founder-nodeid> /mpproperty-->
+
+

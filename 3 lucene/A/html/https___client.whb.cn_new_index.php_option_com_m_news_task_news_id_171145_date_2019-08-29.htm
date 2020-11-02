@@ -1,0 +1,196 @@
+		<!doctype html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>文汇报-人工智能发展需要冒险精神</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+        <link href="https://client.whb.cn/new/components/com_m_news/include/css/style.css?v=0.01" rel="stylesheet" type="text/css"/>
+        <script src="https://client.whb.cn/new/components/com_m_news/include/js/jquery.min.js?v=0.01" type="text/javascript"></script>
+        <script src="/new/components/com_m_news/include/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 320;
+		var ua = navigator.userAgent;
+		var IS_Android = 0;
+		if (/(Android)/i.test(ua)) {
+			IS_Android = 1;
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3) {
+				document.write('<meta name="viewport" content="width=320, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+			}
+			else{
+				document.write('<meta name="viewport" content="width=320, target-densitydpi=device-dpi">');
+			}
+		}
+		else{
+			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+        <script type="text/javascript" language="javascript">
+			var oY, tY, cY, offSetPx;
+			var moveTimeOut;
+			window.onscroll = function () {
+				if (moveTimeOut) {
+					clearTimeout(moveTimeOut);
+				}
+				oY = document.getElementById("backBtn").offsetTop;
+				tY = getScrollTop(oY);
+				if (oY > tY+300) {
+					offSetPx = -1;
+				}
+				else {
+					offSetPx = 1;
+				}
+				moveTimeOut = setTimeout(moveBackBtn, 0);
+			}
+	
+			function moveBackBtn() {
+				cY = document.getElementById("backBtn").offsetTop;
+	
+				if (offSetPx > 0) {
+					if (cY >= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY + 10 + "px";
+	
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+				else {
+					if (cY <= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY - 10 + "px";
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+			}
+	
+			function getScrollTop() {
+				var scrollPos;
+				if (window.pageYOffset) {
+					scrollPos = window.pageYOffset;
+				}
+				else if (document.compatMode && document.compatMode != 'BackCompat')
+				{ scrollPos = document.documentElement.scrollTop; }
+				else if (document.body) { scrollPos = document.body.scrollTop; }
+				return scrollPos;
+			}
+			
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: '/new/index.php?option=com_m_news&getWxConfig',
+					data: {
+						getWxConfig: '1',
+					},
+					dataType: 'json',
+					success: function(signPackage) {
+						wx.config({
+							debug: false,
+							appId: signPackage["appId"],
+							timestamp: signPackage["timestamp"],
+							nonceStr: signPackage["nonceStr"],
+							signature: signPackage["signature"],
+							jsApiList: [
+								'checkJsApi',
+								'onMenuShareTimeline',
+								'onMenuShareAppMessage'
+							]
+						});
+					},
+					error: function(xhr, type, error) {
+					}
+				});
+			});
+		</script>
+        </head>
+        <body>
+        <a href="javascript:history.go(-1);" class="backBtn" style="display: none; z-index: 100; opacity: 0.8; top:300px; right:5px; padding: 0px; width: 40px; height: 40px; background-image: url(https://client.whb.cn/new/components/com_m_news/include/images/BackBtn1.png);position:absolute;" id="backBtn"></a>
+        <div class="content">
+        	<div class="menu1">
+            <h1>2019年8月29日   智联世界 无限可能  </h1>
+            </div>
+            <div style="clear:both;">
+            						<script type="text/javascript">
+							wx.ready(function () {
+								// 在这里调用 API
+								wx.onMenuShareAppMessage({
+								  title: '人工智能发展需要冒险精神',  
+								  desc: '',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2019-08-29&id=171145&p=3',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg', 
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								});
+								wx.onMenuShareTimeline({  
+							      title: '人工智能发展需要冒险精神',  
+								  desc: '文汇报',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2019-08-29&id=171145&p=3',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg',  
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								}); 
+							});
+						</script>
+						<div align="left" style="padding-bottom: 10px">
+							<div style="background:#F5F5F5; padding: 12px;">
+																<div style="font-weight:600;font-size:24px;width: 296px;word-wrap:break-word">人工智能发展需要冒险精神</div>
+							</div>
+													</div>
+						<div style="border-bottom: 1px solid #CECECE; clear: both; margin-bottom: 5px;"></div>
+						<div align="center" style="padding: 0px 12px;">
+														<div align="center" style="margin:0px 0px 10px 0px;width:100%;">
+									<img src="/resfiles/2019-08/28/1566940510596-30828_p12_b.jpg"  style="border:1px solid #666;" width="296px;"/>
+									<div style="clear:both; width:100%; margin:0px auto;word-break: break-all;" align="left">
+									▲2019世界人工智能大会上海西岸会场各项准备工作已就绪。  本报记者 赵立荣摄									</div>
+								</div>
+														<div style="font-size:14px; text-align: left;word-break: break-all;">
+							<img src="https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg" style="position:absolute;left:-1000px;top:-1000px;"/>
+							    <p><p>■嘉宾：毛军发（中国科学院院士、上海交通大学副校长、上海市人工智能战略咨询专家委员会成员）</p><p>■采访：姜澎（本报记者）</p><p>盘点人工智能（AI）产业领域“独角兽”企业，创始人中有很大比例来自上海交通大学。作为上海市人工智能战略咨询专家委员会成员之一，中国科学院院士、上海交通大学副校长毛军发在接受记者专访时表示：“上海的人工智能发展需要更多‘冒险家’，不论是在基础研究领域，还是在产业发展方面。”</p><p>上海拥有人工智能产业发展独特优势</p><p>在毛军发看来，人工智能至今尚未形成一个独立的产业，更多时候是以“人工智能+”的形式辅助其它产业迈向高精度、高效率发展。正在建设人工智能高地的上海，有诸多大学、科研院所，以及和人工智能对接的产业，作为“+”后面的丰富内容，这些资源凸显着上海发展人工智能的独特优势。</p><p>“生物医疗、交通、金融……这些都是人工智能可以服务的优势产业，也是上海的人才聚集高地。”毛军发说，去年以来，上海各大高校整合了各优势学科，形成了一批人工智能专业和研发平台，这将为人工智能发展提供充沛的人才和科研支撑。</p><p>以科技部今年发布的创新2030—“新一代人工智能”重大项目为例，上海共获得四项，其中上海交通大学独得两项。同时，上海交大还承担了“智能法庭”等五个国家重点研发专项，教育部人工智能重点实验室不久前也刚刚落户上海交大。</p><p>“为人工智能产业提供基础研发及人才支持，是高校的职责使命所在。”毛军发说，沪上高校近来纷纷出台政策吸引优秀科学家加盟，比如上海交大引进了一批包括卢策吾（全球35位35岁以下学术新星荣誉获得者）在内的青年科学家。瞄准培养人工智能顶尖人才，“吴文俊人工智能荣誉博士研究生班”新学期开班在即，好几位获得海外大学全额资助的学生放弃出国机会选择入读吴文俊班。</p><p>在量变积累基础上，是时候实现质的突破了</p><p>毛军发认为，我国人工智能应用场景非常丰富，“在应用领域，我们与发达国家间的差距并不大，但基础研究领域的创新需要更加努力。而如果没有鼓励创新、宽容失败的环境，没有敢于‘冒险’的科学家，则很难在基础研究领域突破”。</p><p>目前人工智能的“能力”主要依靠算法来实现，但现有算法可挖掘的潜力已经不多了，且常用的深度学习算法都是由发达国家提出的。毛军发坦言，这些算法已经到了需要创新和突破的时候了，目前全球人工智能领域的竞争焦点大多数集中在此。</p><p>他认为，在人工智能的早期发展阶段，主要是应用带动基础研究的发展，而今已经过了应用驱动的阶段。</p><p>“我国人工智能应用场景比较丰富，且拥有庞大数据，比如超大城市的数据、医疗数据等；我们的算力与发达国家也比较接近，算法亦正在迎头赶上；中国学者贡献了三分之一的全球人工智能相关论文……现在似乎到了由追求数量向追求质量转变，以实现质的突破的时候了。”毛军发告诉记者，目前上海吸引了大量人工智能人才，沪上高校聚集了多个相关学科领域学者，这些研发力量需要进一步整合，鼓励更多具有冒险精神的科学家和创业者开展协同攻关和多元探索。</p><p>敢于做一些别人不愿或不敢做的事</p><p>在2019世界人工智能大会上，上海交大教授俞凯即将推出的思必驰人工智能慢病管理系统已受到众多专家关注。五年前，以俞凯实验室为依托，上海交大在苏州设立人工智能研究院，主攻语音识别等技术；去年，该校又在宁波设立人工智能宁波研究院。毛军发说，随着长三角一体化进程的推进，上海人工智能产业将开启更大发展空间。</p><p>目前，不少上海青年科学家的人工智能相关成果已在本地及长三角地区转化落地，比如上海交大创业企业思必驰如今估值已超过10亿美元。“在高校和科研机构还有大量类似成果，这些来自科学家的创新成果会激发更多业界创新。”毛军发说，今年上海交大联手闵行区政府、临港集团和博康集团，联合成立上海人工智能研究院有限公司，希望能够建成研发与转化功能型平台，让更多人工智能相关成果在上海落地转化。</p><p>“其实，即便是基础研究的发展，也必须有产业的支持，人工智能尤其如此。”毛军发以与人工智能发展密切相关的芯片技术为例，芯片总是在应用过程中不断改进的，芯片应用的量越大，暴露的问题就越多，改进就越快，成本也就越低，正是大量的应用推动芯片产业形成一个正向的循环。反之，如果产业不够发达，与人工智能密切相关的支柱性技术则很难加以改进。</p><p>“过去我们错过了一些机会，如今国家下了很大决心发展人工智能产业，上海也以此为己任，且拥有基础研究和产业的综合优势，但最终要实现创新发展，还需要政府、科研机构和产业界，以更大的勇气投身创新，敢于冒险做一些别人不愿做或不敢做的事情。”毛军发说。</p></p>							<img src="https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg" style="position:absolute;left:-1000px;top:-1000px;"/>
+						</div>
+					  </div>
+					</div>
+				            </div>
+            <br style="clear:both"/>
+        </div><!--content-->
+        </body>
+        <script type="text/javascript">
+			var date = "2019-08-29";
+			var name,value,i;
+			var str=location.href;
+			var num=str.indexOf("?");
+			str=str.substr(num+1);
+			var arrtmp=str.split("&");
+			var backurl = "";
+			for(i=0;i < arrtmp.length;i++){
+				num=arrtmp[i].indexOf("=");
+				if(num>0){
+					name=arrtmp[i].substring(0,num);
+					value=arrtmp[i].substr(num+1);
+					if(name=="p"){
+						backurl = "index.php?option=com_m_news&date="+date+"&p="+value;
+						$(".backBtn").attr("href", "index.php?option=com_m_news&date="+date+"&p="+value);
+					}
+				}
+			}
+			function goback(){
+				window.location.href = backurl;
+				console.log("不是首页");
+				if(IS_Android){
+					console.log("android");
+					android.goback(1);
+				}
+				else{
+					console.log("ios");
+					return 1;
+				}
+			}
+			//setTimeout("goback();", 3000);
+		</script>
+        </html>
+		

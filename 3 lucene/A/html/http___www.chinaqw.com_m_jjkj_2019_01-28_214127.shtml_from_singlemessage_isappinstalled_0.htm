@@ -1,0 +1,723 @@
+<!DOCTYPE HTML>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="robots" content="all" />
+    <title>上海政协委员为优化服务海外人才“支招”-中国侨网</title>
+    <meta name="keywords" content="上海,上海市,人才,海外,致公党" />
+    <meta name="description" content="这位委员认为，近年来，上海在关于海归与外籍人才的引进与服务举措有了极大改善，但是仍有较大的提升空间。" />
+    <!--[894,5,214127] published at 2019-01-28 11:19:53 from #10 by 李明阳 -->
+    <link href="/part/wap/index.css" rel="stylesheet" type="text/css" />
+    <link href="/part/wap/indexadd.css" rel="stylesheet" type="text/css" />
+    <script src="/js/zepto.js"></script>
+
+    <style>
+        .list_jrzr{height:auto;}
+        .qw_list_title {display:none;}
+        .content_s_right{    text-align: right;  margin-bottom: 15px;}
+    </style>
+    <script src="/js/jquery1.11.3.js"></script>
+    <script>
+        // JavaScript Document
+
+        $.fn.toggle = function( fn, fn2 ) {
+            var args = arguments,guid = fn.guid || $.guid++,i=0,
+                    toggle = function( event ) {
+                        var lastToggle = ( $._data( this, "lastToggle" + fn.guid ) || 0 ) % i;
+                        $._data( this, "lastToggle" + fn.guid, lastToggle + 1 );
+                        event.preventDefault();
+                        return args[ lastToggle ].apply( this, arguments ) || false;
+                    };
+            toggle.guid = guid;
+            while ( i < args.length ) {
+                args[ i++ ].guid = guid;
+            }
+            return this.click( toggle );
+        };
+
+        $(function(){
+            $(".more").toggle(function(){
+                // $("#daohang_ul").animate({height:"90px"},0);
+                $("#navlayer").slideDown("fast");
+            },function(){
+                //$("#daohang_ul").animate({height:"30px"},0);
+                $("#navlayer").slideUp("fast");
+            })
+
+            $(".daohang").toggle(function(){
+                // $("#daohang_ul").animate({height:"90px"},0);
+                $("#fnavlayer").show("");
+                $("footer i a em.dhem").show("");
+                $("#fnavlayer_link").hide("");
+                $("footer i a em.linkem").hide("");
+
+            },function(){
+                //$("#daohang_ul").animate({height:"30px"},0);
+                $("#fnavlayer").hide("");
+                $("footer i a em.dhem").hide("");
+
+            })
+
+            $(".linkwap").toggle(function(){
+                // $("#daohang_ul").animate({height:"90px"},0);
+                $("#fnavlayer_link").show("");
+                $("footer i a em.linkem").show("");
+                $("#fnavlayer").hide("");
+                $("footer i a em.dhem").hide("");
+
+            },function(){
+                //$("#daohang_ul").animate({height:"30px"},0);
+                $("#fnavlayer_link").hide("");
+                $("footer i a em.linkem").hide("");
+
+            })
+
+            $(".load_more1").click(function(){
+                $(this).parent().find(".list_ulc").css({"height":"auto"});
+                $(this).parent().find(".list_jrzr").css({"height":"auto"});
+                $(this).parent().find(".list_ulc1").css({"height":"auto"});
+                $(this).hide();
+                $(this).next().show();
+            })
+            $("#closeapp").click(function(){
+                $("#bottomapp").hide("slow");
+
+            })
+
+            var averttwx = setInterval(initwx,5000);
+            function initwx(){
+                $("#cns_topappwx").hide("slow");
+                // $('#topapp').hide("slow");
+            }
+
+        })
+    </script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+        <img src='//www.chinaqw.com/pic/pic300.jpg' alt="关注侨网微信"/>
+    </div>
+
+</head>
+
+<body id="backtop">
+
+<div class="backtop" style="display:none;"><a href="#backtop"><img src="https://i3.chinanews.com/2014/wap/images/top.png" height="37" alt="返回顶部"/></a></div>
+<script language="javascript">
+    function goTop(){
+        var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+        if($(window).scrollTop()>(windowHeight*1.5)){
+            $(".backtop").fadeIn("slow");
+        }else{
+            $(".backtop").fadeOut("slow");
+        }
+    }
+    $(window).scroll(function(){goTop();});
+    $(window).resize(function(){goTop();});
+</script>
+<script type="text/javascript">
+
+    if(window.location.href.indexOf('f=qbapp')>=0)
+    {
+        $(document).ready(function(e) {
+            $("#theader").remove();
+            $("#pl").css("display","none");
+            $("#jctj").remove();
+            $("#b_ban").remove();
+            $("#fenx_box").remove();
+            $(".cnsnav").remove();
+            $("#navlayer").remove();
+            $(".xzqb").show();
+            $(".qbhead-right-button").val("立即打开");
+            $(".content_title h1").css("fontSize","1.4rem");
+            $(".content_title time").css("fontSize","0.9rem");
+            $(".content_context p").css("fontSize","1.1rem");
+        });
+    }else if(window.location.href.indexOf('f=qbwap')>=0){
+        $(document).ready(function(e) {
+            $("#theader").remove();
+            $("#pl").remove();
+            $("#jctj").remove();
+            $("#b_ban").remove();
+            $("#fenx_box").remove();
+            $("#navlayer").remove();
+            $(".xzqb").show();
+            $("#appxg").remove();
+        });
+    }else{
+
+        $(document).ready(function(e) {
+            $("#appxg").remove();
+            $("#theader").show();
+            $("#pl").show();
+            $("#jctj").show();
+            $("#b_ban").show();
+            $("#fenx_box").show();
+            $("#loadmore").remove();
+        });
+
+    }
+</script>
+
+<header class="content_top" id="theader" style="display:none;">
+    <div class="arrowl"><a onClick="javascript :history.back(-1);"><img src="https://i2.chinanews.com/2014/wap/images/arrow_l.png" alt="dropdown" height="22"></a></div>
+    <div class="context"><a href="/m/">侨网</a>  &#8226; <a>正文</a></div>
+    <div class="arrowr"><a href="#" class="more"><img src="https://i2.chinanews.com/2014/wap/images/more.png" alt="dropdown" height="23"></a></div>
+</header>
+
+<div style="display: none" class="xzqb">
+    <style>
+ @media screen and (max-width:768px){
+            #qiaobao_head{height: 62px;background-color: #ebebeb;    position: fixed;  bottom: 0;  width: 100%;  z-index: 1000;}
+            .qbhead{padding: 10px 12px;}
+            .qbhead-left{float: left;overflow: hidden;}
+            .qbhead-img{float: left;}
+            .qbhead-ul{float: left;margin-left: 12px;height: 44px;}
+            .qbhead-li1{font-size: 20px;color: #434343;margin-top: -2px;}
+            .qbhead-li2{font-size: 14px;color: #a0a0a0;}
+            .qbhead-right{float: right;overflow: hidden;}
+            .qbhead-right-button{    height: 35px;width: 87px;color: #ff0000;font-size: 16px;border: 1px solid #ff0000;border-radius: 6px;background-color: #ebebeb;}
+        }
+        #qiaobao_head{height: 62px;background-color: #ebebeb;    position: fixed;  bottom: 0;  width: 100%;  z-index: 1000;}
+        .qbhead{padding: 10px 12px;}
+        .qbhead-left{float: left;overflow: hidden;}
+        .qbhead-img{float: left;}
+        .qbhead-ul{float: left;margin-left: 12px;height: 44px;}
+        .qbhead-li1{font-size: 20px;color: #434343;margin-top: -2px;}
+        .qbhead-li2{font-size: 14px;color: #a0a0a0;}
+        .qbhead-right{float: right;overflow: hidden;}
+        .qbhead-right-button{    height: 35px;width: 87px;color: #ff0000;font-size: 16px;border: 1px solid #ff0000;border-radius: 6px;background-color: #ebebeb;    margin-top: 4px;}
+.qbhead-img img{border-radius: 6px;}
+body{margin-bottom:60px}
+</style>
+<div id="qiaobao_head" style="">
+    <ul class="qbhead">
+        <li class="qbhead-left">
+            <div class="qbhead-img"><img src="/upload_pic/1/201703/21/U674P894T1D1434F2DT20170321151831.jpg" width="40px" height="40px" alt="侨宝客户端"></div>
+            <ul class="qbhead-ul">
+                <li class="qbhead-li1">侨宝</li>
+                <li class="qbhead-li2">为侨服务 尽在侨宝</li>
+
+            </ul>
+        </li>
+        <li class="qbhead-right">
+            <a href="/m/qiaobao/app.shtml"><input type="button" class="qbhead-right-button" value="立即打开"></a>
+        </li>
+    </ul>
+</div>
+</div>
+
+<div class="cnsnav">
+    <div class="navlayer" id="navlayer">
+        <div class="cnsnav">
+            <ul id="">
+                <li class="selimg"><a href="/m/">首页</a></li>
+                 
+
+<li><a href="/m/hqhr/">华人</a></li>
+<li><a href="/m/gqqj/">侨务</a></li>
+<li><a href="/m/zhwh/">文教</a></li>
+<li><a href="/m/jjkj/">经济</a></li>
+<li><a href="/m/hqly/">出境</a></li>
+<li><a href="/m/hdfw/">服务</a></li>
+<li><a href="/m/sp/">视频</a></li>
+<li><a href="http://weibo.com/5137261048">@侨网</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="channltt_con">
+
+    <div class="content_title" id="fromapp">
+        <h1 id='test0511'>上海政协委员为优化服务海外人才“支招”</h1>
+        <div class="subtitle">
+            <time>2019年01月28日 11:19　来源：<a href='http://www.chinaqw.com/' style='color:#666;font-weight:normal;'>中国侨网</a> </time>
+        </div>
+    </div>
+
+    <div class="content_context">
+
+        <div class="spss"></div>
+
+<p>　　中国侨网上海1月28日电 (记者 许婧 李姝徵)正在此间举行的上海市政协十三届二次会议上，海外人才如何在上海“引得进、留得住、育得出、用得好”成为委员们关注的热点话题之一。</p>
+
+<p>　　上海交通大学凯原法学院副院长程金华介绍说，据不完全统计，目前在沪就业创业的外国人有21.5万人，集聚外企超过8万家、跨国企业的地区总部665家、外资研发中心440家，高度国际化已然是上海整个城市高质量发展的重要标志之一。同时，大量的海外留学归国人员在沪创业就业，极大地提升了上海的全球竞争力。</p>
+
+<p>　　这位委员认为，近年来，上海在关于海归与外籍人才的引进与服务举措有了极大改善，但是仍有较大的提升空间。他建议，上海在进一步多元化、多渠道拓展海外人才的引进举措的同时，进一步简化人才引进、落户相关的外国学历工作证书等认证工作，选取某个区为试点，探索推进“一站式窗口”缩短审批时长。</p>
+
+<p>　　他特别提到，建议加快推进出国审批流程的简化。“上海科创中心要想具有全球影响力，必须让上海科研工作者能有在全球同行中充分切磋交流的机会，而目前部分单位繁琐的出国审批手续大大制约了这种国际交流机会，建议进一步落实细化2016年5月国家出台的《关于加强和改进教学科研人员因公临时出国管理工作的指导意见》，赋予科研院校因公临时出国管理方面更多自主权”。</p>
+
+<p>　　上海市政协委员、上海春秋发展战略研究院秘书长梁顺龙发现，当前上海对海归人才数量、结构特点、人才需求的数据统计不够全面，且市、区政府部门之间也缺少数据共享和交流机制，他认为，这些不仅不利于人才扶持政策的落实，也无法做到精确的预测及预警紧缺人才，了解上海的人才需求状况。</p>
+
+<p>　　梁顺龙据此建议，完善海归人才数据库，在完善海归人才数据库基础上，开展各种专业海归人才的招聘会、推介会、交流会；支持企业引进、使用海归人才；加大对海归人才在上海创业进行补助、补贴；帮助海归人才充分发挥专业所长，把上海打造成海归人才就业、孵化、发展的摇篮和高地，促进海归人才对上海的归属、融入，进一步推动上海科创中心建设。</p>
+
+<p>　　致公党上海市委关注到海外人才在“一带一路”建设中的作用。致公党上海市委提出，应发挥海外人才作用，为“一带一路”提供法律服务支持，其中，在建立海外“一带一路”法律服务人才培养基地时，应充分发挥海外华侨的作用。</p>
+
+<p>　　致公党上海市委相关负责人表示，海外华人华侨具有“双重文化”共识。在建立海外“一带一路”法律服务人才培养基地时，可委托当地的海外华侨组织或协会牵头设立、组织此类海外人才培养基地。首先，海外华侨熟悉当地的政策法规，拥有一定的人脉资源，能够有效降低设立的难度，拓宽建立此类基地的渠道；在基地建立后寻求资金支持时，海外华侨能够积极联络、游说当地的企业、政府组织或基金会组织，为海外“一带一路”法律服务人才培养基地争取多元化的资金来源以及合法的税收优惠政策等；在基地的宣传上，海外华侨能够与当地的其他组织协商、合作，发挥民间力量，扩大海外“一带一路”法律服务人才培养基地在当地的影响力。</p>
+
+<p>　　民建上海市委注意到海外人才与上海科创中心建设的关系。上海市政协委员、民建会员、上海市信息投资股份有限公司副总经理张琦说，面对加快建设具有全球影响力的科技创新中心的紧迫性和严峻性，在科创人才方面还存在一些短板和薄弱环节，其中之一就是国际化人才吸引力不足。</p>
+
+<p>　　张琦建议，上海应构建市场化人才服务体系。围绕引进、留用、用好科创人才的需要，建设科创人才服务中心，对人才测评、人才流动等人才服务行业进行培育扶持，让市场主体在人才发现、评价中发挥更为重要的作用；同时，真正形成政府制订政策、行业组织搭建平台，市场主体对接服务的科创人才服务网络。例如，可试点由人力资源公司带头开展人才资质及外籍人士来华工作的咨询服务，为各类企业特别是中小型科创企业引进海外人才提供专业化的“套餐式”服务，并组织专业猎头企业为国内企业提供与海外研究机构、人才的对接服务，大力挖掘海外高层次专家人才。(完)</p>
+        <div class="left_name">  </div>
+        <div class="fenx_box " id="fenx_box" style="display:none;"><div class="bshare-custom">
+            <!--[894,7,23] published at 2020-06-25 09:11:54 from #10 by 杨翼峰--> 
+<span>分享</span>
+
+<a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a>
+<a title="分享到QQ空间" class="bshare-qzone"></a>
+<a title="分享到腾讯微博" class="bshare-qqmb"></a>
+
+        </div>
+            <script type="text/javascript" charset="utf-8" src="//static.bshare.cn/b/buttonLite.js#uuid=7bd5e381-914d-47fe-be18-9c61404c93b8&style=-1&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="//static.bshare.cn/b/bshareC0.js"></script>
+
+            <style>
+
+                .fenx_box{width: 160px;height: 27px;}
+                .bshare-custom .bshare-qzone{
+                    background:url(//www.chinanews.com/m/fileftp/2015/06/2015-06-01/U412P885T32D2340F498DT20150603161119.png) no-repeat;
+                    background-size:22px 20px;
+                    margin-left:7px;
+
+                }
+                .bshare-custom a{ height:20px;margin-right:0px;}
+                .fenx_box span {
+                    float: left;
+                    padding: 0 15px;
+                }
+                .bshare-custom .bshare-weixin{
+                    background:url(https://i2.chinanews.com/2014/wap/images/wx.png) no-repeat;
+                    background-size:19px 19px;
+                    margin-left:2px;
+                }
+                .bshare-custom .bshare-qqxiaoyou{
+                    background:url(https://i2.chinanews.com/2014/wap/images/pyq.png) no-repeat;
+                    background-size:19px 19px;
+                    margin-left:2px;
+                }
+                .bshare-custom .bshare-qqmb{
+                    background:url(https://i2.chinanews.com/2014/wap/images/qq.png) no-repeat;
+                    background-size:17px 20px;
+                    margin-left:9px;
+                }
+                .bshare-custom .bshare-sinaminiblog{
+                    background:url(https://i2.chinanews.com/2014/wap/images/sina.png) no-repeat;
+                    background-size:20px 18px;
+                    margin-top:1px;
+                }
+                .fenx_box span{padding:1px 11px 0 14px;}
+            </style>
+        </div>
+
+    </div>
+    <style>
+        #appxg{padding: 0 10px}
+        .xgyd h2{
+            color: #0491ed;
+            padding-left: 16px;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            background: url(//www.chinaqw.com/upload_pic/1/201703/14/U674P894T1D1423F7DT20170315150015.gif) no-repeat 3px center;
+        }
+        .xgyd .xgydjctj{margin-top:15px;}
+        .xgyd li{
+            height: 6rem;
+            border-bottom: 1px solid #EBEBEB;
+            clear: both;
+            padding: 13px 0 10px 0;
+            position: relative;
+        }
+        .xgyd li:first-child{
+            padding-top: 2px;
+        }
+        .xgyd li h4{
+            overflow: hidden;
+            height: 1.6rem;
+            line-height: 1.6rem;
+        }
+        .xgyd li h4 a{
+            color: #000;
+            font-size: 1.1rem;
+        }
+        .fbsj {
+            font-size: .8rem;
+            line-height: .8rem;
+            color: #000;
+            position: absolute;
+            bottom: 18px;
+            left: 0;
+        }
+        #appxg .zeropic {
+            height: 3.6rem;
+        }
+        #appxg .onepic h4{height: 3.2rem}
+        .onepic .lt {
+            width: 60%;
+            float: left;
+        }
+        .onepic .lt p,.zeropic p{
+            line-height: 1rem;
+            color: #575757;
+            font-size: .8rem;
+            height: 2rem;
+            overflow: hidden;
+        }
+        .onepic .rt {
+            width: 39%;
+            height: 100%;
+            float: right;
+            margin-top: .1rem;
+        }
+        .onepic .rt img {
+            width: 100%;
+            height: 95%;
+        }
+        #appxg .twopic{height: 8rem}
+        .morepic{
+            height: 5rem;
+            width: 100%;
+            padding-top: 8px;
+        }
+        .morepic img {
+            float: left;
+            margin-right: 4%;
+            width: 48%;
+            height: 100%;
+        }
+        #appxg .threepic{height: 9rem}
+        .morepic img:last-child,.threepic .morepic img:last-child{
+            margin-right: 0;
+        }
+        .threepic .morepic img{
+            width: 31%;
+            margin-right: 10px;
+        }
+        .threepic .morepic{
+            height: 5rem;
+        }
+        #loadmore,#loaded{
+            display: none;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 10px 20px;
+            width: 90px;
+            margin: 0 auto 93px;
+        }
+        #loadmore img{
+            float: left;
+        }
+        #loadmore p{
+            float: right;
+            color: #000;
+        }
+        #qiaobao_head{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .content_context p{
+            padding-top: 0;
+        }
+        .newslogo{color:#0491ed}
+        #qiaobao_head{height: 62px}
+        .qbhead{
+            padding: 10px 12px;
+        }
+        .qbhead-right-button{margin-top: 4px;}
+    </style>
+    <div id="appxg">
+        <div class="xgyd">
+            <h2 class="xgydtt">相关阅读</h2>
+            <ul class="xgydlist">
+            </ul>
+        </div>
+        <div class="xgyd">
+            <h2 class="xgydjctj">精彩推荐</h2>
+            <ul class="jctjlist">
+            </ul>
+        </div>
+    </div>
+    <div id="loadmore"><img src="//www.chinaqw.com/upload_pic/1/201701/12/U674P894T1D1225F11DT20170112160628.gif"
+                            alt="loadmore" width="20" height="20"/><p>加载更多</p></div>
+    <input type="hidden" name="pageNo" id="pageNo" value="1" />
+    <input type="hidden" name="pageNo" id="zwid" value="214127" />
+</div>
+
+<script>
+    var loading=true;
+    function xgxw(num){
+        $.ajax({
+            url: "https://qb.chinaqw.com/api/wapRelatedNews?id="+num,
+            type: 'GET',
+            dataType: 'JSONP',
+            success: function (data) {
+                var html = "";
+                var isLastPage=data.isLastPage;
+                for(var i=0;i<data.contentlist.length;i++){
+                    var title = data.contentlist[i].title;
+                    var url = data.contentlist[i].wapUrl+"?f=qbapp";
+                    var img = data.contentlist[i].img;
+                    var source = data.contentlist[i].source+" ";
+                    var pubtime = data.contentlist[i].pubtime;
+                    var myDate = new Date();
+                    var year=myDate.getFullYear();
+                    var month=myDate.getMonth()+1;
+                    var day=myDate.getDate();
+                    month =(month<10 ? "0"+month:month);
+                    var nowday=month+"-"+day;
+                    var pubdate=pubtime.split(" ");
+                    var pubyear=pubdate[0].split("-")[0];
+                    var pubmonth=pubdate[0].split("-")[1];
+                    var pubday=pubdate[0].split("-")[2];
+                    var pubhour=pubdate[1].split(":")[0];
+                    var pubmin=pubdate[1].split(":")[1];
+                    if(year==pubyear){
+                        if(nowday==(pubmonth+"-"+pubday)){
+                            pubtime=pubhour+":"+pubmin
+                        }
+                        else{
+                            pubtime=pubmonth+"-"+pubday
+                        }
+                    }
+                    else{
+                        pubtime=pubyear+"-"+pubmonth+"-"+pubday
+                    }
+                    var type = data.contentlist[i].type;
+                    if((type=='zw'&&img!='')||type=='sp'||type=='zt'){
+                        if(type=='sp'){
+                            html=html+'<li class="onepic"> <div class="lt"> <h4><a href="'+url+'">'+title+'</a></h4> <span class="fbsj">'+'<span class="newslogo">视频 </span>'+source+pubtime+'</span></div><div class="rt"><a href="'+url+'"><img src="'+img+'" alt="'+title+'"></a></div></li>'
+                        }
+                        else if(type=='zt'){
+                            html=html+'<li class="onepic"> <div class="lt"> <h4><a href="'+url+'">'+title+'</a></h4> <span class="fbsj">'+'<span class="newslogo">专题 </span>'+source+pubtime+'</span></div><div class="rt"><a href="'+url+'"><img src="'+img+'" alt="'+title+'"></a></div></li>'
+                        }
+                        else{
+                            html=html+'<li class="onepic"> <div class="lt"> <h4><a href="'+url+'">'+title+'</a></h4> <span class="fbsj">'+source+pubtime+'</span></div><div class="rt"><a href="'+url+'"><img src="'+img+'" alt="'+title+'"></a></div></li>'
+                        }
+                    }
+                    else if(type=='zw' && img==''){
+                        html=html+'<li class="zeropic"><h4><a href="'+url+'">'+title+'</a></h4><span class="fbsj">'+source+pubtime+'</span></li>'
+                    }
+                    else if(type=='llt'){
+                        var src=imgs.split("|");
+                        html=html+'<li class="twopic"><h4><a href="'+url+'">'+title+'</a></h4><div class="morepic"><a href="'+url+'"><img src='+src[0]+' alt="'+title+'"><img src='+src[1]+' alt="'+title+'"></a></div><span class="fbsj">'+source+pubtime+'</span></li>'
+                    }
+                    else if(type=='tj'){
+                        var src=imgs.split("|");
+                        html=html+'<li class="threepic"><h4><a href="'+url+'">'+title+'</a></h4><div class="morepic"><a href="'+url+'"><img src='+src[0]+' alt="'+title+'"><img src='+src[1]+' alt="'+title+'"><img src='+src[2]+' alt="'+title+'"></a></div><span class="fbsj">'+'<span class="newslogo">图集 </span>'+source+pubtime+'</span></li>'
+                    }
+                }
+                if(html==""){
+                    $(".xgydtt").remove()
+                }
+                else{
+                    $(".xgydlist").append(html);
+                }
+            },
+            error : function(){
+                loading=true;
+                alert("查询数据出错啦，请刷新再试");
+            }
+        });
+    }
+    function jctj(id,num){
+        $.ajax({
+            url: "https://qb.chinaqw.com/api/wapMoreNews?id="+id+"&pageSize=5&pageNum="+num+"",
+            type: 'GET',
+            dataType: 'JSONP',
+            success: function (data) {
+                var html = "";
+                var islastpage=data.islastpage;
+                if(islastpage=="false"){
+                    loading=true;
+                    $("#loadmore").show();
+                }
+                else if(islastpage=="true"){
+                    loading=false;
+                    $("#loadmore").hide();
+                }
+                for(var i=0;i<data.contentlist.length;i++){
+                    var title = data.contentlist[i].title;
+                    var url = data.contentlist[i].wapUrl+"?f=qbapp";
+                    var img = data.contentlist[i].img;
+                    var imgs = data.contentlist[i].imgs;
+                    var source = data.contentlist[i].source+" ";
+                    var pubtime = data.contentlist[i].pubtime;
+                    var myDate = new Date();
+                    var year=myDate.getFullYear();
+                    var month=myDate.getMonth()+1;
+                    var day=myDate.getDate();
+                    month =(month<10 ? "0"+month:month);
+                    var nowday=month+"-"+day;
+                    var pubdate=pubtime.split(" ");
+                    var pubyear=pubdate[0].split("-")[0];
+                    var pubmonth=pubdate[0].split("-")[1];
+                    var pubday=pubdate[0].split("-")[2];
+                    var pubhour=pubdate[1].split(":")[0];
+                    var pubmin=pubdate[1].split(":")[1];
+                    if(year==pubyear){
+                        if(nowday==(pubmonth+"-"+pubday)){
+                            pubtime=pubhour+":"+pubmin
+                        }
+                        else{
+                            pubtime=pubmonth+"-"+pubday
+                        }
+                    }
+                    var type = data.contentlist[i].type;
+                    if((type=='zw'&&img!='')||type=='sp'||type=='zt'){
+                        if(type=='sp'){
+                            html=html+'<li class="onepic"> <div class="lt"> <h4><a href="'+url+'">'+title+'</a></h4> <span class="fbsj">'+'<span class="newslogo">视频 </span>'+source+pubtime+'</span></div><div class="rt"><a href="'+url+'"><img src="'+img+'" alt="'+title+'"></a></div></li>'
+                        }
+                        else if(type=='zt'){
+                            html=html+'<li class="onepic"> <div class="lt"> <h4><a href="'+url+'">'+title+'</a></h4> <span class="fbsj">'+'<span class="newslogo">专题 </span>'+source+pubtime+'</span></div><div class="rt"><a href="'+url+'"><img src="'+img+'" alt="'+title+'"></a></div></li>'
+                        }
+                        else{
+                            html=html+'<li class="onepic"> <div class="lt"> <h4><a href="'+url+'">'+title+'</a></h4> <span class="fbsj">'+source+pubtime+'</span></div><div class="rt"><a href="'+url+'"><img src="'+img+'" alt="'+title+'"></a></div></li>'
+                        }
+                    }
+                    else if(type=='zw' && img==''){
+                        html=html+'<li class="zeropic"><h4><a href="'+url+'">'+title+'</a></h4><span class="fbsj">'+source+pubtime+'</span></li>'
+                    }
+                    else if(type=='llt'){
+                        var src=imgs.split("|");
+                        html=html+'<li class="twopic"><h4><a href="'+url+'">'+title+'</a></h4><div class="morepic"><a href="'+url+'"><img src='+src[0]+' alt="'+title+'"><img src='+src[1]+' alt="'+title+'"></a></div><span class="fbsj">'+source+pubtime+'</span></li>'
+                    }
+                    else if(type=='tj'){
+                        var src=imgs.split("|");
+                        html=html+'<li class="threepic"><h4><a href="'+url+'">'+title+'</a></h4><div class="morepic"><a href="'+url+'"><img src='+src[0]+' alt="'+title+'"><img src='+src[1]+' alt="'+title+'"><img src='+src[2]+' alt="'+title+'"></a></div><span class="fbsj">'+'<span class="newslogo">图集 </span>'+source+pubtime+'</span></li>'
+                    }
+                }
+                if(html==""){
+                    $(".xgydjctj").remove()
+                }
+                else{
+                    $(".jctjlist").append(html);
+                }
+            },
+            error : function(){
+                loading=true;
+                $("#pageNo").val(parseInt($("#pageNo").val())-1);
+                alert("查询数据出错啦，请刷新再试");
+            }
+        });
+    }
+    Zepto(function($){
+        $(window).scroll(function(){
+            if(($(window).scrollTop()+$(window).height()>$(document).height()-10)&&loading){
+                loading=false;
+                $("#pageNo").val(parseInt($("#pageNo").val())+1);
+                var num=$("#pageNo").val();
+                var id =  $("#zwid").val();
+                setTimeout("jctj("+id+","+num+")",1000);
+            }
+        });
+    });
+    $(document).ready(function(){
+        var id =  $("#zwid").val();
+        xgxw(id);
+        jctj(id,1);
+        var aaa=document.getElementsByTagName("p");
+        for(var i=0;i<aaa.length;i++){
+            if(aaa[i].innerHTML=="&nbsp;"){
+                aaa[i].remove();
+            }
+        }
+    })
+</script>
+
+<section>
+    <div class="mt20">
+        <div style="display:none"></div>
+    </div>
+</section>
+
+<section>
+    <div class="w320" id="pl" style="display:none;">
+        <div id="SOHUCS" sid="894-5-214127"></div>
+        <script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
+                src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cysWhJpTK&conf=prod_8b669edc60fa271cff940dba5f7b08a2">
+        </script>
+    </div>
+</section>
+
+<div class="channl_appc mt20" id="jctj" style="display:none;">
+    <h3><span><a href="//www.chinanews.com/m/channel/sp/index.htm">精彩推荐</a></span></h3>
+    <div class="recommend o_h ">
+
+        <div class="img_recom o_h clear">
+            <ul id="hotspwd">
+                <li><a href="http://www.chinaqw.com/qx/hd2011/2019/01-27/29960.shtml"><img src="/m/qx/2019/01-27/U780P894T5D214088F42DT20190127145530.jpg" alt="当云海遇上日出光晕 安徽黄山风景美如画境 "><i>当云海遇上日出光晕 安徽黄山风景美如画境 </i></a><em></em></li>
+                <li><a href="http://www.chinaqw.com/qx/hd2011/2019/01-27/29954.shtml"><img src="/m/qx/2019/01-27/U780P894T5D214087F42DT20190127142159.jpg" alt="“乐高”积木新年场景令人心花怒放 "><i>“乐高”积木新年场景令人心花怒放 </i></a><em></em></li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="mt10">
+        <ul class="list_ulc">
+            <!--[894,7,2] published at 2020-10-12 16:37:11 from #10 by system--> 
+<div class="mt10 ">
+               <div class="qw_list_title ">
+                  <div class="life_title_zhichang_text"><a href="http://www.chinaqw.com/pdjx/news1.shtml">频道精选</a></div>
+                </div>
+                <div class="mt10">
+                   <ul class="module_list_ul">
+
+    <li><a href="/hqhr/2020/10-12/272313.shtml">希腊出台政策 欢迎外国人退休到希腊安度晚年</a></li>
+
+    <li><a href="/hdfw/2020/10-12/272308.shtml">中国驻尼日尔使馆提醒中国公民关注疫情加强防护</a></li>
+
+    <li><a href="/hqhr/2020/10-12/272307.shtml">希腊国会批准国籍法修正案 入籍考试明年5月举行</a></li>
+
+    <li><a href="/hqhr/2020/10-12/272301.shtml">俄媒：外国人获取俄罗斯国籍规定被简化</a></li>
+
+    <li><a href="/qx/2020/10-12/272287.shtml">街头巷尾的烟火气息 侨乡温州值得去看看</a></li>
+
+    <li><a href="/sqfg/2020/10-12/272280.shtml">纪念《归侨保护法》颁布30周年 各地举办普法活动</a></li>
+
+    <li><a href="/yw/2020/10-11/272246.shtml">世卫组织：全球新冠肺炎确诊病例超过3675万例</a></li>
+
+    <li><a href="/yw/2020/10-11/272245.shtml">疫情下的伦敦：当金融城沦为空城……</a></li>
+
+    <li><a href="/yw/2020/10-11/272241.shtml">贵阳警方打掉特大跨境“杀猪盘”团伙 涉案金额超2亿元</a></li>
+
+</ul>
+                </div>
+              </div>
+        </ul>
+
+    </div>
+</div>
+<!--广告位开始-->
+<div class="madbanner" id="b_ban">
+    <style>
+.appdown{
+background:#CDCDCD;  height:35px;  width:100%;  padding:10px 0;  position:fixed;  bottom:0;z-index:1000;}
+.appleft{float:left;  margin-left:10px;}
+.appright{float:right;  margin-right:15px;}
+</style>
+<img src="http://www.chinaqw.com/upload_pic/1/201509/15/U412P894T1D448F6DT20150923134248.jpg" width="100%" heigh="100%" alt="关注侨网微信">
+<p style="height: 120px;width: 100%;line-height:30px;color:#333;text-align:center">Copyright&#169;2003-2020 chinaqw.com. All Rights Reserved</p>
+<div class="appdown">
+<div class="appleft" style="margin-left:15px"><img src="http://www.chinaqw.com/upload_pic/1/201608/22/U674P894T1D828F2DT20160822140851.jpg" width="35" alt="侨宝客户端"/></div>
+<div class="appleft"><img src="http://www.chinaqw.com/upload_pic/1/201608/22/U674P894T1D828F5DT20160822140851.jpg" alt="侨宝客户端" width="130"/></div>
+<div class="appright"><a href="/m/qiaobao/app.shtml"><img src="http://www.chinaqw.com/upload_pic/1/201608/22/U674P894T1D828F4DT20160822140851.jpg" alt="侨宝客户端" width="95"/></a></div>
+</div>
+</div>
+<!--广告位end-->
+
+<script>
+    var url=encodeURIComponent(window.location.href);
+    var shareImg="http://www.chinaqw.com/jjkj/2019/01-28/U780P894T5D214127F1532DT20190128111842.jpg";
+    var shareTitle='中国侨网';
+    var shareDesc="上海政协委员为优化服务海外人才“支招”";
+</script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="https://www.chinaqw.com/wechat/share.js"></script>
+
+</body>
+</html>

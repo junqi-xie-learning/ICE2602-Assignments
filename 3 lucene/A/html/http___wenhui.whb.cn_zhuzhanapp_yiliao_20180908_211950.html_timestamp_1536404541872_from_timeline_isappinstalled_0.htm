@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>婉拒名校只为救死扶伤之志，医学院迎来“00后”：领到人生第一件白大褂，希望成为被需要的人</title>
+<link rel="stylesheet" href="/r/share_files/reset_style.css">
+<link rel="stylesheet" href="/r/share_files/vote.css">
+<link rel="stylesheet" type="text/css" href="/r/share_files/style.css">
+<script type="text/javascript" src="/r/share_files/jquery-1.10.2.min.js"></script>
+<script src="/r/share_files/front.js" type="text/javascript"></script>
+<script src="/r/share_files/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/r/share_files/sha1.js" type="text/javascript"></script>
+<script src="/r/share_files/weixin.js" type="text/javascript"></script>
+<style>
+
+		.textCenter {text-align: center}
+		.title {font-family: "BoldFont";text-align: left;}
+		.author {text-align: center;}
+		.source {text-align: left;}
+		.authorLeft {vertical-align: text-top;text-align: left;}
+		#zanImages{
+			width: 80%;
+			height: 80%;
+			margin: 0 auto;
+			vertical-align: top;
+			display: inline-block;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -7px;
+			margin-top: -8px;
+		}
+		.content-min-ctn>p{
+			text-align: justify;
+			margin: 18px 0;
+
+		}
+		/* 底部下载APP */
+		.download-app-box{
+			background: rgb(45,49,50);
+			position: relative;
+			padding: 15px 10px;
+			overflow: hidden;
+		}
+		.media-container:first-child{
+			margin-top: 0;
+		}
+		.media-container, .media-body {
+			overflow: hidden;
+			zoom: 1;
+		}
+		.media-body, .media-left, .media-right {
+			display: table-cell;
+			vertical-align: top;
+		}
+		.media-left{
+			padding-right: 10px;
+			padding-top: 2px;
+		}
+		.media-header{
+			font-size: 16px;
+			font-weight: 500;
+			font-family: "微软雅黑";
+			color: #fff;
+		}
+		.media-text{
+			color: rgb(156,157,157);
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		.download-app{
+			width: 26%;
+			position: absolute;
+			top: 27%;
+			right: 4.3%;
+			z-index: 100;
+		}
+		.content-min-ctn img{ width:100% !important;height:auto !important}
+	</style>
+<script>
+        var imageArr = new Array();
+        var img = {
+            "width":"645px",
+            "height":"483px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var img = {
+            "width":"645px",
+            "height":"430px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var voteColors = [
+            "#e3e5f1",
+            "#cacdde",
+            "#aaafca"
+        ];
+        var perVotePerW;	// 100%长度
+        $(document).ready(function(){
+            $("#header").load("/include/header.html");
+            $("#foot").load("/include/footer.html");
+            var w = document.body.clientWidth - 20;
+            try {
+                var fontsize = w / 20;	// 字数：一行18字
+                document.body.style.fontSize = fontsize + "px";
+                var percent = w / 720;
+                $("#voteTitle").css("font-size", (percent * 30) + "px");
+                $("#voteTitle").css("height", (percent * 70) + "px");
+                $("#voteTitle").css("padding-top", (percent * 35) + "px");
+                // 投票长度 720px 400=100%
+                perVotePerW = percent * 400;
+                $("#voteCon").css("font-size", (percent * 30) + "px");
+                var width = percent * 125;
+                var height = width / height * width;
+                $(".voteimg").css("width", width + "px");
+                $(".voteimg").css("height", height + "px");
+
+            } catch (e) {}
+
+            $("img[name=videoImg]").click(function() {
+                openVideo(this)
+            });
+
+            // 图片宽度、高度
+            if(imageArr.length == 0)
+                return ;
+            for(var index = 0; index < imageArr.length; index++) {
+                var img = $("#image-" + (index + 1));
+                var width = imageArr[index].width;
+                width = width.replace("px", "");
+                width = width.replace("PX", "");
+                if(width >= 645) {
+                    // 宽度645，直接铺满
+                    img.css("width", "100%");
+                    continue ;
+                }
+                // 小于645，按照比例进行缩放
+                var proportion = w/645;	// 宽度比例
+                width = width * proportion;
+                img.css("width", width + "px");
+
+                // 专家图片
+                var photo = $("#expertPhoto");
+                if(photo == null || photo == undefined)
+                    return ;
+                var photoWidth = 223 * proportion;
+                photo.css("width", photoWidth + "px");
+                var height = 272 * proportion;
+                photo.css("height", height + "px");
+            }
+        });
+
+        var play, videoIndex = 0;
+        function openVideo(img) {
+            videoIndex++;
+            $(img).css("display", "none");
+            $(img).after("<div id='mod_player_" + videoIndex + "'></div>");
+            try{
+                // url由app替换字符串获得
+                var url = $(img).attr("videourl");
+                var pos1 = url.indexOf("vid=");
+                if (pos1 < 0){
+                    alert("视频路径格式有误，无法播放!");
+                }else{
+                    var pos2 = url.indexOf("&", pos1);
+                    if (pos2 < 0)
+                        pos2 = url.length;
+                    var vid = url.substring(pos1 + 4,pos2);
+                    var video = new tvp.VideoInfo();
+                    video.setVid(vid);
+                    var player =new tvp.Player();
+                    player.create({
+                        width:"100%",
+                        height:280,
+                        video:video,
+                        modId:"mod_player_" + videoIndex,
+                        vodFlashExtVars: {
+                            showlogo:0,
+                            popup : 0,
+                            share : 0,
+                            follow : 0
+                        },
+                        autoplay:true
+                    });
+
+                    player.oninited = function() {
+                        player.play();
+                    }
+                    player.play();
+                }
+            }catch(e){console.debug(e.message);}
+        }
+
+        //评论
+        function fnSubmit(){
+            if($("#text").val().trim().length==0){
+                alert("请输入评论内容");
+                return ;
+            }
+            var text = $("#text").val();
+            $.ajax({
+                type: "POST",
+                url:"/whb/comment.jspx",
+                "dataType" : "json",
+                data:{
+                    text:text,
+                    contentId:67907,
+                    hasCaptcha:"no"
+                },
+                success:myCallback
+            })
+        }
+        function myCallback(data) {
+            if(data.status==0) {
+                alert("评论成功,等待审核");
+                $("#text").val("");
+                fnText();
+                //location.href=location.href;
+            } else if(data.status==1) {
+                alert("验证码错误");
+                //$("#commentCaptcha").click();
+            } else if(data.status==2) {
+                alert("内容不存在");
+                //$("#commentCaptcha").click();
+            } else if(data.status==3) {
+                alert("评论关闭");
+                //$("#commentCaptcha").click();
+            } else if(data.status==4) {
+                alert("需要登录评论");
+                //$("#commentCaptcha").click();
+            } else if(data.status==100) {
+                alert("内容不存在");
+                // $("#commentCaptcha").click();
+            } else if(data.status==101) {
+                alert("评论不能为空");
+                // $("#commentCaptcha").click();
+            } else {
+                alert("评论失败");
+                // $("#commentCaptcha").click();
+            }
+        }
+        function fnText(){
+            var length = $("#text").val().trim().length;
+            $("#textcount").html(300-length);
+        }
+	</script>
+<script src="../../../../../../r/cms/html5.js"></script>
+</head>
+<body style="margin: 10px; font-size: 18.7px;" bgcolor="white"><input id="title" type="hidden" value="婉拒名校只为救死扶伤之志，医学院迎来“00后”：领到人生第一件白大褂，希望成为被需要的人">
+<input id="descp" type="hidden" value="领到人生第一件白大褂，让他们兴奋不已。">
+<input id="imgUrl" type="hidden" value="/u/cms/www/201809/08161437hri8_cut.jpg">
+<div id="header"><a id="appDownload" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook">
+<img src="/r/share_files/download.png" width="100%">
+</a>
+<script>
+
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var isWeixin = is_weixin();
+        var isAndroid = false;
+        var isIos = false;
+
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/) == "iphone os";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+
+        if (bIsAndroid) {
+            isAndroid = bIsAndroid;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+
+        } else if(bIsIphoneOs || bIsIpad) {
+            isIos = bIsIphoneOs || bIsIpad;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+        }
+	</script></div>
+<table class="marginTop_normal marginLeft_big marginRight_big marginBottom_big">
+<tbody><tr style="font-size:22px;text-align:justify;">
+<td class="title titleFont" colspan="2"><font color="#000000" style="line-height:1.5;">婉拒名校只为救死扶伤之志，医学院迎来“00后”：领到人生第一件白大褂，希望成为被需要的人</font></td>
+</tr>
+<tr>
+<td class="author authorFont" style="text-align:left;padding-bottom:5px;">
+<font color="#595757">2018-09-08 16:39:27</font>
+<font style="margin-left: 10px;" color="#595757">作者：唐闻佳 杨静</font>
+</td>
+</tr>
+</tbody></table>
+<div style="margin:0;padding:0; width:100%;height:1px;background-color:#787878;overflow:hidden;"></div>
+<div class="content_body">
+<div class="content_title hei"></div>
+<div class="content_other"></div>
+<font color="#000000" font-size="16.666666px">
+<div class="content-min-ctn" style="text-align:justify;font-size:18px; wrap-word:normal; line-height:1.6;">
+<p style="text-align:center;"><img src="http://whb.cn/u/cms/www/201809/08161012aypl.jpg" alt="497140222.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">领到人生第一件白大褂，让他们兴奋不已。今天是上海交通大学医学院的新生报到日，600多名新生的到来也意味着医学院首次与“00后”集中相遇了。他们中不少人婉拒了许多名校，只为一个救死扶伤的理想。</p><p style="text-align:left;display:block;">以613分高分（上海卷满分660）考入交大医学院临床医学八年制的茅天誉说，最初是因为对人体奥秘感兴趣而想读医，看了一系列医疗纪录片后，看到医生们哪怕只有一丝希望都会拼尽全力去救治，被感动之余，更坚定了学医的想法，也希望成为那个被需要的人，可以拯救无数生命。</p><p style="text-align:left;display:block;">“起初父母朋友不是很理解我的选择，告诉我这个职业很辛苦，压力很大，但看到我的坚持，他们也表示了尊重。高考出成绩后，我放弃清华、北大的邀请，父母很支持我坚持自己的理想。”茅天誉说。</p><p style="text-align:left;display:block;">与茅天誉一样来自复旦附中的王佳琦，也是高考600分以上的“学霸”，他也选择了临床医学八年制。这个“00后”把中国工程院院士、上海交大医学院附属瑞金医院血液学家王振义视作偶像。</p><p style="text-align:center;"><img src="http://whb.cn/u/cms/www/201809/0816110441bh.jpg" alt="1201346498.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;"><span style="color: rgb(127, 127, 127);">▲王佳琦和振义路路牌合影</span></p><p style="text-align:left;display:block;">“没有像样的实验室，没有任何精密的仪器，但王院士以其执着与坚守攻克了急性早幼粒细胞白血病，治愈了无数患者，并在很大程度上推进了血液病学的发展。更令我心生敬仰的是，王院士没有为此申请专利，使治疗该种白血病的费用能被大部分患者的家庭承受。他的医者仁心使我敬佩！”报到当天，王佳琦在交大校区看到以王振义院士命名的“振义路”路牌，立刻开心地与之合影。得知随后的新生入学教育还有机会聆听王老的教诲，他更是大呼期待。</p><p style="text-align:left;display:block;">婉拒了香港大学生物医学工程专业，坚定选择上海交大医学院临床医学八年制法文班的何咏元也有自己的医学偶像，就是被称作“斯坦福天才医生”的保罗·卡拉尼什。卡拉尼什的遗作《当呼吸化为空气》一度成为全球畅销书，感动了很多人。此书包含了他对与生死命题的思考、对生命终结的感悟。“医生不仅需要医治好疾病，更重要的是能帮助病人寻找到生命的价值和意义，”何咏元受此书启发，也希望自己能在今后的学习中得到更多成长。</p><p style="text-align:center;"><img src="http://whb.cn/u/cms/www/201809/08161522gg5p.jpg" alt="109413611.jpg" style="width:645px;height:auto;display: block; margin-left: auto; margin-right: auto; "/></p><p style="text-align:left;display:block;">来自新疆的新生迪娜是“医二代”，她的父母同为医生，她从小在医院的家属楼里长大。她说，自己的医学偶像就在身边，这些长辈里有的年纪古稀却依旧认真钻研医术；有的奔赴各地，向新疆偏远地区带去医疗支援；有的精通各民族语言，为广大患者热忱服务；有的飞行千里，学习更先进的医学前沿知识；有的为改进医疗设备及器械，四处奔波求索。</p><p style="text-align:left;display:block;">“小时候，只能看到长辈们匆忙的背影，成年后，我很想参与其中，一同担当起减轻他人痛苦的责任。”迪娜充满期待地说，八年后，希望自己成为值得被相托性命的温暖医生。</p><p style="text-align: left; display: block;">近年来，上海交大医学院录取分数线呈持续攀升态势，越来越多优秀的高中生热衷投身学医队伍。这批抱持“被需要”初心的年轻人的到来，也让医学院倍感振奋。据了解，9月10日新生入学教育当天，交大医学院还将举行白袍宣誓仪式、入学第一课和舞台思政课《清贫的牡丹》公演等，学校希望用更有温度的医学教育，为这批医学“新鲜血液”灌注灵魂，助力成才。</p><p><span style="color: rgb(127, 127, 127);font-size:16px">作者：唐闻佳 杨静</span><br/><span style="color: rgb(127, 127, 127);font-size:16px">编辑：朱颖婕</span><br/><span style="color: rgb(127, 127, 127);font-size:16px">责任编辑：樊丽萍</span></p><p><span style="color: rgb(127, 127, 127);font-size:16px">*文汇独家稿件，转载请注明出处。</span></p>
+</div>
+</font>
+</div>
+<div>
+<div class="reset-css">
+<div class="praise-container" style="height:42px;">
+<span id="ups" style="float: right;font-size: 12px;height: 22px;position: relative;top: 5px;">0</span>
+<span onclick="Cms.up('',67907,0);" id="zanImagesCtn" style="display: inline-block;width: 20px;height: 20px;border: 1px solid #333;border-radius: 50%;line-height: 20px;overflow: hidden;position: relative;float: right;margin-right: 3px;">
+<img id="zanImages" src="/r/share_files/dianzan2x.png" alt="">
+</span>
+</div>
+<div class="edit-comment">
+<textarea name="text" id="text" placeholder="请输入文字内容..." style="resize: none;line-height:1.5;padding-bottom:5px;" rows="2" oninput="fnText();"></textarea>
+<div class="submit-comment-container solve_float">
+<span class="left">还可以输入<span id="textcount" style="color:#FFA83F;">300</span>字</span>
+<button class="submit-comment right" onclick="fnSubmit();">提交</button>
+</div>
+<input type="hidden" name="contentId" value="67907">
+</div>
+<div>
+<button class="btn-see-more" onclick="location='/findComment.jspx?contentId=67907'">查看评论&gt;&gt;</button>
+</div>
+</div>
+</div>
+<div class="download-app-box">
+<div class="media-container">
+<div class="media-left">
+<img src="/r/share_files/logo3.png" alt="Logo" style="width: 40px;height:40px;">
+</div>
+<div class="media-body">
+<h4 class="media-header">文汇报</h4>
+<div class="media-text">源于事实 来自眼界</div>
+</div>
+</div>
+<img class="download-app" src="/r/share_files/down-app.png" onclick="window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook'" alt="DownLoad">
+</div>
+<div id="foot"></div>
+<script src="/r/share_files/tvp.player_v2.js" type="text/javascript"></script>
+<script src="/r/share_files/wb.js" type="text/javascript"></script>
+<script type=text/javascript>
+    $(function() {
+        Cms.siteFlow("http://www.whb.cn", location.href, document.referrer, "婉拒名校只为救死扶伤之志，医学院迎来“00后”：领到人生第一件白大褂，希望成为被需要的人", "唐闻佳 杨静","587");
+        Cms.viewCount("","211950",null,null, null,null,null);
+    });
+</script>
+</body></html>

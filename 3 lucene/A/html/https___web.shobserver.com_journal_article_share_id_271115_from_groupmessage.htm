@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>上交大设立吴文俊数学中心</title>
+    <style>
+        body{ padding:0px; margin:0px;}
+        img{width:100%}
+        .w{width: 95%;}
+		.lr{margin:0 auto;}
+        .H_xq{font-size:16px;line-height:24px;padding:0px;}
+		.H_xq h1{font-size: 22px;color: #000;margin: 0.7em 0;}
+		.H_xq h3{font-size: 16px;color: #3f3f3f;margin:0.5em 0;}
+		
+		.H_xq img{margin-bottom: 8px;}
+		
+		.H_xq font{ color:#ed1c24;}
+		.H_xq .img1{ text-align:center;}
+		.H_xq .img3{margin-bottom: 8px; width:60%;}
+		
+        .img2{ width:100%;}
+		
+		.xiazai-top{
+        	background-color:#fff;
+        	position:relative;
+        	padding:10px 0 5px 0;
+        	border-bottom:1px solid #dddddd;
+    	}
+    	
+		.open-app{
+			position:absolute;
+			top:23%;
+			right:4%;
+		}
+		
+		.xiazai-bottom{
+			width:100%;
+        	font-size:0;
+        	padding:10px 0 10px 0;
+        	background-color:rgba(0,0,0,0.8);
+			position:fixed;
+			bottom:0;
+			left:0;
+			display:none;
+    	}
+    	
+    </style>
+</head>
+
+<body>
+
+<div class="xiazai-top">
+  <img src="/images/wx/logo-top.png" style="width:135px;margin-left:10px;">
+  <img src="/images/wx/open-top.png" class="open-app" style="width:77px;" onclick="download();" >
+</div>
+
+<div class="H_xq w lr">
+	<h3>聚焦基础算法，培养人工智能领军者</h3>
+	<h1 id="title">上交大设立吴文俊数学中心</h1>
+	
+	
+	
+	    本报讯（记者 徐瑞哲）“中国有多少数学家投入到人工智能的基础算法研究中？”中国工程院院士徐匡迪日前点中当前国内人工智能发展的要害，被称为“徐匡迪之问”。昨天，全国政协常委、中国科协副主席、中国数学会理事长袁亚湘，全国政协常委、中科院数学与系统科学研究院院长席南华等13位两院院士，以及数十位国内外知名专家学者来沪，纪念今年百岁诞辰的“吴方法”创立者——吴文俊院士，也为新设立的上海交通大学吴文俊数学中心建言献计。<br/><br/>    作为首届国家最高科学技术奖获得者，吴文俊早在上世纪70年代后期，就认识到中国传统数学的机械化思想与现代计算机科学是相通的。在此启发下，他开创了崭新的数学机械化领域，创立用计算机证明几何定理的“吴方法”，被认为是自动推理领域的先驱性工作。当前中国智能科学技术最高奖，正是中国人工智能学会发起并以其命名的“吴文俊人工智能科学技术奖”。上海交大校长林忠钦院士表示，此次吴文俊数学中心重点在基础数学、数据科学、数学史领域开展研究，其中数据科学领域着力学科交叉，聚焦基础算法、统计大数据分析、机器与深度学习、数学与生物医学交叉等。<br/><br/>
+</div>
+
+<div style="height:70px;"></div> <!-- 底部悬浮框的高度 -->
+
+<div class="xiazai-bottom" id="xiazaiBottom">
+   <img src="/images/wx/logo-bottom.png" style="width:125px;margin-left:15px;">
+   <img src="/images/wx/open-bottom.png" class="open-app" style="width:80px;top:20%;" onclick="download();"/>
+</div>
+
+<script type="text/javascript">
+    function isPC() {
+	    var userAgentInfo = navigator.userAgent.toLowerCase();
+	    var Agents = ["Android", "iPhone",
+	                "SymbianOS", "Windows Phone",
+	                "iPad", "iPod"];
+	    var flag = true;
+	    for (var v = 0; v < Agents.length; v++) {
+	        if (userAgentInfo.indexOf(Agents[v].toLowerCase()) > 0) {
+	            flag = false;
+	            break;
+	        }
+	    }
+	    return flag;
+	}
+	
+	function download()
+	{
+		window.open("/link/app");
+	}
+	
+	(function(){
+	
+		var clientWidth = document.documentElement.clientWidth;
+		var bottom = document.getElementById("xiazaiBottom");
+		if (isPC())
+		{
+			document.body.style.width = "640px";
+			document.body.style.margin = "0 auto";
+			
+			bottom.style.width = "640px";
+			bottom.style.left = (clientWidth - 640)/2 + "px";
+			
+			window.onresize = function(){
+				var bottom = document.getElementById("xiazaiBottom");
+				var clientWidth2 = document.documentElement.clientWidth;
+				bottom.style.left = (clientWidth2 - 640)/2 + "px";
+			}
+			
+			clientWidth = 640;
+		}
+		bottom.style.display = "block";
+			
+	})();
+</script>
+
+<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script type="text/javascript" src="/js/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/weixinShare.js?ver=20170427"></script> 
+<script type="text/javascript"> 
+$(function(){     
+    $.ajax({ 
+        url: "/weixin/getWeiXinShare", 
+        type: "POST", 
+        data: {pageUrl:window.location.href}, 
+        // data: {pageUrl:encodeURIComponent(window.location.href)}, 
+        dataType: "json", 
+        success : function(data){ 
+            if (data) 
+            { 
+                var weixin = new WeiXinShare(); 
+                weixin.config(data.appId, data.timestamp, data.nonceStr, data.signature); 
+                var title = $("#title").text();
+                var subtitle = $("#subtitle").text();
+                var logoUrl = "https://images.shobserver.com/images/logo_jf.jpg";
+                weixin.share({'title':title, 'link':location.href,'img_url':logoUrl, 'desc':subtitle}); 
+            }
+        } 
+    }); 
+}); 
+</script>
+</body>
+</html>

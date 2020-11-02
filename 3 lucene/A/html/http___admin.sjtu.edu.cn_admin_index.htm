@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html style="overflow-x:auto;overflow-y:auto;">
+<head>
+	<title>ETCMS 上海交通大学 稿库管理系统</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="author" content="http://www.wdit.com.cn/"/>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=10" />
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-store">
+<link type="text/css" rel="stylesheet" href="/static/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="/static/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<script type="text/javascript" src="/static/jquery/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/static/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="/static/jquery-select2/3.4/select2.min.css"/>
+<link type="text/css" rel="stylesheet" href="/static/jquery-validation/jquery.validate.min.css"/>
+<link type="text/css" rel="stylesheet" href="/static/toastr/toastr.min.css"/>
+<link type="text/css" rel="stylesheet" href="/static/common/app.css"/>
+<link type="text/css" rel="stylesheet" href="/static/common/add.css"/>
+<link rel="shortcut icon" href="/static/favicon.ico" />
+
+<script type="text/javascript" src="/static/jquery-select2/3.4/select2.min.js"></script>
+<script type="text/javascript" src="/static/jquery-validation/jquery.validate.js"></script>
+<script type="text/javascript" src="/static/jquery-validation/jquery.validate.method.js"></script>
+<script type="text/javascript" src="/static/jquery-cookie/jquery.cookie.js"></script>
+<script type="text/javascript" src="/static/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/common/mustache.min.js"></script>
+<script type="text/javascript" src="/static/toastr/toastr.min.js"></script>
+<script type="text/javascript" src="/static/store/store.min.js"></script>
+<script type="text/javascript" src="/static/blockUI/jquery.blockUI.js"></script>
+<script type="text/javascript" src="/static/bootbox/bootbox.min.js"></script>
+<script type="text/javascript" src="/static/common/app.box.js?_t=115346"></script>
+<script type="text/javascript" src="/static/common/app.js?_t=115346"></script>
+<script type="text/javascript">
+	var ctx = '/admin', ctxStatic='/static';
+</script>
+
+
+
+<style type="text/css">
+	body {
+	
+		text-align: center;
+		overflow: hidden;
+	}
+	
+	#brands-logo { margin: 0; font-size: 30px; font-weight: 700; color: #fff; }
+	#brands-logo small { font-size: 14px; color: #fff; }
+	#main-title h3 { margin-top: 0; color: #317eac; font-size: 22px; }
+	#main-title h3 + p { margin-bottom: 0; color: #8b91a0; }
+	
+	.panel { background-color: transparent; border: 0; }
+	.panel-heading { background-color: rgba(0, 0, 0, 0.7) !important; }
+	.panel-body, .panel-footer { background-color: #fff; }
+	.panel-body { padding:20px 30px 0px 30px; }
+	.panel-footer { padding-bottom: 10px; text-align: left; }
+
+	#loginForm .form-group {padding: 0px 20px;}
+	#loginForm .form-group .form-control {font-size:12px; height: 32px;}
+	#loginForm .form-group .btn {font-size:14px; width:100%;}
+	#captchaInput {padding-left: 0px;}
+	#captchaImage {padding-right: 0px;}
+</style>
+
+<script type="text/javascript" src="/static/jsencrypt.min.js"></script>
+<script type="text/javascript">
+	if (top != this) {
+		top.location = this.location;
+	}
+
+	$(document).ready(function () {
+
+		$('[name="username"]').focus();
+
+		$("#loginForm").validate({
+			rules: {
+				validateCode: {
+					remote: "/servlet/validateCodeServlet"
+				}
+			}, messages: {
+				validateCode: {remote: "验证码不正确", required: "请填写验证码"},
+				username: {required: "请填写用户名"},
+				password: {required: "请填写密码"}
+
+			}, submitHandler: function (form) {
+	            var $pubkey = $('[name="pubkey"]');
+	            var $password = $('[name="password"]');
+	            var encrypt = new JSEncrypt();
+	            encrypt.setPublicKey($pubkey.val());
+	            $password.val(encrypt.encrypt($password.val()));
+	            $pubkey.val('');
+
+	            loading('正在提交，请稍等...');
+	            form.submit();
+
+			}, highlight: function(element, errorClass, validClass) {
+				$(element).addClass(errorClass).removeClass(validClass);
+
+			}, unhighlight: function (element, errorClass, validClass) {
+				$(element).removeClass(errorClass).addClass(validClass);
+				$(element).closest('.form-group').popover('destroy');
+
+			}, errorPlacement: function(error, element) {
+				var $container = $(element).closest('.form-group');
+				$container.attr('data-html', 'true');
+				$container.attr('data-container', 'body');
+				$container.attr('data-placement', 'auto right');
+				$container.attr('data-content', error.prop('outerHTML'));
+				$container.popover('show');
+			}
+		
+		});
+
+	});
+
+	var refreshValidateCode = function () {
+		$('#captchaImage img').attr('src', '/servlet/validateCodeServlet?_t=' + new Date());
+	}
+	
+	var getWindowSize = function(){
+		return ["Height","Width"].map(function(name){
+		  return window["inner"+name] ||
+			document.compatMode === "CSS1Compat" && document.documentElement[ "client" + name ] || document.body[ "client" + name ];
+		});
+	};
+
+	var wSize = function () {
+		var s = getWindowSize();
+		$('#main').css('margin-top', Math.floor(s[0]/5) + 'px');
+	}
+
+	$(window).resize(function () {
+		wSize();
+	});
+	$(document).ready(function () {
+		wSize();
+	});
+
+</script>
+
+</head>
+<body>
+	
+	<div id="bg-body">
+		<img id="bg-body0" src="/static/images/sjtudoor.jpg" alt="Picture">
+	</div>
+	<div id="main" class="row" >
+		<div id="loginPanel" class="panel panel-default col-xs-offset-4 col-xs-4">
+			<div class="panel-heading">
+				<h1 id="brands-logo">ETCMS <small>交大版 V2.0</small></h1>
+			</div>
+			<div class="panel-body">
+				<div id="main-title">
+					<h3>稿库管理系统</h3>
+				</div>
+				<form id="loginForm" action="login" method="post">
+					<input type="hidden" name="pubkey" value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDMZphob8ksonQWHlRhxwhB+nHAbW+3h1cFQBPAwFM6hSW8XYvpAb+85WW0YFBwO8G7qszqd9SeE5otgqFgvFyCF6gkvQAik4XUZzE7fExmLjBM2yzUZ5LUqLw3YQc7vhS7/g94ayEj+hpKIIJxWY9js/K6ZATFyGdK9hE6RwC/ZQIDAQAB"/>
+					<div class="row form-group">
+						<input type="text" name="username" placeholder="请输入用户名" maxlength="40" class="form-control required" />
+					</div>
+					<div class="row form-group">
+						<input type="password" name="password" placeholder="请输入密码" maxlength="64" class="form-control required" autocomplete="off"/>
+					</div>
+					<div class="row form-group">
+						<div id="captchaInput" class="col-xs-8">
+							<input type="text" name="validateCode" placeholder="请输入校验码" maxlength="64" class="col-xs-6 form-control required" />
+						</div>
+						<div id="captchaImage" class="col-xs-4">
+							<img src="/servlet/validateCodeServlet" class="img-responsive" onclick="javascript:refreshValidateCode();"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary text-justify"><i class="fa fa-sitemap">&nbsp;</i>登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+					</div>
+				</form>
+			</div>
+			<div class="panel-footer">
+				<span>2018 © ETCMS </span><a href="http://www.wdit.com.cn/" target="_blank">上海东方怡动信息技术有限公司</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

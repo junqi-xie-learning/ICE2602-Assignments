@@ -1,0 +1,920 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+五四百年，青年责任代代相传
+</title>
+<SCRIPT language=Javascript src="../../../tplimg/swfobject.js"></SCRIPT>
+<link href="../../../tplimg/paper_blu.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../tplimg/mpcore.js"></script>
+<script type="text/javascript" src="../../../tplimg/period.js"></script>
+<script type="text/javascript" src="../../../tplimg/calendarp.js"></script>
+<script type="text/javascript" src="../../../tplimg/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../../tplimg/formap3.js"></script>
+   <script language="JavaScript" type="text/javascript">
+function zoomIn() {
+  newZoom= parseInt(ozoom.style.zoom)+10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+function zoomOut() {
+  newZoom= parseInt(ozoom.style.zoom)-10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+  
+  $(document).ready(  
+  function() {  
+		$(".title3").html($(".title3").html().replace("<br>",""));
+		$(".title1").html($(".title1").html().replace("<br>",""));
+		$(".title5").html($(".title5").html().replace("<br>",""));
+  });  
+            </script>
+
+<style type="text/css">
+<!--
+#layer31
+{
+	top: -0px;
+	right: 17px;
+	position: relative;
+	float: right;
+	/*overflow:hidden;*/
+}
+.tushuo{
+		text-align: left;
+		padding: 0 20px;
+		text-indent: 2em;
+		font-size:13px;
+}
+
+#nav_1 a:link{
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+} 
+#nav_1 a:visited {
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+}
+#nav_1 a:hover {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: underline;
+	font-weight:normal;
+}
+#nav_1 a:active {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: none;
+	font-weight:normal;
+} 
+.date {font-size:14px; color:#000000}
+.btH2 {
+	font-size:14px;
+	color:#FFF
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: none;
+	color: #C00;
+}
+a:active {
+	text-decoration: none;
+	color: #C00;
+}
+talbe{margin:0 auto}  
+td{ font-size:12px; color:#000000}
+
+.demo {position:relative; width:1000px; margin:0 auto;}
+.title1 {
+	font-family: "黑体";
+	font-size: 18px;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: bold;
+	font-variant: normal;
+	color: black;
+}
+.title3 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+
+.title4 {
+	font-family: "宋体";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+}
+.title2 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #666;
+}
+.title5 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+.content_tt {font-size: 14px; line-height: 180%; margin: auto; padding: 10px; text-align:left}
+.content_tt  p{text-indent:2em}
+.main-ed-map img{max-width:380px}
+.wztp img{max-width:500px; width:expression(this.width > 500 ? "500px" : this.width)}
+
+#float{border:2px solid #CEE3E9;background:#F1F7F9;font-size:18px;font-weight:bold;padding:10px 20px;position:absolute;left:0;top:0;z-index:9999;display:none;line-height:24px;}
+
+TD.S9bo_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+.dropdown {float:left; padding-right:0px}
+.dropdown dt {}
+.dropdown dt:hover {background:url()}
+.dropdown dd {position:absolute; overflow:hidden; width:194px; display:none; background:#edebec; z-index:200; opacity:0}
+.dropdown ul {width:194px; border:2px solid #d0caca; list-style:none; }
+.dropdown li {display:inline;text-align:left; float:none;magin:0;border-bottom:1px solid #ffffff;}
+.dropdown a, .dropdown a:active, .dropdown a:visited {display:block; text-align:left; padding:5px; color:#333; text-decoration:none; background:#ececec;width:190px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;border-bottom:1px solid #ffffff;}
+.dropdown a:hover {background:#f8f8f8; color:#000}
+.dropdown .underline {border-bottom:1px solid #fafafa}
+.wztp table{width:100%;text-align:center}
+-->
+</style>
+<script language="javascript">
+var DDSPEED = 10;
+var DDTIMER = 15;
+
+// main function to handle the mouse events //
+function ddMenu(id,d){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearInterval(c.timer);
+  if(d == 1){
+    clearTimeout(h.timer);
+    if(c.maxh && c.maxh <= c.offsetHeight){return}
+    else if(!c.maxh){
+      c.style.display = 'block';
+      c.style.height = 'auto';
+      c.maxh = c.offsetHeight;
+      c.style.height = '0px';
+    }
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }else{
+    h.timer = setTimeout(function(){ddCollapse(c)},50);
+  }
+}
+
+// collapse the menu //
+function ddCollapse(c){
+  c.timer = setInterval(function(){ddSlide(c,-1)},DDTIMER);
+}
+
+// cancel the collapse if a user rolls over the dropdown //
+function cancelHide(id){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearTimeout(h.timer);
+  clearInterval(c.timer);
+  if(c.offsetHeight < c.maxh){
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }
+}
+
+// incrementally expand/contract the dropdown and change the opacity //
+function ddSlide(c,d){
+  var currh = c.offsetHeight;
+  var dist;
+  if(d == 1){
+    dist = (Math.round((c.maxh - currh) / DDSPEED));
+  }else{
+    dist = (Math.round(currh / DDSPEED));
+  }
+  if(dist <= 1 && d == 1){
+    dist = 1;
+  }
+  c.style.height = currh + (dist * d) + 'px';
+  c.style.opacity = currh / c.maxh;
+  c.style.filter = 'alpha(opacity=' + (currh * 100 / c.maxh) + ')';
+  if((currh < 2 && d != 1) || (currh > (c.maxh - 2) && d == 1)){
+    clearInterval(c.timer);
+  }
+}
+</script>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641e36ad99ad4a5e9df6a40952a4f724";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">
+<!--
+
+marquee { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+span.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+
+TD.S7_b { font-size: 7pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S7_g { font-size: 7pt; color: #595959; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_b { font-size: 10pt; color: #595959; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S10_bb { font-size: 11pt; color: #FFFFFF; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt; font-weight:bold}
+TD.S10_bbb { font-size: 14pt; color: #000000; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_w { font-size: 8pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_w { font-size: 9pt; color: #FFFFFF; line-height: 13pt; font-family: "宋体"; letter-spacing:1pt}
+TD.S9_ws { font-size: 9pt; color: #000080; line-height: 13pt; font-family: "宋体"}
+TD.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_w { font-size: 11pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_o { font-size: 9pt; color: #FF0000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+TD.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体"; letter-spacing:0pt}
+TD.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体"}
+TD.S12_g { font-size: 12pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_gr { font-size: 10pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_gr { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+
+P.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S9_w { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+A:link { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体" }
+A:link.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration}
+A:link.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+
+A:visited.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_b { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_b { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+
+input
+{
+COLOR: #000000;
+FONT-SIZE: 9pt
+}
+Select.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+body,td,th {
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+}
+
+a:link {
+	text-decoration: none;
+}
+#bmt{width:410px;
+	 height:590px;
+ position:relative;
+	 top:24px;
+	 left:10px;
+	 text-align:center;
+	 z-index:9999;
+	  overflow:hidden;
+	 }
+.bgt{background:url(http://pc/qnb/tplimg/paper-bg.jpg) no-repeat;
+ height:619px
+}
+-->
+</style>
+
+</head>
+
+<body topmargin="0" leftmargin="0">
+<div id="float"></div>
+<div id="demo"  style="position:relative;">
+<table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0" height="100%">
+	<tr>
+		<td valign="top">
+		<table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0" height="100%">
+			<tr>
+				<td height="674">
+
+<table border="0" width="100%" id="table50" cellspacing="0" cellpadding="0" background="../../../tplimg/bg-1.jpg" height="674">
+	<tr>
+		<td style="vertical-align:top">
+		<div align="center">
+			<table border="0" width="1024" id="table51" cellspacing="0" cellpadding="0" height="100%">
+				<tr>
+					<td valign="top">
+					<table border="0" width="100%" id="table52" cellspacing="0" cellpadding="0" height="100%">
+						<tr>
+							<td valign="top" width="440">
+							<table border="0" width="100%" id="table53" cellspacing="0" cellpadding="0">
+								<tr>
+									<td id="bgt" background="../../../tplimg/paper-bg.jpg" style="background-repeat:no-repeat;height:619px" valign="top">
+								 <div id="bmt">			
+                
+<map name=PagePicMap><Area coords="6,11,334,11,334,542,6,542" shape="polygon" href="./content_87236.html"></map>
+<img src=../../../images/2019-05/04/A11/20190504A11_brief.jpg border=0 USEMAP=#PagePicMap>
+</div>
+								<tr>
+									<td height="6"></td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table94" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="18">　</td>
+											<td><div id="coreArea" style="display:none"></div>
+											<table border="0" width="94%" id="table95" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g" width="198">
+													<p align="left" style="color:#000000">
+                                                      第A11版：向新时代进发
+                                                </td>
+
+													<td width="117" class="S9_g">
+													<p align="right">
+													  <a class=preart href="node_10.html">上一版</a>&nbsp;&nbsp;<a class=preart href="node_12.html">下一版</a> &nbsp;&nbsp;
+												  </td>
+												   <td width="50" align=right valign=center nowrap style="PADDING-RIGHT: 5px"><a href=../../../images/2019-05/04/A11/20190504A11_pdf.pdf><IMG height=16  
+src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+							</table>
+							</td>
+							<td valign="top">
+							<table border="0" width="100%" id="table54" cellspacing="0" cellpadding="0">
+								<tr>
+									<td height="97" valign="top">
+									<table border="0" width="100%" id="table55" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="277"><img border="0" src="../../../tplimg/青年报_logo.png" width="277" height="97"></td>
+											<td valign="top">
+											<table border="0" width="100%" id="table56" cellspacing="0" cellpadding="0" height="97">
+												<tr>
+													<td>　</td>
+												</tr>
+												<tr>
+													<td valign="bottom">
+													<table border="0" width="100%" id="table93" cellspacing="0" cellpadding="0">
+														<tr>
+															<td class="S9_g">
+															<p align="right">
+															2019年05月04日 星期六</td>
+															<td width="14" valign="bottom">　</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+												<tr>
+													<td height="40" valign="bottom">
+													<table border="0" width="100%" id="table57" cellspacing="0" cellpadding="0">
+														<tr><td width="12"></td>
+															<td>
+															<dl class="dropdown">
+  <dt id="one-ddheader" onMouseOver="ddMenu('one',1)" onMouseOut="ddMenu('one',-1)"><img border="0" src="../../../tplimg/top-1.png" width="99" height="41" align="right"><dt>
+  <dd id="one-ddcontent" onMouseOver="cancelHide('one')" onMouseOut="ddMenu('one',-1)">
+    <ul id="artPList1">
+  
+<li><a  id="mp87236"  title="五四百年，青年责任代代相传"  class="underline" href=./content_87236.html>五四百年，青年责任代代相传</a></li> 
+  
+  </ul>
+  </dd>
+</dl></td>
+															<td width="99">
+															<dl class="dropdown">
+  <dt id="two-ddheader" onMouseOver="ddMenu('two',1)" onMouseOut="ddMenu('two',-1)"><img border="0" src="../../../tplimg/top-2.png" width="100" height="41"></dt>
+  <dd id="two-ddcontent" onMouseOver="cancelHide('two')" onMouseOut="ddMenu('two',-1)">
+	<ul>
+	<a id=pageLink href=node_1.html title="向新时代进发">
+		第A01版：向新时代进发</a>
+<a id=pageLink href=node_2.html title="向新时代进发">
+		第A02版：向新时代进发</a>
+<a id=pageLink href=node_3.html title="向新时代进发">
+		第A03版：向新时代进发</a>
+<a id=pageLink href=node_4.html title="向新时代进发">
+		第A04版：向新时代进发</a>
+<a id=pageLink href=node_5.html title="向新时代进发">
+		第A05版：向新时代进发</a>
+<a id=pageLink href=node_6.html title="向新时代进发">
+		第A06版：向新时代进发</a>
+<a id=pageLink href=node_7.html title="向新时代进发">
+		第A07版：向新时代进发</a>
+<a id=pageLink href=node_8.html title="向新时代进发">
+		第A08版：向新时代进发</a>
+<a id=pageLink href=node_9.html title="向新时代进发">
+		第A09版：向新时代进发</a>
+<a id=pageLink href=node_10.html title="向新时代进发">
+		第A10版：向新时代进发</a>
+<a id=pageLink href=node_11.html title="向新时代进发">
+		第A11版：向新时代进发</a>
+<a id=pageLink href=node_12.html title="向新时代进发">
+		第A12版：向新时代进发</a>
+<a id=pageLink href=node_13.html title="向新时代进发">
+		第A13版：向新时代进发</a>
+<a id=pageLink href=node_14.html title="向新时代进发">
+		第A14版：向新时代进发</a>
+<a id=pageLink href=node_15.html title="向新时代进发">
+		第A15版：向新时代进发</a>
+<a id=pageLink href=node_16.html title="向新时代进发">
+		第A16版：向新时代进发</a>
+<a id=pageLink href=node_17.html title="向新时代进发">
+		第A17版：向新时代进发</a>
+<a id=pageLink href=node_18.html title="向新时代进发">
+		第A18版：向新时代进发</a>
+<a id=pageLink href=node_19.html title="向新时代进发">
+		第A19版：向新时代进发</a>
+<a id=pageLink href=node_20.html title="向新时代进发">
+		第A20版：向新时代进发</a>
+<a id=pageLink href=node_21.html title="向新时代进发">
+		第A21版：向新时代进发</a>
+<a id=pageLink href=node_22.html title="向新时代进发">
+		第A22版：向新时代进发</a>
+<a id=pageLink href=node_23.html title="向新时代进发">
+		第A23版：向新时代进发</a>
+<a id=pageLink href=node_24.html title="向新时代进发">
+		第A24版：向新时代进发</a>
+</ul
+  </dd>
+</dl></td>
+															<td width="90">
+															<span id="calendarBtn"><img border="0" src="../../../tplimg/top-3.png" width="90" height="41"></span></td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="46">
+									<table border="0" width="100%" id="table96" cellspacing="0" cellpadding="0" height="100%">
+										<tr>
+											<td>　</td>
+										</tr>
+										<tr>
+											<td>
+											<table border="0" width="100%" id="table98" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g">
+													<p align="right">
+													<a onClick="zoomIn();" href="javascript:"><img border="0" src="../../../tplimg/a--.gif" width="10" height="10"> 
+													放大</a>&nbsp; 
+													<a onClick="zoomOut();" href="javascript:"><img border="0" src="../../../tplimg/a-.gif" width="10" height="10"> 
+													缩小</a>&nbsp; 
+													<a onClick="ozoom.style.zoom='100%';" 
+            href="javascript:"><img border="0" src="../../../tplimg/a0.gif" width="10" height="10"> 
+													默认</a>&nbsp;
+													
+													&nbsp;
+													
+												  </td>
+													<td width="14">　</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+										<tr>
+											<td height="5"></td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table58" cellspacing="0" cellpadding="0">
+										<tr>
+											<td valign="top" width="279">
+											<table border="0" width="573" id="table59" cellspacing="1" cellpadding="0" bgcolor="#17529a" height="510">
+												<tr>
+													<td bgcolor="#FFFFFF" valign="top">
+													<table border="0" width="100%" id="table97" height="100%" cellpadding="0" cellspacing="10">
+														<tr>
+															<td valign="top">
+															<table border="0" width="100%" id="table99" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td height="80" align="center" valign="middle" class="S12_b">
+<p class="title3"></p>
+<p class="title1">五四百年，青年责任代代相传</p>
+<p class="title5"></p>
+<p class="title6"></p>
+</td>
+																</tr>
+																<tr>
+																	<td bgcolor="#17529a" height="1"></td>
+																</tr>
+																<tr>
+																	<td height="15"></td>
+																</tr>
+																<tr>
+																	<td class="S11_g">
+																	<div class="wztp" style="height:600px; overflow-y:auto; width:100%;">
+																	  <table bgcolor=#efefef><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2019-05/04/A11/res03_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p></p></TD></TR></TBODY></TABLE></td></tr><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2019-05/04/A11/res07_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p></p></TD></TR></TBODY></TABLE></td></tr><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2019-05/04/A11/res11_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p></p></TD></TR></TBODY></TABLE></td></tr><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2019-05/04/A11/res15_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p></p></TD></TR></TBODY></TABLE></td></tr></table><script language="JavaScript" type="text/javascript">
+								if(picResCount>0){
+									document.getElementById("picres").style.display="block";
+									document.write("<br>");
+								}
+ 			  				</script>
+          <div id="ozoom" style="zoom:100%;FLOAT: left;"><!--enpcontent-->
+            <table width="100%" border="0" class="S11_g">
+<tr>
+<td class="content_tt"><P><p>1919年，五四运动如一道闪电照亮了历史的天空；2019年，青年接续奋进书写新篇章。一百年五四，青年之精神始终如一；五四一百年，青年之责任代代相传。连日来，各大高校如火如荼开展起纪念“五四运动100周年”活动，向青春力量致敬，传承时代精神。当下，上海学校共青团也聚焦政治引领主责主业，努力在学校“大思政”工作格局中发挥生力军作用。<strong>青年报·青春上海记者　刘昕璐</strong></p><p><strong>红色基因</strong></p><p><strong>树爱国心　立报国志</strong></p><p>青年人要勇立时代潮头，以开疆辟土的闯劲和踏石留印的韧劲，为共产主义信仰传播和社会主义建设添砖加瓦。</p><p>国福路51号，这里曾是复旦大学老校长陈望道的住所。这幢掩映在绿意中的洋房经过修缮，于去年马克思诞辰两百周年前夕，以《共产党宣言》展示馆的新身份，重新回到复旦师生和公众的视野中。</p><p>沿着褚红色的楼梯拾级而上，先生的藏书、手札以及相关珍档一一出现在眼前……这一年间，共产主义远大理想、独立学术和自由精神在这里汇聚，一起融入复旦人的品格。</p><p>展示馆面向公众开放伊始，校团委“星火团”就加入了展示馆志愿讲解员团队，在接待一批批参观者的同时，志愿者也在服务中受到教育。校团委组织院系的团支部书记等基层团干部参与到志愿服务中，发挥望道旧居讲解志愿者的辐射作用，引导一批批青年树爱国心、立报国志。</p><p>在大家看来，在旧居的讲解经历，从来都不是简单的个人独白。这里闪烁的梦想之光，让讲解者同样能够从历史中得到鼓舞与激励。</p><p>复旦大学马克思主义学院博士三年级学生陆婷婷是该志愿者服务项目的队长。她多次为望老家属和党史专家做过讲解，遇到讲稿中不甚详细的地方，她都会抓住机会向前辈们请教，据此补充了不少珍贵的史料细节。更让她欣慰的是，志愿者队伍日益壮大起来，不少人正是在听完讲解后现场报名加入的。“我们青年人，尤其是青年党员，要勇立时代潮头，以开疆辟土的闯劲和踏石留印的韧劲，为共产主义信仰传播和社会主义建设添砖加瓦。”陆婷婷说道。</p><p>对同济大学来说，“一·二九礼堂”等积淀着特殊历史意义的校园建筑与重要纪念日也都是教育载体。校团委常常利用微信、微博等新媒体平台，开展相关展览纪念活动，组织同学服务队志愿讲解，以“一堂团课”为依托，挖掘文化资源中的核心价值引领功能，寻求红色文化、传统文化与高校思政教育的契合点，引导师生成为革命精神的守护者和实践者，使社会主义核心价值观教育“入眼”“悦耳”“合意”“走心”。</p><p><strong>倾听引领</strong></p><p><strong>朋友圈变正能量“生态圈”</strong></p><p>有效掌握和运用青年人的话语体系，把政治引领与成长服务相结合，正成为许多学校共青团探索和实践的课题。</p><p>上海财经大学学联调研部充分依托“上财青年”公众号平台，利用网络新媒体，开展各类青年调研，通过话题讨论、调研长图展示、调研报告推送等全流程设置，以问卷形式引发青年积极参与网上讨论，通过调研数据分析呈现青年学习生活的所思所想，在调研报告中结合时代背景、青年特征进行深入分析，并针对调研结果进行相应的政治引领和引导，充分发挥网络新媒体的政治教育功能。</p><p>今年五四期间，“上财青年”平台调研板块还特别设置“观青年”和“青年观”两大主题调研板块，以期通过调研对青年精神风貌进行客观画像，同时实现对青年的思想政治引领。</p><p>依托“华政青年”微信平台，华东政法大学团委最近一年来，发起了更多系列线上“微调研”活动，以学生易接受、便捷参与的新型调查方式，结合热点事件，开展专题调研，系统收集学生学习、生活、情感等方面的数据资料，并形成调研报告，为学校相关职能部门走进学生、了解学生、引导学生、服务学生提供基本支撑。</p><p>校团委认为，此举亦可以及时了解学生需求，有效提高学生服务工作的精准性和有效性。校团委表示，将进一步通过找准社会需要和青年关切的结合点，优化供给，探索从“内容供给”向“产品供给”转变，逐步实现从满足学生需求进而创造和引领学生需求，并进一步发挥学生会官方微博、微信等平台作用，主动建网、用网、占网，将团员青年的“朋友圈”变为传递正能量的“生态圈”，将团员青年的“浏览量”转变为团学工作“点赞量”。</p><p><strong>温度思政</strong></p><p><strong>生动的活动融入深刻的教育</strong></p><p>政治引领是共青团的生命线，如何在生动的活动中融入深刻的教育意涵，真正聚焦主责主业，是摆在学校共青团面前的思考题。</p><p>“师生相约一小时，通海湖畔叙真知”，这是华东理工大学的“通海茶叙”。参与师生在校园咖啡厅优雅的环境和轻松的氛围中，共品香茗，共话成长，于潜移默化中打造一杯茶的温度思政，在对话中实现“浸润式”教育。&nbsp;&nbsp;<p>“小花梨”“华理勤人”和“通海茶叙”公众号每个周末定期推送下周活动预告，由学生组织的“通海茶叙”工作室通过调研反馈，了解当下青年学子关注的热点话题，并及时加入茶叙交流菜单，方便学生自行选择。&nbsp;&nbsp;<p>化工学院张庆同学是茶叙活动忠实的“茶粉儿”，上学期百场茶叙活动他参加了三分之一。他说：“这不仅仅是一个文化活动，更像是一门门短学时的选修课，我们在老师们的带领了解和走进不同的文化，在不知不觉中改变着我们的思维方式和生活态度。”&nbsp;&nbsp;<p>上海对外经贸大学，则主打“感恩教育”，分为对家庭亲人、对师长前辈、对朋辈他人、对党和国家等对象来开展，从而构建起一个具有层级递进、互动关联的系统结构。今年，利用五四运动100周年的契机，学校专门召开特别主题团日活动暨2018年度共青团表彰大会，在大学生中开展以党和国家为对象的感恩教育，对大学生政治引领模式进行有益尝试。</p><p><strong>实践育人</strong></p><p><strong>价值引领落细落小落实</strong></p><p>同人民一起开拓、同祖国一起奋进是时代赋予青年的使命。中国梦终将在一代代青年的接续奋斗中变成现实。</p><p>在上海交通大学，“实践育人”四个字的分量尤其重。2018年，学校将“实践育人质量提升体系”正式纳入学校“双一流”建设整体规划，通过完善机制，单列经费，坚持理论教育与实践养成相结合，不断加强学生价值引领。</p><p>“工作是干出来的，百姓的认可也是干出来的。在和田地区和田县塔瓦库勒乡巴克墩村，我找到了属于这个新时代、属于我自己的‘梁家河’。同人民一起开拓、同祖国一起奋进是时代赋予青年的使命。经过为期14天的南疆基层实践调研，我更加坚定地相信中国梦终将在一代代青年的接续奋斗中变成现实。”安泰经济与管理学院博士生赛福鼎·阿力木，作为上海交大11700余名学生之一参与到去年的暑期社会实践中，并担任“情系新疆·践行使命”赴新疆基层社会实践团团长，该实践团队旨在与地方基层长期合作交流，为南疆注入持续的“交大力量”。</p><p>校团委表示，在去年《新时代社会认知实践》课程施行基础上，今年暑假，将专门为学子开设并铺开行业教育实践板块。同时，以“行万里路，知中国情”为主题，号召全校学生深入基层、深入行业、了解国情、增长才干、明确方向，推动学生价值引领工作落细落小落实，引导学生树立在新时代勇担民族复兴大任的远大理想和使命认同。</p><p>据了解，类似这样的实践活动在其他高校同样开展得红红火火。</p><p><strong>亮点活动</strong></p><p><strong>@复旦大学</strong>　纪念五四百年升国旗仪式、纪念五四百年晚会等。</p><p>学校团委还与食堂联手，在4月29日和30日提供5.4元的“团餐”。</p><p><strong>@上海交通大学</strong>　举办“新青年耀青春”纪念五四百年系列活动之一时光宝盒万里巡展等主题活动。&nbsp;<p><strong>@上海财经大学</strong>　致力于提升青年的国际化水平，开展包括英语辩论等在内的“青年看世界世界听中国”系列特色英语活动。&nbsp;&nbsp;<p><strong>@同济大学围绕　</strong>“青春心向党、建功新时代”主题开展纪念五四运动一百周年系列活动，包括五四奖章评选活动、殷夫班开班仪式等系列活动。@华东理工大学“青春心向党，建功新时代”纪念五四运动100周年青春歌会，习近平新时代中国特色社会主义思想“三进”首场报告会暨百名优秀学生骨干培训班开班仪式。&nbsp;&nbsp;<p><strong>@东华大学　</strong>“百团”青春接力跑。由100个团支部书记以接力跑和创意集体照的形式开展，接力跑路线设置“青年大学习”关卡。&nbsp;&nbsp;<p><strong>@华东政法大学　</strong>“春之华政”青年文化艺术节，贯穿整个红五月，激励青年大学生坚定理想信念，通过丰富多样的活动形式展现出华政学子独特的精神风貌。&nbsp;&nbsp;<p><strong>@上海中医药大学　</strong>“奋斗的青春最美丽”主题演讲比赛，选拔10名优秀的宣讲员，分赴各团支部开展红色精神传承的主题团日活动，让红色基因融入到团员青年的精神血脉中。&nbsp;&nbsp;<p><strong>@上海对外经贸大学</strong>　开展“青春心向党，建功新时代”五四主题微团课，融入感恩教育元素，引领青年感恩党和国家，并发布共青团品牌形象“啾团团”。</p></P>
+<INPUT type=checkbox value=0 name=titlecheckbox sourceid="<Source>SourcePh</Source>" style="display:none">
+</td>
+</tr>
+</table>
+
+
+<!--/enpcontent--></div>
+        </div></td>
+																</tr>
+															</table>
+															</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+											<td valign="top" width="11">　</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td valign="bottom" bgcolor="#e1f5ff">
+
+<table border="0" width="100%" id="table67" cellspacing="0" cellpadding="0" bgcolor="#e1f5ff">
+	<tr>
+		<td height="100%" valign="bottom"><br>
+		　<table border="0" width="100%" id="table68" cellspacing="0" cellpadding="0">
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#17529a" height="26" class="S9bo_g">
+				<p align="center"><font color="#FFFFFF"></font></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table></div>
+<div style="display:none"><a href="../../../paperindex.htm" id="paperName"></a>
+    青年报
+</div>
+<!-- -------------------------版面导航-------------->
+<div id=bmdh onMouseOver="document.getElementById('bmdh').style.display = 'block';" onMouseOut="document.getElementById('bmdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:220px; top:82px; filter:alpha(opacity=90);">
+  <table cellspacing=0 cellpadding=2 width="192px" border=0 bgcolor=#ffffff><tbody>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_1.html>
+        第A01版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A01/20190504A01_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_2.html>
+        第A02版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A02/20190504A02_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_3.html>
+        第A03版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A03/20190504A03_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_4.html>
+        第A04版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A04/20190504A04_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_5.html>
+        第A05版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A05/20190504A05_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_6.html>
+        第A06版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A06/20190504A06_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_7.html>
+        第A07版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A07/20190504A07_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_8.html>
+        第A08版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A08/20190504A08_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_9.html>
+        第A09版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A09/20190504A09_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_10.html>
+        第A10版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A10/20190504A10_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_11.html>
+        第A11版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A11/20190504A11_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_12.html>
+        第A12版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A12/20190504A12_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_13.html>
+        第A13版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A13/20190504A13_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_14.html>
+        第A14版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A14/20190504A14_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_15.html>
+        第A15版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A15/20190504A15_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_16.html>
+        第A16版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A16/20190504A16_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_17.html>
+        第A17版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A17/20190504A17_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_18.html>
+        第A18版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A18/20190504A18_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_19.html>
+        第A19版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A19/20190504A19_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_20.html>
+        第A20版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A20/20190504A20_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_21.html>
+        第A21版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A21/20190504A21_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_22.html>
+        第A22版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A22/20190504A22_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_23.html>
+        第A23版
+        ：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A23/20190504A23_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_24.html>
+        第A24版：向新时代进发</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-05/04/A24/20190504A24_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+</tbody></table></div>
+<!-------bmdh版面导航END------>
+<!-- -------------------------标题导航-------------->
+<DIV  id=btdh onMouseOver="document.getElementById('btdh').style.display = 'block';" onMouseOut="document.getElementById('btdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:200px; top:82px; filter:alpha(opacity=90); background-color:#FFFFFF">
+  <ul id="artPList1">
+  
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp87236" href=./content_87236.html>五四百年，青年责任代代相传</a></li> 
+  
+  </ul>
+</div>
+<!-- -------------------------标题导航 END -------------->
+<!--日历部分-->
+
+<div id="calendarBox"  style="left:50%; margin-left:295px; top:82px;">
+<form name=CLD>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td colspan=7 align="center" height="24" bgcolor="#ffffff">
+              <img src="../../../tplimg/d1.gif" width="7" height="11"  onclick="turnpage('SY',0)">
+               <select name=SY  onchange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=2006;i<2051;i++){document.write('<option>'+i+'</option>')}</script>
+              </select>
+               <img src="../../../tplimg/d.gif" width="7" height="11" onClick="turnpage('SY',1)">
+               <img src="../../../tplimg/d1.gif" width="7" height="11" onClick="turnpage('SM',0)">
+                <select name=SM onChange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=1;i<13;i++) document.write('<option>'+i+'</option>')</script>
+                </select>                          
+                <img src="../../../tplimg/d.gif" width="7" height="11" style="cursor:pointer;" onClick="turnpage('SM',1)">
+          </td>
+        </tr>
+        <tr height="22" bgcolor="#e8e8e8">
+          <td align="center"><b>日</b></td>
+          <td align="center"><b>一</b></td>
+          <td align="center"><b>二</b></td>
+          <td align="center"><b>三</b></td>
+          <td align="center"><b>四</b></td>
+          <td align="center"><b>五</b></td>
+          <td align="center"><b>六</b> </td>
+        </tr>
+        <script>
+            var gNum;
+            for(i=0;i<6;i++) {
+                document.write('<tr height="20">');
+                for(j=0;j<7;j++){
+                    gNum = i*7+j;
+                    document.write('<td align=center id="GD' + gNum +'" width="14%"><a id="CD' + gNum + '">');
+                    document.write('</a></td>');
+                }
+                document.write('</tr>');
+            } 
+      </script>
+   </table>
+</form>
+</div>
+ <span class="nav_1" style="display:none"><a href="#" class="14bai" onClick="goPrePeriod()">上一期</a>&nbsp;&nbsp;<a href="#" class="14bai" onClick="goNxtPeriod();" >下一期</a></span>
+
+</body>
+
+</html>
+
+<!--mpproperty <founder-date>
+2019-05-04
+</founder-date>
+<founder-author>
+
+</founder-author>
+<founder-title>五四百年，青年责任代代相传
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle></founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle></founder-introtitle>
+<founder-pagepicurl>http://pc/qnb/images/2019-05/04/A11/20190504A11_brief.jpg</founder-pagepicurl>
+<founder-pagenum>A11</founder-pagenum>
+<founder-papername>青年报</founder-papername>
+<founder-nodeid>11</founder-nodeid> /mpproperty-->
+
+

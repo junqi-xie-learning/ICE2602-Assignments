@@ -1,0 +1,189 @@
+		<!doctype html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>文汇电子报-临床医学“大而不强”如何破题</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+        <link href="https://client.whb.cn/new/components/com_m_news/include/css/style.css?v=0.01" rel="stylesheet" type="text/css"/>
+        <script src="https://client.whb.cn/new/components/com_m_news/include/js/jquery.min.js?v=0.01" type="text/javascript"></script>
+        <script src="/new/components/com_m_news/include/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 320;
+		var ua = navigator.userAgent;
+		var IS_Android = 0;
+		if (/(Android)/i.test(ua)) {
+			IS_Android = 1;
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3) {
+				document.write('<meta name="viewport" content="width=320, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+			}
+			else{
+				document.write('<meta name="viewport" content="width=320, target-densitydpi=device-dpi">');
+			}
+		}
+		else{
+			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+        <script type="text/javascript" language="javascript">
+			var oY, tY, cY, offSetPx;
+			var moveTimeOut;
+			window.onscroll = function () {
+				if (moveTimeOut) {
+					clearTimeout(moveTimeOut);
+				}
+				oY = document.getElementById("backBtn").offsetTop;
+				tY = getScrollTop(oY);
+				if (oY > tY+300) {
+					offSetPx = -1;
+				}
+				else {
+					offSetPx = 1;
+				}
+				moveTimeOut = setTimeout(moveBackBtn, 0);
+			}
+	
+			function moveBackBtn() {
+				cY = document.getElementById("backBtn").offsetTop;
+	
+				if (offSetPx > 0) {
+					if (cY >= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY + 10 + "px";
+	
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+				else {
+					if (cY <= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY - 10 + "px";
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+			}
+	
+			function getScrollTop() {
+				var scrollPos;
+				if (window.pageYOffset) {
+					scrollPos = window.pageYOffset;
+				}
+				else if (document.compatMode && document.compatMode != 'BackCompat')
+				{ scrollPos = document.documentElement.scrollTop; }
+				else if (document.body) { scrollPos = document.body.scrollTop; }
+				return scrollPos;
+			}
+			
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: '/new/index.php?option=com_m_news&getWxConfig',
+					data: {
+						getWxConfig: '1',
+					},
+					dataType: 'json',
+					success: function(signPackage) {
+						wx.config({
+							debug: false,
+							appId: signPackage["appId"],
+							timestamp: signPackage["timestamp"],
+							nonceStr: signPackage["nonceStr"],
+							signature: signPackage["signature"],
+							jsApiList: [
+								'checkJsApi',
+								'onMenuShareTimeline',
+								'onMenuShareAppMessage'
+							]
+						});
+					},
+					error: function(xhr, type, error) {
+					}
+				});
+			});
+		</script>
+        </head>
+        <body>
+        <a href="javascript:history.go(-1);" class="backBtn" style="display: none; z-index: 100; opacity: 0.8; top:300px; right:5px; padding: 0px; width: 40px; height: 40px; background-image: url(https://client.whb.cn/new/components/com_m_news/include/images/BackBtn1.png);position:absolute;" id="backBtn"></a>
+        <div class="content">
+        	<div class="menu1">
+            <h1>2019年8月5日   要闻  </h1>
+            </div>
+            <div style="clear:both;">
+            						<script type="text/javascript">
+							wx.ready(function () {
+								// 在这里调用 API
+								wx.onMenuShareAppMessage({
+								  title: '临床医学“大而不强”如何破题',  
+								  desc: '最新统计显示，我国大陆地区登记临床研究数1.4万多项，仅占全球总数的4.79%',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2019-08-05&id=157146&p=1',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg', 
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								});
+								wx.onMenuShareTimeline({  
+							      title: '临床医学“大而不强”如何破题',  
+								  desc: '文汇电子报',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2019-08-05&id=157146&p=1',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg',  
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								}); 
+							});
+						</script>
+						<div align="left" style="padding-bottom: 10px">
+							<div style="background:#F5F5F5; padding: 12px;">
+																<div style="font-size:12px; color:#949494;width: 296px;word-wrap:break-word">最新统计显示，我国大陆地区登记临床研究数1.4万多项，仅占全球总数的4.79%</div>
+																<div style="font-weight:600;font-size:24px;width: 296px;word-wrap:break-word">临床医学“大而不强”如何破题</div>
+							</div>
+													</div>
+						<div style="border-bottom: 1px solid #CECECE; clear: both; margin-bottom: 5px;"></div>
+						<div align="center" style="padding: 0px 12px;">
+												<div style="font-size:14px; text-align: left;word-break: break-all;">    <p><p>7月17日至25日，一个多星期，上海交通大学医学院的原创研究成果三次刊登于国际医学顶尖期刊《新英格兰医学杂志》，国内外同行直呼“破天荒”。中国医生发表的论文多了，但是，在国际重大新药研发、新治疗方案上有话语权的成果，却并不多。这一次连发重量级论文的背后，实为上海交通大学医学院力推临床型研究的深层次转型</p><p>■本报首席记者&nbsp;唐闻佳</p><p>这个夏天，上海交通大学医学院沸腾了：7月17日至25日，国际医学顶尖期刊《新英格兰医学杂志》连发三篇重磅论文，报道该院附属瑞金医院肾脏内科陈楠团队、附属仁济医院风湿科叶霜团队的原创研究成果。前者涉及一款全球首创新药，后者为一种死亡率高达50%的危重症提供了全新治疗方案。</p><p>一个多星期，一流研究成果三次刊登于《新英格兰医学杂志》，国内外同行直呼“破天荒”。中国医生发表的论文多了，但是，在国际重大新药研发、新治疗方案上有话语权的成果，却并不多。这一次连发重量级论文的背后，实为上海交通大学医学院力推临床型研究的深层次转型。</p><p>“不能再把国人的健康寄托在他国的治疗标准或指南上了。”中国科学院院士、上海交通大学医学院院长陈国强，一语道破医学院和医院向深层次转型的动力。</p><p>医生发的论文不少，临床研究“大而不强”</p><p>上海交通大学医学院临床医学学科实力雄厚：2011年以来，国家自然科学基金数量、SCI论文数均连年位列全国医学院校之首，“临床医学”学科多年蝉联全国第一。</p><p>辉煌之下，亦有忧患。早在2007年，时任上海交通大学医学院副院长的陈国强就在学校年度科技工作会上发问：“现在一讲到研究，就讲细胞、分子、基因。但我想问，是不是临床问题都解决了？没有！”</p><p>陈国强的话，道出了中国临床研究长久以来的尴尬：中国医生发表论文的不少，但开展临床研究太少、能力较弱。</p><p>最新统计显示，全球登记临床研究总数达31万多项，其中，美国登记数12万多项，占全球总数的39.5%；中国大陆地区登记数1.4万多项，仅占全球总数的4.79%。◆下转第二版</p><p>(上接第一版)</p><p>“中国的医院里，一个科室单月病例数可能相当于其他国一年的病例数。我们虽然手握丰富的病例，但国际上由中国人牵头研发的新药、制定的指南却很少。”用上海交通大学医学院附属第九人民医院副院长、整形外科专家李青峰的话来说，中国临床医学工作“大而不强”。</p><p>“我们中国人跟西方人遗传背景不同、生活方式不同，拿西方人的治疗标准来医治中国人，合适吗？”陈国强认为，正确认识基础研究和临床研究之间的关系，大力倡导开展具有临床诊断和治疗价值的临床研究，这尤应成为三甲医院与普通医院的重要区别，更是三甲医院的重要使命。</p><p>放眼世界一流医学院、一流医疗机构，凡称得上“世界一流”的，无一不是将“减轻人类病痛”“治愈疾病”作为首要目标，而非SCI论文，也非基金项目数。五年前，拥有13家附属医院、承担上海二分之一疑难杂症诊治量的上海交通大学医学院，吹响了加强临床研究的集结号。</p><p>打破唯项目唯论文旧观念，“激”出临床研究新体系</p><p>转型的路，并不好走！</p><p>在唯项目、唯论文的环境下，推动结果不可知、研究周期长，需要团队作战的临床研究……仔细掂量，这条改革的路，各种显性和隐性阻力不少。但是，改革哪有容易的事？！</p><p>“如果我们这批年轻人，依旧过着周末到处跑、开‘飞刀’的日子，而不能静下心来思考一些临床问题，使自己在看病的同时逐渐向研究型人才方向发展，这对个人、对医院、对医学院来说，都是一种浪费。”陈国强说。</p><p>上海交通大学医学院决策层达成共识：既然在国内，学校的项目、论文、科研奖项已处于“第一方阵”，那就应该有接受论文、排名可能暂时落后的勇气，从而鼓励医务人员利用临床资源开展规范的临床研究，成就一批疾病诊断治疗标准，更多惠及人民健康。同时，也为国家创新药物和生物医药产业爆发期的来临夯基垒台，搭建高效、高质的临床研究平台。</p><p>从2014年起，上海交通大学医学院依托上海市高峰高原学科建设计划，在临床医学学科中全面启动基于临床资源的前瞻性多中心临床研究计划。</p><p>指挥棒变了，运动员未必会跑。上海交通大学医学院副院长江帆教授介绍，学校坚持顶层设计，以“临床研究能力提升”为抓手，形成临床研究“人才—项目—平台”联动模式，打破唯项目、唯论文的旧观念，不断“激”出临床研究新体系。</p><p>为此，学校启动“双百”人才计划。上海交通大学医学院副院长吴正一介绍，其中，“一个百”就是在五年内培养100名“研究型医师”，由校方为这支队伍提供充分保障与成长平台。与之配合，学校还通过引育并举方式，打造一支百人“临床专职研究队伍”。</p><p>近年来，上海交通大学医学院先后布局30多项“多中心临床研究项目”，附属医院形成了医生争先恐后提出科学问题、总结诊疗病例、组队协同攻关的临床研究氛围。</p><p>2017年，上海交通大学医学院临床研究中心成立。该中心通过全面整合下属13家附属医院的临床资源，致力于在医学前沿问题、疾病规范化诊治、临床诊疗新技术等方面形成一批在国内外有重大影响的临床研究成果。</p><p>临床研究渐成风气，让医生真正回归到病人身边</p><p>五年来，在上海交通大学医学院建立临床研究中心的基础上，各附属医院建立配套分中心，临床研究“人才—项目—平台”联动模式真正激起了临床医生的研究热情，让他们能更好地回归到病人身边，从病人的病征细致观察，到规范化诊疗体系，到创新诊疗技术的应用，这一切都成了高质量研究的来源。</p><p>观念转变，平台助跑，一批高水平临床研究成果自然涌现。</p><p>去年4月，由附属瑞金医院心脏外科赵强教授牵头的研究成果在《美国医学会杂志》（JAMA）发表。该研究将有望改变中国乃至世界搭桥术后的治疗指南；去年，附属第九人民医院李青峰教授团队实现1.2亿元独家转让项目，创下上海交通大学医学院迄今临床科技成果转化金额的最大单纪录，相关技术将应用于皮肤再生、愈合、移植等领域，具有巨大的临床应用价值和效益；今年7月17日至25日，短短一周间，附属医院三项原创研究成果发表于《新英格兰医学杂志》。</p><p>“对医务人员来说，就是要从临床发现问题，通过科学研究解决问题，再回到临床造福老百姓。”瑞金医院院长瞿介明教授介绍，在上海交通大学医学院吹响临床研究集结号后，去年，瑞金医院专门拨款2000万元，首次在医院里择优资助临床研究项目。</p><p>“指挥棒”效应是无穷的。瑞金医院近年共承接各类药物和器械临床试验876项。就在最近，由中国工程院院士、瑞金医院终身教授陈赛娟等领衔的专家团队，通过新型CAR-T免疫治疗技术，使多发性骨髓瘤患者从生死的边缘重获新生，论文刊发于《美国科学院院刊》，标志着CAR-T治疗的新里程碑。</p><p>人均寿命越来越长，但今天的我们却比以往任何时候更期待医学的进步。这些进步正需要顶尖医生每天在病房、在手术室忙碌并总结提炼临床问题，从事临床研究。因为他们的研究，将拓宽人类对疾病的认识，推动临床诊疗的进步，也将在世界舞台上贡献中国医生的智慧。</p></p></div>
+						</div>
+					</div>
+				            </div>
+            <br style="clear:both"/>
+        </div><!--content-->
+        </body>
+        <script type="text/javascript">
+			var date = "2019-08-05";
+			var name,value,i;
+			var str=location.href;
+			var num=str.indexOf("?");
+			str=str.substr(num+1);
+			var arrtmp=str.split("&");
+			var backurl = "";
+			for(i=0;i < arrtmp.length;i++){
+				num=arrtmp[i].indexOf("=");
+				if(num>0){
+					name=arrtmp[i].substring(0,num);
+					value=arrtmp[i].substr(num+1);
+					if(name=="p"){
+						backurl = "index.php?option=com_m_news&date="+date+"&p="+value;
+						$(".backBtn").attr("href", "index.php?option=com_m_news&date="+date+"&p="+value);
+					}
+				}
+			}
+			function goback(){
+				window.location.href = backurl;
+				console.log("不是首页");
+				if(IS_Android){
+					console.log("android");
+					android.goback(1);
+				}
+				else{
+					console.log("ios");
+					return 1;
+				}
+			}
+			//setTimeout("goback();", 3000);
+		</script>
+        </html>
+		

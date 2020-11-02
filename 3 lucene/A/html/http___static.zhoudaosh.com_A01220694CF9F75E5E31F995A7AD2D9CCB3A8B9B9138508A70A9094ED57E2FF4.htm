@@ -1,0 +1,508 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>周到上海</title>
+<link rel="stylesheet" href="http://cdn.zhoudaosh.com/public/style/common.css">
+<link rel="icon" href="http://cdn.zhoudaosh.com/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://cdn.zhoudaosh.com/favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<style>
+            .recommend{ display: none;}
+            .recommend .recommend-title{padding:.26rem 0 .08rem .09rem;font-size:.12rem;font-weight:bold;color:#4f5057}
+            .recommend ul{width:2.94rem;margin:0 auto}
+            .recommend ul li{margin:.13rem auto;box-sizing:border-box;border-radius:.05rem;background-color:#fff;box-shadow:0 .015rem .085rem 0 rgba(231,219,219,0.52)}
+            .recommend ul li a{display:block;padding:.13rem}
+            .recommend ul li .topic{padding-bottom:.05rem;font-size:.1rem;color:#b69a83}
+            .recommend ul li .images{margin-bottom:.1rem;font-size:0;text-align:center}
+            .recommend ul li .images img{margin-right:.06rem}
+            .recommend ul li .images img:last-child{margin:0}
+            .recommend ul li h3{height:.55rem;font-size:.13rem;color:#333;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+            .recommend ul li h3.m-el2{height:.4rem;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+            .recommend ul li img{width:.85rem;height:.68rem;object-fit:cover;border-radius:.05rem;box-shadow:0 .015rem .085rem 0 rgba(231,219,219,0.5);background:url("http://cdn.zhoudaosh.com/public/images/imgholder.png") no-repeat center;background-size:100%}
+            .recommend ul li .item-top img{margin-left:.23rem}
+            .recommend ul li .bottom{padding-top:.08rem;line-height:.2rem;font-size:.1rem}
+            .recommend ul li .bottom .classify{height:.185rem;margin-right:.13rem;padding:0 .04rem;border-radius:.05rem;border:solid 1px #e14d45;text-align:center;line-height:.185rem;color:#e14d45}
+            .recommend ul li .bottom .views{padding-left:.18rem;color:#6c6c6c;background:url('http://cdn.zhoudaosh.com/public/images/comment.png') no-repeat 0 center;background-size:.14rem}
+            .recommend ul li .bottom .time{color:#969696}
+            .recommend ul li h3{font-weight:normal}
+            .recommend ul li img{height:.68rem !important}
+            .fl{float:left}.fr{float:right}.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0}.clearfix{*zoom:1}
+
+            .advert{display: none;position:relative;width:2.94rem;height:1.56rem;margin:0 auto;border-radius:.05rem;padding:.085rem;box-sizing:border-box;background-color:#fff;box-shadow:0 .015rem .085rem 0 rgba(231,219,219,0.5)}
+            .advert img{border-radius:.05rem;width:100%;height:100% !important;object-fit:cover}
+
+            .advert .adLabels{display: none;position:absolute;bottom:0;left:0;width:.365rem;height:.225rem;padding:.03rem .06rem 0 0;border-radius:.05rem;box-sizing:border-box;text-align:right;font-size:.1rem;color:#6c6c6c;background-color:#fff}
+        </style>
+<link rel="stylesheet" href="http://cdn.zhoudaosh.com/public/style/stylelist/sharestyle2.css?ver=2"> </head>
+<body>
+<div id="center">
+<div id="download" class="download">
+<dl>
+<dt><img src="http://cdn.zhoudaosh.com/public/images/contentshare/logo.png" /></dt>
+<dd>
+<h2>周到上海</h2>
+<p>上海市民的生活指南</p>
+</dd>
+</dl>
+<div class="download-app" onclick="download()">下载APP</div>
+</div>
+<div id="mainspace" style="margin: 8px;">
+<div id="contentzoneouter"></div>
+<a href="javascript:;" class="more">展开更多内容</a>
+</div>
+<div id="loadingmark" style="z-index: 100;position: fixed; top: 0; right: 0; bottom: 0; left: 0; text-align: center; background-color: white;">
+<img style="margin-top: 100px; width: 120px;" src="http://cdn.zhoudaosh.com/public/images/loading.gif" alt="加载中……">
+<div id="loadingmsg"></div>
+</div>
+</div>
+<div class="advert"></div>
+<div class="recommend">
+<div class="recommend-title">相关推荐</div>
+<ul></ul>
+</div>
+<div class="open-app" onclick="download()"><span>打开<br>APP</span></div>
+<div class="modal">
+<div class="modal-shadow"></div>
+<div class="modal-box">
+<div class="modal-content">即将离开微信<br>打开“周到上海”</div>
+<div class="btns">
+<div class="cancel btn">取消</div>
+<div class="confirm btn">允许</div>
+</div>
+</div>
+</div>
+<script>(function(a,d){var b=a.documentElement,e="orientationchange"in window?"orientationchange":"resize",c=function(){var a=b.clientWidth;a&&(b.style.fontSize=Math.min(a,640)/320*100+"px")};a.addEventListener&&(d.addEventListener(e,c,!1),a.addEventListener("DOMContentLoaded",c,!1))})(document,window);</script>
+<script type="text/javascript">
+        function getloader( _url, _fn, _efn ){
+            var xmlhttp;
+            try{
+                xmlhttp = new XMLHttpRequest();
+            }
+            catch( e ){
+                try{
+                    xmlhttp = new ActiveXObject( 'Microsoft.XMLHTTP' );
+                }
+                catch( e ){
+                    return;
+                }
+            }
+            xmlhttp.onreadystatechange = function(){
+                switch( xmlhttp.readyState ){
+                    case 1:
+                    case 2:
+                    case 3: {
+                        break;
+                    }
+                    case 4: {
+                        switch( xmlhttp.status ){
+                            case 200: {
+                                try{
+                                    _fn( xmlhttp );
+                                }
+                                catch( err ){}
+                                break;
+                            }
+                            default: {
+                                try{
+                                    _efn( xmlhttp );
+                                }
+                                catch( err ){}
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            };
+            xmlhttp.open( 'GET', _url );
+            xmlhttp.send();
+        }
+        window.regwxinfo = function(){};
+        // API式获取授权信息
+        ( function gotoregist(){
+            if( !navigator.userAgent.match( /(iPhone|iPod|Android|ios|SymbianOS)/i ) ) {
+                document.getElementById( 'center' ).style.width = '700px';
+                document.getElementById( 'center' ).style.margin = '0 auto';
+                document.getElementById( 'mainspace' ).style.margin = '';
+                window.onpc = 700;
+            }
+            if( /micromessenger/i.test( navigator.userAgent.toLowerCase() ) && !( /WindowsWechat/i.test( navigator.userAgent.toLowerCase() ) ) ){
+                getloader( '//api.zhoudaosh.com/weixin.php?apiurl=' + encodeURIComponent( location.protocol + '//' + location.host + location.pathname + location.search ), function( xmlhttp ){
+                    var content = xmlhttp.responseText;
+                    var json = null;
+                    try{
+                        json = JSON.parse( content );
+                    }
+                    catch( err ){}
+                    if( json && json[ '' ] == 'OK' ){
+                        try{
+                            var reloader = null;
+                            // 微信注册
+                            wx.config( {
+                                appId: json[ 'i' ], // 必填，公众号的唯一标识
+                                timestamp: json[ 't' ], // 必填，生成签名的时间戳
+                                nonceStr: json[ 'n' ], // 必填，生成签名的随机串
+                                signature: json[ 's' ], // 必填，签名，见附录1
+                                jsApiList: [ 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone', 'onMenuShareWeibo' ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                            } );
+                            wx.ready( function(){
+                                clearTimeout( reloader );
+                                reloader = null;
+                                window.regwxinfo = function( title, link, imgUrl, desc, type, dataUrl ){
+                                    if( title && link && imgUrl && desc ){
+                                        window.regwxinfo = function(){};
+                                    }
+                                    wx.onMenuShareTimeline( {
+                                        title: title, // 分享标题
+                                        link: link, // 分享链接
+                                        imgUrl: imgUrl, // 分享图标
+                                        success: function(){
+                                            // alert( '分享成功' ); // 用户确认分享后执行的回调函数
+                                        },
+                                        cancel: function(){
+                                            // alert( '分享失败' ); // 用户取消分享后执行的回调函数
+                                        }
+                                    } );
+                                    wx.onMenuShareAppMessage( {
+                                        title: title, // 分享标题
+                                        desc: desc, // 分享描述
+                                        link: link, // 分享链接
+                                        imgUrl: imgUrl, // 分享图标
+                                        type: 'link', // 分享类型,music、video或link，不填默认为link
+                                        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                                        success: function(){
+                                            // alert( '分享成功' ); // 用户确认分享后执行的回调函数
+                                        },
+                                        cancel: function(){
+                                            // alert( '分享失败' ); // 用户取消分享后执行的回调函数
+                                        }
+                                    } );
+                                    wx.onMenuShareQQ( {
+                                        title: title, // 分享标题
+                                        desc: desc, // 分享描述
+                                        link: link, // 分享链接
+                                        imgUrl: imgUrl, // 分享图标
+                                        success: function(){
+                                            // alert( '分享成功' ); // 用户确认分享后执行的回调函数
+                                        },
+                                        cancel: function(){
+                                            // alert( '分享失败' ); // 用户取消分享后执行的回调函数
+                                        }
+                                    } );
+                                    wx.onMenuShareQZone( {
+                                        title: title, // 分享标题
+                                        desc: desc, // 分享描述
+                                        link: link, // 分享链接
+                                        imgUrl: imgUrl, // 分享图标
+                                        success: function () {
+                                            // alert( '分享成功' ); // 用户确认分享后执行的回调函数
+                                        },
+                                        cancel: function () {
+                                            // alert( '分享失败' ); // 用户取消分享后执行的回调函数
+                                        }
+                                    } );
+                                    wx.onMenuShareWeibo( {
+                                        title: title, // 分享标题
+                                        desc: desc, // 分享描述
+                                        link: link, // 分享链接
+                                        imgUrl: imgUrl, // 分享图标
+                                        success: function () {
+                                            // alert( '分享成功' ); // 用户确认分享后执行的回调函数
+                                        },
+                                        cancel: function () {
+                                            // alert( '分享失败' ); // 用户取消分享后执行的回调函数
+                                        }
+                                    } );
+                                };
+                                getUrl();
+                            } );
+                            wx.error( function( res ){
+                                //document.getElementById( 'loadingmsg' ).innerHTML = '网络故障，几秒后重试……';
+                                if( !reloader ){
+                                    reloader = setTimeout( function(){
+                                        location.hash = '';
+                                        gotoregist();
+                                    }, 5000 );
+                                }
+                            } );
+                        }
+                        catch( err ){
+                            console.log( err );
+                        }
+                    }else{
+                        getUrl();
+                    }
+                }, function( xmlhttp ){
+                    //document.getElementById( 'loadingmsg' ).innerHTML = '网络故障，正在重试……';
+                    setTimeout( function(){
+                        location.reload();
+                    }, 10 );
+                } );
+            }
+            else{
+                getUrl();
+            }
+        } )();
+        function getUrl(){
+            		var cururl = location.protocol + "//static.zhoudaosh.com/A01220694CF9F75E5E31F995A7AD2D9CCB3A8B9B9138508A70A9094ED57E2FF4";
+		var url = "http://static.zhoudaosh.com/files/cnews/2019/20190518/A01220694CF9F75E5E31F995A7AD2D9CCB3A8B9B9138508A70A9094ED57E2FF4/3.html";
+            getloader( url, function( xmlhttp ){
+                var st = xmlhttp.responseText;
+                var re1 = /[<]body[>]((.|\r|\n|[^.])*)[<][/]body[>]/ig;
+                var re2 = /[<]script.*?[<][/]script[>]/ig;
+                var re3 = /src="(.*?)"/;
+                var re7 = /[>]((.|\r|\n)*?)[<][/]script[>]/;
+                var re4 = /[<]meta.*?[>]/ig;
+                var re5 = /name="(.*?)"/;
+                var re6 = /content="(.*?)"/;
+                var body = re1.exec( st );
+                if( body && body.length > 1 ){
+                    body = body[ 1 ];
+                }else{
+
+                }
+
+                var oMainspace = document.getElementById('mainspace'),
+                    oContentzoneouter = document.getElementById('contentzoneouter');
+                oContentzoneouter.innerHTML = body;
+
+                /**
+                 * 查看更多内容
+                 **/
+                if(oContentzoneouter.clientHeight > 1200){
+                    oMainspace.classList.add('hide');
+                } else {
+                    document.getElementById('download').style.display = 'block';
+                }
+                oMainspace.querySelector('.more').addEventListener('click', function () {
+                    document.querySelector('.modal').classList.add('show');
+                });
+
+                /**
+                 * Modal弹窗按钮事件方法
+                 **/
+                document.querySelector('.modal .cancel').addEventListener('click', function () {
+                    oMainspace.classList.remove('hide');
+                    document.querySelector('.modal').classList.remove('show');
+                });
+                document.querySelector('.modal .confirm').addEventListener('click', function () {
+                    oMainspace.classList.remove('hide');
+                    document.querySelector('.modal').classList.remove('show');
+                    download();
+                });
+
+                while( !!( sc = re2.exec( st ) ) ){
+                    sc = sc[ 0 ];
+                    src = re3.exec( sc );
+                    if( src && src.length > 1 ){
+                        src = src[ 1 ];
+                        var $scr = document.createElement( 'script' );
+                        $scr.src = src;
+                        document.head.appendChild( $scr );
+                    }
+                    else{
+                        src = re7.exec( sc );
+                        if( src && src.length > 1 ){
+                            src = src[ 1 ];
+                            var $scr = document.createElement( 'script' );
+                            $scr.innerHTML = src;
+                            document.head.appendChild( $scr );
+                        }
+                    }
+                }
+                setInterval( function(){
+                    if( !window.player && !!window.YKU ){
+                        try{
+                            document.getElementById( 'mousechsh_baidutongji' ).remove();
+                        }
+                        catch( err ){}
+                        try{
+                            document.getElementById( 'mousechsh_cnzzcnzz' ).remove();
+                        }
+                        catch( err ){}
+                        setTimeout( function(){
+                            //location.reload();
+                        }, 2000 );
+                    }
+                }, 3000 );
+                var title = '周到上海';
+                var link = cururl;
+                var imgUrl = 'http://cdn.zhoudaosh.com/installer/ZhouDao_2.png';
+                var desc = '周到上海，上海市民生活指南';
+                while( !!( mt = re4.exec( st ) ) ){
+                    mt = mt[ 0 ];
+                    nm = re5.exec( mt );
+                    ctn= re6.exec( mt );
+                    if( nm && nm.length > 1 && ctn && ctn.length > 1 ){
+                        switch( nm[ 1 ] ){
+                            case 'zd-title':
+                                title = ctn[ 1 ];
+                                document.title = title;
+                                break;
+                            case 'zd-titleimage':
+                                //	imgUrl = ctn[ 1 ];
+                                //	if( /^[/][/]/.test( imgUrl ) ){
+                                //		imgUrl = 'http:' + imgUrl;
+                                //	}
+                                break;
+                            case 'zd-shortdisplay':
+                                desc = ctn[ 1 ];
+                                break;
+                        }
+                    }
+                }
+                window.regwxinfo( title, link, imgUrl, desc );
+                function imgrs(){
+                    try{
+                        if( window.imageresize ){
+                            window.imageresize();
+                        }
+                        else{
+                            setTimeout( function(){
+                                imgrs();
+                            }, 500 );
+                        }
+                    }
+                    catch( err ){}
+                }
+                imgrs();
+                document.getElementById( 'loadingmark' ).style.display = 'none';
+                //删除空白
+                var p = document.querySelectorAll('#mainspace p');
+                var parent = document.querySelector('#contentzoneouter');
+                for(var i = 0,len=p.length; i < len; i++){
+                    if(p[i].innerHTML == '<br>'){
+                        parent.removeChild(p[i]);
+                    }
+                }
+                //删除空白结束
+            }, function( xmlhttp ){
+                //document.getElementById( 'loadingmsg' ).innerHTML = '网络故障，即将重试……';
+                setTimeout( function(){
+                    location.reload();
+                }, 100 );
+            } );
+        }
+
+        function ajax(json) {
+            var type = json.type || 'get';
+            typeof type == 'string' ? type = type.toLowerCase() : false;
+            var url = json.url || '';
+            var dataType = json.dataType || 'text';
+            typeof type == 'string' && (dataType = dataType.toLowerCase());
+            var async = json.async || true;
+            var data = json.data || null;
+            var success = json.success || function () {};
+            var error = json.error || function () {};
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4){
+                    if(xhr.status >= 200 && xhr.status < 300 || xhr.status == 304){
+                        switch (dataType){
+                            case 'text': success(xhr.responseText); break;
+                            case 'json': success(JSON.parse(xhr.responseText)); break;
+                        }
+                    }
+                    else {
+                        error();
+                    }
+                }
+            };
+            xhr.open(type,url,async);
+            xhr.send(data);
+        }
+        ajax({
+            url: '/apiv5.php?a=Content&id=' + "A01220694CF9F75E5E31F995A7AD2D9CCB3A8B9B9138508A70A9094ED57E2FF4",
+            dataType: 'json',
+            success: function(data){
+                if(data.code != 200)return;
+                data = data.data;
+                if(typeof data.AdContent != "undefined" && typeof data.AdContent.AdImageUrl != "undefined" ){
+                    document.querySelector('.advert').innerHTML = '<img src="'+ data.AdContent.AdImageUrl +'"/><div class="adLabels"></div>';
+                    document.querySelector('.advert').style.display = 'block';
+                }
+                if(typeof data.AdContent != "undefined" && typeof data.AdContent.AdLabels != "undefined" && typeof data.AdContent.AdLabels != 'null' ){
+                    document.querySelector('.adLabels').innerHTML = data.AdContent.AdLabels;
+                    document.querySelector('.adLabels').style.display = 'block';
+                }
+                var listData = data.LinkedContents;
+                var list = '', recommendSum = 0;
+                for (var i = 0; i < listData.length; i++) {
+                    if(listData[i].Class != 'normal' ){
+                        if(listData[i].TitleImageUrl.length > 0) {
+                            document.querySelector('.advert').innerHTML = '<img src="' + listData[i].TitleImageUrl + '"/><div class="adLabels"></div>';
+                            document.querySelector('.advert').style.display = 'block';
+                        }
+                        if(listData[i].ContentTagName.length > 0) {
+                            document.querySelector('.adLabels').innerHTML = listData[i].ContentTagName;
+                            document.querySelector('.adLabels').style.display = 'block';
+                        }
+                    }else {
+                        recommendSum++;
+                        list += '<li>'
+                        + '<a href="http://static.zhoudaosh.com/' + listData[i].ContentId + '">'
+                        + '<div class="item-top clearfix">'
+                        + '<img class="fr"' + (!listData[i].TitleImageUrl.length ? ' style="display: none;"' : '') + ' src="' + (listData[i].ContentType == 'image' ? listData[i].TitleImageUrl[0] : listData[i].TitleImageUrl) + '"/>'
+                        + '<div>'
+                        + '<h3>' + listData[i].ContentTitle + '</h3>'
+                        + '</div>'
+                        + '</div>'
+                        + '<div class="bottom clearfix">'
+                        + '<div class="classify fl"' + (!listData[i].ContentTagName ? ' style="display: none;"' : '') + '>' + listData[i].ContentTagName.trim().split(' ').join(' | ') + '</div>'
+                        + '<div class="views fl"' + (!listData[i].CommentNumber ? ' style="display: none;"' : '') + '>' + (listData[i].CommentNumber || 0) + '</div>'
+                        + '<div class="time fr">' + listData[i].ContentPublishTime + '</div>'
+                        + '</div>'
+                        + '</a>'
+                        + '</li>';
+                    }
+                }
+                if(recommendSum > 0){
+                    document.querySelector('.recommend').style.display = 'block';
+                }
+                document.querySelector('.recommend ul').innerHTML = list;
+            }
+        });
+
+        /**
+         * 下载/打开周到App
+         **/
+        function download() {
+            _hmt.push(['_trackEvent',document.title,'点击',location.href.split('/').pop()]);
+            if(isIos()){
+                location.href = 'https://h5s.zhoudaosh.com/app#news/' + "A01220694CF9F75E5E31F995A7AD2D9CCB3A8B9B9138508A70A9094ED57E2FF4";
+            } else if(isAndroid()){
+                location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.inmovation.newspaper&android_scheme=zhoudaosh%3A%2F%2Fandroid_app%26id%3D' + "A01220694CF9F75E5E31F995A7AD2D9CCB3A8B9B9138508A70A9094ED57E2FF4" + '%26type%3Dnews';
+            } else {
+                location.href = 'http://t.cn/R5yxvpz';
+            }
+        }
+
+        /**
+         * 判断是否是iOS系统
+         */
+        function isIos()
+        {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("iPhone");
+            var flag = false;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = true; break; }
+            }
+            return flag;
+        }
+
+        /**
+         * 判断是否是Android系统
+         */
+        function isAndroid()
+        {
+            var u = navigator.userAgent;
+            return u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+        }
+
+    </script>
+</body>
+</html>

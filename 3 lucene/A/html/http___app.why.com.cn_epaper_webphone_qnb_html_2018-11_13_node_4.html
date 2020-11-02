@@ -1,0 +1,820 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>
+青年
+
+</title>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641e36ad99ad4a5e9df6a40952a4f724";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<link rel="stylesheet" media="screen and (min-width:801px) and (min-height:601px) and (max-height:1001px)" href="../../../tplimg/index_heng.css" />
+<link rel="stylesheet" media="screen and (max-width:1001px) and (min-width:601px) and (min-height:801px)" href="../../../tplimg/index_shu.css" />
+<link rel="stylesheet" media="screen and (max-width:601px) and (min-height:401px) and (max-height:1001px)" href="../../../tplimg/index_phone.css" />
+<link rel="stylesheet" media="screen and (min-width:401px) and (max-width:1001px) and (max-height:601px)" href="../../../tplimg/index_phone_shu.css" />
+<link rel="stylesheet" href="../../../tplimg/banmian_heng.css" />
+<script src="../../../tplimg/jquery.min.js"></script>
+<script src="../../../tplimg/jquery.ui.datepicker.js"></script>
+<script src="../../../tplimg/calendarp.js"></script>
+<script src="../../../tplimg/period.js"></script>
+<script type="text/javascript">
+$(function() {
+	var content = "index";
+    $("#shu_banmian").click(function() {
+    	if(content == "pagelist"){
+        	content = "index";
+    	}
+    	else if (content == "index"){
+    		content = "pagelist";
+    	}
+        $("#aticle_list").hide();
+		$("#calendar").hide();
+        $("#shu_page_list").slideToggle();
+    });
+    $("#shu_liebiao").click(function() {
+        $("#shu_page_list").hide();
+		$("#calendar").hide();
+        $("#aticle_list").slideToggle();
+    });
+    $("#pagelist_btn").click(function() {
+    	content = "pagelist";
+		$("#calendar").hide();
+        $("#page_list").show();
+        $("#aticle_list").hide();
+    });
+    
+    $("#liebiao_btn").click(function() {
+		$("#calendar").hide();
+        $("#aticle_list").slideToggle();
+    });
+  
+    $("#index_btn").click(function() {
+    	content = "index";
+        $("#page_list").hide();
+		$("#aticle_list").hide();
+		$("#calendar").hide();
+    });
+    $("#shu_index_btn").click(function() {
+    	content = "index";
+        $("#aticle_list").hide();
+        $("#shu_page_list").hide();
+		$("#calendar").hide();
+    });
+	
+    $(".calendar_btn").click(function() {
+    	if(Math.abs(window.orientation)!=90){
+	        $("#aticle_list").hide();
+	        $("#shu_page_list").hide();
+    	}
+		$("#calendar").slideToggle();
+    });
+	$(window).on('orientationchange', function() {
+		changeArea();
+		if(Math.abs(window.orientation)==90){
+			if(content=="pagelist"){
+		        $("#page_list").show();
+	        }
+	        $("#shu_page_list").show();
+		}else{
+	        $("#page_list").hide();
+	        if(content=="index"){
+		        $("#shu_page_list").hide();
+	        }else if(content=="pagelist"){
+		        $("#shu_page_list").show();
+	        }
+		}
+	});
+			$("#phone_pagelist_btn").click(function() {
+				$("#aticle_list").hide();
+				$("#calendar").hide();
+				$("#phone_bm").slideToggle();
+			});
+			$("#phone_index").click(function() {
+				$("#phone_bm").hide();
+				$("#calendar").hide();
+				$("#aticle_list").hide();
+			});
+			$(".phone_calendar_btn").click(function() {
+				$("#phone_bm").hide();
+				$("#aticle_list").hide();
+				$("#calendar").slideToggle();
+			});
+			$("#phone_liebiao_btn").click(function() {
+				$("#phone_bm").hide();
+				$("#calendar").hide();
+				$("#aticle_list").slideToggle();
+			});
+			$("#list_calendar").click(function() {
+				$("#aticle_list").hide();
+				$("#calendar").slideToggle();
+			});
+			$("#list_liebiao").click(function() {
+				$("#calendar").hide();
+				$("#aticle_list").slideToggle();
+			});
+			$("#list_bm").click(function() {
+				$("#page_list").hide();
+			});
+		 var imgWidth;
+	     var imgHeight;
+				
+				
+			function changeArea(){
+				var viewWidth = $("#bmt img").width();
+				var viewHeight = $("#bmt img").height();
+		        $("#bmt map area").each(function(){
+		                  var array = $(this).attr("coords").split(",");
+		                  var strCord = "";
+		                  for(var i=0; i<array.length; i++){
+		                           if(i%2 ==0){
+		                                    strCord += parseInt(array[i]*viewWidth/imgWidth);
+		                           }
+		                           else if(i%2 ==1){
+		                                    strCord += parseInt(array[i]*viewHeight/imgHeight);
+		                           }
+		                           if(i!=array.length-1){
+		                        	   strCord += ",";
+		                           }
+		                  }
+		                  $(this).attr("coords",strCord);
+		        });
+		        imgWidth = viewWidth;
+		        imgHeight = viewHeight;
+			}        
+
+	        var image = new Image();
+	        image.src = $("#bmt img").attr("src");
+	        image.onload = function() {
+		        imgWidth = image.width;
+		        imgHeight = image.height;
+		        changeArea();	
+	        }
+	        
+	        $(window).resize(function() {
+	        	changeArea();
+	        });
+});
+
+</script>
+
+
+<script>
+$(function(){
+	var slider = {
+		//判断设备是否支持touch事件
+		touch:('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+		bmt:document.getElementById('bmt'),
+	
+		//事件
+		events:{
+			index:0,     //显示元素的索引
+			bmt:document.getElementById('bmt'),     //this为bmt对象
+			handleEvent:function(event){
+				var self = this;     //this指events对象
+				if(event.type == 'touchstart'){
+					self.start(event);
+				}else if(event.type == 'touchmove'){
+					self.move(event);
+				}else if(event.type == 'touchend'){
+					self.end(event);
+				}
+			},
+			//滑动开始
+			start:function(event){
+				var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
+				startPos = {x:touch.pageX,y:touch.pageY,time:+new Date};    //取第一个touch的坐标值
+				isScrolling = 0;   //这个参数判断是垂直滚动还是水平滚动
+				this.bmt.addEventListener('touchmove',this,false);
+				this.bmt.addEventListener('touchend',this,false);
+			},
+			//移动
+			move:function(event){
+				//当屏幕有多个touch或者页面被缩放过，就不执行move操作
+				if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+				var touch = event.targetTouches[0];
+				endPos = {x:touch.pageX - startPos.x,y:touch.pageY - startPos.y};
+				isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1:0;    //isScrolling为1时，表示纵向滑动，0为横向滑动
+				if(isScrolling === 0){
+					event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
+					
+				}
+			},
+			//滑动释放
+			end:function(event){
+				var duration = +new Date - startPos.time;    //滑动的持续时间
+				if(isScrolling === 0){    //当为水平滚动时
+					//this.icon[this.index].className = '';
+					if(Number(duration) > 10){     
+						//判断是左移还是右移，当偏移量大于10时执行
+						if(endPos.x > 10){
+						  var my_last=document.getElementById("shangyiban").getElementsByTagName("a")[0];
+						  if(my_last){
+							var last_url = my_last.href;
+						    window.location.href=last_url;  
+						  }
+						     
+						}else if(endPos.x < -10){
+						 var my_next=document.getElementById("xiayiban").getElementsByTagName("a")[0];
+						   if(my_next){
+							   var next_url = my_next.href;
+							   window.location.href=next_url; 
+						   }
+						  
+						  
+						}
+					}
+					//this.icon[this.index].className = 'curr';
+					//this.bmt.className = 'cnt f-anim';
+					//this.bmt.style.left = -this.index*600 + 'px';
+				}
+				//解绑事件
+				this.bmt.removeEventListener('touchmove',this,false);
+				this.bmt.removeEventListener('touchend',this,false);
+			}
+		},
+		
+		//初始化
+		init:function(){
+			var self = this;     //this指bmt对象
+			if(!!self.touch) self.bmt.addEventListener('touchstart',self.events,false);    //addEventListener第二个参数可以传一个对象，会调用该对象的handleEvent属性
+		}
+	};
+	
+	slider.init();
+})
+
+</script>
+
+
+
+<body>
+<div  style="width: 100%; height: 100%; position:absolute; top:0; left:0;" id="index">
+  <div class="column" id="shu_page_list">
+    <div class="time"><span>
+      2018年11月13日</span></div>
+    <div class="submenu">
+      <ul>
+<li>
+<a   href=node_1.html#1 name="1">
+<img border=0 src=../../../images/2018-11/13/A01/20181113A01_icon.jpg>
+<p>A01头版</p>
+</a>
+</li>
+<li>
+<a   href=node_2.html#2 name="2">
+<img border=0 src=../../../images/2018-11/13/A02/20181113A02_icon.jpg>
+<p>A02要闻</p>
+</a>
+</li>
+<li>
+<a   href=node_3.html#3 name="3">
+<img border=0 src=../../../images/2018-11/13/A03/20181113A03_icon.jpg>
+<p>A03要闻</p>
+</a>
+</li>
+<li>
+<a   href=./node_4.html#4 name="4">
+<img border=0 src=../../../images/2018-11/13/A04/20181113A04_icon.jpg>
+<p>A04青年</p>
+</a>
+</li>
+<li>
+<a   href=node_5.html#5 name="5">
+<img border=0 src=../../../images/2018-11/13/A05/20181113A05_icon.jpg>
+<p>A05城事</p>
+</a>
+</li>
+<li>
+<a   href=node_6.html#6 name="6">
+<img border=0 src=../../../images/2018-11/13/A06/20181113A06_icon.jpg>
+<p>A06那年，我们正青春</p>
+</a>
+</li>
+<li>
+<a   href=node_7.html#7 name="7">
+<img border=0 src=../../../images/2018-11/13/A07/20181113A07_icon.jpg>
+<p>A07那年，我们正青春</p>
+</a>
+</li>
+<li>
+<a   href=node_8.html#8 name="8">
+<img border=0 src=../../../images/2018-11/13/A08/20181113A08_icon.jpg>
+<p>A08城事</p>
+</a>
+</li>
+<li>
+<a   href=node_9.html#9 name="9">
+<img border=0 src=../../../images/2018-11/13/A09/20181113A09_icon.jpg>
+<p>A09城事</p>
+</a>
+</li>
+<li>
+<a   href=node_10.html#10 name="10">
+<img border=0 src=../../../images/2018-11/13/A10/20181113A10_icon.jpg>
+<p>A10天下</p>
+</a>
+</li>
+<li>
+<a   href=node_11.html#11 name="11">
+<img border=0 src=../../../images/2018-11/13/A11/20181113A11_icon.jpg>
+<p>A11文体</p>
+</a>
+</li>
+<li>
+<a   href=node_12.html#12 name="12">
+<img border=0 src=../../../images/2018-11/13/A12/20181113A12_icon.jpg>
+<p>A12文体</p>
+</a>
+</li>
+<li>
+<a   href=node_13.html#13 name="13">
+<img border=0 src=../../../images/2018-11/13/A13/20181113A13_icon.jpg>
+<p>A13文体</p>
+</a>
+</li>
+<li>
+<a   href=node_14.html#14 name="14">
+<img border=0 src=../../../images/2018-11/13/A14/20181113A14_icon.jpg>
+<p>A14财经</p>
+</a>
+</li>
+<li>
+<a   href=node_15.html#15 name="15">
+<img border=0 src=../../../images/2018-11/13/A15/20181113A15_icon.jpg>
+<p>A15投资</p>
+</a>
+</li>
+<li>
+<a   href=node_16.html#16 name="16">
+<img border=0 src=../../../images/2018-11/13/A16/20181113A16_icon.jpg>
+<p>A16早知道</p>
+</a>
+</li>
+<li>
+<a   href=node_41.html#41 name="41">
+<img border=0 src=../../../images/2018-11/13/B01/20181113B01_icon.jpg>
+<p>B01梦创周刊</p>
+</a>
+</li>
+<li>
+<a   href=node_42.html#42 name="42">
+<img border=0 src=../../../images/2018-11/13/B02/20181113B02_icon.jpg>
+<p>B02创·视野</p>
+</a>
+</li>
+<li>
+<a   href=node_43.html#43 name="43">
+<img border=0 src=../../../images/2018-11/13/B03/20181113B03_icon.jpg>
+<p>B03创·人物</p>
+</a>
+</li>
+<li>
+<a   href=node_44.html#44 name="44">
+<img border=0 src=../../../images/2018-11/13/B04/20181113B04_icon.jpg>
+<p>B04创·专题</p>
+</a>
+</li>
+<li>
+<a   href=node_45.html#45 name="45">
+<img border=0 src=../../../images/2018-11/13/B05/20181113B05_icon.jpg>
+<p>B05创·专题</p>
+</a>
+</li>
+<li>
+<a   href=node_46.html#46 name="46">
+<img border=0 src=../../../images/2018-11/13/B06/20181113B06_icon.jpg>
+<p>B06创·资讯</p>
+</a>
+</li>
+<li>
+<a   href=node_47.html#47 name="47">
+<img border=0 src=../../../images/2018-11/13/B07/20181113B07_icon.jpg>
+<p>B07创·资讯</p>
+</a>
+</li>
+<li>
+<a   href=node_48.html#48 name="48">
+<img border=0 src=../../../images/2018-11/13/B08/20181113B08_icon.jpg>
+<p>B08创·视野</p>
+</a>
+</li>
+</ul>
+</div>
+  </div>
+  <div class="column" id="phone_page_list">
+    <div class="time"> <span>2018年11月13日</span> </div>
+  </div>
+
+  <div class="main" id="bmt">
+    
+<map name=PagePicMap2><Area coords="7,80,685,80,685,1007,7,1007" shape="polygon" href="content_74366.html"></map>
+<img src=../../../images/2018-11/13/A04/20181113A04_big.jpg border=0 USEMAP=#PagePicMap2>
+</div>
+<div class="shangxiaban">
+<div class="shangyiban" id="shangyiban">
+  <a class=preart href="node_3.html">上一版</a></div>
+<div class="xiayiban" id="xiayiban">
+  <a class=preart href="node_5.html">下一版</a></div>
+</div>
+  <div class="sidebar" id="page_aticles">
+    <div class="sidebar_nav"> <img class="logo" src="../../../tplimg/青年报_logo.png" />
+      <a href="../../../paperindex.htm"><img class="btn" src="../../../tplimg/btn1.png" /></a><a href="javascript:void(0);"><img class="btn" id="pagelist_btn" src="../../../tplimg/btn2.png" /></a> <a href="javascript:void(0); "><img class="btn calendar_btn" src="../../../tplimg/btn3.png" /></a> <img class="btn" id="liebiao_btn" src="../../../tplimg/btn4.png" /> </div>
+    <div class="sidebar_title">
+      
+<h1>A04青年</h1>
+
+
+<a href=content_74366.html><p>于盛世不负韶华 重整行装再出发</p></a>
+
+
+</div>
+  </div>
+  <div class="rili calendarBox" id="calendar" style="display:none">
+  <form name=CLD>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td colspan=7 align="center" height="24" bgcolor="#000">
+              <img src="../../../tplimg/d1.gif" width="7" height="11"  onclick="turnpage('SY',0)">
+               <select name=SY  onchange="changeMPCld();">
+				  <script>for(i=2006;i<2051;i++){document.write('<option>'+i+'</option>')}</script>
+              </select>
+               <img src="../../../tplimg/d.gif" width="7" height="11" onclick="turnpage('SY',1)">
+               <img src="../../../tplimg/d1.gif" width="7" height="11" onclick="turnpage('SM',0)">
+                <select name=SM onchange="changeMPCld();">
+				  <script>for(i=1;i<13;i++) document.write('<option>'+i+'</option>')</script>
+                </select>                          
+                <img src="../../../tplimg/d.gif" width="7" height="11" style="cursor:pointer;" onclick="turnpage('SM',1)">
+          </td>
+        </tr>
+        <tr height="22" bgcolor="#e8e8e8">
+          <td align="center" class="week"><b>日</b></td>
+          <td align="center" class="week"><b>一</b></td>
+          <td align="center" class="week"><b>二</b></td>
+          <td align="center" class="week"><b>三</b></td>
+          <td align="center" class="week"><b>四</b></td>
+          <td align="center" class="week"><b>五</b></td>
+          <td align="center" class="week"><b>六</b> </td>
+        </tr>
+        <script>
+            var gNum;
+            for(i=0;i<6;i++) {
+                document.write('<tr height="20">');
+                for(j=0;j<7;j++){
+                    gNum = i*7+j;
+                    document.write('<td align=center id="GD' + gNum +'" width="10%"><a id="CD' + gNum + '">');
+                    document.write('</a></td>');
+                }
+                document.write('</tr>');
+            } 
+            loadPeriod();
+      </script>
+   </table>
+</form>
+  </div>
+  
+  
+  <div class="phone_sidebar">
+				<div class="phone_sidebar_nav">
+					<img class="phone_logo" src="../../../tplimg/青年报_logo.png"  /><a href="../../../paperindex.htm"><img class="phone_btn" id="phone_index" src="../../../tplimg/btn1.png" /></a>
+					<a href="javascript:void(0); "><img
+						class="phone_btn" id="phone_pagelist_btn" src="../../../tplimg/btn2.png" /></a>
+					<a href="javascript:void(0); "><img class="phone_btn phone_calendar_btn"
+						src="../../../tplimg/btn3.png" /></a> <img class="phone_btn"
+						id="phone_liebiao_btn" src="../../../tplimg/btn4.png" />
+				</div>
+  </div>
+			
+  <div class="shu_sidebar">
+    <div class="shu_sidebar_nav"> <img class="shu_logo" src="../../../tplimg/logo.png" /><a href="../../../paperindex.htm"> <img class="shu_btn" id="shu_index_btn" src="../../../tplimg/btn1.png" /></a>
+     <img class="shu_btn" id="shu_banmian" src="../../../tplimg/btn2.png" /> <img class="shu_btn calendar_btn" src="../../../tplimg/btn3.png" /> <img class="shu_btn" id="shu_liebiao" src="../../../tplimg/btn4.png" />
+      <div class="shu_mingzi"> 
+        <p>文山日报社</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="phone_bm" id="phone_bm" style="display:none">
+<h1><a href=node_1.html>A01头版</a></h1>
+<h1><a href=node_2.html>A02要闻</a></h1>
+<h1><a href=node_3.html>A03要闻</a></h1>
+<h1><a href=./node_4.html>A04青年</a></h1>
+<h1><a href=node_5.html>A05城事</a></h1>
+<h1><a href=node_6.html>A06那年，我们正青春</a></h1>
+<h1><a href=node_7.html>A07那年，我们正青春</a></h1>
+<h1><a href=node_8.html>A08城事</a></h1>
+<h1><a href=node_9.html>A09城事</a></h1>
+<h1><a href=node_10.html>A10天下</a></h1>
+<h1><a href=node_11.html>A11文体</a></h1>
+<h1><a href=node_12.html>A12文体</a></h1>
+<h1><a href=node_13.html>A13文体</a></h1>
+<h1><a href=node_14.html>A14财经</a></h1>
+<h1><a href=node_15.html>A15投资</a></h1>
+<h1><a href=node_16.html>A16早知道</a></h1>
+<h1><a href=node_41.html>B01梦创周刊</a></h1>
+<h1><a href=node_42.html>B02创·视野</a></h1>
+<h1><a href=node_43.html>B03创·人物</a></h1>
+<h1><a href=node_44.html>B04创·专题</a></h1>
+<h1><a href=node_45.html>B05创·专题</a></h1>
+<h1><a href=node_46.html>B06创·资讯</a></h1>
+<h1><a href=node_47.html>B07创·资讯</a></h1>
+<h1><a href=node_48.html>B08创·视野</a></h1>
+</div>
+
+<div class="sidebar_all" id="aticle_list">
+<h1>A01头版</h1>
+
+
+<p><a href=content_74358.html>习近平将出席APEC第二十六次领导人非正式会议</a></p>
+<p><a href=content_74362.html>要为港澳青年发展多搭台多搭梯</a></p>
+<p><a href=content_74364.html>那年，我们正青春⑨ 　徐汇滨江：从运煤码头到迈向全球的卓越水岸</a></p>
+<p><a href=content_74369.html>红叶舞金山</a></p>
+<p><a href=content_74373.html>进博人 既于盛世不负韶华 重整行装再度出发</a></p>
+<p><a href=content_74376.html>后进博 青浦收获“金苹果” 将要打造“五新区”</a></p>
+<p><a href=content_74377.html>平安行 进博会客流86万人 9日轨交创历史新高</a></p>
+<p><a href=content_74381.html>2018年11月13日 星期二</a></p>
+<p><a href=content_74385.html>天气</a></p>
+<p><a href=content_74388.html>总第10928期</a></p>
+
+<h1>A02要闻</h1>
+
+
+<p><a href=content_74360.html>在国家改革开放中实现港澳更好发展 共同谱写中华民族伟大复兴时代篇章</a></p>
+<p><a href=content_74363.html>推动中新与时俱进的全方位合作伙伴关系迈上新台阶</a></p>
+
+<h1>A03要闻</h1>
+
+
+<p><a href=content_74359.html>确保讲话精神落地生根开花结果</a></p>
+<p><a href=content_74361.html>将“放管服”改革推向深入</a></p>
+<p><a href=content_74365.html>市人大常委会机关传达学习贯彻习近平总书记重要讲话精神</a></p>
+<p><a href=content_74368.html>市政协传达学习习近平总书记重要讲话精神</a></p>
+<p><a href=content_74372.html>尹弘传达习近平总书记重要讲话精神</a></p>
+
+<h1>A04青年</h1>
+
+
+<p><a href=content_74366.html>于盛世不负韶华 重整行装再出发</a></p>
+
+<h1>A05城事</h1>
+
+
+<p><a href=content_74367.html>“老娘舅”入驻进博会交易更放心</a></p>
+<p><a href=content_74370.html>进口博览会交通保障运行有序</a></p>
+<p><a href=content_74374.html>一年的工作量半年内就完成了</a></p>
+
+<h1>A06那年，我们正青春</h1>
+
+
+<p><a href=content_74371.html>焕然一新的徐汇滨江：迈向全球城市的卓越水岸</a></p>
+
+<h1>A07那年，我们正青春</h1>
+
+
+<p><a href=content_74375.html>焕然一新的徐汇滨江：迈向全球城市的卓越水岸</a></p>
+
+<h1>A08城事</h1>
+
+
+<p><a href=content_74379.html>“后进博”将要打造“五个新区”</a></p>
+<p><a href=content_74384.html>两个半月建成四个配套停车场</a></p>
+
+<h1>A09城事</h1>
+
+
+<p><a href=content_74380.html>将审议0-3岁婴幼儿托育情况报告</a></p>
+<p><a href=content_74382.html>法院释法促外籍商家主动赔付</a></p>
+<p><a href=content_74386.html>广告</a></p>
+
+<h1>A10天下</h1>
+
+
+<p><a href=content_74378.html>看非法网店如何“套路”你？</a></p>
+<p><a href=content_74383.html>阿富汗首都发生爆炸袭击多人死伤</a></p>
+<p><a href=content_74387.html>广告</a></p>
+
+<h1>A11文体</h1>
+
+
+<p><a href=content_74389.html>存储的是阅读量 提取的是智慧</a></p>
+<p><a href=content_74392.html>优秀绘本没有国别之分</a></p>
+
+<h1>A12文体</h1>
+
+
+<p><a href=content_74391.html>让更多人从中了解中国声乐之美</a></p>
+<p><a href=content_74395.html>体娱结合 新形态网综更具正能量</a></p>
+<p><a href=content_74398.html>上音举行国际中提琴艺术节</a></p>
+<p><a href=content_74402.html>李天纲：海派文化有风骨</a></p>
+
+<h1>A13文体</h1>
+
+
+<p><a href=content_74390.html>为冠军庆功，为下一个冠军努力</a></p>
+<p><a href=content_74394.html>市运会落幕 小将开启奥运梦想</a></p>
+<p><a href=content_74399.html>“科学让梦想飞扬”宝山区大华小学举行第20届科技节闭幕式</a></p>
+<p><a href=content_74403.html>上海食品科技学校第二期团校结业典礼暨第三期团校开班仪式</a></p>
+<p><a href=content_74406.html>嘉定区真新幼儿园：双管齐下共推陶艺特色发展</a></p>
+<p><a href=content_74410.html>全民参与防患未“燃”</a></p>
+
+<h1>A14财经</h1>
+
+
+<p><a href=content_74393.html>更注重品质的新电商已然兴起？</a></p>
+<p><a href=content_74397.html>网联平稳度过首次大考 “双11”促使支付时代加速转型</a></p>
+<p><a href=content_74400.html>上海车险人伤案件涉残率下降4.26个百分点</a></p>
+<p><a href=content_74404.html>A+H上市券商将再添一家</a></p>
+<p><a href=content_74407.html>第三届“一带一路”国际时尚周新闻发布会在沪举行</a></p>
+<p><a href=content_74412.html>一带一路带来泰国投资新机遇</a></p>
+<p><a href=content_74415.html>会德丰国际广场诚邀地球公民共启“无塑一天”</a></p>
+<p><a href=content_74418.html>浦银安盛：科创板推出利于丰富A股市场估值体系</a></p>
+<p><a href=content_74422.html>基金年度业绩收官战打响上投摩根医疗健康基金业绩领跑</a></p>
+<p><a href=content_74425.html>南方1-3年国开债规模超45亿提前结募</a></p>
+<p><a href=content_74429.html>富国发行养老目标基金全面布局三大支柱</a></p>
+
+<h1>A15投资</h1>
+
+
+<p><a href=content_74396.html>沪上银行助力民企债券融资</a></p>
+<p><a href=content_74401.html>央行发布三季度货币执行报告下阶段稳健货币政策保持中性</a></p>
+
+<h1>A16早知道</h1>
+
+
+<p><a href=content_74405.html>中青年预约膏方比例逐年上升</a></p>
+<p><a href=content_74409.html>周五起16号线大站车均停靠临港大道站</a></p>
+<p><a href=content_74413.html>水墨概念艺术大展亮相中华艺术宫</a></p>
+<p><a href=content_74417.html>深秋季金山可赏12000多棵枫树</a></p>
+
+<h1>B01梦创周刊</h1>
+
+
+<p><a href=content_74408.html>集中培训提升创业者综合素质</a></p>
+<p><a href=content_74411.html>创视野 中国企业改革40年共话企业家精神传承与创新</a></p>
+<p><a href=content_74416.html>创人物 用人工智能赋能零售业真正实现无感支付</a></p>
+<p><a href=content_74419.html>创动态 搭建创新创业平台展示青年匠心设计</a></p>
+
+<h1>B02创·视野</h1>
+
+
+<p><a href=content_74414.html>共话企业家精神的传承与创新</a></p>
+
+<h1>B03创·人物</h1>
+
+
+<p><a href=content_74420.html>以助力创业者为乐是不变的初心</a></p>
+<p><a href=content_74423.html>冯杰夫：用人工智能赋能零售业 真正实现无感支付</a></p>
+
+<h1>B04创·专题</h1>
+
+
+<p><a href=content_74421.html>多模块课程集中培训 提升创业综合素质</a></p>
+
+<h1>B05创·专题</h1>
+
+
+<p><a href=content_74424.html>多模块课程集中培训 提升创业综合素质</a></p>
+
+<h1>B06创·资讯</h1>
+
+
+<p><a href=content_74426.html>中国企业创新研发支出领跑全球</a></p>
+<p><a href=content_74430.html>“创业Style”青年大学生创业体验日活动顺利举行</a></p>
+<p><a href=content_74432.html>青年创智让老字号品牌历久弥新</a></p>
+
+<h1>B07创·资讯</h1>
+
+
+<p><a href=content_74427.html>汇聚人才 助创业者赋能前行</a></p>
+<p><a href=content_74431.html>体育与学术融合推动行业创新成长</a></p>
+<p><a href=content_74433.html>电商产品矩阵助力服务与创新</a></p>
+
+<h1>B08创·视野</h1>
+
+
+<p><a href=content_74428.html>搭建双创平台 展示青年匠心设计</a></p>
+
+</div>
+
+
+
+
+
+<div style="width: 100%; height: 100%; position:absolute; top:0; left:0; display:none" id="page_list">
+  <div class="list_all">
+    <div class="list_column">
+      <div class="list_time"> <span>2018年11月13日</span> </div>
+      <div class="list_sidebar_nav"> <img class="list_logo" src="../../../tplimg/青年报_logo.png"  /><img class="list_btn" id="index_btn" src="../../../tplimg/btn1.png" /> <img class="list_btn" id="list_bm" src="../../../tplimg/btn2.png" /> <img class="list_btn" id="list_calendar" src="../../../tplimg/btn3.png" /> <img class="list_btn" id="list_liebiao" src="../../../tplimg/btn4.png" /> </div>
+    </div>
+    <div class="list_submenu">
+      <ul>
+<li>
+<a href=node_1.html#1 name="1"><img border=0 src=../../../images/2018-11/13/A01/20181113A01_icon.jpg></a>
+<p>A01头版</p>
+</li>
+<li>
+<a href=node_2.html#2 name="2"><img border=0 src=../../../images/2018-11/13/A02/20181113A02_icon.jpg></a>
+<p>A02要闻</p>
+</li>
+<li>
+<a href=node_3.html#3 name="3"><img border=0 src=../../../images/2018-11/13/A03/20181113A03_icon.jpg></a>
+<p>A03要闻</p>
+</li>
+<li>
+<a href=./node_4.html#4 name="4"><img border=0 src=../../../images/2018-11/13/A04/20181113A04_icon.jpg></a>
+<p>A04青年</p>
+</li>
+<li>
+<a href=node_5.html#5 name="5"><img border=0 src=../../../images/2018-11/13/A05/20181113A05_icon.jpg></a>
+<p>A05城事</p>
+</li>
+<li>
+<a href=node_6.html#6 name="6"><img border=0 src=../../../images/2018-11/13/A06/20181113A06_icon.jpg></a>
+<p>A06那年，我们正青春</p>
+</li>
+<li>
+<a href=node_7.html#7 name="7"><img border=0 src=../../../images/2018-11/13/A07/20181113A07_icon.jpg></a>
+<p>A07那年，我们正青春</p>
+</li>
+<li>
+<a href=node_8.html#8 name="8"><img border=0 src=../../../images/2018-11/13/A08/20181113A08_icon.jpg></a>
+<p>A08城事</p>
+</li>
+<li>
+<a href=node_9.html#9 name="9"><img border=0 src=../../../images/2018-11/13/A09/20181113A09_icon.jpg></a>
+<p>A09城事</p>
+</li>
+<li>
+<a href=node_10.html#10 name="10"><img border=0 src=../../../images/2018-11/13/A10/20181113A10_icon.jpg></a>
+<p>A10天下</p>
+</li>
+<li>
+<a href=node_11.html#11 name="11"><img border=0 src=../../../images/2018-11/13/A11/20181113A11_icon.jpg></a>
+<p>A11文体</p>
+</li>
+<li>
+<a href=node_12.html#12 name="12"><img border=0 src=../../../images/2018-11/13/A12/20181113A12_icon.jpg></a>
+<p>A12文体</p>
+</li>
+<li>
+<a href=node_13.html#13 name="13"><img border=0 src=../../../images/2018-11/13/A13/20181113A13_icon.jpg></a>
+<p>A13文体</p>
+</li>
+<li>
+<a href=node_14.html#14 name="14"><img border=0 src=../../../images/2018-11/13/A14/20181113A14_icon.jpg></a>
+<p>A14财经</p>
+</li>
+<li>
+<a href=node_15.html#15 name="15"><img border=0 src=../../../images/2018-11/13/A15/20181113A15_icon.jpg></a>
+<p>A15投资</p>
+</li>
+<li>
+<a href=node_16.html#16 name="16"><img border=0 src=../../../images/2018-11/13/A16/20181113A16_icon.jpg></a>
+<p>A16早知道</p>
+</li>
+<li>
+<a href=node_41.html#41 name="41"><img border=0 src=../../../images/2018-11/13/B01/20181113B01_icon.jpg></a>
+<p>B01梦创周刊</p>
+</li>
+<li>
+<a href=node_42.html#42 name="42"><img border=0 src=../../../images/2018-11/13/B02/20181113B02_icon.jpg></a>
+<p>B02创·视野</p>
+</li>
+<li>
+<a href=node_43.html#43 name="43"><img border=0 src=../../../images/2018-11/13/B03/20181113B03_icon.jpg></a>
+<p>B03创·人物</p>
+</li>
+<li>
+<a href=node_44.html#44 name="44"><img border=0 src=../../../images/2018-11/13/B04/20181113B04_icon.jpg></a>
+<p>B04创·专题</p>
+</li>
+<li>
+<a href=node_45.html#45 name="45"><img border=0 src=../../../images/2018-11/13/B05/20181113B05_icon.jpg></a>
+<p>B05创·专题</p>
+</li>
+<li>
+<a href=node_46.html#46 name="46"><img border=0 src=../../../images/2018-11/13/B06/20181113B06_icon.jpg></a>
+<p>B06创·资讯</p>
+</li>
+<li>
+<a href=node_47.html#47 name="47"><img border=0 src=../../../images/2018-11/13/B07/20181113B07_icon.jpg></a>
+<p>B07创·资讯</p>
+</li>
+<li>
+<a href=node_48.html#48 name="48"><img border=0 src=../../../images/2018-11/13/B08/20181113B08_icon.jpg></a>
+<p>B08创·视野</p>
+</li>
+</ul></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>光明日报客户端</title>
+		<meta name="version" content="release-20190213-v1.0_7_1">
+		<meta property="og:image" content="https://s.cloud.gmw.cn/2016/json/upload/resources/image/2016/12/13/6100070.png">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.gmrbAppLayer {
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				font-size: 62.5%;
+			}
+			
+			.app_layer_bg {
+				width: 100%;
+				vertical-align: top;
+			}
+			
+			#btnOpenApp {
+				width: 100%!important;
+				height: 100%!important;
+				position: absolute;
+				background: none!important;
+				text-align: left!important;
+				right: 0!important;
+				bottom: 0!important;
+			}
+			
+			.app_pic {
+				position: absolute;
+				width: 8%;
+				height: 52%;
+				left: 4.2%;
+				bottom: 10%;
+				border-radius: 3px;
+			}
+			
+			.app_title {
+				position: absolute;
+				color: #FFF;
+				font-size: 0.7rem;
+				left: 14%;
+				bottom: 18%;
+				width: 68%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			
+			#btnOpenApp {
+				position: absolute;
+				width: 9.3%;
+				height: 48%;
+				background: #C73039;
+				text-align: center;
+				right: 10.2%;
+				bottom: 12%;
+				color: #FFF;
+				text-decoration: none;
+			}
+			
+			.open_app {
+				position: absolute;
+				width: 10.4%;
+				bottom: 8%;
+				right: 7%;
+			}
+			
+			.btn_gmrbApp_close {
+				position: absolute;
+				width: 5%;
+				right: 1%;
+				bottom: 60%;
+				z-index: 99;
+				height: auto;
+			}
+			
+			.slide_one {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+			}
+			
+			.slide_two {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				transform: translateY(100%);
+				-webkit-transform: translateY(100%);
+			}
+			
+			.slides1,
+			.slides2,
+			.slides3 {
+				position: absolute;
+				transform: translateY(100%);
+				-webkit-transform: translateY(100%);
+			}
+			
+			.gm_daily {
+				position: absolute;
+				width: 66%;
+				left: 10%;
+				bottom: 10%;
+			}
+			
+			.ani1 {
+				animation: ani1 1s;
+				-webkit-animation: ani1 1s;
+				animation-fill-mode: forwards;
+			}
+			
+			.ani2 {
+				animation: ani2 1s;
+				-webkit-animation: ani2 1s;
+				animation-fill-mode: forwards;
+			}
+			
+			@keyframes ani1 {
+				from {
+					transform: translateY(0);
+				}
+				to {
+					transform: translateY(100%);
+				}
+			}
+			
+			@-webkit-keyframes ani1 {
+				from {
+					-webkit-transform: translateY(0);
+				}
+				to {
+					-webkit-transform: translateY(100%);
+				}
+			}
+			
+			@keyframes ani2 {
+				from {
+					transform: translateY(100%);
+				}
+				to {
+					transform: translateY(0);
+				}
+			}
+			
+			@-webkit-keyframes ani2 {
+				from {
+					-webkit-transform: translateY(100%);
+				}
+				to {
+					-webkit-transform: translateY(0);
+				}
+			}
+		</style>
+	</head>
+	<script id="wx_login" src="js/wxlogin.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <body>
+        <div style="overflow: auto;-webkit-overflow-scrolling:touch;width:100%;">
+            <iframe id="iframe" scrolling="yes" style="width: 1px; min-width: 100%; *width: 100%;" height="100%" name="iframe" frameborder="0" onload="resize()" allowfullscreen></iframe>
+        </div>
+        <!--
+        <div class="gmrbAppLayer onlyYSP" id="ysp_gmrbAppLayer">
+            <a id="btnOpenApp">
+                <div class="slide_one slides0">
+                    <img class="app_pic" src="">
+                    <p class="app_title"></p>
+                    <a href=""><img class="open_app" src="http://img.gmw.cn/gmapp/open.png"></a>
+                </div>
+                <div class="slide_one slides1">
+                    <img class="app_pic" src="">
+                    <p class="app_title"></p>
+                    <a href=""><img class="open_app" src="http://img.gmw.cn/gmapp/open.png"></a>
+                </div>
+                <div class="slide_one slides2">
+                    <img class="app_pic" src="">
+                    <p class="app_title"></p>
+                    <a href=""><img class="open_app" src="http://img.gmw.cn/gmapp/open.png"></a>
+                </div>
+                <div class="slide_one slides3">
+                    <img class="app_pic" src="">
+                    <p class="app_title"></p>
+                    <a href=""><img class="open_app" src="http://img.gmw.cn/gmapp/open.png"></a>
+                </div>
+            </a>
+            <img class="btn_gmrbApp_close" src="http://img.gmw.cn/gmapp/close_icon.png">
+            <img class="app_layer_bg" src="http://img.gmw.cn/gmapp/app_layer_bg.png">
+        </div>
+        -->
+    </body>
+</html>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/weixinShare.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	if(typeof sharefrom == "undefined" || (typeof sharefrom != "undefined" && sharefrom != "gmwjsonp")){
+	    /*
+		var domain = document.location.protocol+'//'+window.location.host;
+		$.ajax({
+			type: "get",
+			url: "http://m.gmw.cn/json2jsonp/s.cloud/2016/json/sxw/rd/news.json",
+			dataType: "jsonp",
+			jsonpCallback: "callback",
+			success: function(data) {
+				$(data.list).each(function(i) {
+                    if(data.list[i].artUrl.indexOf("http://") == -1 && data.list[i].artUrl.indexOf("https://") == -1){
+                        return true;//跳出本次循环
+                    }
+					$(".slide_one").eq(i).find("img:first").attr("src", data.list[i].picLinks);
+					$(".slide_one").eq(i).find("p").text(data.list[i].title);
+					$(".slide_one").eq(i).find("a").attr("href",""+domain+"/yunmei-share/?shareTitle="+data.list[i].title+"&shareImg=https://s.cloud.gmw.cn/2016/json/upload/resources/image/2016/12/13/6100070.png&shareDes="+data.list[i]._abstract+"&sourceUrl="+data.list[i].artUrl+"&articleId="+data.list[i].articleId+"&sharefrom=gmwjsonp");
+				});
+			}
+		});
+	}
+    $(".btn_gmrbApp_close").on("click", function() {
+        $(".gmrbAppLayer").remove();
+    });
+    var _num = 0;
+    function ani_fn() {
+        setInterval(function() {
+            _num++;
+            if(_num > 3) {
+                _num = 0;
+            };
+            if(_num == 0) {
+                $(".slides3").removeClass("ani2").addClass("ani1");
+                $(".slides0").removeClass("ani1").addClass("ani2");
+            } else if(_num == 1) {
+                $(".slides0").removeClass("ani2").addClass("ani1");
+                $(".slides1").removeClass("ani1").addClass("ani2");
+            } else if(_num == 2) {
+                $(".slides1").removeClass("ani2").addClass("ani1");
+                $(".slides2").removeClass("ani1").addClass("ani2");
+            } else if(_num == 3) {
+                $(".slides2").removeClass("ani2").addClass("ani1");
+                $(".slides3").removeClass("ani1").addClass("ani2");
+            }
+        }, 4000);
+    };
+    ani_fn();
+    */
+</script>

@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>中国组织人事报</title>
+
+
+<script type="text/javascript"
+	src="/js/jquery-1.4.2.min.js"></script>
+
+<link rel="stylesheet" style="text/css"
+	href="/css00/style.css" />
+<script type="text/javascript"
+	src="/js/jquery.image-maps-dianzibao.js"></script>
+<script type="text/javascript"
+	src="/js/dianzibao/dianzibao01.js"></script>
+<script type="text/javascript">
+	var ReleaseDate = "2020-09-16";
+	var BNum = 2;
+	var CurrentYear = 2020;
+	var CurrentMonth = 9;
+	var SubLanMuList = [{"lmmc":"第一版 要闻","lmid":38430},{"lmmc":"第二版 干部（公务员）工作","lmid":38431},{"lmmc":"第三版 人才","lmid":38432},{"lmmc":"第四版 人事工作","lmid":38433},{"lmmc":"第五版 基层党建","lmid":38434},{"lmmc":"第六版 理论评论","lmid":38435},{"lmmc":"第七版 海外瞭望","lmid":38436},{"lmmc":"第八版 知行","lmid":38437}];
+	var InfoList = [{"infoid":"bdd08608-300d-485f-b696-ac7192143a33","title":"攻坚拔寨步铿锵"},{"infoid":"9d244186-4ade-4327-bf65-83403dbb093b","title":"一线历练长才干"},{"infoid":"124ef26b-548b-4687-94b8-5edc72fc3d67","title":"我把青春写在哇麻村"},{"infoid":"c6bd5b1b-2c82-4c12-a752-c34aaeb3be6e","title":"要善于识危驭机开新局"},{"infoid":"c185891c-861b-4a75-9fc5-6d04e178a0f6","title":"深耕年轻干部成长沃土"},{"infoid":"2a9accd3-e6e8-47fe-8ec5-62b20b2fe3e3","title":"扶贫扶智同心圆梦"}];
+	var AreaImage = "http://www.zuzhirenshi.com" + "/userfiles/image/20200916/01981f25-3a23-405e-a37e-634ade51f2db.jpg";
+	var AreaInfoList = [{"infoid":"bdd08608-300d-485f-b696-ac7192143a33","id":312480,"coords":"124,27,348,220"},{"infoid":"9d244186-4ade-4327-bf65-83403dbb093b","id":312482,"coords":"121,233,346,367"},{"infoid":"124ef26b-548b-4687-94b8-5edc72fc3d67","id":312484,"coords":"122,380,347,508"},{"infoid":"c6bd5b1b-2c82-4c12-a752-c34aaeb3be6e","id":312481,"coords":"2,44,104,204"},{"infoid":"c185891c-861b-4a75-9fc5-6d04e178a0f6","id":312483,"coords":"0,217,104,322"},{"infoid":"2a9accd3-e6e8-47fe-8ec5-62b20b2fe3e3","id":312485,"coords":"1,336,104,507"}];
+	var Source = "";
+	var Author = "柴明杰";
+	
+	$(function() {
+		InitImgMap();
+		ShowShangXiaBan();
+
+		$("#YearList").val(CurrentYear);
+		$("#MonthList").val(CurrentMonth);
+
+		if(Source != "" && Source != null){
+			$("#Source").html("来源："+Source);
+			$("#Source").show();
+		}
+		
+		if(Author != "" && Author != null){
+			$("#Author").html("作者："+Author);
+			$("#Author").show();
+		}
+		
+		Search_Qi();
+	});
+
+</script>
+</head>
+<body>
+	
+<div class="banner" style="position:relative;">
+	<!-- <a href="http://www.zuzhirenshi.com/dianzibao/2015-01-05/1/931baaa1-2ecf-43eb-8f2f-e1f0ea2dfa64.htm" target="_blank"><img src="../../../images01/weixin.jpg" style="border:0;position:absolute;left:1010px;top:5px;" /></a> -->
+	<!-- <a href="http://www.zuzhirenshi.com/dianzibao/2015-04-17/1/da81f1a0-4810-4508-9ae6-aea0c46bcb77.htm" target="_blank"><img src="../../../images01/ZhaoPin2015-4.jpg" alt="中国人事报刊社2015年度招聘工作人员体检公告"  style="border:0;position:absolute;left:1010px;top:5px;" /></a> -->
+</div>
+	<div class="centcontainer">
+		<div style="float:left;width: 370px; border: solid 0px #900; overflow: visible; position: relative; left: 20px; top: -50px;">
+			
+    
+<div id="imgMap">
+			</div>
+			<div id="ShangXiaBan" style="text-align:center;"></div>
+			
+			
+			<div class="top" style="width:340px;margin-top:10px;">稿件搜索</div>
+			<div style="text-align:center;">
+			<form action="/dianzibao/search" method="post" target="_blank" onsubmit="return StartSearch();">
+				<input id="searchtext" name="searchtext" style="width:220px;padding:5px;margin-top:10px;" type="text" /><input type="submit" style="padding:5px;" value="搜 索">
+			</form>
+			</div>
+			
+			
+			<div class="top" style="width:340px;margin-top:10px;">往期回顾</div>
+			<div style="text-align:center;">
+				<select id="YearList">
+					<option value="2020">2020</option>
+					<option value="2019">2019</option>
+					<option value="2018">2018</option>
+					<option value="2017">2017</option>
+					<option value="2016">2016</option>
+					<option value="2015">2015</option>
+					<option value="2014">2014</option>
+					<option value="2013">2013</option>
+					<option value="2012">2012</option>
+					<option value="2011">2011</option>
+				</select>
+				年
+				
+				<select id="MonthList">
+					<option value="12">12</option>
+					<option value="11">11</option>
+					<option value="10">10</option>
+					<option value="9" selected="selected">9</option>
+					<option value="8">8</option>
+					<option value="7">7</option>
+					<option value="6">6</option>
+					<option value="5">5</option>
+					<option value="4">4</option>
+					<option value="3">3</option>
+					<option value="2">2</option>
+					<option value="1">1</option>
+				</select>
+				月
+				<input id="SearchButton" type="button" value="查 询" style="padding:5px;" onclick="Search_Qi();" />
+			</div>
+			<div id="SearchResultList" style="width:355px;height:220px;overflow:auto;"></div>
+		</div>
+		<div style="margin-left:375px;width:610px;border:solid 0px #089;padding:5px;">
+			
+<div class="nav">
+	<ul>
+		<li><a href="../../index.htm">电子报首页</a></li>
+		<li><a href="9c9b7d58-6f29-450e-b760-99a3f65faee5.htm">报社简介</a></li>
+		<!-- <li><a href="9e5cca9e-b325-4fa0-ae26-b3cdc68cf933.htm">订阅</a></li> -->
+		<!--<li><a href="ab4663da-e1ba-42e2-8952-e63b98e803fb.htm">订阅</a></li>-->
+		<li><a href="a26aa092-a662-42e4-b0fd-1bc414a0a921.htm">订阅</a>
+		<li><a href="a02edf6c-bd91-48b5-a9b5-a7b0126e80c5.htm">投稿</a></li>
+		<!--<li><a href="e685ea5f-9922-4976-8693-45a964087df9.htm">广告</a></li> -->
+		<li><a href="infolist.htm?lmid=274">通知公告</a></li>
+		<li><a href="http://www.zuzhirenshi.com/">新闻网首页</a></li>
+	</ul>
+</div>
+			<div class="innertop">
+			<div class="listhottitle3">
+	我把青春写在哇麻村</div>
+	<div class="listhottitle3">
+	</div>
+	<div class="listhottitle1">
+	</div>
+				发布时间：2020年09月16日<span id= "Source" style="margin-left:18px;display:none;">来源：</span><span id="Author" style="margin-left:18px;display:none;">作者：</span>
+			</div>
+			<div class="innercontent">
+				<p style="text-indent: 2em; text-align: left;">“实现中华民族伟大复兴的中国梦需要一代一代青年矢志奋斗。”我是青海省委组织部的一名干部，2018年4月被派往互助土族自治县台子乡哇麻村驻村扶贫。扶贫路上，进过百家门、吃过百家饭，有苦有乐、有酸有甜。一路走来，是青春的飞扬，更是责任使命的担当。</p><p style="text-align: center; text-indent: 0em;"><strong>努力成为村民“自家人”</strong></p><p style="text-indent: 2em; text-align: left;">“土不土家乡话，亲不亲故乡人。”语言是沟通的桥梁，更是情感的纽带。记得驻村伊始，每次入户走访都需要村干部充当“翻译”。隔着一层“纸”的交流，即使进了农户家的门，也贴不近他们的心。于是学说当地话就成了我打开工作局面的“敲门砖”。</p><p style="text-indent: 2em; text-align: left;">从一个词的发音，到一句话的组合，再到一段话的交流，从刚开始不会说、不敢说、不好意思说，到后来主动说、大胆说、公开场合说。经过半年多的努力，我终于攻破了“语言关”。与大家交流顺畅后，熟悉和信任也就随之建立起来了。</p><p style="text-indent: 2em; text-align: left;">长期生活在城市，不了解农民的习性，也曾给我带来困扰。为了不给村民添麻烦，开始入户时，我都习惯自己带水杯，村民邀请上炕，也总是婉言拒绝。但慢慢发现，虽然大家都认得我，却不大愿意跟我袒露心扉。村书记的一句话点醒了我：“你要把群众家当成自己家，才能让他们觉得和你没有距离。”</p><p style="text-indent: 2em; text-align: left;">知道原委后，再入户时我就“无所顾忌”地喝起村民倒的水，上暖好的土炕，开一些喜闻乐见的玩笑。距离感消失了，心与心也就贴近了，大家有什么困难，也开始想到我，依靠我。</p><p style="text-align: center; text-indent: 0em;"><strong>勇当急难险重“逆行人”</strong></p><p style="text-indent: 2em; text-align: left;">扶贫路上的每一次挑战都是历练提升的机会，只有在农村的广阔天地中、在扶贫的伟大事业下，经风雨、见世面，才能磨砺品格、成长成熟。</p><p style="text-indent: 2em; text-align: left;">村里有一对80多岁的老人，因家庭琐事和儿子儿媳产生了芥蒂。为了化解他们的矛盾，我和村干部多次上门调和。在这个过程中，被轰出过门、泼过冷水、说过风凉话，可我认为只要是真心实意为群众做好事，即使被误解也绝不能退缩，一次不行两次，两次不行三次……“精诚所至，金石为开”，当一家人重归于好，两位老人给我们端上奶茶，泪眼婆娑地说出感谢时，我觉得所有付出都是值得的。</p><p style="text-indent: 2em; text-align: left;">面对来势汹汹的新冠肺炎疫情，我和村第一书记第一时间起草了防控方案，指导村“两委”成立了应对疫情工作领导小组，明确防控职责、细化防控措施。为了保障村内孤寡老人、残障人员等特殊群体居家隔离时的正常生产生活，我们还安排专人帮他们代购米面油等生活必需品，让村民真正感受到身边有人、心里有底。</p><p style="text-align: center; text-indent: 0em;"><strong>做好群众致富“引路人”</strong></p><p style="text-indent: 2em; text-align: left;">哇麻村山大沟深，地理位置偏僻，2015年被列为省级贫困村时，全村有近三分之一的贫困人口。用当地人的话说就是“小伙儿跑得快，姑娘不想来”。近几年，通过发展到户产业、开展技能培训、推动劳动力转移、建设高原美丽乡村，村风民风大变模样，村容村貌焕然一新。2019年建档立卡贫困户人均可支配收入达到9118元。</p><p style="text-indent: 2em; text-align: left;">为了巩固脱贫成果、推进乡村振兴，我们充分利用村里得天独厚的自然条件，确定了发展乡村旅游的目标。两年来，曾为了争取项目，风雨无阻；打造景点，风餐露宿；吸引游客，风尘仆仆。在旅游景区的规划中，我还结合所学所长，查阅大量资源，挖掘景区文化内涵，拍摄乡村风貌照片，制作宣传海报、手册等，很多连当地人都不了解的情况，我都熟稔于心。</p><p style="text-indent: 2em; text-align: left;">去年，哇麻村旅游景区累计接待游客达10万人，实现各类经济收入近20万元。今年年初，哇麻村还入选了第二批“国家森林乡村”以及“全省乡村旅游重点村”。乡村旅游给村民们带来的财富和希望，就是我们扶贫工作最大的成就和勋章。</p>
+			</div>
+		</div>
+    	<div class="clear"></div>
+	</div>
+    	<div class="clear"></div>
+	
+  <div class="footer" style="">
+  <div style="padding:15px;">
+  Copyright &copy; 2014 zuzhirenshi.com  All Rights Reserved　<script language="javascript" src="http://count10.51yes.com/click.aspx?id=107975599&logo=8" charset="gb2312"></script>
+<br />
+          版权所有:中国人事报刊社　电话：010-84209407　邮箱：BIN2050@163.COM　<a href="http://www.miitbeian.gov.cn" target="_blank">京ICP备15027109号-1号</a>
+ </div>
+ </div>
+</body>
+</html>

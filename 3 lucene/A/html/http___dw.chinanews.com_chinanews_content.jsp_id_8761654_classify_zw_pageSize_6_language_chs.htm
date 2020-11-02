@@ -1,0 +1,772 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<script src="resource/js/jquery-1.12.4.min.js"></script>
+<script type="text/jscript" src="resource/js/swiper-4.1.0.min.js"></script>
+<script type="text/jscript" src="resource/js/swipeSlide.min.js"></script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+	var phoneWidth = parseInt(window.screen.width);
+	var phoneScale = phoneWidth / 640;
+	var ua = navigator.userAgent;
+	if (/Android (\d+\.\d+)/.test(ua)) {
+		var version = parseFloat(RegExp.$1);
+		if (version > 2.3) {
+			document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+		} else {
+			document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+		}
+	} else {
+		document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+	}
+	//动态引入js
+	var now = new Date();
+	var number = now.getYear().toString() + now.getMonth().toString() + now.getDate().toString() + now.getHours().toString() + now.getMinutes().toString() + now.getSeconds().toString();
+	document.write('<scr' + 'ipt type="text/javascript" src="resource/js/pub-get-news.js?v='+number+'"></scr' + 'ipt>');
+	document.write('<link href="resource/css/publicStyle.css?v=' + number + '" rel="stylesheet" type="text/css" />');
+	document.write('<link href="resource/css/newsDetail.css?v=' + number + '" rel="stylesheet" type="text/css" />');
+</script>
+
+	<meta property='og:image' content='http://i2.chinanews.com/simg/2019/190222/sl_95554950.jpg'/>
+<meta property='og:title' content='意大利留学生马克：梦想成为“当代马可·波罗”'/>
+<meta property='og:description' content='来自中新网客户端'/>
+
+<script>
+/** 初期获取  **/
+//	window.onload = function()
+//    {
+//        $("body").hide();
+//    }
+	
+	var f_title = "";
+	var f_describe = "";
+	var f_url = "";
+	var f_picture = "";
+	
+	/** 初期检查  **/
+	var checkId = "8761654";
+	var checkPageSize = "6";
+	var checkClassify = "zw";
+	var language = "chs";
+	var type = "";
+	var cmid = "";
+	if(checkId == ""){
+		error("Error:\n异常项目：id");
+	}else if(isNaN(checkPageSize)){
+		error("Error:\n异常项目：pageSize");
+	}else if(checkClassify != "zw" && checkClassify != "pic" 
+			&& checkClassify != "zwsp" && checkClassify != "sp"){
+		error("Error:\n异常项目：classify");
+	}else{
+		doit();
+	}
+	
+	/** 检查成功执行 **/
+	function doit(){
+		$.ajax({
+			url : "/chinanews/newsContent?id=8761654&pageSize=6&language=chs&dtp=2&version_chinanews=6.6.9",
+			type : "get",
+			dataType : "json",
+			success : function(data) {
+				//$("body").show();
+				// 错误信息检查
+				if (data["msgcode"] != 0) {
+					alert(data["message"]);
+					return;
+				}
+				
+				// JSON信息获取与处理
+				var page = data["data"];
+				
+				var $body = $('body');
+				// hack在微信等webview中无法修改document.title的情况
+				var $iframe = $('<iframe src="/favicon.ico"></iframe>');
+				$iframe.on('load',function() {
+					setTimeout(function() {
+						$iframe.off('load').remove();
+					}, 0);
+				}).appendTo($body);
+				document.title = f_title;
+				
+				// JSSDK设定
+				f_title = fm(page["collectTtl"]);
+				if(language=="chs"){
+					f_describe = "来自中新网客户端";
+				}else{
+					f_describe = "來自中新網客戶端";
+				}
+				f_picture = fm(page["sharePic"]);
+				if(f_picture==null||f_picture==""){
+					f_picture = fm(page["collectPic"]);
+				}
+				f_url = fm(page["shareUrl"]);
+				document.title = f_title;
+				$("#sharePic").attr('src', f_picture);
+				$("#topText").text(f_describe);
+				$("head").append("<meta property='og:description' content='中新网APP' />");
+				$("head").append("<meta name='descri" + "ption' itemprop='description' content='" + f_describe + "' />");
+				
+				$("#ysyd").text(page["ysname"]);
+				if(language == "cht"){
+					$("#wypl").text("網友評論");
+					$("#gdtj").text("更多推薦");
+					$("#bjjx").text("編輯精選");
+				}
+				
+				$("#title").text(fm(page["title"]));
+				var title = fm(page["title"]);
+				cmid = fm(page["cmid"]);
+				$("#oap").attr("href","com.chinanewszxsapp://"
+		                + "classify=" 
+		                + checkClassify 
+		                + "&id="
+		                + checkId 
+		                + "&c=1");
+				if(isWeiXin()){
+					//$("#oap").attr("href","https://www.chinanews.com/m/apps/?isPage=1&target=_blank");
+					$("#oap").attr("href","https://dw.chinanews.com/chinanews/midpage.jsp?classify="+checkClassify+"&id="+checkId+"&c=1");
+				}
+				
+				if (fm(page["source"]) != "") {
+					$("#source").text(page["source"]);
+				}
+				$("#pubtime").text(fm(page["pubtime"]));
+				//获取浏览量
+				$.ajax({
+					url : "/chinanews/getReadCount?id=8761654&language=chs&classify="+checkClassify+"&version_chinanews=6.6.9",
+					type : "get",
+					dataType : "json",
+					success : function(data) {
+						if (data["msgcode"] == 0) {
+							// JSON信息获取与处理
+							var rInfo = data["data"];
+							var readCount = fm(rInfo["readCount"]);
+							if("0"!=readCount){
+								if(language=="cht"){
+									$("#readCount").text("|\xa0\xa0\xa0流覽量："+readCount);
+								}else{
+									$("#readCount").text("|\xa0\xa0\xa0浏览量："+readCount);
+								}
+							}
+						}
+					}
+				});
+				
+				if(fm(page["topicName"]) != ""){
+					var topics = "<span style='font-size:18px;color:#000000;font-weight:800;'>相关专题</span><span style='font-size:18px;text-decoration:underline;'><a href='topic.jsp?id=" 
+							+ fm(page["topicId"]) 
+							+ "' target='_blank' >" 
+							+ fm(page["topicName"]) 
+							+ "></a></span>";
+					$("#topicSpanContent").html(topics);
+				}
+				
+				var content = fm(page["content"]);
+				
+				if(fm(page["exid"]) != ""){
+					content = "<div style='width:100%;margin-bottom:-38px;'>" 
+					+ "<a href='content.jsp?id="
+					+ fm(page["exid"])
+					+ "&pageSize="+ checkPageSize 
+					+ "&classify=" + fm(page["exclassify"]) + " ' target='_blank'>"
+					+ "<img src='"+ fm(page["expicture"]) +"'><div class='mlopen02'>图集</div>"
+					+ "</a></div>" + content;
+				}
+				
+				$("#content").html(content);
+				if( fm(page["video"]) !=""){
+					var videoShow = "<video style='width:100%' id='video' src='"+ page["video"] 
+					+"' controls='controls' preload='metadata' poster='"+ fm(page["picture"]) +"' ></video>";
+					if(checkClassify == "zwsp"){
+						$("#videoShowZw").html(videoShow);
+					}else{
+						$("#videoShow").html(videoShow);
+					}
+				}
+
+				// 特殊处理·关键字
+				if( fm(page["keyword"])!="" ){
+					var strs = page["keyword"].split(",");
+					var keyword = "";
+					for (var i = 0; i < strs.length; i++) {
+						keyword += "<a href='javascript:void(0)' target='_blank'>#" + strs[i] + "</a>";
+					}
+				}
+				$("#keyword").html(keyword);
+				// 头部logo（华媒与中国新闻周刊不显示）20180604
+				if((fm(page["hmName"])==null||fm(page["hmName"])=="") && fm(page["source"])!="中国新闻周刊" && fm(page["source"])!="中國新聞周刊"){
+					$("#topBox").html("<div class='topBox' style='height:52px;background:#ffffff;'><img width='100%' height='100%' src='resource/img/wap_top.jpg' /></div>");
+				}
+				//增加华媒图标和底部声明
+				if(fm(page["hmName"])!=null && fm(page["hmName"])!=""){
+					var hmpic = "https://i2.chinanews.com/cnsapp/icon/"+fm(page["hmName"])+".jpg";
+					$("#hmpic").html("<img src='"+hmpic+"' />");
+					if(language=="cht"){
+						//$("#hmdingyue").html("<a href='com.chinanewszxsapp://hmcname="+fm(page["hmName"])+"&hmname="+fm(page["belong"])+"' style='background-color:#cc3333;color:white;font-size:18px;border-radius:5px;padding:2px 5px;' onclick=\"openhm('"+fm(page["hmName"])+"','"+fm(page["belong"])+"')\">+ 訂閱</a>");
+						//$("#hmdingyue").html("<a href='http://www.chinanews.com/m/apps/?isPage=1&target=_blank' style='background-color:#cc3333;color:white;font-size:18px;border-radius:5px;padding:2px 5px;' onclick=\"openhm('"+fm(page["hmName"])+"','"+fm(page["belong"])+"')\">+ 訂閱</a>");
+						$("#hmdingyue").html("<a href='https://dw.chinanews.com/chinanews/midpage.jsp?hmcname="+fm(page["hmName"])+"&hmname="+fm(page["belong"])+"&type=hm' style='background-color:#cc3333;color:white;font-size:18px;border-radius:5px;padding:2px 5px;' onclick=\"openhm('"+fm(page["hmName"])+"','"+fm(page["belong"])+"')\">+ 訂閱</a>");
+					}else{
+						//$("#hmdingyue").html("<a href='com.chinanewszxsapp://hmcname="+fm(page["hmName"])+"&hmname="+fm(page["belong"])+"' style='background-color:#cc3333;color:white;font-size:18px;border-radius:5px;padding:2px 5px;' onclick=\"openhm('"+fm(page["hmName"])+"','"+fm(page["belong"])+"')\">+ 订阅</a>");
+						//$("#hmdingyue").html("<a href='http://www.chinanews.com/m/apps/?isPage=1&target=_blank' style='background-color:#cc3333;color:white;font-size:18px;border-radius:5px;padding:2px 5px;' onclick=\"openhm('"+fm(page["hmName"])+"','"+fm(page["belong"])+"')\">+ 订阅</a>");
+						$("#hmdingyue").html("<a href='https://dw.chinanews.com/chinanews/midpage.jsp?hmcname="+fm(page["hmName"])+"&hmname="+fm(page["belong"])+"&type=hm' style='background-color:#cc3333;color:white;font-size:18px;border-radius:5px;padding:2px 5px;' onclick=\"openhm('"+fm(page["hmName"])+"','"+fm(page["belong"])+"')\">+ 订阅</a>");
+					}
+					$("#hmzone").attr("href","https://dw.chinanews.com/chinanews/hmtopic.jsp?cname="+fm(page["hmName"]));
+					if(language=="cht"){
+						$("#hmAnnounce").html("特別聲明：本文系中國新聞網客戶端“華媒站點”上傳並發布，僅代表作者觀點與立場，所有權歸屬原作者，中國新聞網僅提供信息發布與展示平臺。");
+					}else{
+						$("#hmAnnounce").html("特别声明：本文系中国新闻网客户端“华媒站点”上传并发布，仅代表作者观点与立场，所有权归属原作者，中国新闻网仅提供信息发布与展示平台。");
+					}
+				}
+				//增加周刊图标
+				if(fm(page["source"])=="中国新闻周刊" || fm(page["source"])=="中國新聞周刊"){
+					var hmpic = "https://www.chinanews.com/fileftp/2017/09/2017-09-26/U690P4T47D40391F967DT20170926135620.jpg";
+					$("#hmpic").html("<img src='"+hmpic+"' />");
+				}
+				
+				//事件进展
+				var eventId = fm(page["eventId"]);
+				if(eventId!=""){
+					$.ajax({
+						url : "/chinanews/getContentEvent?id=" + eventId + "&language=" + language + "&version_chinanews=6.6.9",
+						type : "get",
+						dataType : "json",
+						success : function(data) {
+							if (data["msgcode"] == 0) {
+								var eventData = data["data"];
+								var eventList = fm(eventData["newsList"]);
+								var eventHtml = "";
+								var status = fm(eventData["status"]);
+								eventHtml = getEventStyle(eventList,status,language);
+								$("#event").html(eventHtml);
+								if($(".hideDivEvent")!=null){
+									var eventDiv = $(".hideDivEvent").eq(0).prev();
+									eventDiv.css("border-left","dotted 4px #f5f5f5");
+									eventDiv.addClass("markerEvent");
+								}
+								if($(".hideDivInfo")!=null){
+									var infoDiv = $(".hideDivInfo").eq(0).prev();
+									infoDiv.children('.eventNewsLine').removeClass("eventNewsLine");
+									infoDiv.addClass("markerInfo");
+								}
+							}
+						}
+					});
+				}
+				
+				//顶部广告
+				var topAd = fm(page["topAd"]);
+				if(topAd["id"]!=""&&topAd["id"]!=null){
+					var tpAd = ""
+					if(topAd["classify"]=="zw"||topAd["classify"]=="sp"){
+						tpAd += "<a href='https://dw.chinanews.com/chinanews/content.jsp?id="+topAd["id"]+"' style='text-decoration:none;color:#333;'>";
+					}else if(topAd["classify"]=="zy"){
+						tpAd += "<a href='https://dw.chinanews.com/chinanews/topic.jsp?id="+topAd["id"]+"' style='text-decoration:none;color:#333;'>";
+					}else if(topAd["classify"]=="zt"){
+						tpAd += "<a href='"+topAd["id"]+"' style='text-decoration:none;color:#333;'>";
+					}else{
+						tpAd += "<a>";
+					}
+					tpAd += "<img src='"+topAd["picture"]+"' style='height:80px;width:640px;'/></a>";
+					$("#topAd").html(tpAd);
+				}
+				//底部广告
+				var bottomAd = fm(page["bottomAd"]);
+				if(bottomAd["id"]!=""&&bottomAd["id"]!=null){
+					var btAd = "<div style='padding:10px 13px;border-top:10px solid #eee;border-bottom:10px solid #eee;'>";
+					if(bottomAd["classify"]=="zw"||bottomAd["classify"]=="sp"){
+						btAd += "<a href='http://dw.chinanews.com/chinanews/content.jsp?id="+bottomAd["id"]+"' style='text-decoration:none;color:#333;'>";
+					}else if(bottomAd["classify"]=="zy"){
+						btAd += "<a href='http://dw.chinanews.com/chinanews/topic.jsp?id="+bottomAd["id"]+"' style='text-decoration:none;color:#333;'>";
+					}else if(bottomAd["classify"]=="zt"){
+						btAd += "<a href='"+bottomAd["id"]+"' style='text-decoration:none;color:#333;'>";
+					}else{
+						btAd += "<a>";
+					}
+					btAd += "<div style='padding-bottom:10px;font-size:28px;'>"+bottomAd["title"]+"</div>";
+					btAd += "<img src='"+bottomAd["picture"]+"' style='height:246px;width:614px;'/>"
+					btAd += "<div style='padding-top:10px;position:relative;'><img src='"+bottomAd["logo"]+"' style='height:20px;margin-right:5px;position:absolute;top:14px;'/><span style='font-size:20px;color:#aaa;padding-left:42px;'>"+bottomAd["source"]+"</span></div>";
+					btAd += "</a></div>"
+					$("#bottomAd").html(btAd);
+				}
+				
+				//相关报道
+				var dataExtend = data["dataExtend"];
+				var modelstd = eval(dataExtend);
+				var newsListtd = "";
+				newsListtd = getTextStyle("list", modelstd);
+				if(newsListtd==""){
+					$("#yanshen").hide();
+				}else{
+					$("#newsListYs").html(newsListtd);
+					$("#yanshen").css("display","block");
+				}
+				
+				// 更多推荐
+				var dataRlvc = data["dataRlvc"];
+				var models = eval(dataRlvc);
+				var newsList = "";
+				newsList = getListStyle("list", models,language);
+				if(newsList==""){
+					$("#xiangguan").hide();
+				}else{
+					$("#newsListCt").html(newsList);
+					$("#xiangguan").css("display","block");
+				}
+				
+				//底部滚动，取更多推荐内容
+				var btm_gd = "";
+				var btm_gd1 = "";
+				var btm_gd2 = "";
+				var btm_dot = "<span id='dotfirst'></span>";
+				for(var j in models){
+					if(j < 4){
+						btm_gd1 = "<img src='" + models[j].picture + "' />";
+						btm_gd2 = "<div class='slidetitle'>" + models[j].title + "</div>";
+						if(isWeiXin()){
+							//btm_gd += "<li><a href='http://www.chinanews.com/m/apps/?isPage=1&target=_blank' onclick='openAppc(1)' style='color:#333;'><div class='slideimg'>" + btm_gd1
+							btm_gd += "<li><a href='https://dw.chinanews.com/chinanews/midpage.jsp?classify="+models[j].classify+"&id="+models[j].id+"&c=1' onclick='openAppc(1)' style='color:#333;'><div class='slideimg'>" + btm_gd1
+							+ "</div>"+ btm_gd2+"</a></li>";
+						}else{
+							btm_gd += "<li><a href='com.chinanewszxsapp://classify="+models[j].classify+"&id="+models[j].id+"&c=1' onclick='openAppc(1)' style='color:#333;'><div class='slideimg'>" + btm_gd1
+									+ "</div>"+ btm_gd2+"</a></li>";
+						}
+						btm_dot += "<span id=dot"+j+"></span>";
+					}
+				}
+				if(btm_gd != ""){
+					btm_gd = "<li><div class='slidelog'>"
+					+ "<img src='resource/img/512pxlogo.png' />"
+					+ "</div><div class='slidetitle'><img src='resource/img/logo2.png' /></div>"
+					+ "</li>"+btm_gd;
+					$("#slideBot").html("<ul>"+btm_gd+"</ul>");
+					$("#pagedot").html(btm_dot);
+					$('#slideBot').swipeSlide({
+				        continuousScroll: true,
+				        speed: 3000,
+				        transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+				        firstCallback: function(i, sum, me) {
+				            $("#dotfirst").addClass('cur');
+				        },
+				        callback: function(i, sum, me) {
+				            var num = i - 1;
+				            if(num==-1){
+				            	$("#dotfirst").addClass('cur').siblings().removeClass('cur');
+				            }
+				            $("#dot"+num).addClass('cur').siblings().removeClass('cur');
+				        }
+				    });
+
+				}
+				
+				var talks = "";
+				// 畅言获取评论
+				$.ajax({
+					url : "https://changyan.sohu.com/api/2/topic/load?client_id=cyqE875ep&topic_source_id=" + cmid + "&topic_url=1&page_size=3",
+					type : "get",
+					dataType : "jsonp",
+					success : function(data) {
+						var comments = data["comments"];
+						var count = data["cmt_sum"];
+						var models = eval(comments);
+						
+						for ( var i in models) {
+							var newDate = new Date();
+							var area = "";
+                        	if(fm(models[i].ip_location) != ""){
+                        		area = "<div style='font-size:20px;color:#C5BCB6'>"+ fm(models[i].ip_location) +"</div>";
+                        	}
+							var cmtcontent = models[i].content.replace(/\[emoji:[a-zA-Z0-9]*\]/g, "^.^");
+							cmtcontent = cmtcontent.replace(/[/[\u4e00-\u9fa5]*\]/g, "^.^");
+							newDate.setTime(models[i].create_time * 1000);
+							talks += "<div class='unit b'>"
+							+ "<div class='txBox b'>"
+							+ "<div class='tx'>"
+							+ "<img src='" + models[i].passport.img_url + "' />"
+							+ "</div>"
+							+ "</div>"
+							+ "<div class='con b'>"
+							+ "<div class='timeBox b'>"
+							+ "<span class='hui'>" + chuoToDate(models[i].create_time) + "</span>" 
+							+ models[i].passport.nickname
+							+ "</div>"
+							+ area
+							+ "<div class='sj'></div>"
+							+ cmtcontent
+							+ "</div>"
+							+ "</div>";
+						}
+						if(talks != ""){
+							var talksop = "<a href='com.chinanewszxsapp://"
+							+ "classify=" 
+							+ checkClassify 
+							+ "&id="
+							+ checkId 
+							+ "&c=0' "
+							+ "onclick='openAppc(0)' >" 
+							+ "<div class='mlopen01'>" 
+							+ "<table style='margin:auto;' height='100%'>" 
+							+ "<tr><td valign='middle'>" 
+							+ "<img style='height:29px;' border='1' src='resource/img/get_app_more_cmt.png' />" 
+							+ "</td><td style='padding-left:25px;'>" 
+							+ "<b>打开中新网客户端</b>查看更多评论("+ count +")</td></tr></table></div></a>";
+							$("#talk").html(talks);
+							$("#talkop").html(talksop);
+							$("#changyan").css("display","block");
+							
+							if(newsListtd == "" && newsList == "" ){
+								$("#btm_pic").hide();
+							}
+						}else{
+							$("#changyan").hide();
+						}
+					}
+				});
+				
+				if(fm(page["showEditorPick"])=="yes"){
+					//编辑精选
+					var editorPick = "";
+					$.ajax({
+						url : "/chinanews/getEditorPickList?language=chs&version_chinanews=6.6.9",
+						type : "get",
+						dataType : "json",
+						success : function(data) {
+							var editorNews = data["data"];
+							var models = eval(editorNews);
+
+							for(var i in models) {
+								editorPick += "<a class='swiper-slide' style='display:block;width:180px;font-size:20px;text-decoration:none;out-line:none;color:#333;' href='https://dw.chinanews.com/chinanews/content.jsp?id="+models[i].id+"&language="+language+"'>";
+								if(fm(models[i].picture)!=""){
+									editorPick += "<div>"
+												+"<img style='width:180px;height:118px;' src='"+fm(models[i].picture)+"' alt='"+fm(models[i].title)+"'>"
+												+ "</div>";
+								}
+								editorPick += "<div>"+fm(models[i].title)+"</div>"
+										    + "<div style='color:#b2b2b2'>"+fm(models[i].source)+"</div>"
+										    + "</a>";
+							}
+							$("#wrapperEditor").html(editorPick);
+							$("#editorPick").css("display","block");
+							var swiper = new Swiper('#swiperEditor', {
+					      		spaceBetween: 10,
+					      		slidesPerView: 'auto',
+					      		//centeredSlides: true,
+					    	});
+						}
+					});
+				}else{
+					$("#editorPick").hide();
+				}
+				
+				$("#showLast").css("display","block");
+				
+				$.ajax({
+					url : "/chinanews/jssdksign?url=" + encodeURIComponent(location.href.split('#')[0]),
+					//url : "//lc.chinanews.com:8090/jssdksign?url=" + encodeURIComponent(location.href.split('#')[0]),
+					type : "get",
+					dataType : "json",
+					success : function(data) {
+						wx.config({
+						    debug: false,   
+						    appId: data["appid"],
+						    timestamp:  data["timestamp"],   
+						    nonceStr: data["nonceStr"],   
+						    signature: data["signature"],  
+						    jsApiList: [
+										'onMenuShareTimeline',
+						                'onMenuShareAppMessage',
+						                'onMenuShareQQ',
+						                'onMenuShareWeibo',
+						                'onMenuShareQZone'
+						                //'updateAppMessageShareData',//分享给朋友及qq
+		    		                	//'updateTimelineShareData',//分享到朋友圈及分享到QQ空间
+		    		                	//'onMenuShareWeibo'//分享到腾讯微博
+						               ] 
+						});
+						wx.ready(function(){
+							wx.onMenuShareTimeline({
+							    title: f_title,
+							    link: f_url,
+							    imgUrl: f_picture,
+							});
+							wx.onMenuShareAppMessage({
+							    title: f_title,
+							    desc: f_describe,
+							    link: f_url,
+							    imgUrl: f_picture,
+							    type: 'link',
+							    dataUrl: '',
+							});
+							wx.onMenuShareQQ({
+							    title: f_title,
+							    desc: f_describe,
+							    link: f_url,
+							    imgUrl: f_picture,
+							});
+							wx.onMenuShareWeibo({
+							    title: f_title,
+							    desc: f_describe,
+							    link: f_url,
+							    imgUrl: f_picture,
+							});
+							wx.onMenuShareQZone({
+							    title: f_title,
+							    desc: f_describe,
+							    link: f_url,
+							    imgUrl: f_picture,
+							});
+							/*wx.updateTimelineShareData({
+							    title: f_title,
+							    link: f_url,
+							    imgUrl: f_picture,
+							});
+							wx.updateAppMessageShareData({
+							    title: f_title,
+							    desc: f_describe,
+							    link: f_url,
+							    imgUrl: f_picture,
+							});
+							wx.onMenuShareWeibo({
+							    title: f_title,
+							    desc: f_describe,
+							    link: f_url,
+							    imgUrl: f_picture,
+							});*/
+						});
+						wx.error(function(res){
+						});
+					}
+				});
+			}
+		})
+	}
+	
+	/** 图片点击事件无处理 **/
+	function picChange(){
+	}
+	
+	function openModal(ele) {
+		ele.next().css("display","block");
+	}
+
+	function closeModal(ele) {
+		ele.css("display","none");
+	}
+	
+	function openVideoModal(ele) {
+		var video = ele.children().eq(2).children().eq(0);
+		ele.children().eq(2).css("display","block");
+		video[0].play();
+	}
+
+	function closeVideoModal(ele) {
+		event.stopPropagation();
+		var video = ele.children().eq(0);
+		ele.css("display","none");
+		video[0].pause();
+	}
+	
+	
+	// 事件进展点击展开全部
+	function clickMore(i){
+		$("#event"+i).hide();
+		$(".event"+i).removeClass("hideDivEvent");
+		$(".event"+i).removeClass("hideDivInfo");
+		$("#marker"+i).children(".markerEvent").css("border-left","dotted 4px #b2b2b2");
+		$("#marker"+i).children(".markerInfo").find("div").eq(2).addClass("eventNewsLine");
+		$("#marker"+i).children(".markerEvent").removeClass("markerEvent");
+		$("#marker"+i).children(".markerInfo").removeClass("markerInfo");
+	}
+	
+	function openAppc(info){
+		var schame = "com.chinanewszxsapp://"
+				+ "classify=" 
+	            + checkClassify 
+	            + "&id="
+	            + checkId 
+	            + "&c="
+	            + info;
+		var ios = "https://itunes.apple.com/us/app/zhong-guo-xin-wen-wang/id589796322";
+		var android = "https://a.app.qq.com/o/simple.jsp?pkgname=com.cns.mc.activity";
+		openApp(schame, ios, android);
+    }
+	
+	function openhm(hmcname,hmname){
+		var schame = "com.chinanewszxsapp://"
+				+ "hmcname=" 
+	            + hmcname 
+	            + "&hmname="
+	            + hmname;
+		var ios = "https://itunes.apple.com/us/app/zhong-guo-xin-wen-wang/id589796322";
+		var android = "https://a.app.qq.com/o/simple.jsp?pkgname=com.cns.mc.activity";
+		openApp(schame, ios, android);
+    }
+	
+</script>
+
+<title>来自中新网客户端</title>
+<link href="resource/css/swiper-4.1.0.min.css" rel="stylesheet" type="text/css">
+<link href="resource/css/xhwDetailedView.css" rel="stylesheet" type="text/css" />
+<link href="resource/css/news1_11.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+<style type="text/css">
+.slidetitle {
+	width:auto;
+	padding: 13px 0;
+	margin-left: 170px;
+	height: 60px;
+	overflow: hidden;
+}      
+.mainDetailed {
+	WORD-WRAP:break-word;
+	TABLE-LAYOUT:fixed;
+	word-break:break-all
+}
+</style>
+</head>
+<body>
+	<div id="pichide" style="display:none;height:0px;width:0px;">
+	    <img id="sharePic" src="" />
+	    <img src="resource/img/logo512x512_ra.jpg">
+	    <div id ="topText"></div>
+	</div>
+	<div class="mainBox">
+	<div id="topBox"></div>
+<!-- 		<div class="topBox" style="height:52px;background:#ffffff;"><img width="100%" height="100%" src="resource/img/wap_top.jpg" /></div> -->
+		<div class="videoBox" id="videoShow"></div>
+		<div id="topAd"></div>
+		<div class="mainDetailed">
+			<div class="titBox">
+				<div style="font-weight:600;font-size:38px;">
+					<span id="title"></span>
+				</div>
+				<div class="sourceBox">
+					<span id="hmdingyue" style="margin-right:10px;float:right;"></span>
+					<a id="hmzone">
+						<div id="hmpic" class="hmpic"></div>
+						<span id="source"></span>
+						<div style="margin-top:-15px;">
+							<span id="pubtime"></span>
+							<span id="readCount"></span>
+						</div>
+					</a>
+				</div>
+				<div class="sourceBox" id="topicSpan">
+					<!-- <div id="topicSpanContent" style="display:none"></div> -->
+					<div id="topicSpanContent"></div>
+				</div>
+			</div>
+			<div class="videoBox" id="videoShowZw"></div>
+			<div class="contentBox" id="content"></div>
+			<div id="hmAnnounce" style="color:#bbb;font-size:20px"></div>
+			<div class="moreReportsBox" style="display:none;">
+				<input type="button" value="更多报道" />
+				<div class="hotWordsBox" id="keyword"></div>
+			</div>
+		</div>
+		<div id="event" style="background-color:#F5F5F5;border-radius:10px;margin:13px 13px 25px 13px;"></div>
+		<div id="bottomAd"></div>
+		<div class="relatedNewsBox" id="changyan" style="border-bottom:10px solid #eee;display:none;">
+            <div class="relatedNewsChnl" style="border-bottom:1px solid #eee;">
+                <span>&nbsp;</span><span style="background-color:#FFFFFF;" id="wypl">网友评论</span>
+            </div>
+            <div class="zbBoxc2" id="talk"></div>
+            <div style="padding-left:34px;" id="talkop"></div>
+        </div>
+		<div class="relatedNewsBox" id="yanshen" style="border-bottom:10px solid #eee;display:none">
+			<div class="relatedNewsChnl" style="border-bottom:1px solid #eee;">
+				<span>&nbsp;</span><span style="background-color:#FFFFFF;" id="ysyd"></span>
+			</div>
+			<div class="newsList" id="newsListYs"></div>
+		</div>
+		<div class="editorNewsBox" id="editorPick" style="border-bottom:10px solid #eee;display:none;">
+			<div class="relatedNewsChnl" style="border-bottom:1px solid #eee;">
+				<span>&nbsp;</span>
+				<span style="background-color:#FFFFFF;" id="bjjx">编辑精选</span>
+				<a style="background-color:#FFFFFF;float:right;margin-right:25px;font-size:25px;color:#b2b2b2" id="showMoreEditorPick" href="https://dw.chinanews.com/chinanews/editorpick.jsp?language=chs">查看更多></a>
+			</div>
+			<div class="swiper-container" id="swiperEditor" style="height:100%;background-color:#FFFFFF;margin:20px 25px;">
+				<div class="swiper-wrapper" id="wrapperEditor">
+					<div class="swiper-slide">
+						
+					</div>				
+				</div>
+			</div>
+		</div>
+		<div class="relatedNewsBox" id="xiangguan" style="display:none;">
+			<div class="relatedNewsChnl" style="border-bottom:1px solid #eee;">
+				<span>&nbsp;</span><span style="background-color:#FFFFFF;" id="gdtj">更多推荐</span>
+			</div>
+			<div class="newsList" id="newsListCt"></div>
+		</div>
+		<div class="swiperWrap">
+			<div class="slide" id="slideBot">
+				<div class="slidelog">
+					<img src='resource/img/512pxlogo.png' style="padding-top:10px;"/>
+				</div>
+				<div class='slidetitle' style="padding-top:22px;"><img src='resource/img/logo2.png' /></div>	
+			</div>
+			<div class="dot" id="pagedot"></div>
+			<a href="com.chinanewszxsapp://" onclick="openAppc(1)" id="oap">
+				<div class="openBut">
+					<img alt="open" src="resource/img/open.png">
+				</div>
+			</a>
+		</div>
+		 
+		<!-- <div style="width:95%;padding:18px;text-align: center;" id="btm_pic">
+		  <a href="com.chinanewszxsapp://" onclick="openAppc(1)" id="oap">
+		      <img width="95%" src="resource/img/wap_bottom.png">
+		  </a>
+		</div> -->
+		<div class="H18BGf2f2f2" id="showLast" style="display:none;"></div>
+	</div>
+<script>
+
+//添加图片播放区域并传入高度参数（数字）
+function addImgBg(videoimgheight){
+	if(videoimgheight == null || videoimgheight<0){
+		videoimgheight = 200;
+	}
+	var icowidth = 50;
+	var htmls = '<div id="videoimgbg" style="position:relative;background:#eee;width:100%;text-align:center;overflow:hidden;height:'+videoimgheight+'px;margin-top:5px;">';
+	htmls += '<img id="videoimg" src="" style="widthwidth:100%;height:'+videoimgheight+'px;" />';
+	htmls += '<div style="position:absolute;left:20px;bottom:20px;" class="play1"></div>';
+	htmls += '</div>';
+	
+	$("#content").prepend(htmls);
+	$("#videoimgbg").click(function(){
+		var w = $("#videoimgbg").width();
+		var h = w/16*9;
+		playHeight(h);
+	});
+}
+//获得视频区域距离顶部高度
+function getTop(){
+	return $("#videoimgbg").offset().top;
+}
+//内部方法
+function playHeight(videoimgheight){
+	$("#videoimgbg").find("img").remove();
+	$("#videoimgbg").animate({height:videoimgheight+"px"},500,function(){
+		play();
+	});
+}
+//回调播放方法
+function play(){
+	alert("Play!");
+}
+
+</script>
+</body>
+
+</html>

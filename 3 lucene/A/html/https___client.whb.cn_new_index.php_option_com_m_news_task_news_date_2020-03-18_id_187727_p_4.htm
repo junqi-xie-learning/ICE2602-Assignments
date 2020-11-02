@@ -1,0 +1,194 @@
+		<!doctype html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>文汇电子报-眼里有光心中有爱，胸膛里有一份家国情怀</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+        <link href="https://client.whb.cn/new/components/com_m_news/include/css/style.css?v=0.01" rel="stylesheet" type="text/css"/>
+        <script src="https://client.whb.cn/new/components/com_m_news/include/js/jquery.min.js?v=0.01" type="text/javascript"></script>
+        <script src="/new/components/com_m_news/include/js/jweixin-1.0.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+		var phoneWidth = parseInt(window.screen.width);
+		var phoneScale = phoneWidth / 320;
+		var ua = navigator.userAgent;
+		var IS_Android = 0;
+		if (/(Android)/i.test(ua)) {
+			IS_Android = 1;
+			var version = parseFloat(RegExp.$1);
+			if(version > 2.3) {
+				document.write('<meta name="viewport" content="width=320, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+			}
+			else{
+				document.write('<meta name="viewport" content="width=320, target-densitydpi=device-dpi">');
+			}
+		}
+		else{
+			document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+		}
+		</script>
+        <script type="text/javascript" language="javascript">
+			var oY, tY, cY, offSetPx;
+			var moveTimeOut;
+			window.onscroll = function () {
+				if (moveTimeOut) {
+					clearTimeout(moveTimeOut);
+				}
+				oY = document.getElementById("backBtn").offsetTop;
+				tY = getScrollTop(oY);
+				if (oY > tY+300) {
+					offSetPx = -1;
+				}
+				else {
+					offSetPx = 1;
+				}
+				moveTimeOut = setTimeout(moveBackBtn, 0);
+			}
+	
+			function moveBackBtn() {
+				cY = document.getElementById("backBtn").offsetTop;
+	
+				if (offSetPx > 0) {
+					if (cY >= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY + 10 + "px";
+	
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+				else {
+					if (cY <= tY + 300) {
+				document.getElementById("backBtn").style.top = tY + 300 + "px";
+						clearTimeout(moveTimeOut);
+						return;
+					}
+					document.getElementById("backBtn").style.top = cY - 10 + "px";
+					moveTimeOut = setTimeout(moveBackBtn, 5);
+				}
+			}
+	
+			function getScrollTop() {
+				var scrollPos;
+				if (window.pageYOffset) {
+					scrollPos = window.pageYOffset;
+				}
+				else if (document.compatMode && document.compatMode != 'BackCompat')
+				{ scrollPos = document.documentElement.scrollTop; }
+				else if (document.body) { scrollPos = document.body.scrollTop; }
+				return scrollPos;
+			}
+			
+			$(function() {
+				$.ajax({
+					type: 'POST',
+					url: '/new/index.php?option=com_m_news&getWxConfig',
+					data: {
+						getWxConfig: '1',
+					},
+					dataType: 'json',
+					success: function(signPackage) {
+						wx.config({
+							debug: false,
+							appId: signPackage["appId"],
+							timestamp: signPackage["timestamp"],
+							nonceStr: signPackage["nonceStr"],
+							signature: signPackage["signature"],
+							jsApiList: [
+								'checkJsApi',
+								'onMenuShareTimeline',
+								'onMenuShareAppMessage'
+							]
+						});
+					},
+					error: function(xhr, type, error) {
+					}
+				});
+			});
+		</script>
+        </head>
+        <body>
+        <a href="javascript:history.go(-1);" class="backBtn" style="display: none; z-index: 100; opacity: 0.8; top:300px; right:5px; padding: 0px; width: 40px; height: 40px; background-image: url(https://client.whb.cn/new/components/com_m_news/include/images/BackBtn1.png);position:absolute;" id="backBtn"></a>
+        <div class="content">
+        	<div class="menu1">
+            <h1>2020年3月18日   要闻  </h1>
+            </div>
+            <div style="clear:both;">
+            						<script type="text/javascript">
+							wx.ready(function () {
+								// 在这里调用 API
+								wx.onMenuShareAppMessage({
+								  title: '眼里有光心中有爱，胸膛里有一份家国情怀',  
+								  desc: '奋战在雷神山医院的仁济医疗队90后护士戴倩——',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2020-03-18&id=187727&p=4',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg', 
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								});
+								wx.onMenuShareTimeline({  
+							      title: '眼里有光心中有爱，胸膛里有一份家国情怀',  
+								  desc: '文汇电子报',  
+								  link: 'https://client.whb.cn/new/index.php?option=com_m_news&task=news&date=2020-03-18&id=187727&p=4',
+								  imgUrl: 'https://client.whb.cn/new/components/com_m_news/include/images/pic300.jpg',  
+								  success: function (res) {  
+									alert('已分享');  
+								  } 
+								}); 
+							});
+						</script>
+						<div align="left" style="padding-bottom: 10px">
+							<div style="background:#F5F5F5; padding: 12px;">
+																<div style="font-size:12px; color:#949494;width: 296px;word-wrap:break-word">奋战在雷神山医院的仁济医疗队90后护士戴倩——</div>
+																<div style="font-weight:600;font-size:24px;width: 296px;word-wrap:break-word">眼里有光心中有爱，胸膛里有一份家国情怀</div>
+							</div>
+													</div>
+						<div style="border-bottom: 1px solid #CECECE; clear: both; margin-bottom: 5px;"></div>
+						<div align="center" style="padding: 0px 12px;">
+														<div align="center" style="margin:0px 0px 10px 0px;width:100%;">
+									<img src="/resfiles/2020-03/18/1584482755582-40318_p23_b.jpg"  style="border:1px solid #666;" width="296px;"/>
+									<div style="clear:both; width:100%; margin:0px auto;word-break: break-all;" align="left">
+									▲戴倩说：“穿上白衣，我就是战士！病人在，我就在。”  （受访者供图）									</div>
+								</div>
+														<div style="font-size:14px; text-align: left;word-break: break-all;">    <p><p>■本报首席记者&nbsp;唐闻佳</p><p>防护装备、大号暖宝宝、提神润喉糖……昨天晚上10点45分，上海交通大学医学院附属仁济医院护士戴倩在房间快速收拾行囊，几分钟后，她就要赶晚上11点的班车前往雷神山医院。她所在的这支医疗队负责雷神山的ICU病区，等待她的，是一个凌晨1点到5点的班头。这个夜班，她要独立护理一名ECMO上机患者。</p><p>“说实话，有些紧张，但也不是太紧张。”1993年出生的戴倩说话爽快，她说，自己在武汉经历了太多“人生第一次”，尤其是直面生死，刻骨铭心。</p><p>“听说我要去武汉，爸爸哭了”</p><p>这个新年不同寻常，新冠病毒来势汹汹，武汉“封城”。一时间，医护短缺，仁济医院响应国家号召征集医护人员奔赴一线，戴倩第一时间递交了“请战书”。其实，在此之前，她刚结束2019年5月至12月的援滇任务回到上海。且不说长期驻外，此行前往疫情“风暴中心”，就不担心自身的安全？戴倩答得爽快：“我也不知道自己是不是真的那么无畏，但我的专业是重症医学，正好能派上用场。我也没成家，生活没啥负担。”</p><p>2月18日，上海第八批医疗队集结时，仁济医疗队位列其中，从集结令发出，到踏上征程，他们只用了24个小时。这24个小时也是戴倩人生中最漫长的一天。她在医院剪短了长发，回家收拾行囊。</p><p>“从开始报名起，我就一直瞒着父亲。直到临走那天，听说我要去武汉，爸爸哭了，那是我第一次看到他那么伤心。”戴倩难忘临走前爸爸给她做了爱吃的菜，两人默默吃着饭，谁都不敢说话，父女间的牵挂，尽在不言中。</p><p>“那晚，爸爸把我送到小区门口，一直看着我渐渐走远。我也舍不得他，可我还是坚定地往前走。我对自己说：一定要平安回家！”戴倩后来在日记里写道。</p><p>在武汉，经历了太多“人生第一次”</p><p>飞抵武汉，来不及沉浸在任何情绪里，因为这里的节奏不容许。踏进雷神山医院，一片空空荡荡的板房就是他们将要收治患者的病房。在上海第八批医疗队领队、仁济医院副院长张继东的指挥下，队员们快速搬来床铺、呼吸机、心电监护仪，然后调试设备系统……所有人几乎都处于不眠不休的状态，以最快速度建起一座“抗疫堡垒”。2月22日，这个雷神山ICU正式收治第一批患者。</p><p>“穿戴上厚厚的防护装备，还没开始工作就晕了，刚走几步就已气喘吁吁。但这时，危重症病人已经住进来了，说不害怕是假的，但我必须上去迎战。”戴倩要面对的，不仅仅是自己的身体极限，还有这个新型超级病毒的“暴风式打击”。</p><p>她护理的一名老太太，送进来时还能跟她眨眨眼，可很快病情就急转直下，血氧饱和度一路往下跌，重症监护护士出身的戴倩本能地冲上去参与抢救。插管、调呼吸机参数……就是十多分钟的时间，大家用尽全力，老人还是走了。</p><p>“我一个人在病床旁坐了好一会儿才缓过来，看着监护仪上的数字慢慢不动了。”这是戴倩与新冠病毒的第一次正面交锋，一条生命的瞬间停摆，给这个年轻人留下了深刻的印象。</p><p>ICU就是一个“生死场”，柔情岁月大多只在小说里。此后，又一位重症老爷爷离世了，戴倩跟着护理老师开展遗体护理，这又是她的“人生第一次”。一根根拔掉患者身上的插管，戴倩一边擦拭着患者的身体，一边在心里默念，“爷爷，一路走好”。“从事护理五年，在重症监护室工作三年，目睹过死亡，但生命如此快速消逝，这是第一次。”戴倩说，她会心痛，会悲伤，但并没有过多时间沉浸其中。她会一遍遍反复问自己“如何能做得更好”，因为，还有太多生命等待着他们。</p><p>在雷神山火线入党，“我想，我长大了”</p><p>这个夜班，戴倩要护理的ECMO重症病人也让她印象很深。这是一名50多岁的男士，进来时就戴着呼吸机，但神智是清醒的。之后他的情况不断变糟，氧合情况无法改善，医生决定上ECMO。“他很坚强，之前清醒时，他会自己说要吃什么，要多吃一点。吃完饭，他还会要求口腔清洁，这是一个对生活有要求的人。”戴倩会留意很多病人的性格、细节。她说，每个病人都有故事，她也希望竭尽自己的力量，为每一条生命奋斗到底。</p><p>“在这些日日夜夜的战斗中，我经历了许多以前不曾经历过的考验。我每天都在学习，也收获了大家的肯定。这20多天，我过得比在上海辛苦得多，但是我越来越感觉到生命的充实，体会到了一种被人需要的自豪感。我想，我成长了，艰辛与磨砺是最好的成长礼。”戴倩觉得，能把自己的所学用到刀刃上，这是一件非常自豪的事。</p><p>3月8日，戴倩在雷神山火线入党了。这是她第三次递交入党申请书，也是最郑重的一次。“与病毒的较量，看不见硝烟，但生与死的考验真真切切，正是因为经历过了这一切。我特别想对父亲说，爸爸，你的女儿长大了；也特别想告诉大家，我和千千万万个90后一样，也是勇敢、努力的一代人，我们眼里有光、心中有爱，我们的胸膛里也有一份家国情怀。”</p><p>“穿上白衣，我就是战士！病人在，我就在。”说这话时，戴倩有一种超越年龄的成熟。</p></p></div>
+						</div>
+					</div>
+				            </div>
+            <br style="clear:both"/>
+        </div><!--content-->
+        </body>
+        <script type="text/javascript">
+			var date = "2020-03-18";
+			var name,value,i;
+			var str=location.href;
+			var num=str.indexOf("?");
+			str=str.substr(num+1);
+			var arrtmp=str.split("&");
+			var backurl = "";
+			for(i=0;i < arrtmp.length;i++){
+				num=arrtmp[i].indexOf("=");
+				if(num>0){
+					name=arrtmp[i].substring(0,num);
+					value=arrtmp[i].substr(num+1);
+					if(name=="p"){
+						backurl = "index.php?option=com_m_news&date="+date+"&p="+value;
+						$(".backBtn").attr("href", "index.php?option=com_m_news&date="+date+"&p="+value);
+					}
+				}
+			}
+			function goback(){
+				window.location.href = backurl;
+				console.log("不是首页");
+				if(IS_Android){
+					console.log("android");
+					android.goback(1);
+				}
+				else{
+					console.log("ios");
+					return 1;
+				}
+			}
+			//setTimeout("goback();", 3000);
+		</script>
+        </html>
+		

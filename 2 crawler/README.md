@@ -23,7 +23,7 @@ python crawler.py https://www.sjtu.edu.cn/ 100
 python crawler_multi_thread.py https://www.sjtu.edu.cn/ 100
 ```
 
-## Extended Exercise (Crawler/crawler_bloom_filter.py)
+## Extended Exercise (crawler_bloom_filter.py)
 
 * Input: initial url, number of pages
 * Output: `/html`, `index.txt`

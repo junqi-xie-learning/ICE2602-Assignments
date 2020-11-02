@@ -1,0 +1,821 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-language" content="utf-8" />
+<meta name="robots" content="all" />
+<meta name="author" content='第007版' />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<META name='filetype' content='1'>
+<meta name='publishedtype' content='1'>
+<meta name='pagetype' content='1'>
+<meta name='catalogs' content='rmrbdzb'>
+<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+<meta name='publishdate' content='2013-07-17'>
+<link href="../../../tplimg/mulu_4.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+<title>带你认识“最美高校辅导员”</title>
+<SCRIPT language=Javascript src="../../../tplimg/prototype.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/mp.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/calendar2.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/new.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/range.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/jspoints111.js"></SCRIPT>
+<style>
+a.ared:link {
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: none;
+}
+a.ared:visited {
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: none;
+}
+a.ared:hover {
+	font-size: 12px;
+	color: #006699;
+	text-decoration: none;
+}
+</style>
+<style>
+.head_c2{display:block;float:left;margin:0 15px 0 0;width:91px;color:#004873;height:21px;padding:0 2px 0 2px;background:#fff;border:1px solid #66B1EB;text-align:left;}
+.head_c3{float:right; margin:2px 0 0 0;}
+</style>
+<script type="text/javascript">
+function nTabs(tabObj,obj){
+	var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+	for(i=0; i <tabList.length; i++)
+	{
+		if (tabList[i].id == obj.id)
+		{
+			document.getElementById(tabObj+"_Title"+i).className = "active";
+    		document.getElementById(tabObj+"_Content"+i).style.display = "block";
+		}else{
+			document.getElementById(tabObj+"_Title"+i).className = "normal";
+			document.getElementById(tabObj+"_Content"+i).style.display = "none";
+		}
+	}
+}
+function CopyAll()
+
+{
+
+         var obj = document.getElementById("articleContent");
+
+         if(obj!=null){
+
+                   var content = obj.innerText;
+
+                   window.clipboardData.setData("Text",content);           
+
+                   alert("复制成功");
+
+         }                 
+
+}
+
+function zoomIn() {
+ newZoom= parseInt(ozoom.style.zoom)+10+'%'
+ ozoom.style.zoom =newZoom;
+ } 
+function zoomOut() {
+ newZoom= parseInt(ozoom.style.zoom)-10+'%'
+ ozoom.style.zoom =newZoom;
+ } 
+function submitCheck()
+ {
+ if(document.all("content1").value.length>1000){
+	 alert("评论内容超过1000字！");
+	 return false;
+	 }
+	 if(document.all("content1").value.indexOf("<script")!=-1 ||document.all("content1").value.indexOf("<\/")!=-1){
+	 alert("评论内容含有特殊字符!");
+	 return false;
+	 }
+	 if(document.all("content1").value == "")
+	 {
+	 alert("必须填写评论内容！");
+	 return false;
+	 }
+	 var isnodecomment = document.commentform.isnodecomm.value; 
+	 document.commentform.nispagename.value = escape(document.getElementById("pageNameForJiaoHu").innerText.replace(/(^\s*)|(\s*$)/g, ""));
+	 document.commentform.paperdate.value = document.getElementById("paperdatediv").innerText.replace(/(^\s*)|(\s*$)/g, ""); 
+	 document.commentform.content.value=escape(document.commentform.content1.value);
+	 document.commentform.author.value=escape(document.commentform.author1.value);
+	 document.commentform.submit();
+	 alert("您的留言已经成功提交！");
+	 document.commentform.content1.value="";
+ }
+
+function viewComment(){ 		
+         document.viewform.nispagename.value = escape(document.getElementById("pageNameForJiaoHu").innerText.replace(/(^\s*)|(\s*$)/g, ""));		 
+         document.viewform.paperdate.value = document.getElementById("paperdatediv").innerText.replace(/(^\s*)|(\s*$)/g, ""); 	
+		
+ 		 document.viewform.submit();		
+ 	}
+ function dohit(){
+  if (document.readyState == 'complete' )
+     {
+  document.frames("hitClickIframe").document.hitform.url.value = location.href;
+  if(document.commentform.isnodecomm.value == '1'){
+  document.frames("hitClickIframe").document.hitform.nodeid.value = document.commentform.nodeid.value;
+  }else{
+  document.frames("hitClickIframe").document.hitform.articleid.value = document.commentform.articleid.value;
+  }
+  document.frames("hitClickIframe").document.hitform.submit();
+  document.hitClickIframe.style.display="none";
+  }else
+  window.setTimeout("dohit()","300");
+}
+	
+	function getDate()
+	{
+		  var url = window.location.pathname.split('/');		  	
+		  var length = url.length;  		  
+		  document.getElementById("newsIframe").src = "http://paperpost.people.com.cn/"+url[1]+"-"+url[length-3]+"-"+url[length-2]+".html";
+	}
+</script>
+<script type="text/javascript">
+ var focus_width=260;
+ var focus_height=180;
+ var text_height=20;
+ var swf_height = focus_height+text_height;
+ var pics ="";
+ var links ="";
+ var texts ="";
+ var resCount=0;
+ function showArtPics()
+ {
+ if(resCount>0)
+ {
+ pics = pics.substring(0, pics.length-1);
+ links = links.substring(0, links.length-1);
+ texts = texts.substring(0, texts.length-1);
+ var content = "";
+ content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">';
+ content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+ content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+ content += '<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">';
+ content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" bgcolor="#ffffff" quality="high" width="'+ focus_width +'" height="'+ focus_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+ content += '<\/object>';
+ document.getElementById("showArtPicsDiv").innerHTML = content;
+ }
+}
+</script>
+</head>
+<SPAN id=leveldiv title=点击查看内容
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; Z-INDEX: 100; LEFT: 233px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 210px; CURSOR: hand; POSITION: absolute; TOP: 123px; HEIGHT: 34px; BORDER-RIGHT-WIDTH: 0px"></SPAN>
+<body onLoad="checkContent();createStarsPage();initialize();initMPPage();getDate();dohit();showArtPics();">
+<div class="div_bg"><div class="div_center">
+  <!--左侧版面图部分-->
+  <div class="left_c">
+    <div class="ban">
+      <div>
+        <map name=PagePicMap><Area coords="2,29,291,29,291,290,2,290" shape="polygon" href="./nw.D110000renmrb_20190614_1-07.htm"><Area coords="299,29,397,29,397,422,299,422" shape="polygon" href="nw.D110000renmrb_20190614_2-07.htm"><Area coords="2,304,71,304,71,433,2,433" shape="polygon" href="nw.D110000renmrb_20190614_3-07.htm"><Area coords="291,304,76,304,71,437,2,437,2,484,71,484,76,484,291,484" shape="polygon" href="nw.D110000renmrb_20190614_4-07.htm"><Area coords="397,450,397,428,397,425,299,425,299,428,299,450,299,563,397,563" shape="polygon" href="nw.D110000renmrb_20190614_5-07.htm"><Area coords="2,496,289,496,289,563,2,563" shape="polygon" href="nw.D110000renmrb_20190614_6-07.htm"></map><img  width=400 height=575 src=../../../page/2019-06/14/07/rmrb2019061407_b.jpg border=0 USEMAP=#PagePicMap>
+      </div>
+    </div>
+    <div class="ban_t">
+      <div>
+        <ul>
+          <li>
+            07版:要闻
+&nbsp;
+            <a href=../../../page/2019-06/14/07/rmrb2019061407.pdf><IMG src="../../../tplimg/ico4.gif" border=0></a>
+            PDF版下载 
+            <span>
+                 <a class=preart href="nbs.D110000renmrb_06.htm"><img src='../../../tplimg/left_ico.gif' border=0 /> 上一版</a>&nbsp;&nbsp;<a class=preart href="nbs.D110000renmrb_08.htm">下一版 <img src='../../../tplimg/right_ico.gif' border=0 /></a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tool">
+      <input type="image" onclick="javascript:window.open('http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/chs/AdbeRdr810_zh_CN.exe')" src="../../../tplimg/button.gif" name="" style="float:left;padding-left:40px"/>
+      <img src="../../../tplimg/button1.gif" style="display:none"/>
+      <img src="../../../tplimg/button2.gif" style="display:none"/>
+<a href="node_1921.htm"><img src="../../../tplimg/button3.gif" border="0" style="float:right;padding-right:40px"/></a>
+    </div>
+	<!-- -->
+	
+    <div class="title" style="margin-top:10px">
+      <div>我给文章打分</div>
+    </div>
+    <div class="da_c" style="width:366px;margin-bottom:10px">
+      <FORM id=pointsform name=pointsform action="" method=post 
+                  target=pointsIframe  style=" display:none;">
+                  <INPUT type=hidden
+ name=paperdate />
+        <INPUT 
+                              type=hidden name=nodename1 />
+        <INPUT type=hidden 
+                              name=channelname1 />
+        <INPUT type=hidden name=title1 />
+        <INPUT type=hidden value=2 name=attr />
+        <!--attr 2 数字报刊 1 翔宇-->
+        <INPUT type=hidden value=2 
+                              name=isnodecomm />
+        <!--isnodecomm 2 文章评论 1 版面或栏目评论-->
+        <INPUT 
+                              type=hidden value=2 name=pointtype />
+        <!--pointtype 2 计算平均分（现阶段必须设为2） 1 统计类型-->
+        <!--此列为插件生成的组件-->
+        <input name="nodeid" type=hidden value="1928"><input name="nodename" type=hidden value="07"><input name="nodetype" type=hidden value="0"><input name="nodeurl" type=hidden value="null.htm"><input name="channelid" type=hidden value="1921"><input name="channelname" type=hidden value="人民日报"><input name="articleid" type=hidden value="1930553"><input name="author" type=hidden value="本报记者  丁雅诵"><input name="title" type=hidden value="带你认识“最美高校辅导员”"><input name="keyword" type=hidden value=""><input name="weburl" type=hidden value="./nw.D110000renmrb_20190614_1-07.htm"><input name="pubtime" type=hidden value="2019-06-14">
+        <div id="paperdatediv">
+          2019-June-14
+        </div>
+      </FORM>
+      <form name="pForm" id="pForm">
+        <input type="radio" name="pointVal" value="1" onClick="pv(1)"/>
+        1分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="2" onClick="pv(2)" />
+        2分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="3" onClick="pv(3)" checked="checked" />
+        3分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="4" onClick="pv(4)" />
+        4分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="5" onClick="pv(5)" />
+        5分 &nbsp;        
+		<img src="../../../tplimg/ti.gif"  alt="" border="0" style="cursor:hand " onclick="submitPoints(document.pForm.Input2.value);" />
+        <!--<p>本版得分:<span>4.1分</span>(共有<span>19</span>位网友打分)</p>-->
+        <input name="Input2" type="hidden" value="3" />
+      </form>
+      <iframe id="pointsIframe"  
+            name="pointsIframe" src="about:blank" frameborder=0 width=350
+            scrolling=no height=30 style="margin-left:0px"></iframe>
+    </div>
+    <div class="title">
+      <div>新闻排行榜</div>
+    </div>
+    <div class="pai">
+      <div>
+        <!--
+	    <span>1</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>2</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>3</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>4</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>5</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>6</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>7</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>8</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>9</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>10</span><a href="">我看到了你，也看到了我的种点</a><br />-->
+        <iframe name="newsIframe" id="newsIframe" border="0" height="240" width="95%" frameborder="0" src=""></iframe>
+        <br />
+        <iframe name="hitClickIframe" id="hitClickIframe" height="0" width="0" border="0" frameborder="0" src="../../../tplimg/hitPost.htm"></iframe>
+      </div>
+    </div>
+    <div class="title">
+      <div id="bqsm">版权声明</div>
+    </div>
+    <div class="pai f_link" id="bqsm_nr" style="line-height:25px">　　《人民日报》（电子版）的一切内容(包括但不限于文字、图片、PDF、图表、标志、标识、商标、版面设计、专栏目录与名称、内容分类标准以及为读者提供的任何信息)仅供人民网读者阅读、学习研究使用，未经人民网股份有限公司及/或相关权利人书面授权，任何单位及个人不得将《人民日报》（电子版）所登载、发布的内容用于商业性目的，包括但不限于转载、复制、发行、制作光盘、数据库、触摸展示等行为方式，或将之在非本站所属的服务器上作镜像。否则，人民网股份有限公司将采取包括但不限于网上公示、向有关部门举报、诉讼等一切合法手段，追究侵权者的法律责任。</div><!-- -->  
+  </div>
+  <!--右侧目录部分-->
+  <div class="right_c">
+    <div style="margin:0 auto;width:530px;height:70px;text-align:right;padding:8px 0 0 20px;">
+      <div style="height:70px;">
+        <div style="float:left; width:390px;">
+          <div style="height:23px; padding:10px 0px;">
+            <div onMouseOver="document.getElementById('rmrbbx').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx').style.display = 'none';" class="head_c2">
+              <div style="float:left">日&nbsp;报</div>
+              <div  class="head_c3"><img src="../../../tplimg/ico10.gif" border="0" alt="" /></div>
+            </div>
+            <div onMouseOver="document.getElementById('rmrbbx1').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx1').style.display = 'none';" class="head_c2">
+              <div style="float:left">周&nbsp;报</div>
+              <div  class="head_c3"><img src="../../../tplimg/ico10.gif" border="0" alt="" /></div>
+            </div>
+            <div onMouseOver="document.getElementById('rmrbbx2').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx2').style.display = 'none';" class="head_c2">
+              <div style="float:left">杂&nbsp;志</div>
+              <div  class="head_c3"><img src="../../../tplimg/ico10.gif" border="0" alt="" /></div>
+            </div>
+          </div>
+          <div style="text-align:left;">
+            <div style="float:left; width:370px;"><div id="riqi_"  style="float:left;">
+            人民日报
+            2019年06月14日 星期五
+            </div><div id="peopledata" style="float:right; display:none" class="peopledata"></div>
+		  <div style="float:left; color:#004773; display:none; padding-left:5px;" id="infowelcome">&nbsp;欢迎您：<span id="disname" class="un">用户ID名称</span></div></div>
+         </div>
+        </div>
+        <div style="float:left;"><a href="http://www.people.com.cn"><img src="../../../tplimg/logo.jpg" border="0" alt="人民网" /></a></div>
+      </div>
+    </div>
+    <div style="margin:0 auto; color:#004773; height:20px; width:500px; padding:8px 10px 10px 20px; text-align: left;float:left;">
+      <div style="float:left; width:50px;">往期回顾</div>
+      <div style="float:left; width:60px; padding-top:2px;"><a onClick="autoShowDate();" style="cursor:hand;" title="鼠标点击，显示日历牌"><img src="../../../tplimg/ico1.gif" border="0" alt="" /></a></div>
+      <div style="float:left; width:80px;display:none" id="paperSearch"><a href="http://search.people.com.cn/rmw/GB/bkzzsearch/index.jsp" target="_blank">人民网检索</a></div>
+      <div style="float:left; display:none; font-weight:bold;" id="usercenter"><a href="../../../notice/notice.htm" class="ared" target="_blank">《人民日报》数字报取消收费的通知</a></div>
+      <div style="float:right; text-align:right;"><a href=nbs.D110000renmrb_07.htm>返回目录</a></div>
+    </div>
+    <div class="mobilepaper" id="mobilepaper"></div>
+  <!--目录与标题-->
+    <div style="margin:15px auto 0 auto; width:550px;">
+      <div class="text_c"><br/>
+        
+<h3>他们与学生分享快乐，为学生排解烦恼，帮学生找准方向</h3>
+<h1>带你认识“最美高校辅导员”</h1>
+<h2></h2>
+
+<h4>本报记者  丁雅诵</h4>
+        <div class="lai"  style="padding-top:5px;"> 《
+          人民日报
+          》（
+          2019年06月14日
+&nbsp;
+          07
+          版）</div>
+        <div class="c_c">
+        	<div align="center" style="padding:10px 0 15px 0">
+            </div>
+          <DIV id=ozoom style="zoom:100%;">
+            <div id="showArtPicsDiv" align="center"></div>
+            <script language=javascript>
+							/*	if(picResCount>0){
+									document.getElementById("picres").style.display="block";
+									document.write("<br />");
+								}*/
+ 			  				</script>
+ 			
+            <!--enpcontent--><P>　　核心阅读</P>
+<P>　　辅导员队伍，是高校实现立德树人目标的重要依托，是实现大学生价值引领的骨干力量。日前，中宣部、教育部首次从历届在岗的“高校辅导员年度人物”中，评选出10名“最美高校辅导员”。他们，用既有意义又有意思、既营养又对味的方式，创新学生工作方式，做好高校思政教育。</P>
+<P>　　</P>
+<P>　　这是一支特殊的队伍：他们是离大学生最近的人，能与学生一起分享快乐、帮学生排解烦恼；他们在思政教育的最前沿，能帮助学生拨开迷雾、找准方向；他们是学生的人生导师，也是学生的知心朋友。他们有一个共同的名字——辅导员。</P>
+<P>　　日前，中宣部、教育部首次从历届在岗的“高校辅导员年度人物”中，评选出10名“最美高校辅导员”。今天，让我们一起走近这10位辅导员，感受他们的“最美”风华。</P>
+<P>　　“必须为学生系好人生的第一粒扣子”</P>
+<P>　　“我是陈小花，我觉得自己就像一株小花，身边的学生也是一株株小花。我在群花之中，带着他们一起绽放，奋力进取，共圆我们的中国梦！”广东技术师范大学辅导员陈小花，曾在日记里写下这样一段话。</P>
+<P>　　从16年前走上高校辅导员岗位，到如今成长为党的十九大代表，陈小花对辅导员工作充满自信心与责任感：“我们离学生最近，必须为学生系好人生的第一粒扣子。”</P>
+<P>　　有一次，一名学生从网上看到一篇质疑革命英雄的文章，并转发给了陈小花。陈小花没有立即驳斥，而是循序渐进地向这位学生讲解历史虚无主义的实质，还邀请他以访谈形式聆听革命前辈的故事、和他一起参观革命旧址。陈小花的努力让这位同学有了清醒的认识，后来，这名学生深情地说，“是小花姐的引导，让我有了坚定的信仰。”</P>
+<P>　　党的十九大之后，陈小花迅速投入到宣传落实十九大精神的工作之中，助力十九大精神在青年学生中落地生根。陈小花说，我愿扎根在一线，一花引得万花开，让祖国的花朵绽放得更加灿烂。</P>
+<P>　　学生工作怎么做才能既有意义又有意思、既营养又对味？这是摆在高校辅导员面前的一道难题，也让武汉大学历史学院原党委副书记徐冶琼思虑良久。</P>
+<P>　　她决定为学生提供“学长制”服务：在新生入校时，学院选拔优秀的高年级同学与新生结对。跨专业、有共同特长、相似兴趣、同一民族、同一地域……徐冶琼尽最大可能提高结对的匹配度。如今，学院已形成了低年级“学长制”、高年级“学术导师制”的育人体系，将思想政治教育融汇在学生成长的全过程。</P>
+<P>　　相较于其他高校辅导员，浙江大学国际联合学院（海宁国际校区）学生事务部部长王玉芬的情况是特殊的，因为她面对的学生40%以上是留学生，他们来自46个国家和地区。</P>
+<P>　　国际校区的思政教育如何做？怎样给外国学生做好辅导员？在反复调研之后，王玉芬搭建起融合中西方学生管理优势的学生思政教育工作体系。“大学生先锋引领计划”帮助学生坚定理想信念，让中华优秀传统文化浸润每一个学生的心灵……“扎根中国大地，坚持以我为主，讲好中国故事，在中西文化交融的土壤中铸魂育人。”王玉芬踌躇满志。</P>
+<P>　　“只要是学生的事，再小也是天大的事”</P>
+<P>　　倘若拨打重庆大学微电子与通信工程学院办公室电话，电话铃声响了9下还没人接，你就会听到一段录音：“主人不在，请拨1345239****。”这个号码就是学院党委副书记袁利的手机号。她的手机24小时开机，有求必应。她总说：“作为辅导员，只要是学生的事，再小也是天大的事。”</P>
+<P>　　从1990年毕业到现在，袁利一直从事基层学生工作，先后担任了105个班级的辅导员，累计教育引导学生2700多名。每带一级学生，她都会用最快的时间了解学生的兴趣爱好、个性特点、家庭背景等情况，努力成为每个学生的知心朋友。</P>
+<P>　　有困难，找辅导员。在克拉玛依职业技术学院，信息工程系辅导员吐尔逊麦麦提·艾麦提江，被学生亲切地称为“吐爸爸”。</P>
+<P>　　“如果没有吐爸爸，我不可能有今天……”回忆起过去，已经毕业的袁芸红了眼圈。</P>
+<P>　　大一那年，由于家里有特殊情况，袁芸打算退学。这可把吐尔逊麦麦提着急坏了。站在学校大门口的雪地里，吐尔逊麦麦提苦苦劝说袁芸父母：“家里有困难，我会帮助她，同学们也会帮助她，求求你们，千万别让孩子退学。”</P>
+<P>　　“吐爸爸就像父亲在维护自己的女儿一样，让我非常感动，铭记至今。”袁芸说。</P>
+<P>　　“每到父亲节这天，我的手机就响个不停。手里握着手机，看着那些祝福的话语，这是我最满足的时刻。”吐尔逊麦麦提一边说，一边露出幸福的笑容。</P>
+<P>　　在辅导员生涯中感到幸福的，还有中南大学建筑与艺术学院党委副书记张金学。“32年来，帮助一个又一个有困难的学子摆脱困境，看着一批又一批学生到祖国各地建功立业，是我最骄傲的事。”同样，在学生心中，张老师就是遇到困难时第一个想起的人，张老师的办公室就是他们心中最温暖的港湾。</P>
+<P>　　“我的老师对我好，我也要对学生好。”在同济大学艺术与传媒学院党委副书记李睿的影响下，他的学生也有许多走上了辅导员岗位。“2017年，在同济的两个王牌学院，先后有13位学生放弃设计与艺术领域的高薪职位，选择留校当辅导员。”李睿说，他们曾经分赴47座城市采访409位校友，也曾奔赴台州黄岩沙滩村，用脚步丈量乡村，用“把论文写在祖国大地上”的精神，激励学生留下来，为教育事业贡献力量。</P>
+<P>　　“以学生喜欢的方式和他们对话”</P>
+<P>　　“我喜欢和学生在一起，他们身上涌动着的，永远是年轻向上的活力。”这是山东大学威海分校海洋学院党委副书记范蕊在《在海滩上种花——一个大学辅导员的工作日志》中的一段话，也是她多年辅导员生涯的心声。</P>
+<P>　　“在信息庞杂、价值多元的时代，学生能在网络上接收到各种各样的资讯，这时候就必须有人帮助他们辨别真伪、分清善恶，引领他们的思想。而辅导员正应成为网络思政教育的先行者，以学生喜欢的方式与他们对话，引导和陪伴他们成长。”范蕊是这样认为的，也是这样做的。</P>
+<P>　　从人人网到QQ空间，从新浪微博到“陌上花开”微信公众号，她一直坚持利用网络，记录学生的点点滴滴、为学生答疑解惑。她在网上为学生写下600多篇文章，近100万字；拥有粉丝近2万多人，回答学生提问上万条，几乎“有问必答”。</P>
+<P>　　同样善于运用新方式新手段，取得良好思政教育效果的，还有北京师范大学教育学部辅导员任雅才。她组织学生党支部以社会主义核心价值观为主题，拍摄了12段反映学生校园学习生活的微视频。</P>
+<P>　　从脚本撰写、视频拍摄，到后期制作、网络传播，学生们群策群力，既加深了对社会主义核心价值观的认知，也增强了情感上的认同。</P>
+<P>　　“我的祖国给了我生命和智慧，如果我的爱能对祖国有一点点贡献，我将百死不辞！”原创话剧《钱学森》在全国巡演期间，剧中的这句台词在青年学子中“火”了起来。这部由上海交通大学师生根据新中国“两弹一星”元勋、交大校友钱学森生平事迹创作而成的话剧，幕后制作人便是学校人文学院党委副书记汪雨申。</P>
+<P>　　汪雨申说，希望自己成为开垦交大校园文化、播种交大精神文化、培育交大原创文化的实践者和开拓者，用文化打造德育精品。</P>
+<P>　　“学者而师，而师者学，意思是要求我们老师不断学习、不断进步。”汪雨申说，我愿意与学生们相伴成长，持续关注新一代大学生的特点，为学生成长保驾护航，让他们找到属于自己人生的闪光时刻。</P><!--/enpcontent-->
+<INPUT type=checkbox value=0 name=titlecheckbox sourceid="<Source>SourcePh</Source>" style="display:none">
+               
+          </DIV>
+        </div>
+      </div>
+    </div>
+    <div style="padding:5px 15px;" id="xgyd">
+    </div>
+    <!--工具条-->
+    <div class="tool_t">
+      <a href=nbs.D110000renmrb_07.htm>返回目录</a>
+&nbsp;&nbsp;&nbsp;<a href="#" onclick="zoomIn();">放大</a><a href="#" onclick="zoomOut();"><img src="../../../tplimg/ico6.gif" border="0" alt="" />缩小</a><a href="#" onclick="CopyAll();"><img src="../../../tplimg/ico7.gif" border="0" alt="" />全文复制</a>&nbsp;&nbsp;&nbsp;
+      <a class=preart href="nw.D110000renmrb_20190614_2-07.htm">下一篇 <img src='../../../tplimg/ico9.gif' border=0 /></a>
+    </div>
+    <!-- 以下是供复制全文用 -->
+    <div style="display:none" id="articleContent">
+      
+			<!--enpcontent--><P>　　核心阅读</P>
+<P>　　辅导员队伍，是高校实现立德树人目标的重要依托，是实现大学生价值引领的骨干力量。日前，中宣部、教育部首次从历届在岗的“高校辅导员年度人物”中，评选出10名“最美高校辅导员”。他们，用既有意义又有意思、既营养又对味的方式，创新学生工作方式，做好高校思政教育。</P>
+<P>　　</P>
+<P>　　这是一支特殊的队伍：他们是离大学生最近的人，能与学生一起分享快乐、帮学生排解烦恼；他们在思政教育的最前沿，能帮助学生拨开迷雾、找准方向；他们是学生的人生导师，也是学生的知心朋友。他们有一个共同的名字——辅导员。</P>
+<P>　　日前，中宣部、教育部首次从历届在岗的“高校辅导员年度人物”中，评选出10名“最美高校辅导员”。今天，让我们一起走近这10位辅导员，感受他们的“最美”风华。</P>
+<P>　　“必须为学生系好人生的第一粒扣子”</P>
+<P>　　“我是陈小花，我觉得自己就像一株小花，身边的学生也是一株株小花。我在群花之中，带着他们一起绽放，奋力进取，共圆我们的中国梦！”广东技术师范大学辅导员陈小花，曾在日记里写下这样一段话。</P>
+<P>　　从16年前走上高校辅导员岗位，到如今成长为党的十九大代表，陈小花对辅导员工作充满自信心与责任感：“我们离学生最近，必须为学生系好人生的第一粒扣子。”</P>
+<P>　　有一次，一名学生从网上看到一篇质疑革命英雄的文章，并转发给了陈小花。陈小花没有立即驳斥，而是循序渐进地向这位学生讲解历史虚无主义的实质，还邀请他以访谈形式聆听革命前辈的故事、和他一起参观革命旧址。陈小花的努力让这位同学有了清醒的认识，后来，这名学生深情地说，“是小花姐的引导，让我有了坚定的信仰。”</P>
+<P>　　党的十九大之后，陈小花迅速投入到宣传落实十九大精神的工作之中，助力十九大精神在青年学生中落地生根。陈小花说，我愿扎根在一线，一花引得万花开，让祖国的花朵绽放得更加灿烂。</P>
+<P>　　学生工作怎么做才能既有意义又有意思、既营养又对味？这是摆在高校辅导员面前的一道难题，也让武汉大学历史学院原党委副书记徐冶琼思虑良久。</P>
+<P>　　她决定为学生提供“学长制”服务：在新生入校时，学院选拔优秀的高年级同学与新生结对。跨专业、有共同特长、相似兴趣、同一民族、同一地域……徐冶琼尽最大可能提高结对的匹配度。如今，学院已形成了低年级“学长制”、高年级“学术导师制”的育人体系，将思想政治教育融汇在学生成长的全过程。</P>
+<P>　　相较于其他高校辅导员，浙江大学国际联合学院（海宁国际校区）学生事务部部长王玉芬的情况是特殊的，因为她面对的学生40%以上是留学生，他们来自46个国家和地区。</P>
+<P>　　国际校区的思政教育如何做？怎样给外国学生做好辅导员？在反复调研之后，王玉芬搭建起融合中西方学生管理优势的学生思政教育工作体系。“大学生先锋引领计划”帮助学生坚定理想信念，让中华优秀传统文化浸润每一个学生的心灵……“扎根中国大地，坚持以我为主，讲好中国故事，在中西文化交融的土壤中铸魂育人。”王玉芬踌躇满志。</P>
+<P>　　“只要是学生的事，再小也是天大的事”</P>
+<P>　　倘若拨打重庆大学微电子与通信工程学院办公室电话，电话铃声响了9下还没人接，你就会听到一段录音：“主人不在，请拨1345239****。”这个号码就是学院党委副书记袁利的手机号。她的手机24小时开机，有求必应。她总说：“作为辅导员，只要是学生的事，再小也是天大的事。”</P>
+<P>　　从1990年毕业到现在，袁利一直从事基层学生工作，先后担任了105个班级的辅导员，累计教育引导学生2700多名。每带一级学生，她都会用最快的时间了解学生的兴趣爱好、个性特点、家庭背景等情况，努力成为每个学生的知心朋友。</P>
+<P>　　有困难，找辅导员。在克拉玛依职业技术学院，信息工程系辅导员吐尔逊麦麦提·艾麦提江，被学生亲切地称为“吐爸爸”。</P>
+<P>　　“如果没有吐爸爸，我不可能有今天……”回忆起过去，已经毕业的袁芸红了眼圈。</P>
+<P>　　大一那年，由于家里有特殊情况，袁芸打算退学。这可把吐尔逊麦麦提着急坏了。站在学校大门口的雪地里，吐尔逊麦麦提苦苦劝说袁芸父母：“家里有困难，我会帮助她，同学们也会帮助她，求求你们，千万别让孩子退学。”</P>
+<P>　　“吐爸爸就像父亲在维护自己的女儿一样，让我非常感动，铭记至今。”袁芸说。</P>
+<P>　　“每到父亲节这天，我的手机就响个不停。手里握着手机，看着那些祝福的话语，这是我最满足的时刻。”吐尔逊麦麦提一边说，一边露出幸福的笑容。</P>
+<P>　　在辅导员生涯中感到幸福的，还有中南大学建筑与艺术学院党委副书记张金学。“32年来，帮助一个又一个有困难的学子摆脱困境，看着一批又一批学生到祖国各地建功立业，是我最骄傲的事。”同样，在学生心中，张老师就是遇到困难时第一个想起的人，张老师的办公室就是他们心中最温暖的港湾。</P>
+<P>　　“我的老师对我好，我也要对学生好。”在同济大学艺术与传媒学院党委副书记李睿的影响下，他的学生也有许多走上了辅导员岗位。“2017年，在同济的两个王牌学院，先后有13位学生放弃设计与艺术领域的高薪职位，选择留校当辅导员。”李睿说，他们曾经分赴47座城市采访409位校友，也曾奔赴台州黄岩沙滩村，用脚步丈量乡村，用“把论文写在祖国大地上”的精神，激励学生留下来，为教育事业贡献力量。</P>
+<P>　　“以学生喜欢的方式和他们对话”</P>
+<P>　　“我喜欢和学生在一起，他们身上涌动着的，永远是年轻向上的活力。”这是山东大学威海分校海洋学院党委副书记范蕊在《在海滩上种花——一个大学辅导员的工作日志》中的一段话，也是她多年辅导员生涯的心声。</P>
+<P>　　“在信息庞杂、价值多元的时代，学生能在网络上接收到各种各样的资讯，这时候就必须有人帮助他们辨别真伪、分清善恶，引领他们的思想。而辅导员正应成为网络思政教育的先行者，以学生喜欢的方式与他们对话，引导和陪伴他们成长。”范蕊是这样认为的，也是这样做的。</P>
+<P>　　从人人网到QQ空间，从新浪微博到“陌上花开”微信公众号，她一直坚持利用网络，记录学生的点点滴滴、为学生答疑解惑。她在网上为学生写下600多篇文章，近100万字；拥有粉丝近2万多人，回答学生提问上万条，几乎“有问必答”。</P>
+<P>　　同样善于运用新方式新手段，取得良好思政教育效果的，还有北京师范大学教育学部辅导员任雅才。她组织学生党支部以社会主义核心价值观为主题，拍摄了12段反映学生校园学习生活的微视频。</P>
+<P>　　从脚本撰写、视频拍摄，到后期制作、网络传播，学生们群策群力，既加深了对社会主义核心价值观的认知，也增强了情感上的认同。</P>
+<P>　　“我的祖国给了我生命和智慧，如果我的爱能对祖国有一点点贡献，我将百死不辞！”原创话剧《钱学森》在全国巡演期间，剧中的这句台词在青年学子中“火”了起来。这部由上海交通大学师生根据新中国“两弹一星”元勋、交大校友钱学森生平事迹创作而成的话剧，幕后制作人便是学校人文学院党委副书记汪雨申。</P>
+<P>　　汪雨申说，希望自己成为开垦交大校园文化、播种交大精神文化、培育交大原创文化的实践者和开拓者，用文化打造德育精品。</P>
+<P>　　“学者而师，而师者学，意思是要求我们老师不断学习、不断进步。”汪雨申说，我愿意与学生们相伴成长，持续关注新一代大学生的特点，为学生成长保驾护航，让他们找到属于自己人生的闪光时刻。</P><!--/enpcontent-->
+			
+    </div>
+    <!--结束工具条-->
+    	<iframe id=postIframe"  
+            name="postIframe" src="http://paperpost.people.com.cn/dis/commesDetail.jsp" frameborder=0 width=555
+            scrolling=no height=437 style="margin-left:0px"></iframe>
+    <!--我要评报-->
+    <div class="title da_t">
+      <div><div style="float:left;width:350px;background:none;margin:0px;padding:0px;height:25px">我要评报 <a href="http://www.people.com.cn/GB/50142/104580/index.html" target="_blank">&nbsp;|&nbsp;关于人民日报社</a></div><div style="width:80px;float:right;margin-right:20p;background:none;padding:0px"><a href="#liuyan" onClick="getElementById
+('liuyans').style.display=
+(getElementById('liuyans').style.display=='none'?'block'
+:'none');">隐藏留言须知</a></div></div>
+    </div>
+    <div class="note">
+		<div name="pageNameForJiaoHu" id="pageNameForJiaoHu" style="display:none" >
+       	 要闻
+    	</div>
+      <form name=commentform action=http://paperpost.people.com.cn/comment/saveArtComment.jsp method=post target="tempForm">
+&nbsp;&nbsp;&nbsp;&nbsp;署名:
+        <input type="text" style="width:95px;height:18px;border:1px solid #7F9DB9;"  maxLength=64  name="author1"/>
+&nbsp;&nbsp;
+        <input name="isGuest" type="hidden"  id="isGuest" value="ture" />
+        <!--匿名发表-->
+        <p>
+          <textarea name="content1" cols="50" rows="6"  id="content1"></textarea>
+          <img src="../../../tplimg/fb.gif"  alt="" border="0" style="cursor:hand " onclick="return submitCheck();" />
+		  <br/><br/><br/><!--img src="../../../tplimg/ckpl.gif"  alt="" border="0" style="cursor:hand " onclick="return viewComment();" /-->
+        </p>
+        <input type="hidden"  name="nodename1" />
+        <input type="hidden"  name="channelname1" />
+        <input  name="title1" type="hidden" value="" />
+        <input name="attr" type="hidden" value="2" />
+        <input name="isnodecomm" type="hidden" value="2" />
+        <input type="hidden" name="author" />
+        <input type="hidden" name="content" />
+		<INPUT type="hidden" name="paperdate">
+		<input type="hidden" name="nispagename" /><br />
+                <span id="liuyans">
+          1.遵守中华人民共和国有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。 
+            <br>
+            2.人民网拥有管理笔名和留言的一切权力。 <br>
+            3.您在人民网留言板发表的言论，人民网有权在网站内转载或引用。 <br>
+          </span>
+        <input name="nodeid" type=hidden value="1928"><input name="nodename" type=hidden value="07"><input name="nodetype" type=hidden value="0"><input name="nodeurl" type=hidden value="null.htm"><input name="channelid" type=hidden value="1921"><input name="articleid" type=hidden value="1930553"><input name="author" type=hidden value="本报记者  丁雅诵"><input name="title" type=hidden value="带你认识“最美高校辅导员”"><input name="keyword" type=hidden value=""><input name="weburl" type=hidden value="./nw.D110000renmrb_20190614_1-07.htm"><input name="pubtime" type=hidden value="2019-06-14">
+        <INPUT name="password" type="password" id="password" style="WIDTH: 95px; HEIGHT: 18px;display:none" maxLength=64 />
+        <input type="radio" name="rankRadio" style=" display:none;" value="5" />
+        <input type="radio" name="rankRadio" style=" display:none;" value="4" />
+        <input type="radio" name="rankRadio" style=" display:none;" value="3" />
+        <input type="radio" name="rankRadio" style=" display:none;" value="2" />
+        <input type="radio" checked name="rankRadio" style=" display:none;" value="1" />
+      </form>
+      <form name=viewform action=http://paperpost.people.com.cn/comment/comment.jsp method=post> 
+        <input name="attr" type="hidden" value="2" />
+        <input name="isnodecomm" type="hidden" value="2" />
+        <INPUT type="hidden" value="1" name="view" />
+		<INPUT type="hidden" name="paperdate" id="paperdate" />
+		<input name="nispagename" type="hidden" id="nispagename" />
+        <input name="nodeid" type=hidden value="1928"><input name="nodename" type=hidden value="07"><input name="nodetype" type=hidden value="0"><input name="nodeurl" type=hidden value="null.htm"><input name="channelid" type=hidden value="1921"><input name="articleid" type=hidden value="1930553"><input name="author" type=hidden value="本报记者  丁雅诵"><input name="title" type=hidden value="带你认识“最美高校辅导员”"><input name="keyword" type=hidden value=""><input name="weburl" type=hidden value="./nw.D110000renmrb_20190614_1-07.htm"><input name="pubtime" type=hidden value="2019-06-14">
+      </form>
+    </div>
+    <!--我要评报-->
+  </div>
+<!--结束内容部分-->
+<!--版权部分-->
+<div class="copyright"><p class="p1"><span class="red">人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用</span><br /><span class="black">Copyright &copy; 1997-2013 by www.people.com.cn.  all rights reserved</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=0102000101300040" target="_blank"><img src="../../../tplimg/gongshang.gif" width="40" style="float:right;margin:-45px 0px 0 10px;" height="48" alt="" align="middle" border="0" /></a></p></div>
+    <!--日报-->
+    <DIV  id="rmrbbx" style="display:none;position:absolute;top:50px;left:50%;margin-left:-40px;" onMouseOver="document.getElementById('rmrbbx').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx').style.display = 'none';">
+      <table width="100" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+        <tr>
+          <td bgcolor="#D8EFFF" style="padding: 3px;"><table width="100" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF" style="padding: 1px;" valign="top">
+                  <table width="100" border="0" cellpadding="0" cellspacing="0" height="23">
+                    <tr>
+                      <td width="99" bgcolor="#ffffff" align="center" valign="top"><table width="85" border="0" cellpadding="0" cellspacing="0"  style="margin: 5px 0;">
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../paperindex.htm" target="_blank">人民日报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                </table></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    </div>
+    <!--结束日报-->
+    <!--周报-->
+    <DIV  id="rmrbbx1" style="display:none;position:absolute;top:50px;left:50%;margin-left:75px;" onMouseOver="document.getElementById('rmrbbx1').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx1').style.display = 'none';">
+      <table width="100" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+        <tr>
+          <td bgcolor="#D8EFFF" style="padding: 3px;"><table width="100" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF" style="padding: 1px;" valign="top">
+                  <table width="100" border="0" cellpadding="0" cellspacing="0" height="23">
+                    <tr>
+                      <td width="99" bgcolor="#ffffff" align="center" valign="top"><table width="85" border="0" cellpadding="0" cellspacing="0"  style="margin: 5px 0;">
+                      	  <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../gjjrb/paperindex.htm" target="_blank">国际金融报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+							<td height="20" align="left" class="fontstyle"><a href="../../../../zgnyb/paperindex.htm" target="_blank">中国能源报</a></td>
+						  </tr>						  
+                          <tr>
+							<td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../jksb/paperindex.htm" target="_blank">健康时报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../zgcsb/paperindex.htm" target="_blank">中国城市报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                </table></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    </div>
+    <!--结束周报-->
+    <DIV  id="rmrbbx2" style="display:none;position:absolute;top:50px;left:50%;margin-left:190px;" onMouseOver="document.getElementById('rmrbbx2').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx2').style.display = 'none';">
+<table width="110" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+        <tr>
+          <td bgcolor="#D8EFFF" style="padding: 3px;"><table width="110" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF" style="padding: 1px;" valign="top">
+                  <table width="115" border="0" cellpadding="0" cellspacing="0" height="23">
+                    <tr>
+                      <td width="115" bgcolor="#ffffff" align="center" valign="top"><table width="115" border="0" cellpadding="0" cellspacing="0"  style="margin: 5px 0 0 3px;">
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../xwzx/paperindex.htm" target="_blank">新闻战线</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../dd/paperindex.htm" target="_blank">大地</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../hqrw/paperindex.htm" target="_blank">环球人物</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../rmlt/paperindex.htm" target="_blank">人民论坛</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../rmwz/paperindex.htm" target="_blank">人民文摘</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../xaq/paperindex.htm" target="_blank">新安全</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                   			<td height="20" align="left" class="fontstyle"><a href="../../../../mszk/paperindex.htm" target="_blank">民生周刊</a></td>
+                		  </tr>
+                		  <tr>
+                   			<td height="1"></td>
+                		  </tr>
+                          <tr>
+                   			<td height="20" align="left" class="fontstyle"><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a></td>
+                			</tr>
+                		<tr>
+                   			<td height="1"></td>
+                		</tr>
+                		<tr>
+                   <td height="20" align="left" class="fontstyle"><a href="../../../../zgby/paperindex.htm" target="_blank">中国报业</a></td>
+                		</tr>
+                		<tr>
+                   			<td height="1"></td>
+                </tr>
+                      </table></td>
+
+                    </tr>
+                </table></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    </div>
+    <!--结束杂志-->
+<script language=JavaScript>
+<!--
+document.write("<div id=detail style=position:absolute;width:300px;></div>");
+//-->
+</script>
+    <!-------rqdh版面导航------>
+    <div id=daydh style="display:none; position:absolute; left:50%;margin-left:-100px; top:110px; filter:alpha(opacity=90);"  onmouseover="document.getElementById('daydh').style.display='block';" >
+      <form name=CLD style="padding:0px;margin:0px;">
+        <table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+          <tr>
+            <td bgcolor="#D8EFFF" style="padding: 3px;"><table cellspacing=0 cellpadding=0 width="100%" align=center border=0 bgcolor="#D8EFFF">
+              <tr>
+                <td><table width="100%" align=center border="0" cellpadding="1" cellspacing="1">
+                  <tr class="default" align=center>
+                    <td height=15 colspan=7 bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="2" cellspacing="0">
+                      <tr align="center">
+                        <td align="left" nowrap><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d1.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SY,0)" /></td>
+                        <td><select class=jumpmenu onChange=changeMPCld() name=SY>
+                          <script language=JavaScript>
+					for(i=2006;i<2051;i++)
+					document.write('<option>'+i+'</option>')
+        			</script>
+                        </select>
+                        </td>
+                        <td><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SY,1)" /></td>
+                        <td align="center" nowrap><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d1.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SM,0)" /></td>
+                        <td><select class=jumpmenu onChange=changeMPCld() name=SM>
+                          <script language=JavaScript>
+				<!--
+					for(i=1;i<13;i++) document.write('<option>'+i+'</option>')
+				//-->
+        			</script>
+                        </select>
+                        </td>
+                        <td><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SM,1)" /></td>
+                        <td align="right" nowrap><strong><font id=GZ fface="Arial, Helvetica, sans-serif"></font></strong></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                  <tr align=middle bgcolor="#FFFFFF" class="default">
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">日</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">一</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">二</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">三</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">四</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">五</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">六</font></b> </td>
+                  </tr>
+                  <script language=JavaScript>
+		<!--
+			var gNum;
+			for(i=0;i<6;i++)
+			{
+				document.write('<tr align=center>');
+				for(j=0;j<7;j++)
+				{
+					gNum = i*7+j;
+					document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+					document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+				}
+				document.write('</tr>');
+			}
+		//-->
+        	</script>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr><td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td></tr>
+        </table>
+      </form>
+    </div>
+    <!-------rqdh版面导航END------>
+<!-------文章显示标题开始------>
+<div style="display:none">
+  <table width="265" border="0" cellspacing="0" cellpadding="0" style="margin-top:3px;">
+
+  <tr>
+	<td width="16" align="left"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22">
+<a href=./nw.D110000renmrb_20190614_1-07.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190614_1-07>带你认识“最美高校辅导员”</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"  bgcolor="#D8EFFF"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22"  bgcolor="#D8EFFF">
+<a href=nw.D110000renmrb_20190614_2-07.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190614_2-07>生产安全事故总量今年继续下降（权威发布）</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22">
+<a href=nw.D110000renmrb_20190614_3-07.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190614_3-07>全面建设现代化诉讼服务体系</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"  bgcolor="#D8EFFF"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22"  bgcolor="#D8EFFF">
+<a href=nw.D110000renmrb_20190614_4-07.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190614_4-07>麦收夜</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22">
+<a href=nw.D110000renmrb_20190614_5-07.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190614_5-07>西藏发展论坛与会嘉宾在藏考察</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"  bgcolor="#D8EFFF"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22"  bgcolor="#D8EFFF">
+<a href=nw.D110000renmrb_20190614_6-07.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190614_6-07>世园会“福建日”拉开序幕（北京世园会风采）</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+
+</table>
+</div>
+<!-------文章显示标题结束------>
+<img src="../../../tplimg/left_ico.gif" style="display:none;" /> <img src="../../../tplimg/right_ico.gif" style="display:none;" /> <img src="../../../tplimg/ico10.gif" style="display:none;" /> <img src="../../../tplimg/ico8.gif" style="display:none;" /> <img src="../../../tplimg/ico9.gif" style="display:none;" /> <img src="../../../tplimg/ti.gif" style="display:none;" /> <img src="../../../tplimg/fb.gif" style="display:none;" />
+</div></div>
+<script>writeErWeiMa();</script>
+<iframe id="tempForm"  
+            name="tempForm" src='' frameborder=0 width=0
+            scrolling=no height=0></iframe>
+</body>
+</html>
+<script language="javascript">
+function checkContent(){
+if(document.getElementById('ozoom')!=null&&document.getElementById('ozoom').offsetHeight<=357)
+	document.getElementById('ozoom').style.height = '357px';
+}
+</script>
+<SCRIPT language=Javascript src="../../../../juas/commons/js/disname2.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/webdig_test.js"></SCRIPT>
+
+<!--mpproperty <founder-date>
+2019-06-14
+</founder-date>
+<founder-author>
+本报记者  丁雅诵
+</founder-author>
+<founder-title>带你认识“最美高校辅导员”
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1,921
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle></founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle>他们与学生分享快乐，为学生排解烦恼，帮学生找准方向</founder-introtitle>
+<founder-pagepicurl>../../../page/2019-06/14/07/rmrb2019061407_b.jpg</founder-pagepicurl>
+<founder-pagenum>07</founder-pagenum>
+<founder-papername>人民日报</founder-papername>
+<founder-nodeid>1,928</founder-nodeid> /mpproperty-->
+
+

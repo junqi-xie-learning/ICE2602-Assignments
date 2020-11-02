@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no"/>
+    <title>经济日报</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/mobase.css?v=20190115">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css?v=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/detail.css?v=5.2.1"> 
+    <script type="text/javascript" src="../static/js/zepto-1.1.6.min.js"></script>
+    <script  src="../static/js/gulfstream.min.js"></script>
+    <script type="text/javascript" src="../static/js/comm.js?v=5.2.1"></script>
+    <script type="text/javascript" src="../static/js/juicer-min.js"></script>
+    <script type="text/javascript" src="../static/lib/player/UtoVRPlayerGuide.js?v=1.1"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/vote.css?v=5.2">
+</head>
+<body>
+    <div class="margin-box">
+        <div class="news-header">
+            <h1 class="news-title" id="news-title"></h1>
+            <p class="news-msg clearfix" id="news-msg">
+                <span class="source" id="news-source"></span>
+                <span class="authors" id="news-authors"></span>
+                <span class="issuetime" id="news-issuetime"></span>
+            </p>
+        </div>
+        <div class="vr-container" id="vr-container"></div>
+        <div class="video-container" id="video-container"></div>
+        <div class="news-content" id="news-content"></div>
+    </div>
+    <div class="vote-box" id="vote-box"></div>
+    <div id="relatedContents"></div>
+    <div class="comment-container" id="comment-container"></div>
+    <div class="vr-popup" id="vr-box">
+        <iframe height='100%' id='playWindow' src='https://static-jjrb.xinhuaapp.com/player.html' width='100%' frameborder=0 allowfullscreen></iframe>
+    </div>
+    <a class="banner" style="display: none;" onclick="openApp(this)"></a>
+	<script type="text/template" id="votetpl">
+		<form id="form">
+			<section class="gr-card">
+				<div class="vote-news-title module-title">投票互动</div>
+				<div class="module-border"><div></div></div>
+				<div class="vote-container" style="margin: 0 0.3rem 0 0.3rem;">
+					<p class="vote-title" id="vote-title" data-id="${id}">${title}</p>
+					<div class="sub">
+			    		<p>活动时间：${startdate} - ${enddate}</p>
+			    	</div>
+			        <p class="summary">${remark}</p>
+					{@if type == 1}
+	                <!-- 纯文字 -->
+					<ul class="vote-list">
+						{@if isVoted || votestatus==2}
+	                    <!-- 已投票 -->
+							{@if selectLimit>1}
+	                        <!-- 多选 -->
+								{@each details as item}
+								<li data-id="${item.id}" class="finish {@if item.checked}focus{@/if}" data-rate="${item.percent}">
+									<label class="radio">
+										<input type="checkbox" name='${id}' value="${item.id}" {@if item.checked==1}checked="checked"{@/if} disabled><i></i>
+										<span class="radioText">${item.voteoptions}</span>
+									</label>
+									 <div class="outRate">
+									 	<span class="rate" style="width:${item.percent};"></span>
+									 </div>
+								</li>
+								{@/each}
+							{@else}
+	                        <!-- 单选 -->
+								{@each details as item}
+								<li data-id="${item.id}" class="finish {@if item.checked}focus{@/if}" data-rate="${item.percent}">
+									<label class="radio">
+										<input type="radio" name='${id}' value="${item.id}" {@if item.checked==1}checked="checked"{@/if} disabled><i></i>
+										<span class="radioText">${item.voteoptions}</span>
+									</label>
+									 <div class="outRate">
+									 	<span class="rate" style="width:${item.percent};"></span>
+									 </div>
+								</li>
+								{@/each}
+							{@/if}
+						{@else}
+	                    <!-- 未投票 -->
+							{@if selectLimit>1}
+	                        <!-- 多选 -->
+								{@each details as item}
+								<li data-id="${item.id}">
+									<label class="radio">
+										<input type="checkbox" name='${id}' value="${item.id}"><i></i>
+										<span class="radioText">${item.voteoptions}</span>
+									</label>
+								</li>
+								{@/each}
+							{@else}
+	                        <!-- 单选 -->
+								{@each details as item}
+								<li data-id="${item.id}">
+									<label class="radio">
+										<input type="radio" name='${id}' value="${item.id}"><i></i>
+										<span class="radioText">${item.voteoptions}</span>
+									</label>
+								</li>
+								{@/each}
+							{@/if}
+						{@/if}
+					</ul>
+					{@else}
+	                <!-- 图文 -->
+					<ul class="vote-img-list clearfix">
+						{@if isVoted || votestatus==2}
+	                    <!-- 已投票 -->
+							{@if selectLimit>1}
+	                        <!-- 多选 -->
+								{@each details as item}
+					            <li data-id="${item.id}"  class="finish {@if item.checked}focus{@/if}">
+					              <div class="vote-img">
+					              	<img src="${item.imageurl}" onerror="this.remove()"/>
+					              </div>
+					              <div class="vote-img-p">
+					              	<label class="radio clearfix">
+										<input type="checkbox" name='${id}' value="${item.id}" {@if item.checked==1}checked="checked"{@/if} disabled>
+										<i></i>
+										<span class="radioText">${item.voteoptions}</span>
+										<!-- <span class="radioRate" style="float: right;">${item.percent}</span> -->
+									</label>
+									<div class="outRate">
+	                                    <div class="midRate">
+	                                        <span class="rate" style="width:${item.percent};">
+	                                        </span>
+	                                    </div>
+	                                    <span class="radioRate">${item.percent}</span>
+									</div>
+					              </div>
+					            </li>
+					            {@/each}
+							{@else}
+	                        <!-- 单选 -->
+								{@each details as item}
+					            <li data-id="${item.id}"  class="finish {@if item.checked}focus{@/if}">
+					              <div class="vote-img">
+					              	<img src="${item.imageurl}" onerror="this.remove()"/>
+					              </div>
+					              <div class="vote-img-p">
+					              	<label class="radio clearfix">
+										<input type="radio" name='${id}' value="${item.id}" {@if item.checked==1}checked="checked"{@/if} disabled>
+										<i></i>
+										<span class="radioText">${item.voteoptions}</span>
+										<!-- <span class="radioRate" style="float: right;">${item.percent}</span> -->
+									</label>
+									<div class="outRate">
+										<div class="midRate">
+	                                        <span class="rate" style="width:${item.percent};">
+	                                        </span>
+	                                    </div>
+	                                    <span class="radioRate">${item.percent}</span>
+									</div>
+					              </div>
+					            </li>
+					            {@/each}
+							{@/if}
+						{@else}
+	                    <!-- 未投票 -->
+							{@if selectLimit>1}
+	                        <!-- 多选 -->
+								{@each details as item}
+					            <li data-id="${item.id}">
+					              <div class="vote-img">
+					              	<img src="${item.imageurl}" onerror="this.remove()"/>
+					              </div>
+					              <div class="vote-img-p">
+					              	<label class="radio clearfix">
+										<input type="checkbox" name='${id}' value="${item.id}">
+										<i></i>
+										<span class="radioText">${item.voteoptions}</span>
+									</label>
+					              </div>
+					            </li>
+					            {@/each}
+							{@else}
+	                        <!-- 单选 -->
+								{@each details as item}
+					            <li data-id="${item.id}">
+					              <div class="vote-img">
+					              	<img src="${item.imageurl}" onerror="this.remove()"/>
+					              </div>
+					              <div class="vote-img-p">
+					              	<label class="radio clearfix">
+										<input type="radio" name='${id}' value="${item.id}">
+										<i></i>
+										<span class="radioText">${item.voteoptions}</span>
+									</label>
+					              </div>
+					            </li>
+					            {@/each}
+							{@/if}
+						{@/if}
+			       	</ul> 
+					{@/if}
+					{@if !isVoted}
+					<div class="vote-btn">
+						{@if votestatus==2}
+						<span>活动已结束</span>
+						{@else}
+						<span class="vote-commit">确认投票</span>
+						{@/if}
+					</div>
+					{@else}
+					<div class="vote-btn">
+						{@if votestatus==2}
+						<span>活动已结束</span>
+						{@else}
+						<span>已投票</span>
+						{@/if}
+					</div>
+					{@/if}
+					<p class="vote-sub">已有${userCount}人参与</p>
+				</div>
+			</section>
+		</form>
+	</script>
+    <script type="text/template" id="list-news-tpl">
+		<div class="list">
+		    {@each data as item}
+		    <a class="item clearfix" href="${item.shareurl}">
+		        {@if item.showtype==3001}
+		        <!--文字-->
+		        <div class="text-item">
+		            <p class="title">${item.topic}</p>
+		            {@if item.summary}
+		            <p class="brief">${item.summary}</p>
+		            {@/if}
+		            <div class="list-info">
+		                <span class="time">${item.releasedate}</span>
+		                {@if item.commentCount!=0}
+		                <span class="comment-num">${item.commentCount | returnCommentNum}评</span>
+		                {@/if}
+		                {@if item.newstagName > 0}
+		                <span class="news-tag">
+		                    ${item.newstagName}
+		                </span>
+		                {@/if}
+		            </div>
+		        </div>
+		        {@/if}
+		        {@if item.showtype==3002 || item.showtype == 3007 || item.showtype == 3015 || item.showtype == 3027 }
+		        <!--图文-->
+		        <div class="small-image-item">
+		            <div class="item-content">
+		                <p class="title">${item.topic}</p>
+		                <div class="list-info">		                    
+		                    <span class="time">${item.releasedate}</span>
+		                    {@if item.commentCount!=0}
+		                    <span class="comment-num">${item.commentCount | returnCommentNum}评</span>
+		                    {@/if}
+		                    {@if item.newstagName > 0}
+		                    <span class="news-tag">
+			                    ${item.newstagName}
+			                </span>
+		                    {@/if}
+		                </div>
+		            </div>
+		            <div class="item-image-box">
+		                <img src="${item.imglist[0]}" onerror="loadDefaultImg(this)" class="image">
+		                {@if item.showtype == 3007 || item.showtype == 3015 }
+		                    <span class="play-icon" v-if="item.showtype == 3007 || item.showtype == 3015"></span>
+		                {@/if}
+		            </div>
+		        </div>
+		        {@/if}
+		        {@if item.showtype == 3003 || item.showtype == 3006 || item.showtype == 3008 || item.showtype == 3025 || item.showtype == 3026 || item.showtype == 3029}
+		        <!--大图-->
+		        <div class="big-image-item">
+		        	 <p class="title">${item.topic}</p>
+		            <div class="item-image-box">
+		                <img src="${item.imglist[0]}" onerror="loadDefaultImg(this, '//static.jingjiribao.cn/base/news_default_169.jpg')" class="image">
+		                {@if item.showtype == 3008 || item.showtype == 3029}
+		                <span class="play-icon" v-if="item.showtype == 3008"></span>
+		                {@/if}
+		            </div>
+		            <div class="list-info">
+		                <span class="time">${item.releasedate}</span>
+		                {@if item.commentCount!=0}
+		                <span class="comment-num">${item.commentCount | returnCommentNum}评</span>
+		                {@/if}
+		                {@if item.newstagName > 0}
+		                <span class="news-tag">
+		                    ${item.newstagName}
+		                </span>
+		                {@/if}
+		            </div>
+		        </div>
+		        {@/if} 
+		        {@if item.showtype==3004}
+		        <!-- 三图-->
+		        <div class="three-image-item">
+		            <p class="title">${item.topic}</p>
+		            <div class="item-image-box">
+		                {@each item.imglist as imgItem}
+		                <img src="${imgItem}" onerror="loadDefaultImg(this)" class="image">
+		                {@/each}
+		            </div>
+		            <div class="list-info">
+		                <span class="time">${item.releasedate}</span>
+		                {@if item.commentCount!=0}
+		                <span class="comment-num">${item.commentCount | returnCommentNum}评</span>
+		                {@/if}
+		                 {@if item.newstagName > 0}
+		                <span class="news-tag">
+		                    ${item.newstagName}
+		                </span>
+		                {@/if}
+		            </div>
+		        </div>
+		        {@/if}
+		        {@if item.showtype==3005}
+		        <!--广告-->
+		        <div class="adv-image-item">
+		            <div class="adv-image-box">
+		                <img src="${item.imglist[0]}" onerror="loadDefaultImg(this, '//static.jingjiribao.cn/base/news_default_31.jpg')" class="image">
+		            </div>
+		        </div>
+		        {@/if}
+		        {@if item.showtype==3024}
+		        <!--专题在专题栏目下的样式-->
+		        <div class="theme-item">
+		            <img src="${item.imglist[0]}" onerror="loadDefaultImg(this)" class="image">
+		            <p class="time">${item.releasedate}</p>
+		            <p class="title">${item.topic}</p>
+		        </div>
+		        {@/if}
+		        {@if item.showtype==3028}
+		        <!--滑动专题展示-->
+		        <div class="scroll-theme-item">
+		            <div class="title">${item.topic}</div>
+		            <div class="scroll-theme-item-wrap">
+		            {@if item.themeNewsList}
+		                <div class="scroll-theme-item-outer">
+		                {@each item.themeNewsList as themeNews}
+		                    <div class="scroll-theme-item-inner" data-href="${themeNews.shareurl | shareUrlFilter, themeNews.newstype, themeNews.linkurl, themeNews.relid}" onclick="goDetail(this)">
+		                        <img src="${themeNews.imglist[0]}" class="image" onerror="loadDefaultImg(this)" />
+		                        <div class="title">${themeNews.topic}</div>
+		                        <div class="list-info">
+		                            <span class="time">${themeNews.releasedate}</span>
+		                            {@if themeNews.commentCount!=0}
+		                            <span class="comment-num">${themeNews.commentCount | returnCommentNum}评</span>
+		                            {@/if}
+		                            {@if themeNews.newstagName > 0}
+		                            <span class="news-tag">
+		                                ${themeNews.newstagName}
+		                            </span>
+		                            {@/if}
+		                        </div>
+		                    </div>
+		                {@/each}
+		                </div>
+		            {@/if}
+		            </div>
+		        </div>
+		        {@/if}
+		
+		    </a>
+		    {@/each}
+		</div>
+	</script>
+	<script type="text/javascript" src="../static/js/detailShare.js?v=20181231"></script>
+    <script type="text/javascript" src="../static/lib/player/plugin/gyro/gyroHelp.js"></script>
+</body>
+</html>

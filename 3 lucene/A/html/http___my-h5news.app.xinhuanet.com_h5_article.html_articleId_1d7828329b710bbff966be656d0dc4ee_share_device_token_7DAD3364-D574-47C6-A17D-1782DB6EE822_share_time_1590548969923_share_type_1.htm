@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1, maximum-scale=1,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!--qq分享-->
+    <meta itemprop="name" content="新华网" />
+    <meta itemprop="image" content="http://my-h5news.app.xinhuanet.com/h5/images/logo.png" />
+    <meta name="description" itemprop="description" content="更多品质内容，尽在新华网客户端" />
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/common.css?19">
+    <link rel="stylesheet" href="./css/page.css">
+    <link rel="stylesheet" href="./css/article.css?24">
+    <link rel="stylesheet" href="./css/green-audio-player.min.css">    
+    <style>        
+        /* .page.article.hasDownload.has-footer-swiper {
+            min-height: calc(100vh - 1.3rem);
+            padding-bottom: 1.3rem;
+        } */
+        /* #footer_bar .swiper-pagination{
+            bottom: 0.1rem;
+        } */
+        /* #footer_bar{
+            padding-bottom:0;
+        }         */
+    </style>
+    <script>     
+        function isIOS() {
+            return /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent);
+        }
+        function isAndroid(){
+            return /android/i.test(navigator.userAgent);
+        }
+        if(!isIOS()&&!isAndroid()){
+            if(navigator.appName == "Microsoft Internet Explorer"&&parseInt(navigator.appVersion.split(";")[1].replace(/[ ]/g, "").replace("MSIE",""))<10){
+                var url=location.href.replace('article.html','article_pc.html');       
+                alert("您的浏览器版本过低，请下载IE10及以上版本或使用其他浏览器打开");     
+                // location.href=url;
+            }                        
+        }        
+    </script>
+
+</head>
+<body>
+    <div class="wrapper wrapperArticle">
+        <!--loading-->
+        <div class="page loading">
+            <div class="loading_content">
+                <img src="images/loading.gif" alt="">
+                <span>加载中...</span>
+            </div>
+        </div>
+        <!--播放-->
+        <div class="ai_audio" data-src="">
+            <div class="btn_ai_audio">
+                <img class="icon_audio_bofang" src="./images/yinliang_icon2@2x.png" /><span class="ai_audio_text">AI听闻</span>
+            </div>
+        </div>
+        <div class="page article page-background">
+            <div class="page_content">
+                <div class="label_info">
+                    <div class="label_image"></div>
+                    <div class="label_name"></div>
+                    <div class="label_arrow"></div>                    
+                </div>
+                <div class="page_article_title">
+
+                </div>
+                <!--上部关注-->
+                <div class="xinhua_from xinhua_from_top">
+                    <div class="xinhua_photo no_bg">
+                        <img class="xinhua_logo" src="" />
+                    </div>
+                    <img class="btn-guanzhu-xinhuahao" src="images/xinhuahao_unsubscribe.png" />
+                    <!--<div class="btn-guanzhu">关注</div>-->
+                    <div class="xinhua_info">
+                        <div class="xinhua_name"></div>
+                        <div class="browse_info"><span class="article_from_view"><span></span></span> · <span class="article_from_time"></span></div>
+                    </div>
+                </div>
+                <!--浏览数-->
+                <div class="article_from">
+                    <span class="article_from_name"></span><span class="article_from_view"><span></span></span> · <span class="article_from_time"></span>
+                </div>
+
+                <!--TODO：上部广告-->
+                <div class="advertisement advertisement_top">
+                    <div class="black_advertIcon">广告</div>
+                </div>
+                <!--新闻内容-->
+                <div class="article_content">
+                    <div class="article_word">
+                    </div>
+                    <!-- <div class="article_limit">
+                        <div class="limit_inner">
+                            <div class="see_more_box">
+                                <img class="arrow_down" src="images/to_openapp.png" alt="">
+                            </div>
+                            <div class="open_app_btn">打开新华网客户端，阅读体验更佳</div>
+                        </div>
+                        
+                    </div>-->
+                    <div class="article_limit">
+                        <div class="limit_inner">
+                            <div class="see_more_box">
+                                <img class="arrow_down" src="images/to_openapp.png" alt="">
+                            </div>
+                            <div class="wonderful">
+                                <div>打开新华网客户端查看全文</div>
+                                <img src="images/icon-phone.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article_liability">（责任编辑 <span></span>）</div>
+                </div>
+                <!-- 弹出浮层 -->
+                <div class="toast">
+                    <div class="toast_container">
+                        <div class="toast_top">
+                            前往新华网客户端查看全文,<br/>阅读体验更佳
+                        </div>
+                        <div class="toast_bottom">
+                            <div class="cancel">取消</div>
+                            <div class="goTo">前往</div>
+                        </div>
+                    </div>
+                </div>
+                <!--新华号说明-->
+                <div class="xinhua_copyright">
+                    <div>特别声明：本文为新华网客户端新媒体平台“新华号”账号作者上传并发布，仅代表作者观点，不代表新华号的立场及观点。新华号仅提供信息发布平台。</div>                    
+                </div>
+                <!--底部关注-->
+                <div class="xinhua_from xinhua_from_bottom">
+                    <div class="xinhua_photo no_bg">
+                        <img class="xinhua_logo" src="" />
+                    </div>
+                    <img class="btn-guanzhu-xinhuahao" src="images/xinhuahao_unsubscribe.png" />
+                    <!--<div class="btn-guanzhu">关注</div>-->
+                    <div class="xinhua_info">
+                        <div class="xinhua_name"></div>
+                        <div class="browse_info"><span class="article_from_view"><span></span></span> · <span class="article_from_time"></span></div>
+                    </div>
+                </div>
+            </div>
+            <!--投票区块-->
+            <div class="block-vote">
+
+            </div>
+
+            <!--TODO：底部广告-->
+            <!--<div class="advertisement advertisement_bottom">
+                <div class="black_advertIcon">广告</div>
+            </div>-->
+            <!--相关推荐-->
+            <div class="block_rec_articles">
+                <div class="rec_article_top">相关推荐</div>
+                <!--无图-->
+                <div class="rec_article_list"></div>
+                <!--有图-->
+
+            </div>
+
+            <!--评论：加载更多评论-->
+        	<div class="comment-title clearfix">
+        		<div class="comment-color"></div>
+        		<div class="comment-text">
+        			相关评论
+        		</div>
+        	</div>
+        	<div class="article_comment">
+                <div class="comment_list" style="cursor: pointer;">
+
+                </div>
+                <div class="more_comment view_more_style">
+                   更多评论
+                </div>
+            </div>
+        </div>
+        <!--设置稿件不在app里面显示的页面-->
+        <div class="notAppView">
+        </div>
+        <!--404-->
+        <div class="page notFound" style="display: none"></div>
+    </div>
+    <!--打开app-->
+    <div class="open_app"></div>
+    <div class="top_open_app"></div>
+    <script src="utils/jquery.min.js?01"></script>
+    <script src="utils/jweixin-1.4.0.js?04"></script>
+    <script src="utils/swiper.min.js?01"></script>
+    <script src="utils/screeninit.js?01"></script>
+    <script src="utils/green-audio-player.min.js?01"></script>
+
+    <script src="js/tools.js?01"></script>
+    <script src="js/config.js?01"></script>
+    <script src="utils/jxinhuanet.js?01"></script>
+    <script src="utils/wx_config.js?01"></script>
+    <script src="utils/moment.min.js?01"></script>
+    <script src="js/openApp.js?04"></script>
+    <script src="js/page.js?19"></script>
+    
+    <script src="js/textSearch.js"></script>
+    <script src="js/article.js?22"></script>
+    <script src="utils/qqapi.js?04"></script>  
+ 
+
+</body>
+</html>

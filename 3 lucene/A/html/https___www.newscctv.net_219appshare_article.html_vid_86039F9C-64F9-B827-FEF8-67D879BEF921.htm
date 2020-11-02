@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>央视新闻移动网</title>-->
+    <title></title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/top.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/screeninit.js"></script>
+    <script src="js/lib/iscroll-probe.js"></script>
+    <script src="js/lib/utils.js"></script>
+    <script src="js/lib/vconsole.min.js"></script>
+    <script src="js/config.js"></script>
+
+    <script src='https://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
+    <script>
+        var pcurl = 'https://www.newscctv.net/219news/video.html?videoId=';
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {//移动终端浏览器版本信息
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+
+        if (browser.versions.mobile || browser.versions.ios || browser.versions.android ||
+            browser.versions.iPhone || browser.versions.iPad) {
+
+        } else {
+//            window.location.href = pcurl + utils.GetParams()['vid'];
+        }
+    </script>
+    <script>
+        (function (win, doc, $) {
+            if (utils.isWeixinBrowser()) {
+                var openid = localStorage.getItem('cctvnews_219h5_openid');
+                var authsign = localStorage.getItem('cctvnews_219h5_authsign');
+
+                if (!openid || !authsign) {
+                    location.href = 'index.html?callbackurl=' + encodeURIComponent(window.location.href);
+                }
+            }
+
+        })(window, document, jQuery);
+
+    </script>
+</head>
+<body>
+<div class="new_sharetop">
+    <img src="img/sharetoplogo.png" alt="">
+    <p class="new_downloadapp">前往移动网</p>
+</div>
+
+<div class="videoMaster">
+    <div id="videoWapper"></div>
+</div>
+
+<div id="scrollwrap">
+    <div id="scroller">
+        <!--<div class="appdownloadtip" style="display: none">-->
+        <!--<img src="img/downloadtip.png" alt="">-->
+        <!--</div>-->
+        <div class="logowrap">
+            <a href="https://www.newscctv.net">
+                <img src="img/newscctvlogo.png" alt="">
+            </a>
+        </div>
+        <div class="articlecont"></div>
+        <!-- <div class="videotemp"></div> -->
+        <div class="comments"></div>
+        <div class="downloadbtnwrap" style="display: none">
+            <img src="img/downloadbtn2.png" alt="">
+        </div>
+        <div id="pullUp" style="display: none">
+            <img src="img/loadingimg.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="fixedBox">
+</div>
+
+<div class="warnLayer" style="display: none">
+    <p></p>
+</div>
+<div class="wx_show">
+    <div class="wx_show_inner">
+        <p class="row1">若你已经安装了客户端，</p>
+        <div class="row2">
+            <p>请先点击右上角更多“ ··· ” </p>
+            <div class="spot">
+                <img class="hand" src="img/Page1@2x.png">
+                <div class="line1">
+                    <img class="path1" src="img/Path1.png">
+                    <img class="arrow1" src="img/arrow1.png">
+                </div>
+            </div>
+        </div>
+        <div class="arrow2_box">
+            <img class="path2" src="img/Path2.png">
+            <img class="arrow2" src="img/arrow2.png">
+        </div>
+        <div class="row3">
+            <p>然后选择“在Safari中打开”</p>
+            <div class="safari_box"><img src="img/safari@2x.png"></div>
+        </div>
+    </div>
+</div>
+<script src="js/app/video.js"></script>
+<script src="js/app/pagescroll.js"></script>
+<script src="js/app/articlecont.js"></script>
+<script src="js/app/comments.js"></script>
+<script src="js/app/downloadapp.js"></script>
+<script src="js/app/commentinput.js"></script>
+<script src="js/app/wx_config.js"></script>
+<script src="js/app/app.js"></script>
+
+<!--<script src="js/app/bundle.js"></script>-->
+<script type="text/javascript">
+//    var vconsole = new VConsole();
+    $('.new_downloadapp')[0].addEventListener('click', function () {
+        var downloadapp = new window.downloadapp();
+        downloadapp.downloadBtnClick();
+    });
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1261295574'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261295574' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

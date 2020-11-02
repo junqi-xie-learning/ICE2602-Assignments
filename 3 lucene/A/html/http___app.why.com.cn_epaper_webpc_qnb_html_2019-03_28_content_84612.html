@@ -1,0 +1,932 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+一颗仁心搞科研 一腔热血写科普
+</title>
+<SCRIPT language=Javascript src="../../../tplimg/swfobject.js"></SCRIPT>
+<link href="../../../tplimg/paper_blu.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../tplimg/mpcore.js"></script>
+<script type="text/javascript" src="../../../tplimg/period.js"></script>
+<script type="text/javascript" src="../../../tplimg/calendarp.js"></script>
+<script type="text/javascript" src="../../../tplimg/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../../../tplimg/formap3.js"></script>
+   <script language="JavaScript" type="text/javascript">
+function zoomIn() {
+  newZoom= parseInt(ozoom.style.zoom)+10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+function zoomOut() {
+  newZoom= parseInt(ozoom.style.zoom)-10+'%'
+      ozoom.style.zoom =newZoom;
+  } 
+  
+  $(document).ready(  
+  function() {  
+		$(".title3").html($(".title3").html().replace("<br>",""));
+		$(".title1").html($(".title1").html().replace("<br>",""));
+		$(".title5").html($(".title5").html().replace("<br>",""));
+  });  
+            </script>
+
+<style type="text/css">
+<!--
+#layer31
+{
+	top: -0px;
+	right: 17px;
+	position: relative;
+	float: right;
+	/*overflow:hidden;*/
+}
+.tushuo{
+		text-align: left;
+		padding: 0 20px;
+		text-indent: 2em;
+		font-size:13px;
+}
+
+#nav_1 a:link{
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+} 
+#nav_1 a:visited {
+	font-size: 12px;
+	color:#333;
+	text-decoration: none;
+	font-weight:normal;
+}
+#nav_1 a:hover {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: underline;
+	font-weight:normal;
+}
+#nav_1 a:active {
+	font-size: 12px;
+	color:#F30;
+	text-decoration: none;
+	font-weight:normal;
+} 
+.date {font-size:14px; color:#000000}
+.btH2 {
+	font-size:14px;
+	color:#FFF
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: none;
+	color: #C00;
+}
+a:active {
+	text-decoration: none;
+	color: #C00;
+}
+talbe{margin:0 auto}  
+td{ font-size:12px; color:#000000}
+
+.demo {position:relative; width:1000px; margin:0 auto;}
+.title1 {
+	font-family: "黑体";
+	font-size: 18px;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: bold;
+	font-variant: normal;
+	color: black;
+}
+.title3 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+
+.title4 {
+	font-family: "宋体";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+}
+.title2 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #666;
+}
+.title5 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 26px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #999;
+}
+.content_tt {font-size: 14px; line-height: 180%; margin: auto; padding: 10px; text-align:left}
+.content_tt  p{text-indent:2em}
+.main-ed-map img{max-width:380px}
+.wztp img{max-width:500px; width:expression(this.width > 500 ? "500px" : this.width)}
+
+#float{border:2px solid #CEE3E9;background:#F1F7F9;font-size:18px;font-weight:bold;padding:10px 20px;position:absolute;left:0;top:0;z-index:9999;display:none;line-height:24px;}
+
+TD.S9bo_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+.dropdown {float:left; padding-right:0px}
+.dropdown dt {}
+.dropdown dt:hover {background:url()}
+.dropdown dd {position:absolute; overflow:hidden; width:194px; display:none; background:#edebec; z-index:200; opacity:0}
+.dropdown ul {width:194px; border:2px solid #d0caca; list-style:none; }
+.dropdown li {display:inline;text-align:left; float:none;magin:0;border-bottom:1px solid #ffffff;}
+.dropdown a, .dropdown a:active, .dropdown a:visited {display:block; text-align:left; padding:5px; color:#333; text-decoration:none; background:#ececec;width:190px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;border-bottom:1px solid #ffffff;}
+.dropdown a:hover {background:#f8f8f8; color:#000}
+.dropdown .underline {border-bottom:1px solid #fafafa}
+.wztp table{width:100%;text-align:center}
+-->
+</style>
+<script language="javascript">
+var DDSPEED = 10;
+var DDTIMER = 15;
+
+// main function to handle the mouse events //
+function ddMenu(id,d){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearInterval(c.timer);
+  if(d == 1){
+    clearTimeout(h.timer);
+    if(c.maxh && c.maxh <= c.offsetHeight){return}
+    else if(!c.maxh){
+      c.style.display = 'block';
+      c.style.height = 'auto';
+      c.maxh = c.offsetHeight;
+      c.style.height = '0px';
+    }
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }else{
+    h.timer = setTimeout(function(){ddCollapse(c)},50);
+  }
+}
+
+// collapse the menu //
+function ddCollapse(c){
+  c.timer = setInterval(function(){ddSlide(c,-1)},DDTIMER);
+}
+
+// cancel the collapse if a user rolls over the dropdown //
+function cancelHide(id){
+  var h = document.getElementById(id + '-ddheader');
+  var c = document.getElementById(id + '-ddcontent');
+  clearTimeout(h.timer);
+  clearInterval(c.timer);
+  if(c.offsetHeight < c.maxh){
+    c.timer = setInterval(function(){ddSlide(c,1)},DDTIMER);
+  }
+}
+
+// incrementally expand/contract the dropdown and change the opacity //
+function ddSlide(c,d){
+  var currh = c.offsetHeight;
+  var dist;
+  if(d == 1){
+    dist = (Math.round((c.maxh - currh) / DDSPEED));
+  }else{
+    dist = (Math.round(currh / DDSPEED));
+  }
+  if(dist <= 1 && d == 1){
+    dist = 1;
+  }
+  c.style.height = currh + (dist * d) + 'px';
+  c.style.opacity = currh / c.maxh;
+  c.style.filter = 'alpha(opacity=' + (currh * 100 / c.maxh) + ')';
+  if((currh < 2 && d != 1) || (currh > (c.maxh - 2) && d == 1)){
+    clearInterval(c.timer);
+  }
+}
+</script>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?641e36ad99ad4a5e9df6a40952a4f724";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">
+<!--
+
+marquee { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+span.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; letter-spacing:1pt}
+
+TD.S7_b { font-size: 7pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S7_g { font-size: 7pt; color: #595959; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_b { font-size: 10pt; color: #595959; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S10_bb { font-size: 11pt; color: #FFFFFF; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt; font-weight:bold}
+TD.S10_bbb { font-size: 14pt; color: #000000; line-height: 14pt; font-family: "微软雅黑"; letter-spacing:1.5pt}
+TD.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S8_w { font-size: 8pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_w { font-size: 9pt; color: #FFFFFF; line-height: 13pt; font-family: "宋体"; letter-spacing:1pt}
+TD.S9_ws { font-size: 9pt; color: #000080; line-height: 13pt; font-family: "宋体"}
+TD.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_w { font-size: 11pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_o { font-size: 9pt; color: #FF0000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S9_g { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体"}
+TD.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体"; letter-spacing:0pt}
+TD.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体"}
+TD.S12_g { font-size: 12pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S10_gr { font-size: 10pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+TD.S11_gr { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+
+P.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"}
+P.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S9_w { font-size: 9pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S10_w { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+P.S12_w { font-size: 12pt; color: #ffffff; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+
+A:link { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体" }
+A:link.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_d { font-size: 9pt; color: #6e6e6e; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g1 { font-size: 11pt; color: #088dd1; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_r { font-size: 9pt; color: #990000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_w { font-size: 9pt; color: #ffffff; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration}
+A:link.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S8_b { font-size: 8pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+
+A:visited.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S9_g { font-size: 9pt; color: #000000; line-height: 13pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_b { font-size: 10pt; color: #ffffff; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_bb { font-size: 10pt; color: #000000; line-height: 14pt; font-family: "微软雅黑", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:link.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S10_g { font-size: 10pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_g { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S11_b { font-size: 11pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S11_b { font-size: 11pt; color: #333333; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S11_b { font-size: 11pt; color: #306262; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+A:link.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:visited.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: none}
+A:hover.S12_b { font-size: 12pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"; text-decoration: underline}
+
+input
+{
+COLOR: #000000;
+FONT-SIZE: 9pt
+}
+Select.S9_b { font-size: 9pt; color: #000000; line-height: 14pt; font-family: "宋体", "Verdana", "Arial", "Times New Roman"}
+body,td,th {
+	font-family: 宋体;
+	font-size: 12px;
+	color: #000000;
+}
+
+a:link {
+	text-decoration: none;
+}
+#bmt{width:410px;
+	 height:590px;
+ position:relative;
+	 top:24px;
+	 left:10px;
+	 text-align:center;
+	 z-index:9999;
+	  overflow:hidden;
+	 }
+.bgt{background:url(http://pc/qnb/tplimg/paper-bg.jpg) no-repeat;
+ height:619px
+}
+-->
+</style>
+
+</head>
+
+<body topmargin="0" leftmargin="0">
+<div id="float"></div>
+<div id="demo"  style="position:relative;">
+<table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0" height="100%">
+	<tr>
+		<td valign="top">
+		<table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0" height="100%">
+			<tr>
+				<td height="674">
+
+<table border="0" width="100%" id="table50" cellspacing="0" cellpadding="0" background="../../../tplimg/bg-1.jpg" height="674">
+	<tr>
+		<td style="vertical-align:top">
+		<div align="center">
+			<table border="0" width="1024" id="table51" cellspacing="0" cellpadding="0" height="100%">
+				<tr>
+					<td valign="top">
+					<table border="0" width="100%" id="table52" cellspacing="0" cellpadding="0" height="100%">
+						<tr>
+							<td valign="top" width="440">
+							<table border="0" width="100%" id="table53" cellspacing="0" cellpadding="0">
+								<tr>
+									<td id="bgt" background="../../../tplimg/paper-bg.jpg" style="background-repeat:no-repeat;height:619px" valign="top">
+								 <div id="bmt">			
+                
+<map name=PagePicMap><Area coords="191,32,333,32,333,75,191,75" shape="polygon" href="content_84610.html"><Area coords="3,101,346,101,346,384,3,384" shape="polygon" href="./content_84612.html"><Area coords="5,392,344,392,344,413,5,413" shape="polygon" href="content_84617.html"><Area coords="29,424,168,424,168,530,29,530" shape="polygon" href="content_84619.html"><Area coords="180,424,323,424,323,530,180,530" shape="polygon" href="content_84621.html"><Area coords="3,45,72,45,72,99,3,99" shape="polygon" href="content_84625.html"><Area coords="19,21,72,21,72,41,19,41" shape="polygon" href="content_84629.html"><Area coords="28,537,323,537,323,549,28,549" shape="polygon" href="content_84632.html"></map>
+<img src=../../../images/2019-03/28/A01/20190328A01_brief.jpg border=0 USEMAP=#PagePicMap>
+</div>
+								<tr>
+									<td height="6"></td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table94" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="18">　</td>
+											<td><div id="coreArea" style="display:none"></div>
+											<table border="0" width="94%" id="table95" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g" width="198">
+													<p align="left" style="color:#000000">
+                                                      第A01版：头版
+                                                </td>
+
+													<td width="117" class="S9_g">
+													<p align="right">
+													  <a class=preart href="node_2.html">下一版</a> &nbsp;&nbsp;
+												  </td>
+												   <td width="50" align=right valign=center nowrap style="PADDING-RIGHT: 5px"><a href=../../../images/2019-03/28/A01/20190328A01_pdf.pdf><IMG height=16  
+src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+							</table>
+							</td>
+							<td valign="top">
+							<table border="0" width="100%" id="table54" cellspacing="0" cellpadding="0">
+								<tr>
+									<td height="97" valign="top">
+									<table border="0" width="100%" id="table55" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="277"><img border="0" src="../../../tplimg/青年报_logo.png" width="277" height="97"></td>
+											<td valign="top">
+											<table border="0" width="100%" id="table56" cellspacing="0" cellpadding="0" height="97">
+												<tr>
+													<td>　</td>
+												</tr>
+												<tr>
+													<td valign="bottom">
+													<table border="0" width="100%" id="table93" cellspacing="0" cellpadding="0">
+														<tr>
+															<td class="S9_g">
+															<p align="right">
+															2019年03月28日 星期四</td>
+															<td width="14" valign="bottom">　</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+												<tr>
+													<td height="40" valign="bottom">
+													<table border="0" width="100%" id="table57" cellspacing="0" cellpadding="0">
+														<tr><td width="12"></td>
+															<td>
+															<dl class="dropdown">
+  <dt id="one-ddheader" onMouseOver="ddMenu('one',1)" onMouseOut="ddMenu('one',-1)"><img border="0" src="../../../tplimg/top-1.png" width="99" height="41" align="right"><dt>
+  <dd id="one-ddcontent" onMouseOver="cancelHide('one')" onMouseOut="ddMenu('one',-1)">
+    <ul id="artPList1">
+  
+<li><a  id="mp84610"  title="习近平结束国事访问回到北京"  class="underline" href=content_84610.html>习近平结束国事访问回到北京</a></li> 
+<li><a  id="mp84612"  title="一颗仁心搞科研 一腔热血写科普"  class="underline" href=./content_84612.html>一颗仁心搞科研 一腔热血写科普</a></li> 
+<li><a  id="mp84617"  title="市消保委对39款APP开展测评：日历常含个人敏感信息应谨慎授权"  class="underline" href=content_84617.html>市消保委对39款APP开展测评：日历常含个人敏感信息应谨慎授权</a></li> 
+<li><a  id="mp84619"  title="历史延续 传承工艺 传承理念和精神 坐冷板凳 最考验青年耐心"  class="underline" href=content_84619.html>历史延续 传承工艺 传承理念和精神 坐冷板凳 最考验青年耐心</a></li> 
+<li><a  id="mp84621"  title="生命接力 飞行途中 一名乘客突发不适 放油39吨 机组紧急备降救人"  class="underline" href=content_84621.html>生命接力 飞行途中 一名乘客突发不适 放油39吨 机组紧急备降救人</a></li> 
+<li><a  id="mp84625"  title="2019年3月28日 星期四"  class="underline" href=content_84625.html>2019年3月28日 星期四</a></li> 
+<li><a  id="mp84629"  title="天气"  class="underline" href=content_84629.html>天气</a></li> 
+<li><a  id="mp84632"  title="总第11063期"  class="underline" href=content_84632.html>总第11063期</a></li> 
+  
+  </ul>
+  </dd>
+</dl></td>
+															<td width="99">
+															<dl class="dropdown">
+  <dt id="two-ddheader" onMouseOver="ddMenu('two',1)" onMouseOut="ddMenu('two',-1)"><img border="0" src="../../../tplimg/top-2.png" width="100" height="41"></dt>
+  <dd id="two-ddcontent" onMouseOver="cancelHide('two')" onMouseOut="ddMenu('two',-1)">
+	<ul>
+	<a id=pageLink href=node_1.html title="头版">
+		第A01版：头版</a>
+<a id=pageLink href=node_2.html title="要闻">
+		第A02版：要闻</a>
+<a id=pageLink href=node_3.html title="问政">
+		第A03版：问政</a>
+<a id=pageLink href=node_4.html title="焦点">
+		第A04版：焦点</a>
+<a id=pageLink href=node_5.html title="焦点">
+		第A05版：焦点</a>
+<a id=pageLink href=node_6.html title="青年">
+		第A06版：青年</a>
+<a id=pageLink href=node_7.html title="青年">
+		第A07版：青年</a>
+<a id=pageLink href=node_8.html title="青年">
+		第A08版：青年</a>
+<a id=pageLink href=node_9.html title="青年">
+		第A09版：青年</a>
+<a id=pageLink href=node_10.html title="城事">
+		第A10版：城事</a>
+<a id=pageLink href=node_11.html title="城事">
+		第A11版：城事</a>
+<a id=pageLink href=node_12.html title="广告">
+		第A12版：广告</a>
+<a id=pageLink href=node_13.html title="青年">
+		第A13版：青年</a>
+<a id=pageLink href=node_14.html title="财经">
+		第A14版：财经</a>
+<a id=pageLink href=node_15.html title="天下">
+		第A15版：天下</a>
+<a id=pageLink href=node_16.html title="早知道">
+		第A16版：早知道</a>
+<a id=pageLink href=node_41.html title="文体">
+		第B01版：文体</a>
+<a id=pageLink href=node_42.html title="文体">
+		第B02版：文体</a>
+<a id=pageLink href=node_43.html title="文体">
+		第B03版：文体</a>
+<a id=pageLink href=node_44.html title="影像">
+		第B04版：影像</a>
+<a id=pageLink href=node_45.html title="汽车专刊">
+		第B05版：汽车专刊</a>
+<a id=pageLink href=node_46.html title="汽车·业界">
+		第B06版：汽车·业界</a>
+<a id=pageLink href=node_47.html title="市场消费">
+		第B07版：市场消费</a>
+<a id=pageLink href=node_48.html title="汽车·业界">
+		第B08版：汽车·业界</a>
+</ul
+  </dd>
+</dl></td>
+															<td width="90">
+															<span id="calendarBtn"><img border="0" src="../../../tplimg/top-3.png" width="90" height="41"></span></td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="46">
+									<table border="0" width="100%" id="table96" cellspacing="0" cellpadding="0" height="100%">
+										<tr>
+											<td>　</td>
+										</tr>
+										<tr>
+											<td>
+											<table border="0" width="100%" id="table98" cellspacing="0" cellpadding="0">
+												<tr>
+													<td class="S9_g">
+													<p align="right">
+													<a onClick="zoomIn();" href="javascript:"><img border="0" src="../../../tplimg/a--.gif" width="10" height="10"> 
+													放大</a>&nbsp; 
+													<a onClick="zoomOut();" href="javascript:"><img border="0" src="../../../tplimg/a-.gif" width="10" height="10"> 
+													缩小</a>&nbsp; 
+													<a onClick="ozoom.style.zoom='100%';" 
+            href="javascript:"><img border="0" src="../../../tplimg/a0.gif" width="10" height="10"> 
+													默认</a>&nbsp;
+													<a class=preart href="content_84610.html"><img border='0' src='../../../tplimg/alast.gif' width='10' height='10'>上一篇</a>
+													&nbsp;
+													<a class=preart href="content_84617.html"><img border='0' src='../../../tplimg/anext.gif' width='10' height='10'>下一篇</a>
+												  </td>
+													<td width="14">　</td>
+												</tr>
+											</table>
+											</td>
+										</tr>
+										<tr>
+											<td height="5"></td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<table border="0" width="100%" id="table58" cellspacing="0" cellpadding="0">
+										<tr>
+											<td valign="top" width="279">
+											<table border="0" width="573" id="table59" cellspacing="1" cellpadding="0" bgcolor="#17529a" height="510">
+												<tr>
+													<td bgcolor="#FFFFFF" valign="top">
+													<table border="0" width="100%" id="table97" height="100%" cellpadding="0" cellspacing="10">
+														<tr>
+															<td valign="top">
+															<table border="0" width="100%" id="table99" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td height="80" align="center" valign="middle" class="S12_b">
+<p class="title3">上海交通大学医学院博士生三年击碎200多个健康谣言</p>
+<p class="title1">一颗仁心搞科研 一腔热血写科普</p>
+<p class="title5"></p>
+<p class="title6"></p>
+</td>
+																</tr>
+																<tr>
+																	<td bgcolor="#17529a" height="1"></td>
+																</tr>
+																<tr>
+																	<td height="15"></td>
+																</tr>
+																<tr>
+																	<td class="S11_g">
+																	<div class="wztp" style="height:600px; overflow-y:auto; width:100%;">
+																	  <table bgcolor=#efefef><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2019-03/28/A01/res03_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p></p></TD></TR></TBODY></TABLE></td></tr><tr><td><TABLE><TBODY><TR><TD><IMG src="../../../images/2019-03/28/A01/res07_attpic_brief.jpg"></TD></TR>
+    <TR><TD><p></p></TD></TR></TBODY></TABLE></td></tr></table><script language="JavaScript" type="text/javascript">
+								if(picResCount>0){
+									document.getElementById("picres").style.display="block";
+									document.write("<br>");
+								}
+ 			  				</script>
+          <div id="ozoom" style="zoom:100%;FLOAT: left;"><!--enpcontent-->
+            <table width="100%" border="0" class="S11_g">
+<tr>
+<td class="content_tt"><P><p><strong>医者仁心</strong></p><p>2016年，黄佳在上海肿瘤医院做志愿者，其间，她发现很多患者会问，自身不抽烟不喝酒怎么会得癌症，为什么我体检从来没问题一发现就是癌症晚期？彼时，她深切地觉察到大众对健康知识的缺乏。</p><p>黄佳说，她希望更多专业医学知识能被更多人知晓，及早治小病，防大病于未然。</p><p>黄佳坦言，在做临终关怀志愿者的过程中，直面了许多生生死死，许多时候自己也需要哭一场来缓解情绪。</p><p><strong>科普达人</strong></p><p>“有时，我看到网上胡扯得特别严重，就非常愤慨。很多东西我不是一开始就知道人家是造谣的，我也需要去深入地探究，对自己真是莫大的提升。”</p><p>“在写科普文的过程中，身上有一种热血在。想到能有更多的人因阅读而不误入健康谣言的歧途，自己就很有成就感。”</p><p>“科普虽然不是我的主业，但这项工作确实让我觉得很有意义。一方面，通过它我可以把医学院的所学知识传播给更多可能有需要的人。另一方面，科普的过程中，也是从更新的角度去反思我们的医学。”</p><p>■A06</p><p>酒量到底能不能练出来？养猫可能会导致精神分裂？每天喝两杯含糖饮料或致早死，且女性比男性风险更高？鱼刺卡喉，喝醋还是吃饭？你还要被这些“土方法”误导多久……“90后”的黄佳是上海交通大学医学院整复外科的一名博士生，这些也许你曾阅读过的“网红”文章正是出自于她的手。最近三年间，黄佳在投身科研临床之余，也成长为陆续击碎了200多个健康谣言的科普达人。“在今后的道路上，我仍将紧握手术刀，不放笔杆子，做好一名称职的医生，写一手漂亮的科普文。”黄佳许下心愿。&nbsp;</p><p><strong>青年报记者&nbsp;刘昕璐</strong></p><p><strong>通过权威科普平台</strong></p><p><strong>传播健康知识和科学理念</strong></p><p>黄佳是一个活泼外向的女生，科研工作十分优秀，目前已经有多篇SCI论文发表，每年都斩获校内一等奖学金。走上写科普文之路，她说与自己做临终关怀志愿者的经历不无关系。</p><p>2016年，黄佳在上海肿瘤医院做志愿者，其间，她发现很多患者会问，自身不抽烟不喝酒怎么会得癌症，为什么我体检从来没问题一发现就是癌症晚期？彼时，她深切地觉察到大众对健康知识的缺乏。</p><p>“有位患晚期胃癌的老奶奶，其实很早就有幽门螺杆菌感染，只是一直不重视。”黄佳说，她希望更多专业医学知识能被更多人知晓，及早治小病，防大病于未然。</p><p>通过权威的科普平台传播健康的科学知识似乎是一条不错的路径。自觉文笔不错，导师也鼓励多面发展，于是，黄佳通过自主投稿，渐渐敲开了科普中国、丁香园、果壳网等热门微信公众号的大门。2016年10月19日，黄佳在科普中国微信公众号上发出了自己的第一篇科普文章《科学有料：憋住，此文有味道，别闻！！！一分钟科普》。投稿当晚，编辑就如获至宝般地加了黄佳微信。</p><p>黄佳坦言，在做临终关怀志愿者的过程中，直面了许多生生死死，许多时候自己也需要哭一场来缓解情绪。这段经历促使她写下一篇《这里有三个绝望的故事，但是……》的科普文章。这三个故事分别关于“彷徨无依的孤老”“殉情的丈夫”和“学会了放下的母亲”。</p><p>“这三个绝望的故事都是关于病人家属，因为际遇的不同，它们的结局不太一样，但都说明同样一个道理，病人家属也是无助、需要关注的一群人。”黄佳意识到，尽管医学在飞速发展，还是有很多病人无可挽回的进入临终阶段，走向生命的尽头。面对临终病人，几乎所有人的关注点都是病人本人，却少有人关注到另一个需要安慰的群体——病人家属。</p><p>“不仅对病人做好临终关怀，也要关注病人家属的心理状况。在病人病情变化时，提前告知家属病人的现状及将可能发生的情况，及时调整家属的期望值，减少家属和病人在等待死亡过程中的焦虑。对家属做好死亡教育，帮助家属与病人一起度过最后的时光。细心观察，随时准备为病人家属提供帮助，谨防不幸发生。”黄佳说道。</p><p><strong>“diss”老一辈的错误观点</strong></p><p><strong>热点新闻、热播剧皆是素材</strong></p><p>三年来，黄佳已写了200多篇科普文，并诞生了多篇“10万＋”，还有不乏被人民日报公众号转载的文章。</p><p>《【健康】这不是段子！有一种脑梗死叫陪孩子写作业…》便是去年11月8日人民日报微信号转载的黄佳最初发表于科普中国上的一篇科普文。从一位南京的妈妈陪儿子写作业气到脑梗死住院的消息在朋友圈炸开了锅开始，文章生动有趣地讲述了脑梗死是什么病、常见的症状、导致脑梗死的原因、影响发病风险的因素以及如何预防。</p><p>黄佳的科普选题来源十分多样。教育妈妈、diss父辈自以为是的错误观点，都是写科普文的重要动因。记得每次假期回家，妈妈总是不让她用微波炉，说有辐射。由此，2017年11月，黄佳写了《微波炉加热食物致癌？吓坏无数人的传言是真是假？》，传播度很广，还被多家微信转载，甚至入选年度辟谣知识。</p><p>《延禧攻略：五阿哥永琪是怎么死的？》《&lt;我不是药神&gt;火了！慢粒你了解吗？》《&lt;皓镧传&gt;男主角子楚早早领盒饭，原来是因为心肌梗塞……》黄佳的这些文章还充分结合了热播的影视剧。对此，黄佳俏皮地说：“有的时候就用中午午休的时候看呀。因为觉得浪费了时间，为了减少罪恶感，更是要逼逼自己通过写科普文的方式让自己有所收获，也让公众从中获益。”</p><p><strong>带动起身边的人</strong></p><p><strong>一起投身科普公益事业</strong></p><p>黄佳在学习之余投入精力写科普，也带动了周边人。很多同学看她科普文章发表得比较多，都颇有兴致地咨询如何写好科普文，如何进入这个领域。</p><p>同在一个实验室的“90后”周晓博是一位非常积极主动的学生，一直视师姐黄佳为榜样。周晓博一直有写日记的习惯，文笔娴熟，之后，在黄佳的引荐之下结识了几位编辑。从此，周晓博也就开始了自己的科普之路，至今亦有一年多了。</p><p>“他会跟我说，他是一个作家，而不是写手，我们日常也会经常交流，互相评阅对方写的文章。”黄佳调侃道。</p><p>周晓博2017年底写了自己第一篇科普稿，内容是关于内裤该多久洗一次，结果这第一篇稿件就被人民日报公众号转载，获得“10万＋”阅读，由此一发不可收拾。一年多来，也已经陆续写了二三十篇科普稿件。每篇稿件他都是首先从知网等平台搜索信息，包括国外的相关资料，然后用通俗易懂的语言来表达。</p><p>毕竟刚开始，周晓博还是会经历拒稿，比如有一篇文章他自己写得很得意，把心衰和汽车引擎类比，但是黄佳师姐和编辑都告诉他这样的类比不够大众化，很多机械专业用词对老百姓来说也不能理解。如今，他继续以师姐为榜样，寻找写科普的好角度好方法。</p><p>周晓博说：“科普虽然不是我的主业，但这项工作确实让我觉得很有意义。一方面，通过它我可以把医学院的所学知识传播给更多可能有需要的人，比如在对于某些皮肤疾病，通过提高读者的自觉意识，可能可以提早发现从而及时治疗。另一方面，科普的过程中，也是从更新的角度去反思我们的医学，很多生活中的问题其实教科书上其实并没有直接的解答，比如多久洗一次澡，自拍是否会导致衰老等等。”</p><p><strong>对话</strong></p><p><strong>让公众不被谣言误导就是我的成就感</strong></p><p><strong>记者：你是一名医学博士生，是怎样挤出时间投身科普文章写作的？</strong></p><p><strong>黄佳：</strong>劳逸结合，尽力不拖延，不熬夜。在写科普文的过程中，身上有一种热血在。想到能有人、更多的人因阅读而不误入健康谣言的歧途，自己就很有成就感。除了科研、临床，我平时也喜欢阅读，烹饪美食，会自己做糕点，喜欢看经典电影，非常喜欢运动，经常打篮球、羽毛球，每两天会去健身房锻炼，一般是跑步加撸铁。</p><p><strong>记者：要写出适合新媒体胃口的爆款文，专职小编都会头疼的问题，你又是如何破解的？</strong></p><p><strong>黄佳：</strong>关心热播剧、热门话题，结合着专业知识写出科普文章，才能戳中大众心理又传播科学知识。我专门学习过医学大V“烧伤超人阿宝”写的《八卦医学史》上下册，让我更好地把握历史结合医学的科普写作。同时，上海也有很多不错的医院微信号，我也分析学习了一下行文风格。加上自己性格比较“逗逼”，当把枯燥无味的病理、原理等用深入浅出的语言表示出来，我也觉得很有意思。</p><p><strong>记者：科普这种事还是要讲究科学依据的，如何将自己练成一名“百事通”？</strong></p><p><strong>黄佳：</strong>你提到了关键点呢。有时，我看到网上胡扯得特别严重，就非常愤慨。我带着交大医学院博士生的名头，更需要特别谨慎对待。所写的每篇文章，我都会查文献，中国知网、国外数据库，一定是要有所依据。真的是拿发论文的严谨在发科普文哦。在写作过程中，自己也是在不断学习，很多东西我不是一开始就知道人家是造谣的，我也需要去深入地探究，对自己真是莫大的提升。</p><p><strong>记者：现在信息特别繁杂，你是如何挑选信息的？</strong></p><p><strong>黄佳：</strong>平时生活中还是会翻一下微博，也关注时事政治。至于自如运用网络化的语言，大概算我们这代网络原住民的天然本色吧。我还喜欢听广播节目，一边做实验，一边听APP中的播客。我真的可以一心二用哒。</p><p><strong>记者：三年200多篇科普文，如此高产是怎样达成的？</strong></p><p><strong>黄佳：</strong>前期是投稿，后来就有很多编辑约稿了。因为很多时候是跟着热点的，写稿速度也要很快。现在，这方面技能也提升了很多。最初一篇文章4至5小时，现在2000字的文章一小时吧。有时也被编辑赋予辅助审阅其他投稿者的重任。</p></P>
+<INPUT type=checkbox value=0 name=titlecheckbox sourceid="<Source>SourcePh</Source>" style="display:none">
+</td>
+</tr>
+</table>
+
+
+<!--/enpcontent--></div>
+        </div></td>
+																</tr>
+															</table>
+															</td>
+														</tr>
+													</table>
+													</td>
+												</tr>
+											</table>
+											</td>
+											<td valign="top" width="11">　</td>
+										</tr>
+									</table>
+									</td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td valign="bottom" bgcolor="#e1f5ff">
+
+<table border="0" width="100%" id="table67" cellspacing="0" cellpadding="0" bgcolor="#e1f5ff">
+	<tr>
+		<td height="100%" valign="bottom"><br>
+		　<table border="0" width="100%" id="table68" cellspacing="0" cellpadding="0">
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="5"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#000000" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#FFFFFF" height="1"></td>
+			</tr>
+			<tr>
+				<td bgcolor="#17529a" height="26" class="S9bo_g">
+				<p align="center"><font color="#FFFFFF"></font></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table></div>
+<div style="display:none"><a href="../../../paperindex.htm" id="paperName"></a>
+    青年报
+</div>
+<!-- -------------------------版面导航-------------->
+<div id=bmdh onMouseOver="document.getElementById('bmdh').style.display = 'block';" onMouseOut="document.getElementById('bmdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:220px; top:82px; filter:alpha(opacity=90);">
+  <table cellspacing=0 cellpadding=2 width="192px" border=0 bgcolor=#ffffff><tbody>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_1.html>
+        第A01版
+        ：头版</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A01/20190328A01_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_2.html>
+        第A02版：要闻</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A02/20190328A02_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_3.html>
+        第A03版
+        ：问政</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A03/20190328A03_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_4.html>
+        第A04版：焦点</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A04/20190328A04_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_5.html>
+        第A05版
+        ：焦点</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A05/20190328A05_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_6.html>
+        第A06版：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A06/20190328A06_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_7.html>
+        第A07版
+        ：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A07/20190328A07_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_8.html>
+        第A08版：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A08/20190328A08_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_9.html>
+        第A09版
+        ：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A09/20190328A09_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_10.html>
+        第A10版：城事</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A10/20190328A10_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_11.html>
+        第A11版
+        ：城事</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A11/20190328A11_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_12.html>
+        第A12版：广告</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A12/20190328A12_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_13.html>
+        第A13版
+        ：青年</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A13/20190328A13_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_14.html>
+        第A14版：财经</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A14/20190328A14_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_15.html>
+        第A15版
+        ：天下</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A15/20190328A15_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_16.html>
+        第A16版：早知道</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/A16/20190328A16_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_41.html>
+        第B01版
+        ：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B01/20190328B01_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_42.html>
+        第B02版：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B02/20190328B02_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_43.html>
+        第B03版
+        ：文体</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B03/20190328B03_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_44.html>
+        第B04版：影像</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B04/20190328B04_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_45.html>
+        第B05版
+        ：汽车专刊</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B05/20190328B05_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_46.html>
+        第B06版：汽车·业界</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B06/20190328B06_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_47.html>
+        第B07版
+        ：市场消费</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B07/20190328B07_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+
+<tr>
+                <td height="26" align=left class=default>&nbsp;<a id=pageLink href=node_48.html>
+        第B08版：汽车·业界</a></td>
+                <td width=25 height="26" align=middle nowrap><a href=../../../images/2019-03/28/B08/20190328B08_pdf.pdf><img height=16 
+                  src="../../../tplimg/pdf.gif" width=16 border=0></a></td>
+</tr>
+</tbody></table></div>
+<!-------bmdh版面导航END------>
+<!-- -------------------------标题导航-------------->
+<DIV  id=btdh onMouseOver="document.getElementById('btdh').style.display = 'block';" onMouseOut="document.getElementById('btdh').style.display = 'none';" style="display:none; position:absolute; left:50%; margin-left:200px; top:82px; filter:alpha(opacity=90); background-color:#FFFFFF">
+  <ul id="artPList1">
+  
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84610" href=content_84610.html>习近平结束国事访问回到北京</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84612" href=./content_84612.html>一颗仁心搞科研 一腔热血写科普</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84617" href=content_84617.html>市消保委对39款APP开展测评：日历常含个人敏感信息应谨慎授权</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84619" href=content_84619.html>历史延续 传承工艺 传承理念和精神 坐冷板凳 最考验青年耐心</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84621" href=content_84621.html>生命接力 飞行途中 一名乘客突发不适 放油39吨 机组紧急备降救人</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84625" href=content_84625.html>2019年3月28日 星期四</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84629" href=content_84629.html>天气</a></li> 
+<li style=" line-height:2; width:260">&nbsp;<a  id="mp84632" href=content_84632.html>总第11063期</a></li> 
+  
+  </ul>
+</div>
+<!-- -------------------------标题导航 END -------------->
+<!--日历部分-->
+
+<div id="calendarBox"  style="left:50%; margin-left:295px; top:82px;">
+<form name=CLD>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td colspan=7 align="center" height="24" bgcolor="#ffffff">
+              <img src="../../../tplimg/d1.gif" width="7" height="11"  onclick="turnpage('SY',0)">
+               <select name=SY  onchange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=2006;i<2051;i++){document.write('<option>'+i+'</option>')}</script>
+              </select>
+               <img src="../../../tplimg/d.gif" width="7" height="11" onClick="turnpage('SY',1)">
+               <img src="../../../tplimg/d1.gif" width="7" height="11" onClick="turnpage('SM',0)">
+                <select name=SM onChange="changeMPCld();SetSelectValue(false);"  onfocus="SetSelectValue(true);">
+				  <script>for(i=1;i<13;i++) document.write('<option>'+i+'</option>')</script>
+                </select>                          
+                <img src="../../../tplimg/d.gif" width="7" height="11" style="cursor:pointer;" onClick="turnpage('SM',1)">
+          </td>
+        </tr>
+        <tr height="22" bgcolor="#e8e8e8">
+          <td align="center"><b>日</b></td>
+          <td align="center"><b>一</b></td>
+          <td align="center"><b>二</b></td>
+          <td align="center"><b>三</b></td>
+          <td align="center"><b>四</b></td>
+          <td align="center"><b>五</b></td>
+          <td align="center"><b>六</b> </td>
+        </tr>
+        <script>
+            var gNum;
+            for(i=0;i<6;i++) {
+                document.write('<tr height="20">');
+                for(j=0;j<7;j++){
+                    gNum = i*7+j;
+                    document.write('<td align=center id="GD' + gNum +'" width="14%"><a id="CD' + gNum + '">');
+                    document.write('</a></td>');
+                }
+                document.write('</tr>');
+            } 
+      </script>
+   </table>
+</form>
+</div>
+ <span class="nav_1" style="display:none"><a href="#" class="14bai" onClick="goPrePeriod()">上一期</a>&nbsp;&nbsp;<a href="#" class="14bai" onClick="goNxtPeriod();" >下一期</a></span>
+
+</body>
+
+</html>
+
+<!--mpproperty <founder-date>
+2019-03-28
+</founder-date>
+<founder-author>
+
+</founder-author>
+<founder-title>一颗仁心搞科研 一腔热血写科普
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle></founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle>上海交通大学医学院博士生三年击碎200多个健康谣言</founder-introtitle>
+<founder-pagepicurl>http://pc/qnb/images/2019-03/28/A01/20190328A01_brief.jpg</founder-pagepicurl>
+<founder-pagenum>A01</founder-pagenum>
+<founder-papername>青年报</founder-papername>
+<founder-nodeid>1</founder-nodeid> /mpproperty-->
+
+

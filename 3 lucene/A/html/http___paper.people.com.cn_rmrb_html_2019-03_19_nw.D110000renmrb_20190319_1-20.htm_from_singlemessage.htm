@@ -1,0 +1,754 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="content-language" content="utf-8" />
+<meta name="robots" content="all" />
+<meta name="author" content='第020版' />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<META name='filetype' content='1'>
+<meta name='publishedtype' content='1'>
+<meta name='pagetype' content='1'>
+<meta name='catalogs' content='rmrbdzb'>
+<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+<meta name='publishdate' content='2013-07-17'>
+<link href="../../../tplimg/mulu_4.css" type="text/css" rel="stylesheet" rev="stylesheet" media="all" />
+<title>重温共产党人的珍贵品质</title>
+<SCRIPT language=Javascript src="../../../tplimg/prototype.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/mp.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/calendar2.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/new.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/range.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/jspoints111.js"></SCRIPT>
+<style>
+a.ared:link {
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: none;
+}
+a.ared:visited {
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: none;
+}
+a.ared:hover {
+	font-size: 12px;
+	color: #006699;
+	text-decoration: none;
+}
+</style>
+<style>
+.head_c2{display:block;float:left;margin:0 15px 0 0;width:91px;color:#004873;height:21px;padding:0 2px 0 2px;background:#fff;border:1px solid #66B1EB;text-align:left;}
+.head_c3{float:right; margin:2px 0 0 0;}
+</style>
+<script type="text/javascript">
+function nTabs(tabObj,obj){
+	var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+	for(i=0; i <tabList.length; i++)
+	{
+		if (tabList[i].id == obj.id)
+		{
+			document.getElementById(tabObj+"_Title"+i).className = "active";
+    		document.getElementById(tabObj+"_Content"+i).style.display = "block";
+		}else{
+			document.getElementById(tabObj+"_Title"+i).className = "normal";
+			document.getElementById(tabObj+"_Content"+i).style.display = "none";
+		}
+	}
+}
+function CopyAll()
+
+{
+
+         var obj = document.getElementById("articleContent");
+
+         if(obj!=null){
+
+                   var content = obj.innerText;
+
+                   window.clipboardData.setData("Text",content);           
+
+                   alert("复制成功");
+
+         }                 
+
+}
+
+function zoomIn() {
+ newZoom= parseInt(ozoom.style.zoom)+10+'%'
+ ozoom.style.zoom =newZoom;
+ } 
+function zoomOut() {
+ newZoom= parseInt(ozoom.style.zoom)-10+'%'
+ ozoom.style.zoom =newZoom;
+ } 
+function submitCheck()
+ {
+ if(document.all("content1").value.length>1000){
+	 alert("评论内容超过1000字！");
+	 return false;
+	 }
+	 if(document.all("content1").value.indexOf("<script")!=-1 ||document.all("content1").value.indexOf("<\/")!=-1){
+	 alert("评论内容含有特殊字符!");
+	 return false;
+	 }
+	 if(document.all("content1").value == "")
+	 {
+	 alert("必须填写评论内容！");
+	 return false;
+	 }
+	 var isnodecomment = document.commentform.isnodecomm.value; 
+	 document.commentform.nispagename.value = escape(document.getElementById("pageNameForJiaoHu").innerText.replace(/(^\s*)|(\s*$)/g, ""));
+	 document.commentform.paperdate.value = document.getElementById("paperdatediv").innerText.replace(/(^\s*)|(\s*$)/g, ""); 
+	 document.commentform.content.value=escape(document.commentform.content1.value);
+	 document.commentform.author.value=escape(document.commentform.author1.value);
+	 document.commentform.submit();
+	 alert("您的留言已经成功提交！");
+	 document.commentform.content1.value="";
+ }
+
+function viewComment(){ 		
+         document.viewform.nispagename.value = escape(document.getElementById("pageNameForJiaoHu").innerText.replace(/(^\s*)|(\s*$)/g, ""));		 
+         document.viewform.paperdate.value = document.getElementById("paperdatediv").innerText.replace(/(^\s*)|(\s*$)/g, ""); 	
+		
+ 		 document.viewform.submit();		
+ 	}
+ function dohit(){
+  if (document.readyState == 'complete' )
+     {
+  document.frames("hitClickIframe").document.hitform.url.value = location.href;
+  if(document.commentform.isnodecomm.value == '1'){
+  document.frames("hitClickIframe").document.hitform.nodeid.value = document.commentform.nodeid.value;
+  }else{
+  document.frames("hitClickIframe").document.hitform.articleid.value = document.commentform.articleid.value;
+  }
+  document.frames("hitClickIframe").document.hitform.submit();
+  document.hitClickIframe.style.display="none";
+  }else
+  window.setTimeout("dohit()","300");
+}
+	
+	function getDate()
+	{
+		  var url = window.location.pathname.split('/');		  	
+		  var length = url.length;  		  
+		  document.getElementById("newsIframe").src = "http://paperpost.people.com.cn/"+url[1]+"-"+url[length-3]+"-"+url[length-2]+".html";
+	}
+</script>
+<script type="text/javascript">
+ var focus_width=260;
+ var focus_height=180;
+ var text_height=20;
+ var swf_height = focus_height+text_height;
+ var pics ="";
+ var links ="";
+ var texts ="";
+ var resCount=0;
+ function showArtPics()
+ {
+ if(resCount>0)
+ {
+ pics = pics.substring(0, pics.length-1);
+ links = links.substring(0, links.length-1);
+ texts = texts.substring(0, texts.length-1);
+ var content = "";
+ content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">';
+ content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+ content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+ content += '<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">';
+ content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" bgcolor="#ffffff" quality="high" width="'+ focus_width +'" height="'+ focus_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+ content += '<\/object>';
+ document.getElementById("showArtPicsDiv").innerHTML = content;
+ }
+}
+</script>
+</head>
+<SPAN id=leveldiv title=点击查看内容
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; Z-INDEX: 100; LEFT: 233px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 210px; CURSOR: hand; POSITION: absolute; TOP: 123px; HEIGHT: 34px; BORDER-RIGHT-WIDTH: 0px"></SPAN>
+<body onLoad="checkContent();createStarsPage();initialize();initMPPage();getDate();dohit();showArtPics();">
+<div class="div_bg"><div class="div_center">
+  <!--左侧版面图部分-->
+  <div class="left_c">
+    <div class="ban">
+      <div>
+        <map name=PagePicMap><Area coords="2,19,283,19,283,264,2,264" shape="polygon" href="./nw.D110000renmrb_20190319_1-20.htm"><Area coords="289,24,397,24,397,274,289,274" shape="polygon" href="nw.D110000renmrb_20190319_2-20.htm"><Area coords="289,276,397,276,397,553,289,553" shape="polygon" href="nw.D110000renmrb_20190319_3-20.htm"><Area coords="16,286,274,286,274,393,16,393" shape="polygon" href="nw.D110000renmrb_20190319_4-20.htm"><Area coords="2,405,280,405,280,552,2,552" shape="polygon" href="nw.D110000renmrb_20190319_5-20.htm"></map><img  width=400 height=575 src=../../../page/2019-03/19/20/rmrb2019031920_b.jpg border=0 USEMAP=#PagePicMap>
+      </div>
+    </div>
+    <div class="ban_t">
+      <div>
+        <ul>
+          <li>
+            20版:副刊
+&nbsp;
+            <a href=../../../page/2019-03/19/20/rmrb2019031920.pdf><IMG src="../../../tplimg/ico4.gif" border=0></a>
+            PDF版下载 
+            <span>
+                 <a class=preart href="nbs.D110000renmrb_19.htm"><img src='../../../tplimg/left_ico.gif' border=0 /> 上一版</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tool">
+      <input type="image" onclick="javascript:window.open('http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/chs/AdbeRdr810_zh_CN.exe')" src="../../../tplimg/button.gif" name="" style="float:left;padding-left:40px"/>
+      <img src="../../../tplimg/button1.gif" style="display:none"/>
+      <img src="../../../tplimg/button2.gif" style="display:none"/>
+<a href="node_1921.htm"><img src="../../../tplimg/button3.gif" border="0" style="float:right;padding-right:40px"/></a>
+    </div>
+	<!-- -->
+	
+    <div class="title" style="margin-top:10px">
+      <div>我给文章打分</div>
+    </div>
+    <div class="da_c" style="width:366px;margin-bottom:10px">
+      <FORM id=pointsform name=pointsform action="" method=post 
+                  target=pointsIframe  style=" display:none;">
+                  <INPUT type=hidden
+ name=paperdate />
+        <INPUT 
+                              type=hidden name=nodename1 />
+        <INPUT type=hidden 
+                              name=channelname1 />
+        <INPUT type=hidden name=title1 />
+        <INPUT type=hidden value=2 name=attr />
+        <!--attr 2 数字报刊 1 翔宇-->
+        <INPUT type=hidden value=2 
+                              name=isnodecomm />
+        <!--isnodecomm 2 文章评论 1 版面或栏目评论-->
+        <INPUT 
+                              type=hidden value=2 name=pointtype />
+        <!--pointtype 2 计算平均分（现阶段必须设为2） 1 统计类型-->
+        <!--此列为插件生成的组件-->
+        <input name="nodeid" type=hidden value="1941"><input name="nodename" type=hidden value="20"><input name="nodetype" type=hidden value="0"><input name="nodeurl" type=hidden value="null.htm"><input name="channelid" type=hidden value="1921"><input name="channelname" type=hidden value="人民日报"><input name="articleid" type=hidden value="1914456"><input name="author" type=hidden value="刘  统"><input name="title" type=hidden value="重温共产党人的珍贵品质"><input name="keyword" type=hidden value=""><input name="weburl" type=hidden value="./nw.D110000renmrb_20190319_1-20.htm"><input name="pubtime" type=hidden value="2019-03-19">
+        <div id="paperdatediv">
+          2019-March-19
+        </div>
+      </FORM>
+      <form name="pForm" id="pForm">
+        <input type="radio" name="pointVal" value="1" onClick="pv(1)"/>
+        1分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="2" onClick="pv(2)" />
+        2分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="3" onClick="pv(3)" checked="checked" />
+        3分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="4" onClick="pv(4)" />
+        4分&nbsp;&nbsp;
+        <input type="radio" name="pointVal" value="5" onClick="pv(5)" />
+        5分 &nbsp;        
+		<img src="../../../tplimg/ti.gif"  alt="" border="0" style="cursor:hand " onclick="submitPoints(document.pForm.Input2.value);" />
+        <!--<p>本版得分:<span>4.1分</span>(共有<span>19</span>位网友打分)</p>-->
+        <input name="Input2" type="hidden" value="3" />
+      </form>
+      <iframe id="pointsIframe"  
+            name="pointsIframe" src="about:blank" frameborder=0 width=350
+            scrolling=no height=30 style="margin-left:0px"></iframe>
+    </div>
+    <div class="title">
+      <div>新闻排行榜</div>
+    </div>
+    <div class="pai">
+      <div>
+        <!--
+	    <span>1</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>2</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>3</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>4</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>5</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>6</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>7</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>8</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>9</span><a href="">我看到了你，也看到了我的种点</a><br />
+		<span>10</span><a href="">我看到了你，也看到了我的种点</a><br />-->
+        <iframe name="newsIframe" id="newsIframe" border="0" height="240" width="95%" frameborder="0" src=""></iframe>
+        <br />
+        <iframe name="hitClickIframe" id="hitClickIframe" height="0" width="0" border="0" frameborder="0" src="../../../tplimg/hitPost.htm"></iframe>
+      </div>
+    </div>
+    <div class="title">
+      <div id="bqsm">版权声明</div>
+    </div>
+    <div class="pai f_link" id="bqsm_nr" style="line-height:25px">　　《人民日报》（电子版）的一切内容(包括但不限于文字、图片、PDF、图表、标志、标识、商标、版面设计、专栏目录与名称、内容分类标准以及为读者提供的任何信息)仅供人民网读者阅读、学习研究使用，未经人民网股份有限公司及/或相关权利人书面授权，任何单位及个人不得将《人民日报》（电子版）所登载、发布的内容用于商业性目的，包括但不限于转载、复制、发行、制作光盘、数据库、触摸展示等行为方式，或将之在非本站所属的服务器上作镜像。否则，人民网股份有限公司将采取包括但不限于网上公示、向有关部门举报、诉讼等一切合法手段，追究侵权者的法律责任。</div><!-- -->  
+  </div>
+  <!--右侧目录部分-->
+  <div class="right_c">
+    <div style="margin:0 auto;width:530px;height:70px;text-align:right;padding:8px 0 0 20px;">
+      <div style="height:70px;">
+        <div style="float:left; width:390px;">
+          <div style="height:23px; padding:10px 0px;">
+            <div onMouseOver="document.getElementById('rmrbbx').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx').style.display = 'none';" class="head_c2">
+              <div style="float:left">日&nbsp;报</div>
+              <div  class="head_c3"><img src="../../../tplimg/ico10.gif" border="0" alt="" /></div>
+            </div>
+            <div onMouseOver="document.getElementById('rmrbbx1').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx1').style.display = 'none';" class="head_c2">
+              <div style="float:left">周&nbsp;报</div>
+              <div  class="head_c3"><img src="../../../tplimg/ico10.gif" border="0" alt="" /></div>
+            </div>
+            <div onMouseOver="document.getElementById('rmrbbx2').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx2').style.display = 'none';" class="head_c2">
+              <div style="float:left">杂&nbsp;志</div>
+              <div  class="head_c3"><img src="../../../tplimg/ico10.gif" border="0" alt="" /></div>
+            </div>
+          </div>
+          <div style="text-align:left;">
+            <div style="float:left; width:370px;"><div id="riqi_"  style="float:left;">
+            人民日报
+            2019年03月19日 星期二
+            </div><div id="peopledata" style="float:right; display:none" class="peopledata"></div>
+		  <div style="float:left; color:#004773; display:none; padding-left:5px;" id="infowelcome">&nbsp;欢迎您：<span id="disname" class="un">用户ID名称</span></div></div>
+         </div>
+        </div>
+        <div style="float:left;"><a href="http://www.people.com.cn"><img src="../../../tplimg/logo.jpg" border="0" alt="人民网" /></a></div>
+      </div>
+    </div>
+    <div style="margin:0 auto; color:#004773; height:20px; width:500px; padding:8px 10px 10px 20px; text-align: left;float:left;">
+      <div style="float:left; width:50px;">往期回顾</div>
+      <div style="float:left; width:60px; padding-top:2px;"><a onClick="autoShowDate();" style="cursor:hand;" title="鼠标点击，显示日历牌"><img src="../../../tplimg/ico1.gif" border="0" alt="" /></a></div>
+      <div style="float:left; width:80px;display:none" id="paperSearch"><a href="http://search.people.com.cn/rmw/GB/bkzzsearch/index.jsp" target="_blank">人民网检索</a></div>
+      <div style="float:left; display:none; font-weight:bold;" id="usercenter"><a href="../../../notice/notice.htm" class="ared" target="_blank">《人民日报》数字报取消收费的通知</a></div>
+      <div style="float:right; text-align:right;"><a href=nbs.D110000renmrb_20.htm>返回目录</a></div>
+    </div>
+    <div class="mobilepaper" id="mobilepaper"></div>
+  <!--目录与标题-->
+    <div style="margin:15px auto 0 auto; width:550px;">
+      <div class="text_c"><br/>
+        
+<h3></h3>
+<h1>重温共产党人的珍贵品质</h1>
+<h2></h2>
+
+<h4>刘  统</h4>
+        <div class="lai"  style="padding-top:5px;"> 《
+          人民日报
+          》（
+          2019年03月19日
+&nbsp;
+          20
+          版）</div>
+        <div class="c_c">
+        	<div align="center" style="padding:10px 0 15px 0">
+            </div>
+ 
+                                <TABLE class="pci_c" width="400"><TBODY><TR><TD align="center"><IMG src="../../../res/1/20190319/1552938138666_1.jpg"></TD></TR> <TR><TD><p>　　解放军进入上海后，严守入城纪律。 <BR/>　　上海市档案馆藏<BR/>　　制图：蔡华伟</p></TD></TR></TBODY></TABLE>
+          <DIV id=ozoom style="zoom:100%;">
+            <div id="showArtPicsDiv" align="center"></div>
+            <script language=javascript>
+							/*	if(picResCount>0){
+									document.getElementById("picres").style.display="block";
+									document.write("<br />");
+								}*/
+ 			  				</script>
+ 			
+            <!--enpcontent--><P>　　2017年是中国人民解放军建军90周年，上海人民出版社再版了我的解放战争系列《决战》，社会反响比较好。王为松社长提议：2019年是中华人民共和国成立70周年，也是上海解放70周年，能不能写本关于上海解放的书？我没有多想，就答应了，于是有了现在的《战上海》。</P><P>　　其实我并不是研究上海史的，为什么敢于写上海解放？因为我此前已经出版过两本书。《华东解放战争》写解放上海战役，《跨海之战》写了1950年中苏联合上海防空保卫战。一头一尾有了，中间补充一些接管、改造上海的内容就可以成形。</P><P>　　接触史料后，我才发现问题比预想要复杂得多。我阅读了1949—1950年的《解放日报》，查阅当年的历史档案，上海解放初期的形势非常严峻：蒋介石秘密搬空了国家银行储备，卷走了上海百姓的大部分财富和物资，在长江口布雷掐断了国内外贸易，企图把上海人民饿死困死。上海市面上盗匪出没，特务破坏，投机盛行，物价飞涨，用“一穷二白的烂摊子”来形容是最贴切不过的。大家都在看着共产党和解放军，怎么来管理这个复杂的大上海？</P><P>　　人们看到了什么呢？</P><P>　　人们看到了一群意志坚定、斗志昂扬的共产党人，他们迅速融入上海社会，接管、调查、决策、出击，用铁腕钢拳砸烂了金融投机的地下网络，集中清理扫荡了国民党的散兵游勇和盗匪，斗智斗勇捕获了间谍特务。与工人兄弟一起，修复铁路轮船，将粮食煤炭源源不断运抵上海，从而稳定了物价，保障了人民的基本生活。</P><P>　　人们看到了一群充满智慧的共产党人。在上海解放的第一年，在城市管理和经济运行方面，共产党人没有现成经验可以照搬。刚进入上海时，面临的是怎么养活500万上海市民的大问题。他们迅速恢复铁路和航运，将解放区的粮食物资源源不断运进上海，保证人人有饭吃，工厂能够开工。为控制物价波动，采取解放区的供给制办法，搞折实单位工资，保证工薪阶层的收入不贬值。陈云同志到上海指导税收工作，发掘上海的财政潜力，针对市场的投机风潮，以举国之力，调配物资，控制物价，进而实现全国财政统一。在这个过程中，又发行公债，帮助新政权度过财政困难时期。新中国制定的许多财经政策法规，都有从上海治理中汲取经验。这些探索不仅在上海取得了巨大成绩，有些对新中国的经济建设也有指导意义。</P><P>　　在重温历史和写作过程中，我由衷地敬佩这些共产党人，他们身上有很多发光的品质，值得我们倍加珍视。</P><P>　　在共产党人的身上，我们看到了一种勇往直前的战斗精神，不被任何困难所吓倒。为了上海的解放，他们不怕流血牺牲，不惧艰难险阻。从军队进城露宿街头不扰民，到为人民站岗放哨，从打击银元贩子，到扫清土匪特务，共产党人都不是孤军奋战，而是紧紧依靠人民群众的支持和参与。时刻和人民站在一起，才有威望和号召力，才能无往不胜，所向披靡。共产党人以全心全意为人民服务的赤诚，赢得了上海人民的拥护。几百万人团结一致，还有什么困难不能克服呢？</P><P>　　共产党人的廉洁和朴素赢得了人心，这不仅仅是因为共产党人的纪律严明，更是因为他们心中秉持了高尚的道德观、价值观。毛泽东同志“两个务必”的指示，是共产党人的自觉遵循。“其身正，不令而行”，有了这样的先锋队，人民群众才会紧紧跟随。</P><P>　　从打天下到管理大城市，是一个巨大的转折，问题和困难千头万绪。面对这样的复杂局面，共产党人展示出极强的学习能力和自我纠错能力。刚进上海时，大家一方面吸取以前城市管理的经验，一方面把上海各方面的资料拿来学习研究，尽量避免盲目和失误。比如认真研究旧租界的土地管理规章和税法，用合法手段收回了大量外资的房地产。如果工作中出现错误，则立即下令纠正，绝不护短。这不但没有降低党的威信，反而让百姓佩服共产党人的光明磊落。在不断地研究新情况、解决新问题的过程中，共产党人越来越熟练地管理起了城市，并且创造出新的方法和模式。在短短一年中，就使上海从消费型城市转化为生产型城市，成为新中国财政收入的重要支柱，为新中国的经济建设和发展发挥了重大作用。“我们不但善于破坏一个旧世界，我们还将善于建设一个新世界。”毛泽东同志在七届二中全会上的预言，在上海解放后的一年中变成了现实。</P><P>　　今天，上海已经发展成为繁荣的国际大都市，与70年前相比，真是翻天覆地的变化。抚今追昔，我们还记得前辈们经历的峥嵘岁月吗？我们该如何继承他们的奋斗精神？我写这本书，就是为了如实展现当年共产党人接管上海的风雨历程，从前辈们非凡的经历中寻求他们留下的宝贵遗产和精神财富。</P><P>　　写作这本书时，我最注重的是保留原始史料和记录。共产党的政策和指示都是开诚布公的，政府的公告、首长的讲话都刊登在《解放日报》上，批评和处分的决定也是公开的。不是官话套话，而是开门见山的大实话。所以我在一些重大问题的叙述时，都尽量引用原文。有时我想用自己的语言陈述，但是总感觉还不如用当年的原话更直接、更能体现历史的样貌。上海市委党史研究室、上海市方志办整理和出版了许多历史档案资料，为这本书充实了内容。我的朋友把家藏的《华东区财政经济法令汇编》借给我，提供了许多宝贵的数据。总之，这本书是用第一手史料撰写的，希望它能让读者朋友满意。</P><!--/enpcontent-->
+<INPUT type=checkbox value=0 name=titlecheckbox sourceid="<Source>SourcePh</Source>" style="display:none">
+		               
+		                    
+               
+          </DIV>
+        </div>
+      </div>
+    </div>
+    <div style="padding:5px 15px;" id="xgyd">
+    </div>
+    <!--工具条-->
+    <div class="tool_t">
+      <a href=nbs.D110000renmrb_20.htm>返回目录</a>
+&nbsp;&nbsp;&nbsp;<a href="#" onclick="zoomIn();">放大</a><a href="#" onclick="zoomOut();"><img src="../../../tplimg/ico6.gif" border="0" alt="" />缩小</a><a href="#" onclick="CopyAll();"><img src="../../../tplimg/ico7.gif" border="0" alt="" />全文复制</a>&nbsp;&nbsp;&nbsp;
+      <a class=preart href="nw.D110000renmrb_20190319_2-20.htm">下一篇 <img src='../../../tplimg/ico9.gif' border=0 /></a>
+    </div>
+    <!-- 以下是供复制全文用 -->
+    <div style="display:none" id="articleContent">
+      
+			<!--enpcontent--><P>　　2017年是中国人民解放军建军90周年，上海人民出版社再版了我的解放战争系列《决战》，社会反响比较好。王为松社长提议：2019年是中华人民共和国成立70周年，也是上海解放70周年，能不能写本关于上海解放的书？我没有多想，就答应了，于是有了现在的《战上海》。</P><P>　　其实我并不是研究上海史的，为什么敢于写上海解放？因为我此前已经出版过两本书。《华东解放战争》写解放上海战役，《跨海之战》写了1950年中苏联合上海防空保卫战。一头一尾有了，中间补充一些接管、改造上海的内容就可以成形。</P><P>　　接触史料后，我才发现问题比预想要复杂得多。我阅读了1949—1950年的《解放日报》，查阅当年的历史档案，上海解放初期的形势非常严峻：蒋介石秘密搬空了国家银行储备，卷走了上海百姓的大部分财富和物资，在长江口布雷掐断了国内外贸易，企图把上海人民饿死困死。上海市面上盗匪出没，特务破坏，投机盛行，物价飞涨，用“一穷二白的烂摊子”来形容是最贴切不过的。大家都在看着共产党和解放军，怎么来管理这个复杂的大上海？</P><P>　　人们看到了什么呢？</P><P>　　人们看到了一群意志坚定、斗志昂扬的共产党人，他们迅速融入上海社会，接管、调查、决策、出击，用铁腕钢拳砸烂了金融投机的地下网络，集中清理扫荡了国民党的散兵游勇和盗匪，斗智斗勇捕获了间谍特务。与工人兄弟一起，修复铁路轮船，将粮食煤炭源源不断运抵上海，从而稳定了物价，保障了人民的基本生活。</P><P>　　人们看到了一群充满智慧的共产党人。在上海解放的第一年，在城市管理和经济运行方面，共产党人没有现成经验可以照搬。刚进入上海时，面临的是怎么养活500万上海市民的大问题。他们迅速恢复铁路和航运，将解放区的粮食物资源源不断运进上海，保证人人有饭吃，工厂能够开工。为控制物价波动，采取解放区的供给制办法，搞折实单位工资，保证工薪阶层的收入不贬值。陈云同志到上海指导税收工作，发掘上海的财政潜力，针对市场的投机风潮，以举国之力，调配物资，控制物价，进而实现全国财政统一。在这个过程中，又发行公债，帮助新政权度过财政困难时期。新中国制定的许多财经政策法规，都有从上海治理中汲取经验。这些探索不仅在上海取得了巨大成绩，有些对新中国的经济建设也有指导意义。</P><P>　　在重温历史和写作过程中，我由衷地敬佩这些共产党人，他们身上有很多发光的品质，值得我们倍加珍视。</P><P>　　在共产党人的身上，我们看到了一种勇往直前的战斗精神，不被任何困难所吓倒。为了上海的解放，他们不怕流血牺牲，不惧艰难险阻。从军队进城露宿街头不扰民，到为人民站岗放哨，从打击银元贩子，到扫清土匪特务，共产党人都不是孤军奋战，而是紧紧依靠人民群众的支持和参与。时刻和人民站在一起，才有威望和号召力，才能无往不胜，所向披靡。共产党人以全心全意为人民服务的赤诚，赢得了上海人民的拥护。几百万人团结一致，还有什么困难不能克服呢？</P><P>　　共产党人的廉洁和朴素赢得了人心，这不仅仅是因为共产党人的纪律严明，更是因为他们心中秉持了高尚的道德观、价值观。毛泽东同志“两个务必”的指示，是共产党人的自觉遵循。“其身正，不令而行”，有了这样的先锋队，人民群众才会紧紧跟随。</P><P>　　从打天下到管理大城市，是一个巨大的转折，问题和困难千头万绪。面对这样的复杂局面，共产党人展示出极强的学习能力和自我纠错能力。刚进上海时，大家一方面吸取以前城市管理的经验，一方面把上海各方面的资料拿来学习研究，尽量避免盲目和失误。比如认真研究旧租界的土地管理规章和税法，用合法手段收回了大量外资的房地产。如果工作中出现错误，则立即下令纠正，绝不护短。这不但没有降低党的威信，反而让百姓佩服共产党人的光明磊落。在不断地研究新情况、解决新问题的过程中，共产党人越来越熟练地管理起了城市，并且创造出新的方法和模式。在短短一年中，就使上海从消费型城市转化为生产型城市，成为新中国财政收入的重要支柱，为新中国的经济建设和发展发挥了重大作用。“我们不但善于破坏一个旧世界，我们还将善于建设一个新世界。”毛泽东同志在七届二中全会上的预言，在上海解放后的一年中变成了现实。</P><P>　　今天，上海已经发展成为繁荣的国际大都市，与70年前相比，真是翻天覆地的变化。抚今追昔，我们还记得前辈们经历的峥嵘岁月吗？我们该如何继承他们的奋斗精神？我写这本书，就是为了如实展现当年共产党人接管上海的风雨历程，从前辈们非凡的经历中寻求他们留下的宝贵遗产和精神财富。</P><P>　　写作这本书时，我最注重的是保留原始史料和记录。共产党的政策和指示都是开诚布公的，政府的公告、首长的讲话都刊登在《解放日报》上，批评和处分的决定也是公开的。不是官话套话，而是开门见山的大实话。所以我在一些重大问题的叙述时，都尽量引用原文。有时我想用自己的语言陈述，但是总感觉还不如用当年的原话更直接、更能体现历史的样貌。上海市委党史研究室、上海市方志办整理和出版了许多历史档案资料，为这本书充实了内容。我的朋友把家藏的《华东区财政经济法令汇编》借给我，提供了许多宝贵的数据。总之，这本书是用第一手史料撰写的，希望它能让读者朋友满意。</P><!--/enpcontent-->
+			
+    </div>
+    <!--结束工具条-->
+    	<iframe id=postIframe"  
+            name="postIframe" src="http://paperpost.people.com.cn/dis/commesDetail.jsp" frameborder=0 width=555
+            scrolling=no height=437 style="margin-left:0px"></iframe>
+    <!--我要评报-->
+    <div class="title da_t">
+      <div><div style="float:left;width:350px;background:none;margin:0px;padding:0px;height:25px">我要评报 <a href="http://www.people.com.cn/GB/50142/104580/index.html" target="_blank">&nbsp;|&nbsp;关于人民日报社</a></div><div style="width:80px;float:right;margin-right:20p;background:none;padding:0px"><a href="#liuyan" onClick="getElementById
+('liuyans').style.display=
+(getElementById('liuyans').style.display=='none'?'block'
+:'none');">隐藏留言须知</a></div></div>
+    </div>
+    <div class="note">
+		<div name="pageNameForJiaoHu" id="pageNameForJiaoHu" style="display:none" >
+       	 副刊
+    	</div>
+      <form name=commentform action=http://paperpost.people.com.cn/comment/saveArtComment.jsp method=post target="tempForm">
+&nbsp;&nbsp;&nbsp;&nbsp;署名:
+        <input type="text" style="width:95px;height:18px;border:1px solid #7F9DB9;"  maxLength=64  name="author1"/>
+&nbsp;&nbsp;
+        <input name="isGuest" type="hidden"  id="isGuest" value="ture" />
+        <!--匿名发表-->
+        <p>
+          <textarea name="content1" cols="50" rows="6"  id="content1"></textarea>
+          <img src="../../../tplimg/fb.gif"  alt="" border="0" style="cursor:hand " onclick="return submitCheck();" />
+		  <br/><br/><br/><!--img src="../../../tplimg/ckpl.gif"  alt="" border="0" style="cursor:hand " onclick="return viewComment();" /-->
+        </p>
+        <input type="hidden"  name="nodename1" />
+        <input type="hidden"  name="channelname1" />
+        <input  name="title1" type="hidden" value="" />
+        <input name="attr" type="hidden" value="2" />
+        <input name="isnodecomm" type="hidden" value="2" />
+        <input type="hidden" name="author" />
+        <input type="hidden" name="content" />
+		<INPUT type="hidden" name="paperdate">
+		<input type="hidden" name="nispagename" /><br />
+                <span id="liuyans">
+          1.遵守中华人民共和国有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。 
+            <br>
+            2.人民网拥有管理笔名和留言的一切权力。 <br>
+            3.您在人民网留言板发表的言论，人民网有权在网站内转载或引用。 <br>
+          </span>
+        <input name="nodeid" type=hidden value="1941"><input name="nodename" type=hidden value="20"><input name="nodetype" type=hidden value="0"><input name="nodeurl" type=hidden value="null.htm"><input name="channelid" type=hidden value="1921"><input name="articleid" type=hidden value="1914456"><input name="author" type=hidden value="刘  统"><input name="title" type=hidden value="重温共产党人的珍贵品质"><input name="keyword" type=hidden value=""><input name="weburl" type=hidden value="./nw.D110000renmrb_20190319_1-20.htm"><input name="pubtime" type=hidden value="2019-03-19">
+        <INPUT name="password" type="password" id="password" style="WIDTH: 95px; HEIGHT: 18px;display:none" maxLength=64 />
+        <input type="radio" name="rankRadio" style=" display:none;" value="5" />
+        <input type="radio" name="rankRadio" style=" display:none;" value="4" />
+        <input type="radio" name="rankRadio" style=" display:none;" value="3" />
+        <input type="radio" name="rankRadio" style=" display:none;" value="2" />
+        <input type="radio" checked name="rankRadio" style=" display:none;" value="1" />
+      </form>
+      <form name=viewform action=http://paperpost.people.com.cn/comment/comment.jsp method=post> 
+        <input name="attr" type="hidden" value="2" />
+        <input name="isnodecomm" type="hidden" value="2" />
+        <INPUT type="hidden" value="1" name="view" />
+		<INPUT type="hidden" name="paperdate" id="paperdate" />
+		<input name="nispagename" type="hidden" id="nispagename" />
+        <input name="nodeid" type=hidden value="1941"><input name="nodename" type=hidden value="20"><input name="nodetype" type=hidden value="0"><input name="nodeurl" type=hidden value="null.htm"><input name="channelid" type=hidden value="1921"><input name="articleid" type=hidden value="1914456"><input name="author" type=hidden value="刘  统"><input name="title" type=hidden value="重温共产党人的珍贵品质"><input name="keyword" type=hidden value=""><input name="weburl" type=hidden value="./nw.D110000renmrb_20190319_1-20.htm"><input name="pubtime" type=hidden value="2019-03-19">
+      </form>
+    </div>
+    <!--我要评报-->
+  </div>
+<!--结束内容部分-->
+<!--版权部分-->
+<div class="copyright"><p class="p1"><span class="red">人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用</span><br /><span class="black">Copyright &copy; 1997-2013 by www.people.com.cn.  all rights reserved</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=0102000101300040" target="_blank"><img src="../../../tplimg/gongshang.gif" width="40" style="float:right;margin:-45px 0px 0 10px;" height="48" alt="" align="middle" border="0" /></a></p></div>
+    <!--日报-->
+    <DIV  id="rmrbbx" style="display:none;position:absolute;top:50px;left:50%;margin-left:-40px;" onMouseOver="document.getElementById('rmrbbx').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx').style.display = 'none';">
+      <table width="100" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+        <tr>
+          <td bgcolor="#D8EFFF" style="padding: 3px;"><table width="100" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF" style="padding: 1px;" valign="top">
+                  <table width="100" border="0" cellpadding="0" cellspacing="0" height="23">
+                    <tr>
+                      <td width="99" bgcolor="#ffffff" align="center" valign="top"><table width="85" border="0" cellpadding="0" cellspacing="0"  style="margin: 5px 0;">
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../paperindex.htm" target="_blank">人民日报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                </table></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    </div>
+    <!--结束日报-->
+    <!--周报-->
+    <DIV  id="rmrbbx1" style="display:none;position:absolute;top:50px;left:50%;margin-left:75px;" onMouseOver="document.getElementById('rmrbbx1').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx1').style.display = 'none';">
+      <table width="100" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+        <tr>
+          <td bgcolor="#D8EFFF" style="padding: 3px;"><table width="100" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF" style="padding: 1px;" valign="top">
+                  <table width="100" border="0" cellpadding="0" cellspacing="0" height="23">
+                    <tr>
+                      <td width="99" bgcolor="#ffffff" align="center" valign="top"><table width="85" border="0" cellpadding="0" cellspacing="0"  style="margin: 5px 0;">
+                      	  <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../gjjrb/paperindex.htm" target="_blank">国际金融报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+							<td height="20" align="left" class="fontstyle"><a href="../../../../zgnyb/paperindex.htm" target="_blank">中国能源报</a></td>
+						  </tr>						  
+                          <tr>
+							<td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../jksb/paperindex.htm" target="_blank">健康时报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../zgcsb/paperindex.htm" target="_blank">中国城市报</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                </table></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    </div>
+    <!--结束周报-->
+    <DIV  id="rmrbbx2" style="display:none;position:absolute;top:50px;left:50%;margin-left:190px;" onMouseOver="document.getElementById('rmrbbx2').style.display = 'block';" onMouseOut="document.getElementById('rmrbbx2').style.display = 'none';">
+<table width="110" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+        <tr>
+          <td bgcolor="#D8EFFF" style="padding: 3px;"><table width="110" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF" style="padding: 1px;" valign="top">
+                  <table width="115" border="0" cellpadding="0" cellspacing="0" height="23">
+                    <tr>
+                      <td width="115" bgcolor="#ffffff" align="center" valign="top"><table width="115" border="0" cellpadding="0" cellspacing="0"  style="margin: 5px 0 0 3px;">
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../xwzx/paperindex.htm" target="_blank">新闻战线</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../dd/paperindex.htm" target="_blank">大地</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../hqrw/paperindex.htm" target="_blank">环球人物</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../rmlt/paperindex.htm" target="_blank">人民论坛</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../rmwz/paperindex.htm" target="_blank">人民文摘</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                            <td height="20" align="left" class="fontstyle"><a href="../../../../xaq/paperindex.htm" target="_blank">新安全</a></td>
+                          </tr>
+                          <tr>
+                            <td height="1"></td>
+                          </tr>
+                          <tr>
+                   			<td height="20" align="left" class="fontstyle"><a href="../../../../mszk/paperindex.htm" target="_blank">民生周刊</a></td>
+                		  </tr>
+                		  <tr>
+                   			<td height="1"></td>
+                		  </tr>
+                          <tr>
+                   			<td height="20" align="left" class="fontstyle"><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a></td>
+                			</tr>
+                		<tr>
+                   			<td height="1"></td>
+                		</tr>
+                		<tr>
+                   <td height="20" align="left" class="fontstyle"><a href="../../../../zgby/paperindex.htm" target="_blank">中国报业</a></td>
+                		</tr>
+                		<tr>
+                   			<td height="1"></td>
+                </tr>
+                      </table></td>
+
+                    </tr>
+                </table></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    </div>
+    <!--结束杂志-->
+<script language=JavaScript>
+<!--
+document.write("<div id=detail style=position:absolute;width:300px;></div>");
+//-->
+</script>
+    <!-------rqdh版面导航------>
+    <div id=daydh style="display:none; position:absolute; left:50%;margin-left:-100px; top:110px; filter:alpha(opacity=90);"  onmouseover="document.getElementById('daydh').style.display='block';" >
+      <form name=CLD style="padding:0px;margin:0px;">
+        <table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2" bgcolor="#007CD2">
+          <tr>
+            <td bgcolor="#D8EFFF" style="padding: 3px;"><table cellspacing=0 cellpadding=0 width="100%" align=center border=0 bgcolor="#D8EFFF">
+              <tr>
+                <td><table width="100%" align=center border="0" cellpadding="1" cellspacing="1">
+                  <tr class="default" align=center>
+                    <td height=15 colspan=7 bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="2" cellspacing="0">
+                      <tr align="center">
+                        <td align="left" nowrap><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d1.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SY,0)" /></td>
+                        <td><select class=jumpmenu onChange=changeMPCld() name=SY>
+                          <script language=JavaScript>
+					for(i=2006;i<2051;i++)
+					document.write('<option>'+i+'</option>')
+        			</script>
+                        </select>
+                        </td>
+                        <td><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SY,1)" /></td>
+                        <td align="center" nowrap><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d1.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SM,0)" /></td>
+                        <td><select class=jumpmenu onChange=changeMPCld() name=SM>
+                          <script language=JavaScript>
+				<!--
+					for(i=1;i<13;i++) document.write('<option>'+i+'</option>')
+				//-->
+        			</script>
+                        </select>
+                        </td>
+                        <td><img src="../../../../../../tiaoshidomain/applications/mp/file_upload/enp/1/12../../../tplimg/d.gif" width="7" height="11" style="cursor:hand;" onClick="turnpage(SM,1)" /></td>
+                        <td align="right" nowrap><strong><font id=GZ fface="Arial, Helvetica, sans-serif"></font></strong></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                  <tr align=middle bgcolor="#FFFFFF" class="default">
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">日</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">一</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">二</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">三</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">四</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">五</font></b></td>
+                    <td bgcolor="#027CD1" align="center" class="fontstyle01"><b><font face="Arial, Helvetica, sans-serif">六</font></b> </td>
+                  </tr>
+                  <script language=JavaScript>
+		<!--
+			var gNum;
+			for(i=0;i<6;i++)
+			{
+				document.write('<tr align=center>');
+				for(j=0;j<7;j++)
+				{
+					gNum = i*7+j;
+					document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+					document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+				}
+				document.write('</tr>');
+			}
+		//-->
+        	</script>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr><td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td></tr>
+        </table>
+      </form>
+    </div>
+    <!-------rqdh版面导航END------>
+<!-------文章显示标题开始------>
+<div style="display:none">
+  <table width="265" border="0" cellspacing="0" cellpadding="0" style="margin-top:3px;">
+
+  <tr>
+	<td width="16" align="left"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22">
+<a href=./nw.D110000renmrb_20190319_1-20.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190319_1-20>重温共产党人的珍贵品质</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"  bgcolor="#D8EFFF"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22"  bgcolor="#D8EFFF">
+<a href=nw.D110000renmrb_20190319_2-20.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190319_2-20>沾泥土带露珠的英雄故事</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22">
+<a href=nw.D110000renmrb_20190319_3-20.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190319_3-20>现实题材儿童文学的有益探索</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"  bgcolor="#D8EFFF"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22"  bgcolor="#D8EFFF">
+<a href=nw.D110000renmrb_20190319_4-20.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190319_4-20>书中游</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+  <tr>
+	<td width="16" align="left"><img src="../../../tplimg/icon07.jpg" /></td>
+	<td width="271" align="left" class="fontstyle" height="22">
+<a href=nw.D110000renmrb_20190319_5-20.htm><div style="display:inline" id=mp_nw.D110000renmrb_20190319_5-20>我看《燕然山铭》</div></a>
+	</td>
+  </tr>
+  <tr><td background="../../../tplimg/dian01.jpg" colspan="2" height="1"></td></tr>
+
+</table>
+</div>
+<!-------文章显示标题结束------>
+<img src="../../../tplimg/left_ico.gif" style="display:none;" /> <img src="../../../tplimg/right_ico.gif" style="display:none;" /> <img src="../../../tplimg/ico10.gif" style="display:none;" /> <img src="../../../tplimg/ico8.gif" style="display:none;" /> <img src="../../../tplimg/ico9.gif" style="display:none;" /> <img src="../../../tplimg/ti.gif" style="display:none;" /> <img src="../../../tplimg/fb.gif" style="display:none;" />
+</div></div>
+<script>writeErWeiMa();</script>
+<iframe id="tempForm"  
+            name="tempForm" src='' frameborder=0 width=0
+            scrolling=no height=0></iframe>
+</body>
+</html>
+<script language="javascript">
+function checkContent(){
+if(document.getElementById('ozoom')!=null&&document.getElementById('ozoom').offsetHeight<=357)
+	document.getElementById('ozoom').style.height = '357px';
+}
+</script>
+<SCRIPT language=Javascript src="../../../../juas/commons/js/disname2.js"></SCRIPT>
+<SCRIPT language=Javascript src="../../../tplimg/webdig_test.js"></SCRIPT>
+
+<!--mpproperty <founder-date>
+2019-03-19
+</founder-date>
+<founder-author>
+刘  统
+</founder-author>
+<founder-title>重温共产党人的珍贵品质
+</founder-title>
+<founder-nodename></founder-nodename>
+<founder-keyword>
+
+</founder-keyword><founder-ChannelID>
+1,921
+</founder-ChannelID><founder-imp>0</founder-imp>
+<founder-subtitle></founder-subtitle>
+<founder-type>1</founder-type>
+<founder-introtitle></founder-introtitle>
+<founder-pagepicurl>../../../page/2019-03/19/20/rmrb2019031920_b.jpg</founder-pagepicurl>
+<founder-pagenum>20</founder-pagenum>
+<founder-papername>人民日报</founder-papername>
+<founder-nodeid>1,941</founder-nodeid> /mpproperty-->
+
+

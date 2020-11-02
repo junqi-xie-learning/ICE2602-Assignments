@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta property="fb:pages" content="338109312883186">
+    <meta property="ia:markup_url" content="https://xhnewsapi.zhongguowangshi.com/v100/indexlist.html?id=909">
+    <meta name="apple-moblie-web-app-capable" content="yes">
+
+    <meta property="og:url" content="https://xhnewsapi.xinhuaxmt.com/share/news?id=306356054183936&showType=3007" name="fbshareurl">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Get Fed in China: What turns Italian chef into Chinese major" name="fbtitle">
+    <meta property="og:description" content="What has turned an Italian chef into a Chinese major in China's Shanghai? Click to find out Marco's story." name="fbdescription">
+    <meta property="og:image" content="https://xhnews.oss-accelerate.aliyuncs.com/photo/201905/20190516162650_2147_w1920_h1080.JPG" name="fbshareimage">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Get Fed in China: What turns Italian chef into Chinese major">
+    <meta name="twitter:description" content="What has turned an Italian chef into a Chinese major in China's Shanghai? Click to find out Marco's story.">
+    <meta name="twitter:image" content="https://xhnews.oss-accelerate.aliyuncs.com/photo/201905/20190516162650_2147_w1920_h1080.JPG">
+
+    <link rel="stylesheet" type="text/css" href="../v100/static/css/common.css?_t=1600244375035">
+    <link rel="stylesheet" type="text/css" href="../v100/static/css/news.css?_t=1600244375035">
+    <link rel="stylesheet" type="text/css" href="../v100/static/css/tuji.css?_t=1600244375035">
+</head>
+  </head>
+  <body>
+    <!-- 下载app弹窗 -->
+    <div class="share-banner">
+      <a id="down">
+        <span class="btn"></span>
+        <span class="btn-close icon-close"></span>
+      </a>
+    </div>
+
+    <!-- 包含视频的内容播放层 -->
+    <script type="text/template" id="video-tpl">
+      {@if showType == 3033}
+        <div class="video-container">
+          {@if liveStatus == 2}
+            <video src="${ playSteamUrl }" poster="${ imgList[0] }" controls></video>
+          {@else}
+            <video src="${ videoUrl }" poster="${ imgList[0] }" controls></video>
+          {@/if}
+        </div>
+      {@else if showType == 3007 || showType == 3008}
+        <div class="video-container">
+          <video src="${ videoUrl }" poster="${ imgList[0] }" controls></video>
+        </div>
+      {@else if showType == 3015}
+        <div class="video-container">
+          <div id="pano"></div>
+        </div>
+			{@/if}
+    </script>
+
+    <!-- 标题显示层 -->
+    <script type="text/template" id="title-tpl">
+      {@if contentType=="1003"}
+        <div class="">
+        </div>
+      {@else}
+        <div class="title-container bg">
+          <h1 class="title">${ title }</h1>
+          <div class="t-sub-container">
+            {@if showType=="3033"}
+              <span class="label label-live">Live</span>
+            {@else}
+              <span>${ docSource | is_null }</span>
+            {@/if}
+            <span>${ releaseTime | is_null }</span>
+          </div>
+        </div>
+      {@/if}
+    </script>
+
+    <!-- 跟读显示层，只显示跟读有关的内容 -->
+    <script type="text/template" id="follow-up-tpl">
+      <div class="follow-up-share-container">
+        <div class="modal">
+          {@if showType == 3014}
+            <div class="follow-up-share-container-header">
+              <img id="followupBackUp" src="../v100/static/imgs/follow_up_share_header.png" alt="" />
+            </div>
+            <div class="follow-up-share-container-en">
+              ${ newsReadResult.enTxt }
+            </div>
+            <div class="follow-up-share-container-cn">
+              ${ newsReadResult.chTxt }
+            </div>
+            <div class="follow-up-share-app-down">
+              <div class="left">
+                <span>Xinhua News</span>
+                <p>Download Xinhua News App to listen and repeat What President Xi Says</p>
+              </div>
+              <div class="right">
+                <img src="../v100/static/imgs/follow_up_share_qrcode.png" />
+              </div>
+            </div>
+            
+          {@else if showType == 3016}
+            {@if newsReadResult.highestScore >= 0 }
+              <div class="follow-up-share-container-rating">
+                <img src="../v100/static/imgs/follow_up_share_radar.png" alt="" />
+                <div class="text">
+                  ${ newsReadResult.highestScore }
+                </div>
+              </div>
+            {@else}
+              <div class="keyword-container share">
+                <p class="keyword-en">${ newsReadResult.enTxt | get_keyword, newsReadResult.enTxtKeywordStart, newsReadResult.enTxtKeywordEnd }</p>
+                <p class="keyword-ch">${ newsReadResult.chTxt | get_keyword, newsReadResult.chTxtKeywordStart, newsReadResult.chTxtKeywordEnd }</p>
+              </div>
+            {@/if}
+
+            <div class="follow-up-share-container-en">
+              $${ newsReadResult.enTxt | mark_keyword, newsReadResult.enTxtKeywordStart, newsReadResult.enTxtKeywordEnd }
+            </div>
+            <div class="follow-up-share-container-cn">
+              $${ newsReadResult.chTxt | mark_keyword, newsReadResult.chTxtKeywordStart, newsReadResult.chTxtKeywordEnd }
+            </div>
+
+            <div class="follow-up-share-app-down">
+              <div class="left">
+                <span>Xinhua News</span>
+                <p>Download Xinhua News App to listen and repeat What President Xi Says</p>
+              </div>
+              <div class="right">
+                <img src="../v100/static/imgs/follow_up_share_qrcode.png" />
+              </div>
+            </div>
+          {@/if}
+        </div>
+      </div>
+    </script>
+
+    <!-- 简介显示层 -->
+    <script type="text/template" id="summary-tpl">
+      {@if roundup.length > 0}
+        <div class="summary-container">$${ roundup | format_summary }</div>
+      {@/if}
+    </script>
+
+    <!-- 内容显示层，不显示3007、3008、3033、3014、3015、3016类别的内容 -->
+    <script type="text/template" id="content-tpl">
+      {@if showType != "3007" && showType != "3008" && showType != "3033" && showType != "3014" && showType != "3015" && showType != "3016"}
+        <div class="content-container">$${ content }</div>
+      {@/if}
+    </script>
+
+    <!-- 图集显示层 -->
+    <script type="text/template" id="imgs-tpl">
+      <div class="gallery-container">
+
+        <div class="share-tuji">
+          <!--图集详情-->
+            <div class="tuji-body">
+              <div class="info">
+                <div class="index">
+                    <p><span class="curpage">1</span>/<span class="pagecount">${photoList.length}</span></p>
+                </div>
+                <div class="info-detail">
+                    <p class="title">${ title }</p>
+                </div>
+              </div>
+              <div class="pure-info">
+                <div class="index">
+                    <p><span class="curpage">1</span>/<span class="pagecount">${photoList.length}</span></p>
+                </div>
+              </div>
+              <div class="content">
+                {@each photoList as img, index}
+                  <div class="group">
+                      <div class="img-wrap placeholder">
+                        <div class="img-inner">
+                          <img class="element-slidable" src="${img.img | return_imgpath}" />
+                        </div>
+                      </div>
+                      <div class="info-container">
+                        <div class="index">
+                          <p>
+                            <span class="curpage">${+index + 1}</span>/<span class="pagecount">${photoList.length}</span>
+                          </p>
+                        </div>
+                        <div class="info-detail">
+                          <p class="title">${ title }</p>
+                        </div>
+                        <p class="des sg-hidden gallery-des">${ img.description }</p>
+                      </div>
+                  </div>
+                {@/each}
+              </div>
+            </div>
+        </div>
+      </div>
+    </script>
+
+    <!-- 分享层 -->
+    <script type="text/template" id="share-tpl">
+      <ul class="share-container">
+        <li data-name="facebook" class="no-plat"><img src="../v100/static/imgs/xhs_facebook@2x.png" /></li>
+        <li data-name="twitter" class="no-plat"><img src="../v100/static/imgs/xhs_twitter@2x.png" /></li>
+        <li data-name="wechat" class="no-plat"><img src="../v100/static/imgs/xhs_wechat@2x.png" /></li>
+        <li data-name="circle" class="no-plat"><img src="../v100/static/imgs/xhs_wechat_moment@2x.png" /></li>
+      </ul>
+    </script>
+
+    <!-- 推荐层 -->
+    <script type="text/template" id="recommend-tpl">
+      <div class="module-container">
+        <p class="module-title blue">Recommended</p>
+        <ul class="news-list">
+          {@each data as item}
+          <li class="n-single-img">
+            <a href="${ item.detailUrl }">
+               <div class="img-box">
+                 <img src="${ item.compressedImgList[0] }" />
+               </div>
+               <p class="n-title">${ item.title }</p>
+               <div class="n-sub">
+                <span class="n-s-time">${ item.releaseTime }</span>
+                <span class="n-s-comment">${ item.commentCount }</span>
+                {@if item.contentType == 1106}
+                  <p class="n-tags">
+                    <span>Live</span>
+                  </p>
+                {@/if}
+               </div>
+            </a>
+          </li>
+          {@/each}
+        </ul>
+      </div>
+    </script>
+
+    <!-- 评论层嵌套子评论层 -->
+    <script type="text/template" id="comment-tpl">
+      <div class="module-container commenttmp">
+        <p class="module-title red">Comments</p>
+        <ul class="comment-list">
+          {@include subTpl, subData}
+        </ul>
+        {@if hasMore}
+          <p class="line-more-btn"><span>View more comments</span></p>
+        {@/if}
+      </div>
+    </script>
+
+    <!-- 子评论层 -->
+    <script type="text/template" id="sub-comment-tpl">
+      {@each data as item}
+        <li>
+          <div class="head-box">
+            <img src="${ item.userHead }" onerror="this.src='../v100/static/imgs/xhs_Avatar.png'" />
+          </div>
+          <div class="c-body">
+            <p class="c-b-name">${ item.userNick | null_name }</p>
+            <p class="c-b-content">
+              {@if item.pcomId > 0}
+                <span class="ft-blue">@${ item.replayUserHead }: </span>
+              {@/if}
+              ${ item.comment }
+            </p>
+            <p class="c-b-sub">
+              <span class="c-b-time">${ item.createTime }</span>
+              <span class="c-b-reply" data-id="${item.id}" data-userid="${ item.userId }" data-username="${ item.userNick }">
+                {@if item.countReply > 1}
+                  ${ item.countReply | format_number } Replies
+                {@else if item.countReply == 1}
+                  1 Reply
+                {@else}
+                  Reply
+                {@/if}
+              </span>
+            </p>
+          </div>
+        </li>
+      {@/each}
+    </script>
+
+    <!-- 异常错误层 -->
+    <script type="text/template" id="error-tpl">
+      <div class="error-container">
+        <img src="../v100/static/imgs/error.png" />
+        <p>${ tips }</p>
+      </div>
+    </script>
+    <script type="text/javascript" src="../v100/static/plus/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../v100/static/plus/juicer-min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script type="text/javascript" src="../v100/static/js/common.js?_t=1600244375035"></script>
+    <!--引入引导js 动态下载播放器-->
+	  <script type="text/javascript" src="../v100/static/js/UtoVRPlayerGuide.js"></script>
+    <script type="text/javascript" src="../v100/static/js/share.js?_t=1600244375035"></script>
+    <script type="text/javascript" src="../v100/static/js/detailBack.js?_t=1600244375035"></script>
+    
+  </body>
+</html>

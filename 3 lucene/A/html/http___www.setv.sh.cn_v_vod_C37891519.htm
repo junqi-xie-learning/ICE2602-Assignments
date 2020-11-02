@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Note there is no responsive meta tag here -->
+        <link rel="icon" href="/favicon.ico">
+        <title>“城市之巅”体验5G科技 XR创意描绘“心中上海”</title>
+        <!-- ZUI CSS -->
+        <link href="/css/zui.min.css" rel="stylesheet">
+        <link href="/css/non-responsive.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="/css/details.css?t=201809251353" rel="stylesheet">
+        <link href="/css/lady.css?t=201809251353" rel="stylesheet">
+        <link href="/css/search.css?t=201809251353" rel="stylesheet">
+        <link href="/css/index.css?t=201809251353" rel="stylesheet">
+        <link href="/css/topic.css?t=201809251353" rel="stylesheet">
+        <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+        <script src="/js/jquery-1.11.0.min.js"></script>
+        <script src="/js/spark-md5.min.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+        <script src="/js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="/js/vue.js"></script>
+        <!-- swiper -->
+        <link rel="stylesheet" href="/js/swiper/swiper-4.2.6.min.css">
+        <script src="/js/swiper/swiper-4.2.6.min.js"></script>
+        <!-- swiper -->
+		<!-- CryptoJS -->
+		<script src="/js/CryptoJS/rollups/aes.js" type="text/javascript"></script>
+		<script src="/js/CryptoJS/rollups/md5.js" type="text/javascript"></script>
+		<script src="/js/CryptoJS/components/pad-zeropadding-min.js" type="text/javascript"></script>
+		<!-- CryptoJS -->		
+
+        <!--calendar-->
+        
+        <script src="/js/calendar.js"></script>
+        <link href="/css/calendar.css?t=201809251353" rel="stylesheet">
+        <style type="text/css">
+            ul,
+        ol,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+        </style>
+        <!--calendar-->
+
+        <script src="/js/moment.js"></script>
+		
+    </head>
+    <body>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-nav">
+                <div class="navbar-header">
+                    <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
+                    <a class="navbar-brand" href="/i/index"><img class="png-logo" src="/images/logo.png"></a>
+                </div>
+                <div class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <i class="icon icon-search"></i>
+                            <input type="text" class="form-control" placeholder="搜索" id="keyword">
+                            <button type="button" class="btn btn-default" id="searchBtn">搜索</button>
+                        </div>
+                                                <a class="user" href="#" data-toggle="modal" data-target="#myModalLogin" id="myModalLoginImg"><img src="/images/userLogo.png" alt=""></a>
+                                            </form>
+                </div>
+            </div>
+            <div id="navbar" class="nav-menu">
+                <div class="container-fixed-md">
+                    <ul class="nav navbar-nav nav-justified" id="menu_list">
+                        <li name="menu_index"><a href="/i/index.htm">首页</a></li><li name="menu_live"><a href="/live.php">直播·回看</a></li><li name="menu_aboutTip"><a href="/a/aboutTip.htm">教视概况</a></li><li name="menu_activity"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">精彩活动<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/activity/C37878368/0">上海市中小学生生态文明创意作品征集活动</a></li><li><a href="/z/activity/C37879601/0">魅力城市-美丽女生——2018上海市中学生德育实践活动</a></li><li><a href="/z/activity/0/_clt4_jytwy_zt_2018cybhljgxdrtzs_index.htm">2018雏鹰杯红领巾国学达人挑战赛</a></li></ul></li><li name="menu_recommend01"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">新闻资讯<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend01/0/_clt4_jytwy_zt_jsxw_index.htm">教视新闻</a></li><li><a href="/z/recommend01/0/_clt4_jytwy_zt_sxyjy_index.htm">升学与就业</a></li><li><a href="/z/recommend01/0/_clt4_jytwy_zt_2019jtysjnfcx_index.htm">“谢谢侬”2019上海市家庭医生技能风采秀</a></li></ul></li><li name="menu_recommend05"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">科技教育<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend05/0/_clt4_jytwy_zt_hzmwk_index.htm">汉字美微课</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_wczswk_index.htm">舞池之尚微课</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_swgwsm3_index.htm">十万个为什么（第三季）</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_hlzjjt_index.htm">活力张江讲坛</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_zmkdk_index.htm">周末开大课（第一季）</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_zmkdks2_index.htm">周末开大课（第二季）</a></li><li><a href="/z/recommend05/0/_clt4_jytwy_zt_zmkdks3_index.htm">周末开大课（第三季）</a></li><li><a href="/z/recommend05/0/http%3A__topic.htm">一起来成长</a></li></ul></li><li name="menu_recommend02"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">民生服务<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend02/0/_clt4_jytwy_zt_bnvl_index.htm">帮女郎</a></li></ul></li><li name="menu_recommend03"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">健康休闲<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend03/0/_clt4_jytwy_zt_jkdbt_index.htm">健康大不同</a></li><li><a href="/z/recommend03/0/_clt4_jytwy_zt_ylbd_index.htm">银龄宝典</a></li><li><a href="/z/recommend03/0/_clt4_jytwy_zt_ylkt_index.htm">银龄课堂</a></li><li><a href="/z/recommend03/0/_clt4_jytwy_zt_cqs_index.htm">常青树</a></li></ul></li><li name="menu_recommend04"><a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">人文纪录<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="/z/recommend04/0/_clt4_jytwy_zt_sssh_index.htm">书式生活</a></li><li><a href="/z/recommend04/0/_clt4_jytwy_zt_zgzz_index.htm">中国之最</a></li><li><a href="/z/recommend04/0/_clt4_jytwy_zt_xllf_index.htm">杏林流芳</a></li><li><a href="/z/recommend04/0/_clt4_jytwy_zt_bydg_index.htm">博雅达观</a></li></ul></li>                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="modal fade login" id="myModalLogin">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" onclick="closeModal()" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>账号登录</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>输入验证码错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <div>
+                        <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                        <form>
+                            <div id="part_psd" class="form-group log_form">
+                                <i class="icon icon-lock my_lock_style"></i><input type="password" class="form-control psd" name="password" placeholder="密码">
+                            </div>
+                        </form>
+                        <div class="checkbox" style="clear: both;">
+                            <label>
+                                <input type="checkbox" id="remember_me">记住我
+                            </label>
+                            <a href="javascript:void(0);" id="findPwd" class="jumpUrlLog">忘记密码？</a>
+                        </div>
+                        <button type="submit" style="" class="btn btn-default my_btn" id="loginBtn">登录</button>
+                        <div>
+                            <!--<span>其他方式：</span><img class="jumpUrlLog" id="wxLogin" src="/images/gwx.png" />-->
+                            <a class="jumpUrlLog" id="reg" href="javascript:void(0);">立即注册></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade find" id="myModalFind">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" onclick="closeModal()" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>重置密码</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>验证码输入错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                    <div class="part_psd">
+                        <input type="text" class="form-control get_code" name="veri_code" placeholder="验证码">
+                        <button type="submit"  class="btn btn-default get_code_no" name="btnSendCode">获取验证码</button>
+                    </div>
+                    <form>
+                        <div class="form-group log_form">
+                            <i class="icon icon-lock my_lock_style"></i><input type="password" class="form-control psd" name="password" placeholder="密码(6-16数字或字母)">
+                        </div>
+                    </form>
+                    <button type="submit"  class="btn btn-default my_btn" id="resetBtn">重置密码</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade reg" id="myModalReg">
+            <div class="modal-dialog">
+                <div class="modal-content reg">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" onclick="closeModal()" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>注册</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>验证码输入错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                    <form>
+                        <div class="form-group log_form">
+                            <i class="icon icon-lock my_lock_style"></i><input type="password" class="form-control psd" name="password" placeholder="密码(6-16数字或字母)">
+                        </div>
+                    </form>
+                    <div class="reg_middle">
+                        <input type="text" class="form-control get_code" name="veri_code" placeholder="验证码">
+                        <button type="submit" class="btn btn-default get_code_no" name="btnSendCode">获取验证码</button>
+                    </div>
+                    <button type="submit" class="btn btn-default my_btn" id="regBtn">注册</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade wxLogin" id="myModalWX">
+            <div class="modal-dialog">
+                <div class="modal-content login">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" /><span class="sr-only">关闭</span></button>
+                    <div class="msg_input">
+                        <div><h3>为了账号安全，请绑定手机</h3></div>
+                        <div class="msg" style="display: none;" name="error_msg"><i class="icon icon-times"></i>验证码输入错误</div>
+                    </div>
+                    <div class="pic_yezi"><img src="/images/yezi.png"/></div>
+                    <form><div class="form-group log_form"><i class="icon icon-user my_user_style"></i><input type="text" class="form-control phoneNo" name="phone" placeholder="手机号"></div></form>
+                    <div class="wx_middle">
+                        <input type="text" class="form-control get_code" name="veri_code" placeholder="验证码">
+                        <button type="submit"  class="btn btn-default get_code_btn" name="btnSendCode">获取验证码</button>
+                    </div>
+                    <button type="submit" class="btn btn-default my_btn" id="wxBindBtn">登录并绑定</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="wxLoginModal">
+            <div class="modal-dialog">
+                <div class="modal-content login">
+                    <button type="button" class="close myclose" data-dismiss="modal"><img aria-hidden="true"src="/images/pic_login_close.png" /><span class="sr-only">关闭</span></button>
+                    <div>
+                        <span id="wx_login_container"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+	<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+<script src="/js/jquery-1.11.0.min.js"></script>
+<!-- videojs播放器 -->
+<!--  //回看MP4  if ($_REQUEST['hls'] == '1')  -->
+<link href="/js/video/video-js.css" rel="stylesheet">
+<link href="/js/video/video-js.tysx.css" rel="stylesheet">
+<script src="/js/video2/video.6.2.7.js"></script>
+<script src="/js/video2/videojs-contrib-hls.js"></script>
+
+<script src="/js/video/jquery.share.min.js"></script>
+<link href="/css/share.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="/js/jweixin-1.2.0.js"></script>
+<script src="/js/wxApi.js"></script>
+
+
+<!--calendar-->
+        
+<script src="/js/calendar.js"></script>
+        <link href="/css/calendar.css?t=201809251353" rel="stylesheet">
+        <style type="text/css">
+            ul,
+        ol,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+        </style>
+        <!--calendar-->
+
+        <script src="/js/moment.js"></script>
+
+<!-- videojs播放器 -->
+<div class="lady-video">
+    <div class="container-fixed-md la-cont la-detail">
+        <div class="cont">
+            <p class="title" style="max-width:100%;max-width:100%;padding: 0 2%;">
+                <span class="name">“城市之巅”体验5G科技 XR创意描绘“心中上海”</span>
+                <span class="date"></span>
+            </p>
+            <p class="time"> 
+
+            </p>
+        </div>
+        <div class="video" >
+            <video id="liveVideo" class="video-js" controls poster="" preload="auto"></video>
+            <object style="display: none;margin:0 auto;" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="100%" height="100%" id="fplayer" align="middle" data="/js/EduPlayer.swf" >
+                <param name="allowScriptAccess" value="always" />
+                <param name="allowFullScreen" value="true" />
+                <param name='wmode' value='opaque' />
+                <param name="movie" value="/js/EduPlayer.swf" />
+                <param name="quality" value="high" /><param name="bgcolor" value="#000000" />	
+                <embed src="/js/EduPlayer.swf" 
+                    quality="high" bgcolor="#000000" width="100%" height="100%" name="fplayer" align="middle" 
+                    allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash" 
+                    pluginspage="http://www.macromedia.com/go/getflashplayer" />
+            </object>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container lady health" >
+<div class="lady-card la-intr" >
+    <h3>分享：<div class="social-share" style="display: inline-block;margin-left: 10px;" data-sites="wechat"></div></h3>
+    <h3>节目简介</h3>
+    <p class="cont"></p>
+    <!--<div class="more mar-top2"><a href="#">显示更多</a></div>-->
+</div>
+
+
+</div>
+<div class="container-fixed-md lady-card">
+    <h3>往期节目</h3>
+    <div class="cards cards-borderless" id="vod_back_list">
+    </div>
+    
+    </div>
+
+
+
+
+<script type="text/javascript">
+var needSWF = '';
+</script>
+<script src="/js/setv_play.js?t=201809251353"></script>
+<script type="text/javascript">
+    var cid = 'C37891519';
+    var parentId = '';
+	var cur_src = [];
+    var bakUrl = '0';
+
+	function initCallback() {
+		getVodPlayInfo();
+	}
+	
+    $(document).ready(function () {
+        //获取点播详情
+        //tryVodPlayInfo();
+
+        //获取往期节目列表
+        getVodBackList();
+    });
+
+
+    window.onload = function () {
+
+        var videoPanelMenu = $(".vjs-fullscreen-control");
+        videoPanelMenu.before('<div class="vjs-subs-caps-button  vjs-menu-button vjs-menu-button-popup vjs-control vjs-button"  '
+                + 'aria-live="polite" aria-expanded="false" aria-haspopup="true" id="switch_media">'
+                + '<div class="vjs-menu" role="presentation">'
+                + '<ul class="vjs-menu-content" role="menu">'
+				+ '<li class="vjs-menu-item" tabindex="-1" role="menuitemcheckbox"  onclick="changeVideo(0)">标清</li>'
+				+ '<li class="vjs-menu-item" tabindex="-1" role="menuitemcheckbox"  onclick="changeVideo(1)">高清 </li>'
+				+ '<li class="vjs-menu-item" tabindex="-1" role="menuitemcheckbox"  onclick="changeVideo(2)">超清 </li>'
+                + '</ul></div>'
+				+ '<button class="vjs-subs-caps-button vjs-control vjs-button" type="button" src_type="2" id="switch_btn" aria-live="polite" title="清晰度切换" aria-disabled="false">'
+				+ '超清'
+				+ '</button>'
+                + '</div>'
+                );
+    };
+
+    function getVodPlayInfo() {
+        $.ajax({
+			//url: _dir + ".htm?r=vod/getVodPlayInfo",
+            url: "/webapi/getvodplayinfo/"+cid+".htm",
+            type: "get",
+            dataType: "json",
+            data: {},
+            success: function (data) {
+                console.log(data);
+                if (data.code == 0) {
+                    for (var i = 0; i < data.info.videos.length; i++) {
+                        if (data.info.videos[i].qualityid == '4096') {
+                            cur_src[2] = data.info.videos[i].playUrl;
+							cur_src[2] = getUrlTysx(cur_src[2]); 
+                        } else if (data.info.videos[i].qualityid == '16') {
+                            cur_src[1] = data.info.videos[i].playUrl;
+							cur_src[1] = getUrlTysx(cur_src[1]);
+                        } else if (data.info.videos[i].qualityid == '8') {
+                            cur_src[0] = data.info.videos[i].playUrl;
+							cur_src[0] = getUrlTysx(cur_src[0]);
+                        }
+                    }
+					var src_type = parseInt($("#switch_btn").attr("src_type"));
+					if (isNaN(src_type)) src_type = 2; //默认超清
+                    var src = cur_src[src_type];
+					playVideo(false, src);
+                } else {
+                    console.log(data.msg);
+                }
+            },
+            error: function () {
+
+            }
+        });
+    }
+	
+    function changeVideo(type) { //h5切换清晰度
+		var cur = 0;
+        if ($('video')[0] && $('video')[0].currentTime) {
+            cur = $('video')[0].currentTime;
+        }
+		var tags = ['标清', '高清', '超清'];
+		var src = cur_src[type];
+		var isLive = (cur_src[0].indexOf("playseek") < 0) //当前播放的是直播
+		playVideo(isLive, src);
+		$('#switch_btn').html(tags[type]);
+        $('#switch_btn').attr('src_type', type);
+		if (cur > 0) $('video')[0].currentTime = cur;
+    }
+    
+    function getVodBackList() {
+		if (parentId == '' || parentId == undefined || parentId == null) parentId = '0';
+		if (cid == '' || cid == undefined || cid == null) cid = '0';
+		$.ajax({
+            //url: _dir + ".htm?r=vod/getVodBackList",
+            url: "/webapi/getvodbacklist/"+cid+"/"+parentId+".htm",
+            type: "get",
+            dataType: "json",
+            data: {},
+            success: function (data) {
+                if (data.code == 0) {
+                    $('#vod_back_list').html(data.info);
+                } else {
+                    console.log(data.msg);
+                }
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+</script></div><!-- content -->
+
+        <div id="footer">
+            <p class="footer-p">上海教育电视台 电话：65834001 地址：大连路1541号 邮编：200086<br/>
+                上海教育电视台 版权所有<br/>
+                沪ICP备 11045836号-2
+            </p>
+        </div>
+
+        <!-- ZUI Javascript组件 -->
+        <script src="/js/zui.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="/js/ie10-viewport-bug-workaround.js"></script>
+        <!-- core JavaScript -->
+        <script type="text/javascript" src="/js/global.js?t=201809251353"></script>
+		<script type="text/javascript" src="/js/config.js?t=201809251353"></script>
+        <script type="text/javascript" src="/js/setv_index.js?t=201810191049"></script>
+        <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    </body>
+</html>

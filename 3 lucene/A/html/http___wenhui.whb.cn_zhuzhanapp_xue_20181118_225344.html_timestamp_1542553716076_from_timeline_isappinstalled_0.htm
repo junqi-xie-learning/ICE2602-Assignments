@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>看，上海这群青春洋溢的大学生，用才华和热情唱出时代的梦想</title>
+<link rel="stylesheet" href="/r/share_files/reset_style.css">
+<link rel="stylesheet" href="/r/share_files/vote.css">
+<link rel="stylesheet" type="text/css" href="/r/share_files/style.css">
+<script type="text/javascript" src="/r/share_files/jquery-1.10.2.min.js"></script>
+<script src="/r/share_files/front.js" type="text/javascript"></script>
+<script src="/r/share_files/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="/r/share_files/sha1.js" type="text/javascript"></script>
+<script src="/r/share_files/weixin.js" type="text/javascript"></script>
+<style>
+
+		.textCenter {text-align: center}
+		.title {font-family: "BoldFont";text-align: left;}
+		.author {text-align: center;}
+		.source {text-align: left;}
+		.authorLeft {vertical-align: text-top;text-align: left;}
+		#zanImages{
+			width: 80%;
+			height: 80%;
+			margin: 0 auto;
+			vertical-align: top;
+			display: inline-block;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -7px;
+			margin-top: -8px;
+		}
+		.content-min-ctn>p{
+			text-align: justify;
+			margin: 18px 0;
+
+		}
+		/* 底部下载APP */
+		.download-app-box{
+			background: rgb(45,49,50);
+			position: relative;
+			padding: 15px 10px;
+			overflow: hidden;
+		}
+		.media-container:first-child{
+			margin-top: 0;
+		}
+		.media-container, .media-body {
+			overflow: hidden;
+			zoom: 1;
+		}
+		.media-body, .media-left, .media-right {
+			display: table-cell;
+			vertical-align: top;
+		}
+		.media-left{
+			padding-right: 10px;
+			padding-top: 2px;
+		}
+		.media-header{
+			font-size: 16px;
+			font-weight: 500;
+			font-family: "微软雅黑";
+			color: #fff;
+		}
+		.media-text{
+			color: rgb(156,157,157);
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		.download-app{
+			width: 26%;
+			position: absolute;
+			top: 27%;
+			right: 4.3%;
+			z-index: 100;
+		}
+		.content-min-ctn img{ width:100% !important;height:auto !important}
+	</style>
+<script>
+        var imageArr = new Array();
+        var img = {
+            "width":"645px",
+            "height":"483px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var img = {
+            "width":"645px",
+            "height":"430px",
+            "videoUrl" : ""
+        }
+        imageArr.push(img);
+        var voteColors = [
+            "#e3e5f1",
+            "#cacdde",
+            "#aaafca"
+        ];
+        var perVotePerW;	// 100%长度
+        $(document).ready(function(){
+            $("#header").load("/include/header.html");
+            $("#foot").load("/include/footer.html");
+            var w = document.body.clientWidth - 20;
+            try {
+                var fontsize = w / 20;	// 字数：一行18字
+                document.body.style.fontSize = fontsize + "px";
+                var percent = w / 720;
+                $("#voteTitle").css("font-size", (percent * 30) + "px");
+                $("#voteTitle").css("height", (percent * 70) + "px");
+                $("#voteTitle").css("padding-top", (percent * 35) + "px");
+                // 投票长度 720px 400=100%
+                perVotePerW = percent * 400;
+                $("#voteCon").css("font-size", (percent * 30) + "px");
+                var width = percent * 125;
+                var height = width / height * width;
+                $(".voteimg").css("width", width + "px");
+                $(".voteimg").css("height", height + "px");
+
+            } catch (e) {}
+
+            $("img[name=videoImg]").click(function() {
+                openVideo(this)
+            });
+
+            // 图片宽度、高度
+            if(imageArr.length == 0)
+                return ;
+            for(var index = 0; index < imageArr.length; index++) {
+                var img = $("#image-" + (index + 1));
+                var width = imageArr[index].width;
+                width = width.replace("px", "");
+                width = width.replace("PX", "");
+                if(width >= 645) {
+                    // 宽度645，直接铺满
+                    img.css("width", "100%");
+                    continue ;
+                }
+                // 小于645，按照比例进行缩放
+                var proportion = w/645;	// 宽度比例
+                width = width * proportion;
+                img.css("width", width + "px");
+
+                // 专家图片
+                var photo = $("#expertPhoto");
+                if(photo == null || photo == undefined)
+                    return ;
+                var photoWidth = 223 * proportion;
+                photo.css("width", photoWidth + "px");
+                var height = 272 * proportion;
+                photo.css("height", height + "px");
+            }
+        });
+
+        var play, videoIndex = 0;
+        function openVideo(img) {
+            videoIndex++;
+            $(img).css("display", "none");
+            $(img).after("<div id='mod_player_" + videoIndex + "'></div>");
+            try{
+                // url由app替换字符串获得
+                var url = $(img).attr("videourl");
+                var pos1 = url.indexOf("vid=");
+                if (pos1 < 0){
+                    alert("视频路径格式有误，无法播放!");
+                }else{
+                    var pos2 = url.indexOf("&", pos1);
+                    if (pos2 < 0)
+                        pos2 = url.length;
+                    var vid = url.substring(pos1 + 4,pos2);
+                    var video = new tvp.VideoInfo();
+                    video.setVid(vid);
+                    var player =new tvp.Player();
+                    player.create({
+                        width:"100%",
+                        height:280,
+                        video:video,
+                        modId:"mod_player_" + videoIndex,
+                        vodFlashExtVars: {
+                            showlogo:0,
+                            popup : 0,
+                            share : 0,
+                            follow : 0
+                        },
+                        autoplay:true
+                    });
+
+                    player.oninited = function() {
+                        player.play();
+                    }
+                    player.play();
+                }
+            }catch(e){console.debug(e.message);}
+        }
+
+        //评论
+        function fnSubmit(){
+            if($("#text").val().trim().length==0){
+                alert("请输入评论内容");
+                return ;
+            }
+            var text = $("#text").val();
+            $.ajax({
+                type: "POST",
+                url:"/whb/comment.jspx",
+                "dataType" : "json",
+                data:{
+                    text:text,
+                    contentId:67907,
+                    hasCaptcha:"no"
+                },
+                success:myCallback
+            })
+        }
+        function myCallback(data) {
+            if(data.status==0) {
+                alert("评论成功,等待审核");
+                $("#text").val("");
+                fnText();
+                //location.href=location.href;
+            } else if(data.status==1) {
+                alert("验证码错误");
+                //$("#commentCaptcha").click();
+            } else if(data.status==2) {
+                alert("内容不存在");
+                //$("#commentCaptcha").click();
+            } else if(data.status==3) {
+                alert("评论关闭");
+                //$("#commentCaptcha").click();
+            } else if(data.status==4) {
+                alert("需要登录评论");
+                //$("#commentCaptcha").click();
+            } else if(data.status==100) {
+                alert("内容不存在");
+                // $("#commentCaptcha").click();
+            } else if(data.status==101) {
+                alert("评论不能为空");
+                // $("#commentCaptcha").click();
+            } else {
+                alert("评论失败");
+                // $("#commentCaptcha").click();
+            }
+        }
+        function fnText(){
+            var length = $("#text").val().trim().length;
+            $("#textcount").html(300-length);
+        }
+	</script>
+<script src="../../../../../../r/cms/html5.js"></script>
+</head>
+<body style="margin: 10px; font-size: 18.7px;" bgcolor="white"><input id="title" type="hidden" value="看，上海这群青春洋溢的大学生，用才华和热情唱出时代的梦想">
+<input id="descp" type="hidden" value="用青春嘹亮的歌声，放飞时代的梦想。">
+<input id="imgUrl" type="hidden" value="/u/cms/www/201811/18210449rxbk.jpg">
+<div id="header"><a id="appDownload" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook">
+<img src="/r/share_files/download.png" width="100%">
+</a>
+<script>
+
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var isWeixin = is_weixin();
+        var isAndroid = false;
+        var isIos = false;
+
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/) == "iphone os";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+
+        if (bIsAndroid) {
+            isAndroid = bIsAndroid;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+
+        } else if(bIsIphoneOs || bIsIpad) {
+            isIos = bIsIphoneOs || bIsIpad;
+            if(!isWeixin)
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+            else
+                $("#appDownload").attr("href", "http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook");
+        }
+	</script></div>
+<table class="marginTop_normal marginLeft_big marginRight_big marginBottom_big">
+<tbody><tr style="font-size:22px;text-align:justify;">
+<td class="title titleFont" colspan="2"><font color="#000000" style="line-height:1.5;">看，上海这群青春洋溢的大学生，用才华和热情唱出时代的梦想</font></td>
+</tr>
+<tr>
+<td class="author authorFont" style="text-align:left;padding-bottom:5px;">
+<font color="#595757">2018-11-18 21:10:39</font>
+<font style="margin-left: 10px;" color="#595757">作者：樊丽萍</font>
+</td>
+</tr>
+</tbody></table>
+<div style="margin:0;padding:0; width:100%;height:1px;background-color:#787878;overflow:hidden;"></div>
+<div class="content_body">
+<div class="content_title hei"></div>
+<div class="content_other"></div>
+<font color="#000000" font-size="16.666666px">
+<div class="content-min-ctn" style="text-align:justify;font-size:18px; wrap-word:normal; line-height:1.6;">
+<p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="6.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18205720m7pi.jpg"/></p><p style="text-align: left; display: block;">用青春嘹亮的歌声，放飞时代的梦想。</p><p style="text-align: left; display: block;">今晚，由中宣部文艺局、教育部思政司指导，中共上海市委宣传部、中共上海市教育卫生工作委员会、上海市教育委员会主办，复旦大学、上海广播电视台承办的“青春放歌——上海大学生校园歌会”在复旦大学举办，“牢记时代使命 唱响青春旋律”校园歌曲创作活动推出的优秀原创歌曲在此唱响。市委常委、市委宣传部部长周慧琳，副市长翁铁慧出席。</p><p style="text-align: left; display: block;">在复旦大学正大体育馆，每一位在场的高校青年学子都被激情澎湃的旋律深深感染着：舞台上，一批优秀校园歌曲陆续演绎；舞台下，全场16个方阵的先后四组拉歌活动，不时将现场氛围推向高潮。</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="2.pic_hd_meitu_1.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18210051foui.jpg"/></p><p style="text-align: left; display: block;">来自复旦大学、上海交通大学、同济大学、华东师范大学等上海19所高校的3000多名学生，精心编排演绎了一批校园歌曲创作活动入选歌曲，热情展演了近年来由上海高校师生创作的部分优秀校园原创歌曲，并通过16个学生方阵青春洋溢、气势非凡的现场拉歌，彰显了校园文化的独特魅力，展示了上海高校学生搏击奋进、弄潮时代的澎湃力量。</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="3.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18210113kki7.jpg"/></p><p style="text-align: left; display: block;">立鸿鹄志，做奋斗者。以文化人，以美育人。此次歌会对青年学子来说不仅是一次音乐的盛宴，更是让人难忘的“励志课”。大家在歌声与欢呼声中体悟到：中华民族伟大的复兴梦，终将在一代代青年的接力奋斗中变为现实。</p><p style="text-align: left; display: block;">《光阴的故事》《我相信》《明天你好》《红旗飘飘》……晚上7点半刚过，充满青春气息的校园拉歌开始了。复旦大学、上海理工大学、上海应用技术大学、华东理工大的学生们用嘹亮的歌声，和着清脆的掌声，拉开了歌会的序幕。</p><p style="text-align: left; display: block;">“听，未来的声音，2035我们在一起。”在七彩灯光的印衬下，同济大学学生合唱团的四位主唱和28位学生组成的舞蹈团和乐而歌，带来了一首抒情的校园原创歌曲《未来的声音》。</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="8.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18210142wjyo.jpg"/></p><p style="text-align: left; display: block;">“和普通的流行歌曲不同，校园原创歌曲写的是校园里的故事，和我们大学生是零距离的，特别容易被大家接受、获得共鸣。”同济大学学生溥雨欣说，通过这次歌会，大家不仅唱出了属于自己的好声音，更从歌曲中汲取到了力量。“我们不仅想把这首歌曲演绎好，还希望这首歌的正能量能够传播出去，激烈更多的同龄人。”</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="1.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18210154eoo2.jpg"/></p><p style="text-align: left; display: block;">就在去年底，由全国各高校参与的“牢记时代使命、畅想青春旋律”校园歌曲推广活动，征集了一批充满时代风采和青春气息的校园歌曲。</p><p style="text-align: left; display: block;">据悉，本场校园歌会是继今年5月在清华大学举办的全国首场校园青春歌会之后的第二场演出，再次对优秀校园原创歌曲进行集中展示和推广。“牢记时代使命 唱响青春旋律”校园歌曲创作活动于2017年底启动，面向全国高等院校师生征集原创歌曲。第一批共选出《畅想新时代》《创梦》《今天和明天》《无畏》《眺望》《曾经的模样》《我的故事》《未来的声音》等８首优秀原创校园歌曲。第二批原创歌曲也将于近日推出。</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="21.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18210228dtf6.jpg"/></p><p style="text-align: left; display: block;">“青春是校园原创歌曲的永恒主题。而对青年一代来说，青春的旋律有时可以是为抒发内心感受的小清新，有时也可以激发一代人使命感的宏大叙事。”上海交大学生代表团此次演绎的歌曲名为《畅想新时代》。在上海交通大学团委副书记巢睿祺看来，这首歌曲的创作者已经以歌名“点题”，希望更多年轻人在校期间能放飞梦想畅想新时代，走出校园后就要用自己的专业才能践行梦想、奋力新时代。“在平时的校园活动中，能歌善舞、能在台上露一手的优秀学生不少，相比之下，歌会活动是让大家一起唱歌，一起拉歌，沉浸在音乐中，学生们会不自觉地融入到集体中，这种团结一起、协同奋斗的精神状态特别可贵。”</p><p style="text-align: left; display: block;">一曲旋律欢快的《创梦》，表达了新时代大学生敢于突破自我，敢于追梦的心声。而对主唱之一、上海理工大学学生葛藤而言，参加演出的全过程也是一次突破自我的尝试。原来，连续多日赶到临港、和上海海事大学的伙伴们一起排练，她在前一天的彩排时高烧达39.4度。为了演出顺利进行，团队当时提出了换人的想法，但葛藤选择了坚持，在医院挂完盐水后依然回归舞台，她精神饱满的演出状态感动了身边很多小伙伴。</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="4.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18210247s233.jpg"/></p><p style="text-align: left; display: block;">在上海杉达大学，200多名学生们以《隐形的翅膀》参加了第四轮的拉歌活动。“无论是之前的彩排，还是今天的比赛，我们的学生不仅为自己的表演鼓掌、加油，也不时为兄弟院校精彩的演出鼓劲，00后们积极阳光、团结向上的面貌，给我们带来了很多感动。”学校青年教师杨柳说。</p><p style="text-align: left; display: block;">今晚的歌会上，让人印象深刻的的优秀原创歌曲还有很多。华东师范大学音乐学院的师生们带来的《师说》，乐风古雅、旋律悠扬，赞颂师者淡泊名利、默默奉献的崇高品质。</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="9.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/18210303xnqz.jpg"/></p><p style="text-align: left; display: block;">《师说》演唱者石春轩子告诉记者，这首歌的歌词是由华东师范中文系副教授、诗词研究青年学者徐燕婷写的。这首歌前期在学校小规模排练时，就感动了不少师生，”我们希望写一首歌，既弘扬中华传统文化，又激发学生们对教师职业的热爱和憧憬。”在石春轩子看来，音乐本身就承载着重要的育人功能。她相信，今后，随着更多优秀的校园原创歌曲走进校园，在校园普及、流行，大学生能够得到更多精神层面的滋养，能够在歌声中进一步坚定自己的志向和信念。</p><p style="text-align: left; display: block;">牢记时代使命，用青春梦激扬中国梦；唱响青春旋律，做时代弄潮儿。伴随着一曲豪迈的《歌唱祖国》，晚会在歌声、掌声、欢呼声中画上了圆满句号。</p><p style="text-align: center;"><img style="width: 645px; height: auto; margin-right: auto; margin-left: auto; display: block;" alt="6.pic_hd.jpg" src="http://wenhui.whb.cn/u/cms/www/201811/182103578i2b.jpg"/></p><p style="text-align: left; display: block;">据悉，为进一步推广传播优秀校园原创歌曲，本次校园歌会后，上海市还将通过校园文化艺术活动、歌曲演唱会、全媒体推送等形式，多层次、多方面、多频次地进行展示推介，为广大青年学生他们扬帆未来、放飞梦想搭建舞台。</p><p style="text-align: left; display: block;">据了解，此次歌会将在中央广播电视总台、上海广播电视台播出。</p><p style="text-align: left; display: block;"><br/></p><p><span style="color: rgb(127, 127, 127); font-size: 16px;">作者：樊丽萍</span><br/><span style="color: rgb(127, 127, 127); font-size: 16px;">编辑：张鹏</span><br/><span style="color: rgb(127, 127, 127); font-size: 16px;">责任编辑：任荃</span></p><p><span style="color: rgb(127, 127, 127); font-size: 16px;">*文汇独家稿件，转载请注明出处。图 | 本报记者 刘栋 摄</span></p>
+</div>
+</font>
+</div>
+<div>
+<div class="reset-css">
+<div class="praise-container" style="height:42px;">
+<span id="ups" style="float: right;font-size: 12px;height: 22px;position: relative;top: 5px;">0</span>
+<span onclick="Cms.up('',67907,0);" id="zanImagesCtn" style="display: inline-block;width: 20px;height: 20px;border: 1px solid #333;border-radius: 50%;line-height: 20px;overflow: hidden;position: relative;float: right;margin-right: 3px;">
+<img id="zanImages" src="/r/share_files/dianzan2x.png" alt="">
+</span>
+</div>
+<div class="edit-comment">
+<textarea name="text" id="text" placeholder="请输入文字内容..." style="resize: none;line-height:1.5;padding-bottom:5px;" rows="2" oninput="fnText();"></textarea>
+<div class="submit-comment-container solve_float">
+<span class="left">还可以输入<span id="textcount" style="color:#FFA83F;">300</span>字</span>
+<button class="submit-comment right" onclick="fnSubmit();">提交</button>
+</div>
+<input type="hidden" name="contentId" value="225344">
+</div>
+<div>
+<button class="btn-see-more" onclick="location='/whb/findComment.jspx?contentId=225344'">查看评论&gt;&gt;</button>
+</div>
+</div>
+</div>
+<div class="download-app-box">
+<div class="media-container">
+<div class="media-left">
+<img src="/r/share_files/logo3.png" alt="Logo" style="width: 40px;height:40px;">
+</div>
+<div class="media-body">
+<h4 class="media-header">文汇报</h4>
+<div class="media-text">源于事实 来自眼界</div>
+</div>
+</div>
+<img class="download-app" src="/r/share_files/down-app.png" onclick="window.location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.wenhui.ebook'" alt="DownLoad">
+</div>
+<div id="foot"></div>
+<script src="/r/share_files/tvp.player_v2.js" type="text/javascript"></script>
+<script src="/r/share_files/wb.js" type="text/javascript"></script>
+<script type=text/javascript>
+    $(function() {
+        Cms.viewCountNew(location.href,"","225344",null,null, null,null,null);
+    });
+</script>
+</body></html>
