@@ -2,7 +2,6 @@
 
 from java.io import File
 from org.apache.lucene.index import DirectoryReader
-from org.apache.lucene.analysis.core import SimpleAnalyzer
 from org.apache.lucene.queryparser.classic import QueryParser
 from org.apache.lucene.store import SimpleFSDirectory
 from org.apache.lucene.search import IndexSearcher
@@ -85,12 +84,12 @@ class SearchFiles(object):
         Highlight and return the search results.
 
         Input: `score_docs`: search results from the index
-        Output: list of documents found in the index
-                the information contains `title`, `url` and `abstract`
+        Output: list of documents info found in the index,
+                details includes `title`, `url` and `abstract`
         '''
         query = QueryParser('contents', self.analyzer).parse(command)
         highlighter = Highlighter(self.formatter, QueryScorer(query))
-        highlighter.setTextFragmenter(SimpleFragmenter(25))  # Limit the max number of characters
+        highlighter.setTextFragmenter(SimpleFragmenter(200))  # Limit the max number of characters
 
         results = []
         for score_doc in score_docs:
@@ -101,7 +100,7 @@ class SearchFiles(object):
             result = {
                 'title': doc.get('title'),
                 'url': doc.get('url'),
-                'abstract': abstract
+                'abstract': abstract.replace(' ', '')
             }
             results.append(result)
         return results

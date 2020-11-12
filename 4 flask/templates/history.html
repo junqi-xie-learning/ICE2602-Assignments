@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Search History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Article-List.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Footer-Basic.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Navigation-with-Search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+        <div class="container"><a class="navbar-brand" href="/">Integrated Search</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Websites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/img">Images</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/history">History</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="article-list">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Search History</h2>
+            </div>
+            <div class="row articles">
+                <div class="col">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Search Type</th>
+                                    <th>Keyword</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for command in history %}
+                                <tr>
+                                    {% if command.type == "result" %}
+                                    <td>Website</td>
+                                    {% else %}
+                                    <td>Image</td>
+                                    {% endif %}
+                                    <td>
+                                        <a href="/{{ command.type }}?keyword={{ command.keyword }}">{{ command.keyword }}</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://oc.sjtu.edu.cn/courses/24543">
+                        EE208 Introduction to Engineering for Electronic Information (C) (Fall 2020)
+                    </a>
+                </li>
+            </ul>
+            <p class="copyright">Junqi Xie © 2020</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

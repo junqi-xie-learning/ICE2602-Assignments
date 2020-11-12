@@ -1,12 +1,20 @@
 {% extends 'index.html' %}
 
 {% block body %}
-    <hr>
-    <h1>Search Results for "{{ keyword }}"</h1>
-{% for result in results %}
-    <h2><a href="{{ result.url }}">{{ result.title }}</a></h2>
-    <p>{{ result.abstract | safe }}</p>
-    <p><i>{{ result.url }}</i></p>
-    <br>
-{% endfor %}
+<div class="article-list">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Search Results for "{{ keyword }}"</h2>
+        </div>
+        <div class="row articles"></div>
+            {% for result in results %}
+            <div class="col">
+                <h5><a href="{{ result.url }}">{{ result.title }}</a></h5>
+                <p>{{ result.abstract | safe }}</p>
+                <p><i>{{ result.url }}</i></p>
+            </div>
+            {% endfor %}
+    </div>
+    </div>
+</div>
 {% endblock %}

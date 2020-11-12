@@ -1,0 +1,25 @@
+{% extends 'index_img.html' %}
+
+{% block body %}
+<div class="article-list">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Search Results for "{{ keyword }}"</h2>
+        </div>
+        <div class="row articles">
+            {% for result in results %}
+            <div class="col-sm-6 col-md-4 item">
+                <a href="{{ result.url }}">
+                    <img class="img-fluid" src="{{ result.url }}" alt="{{ result.description }}">
+                </a>
+                <h3 class="name">{{ result.title }}</h3>
+                <p class="description">{{ result.description }}</p>
+                <a class="action" href="{{ result.action_url }}">
+                    <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
