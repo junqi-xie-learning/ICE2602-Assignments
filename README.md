@@ -1,6 +1,6 @@
-# EE208-Assignments
+# ICE2602-Assignments
 
-This repository contains the assignments handed out in EE208 (2020 Fall) with my solutions. 
+This repository contains the assignments handed out in ICE2602 (2020 Fall) with my solutions. 
 
 If you found any mistakes in the solutions, please create an issue or contact me through email.
 
