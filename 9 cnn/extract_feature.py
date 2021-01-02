@@ -19,11 +19,6 @@ trans = transforms.Compose([
     normalize,
 ])
 
-print('Prepare image data!')
-test_image = default_loader('panda.jpg')
-input_image = trans(test_image)
-input_image = torch.unsqueeze(input_image, 0)
-
 
 def features(x):
     x = model.conv1(x)
@@ -39,12 +34,21 @@ def features(x):
     return x
 
 
-print('Extract features!')
-start = time.time()
-image_feature = features(input_image)
-image_feature = image_feature.detach().numpy()
-print('Time for extracting features: {:.2f}'.format(time.time() - start))
+def extract_feature(filename):
+    '''
+    Extract feature from the specified filename.
 
+    Input: `filename`: filename of the image
+    Output: `img_feature`: feature vector of the image
+    '''
+    # Prepare image data!
+    test_image = default_loader(filename)
+    input_image = trans(test_image)
+    input_image = torch.unsqueeze(input_image, 0)
 
-print('Save features!')
-np.save('features.npy', image_feature)
+    # Extract features!
+    image_feature = features(input_image)
+    image_feature = image_feature.detach().numpy()
+
+    # Save features!
+    return image_feature.reshape(2048)
