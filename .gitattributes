@@ -1,2 +1,1 @@
-3 lucene/A/html* linguist-vendored
-3 lucene/B/html_img* linguist-vendored
+*.htm linguist-vendored
